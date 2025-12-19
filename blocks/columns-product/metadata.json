@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-product",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-19T10:22:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoq.com/",
+    "originPage": "pharmaceutical product homepage - product display",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "product",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns with product images side-by-side",
+    "buttonCount": 0,
+    "imageCount": 2
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product image displays",
+      "pharmaceutical product comparisons",
+      "side-by-side product variants",
+      "medication format displays"
+    ],
+    "notSuitableFor": [
+      "text-heavy content",
+      "feature comparisons with lots of text",
+      "blog content layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-19T10:22:00.000Z"
+  }
+}

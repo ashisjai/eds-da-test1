@@ -1,0 +1,33 @@
+.columns-patient-story > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-patient-story img {
+  width: 100%;
+}
+
+.columns-patient-story > div > div {
+  order: 1;
+}
+
+.columns-patient-story > div > .columns-patient-story-img-col {
+  order: 0;
+}
+
+.columns-patient-story > div > .columns-patient-story-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-patient-story > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns-patient-story > div > div {
+    flex: 1;
+    order: unset;
+  }
+}

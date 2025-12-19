@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-pharma",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2025-12-19T10:22:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoq.com/",
+    "originPage": "pharmaceutical product homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "purpose": "pharma",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "branded graphic + heading",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "pharmaceutical product pages",
+      "healthcare landing pages",
+      "medical product homepages"
+    ],
+    "notSuitableFor": [
+      "blog posts",
+      "e-commerce product pages",
+      "text-heavy content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index", "/atopic-dermatitis"],
+    "reuseCount": 2,
+    "lastUsed": "2025-12-19T10:53:43.350Z"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-patient-story",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-19T10:53:43.350Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoq.com/atopic-dermatitis",
+    "originPage": "condition page - patient testimonial section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "testimonial",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns: text + patient image",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "patient testimonial sections",
+      "customer story layouts",
+      "2-column text + photo layouts",
+      "pharmaceutical patient stories"
+    ],
+    "notSuitableFor": [
+      "3-column layouts",
+      "product image displays",
+      "text-only sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/atopic-dermatitis"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-19T10:53:43.350Z"
+  }
+}

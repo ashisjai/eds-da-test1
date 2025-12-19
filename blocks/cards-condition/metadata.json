@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-condition",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-19T10:22:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoq.com/",
+    "originPage": "pharmaceutical product homepage - condition selector",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "condition",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "grid of text-only cards with medical conditions",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "medical condition selectors",
+      "pharmaceutical indication lists",
+      "healthcare navigation grids",
+      "disease category pages"
+    ],
+    "notSuitableFor": [
+      "product grids with images",
+      "blog article cards",
+      "team member listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/index"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-19T10:22:00.000Z"
+  }
+}

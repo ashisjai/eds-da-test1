@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-benefits",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-19T10:53:43.350Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoq.com/atopic-dermatitis",
+    "originPage": "condition page - benefits section",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "wide",
+    "purpose": "benefits",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "3 columns with heading + text each",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "condition page benefits sections",
+      "product feature comparisons",
+      "3-column informational layouts",
+      "pharmaceutical benefits messaging"
+    ],
+    "notSuitableFor": [
+      "image-heavy layouts",
+      "2-column layouts",
+      "testimonial sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/atopic-dermatitis"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-19T10:53:43.350Z"
+  }
+}

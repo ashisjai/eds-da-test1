@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="url-classification-results">URL Classification Results</h1>
+<h2 id="analysis-date">Analysis Date</h2>
+<p>2025-12-19</p>
+<h2 id="total-urls-identified">Total URLs Identified</h2>
+<p>10 URLs from RINVOQ website</p>
+<h2 id="classification-results">Classification Results</h2>
+<h3 id="template-rinvoq-homepage">Template: rinvoq-homepage</h3>
+<p><strong>Match Confidence:</strong> 100%
+<strong>URLs:</strong> 1</p>
+<ul>
+<li>https://www.rinvoq.com/ ✅ (already migrated)</li>
+</ul>
+<h3 id="new-category-rinvoq-condition-page">New Category: rinvoq-condition-page</h3>
+<p><strong>Match Confidence:</strong> N/A (requires single-page migration first)
+<strong>URLs:</strong> 9</p>
+<p>These pages share a common structure:</p>
+<ul>
+<li>Condition-specific hero with benefits messaging</li>
+<li>Multi-column benefit cards (Fast Relief, Skin Clearance, Results)</li>
+<li>Patient story sections</li>
+<li>Interactive elements (polls, quizzes)</li>
+<li>Condition-specific ISI content</li>
+<li>Similar navigation and footer</li>
+</ul>
+<p><strong>Condition Page URLs:</strong></p>
+<ol>
+<li>https://www.rinvoq.com/atopic-dermatitis</li>
+<li>https://www.rinvoq.com/rheumatoid-arthritis</li>
+<li>https://www.rinvoq.com/psoriatic-arthritis</li>
+<li>https://www.rinvoq.com/ankylosing-spondylitis</li>
+<li>https://www.rinvoq.com/non-radiographic-axial-spondyloarthritis</li>
+<li>https://www.rinvoq.com/ulcerative-colitis</li>
+<li>https://www.rinvoq.com/crohns-disease</li>
+<li>https://www.rinvoq.com/giant-cell-arteritis</li>
+<li>https://www.rinvoq.com/pjia-jpsa</li>
+</ol>
+<h3 id="additional-url-rinvoq-cost-savings">Additional URL: rinvoq-cost-savings</h3>
+<p><strong>Match Confidence:</strong> N/A (requires analysis)
+<strong>URL:</strong> 1</p>
+<ul>
+<li>https://www.rinvoq.com/cost</li>
+</ul>
+<h2 id="recommendation">Recommendation</h2>
+<p><strong>Option 1: Complete Migration (Recommended)</strong>
+To properly migrate all 10 pages:</p>
+<ol>
+<li>Perform single-page migration for one condition page (e.g., atopic-dermatitis) to create template</li>
+<li>Use bulk import for remaining 8 condition pages</li>
+<li>Analyze and migrate the cost page separately</li>
+</ol>
+<p><strong>Option 2: Skip for Now</strong>
+Continue with only the homepage migration that's already complete.</p>
+<h2 id="current-status">Current Status</h2>
+<ul>
+<li>✅ Homepage template created and infrastructure ready</li>
+<li>❌ Condition pages require new template (single-page migration needed first)</li>
+<li>❌ Cost page not yet analyzed</li>
+</ul></div>
+</main>
+<footer></footer>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-quiz",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2025-12-19T10:53:43.350Z",
+  "sourceContext": {
+    "originUrl": "https://www.rinvoq.com/atopic-dermatitis",
+    "originPage": "condition page - quiz CTA section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "yellow",
+    "density": "wide",
+    "purpose": "quiz",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "2 columns: quiz form + lifestyle image",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "interactive quiz sections",
+      "quiz CTA layouts",
+      "2-column form + image layouts",
+      "engagement sections on condition pages"
+    ],
+    "notSuitableFor": [
+      "3-column layouts",
+      "testimonial sections",
+      "text-only content"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/atopic-dermatitis"],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-19T10:53:43.350Z"
+  }
+}

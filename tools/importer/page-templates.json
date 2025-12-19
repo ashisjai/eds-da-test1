@@ -1,0 +1,45 @@
+{
+  "templates": [
+    {
+      "name": "rinvoq-homepage",
+      "urls": [
+        "https://www.rinvoq.com/"
+      ],
+      "description": "RINVOQ pharmaceutical homepage with hero, condition selector cards, product columns, and extensive ISI content",
+      "blocks": [
+        {
+          "name": "hero-pharma",
+          "instances": [
+            ".abbv-background-container.home-hero"
+          ]
+        },
+        {
+          "name": "cards-condition",
+          "instances": [
+            ".homepage-cta-flex-box.conditions"
+          ]
+        },
+        {
+          "name": "columns-product",
+          "instances": [
+            ".abbv-flex-container.flex-wrap-wrap.homepage-cta-flex-box.conditions .abbv-flex-item:has(img[alt*='upadacitinib'])"
+          ]
+        },
+        {
+          "name": "section-yellow",
+          "section": "background-yellow",
+          "instances": [
+            ".abbv-container.background-yellow"
+          ]
+        },
+        {
+          "name": "section-dark",
+          "section": "background-dark",
+          "instances": [
+            ".abbv-background-container.black-brushstroke.homepage-speak-network"
+          ]
+        }
+      ]
+    }
+  ]
+}
