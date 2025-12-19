@@ -5,23 +5,42 @@
 
 .hero-pharma {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: 80px 24px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-pharma > div {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-pharma h1 {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--heading-font-size-xxl);
+  margin-bottom: 20px;
+}
+
+.hero-pharma-content {
+  margin-top: 20px;
+}
+
+.hero-pharma-content p {
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
 }
 
 .hero-pharma picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   object-fit: cover;
   box-sizing: border-box;
+  opacity: 0.2;
 }
 
 .hero-pharma img {
@@ -32,6 +51,11 @@
 
 @media (width >= 900px) {
   .hero-pharma {
-    padding: 40px 32px;
+    padding: 100px 32px;
+    min-height: 500px;
+  }
+
+  .hero-pharma h1 {
+    font-size: 60px;
   }
 }
