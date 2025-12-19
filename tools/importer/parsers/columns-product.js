@@ -25,19 +25,19 @@ export default function parse(element, { document }) {
                  || element.querySelectorAll('img');
 
   // Filter to get product images only (not icons or decorative)
-  const productImages = Array.from(images).filter(img => {
+  const productImages = Array.from(images).filter((img) => {
     const alt = img.getAttribute('alt') || '';
     const src = img.getAttribute('src') || '';
-    return (alt.toLowerCase().includes('rinvoq') ||
-            alt.toLowerCase().includes('upadacitinib') ||
-            src.includes('rinvoq-bottle') ||
-            src.includes('oral-solution'));
+    return (alt.toLowerCase().includes('rinvoq')
+            || alt.toLowerCase().includes('upadacitinib')
+            || src.includes('rinvoq-bottle')
+            || src.includes('oral-solution'));
   });
 
   // Build cells - one row with multiple columns
   const row = [];
 
-  productImages.forEach(img => {
+  productImages.forEach((img) => {
     const column = document.createElement('div');
     column.appendChild(img.cloneNode(true));
     row.push(column);
@@ -50,7 +50,7 @@ export default function parse(element, { document }) {
     // Create block using WebImporter
     const block = WebImporter.Blocks.createBlock(document, {
       name: 'Columns-Product',
-      cells
+      cells,
     });
 
     // Replace element with block

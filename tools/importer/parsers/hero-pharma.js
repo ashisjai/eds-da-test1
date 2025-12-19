@@ -19,22 +19,19 @@
  */
 
 export default function parse(element, { document }) {
-  // Extract background image
-  const bgImage = element.querySelector('.abbv-background-container-display img');
-
   // Extract relief branding image
-  const reliefImage = element.querySelector('img[alt="Relief"]') ||
-                      element.querySelector('.relief-image img') ||
-                      element.querySelector('picture img');
+  const reliefImage = element.querySelector('img[alt="Relief"]')
+                      || element.querySelector('.relief-image img')
+                      || element.querySelector('picture img');
 
   // Extract heading
-  const heading = element.querySelector('h1') ||
-                  element.querySelector('h2') ||
-                  element.querySelector('[class*="hero"] h1, [class*="hero"] h2');
+  const heading = element.querySelector('h1')
+                  || element.querySelector('h2')
+                  || element.querySelector('[class*="hero"] h1, [class*="hero"] h2');
 
   // Extract product text (RINVOQ with once-daily pill)
-  const productText = element.querySelector('.abbv-image-text-content-v2') ||
-                      element.querySelector('[class*="image-text"]');
+  const productText = element.querySelector('.abbv-image-text-content-v2')
+                      || element.querySelector('[class*="image-text"]');
 
   // Build the cell content - single row with all content
   const cellContent = document.createElement('div');
@@ -45,7 +42,7 @@ export default function parse(element, { document }) {
 
   if (productText) {
     const textElements = productText.querySelectorAll('p');
-    textElements.forEach(p => {
+    textElements.forEach((p) => {
       cellContent.appendChild(p.cloneNode(true));
     });
   }
@@ -56,13 +53,13 @@ export default function parse(element, { document }) {
 
   // Create cells array - hero block is single column
   const cells = [
-    [cellContent]
+    [cellContent],
   ];
 
   // Create block using WebImporter
   const block = WebImporter.Blocks.createBlock(document, {
     name: 'Hero-Pharma',
-    cells
+    cells,
   });
 
   // Replace element with block
