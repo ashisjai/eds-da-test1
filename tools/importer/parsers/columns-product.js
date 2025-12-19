@@ -20,9 +20,9 @@
 
 export default function parse(element, { document }) {
   // Find product images
-  const images = element.querySelectorAll('img[alt*="RINVOQ"], img[alt*="upadacitinib"]') ||
-                 element.querySelectorAll('.image-text-v2 img') ||
-                 element.querySelectorAll('img');
+  const images = element.querySelectorAll('img[alt*="RINVOQ"], img[alt*="upadacitinib"]')
+                 || element.querySelectorAll('.image-text-v2 img')
+                 || element.querySelectorAll('img');
 
   // Filter to get product images only (not icons or decorative)
   const productImages = Array.from(images).filter(img => {

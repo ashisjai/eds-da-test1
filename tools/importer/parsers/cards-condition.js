@@ -22,32 +22,32 @@
 
 export default function parse(element, { document }) {
   // Find all condition card items
-  const cardItems = element.querySelectorAll('.abbv-flex-item:has(a.homepage-indication-selector-cta)');
+  let cardItems = element.querySelectorAll('.abbv-flex-item:has(a.homepage-indication-selector-cta)');
 
   if (cardItems.length === 0) {
     // Fallback: try alternative selector patterns
-    cardItems = element.querySelectorAll('.homepage-indication-selector-cta') ||
-                element.querySelectorAll('a[href*="/"]');
+    cardItems = element.querySelectorAll('.homepage-indication-selector-cta')
+                || element.querySelectorAll('a[href*="/"]');
   }
 
   // Extract content from each card
   const cells = [];
 
-  cardItems.forEach(item => {
+  cardItems.forEach((item) => {
     const link = item.querySelector('a') || item;
 
     // Extract severity/level (e.g., "Moderate to Severe", "Active")
-    const severity = link.querySelector('.font-10px, .abv-custom-txtcolor-grey') ||
-                     link.querySelector('span:first-child');
+    const severity = link.querySelector('.font-10px, .abv-custom-txtcolor-grey')
+                     || link.querySelector('span:first-child');
 
     // Extract condition name (e.g., "Eczema", "Rheumatoid Arthritis")
-    const conditionName = link.querySelector('.font-15px, .font-neueHaasGrotesk') ||
-                          link.querySelector('span:nth-child(2)') ||
-                          link.querySelector('strong, b');
+    const conditionName = link.querySelector('.font-15px, .font-neueHaasGrotesk')
+                          || link.querySelector('span:nth-child(2)')
+                          || link.querySelector('strong, b');
 
     // Extract additional info (e.g., "(Atopic Dermatitis)*")
-    const additionalInfo = link.querySelector('.font-10px.font-line-height-14px') ||
-                           link.querySelector('span:last-child');
+    const additionalInfo = link.querySelector('.font-10px.font-line-height-14px')
+                           || link.querySelector('span:last-child');
 
     // Build cell content
     const cellContent = document.createElement('div');
@@ -65,8 +65,8 @@ export default function parse(element, { document }) {
       cellContent.appendChild(nameText);
     }
 
-    if (additionalInfo && additionalInfo.textContent.trim() &&
-        additionalInfo !== severity && additionalInfo !== conditionName) {
+    if (additionalInfo && additionalInfo.textContent.trim()
+        && additionalInfo !== severity && additionalInfo !== conditionName) {
       cellContent.appendChild(document.createElement('br'));
       const infoText = document.createElement('span');
       infoText.textContent = additionalInfo.textContent.trim();
@@ -82,7 +82,7 @@ export default function parse(element, { document }) {
   // Create block using WebImporter
   const block = WebImporter.Blocks.createBlock(document, {
     name: 'Cards-Condition',
-    cells
+    cells,
   });
 
   // Replace element with block
