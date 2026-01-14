@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="firstnet-homepage---block-identification">FirstNet Homepage - Block Identification</h1><h2 id="overview">Overview</h2><p>This document identifies all UI blocks/components found on the FirstNet homepage (https://www.firstnet.com/) for migration to AEM Edge Delivery Services.</p></div>
+<div><h2 id="block-inventory">Block Inventory</h2><h3 id="header-block">1. Header Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-01-header-hero.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>header</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>FirstNet logo with "Built with AT&#x26;T" tagline</li>
+<li>Dropdown navigation toggle</li>
+<li>Sign up button (primary CTA)</li>
+<li>Log in link (secondary)</li>
+<li>Sticky behavior on scroll</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Logo (image)</li>
+<li>Sign up link (link)</li>
+<li>Login link (link)</li>
+<li>Navigation items (from /nav)</li>
+</ul></div>
+<div><h3 id="icon-navigation-bar-block">2. Icon Navigation Bar Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-01-header-hero.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>icon-nav</code> or <code>quick-links</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>carousel</code>, <code>default</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Horizontal scrolling icon navigation</li>
+<li>8 quick access items with icons</li>
+<li>Mobile-friendly carousel</li>
+</ul><p><strong>Navigation Items:</strong></p><ol>
+<li>Rate plans - Phone icon</li>
+<li>Phones &#x26; devices - Device icon</li>
+<li>Offers - Dollar sign icon</li>
+<li>Pay bill online - Bill icon</li>
+<li>Coverage map - Map icon</li>
+<li>Check eligibility - Checkmark icon</li>
+<li>Mission-critical - Building icon</li>
+<li>FirstNet Refer-A-Friend - People icon</li>
+</ol><p><strong>Content Model:</strong></p><ul>
+<li>Icon (image/svg)</li>
+<li>Label (text)</li>
+<li>Link (link)</li>
+</ul></div>
+<div><h3 id="hero-block">3. Hero Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-01-header-hero.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>hero</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code>, <code>image-right</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Eyebrow text ("MISSION-CRITICAL COMMUNICATIONS")</li>
+<li>Main heading ("America's first responder network")</li>
+<li>Description text with statistics (2.99 million square miles)</li>
+<li>CTA button ("Check eligibility")</li>
+<li>Background image (first responder on phone)</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Eyebrow (text)</li>
+<li>Heading (text)</li>
+<li>Description (richtext)</li>
+<li>CTA button (link)</li>
+<li>Background Image (image)</li>
+</ul></div>
+<div><h3 id="section-heading-block">4. Section Heading Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-02-offers.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>section-heading</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>default</code>, <code>centered</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Main heading ("Discounts for first responders")</li>
+<li>Subheading ("Switch to FirstNet and take advantage of special offers available")</li>
+<li>Centered text alignment</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>Subheading (text)</li>
+</ul></div>
+<div><h3 id="offer-cards-block">5. Offer Cards Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-02-offers.png</code>, <code>firstnet-homepage-03-offers-cards.png</code>, <code>firstnet-homepage-04-why-firstnet.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>cards</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>offer</code>, <code>promo</code>, <code>split-image</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Card with product image</li>
+<li>Eyebrow/Tag text ("LEARN HOW TO GET AN ELIGIBLE")</li>
+<li>Main headline ("Apple Watch SE 3 and iPad for $0.99/mo. each")</li>
+<li>Conditional text ("When you buy with eligible iPhone 17 series")</li>
+<li>Legal disclaimer (expandable)</li>
+<li>CTA button ("Shop now")</li>
+</ul><p><strong>Offer Cards Identified:</strong></p><ol>
+<li><strong>Apple Watch + iPad Deal</strong> - Device bundle image, pricing details, Shop now CTA</li>
+<li><strong>Contract Buyout</strong> - First responder image, "GET UP TO $800/line", Shop now CTA</li>
+<li><strong>FirstNet &#x26; Family</strong> - Family image, "Families save 25% on AT&#x26;T lines", Learn more CTA</li>
+</ol><p><strong>Content Model per Card:</strong></p><ul>
+<li>Image (image)</li>
+<li>Eyebrow/Tag (text)</li>
+<li>Headline (text)</li>
+<li>Sub-headline (text)</li>
+<li>Legal text (richtext, expandable)</li>
+<li>CTA button (link)</li>
+</ul></div>
+<div><h3 id="value-props-block-why-firstnet">6. Value Props Block (Why FirstNet)</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-05-why-section.png</code>, <code>firstnet-homepage-06-value-props.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>value-props</code> or <code>feature-list</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>dark-bg</code>, <code>icon-list</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Dark background section</li>
+<li>Section heading ("Why FirstNet for 5G public safety")</li>
+<li>Section subheading ("Built from the ground up to support emergency services")</li>
+<li>3 value proposition items with icons</li>
+<li>"Learn more" CTA at bottom</li>
+<li>Legal footnote</li>
+</ul><p><strong>Value Props:</strong></p><ol>
+<li><strong>Enough capacity for every first responder</strong> - Shield icon
+<ul>
+<li>"FirstNet supports you with a dedicated lane exclusive to public safety when you need it"</li>
+</ul>
+</li>
+<li><strong>The largest network for public safety</strong> - Map/USA icon
+<ul>
+<li>"FirstNet gives first responders First Priority, speed, low latency, reliability and 5G connectivity"</li>
+</ul>
+</li>
+<li><strong>Unprecedented accountability</strong> - Government building icon
+<ul>
+<li>"Built in a public-private partnership with the federal government"</li>
+</ul>
+</li>
+</ol><p><strong>Content Model:</strong></p><ul>
+<li>Section Heading (text)</li>
+<li>Section Subheading (text)</li>
+<li>Value Prop Items:
+<ul>
+<li>Icon (image/svg)</li>
+<li>Title (text)</li>
+<li>Description (text)</li>
+</ul>
+</li>
+<li>CTA link (link)</li>
+<li>Legal footnote (text)</li>
+</ul></div>
+<div><h3 id="newsarticle-cards-block">7. News/Article Cards Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-07-news.png</code>, <code>firstnet-homepage-08-news-cards.png</code>, <code>firstnet-homepage-09-contact-newsletter.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>cards</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>news</code>, <code>article</code>, <code>story</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Latest news from public safety's network")</li>
+<li>3 article cards in a row</li>
+<li>Each card has image, category tag, title, description, CTA</li>
+</ul><p><strong>News Cards Identified:</strong></p><ol>
+<li><strong>FirstNet Fusion</strong> - Tag: "PRODUCT LAUNCH"
+<ul>
+<li>"FirstNet Fusion will combine critical communications capabilities..."</li>
+</ul>
+</li>
+<li><strong>Stress relief for emergency physicians</strong> - Tag: "HEALTH AND WELLNESS"
+<ul>
+<li>"This Mental Health Awareness Month, Ryan Fields-Spack shares strategies..."</li>
+</ul>
+</li>
+<li><strong>Town of Duck keeps residents safe</strong> - Tag: "LAW ENFORCEMENT"
+<ul>
+<li>"The Duck Police Department relies on FirstNet for priority, secure communications..."</li>
+</ul>
+</li>
+</ol><p><strong>Content Model per Card:</strong></p><ul>
+<li>Image (image)</li>
+<li>Category tag (text)</li>
+<li>Title (text)</li>
+<li>Description (text)</li>
+<li>CTA link (link)</li>
+</ul></div>
+<div><h3 id="explore-cta-block">8. Explore CTA Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-09-contact-newsletter.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>cta-link</code></div></div><div><div>Priority</div><div>P2</div></div><div><div>Variants</div><div><code>arrow</code>, <code>animated</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Link text ("Explore more from the FirstNet community")</li>
+<li>Animated arrow icon</li>
+<li>Full-width clickable area</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Link text (text)</li>
+<li>Link URL (link)</li>
+<li>Icon (optional)</li>
+</ul></div>
+<div><h3 id="contact-cta-banner-block">9. Contact CTA Banner Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-10-cta-newsletter.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>cta-banner</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>contact</code>, <code>simple</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Light gray background</li>
+<li>Heading ("Connect with a FirstNet specialist")</li>
+<li>CTA button ("Contact us")</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>CTA button (link)</li>
+</ul></div>
+<div><h3 id="newsletter-signup-block">10. Newsletter Signup Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-10-cta-newsletter.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>form</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>newsletter</code>, <code>inline</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Dark blue background</li>
+<li>Section heading ("LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK")</li>
+<li>Subheading ("Get connected")</li>
+<li>Privacy consent text</li>
+<li>Email input field</li>
+<li>Category dropdown (Law Enforcement, Fire, EMS, Emergency Communications, Other Public Safety)</li>
+<li>Submit button</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>Subheading (text)</li>
+<li>Privacy text (richtext)</li>
+<li>Form fields:
+<ul>
+<li>Email (text input)</li>
+<li>Category (dropdown)</li>
+</ul>
+</li>
+<li>Submit button text (text)</li>
+</ul></div>
+<div><h3 id="footer-block">11. Footer Block</h3><p><strong>Screenshot:</strong> <code>firstnet-homepage-11-footer.png</code>, <code>firstnet-homepage-12-footer-legal.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>footer</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>FirstNet logo with "Built with AT&#x26;T"</li>
+<li>Sitemap links column</li>
+<li>Support links column</li>
+<li>Social media links (Facebook, LinkedIn, X, YouTube)</li>
+<li>Legal links row</li>
+<li>Copyright text</li>
+</ul><p><strong>Sitemap Links:</strong></p><ul>
+<li>Power of FirstNet</li>
+<li>Coverage</li>
+<li>Rate Plans</li>
+<li>Devices &#x26; Accessories</li>
+<li>Industry Solutions</li>
+<li>Application Ecosystem</li>
+<li>Community</li>
+</ul><p><strong>Support Links:</strong></p><ul>
+<li>FAQ</li>
+<li>Help</li>
+<li>Contact Us</li>
+</ul><p><strong>Social Links:</strong></p><ul>
+<li>Facebook</li>
+<li>LinkedIn</li>
+<li>X (Twitter)</li>
+<li>YouTube</li>
+</ul><p><strong>Legal Links:</strong></p><ul>
+<li>Privacy Notice</li>
+<li>Terms &#x26; Conditions</li>
+<li>Accessibility</li>
+<li>Your Privacy Choices</li>
+<li>Health Privacy Notice</li>
+<li>Cyber Security</li>
+<li>FirstNet.gov</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Logo (image)</li>
+<li>Sitemap links (list of links)</li>
+<li>Support links (list of links)</li>
+<li>Social links (list of links with icons)</li>
+<li>Legal links (list of links)</li>
+<li>Copyright text (text)</li>
+</ul></div>
+<div><h3 id="feedback-widget">12. Feedback Widget</h3><p><strong>Observed in:</strong> All screenshots</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>feedback-widget</code></div></div><div><div>Priority</div><div>P2</div></div><div><div>Type</div><div>Third-party integration</div></div></div><p><strong>Features:</strong></p><ul>
+<li>Floating button on right side</li>
+<li>"Feedback" label</li>
+<li>Opens feedback form overlay</li>
+</ul></div>
+<div><h2 id="block-summary-table">Block Summary Table</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><div><div>1</div><div>header</div><div>P0</div><div>default</div><div>homepage-01</div></div><div><div>2</div><div>icon-nav</div><div>P0</div><div>carousel</div><div>homepage-01</div></div><div><div>3</div><div>hero</div><div>P0</div><div>default, image-right</div><div>homepage-01</div></div><div><div>4</div><div>section-heading</div><div>P1</div><div>default, centered</div><div>homepage-02</div></div><div><div>5</div><div>cards (offers)</div><div>P0</div><div>offer, promo, split-image</div><div>homepage-02, 03, 04</div></div><div><div>6</div><div>value-props</div><div>P0</div><div>dark-bg, icon-list</div><div>homepage-05, 06</div></div><div><div>7</div><div>cards (news)</div><div>P1</div><div>news, article, story</div><div>homepage-07, 08, 09</div></div><div><div>8</div><div>cta-link</div><div>P2</div><div>arrow, animated</div><div>homepage-09</div></div><div><div>9</div><div>cta-banner</div><div>P0</div><div>contact, simple</div><div>homepage-10</div></div><div><div>10</div><div>form</div><div>P1</div><div>newsletter, inline</div><div>homepage-10</div></div><div><div>11</div><div>footer</div><div>P0</div><div>default</div><div>homepage-11, 12</div></div><div><div>12</div><div>feedback-widget</div><div>P2</div><div>third-party</div><div>all</div></div></div></div>
+<div><h2 id="unique-block-count">Unique Block Count</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="priority"><div><div>P0</div><div>6</div></div><div><div>P1</div><div>4</div></div><div><div>P2</div><div>2</div></div><div><div><strong>Total</strong></div><div><strong>12</strong></div></div></div></div>
+<div><h2 id="block-comparison-firstnet-vs-att-business">Block Comparison: FirstNet vs AT&#x26;T Business</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-type"><div><div>Header</div><div>Simpler, dropdown nav</div><div>Full mega-menu</div><div>Different complexity</div></div><div><div>Hero</div><div>Single CTA, badge style</div><div>Multi-CTA, tabbed</div><div>Similar structure</div></div><div><div>Icon Nav</div><div>Horizontal scroll</div><div>Not present</div><div>FirstNet-specific</div></div><div><div>Cards</div><div>Offer, News variants</div><div>Product, Pricing, Value-prop</div><div>Overlap possible</div></div><div><div>Value Props</div><div>Dark background, icons</div><div>4-column grid</div><div>Similar pattern</div></div><div><div>Carousel</div><div>Not on homepage</div><div>Deals, Solutions</div><div>AT&#x26;T has more</div></div><div><div>CTA Banner</div><div>Simple contact</div><div>Guarantee, checklist</div><div>AT&#x26;T more complex</div></div><div><div>Form</div><div>Newsletter signup</div><div>RAI full contact</div><div>Different scope</div></div><div><div>Footer</div><div>Simple 3-column</div><div>Multi-section accordion</div><div>AT&#x26;T more complex</div></div></div></div>
+<div><h2 id="reusability-assessment">Reusability Assessment</h2><p>Several blocks can be shared between FirstNet and AT&#x26;T Business sites:</p><h3 id="highly-reusable">Highly Reusable</h3><ul>
+<li><code>cards</code> - Core card component with variants</li>
+<li><code>cta-banner</code> - Call-to-action banners</li>
+<li><code>section-heading</code> - Section headings</li>
+<li><code>footer</code> - Footer structure (different content)</li>
+</ul><h3 id="needs-customization">Needs Customization</h3><ul>
+<li><code>hero</code> - Different layouts/features per site</li>
+<li><code>header</code> - Different navigation complexity</li>
+<li><code>form</code> - Different form fields/integrations</li>
+</ul><h3 id="site-specific">Site-Specific</h3><ul>
+<li><code>icon-nav</code> - FirstNet-specific quick links</li>
+<li><code>value-props</code> - Different styling per brand</li>
+</ul></div>
+<div><h2 id="screenshots-location">Screenshots Location</h2><p>All screenshots are saved in: <code>/workspace/screenshots/firstnet/</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="file"><div><div>firstnet-homepage-01-header-hero.png</div><div>Header + Icon Nav + Hero</div></div><div><div>firstnet-homepage-02-offers.png</div><div>Offers section heading + cards</div></div><div><div>firstnet-homepage-03-offers-cards.png</div><div>Offer card details</div></div><div><div>firstnet-homepage-04-why-firstnet.png</div><div>FirstNet &#x26; Family card</div></div><div><div>firstnet-homepage-05-why-section.png</div><div>Why FirstNet heading</div></div><div><div>firstnet-homepage-06-value-props.png</div><div>Value props with icons</div></div><div><div>firstnet-homepage-07-news.png</div><div>News section heading</div></div><div><div>firstnet-homepage-08-news-cards.png</div><div>News card details</div></div><div><div>firstnet-homepage-09-contact-newsletter.png</div><div>Case study card</div></div><div><div>firstnet-homepage-10-cta-newsletter.png</div><div>Contact CTA + Newsletter</div></div><div><div>firstnet-homepage-11-footer.png</div><div>Footer navigation</div></div><div><div>firstnet-homepage-12-footer-legal.png</div><div>Footer legal links</div></div></div></div>
+<div><p><em>Document Generated: January 2026</em>
+<em>Source: https://www.firstnet.com/</em></p></div>
+</main>
+<footer></footer>
+</body>
+</html>
