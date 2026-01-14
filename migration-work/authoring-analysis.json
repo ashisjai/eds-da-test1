@@ -1,0 +1,181 @@
+{
+  "url": "https://www.rinvoq.com/",
+  "authoringDecisions": [
+    {
+      "sectionNumber": 1,
+      "sectionStyle": null,
+      "sectionStyleNote": "Background is part of hero block design, no section-metadata needed",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Branded relief graphic with product name and 'once-daily pill' messaging, followed by large heading about taming symptoms in 9 conditions",
+          "decision": "hero-pharma",
+          "decisionType": "block",
+          "reason": "Page introduction with branded imagery and prominent heading - obvious match with hero block"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 2,
+      "sectionStyle": "light grey",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Single line of text 'Choose Your Condition' with yellow underline accent",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Simple heading - author can type normally. Yellow underline is CSS styling."
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Grid of 9 clickable condition cards, each displaying severity level, condition name, and medical notation in a consistent format",
+          "decision": "cards-condition",
+          "decisionType": "block",
+          "reason": "Repeating structured pattern in grid layout - obvious match with cards block"
+        },
+        {
+          "sequenceNumber": 3,
+          "description": "Horizontal separator line",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Simple horizontal rule (---) in markdown"
+        },
+        {
+          "sequenceNumber": 4,
+          "description": "Two product images (pill bottle and oral solution bottle) displayed side-by-side with explanatory paragraph below",
+          "decision": "columns-product",
+          "decisionType": "block",
+          "reason": "Side-by-side layout requires columns block structure"
+        },
+        {
+          "sequenceNumber": 5,
+          "description": "Grid of 2 additional condition cards for juvenile conditions with same format as above",
+          "decision": "cards-condition",
+          "decisionType": "block",
+          "reason": "Same repeating structured pattern as sequence 2"
+        },
+        {
+          "sequenceNumber": 6,
+          "description": "Two paragraphs of disclaimer text with asterisk and dagger symbols",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Simple paragraphs with footnote symbols"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 3,
+      "sectionStyle": "yellow",
+      "sectionStyleValue": "#FFD200",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Logo image, large heading with superscript, descriptive paragraph, link, and disclaimer text - all stacked vertically",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Standard content types stacked vertically - author can type heading, insert image, type paragraphs and links normally"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 4,
+      "sectionStyle": "white",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading followed by two paragraphs of explanatory text about the medication",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Simple flowing text content - heading and paragraphs"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 5,
+      "sectionStyle": "dark",
+      "sectionStyleValue": "#1E1E1E",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading, paragraph, and two contact options (email with icon and phone with icon) arranged vertically",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Standard content - heading, paragraph, links. Icons are presentational (inline images or emoji)"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 6,
+      "sectionStyle": "white",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Disclaimer paragraph with footnote symbol and link",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Simple paragraph with link"
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Extensive safety information containing multiple headings, bulleted lists, warnings, and structured medical content flowing in a standard document format",
+          "decision": "default",
+          "decisionType": "default-content",
+          "reason": "Standard document content with headings, lists, paragraphs - author types normally"
+        }
+      ]
+    }
+  ],
+  "blockStructures": {
+    "hero": {
+      "variant": "Hero (block)",
+      "structure": "Block has 1 row(s) - Row 1: 1 column(s) [image, heading, paragraph(s)]",
+      "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/hero"
+    },
+    "cards": {
+      "variants": [
+        {
+          "name": "Cards",
+          "structure": "Block has N row(s) - Each row: 2 column(s) [image | heading, paragraph(s)]",
+          "note": "Use when cards have images"
+        },
+        {
+          "name": "Cards (no images)",
+          "structure": "Block has N row(s) - Each row: 1 column(s) [heading, paragraph(s)]",
+          "note": "Use when cards have no images"
+        }
+      ],
+      "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/cards"
+    },
+    "columns": {
+      "variants": [
+        {
+          "name": "Columns (two columns)",
+          "structure": "Block has N row(s) - Each row: 2 column(s) [content | content]",
+          "note": "Use for 2-column layouts"
+        },
+        {
+          "name": "Columns (three columns)",
+          "structure": "Block has 1 row - Row: 3 column(s) [content | content | content]",
+          "note": "Use for 3-column layouts"
+        }
+      ],
+      "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/columns"
+    }
+  },
+  "summary": {
+    "totalSections": 6,
+    "totalSequences": 12,
+    "defaultContent": 8,
+    "blocks": 4,
+    "blocksUsed": {
+      "hero-pharma": 1,
+      "cards-condition": 2,
+      "columns-product": 1
+    }
+  },
+  "variantMapping": {
+    "hero": "hero-pharma",
+    "cards": "cards-condition",
+    "columns": "columns-product"
+  }
+}

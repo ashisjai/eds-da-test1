@@ -1,0 +1,113 @@
+{
+  "pageUrl": "https://www.rinvoq.com/atopic-dermatitis",
+  "pageTitle": "RINVOQ® (upadacitinib) for Eczema (Atopic Dermatitis)",
+  "analyzedDate": "2025-12-19",
+
+  "sections": [
+    {
+      "sectionNumber": 1,
+      "style": "light",
+      "description": "Hero section with condition-specific messaging",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Large hero image with 'Relief' branding graphic, product name 'RINVOQ (upadacitinib)' with 'once-daily pill' text, and large heading about taming symptoms"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 2,
+      "style": "light",
+      "description": "Benefits messaging with three columns",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Introductory text block stating 'RINVOQ helps heal your grateful skin in two ways' with subtext about reducing inflammation and soothing eczema"
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Three columns side-by-side, each with heading and supporting text: 'Fast Relief' (symptoms in 2 days), 'Rapid & Significant Skin Clearance' (visible results in 2 weeks), 'Long-term Results' (maintained skin clearance)"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 3,
+      "style": "light",
+      "description": "Important safety information callout",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading 'Select Important Safety Information' with decorative gold brushstroke, followed by safety warning text in black box"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 4,
+      "style": "white",
+      "description": "Interactive poll",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Poll component with 'QUICK POLL' logo, question 'Where is your next dermatologist visit?', and three radio button options"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 5,
+      "style": "light",
+      "description": "Patient testimonial section",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading 'Meet RINVOQ patients like Maddy' with introduction text and 'Meet patients' button"
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Patient image on right side with yellow brushstroke background, name 'Maddy' and descriptive text about her eczema journey"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 6,
+      "style": "yellow",
+      "description": "Quiz call-to-action",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Two-column layout: left side has 'TAKE THIS QUIZ' text with brushstroke styling and quiz question dropdown, right side has lifestyle image"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 7,
+      "style": "light",
+      "description": "ISI summary text block",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Large 'ISI' heading with decorative brushstroke, followed by paragraphs of important safety information text and 'What is the most important information' section with bullet points"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 8,
+      "style": "dark",
+      "description": "Full ISI and footer",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Complete Important Safety Information with multiple sections including boxed warnings, risk information, and clinical study details presented as flowing text with headings and bullet lists"
+        }
+      ]
+    }
+  ],
+
+  "notes": [
+    "Similar structure to homepage but with condition-specific content",
+    "Hero has condition-specific messaging instead of condition selector",
+    "Three-column benefits layout is unique to condition pages",
+    "Poll and quiz components are interactive elements",
+    "Patient testimonial section with image and story",
+    "Extensive ISI content spans two sections"
+  ]
+}

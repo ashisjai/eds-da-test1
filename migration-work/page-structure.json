@@ -1,0 +1,166 @@
+{
+  "url": "https://www.rinvoq.com/",
+  "sections": [
+    {
+      "sectionNumber": 1,
+      "visualStyle": "light grey background",
+      "description": "Hero area with Relief branding and main heading",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Branded relief graphic with product name and 'once-daily pill' messaging, followed by large heading about taming symptoms in 9 conditions"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 2,
+      "visualStyle": "light grey background",
+      "description": "Condition selector grid with product images",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Single line of text 'Choose Your Condition' with yellow underline accent"
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Grid of 9 clickable condition cards, each displaying severity level, condition name, and medical notation in a consistent format"
+        },
+        {
+          "sequenceNumber": 3,
+          "description": "Horizontal separator line"
+        },
+        {
+          "sequenceNumber": 4,
+          "description": "Two product images (pill bottle and oral solution bottle) displayed side-by-side with explanatory paragraph below"
+        },
+        {
+          "sequenceNumber": 5,
+          "description": "Grid of 2 additional condition cards for juvenile conditions with same format as above"
+        },
+        {
+          "sequenceNumber": 6,
+          "description": "Two paragraphs of disclaimer text with asterisk and dagger symbols"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 3,
+      "visualStyle": "yellow/gold background (#FFD200)",
+      "description": "RINVOQ Complete savings program information",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Logo image, large heading with superscript, descriptive paragraph, link, and disclaimer text - all stacked vertically"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 4,
+      "visualStyle": "white background",
+      "description": "About RINVOQ informational content",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading followed by two paragraphs of explanatory text about the medication"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 5,
+      "visualStyle": "dark background (#1E1E1E) with yellow accent elements",
+      "description": "SPEAK Network invitation with contact information",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading, paragraph, and two contact options (email with icon and phone with icon) arranged vertically"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 6,
+      "visualStyle": "white background",
+      "description": "Important Safety Information (ISI) - extensive legal and medical content",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Disclaimer paragraph with footnote symbol and link"
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Extensive safety information containing multiple headings, bulleted lists, warnings, and structured medical content flowing in a standard document format"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "localBlocks": [
+      {
+        "name": "accordion",
+        "purpose": "Expandable sections for FAQs or collapsed content"
+      },
+      {
+        "name": "cards",
+        "purpose": "Grid layout of content items with images, headings, and descriptions"
+      },
+      {
+        "name": "carousel",
+        "purpose": "Rotating slideshow of images or content"
+      },
+      {
+        "name": "columns",
+        "purpose": "Side-by-side content in 2-3 columns for comparisons or layouts"
+      },
+      {
+        "name": "embed",
+        "purpose": "Embedded third-party content like videos, maps, or widgets"
+      },
+      {
+        "name": "footer",
+        "purpose": "Page footer with links and information (auto-populated)"
+      },
+      {
+        "name": "form",
+        "purpose": "Input forms for data collection"
+      },
+      {
+        "name": "fragment",
+        "purpose": "Reusable content section that can be embedded across pages"
+      },
+      {
+        "name": "header",
+        "purpose": "Page header with navigation (auto-populated)"
+      },
+      {
+        "name": "hero",
+        "purpose": "Large heading, paragraph, and call-to-action buttons for page introductions"
+      },
+      {
+        "name": "modal",
+        "purpose": "Popup or overlay content"
+      },
+      {
+        "name": "quote",
+        "purpose": "Highlighted testimonial or pullquote with attribution"
+      },
+      {
+        "name": "search",
+        "purpose": "Search interface"
+      },
+      {
+        "name": "table",
+        "purpose": "Tabular data display"
+      },
+      {
+        "name": "tabs",
+        "purpose": "Tabbed interface for organizing related content"
+      },
+      {
+        "name": "video",
+        "purpose": "Video player for media content"
+      }
+    ],
+    "blockCollectionAvailable": [
+      "Most common blocks are already available locally"
+    ]
+  }
+}

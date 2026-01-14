@@ -1,0 +1,137 @@
+{
+  "url": "https://www.rinvoq.com/atopic-dermatitis",
+  "timestamp": "2025-12-19T10:53:43.350Z",
+  "paths": {
+    "documentPath": "/atopic-dermatitis",
+    "htmlFilePath": "/atopic-dermatitis.plain.html",
+    "mdFilePath": "/atopic-dermatitis.md",
+    "dirPath": "",
+    "filename": "atopic-dermatitis"
+  },
+  "screenshot": "migration-work-condition/screenshot.png",
+  "html": {
+    "filePath": "migration-work-condition/cleaned.html",
+    "size": 500274
+  },
+  "metadata": {
+    "title": "RINVOQ® (upadacitinib) for Eczema (Atopic Dermatitis)",
+    "viewport": "width=device-width, initial-scale=1",
+    "og:title": "Learn About the Condition | RINVOQ® (upadacitinib)",
+    "og:description": "See Full Prescribing & Safety Info, and Boxed Warning. Discover important facts and learn about common symptoms.",
+    "og:image": "/content/dam/rinvoq/images/homepage/og/rinvoq-logo-og-image-800x1200_r16_allviews.png",
+    "og:url": "https://www.rinvoq.com/atopic-dermatitis",
+    "og:type": "article",
+    "twitter:card": "summary",
+    "keywords": "Atopic Dermatitis",
+    "description": "Discover a prescription treatment for moderate to severe eczema, also known as atopic dermatitis. See Full Prescribing & Safety Info, and Boxed Warning.",
+    "language": "en",
+    "country": "US",
+    "pagename": "RINVOQ® (upadacitinib) for Eczema (Atopic Dermatitis)",
+    "templatename": "full-width-content-page",
+    "pageurl": "/atopic-dermatitis",
+    "franchise": "Dermatology (Derm)",
+    "content-journey": "Educate",
+    "patient-journey": "rheum|ra|1|painhasnovoice|prediagnosis|no|no|no",
+    "forcedmodaloverlay": "no",
+    "indication-id": "atopic-dermatitis",
+    "sitename": "rinvoq",
+    "globalisi": "US-RNQ-240084",
+    "epassnumber": "US-RNQD-240208",
+    "canonical": "https://www.rinvoq.com/atopic-dermatitis",
+    "jsonLd": [
+      {
+        "@context": "http://schema.org",
+        "@type": "MedicalWebPage",
+        "url": "https://www.rinvoq.com/atopic-dermatitis",
+        "name": "RINVOQÂ® (upadacitinib) Treatment for Eczema (Atopic Dermatitis)",
+        "description": "Discover a prescription treatment for moderate to severe Eczema, also known as Atopic Dermatitis. See Full Prescribing & Safety Info, and Boxed Warning.",
+        "audience": [
+          {
+            "@type": "MedicalAudience",
+            "audiencetype": "Patient",
+            "healthCondition": [
+              {
+                "@type": "MedicalCondition",
+                "name": "Atopic Dermatitis"
+              }
+            ]
+          }
+        ],
+        "specialty": "https://schema.org/Dermatology"
+      },
+      {
+        "@context": "http://schema.org/",
+        "@type": "Drug",
+        "activeIngredient": "Upadacitinib",
+        "name": "RINVOQ",
+        "description": "RINVOQ is a once-daily pill for adults with moderate to severe Eczema, also known as Atopic Dermatitis. Remember to talk to your doctor about all the benefits and risks of RINVOQ",
+        "sameAs": "https://en.wikipedia.org/wiki/Upadacitinib",
+        "drugClass": [
+          {
+            "@type": "DrugClass",
+            "name": "Janus kinase (JAK) inhibitor"
+          }
+        ],
+        "manufacturer": [
+          {
+            "@type": "Organization",
+            "name": "AbbVie",
+            "brand": "RINVOQ",
+            "telephone": "1-800-222-6885",
+            "url": "https://www.abbvie.com",
+            "sameAs": "https://en.wikipedia.org/wiki/AbbVie",
+            "description": "AbbVie is an American publicly traded biopharmaceutical company founded in 2013. It originated as a spin-off of Abbott Laboratories."
+          }
+        ],
+        "prescribingInfo": "https://www.rxabbvie.com/pdf/rinvoq_pi.pdf"
+      }
+    ]
+  },
+  "images": {
+    "count": 34,
+    "mapping": {
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/rinvoq-logo-white-desktop-r9.png": "./images/e659f87e7fe03f58e8ba027a6fc430b7.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/hero-black-brushstroke_r16_desktop.png": "./images/7c1eb774f5f60fa3ee42c6e95616cbfc.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/ad/homepage/personalization/qp_lockup_r18_desktop.png": "./images/38684e3ed334ed47489da97ae97eba57.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/hero-white-brushstroke_r16_desktop.png": "./images/eacc70b9bdfea2f658a6438aa7e09060.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/ad/homepage/global/brushstroke-underline_r6_oneSize.png": "./images/ba29691e10c7ca31a9ade5698d2d8fac.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/atopic-dermatitis_r16_desktop.jpg": "./images/93f5dfea5fd7461ef3fcca47caf468b6.jpg",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/gastro/cooking-with-uc-and-crohns/arrow-white-circle-small_r5_allviews.png": "./images/cb1928a0e81780e3863ba077b7115ff6.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/ra/select-important-information-brushstroke-gold_r13_allviews.svg": "./images/0c2fa6d2343dd97b62361c9e16140f34.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/atopic-dermatitis-copy_r16_desktop.png": "./images/775daddce2eb14e51323f16328da0b93.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/ISI-swash1.png": "./images/04f7a4ed2cfd46bfab7d39f7618a9e10.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/privacy-choices-black.svg": "./images/4a0713c923cbe799381181ddbd00f883.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/plus.svg": "./images/3a35ccf080f07e7b558d073e4dbfa612.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/abbvie-copyright-2025_r7_desktop.svg": "./images/ec9f214bd989f16b1de7f943c60ee33c.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/patient-maddy_r16_desktop.png": "./images/0e8995ed806668aab7f4d270cb4eb353.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/image-et-itch-rash_r16_desktop.jpg": "./images/0b0e77c749f147d68c73b3aaf0bd1b3f.jpg",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/brush-text-et-take-this-quiz_r16_2x_allviews.png": "./images/87e053861792e8a16bd0f64e1b1a4702.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/atopic-dermatitis-glitch_r22_desktop.gif": "./images/eeedf2e4ab3b550d0d43848b5a96548f.png",
+      "https://dpm.demdex.net/ibs:dpid=903&dpuuid=492c6418-e05f-4cfb-9a45-7d07e827764f": "./images/bc8c6688d1e1fbedc3c0a04a41fa99bf.png",
+      "https://obs.powerstarsbuilding.com/tracker/tc_imp.gif?e=37dfbd8ee84e00126ce8c631eb418b999225c24f567d43d6da1908be6245cad7bd70a976750ef80ed89373bfe70e9c20c1e53e8d56198e6f2e17071a10acf9f29f671c8285d8512b6e1ef72b730c873bd76ac60c370527c656030935550ec1ec3e4f77be26bb25cb43e2963fee5b6fb2082c6412d341f054bbd4829d6ce67d59bb6ccaba2832c45d6d1f205b9cc80274ed1aaee7ddf33116e30cc7a771e027b56dc049957460ee71509e41147f758f562ba5d8a2f761ff65967eb86e8f52612fe08c62694c2f0ade3a908d61a55561a4c6f2613e226089db7b3f8a845f002a5a760302ae9028701e56f2ab0b2093aef6298ee35d60013ee9f3e4869265b9d98c5fbe04cd0d3661cabb9ae1a235c1dae66c94305cd2f99a794e15f1346dba8c063abbcaf1718906f743b5980a870d97dd75d66071d2d964d27a8f95afb491adba476ca96ea8e8a5744e65f88c23c9e75fe710045c861903c18992888fbc8337887283d0f5987fed6d7638c42078c7c4df0e2690b0339c30a7dd0d9637f72e0c0b43cf76e75e9287be78bc8028d71bf7cf849b27c0194567bd065452744e6d91be71b5059a8c8b27b19560fe8627d78ea9a63d83f0a91f637da9e75543d7a1225c42acacad74b828ccb82fb3b97bec38d9658759c609c5b42e854635eec593673d2361032a175f17affd8d6dd71eb6454e4329e4b54fdf981b10ffb8dfbaba70c3ede4ff86e4aced564e3ffb5b9bb0586f9f5e6319d77f407269f367b27019c2f7dc658a61cb388dab28d1a50b9979623d3256394ac8d2eec93d65549d1e4394d7d8bdb1ce4d62e2e8ee2496af361ca5ae4e78688ef3cb4a33f462dc0b8d10f13e8513dcce15f9be33e49a8ccce13a079c8a5810e129d2feb3f51ed414260a17d02d1a04a3a94d8ef215cd9f9dc950cc818637107330b869ca59de3fb2892a90612b474228616da31ad893393ed473d2e5b16ccbc54d906627fe552d50c0bb804e03b12f97db4783586f1240bd273ed6fa957ac1563f989901e1828ced8a43c64f157f40b0652f539d92104efa61a5eccb2d93c1b34d0e2db060211416905403b3dbfc121091606dc1c8c4128bc6b0cf4530e366ee156057d05c723cc7da05458dd7ebcaf0f057b87cb4648b609dd31ed6b4bb52779dda1f91c5e7ec93e1dc9b651ecfb368&cri=PFgPc7RBnU&ts=116&cb=1766141614458": "./images/f2412be1aceeb06c288c07e59af3bf4a.png",
+      "https://cdn.cookielaw.org/logos/baa8d3f1-40eb-408e-9928-100470b8ea17/11839441-74e2-4684-8791-51cf7652d41d/552a3368-6dbe-4c84-a400-7d550f405d28/abbvie-logo-1.png": "./images/21beb81b49da11f4768950d227dec5ab.png",
+      "https://cdn.cookielaw.org/logos/static/ot_close.svg": "./images/cec4a77b663a079574d478e06d310304.png",
+      "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg": "./images/a9584a367ebcccfac48987ce1fec5eae.png",
+      "https://alb.reddit.com/rp.gif?ts=1766141614622&id=a2_erae3ywa1gr1&event=PageVisit&m.itemCount=&m.value=&m.valueDecimal=&m.currency=&m.transactionId=&m.customEventName=&m.products=&m.conversionId=&uuid=0027baa9-f3fc-45ca-a1ef-6231c917e3b1&aaid=&em=&pn=&external_id=&idfa=&integration=reddit&partner=&partner_version=&opt_out=0&sh=1280&sw=720&v=rdt_b107b962&dpm=&dpcc=&dprc=": "./images/22c4ff392e1eb82c5b0a86229080dc93.png",
+      "https://di.rlcdn.com/api/segment?pdata=MCID%3D30564119030108178203311875405901388224&pid=468066&redirect=1": "./images/3afb7524fca19e888d61e5a35db276c6.png",
+      "https://sync.graph.bluecava.com/ds.png?p=9274e5db-ddcb-11ea-a80b-0242ac110002&segment=ytuhzlex04bu1hgpuolexvij8lwcbobk&uid=&CampaignID=2236C&Channel=Website&CreativeID=&Placement=&MAID=&Keyword=&Medium=&Source=default&PageName=/atopic-dermatitis&Event=pageload&Key1=&Key2=&Key3=&Key4=&Key5=": "./images/c2fa2f40edb2507d75c28d6fdf38279c.png",
+      "https://sync.graph.bluecava.com/ds.png?p=9274e5db-ddcb-11ea-a80b-0242ac110002&segment=ytuhzlex04bu1hgpuolexvij8lwcbobk&uid=&CampaignID=2239C&Channel=Website&CreativeID=&Placement=&MAID=&Keyword=&Medium=&Source=default&PageName=/atopic-dermatitis&Event=pageload&Key1=&Key2=&Key3=&Key4=&Key5=": "./images/17cbdf5332883e00c94adb60554f57b5.png",
+      "https://adservice.google.com/ddm/fls/z/dc_pre=CNn30py-yZEDFRPBzgAdz4c4yw;src=11732296;type=rad_w0;cat=rad_w00f;ord=8539530450003;npa=0;auiddc=*;uaa=x86;uab=64;uafvl=HeadlessChrome%3B143.0.7499.4%7CChromium%3B143.0.7499.4%7CNot%2520A(Brand%3B24.0.0.0;uamb=0;uam=;uap=Linux;uapv=6.8.0;uaw=0;pscdl=noapi;frm=0;_tu=IFA;gtm=45fe5ca1v9190672535za200zb9189987612zd9189987612xec;gcd=13l3l3l3l1l1;dma=0;dc_fmt=2;tag_exp=102015666~103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115616986~115938466~115938468~116184927~116184929~116251938~116251940;epver=2;dc_random=1766141614_aCO1m0BmNfIabo68c9swoQeVj4_NeOyo2g;_dc_test=1;~oref=https%3A%2F%2Fwww.rinvoq.com%2Fatopic-dermatitis": "./images/c1b33046f5767a9302adff891d9e3eb3.png",
+      "https://di.rlcdn.com/713512.html?pdata=sessionid%3D17661416150540.5933655889265599%2Crepeatvisitor%3Dn%2Cdomain%3Dwww.rinvoq.com%2Cdevicetype%3Ddesktop%2Cversion%3Dversion%201.4.1%2Cmapidtype%3Du%2Cmapidvalue%3Du%2Cpageurl%3Dhttps%3A%2F%2Fwww.rinvoq.com%2Fatopic-dermatitis%2Cpageurl2%3Du%2Cpageurl3%3Du%2Cpageurl4%3Du%2Ctrafficsource%3Du%2Creferralchannel%3Ddirect%2Creferralsource%3Ddirect%2Csearchgroup%3Du%2Ckeyactionid%3Du%2Ckeyact1%3D0%2Ckeyact2%3D0%2Ckeyact3%3D0%2Ckeyact4%3D0%2Ckeyact5%3D0%2Ckeyact6%3D0%2Ckeyact7%3D0%2Ckeyact8%3D0%2Ckeyact9%3D0%2Ckeyact10%3D0%2Ckeyact11%3D0%2Ckeyact12%3D0%2Ckeyact13%3D0%2Ckeyact14%3D0%2Ckeyact15%3D0%2Ckeyact16%3D0%2Ckeyact17%3D0%2Ckeyact18%3D0%2Ckeyact19%3D0%2Ckeyact20%3D0": "./images/86354794ec0c6e25dada9650a6fa6924.png",
+      "https://sp.analytics.yahoo.com/sp.pl?a=10000&.yp=10204451&f=https%3A%2F%2F11732296.fls.doubleclick.net%2Factivityi%3Bdc_pre%3DCNn30py-yZEDFRPBzgAdz4c4yw%3Bsrc%3D11732296%3Btype%3Drad_w0%3Bcat%3Drad_w00f%3Bord%3D8539530450003%3Bnpa%3D0%3Bauiddc%3D673382151.1766141615%3Buaa%3Dx86%3Buab%3D64%3Buafvl%3DHeadlessChrome%253B143.0.7499.4%257CChromium%253B143.0.7499.4%257CNot%252520A(Brand%253B24.0.0.0%3Buamb%3D0%3Buam%3D%3Buap%3DLinux%3Buapv%3D6.8.0%3Buaw%3D0%3Bpscdl%3Dnoapi%3Bfrm%3D0%3B_tu%3DIFA%3Bgtm%3D45fe5ca1v9190672535za200zb9189987612zd9189987612xec%3Bgcd%3D13l3l3l3l1l1%3Bdma%3D0%3Bdc_fmt%3D2%3Btag_exp%3D102015666~103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115616986~115938466~115938468~116184927~116184929~116251938~116251940%3Bepver%3D2%3Bdc_random%3D1766141614_aCO1m0BmNfIabo68c9swoQeVj4_NeOyo2g%3B_dc_test%3D1%3B~oref%3Dhttps%253A%252F%252Fwww.rinvoq.com%252Fatopic-dermatitis%3F&e=https%3A%2F%2Fwww.rinvoq.com%2F&enc=UTF-8&yv=1.16.6&isIframe=1": "./images/b43a654e576ffea2d58ed3b59a2ef237.png",
+      "https://sp.analytics.yahoo.com/sp.pl?a=10000&d=Fri%2C%2019%20Dec%202025%2010%3A53%3A35%20GMT&n=0&.yp=10204451&f=https%3A%2F%2F11732296.fls.doubleclick.net%2Factivityi%3Bdc_pre%3DCNn30py-yZEDFRPBzgAdz4c4yw%3Bsrc%3D11732296%3Btype%3Drad_w0%3Bcat%3Drad_w00f%3Bord%3D8539530450003%3Bnpa%3D0%3Bauiddc%3D673382151.1766141615%3Buaa%3Dx86%3Buab%3D64%3Buafvl%3DHeadlessChrome%253B143.0.7499.4%257CChromium%253B143.0.7499.4%257CNot%252520A(Brand%253B24.0.0.0%3Buamb%3D0%3Buam%3D%3Buap%3DLinux%3Buapv%3D6.8.0%3Buaw%3D0%3Bpscdl%3Dnoapi%3Bfrm%3D0%3B_tu%3DIFA%3Bgtm%3D45fe5ca1v9190672535za200zb9189987612zd9189987612xec%3Bgcd%3D13l3l3l3l1l1%3Bdma%3D0%3Bdc_fmt%3D2%3Btag_exp%3D102015666~103116026~103200004~104527906~104528500~104684208~104684211~105391252~115583767~115616986~115938466~115938468~116184927~116184929~116251938~116251940%3Bepver%3D2%3Bdc_random%3D1766141614_aCO1m0BmNfIabo68c9swoQeVj4_NeOyo2g%3B_dc_test%3D1%3B~oref%3Dhttps%253A%252F%252Fwww.rinvoq.com%252Fatopic-dermatitis%3F&e=https%3A%2F%2Fwww.rinvoq.com%2F&enc=UTF-8&yv=1.16.6&isIframe=1&et=custom&ec=RINVOQ_2025_RETARGETING": "./images/64d7908654262c79444d58bef8749df3.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/hero-white-brushstroke_r16_mobile.png": "./images/1af986927ca3141a8fd34198bd9cb555.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/atopic-dermatitis-2x_r16_mobile.jpg": "./images/e5d678ad9ae81d7e8ec262fb9c447d33.jpg",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/abbvie-copyright-2025_r7_mobile.svg": "./images/f84406053ab201fd2ff436cdca4e80b5.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/atopic-dermatitis/atopic-dermatitis-glitch-2x_r22_mobile.gif": "./images/a967b7238dda45a6c0e4ebaa45732f0d.png"
+    },
+    "stats": {
+      "total": 38,
+      "converted": 17,
+      "skipped": 17,
+      "failed": 4,
+      "tooLarge": 0,
+      "limitReached": 0
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "pageUrl": "https://www.rinvoq.com/atopic-dermatitis",
+  "analyzedDate": "2025-12-19",
+  "authoringDecisions": [
+    {
+      "sectionNumber": 1,
+      "sectionStyle": "light",
+      "sectionDescription": "Hero section with condition-specific messaging",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Large hero image with 'Relief' branding graphic, product name 'RINVOQ (upadacitinib)' with 'once-daily pill' text, and large heading about taming symptoms",
+          "decision": "BLOCK",
+          "blockName": "hero-pharma",
+          "reasoning": "Same pharma hero pattern as homepage - Relief branding, product name, condition-specific heading. Can reuse existing hero-pharma variant.",
+          "matchType": "OBVIOUS - Reuse existing variant",
+          "variantReuse": true,
+          "existingVariant": "hero-pharma"
+        }
+      ]
+    },
+    {
+      "sectionNumber": 2,
+      "sectionStyle": "light",
+      "sectionDescription": "Benefits messaging with three columns",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Introductory text block stating 'RINVOQ helps heal your grateful skin in two ways' with subtext about reducing inflammation and soothing eczema",
+          "decision": "DEFAULT CONTENT",
+          "reasoning": "Author can type heading and paragraph normally. Just text content that introduces the benefits below."
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Three columns side-by-side, each with heading and supporting text: 'Fast Relief' (symptoms in 2 days), 'Rapid & Significant Skin Clearance' (visible results in 2 weeks), 'Long-term Results' (maintained skin clearance)",
+          "decision": "BLOCK",
+          "blockName": "columns-benefits",
+          "blockVariant": "columns-benefits",
+          "reasoning": "Side-by-side layout requires structure. Three columns of equal content - heading and text in each. Standard columns block (3-column variant).",
+          "matchType": "OBVIOUS - Standard columns block",
+          "variantReuse": false,
+          "newVariant": "columns-benefits-condition",
+          "newVariantReason": "Condition-specific benefits pattern that may recur across condition pages. Create variant to enable reuse for other conditions."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 3,
+      "sectionStyle": "light",
+      "sectionDescription": "Important safety information callout",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading 'Select Important Safety Information' with decorative gold brushstroke, followed by safety warning text in black box",
+          "decision": "DEFAULT CONTENT",
+          "reasoning": "Author can type heading and text. The brushstroke decoration and black box styling are CSS concerns, not authoring structure. Content is just heading + paragraphs."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 4,
+      "sectionStyle": "white",
+      "sectionDescription": "Interactive poll",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Poll component with 'QUICK POLL' logo, question 'Where is your next dermatologist visit?', and three radio button options",
+          "decision": "BLOCK",
+          "blockName": "embed",
+          "reasoning": "Interactive form element with custom branding and radio buttons. Could be embedded poll widget or custom form. Using embed block allows flexibility for poll implementation.",
+          "matchType": "OBVIOUS - Interactive component needs block",
+          "note": "Could alternatively use 'form' block if poll is built with native forms. Embed offers more flexibility."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 5,
+      "sectionStyle": "light",
+      "sectionDescription": "Patient testimonial section",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Heading 'Meet RINVOQ patients like Maddy' with introduction text and 'Meet patients' button",
+          "decision": "DEFAULT CONTENT",
+          "reasoning": "Author can type heading, paragraph, and link normally. Simple stacked content."
+        },
+        {
+          "sequenceNumber": 2,
+          "description": "Patient image on right side with yellow brushstroke background, name 'Maddy' and descriptive text about her eczema journey",
+          "decision": "BLOCK",
+          "blockName": "columns-patient-story",
+          "blockVariant": "columns-patient-story",
+          "reasoning": "Two-column layout: text on left, image on right. Requires side-by-side structure. Standard columns block with 2 columns.",
+          "matchType": "OBVIOUS - Side-by-side layout",
+          "variantReuse": false,
+          "newVariant": "columns-patient-story",
+          "newVariantReason": "Patient story pattern with specific styling (yellow brushstroke, patient photo). May recur across condition pages."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 6,
+      "sectionStyle": "yellow",
+      "sectionDescription": "Quiz call-to-action",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Two-column layout: left side has 'TAKE THIS QUIZ' text with brushstroke styling and quiz question dropdown, right side has lifestyle image",
+          "decision": "BLOCK",
+          "blockName": "columns-quiz",
+          "blockVariant": "columns-quiz",
+          "reasoning": "Two-column layout with quiz form on left, image on right. Requires side-by-side structure. Standard columns block.",
+          "matchType": "OBVIOUS - Side-by-side layout",
+          "note": "Quiz form element within columns. The form is part of the column content."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 7,
+      "sectionStyle": "light",
+      "sectionDescription": "ISI summary text block",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Large 'ISI' heading with decorative brushstroke, followed by paragraphs of important safety information text and 'What is the most important information' section with bullet points",
+          "decision": "DEFAULT CONTENT",
+          "reasoning": "Author can type heading, paragraphs, subheadings, and bullet lists normally. This is flowing prose content with standard document elements. The brushstroke is CSS decoration, not authoring structure."
+        }
+      ]
+    },
+    {
+      "sectionNumber": 8,
+      "sectionStyle": "dark",
+      "sectionDescription": "Full ISI and footer",
+      "sequences": [
+        {
+          "sequenceNumber": 1,
+          "description": "Complete Important Safety Information with multiple sections including boxed warnings, risk information, and clinical study details presented as flowing text with headings and bullet lists",
+          "decision": "DEFAULT CONTENT",
+          "reasoning": "Author can type all content normally - multiple headings, paragraphs, bullet lists. This is extensive flowing prose content. No special structure needed, just text formatting."
+        }
+      ]
+    }
+  ],
+
+  "summary": {
+    "totalSections": 8,
+    "totalSequences": 12,
+    "defaultContentSequences": 7,
+    "blockSequences": 5,
+    "blocksUsed": [
+      {
+        "blockName": "hero-pharma",
+        "usage": 1,
+        "variant": "existing",
+        "purpose": "Condition-specific hero with Relief branding"
+      },
+      {
+        "blockName": "columns",
+        "usage": 3,
+        "variants": [
+          "columns-benefits-condition (3 columns)",
+          "columns-patient-story (2 columns)",
+          "columns (2 columns - quiz)"
+        ],
+        "purpose": "Side-by-side layouts for benefits, patient stories, and quiz"
+      },
+      {
+        "blockName": "embed",
+        "usage": 1,
+        "purpose": "Interactive poll component"
+      }
+    ],
+    "newVariantsNeeded": [
+      {
+        "variantName": "columns-benefits-condition",
+        "baseBlock": "columns",
+        "reason": "Three-column benefits pattern specific to condition pages",
+        "reuseAcrossPages": true
+      },
+      {
+        "variantName": "columns-patient-story",
+        "baseBlock": "columns",
+        "reason": "Patient story layout with yellow brushstroke styling",
+        "reuseAcrossPages": true
+      }
+    ]
+  },
+
+  "step3eValidation": {
+    "required": true,
+    "reason": "Multiple single-block sections exist with distinct styling",
+    "sectionsToValidate": [1, 3, 4, 7, 8],
+    "notes": "These sections contain exactly one sequence that became a block or default content. Need to validate if section styling should be kept."
+  }
+}

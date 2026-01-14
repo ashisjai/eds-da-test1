@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="att-business-homepage---block-identification">AT&#x26;T Business Homepage - Block Identification</h1><h2 id="overview">Overview</h2><p>This document identifies all UI blocks/components found on the AT&#x26;T Business homepage (https://www.business.att.com/) for migration to AEM Edge Delivery Services.</p></div>
+<div><h2 id="block-inventory">Block Inventory</h2><h3 id="header-block">1. Header Block</h3><p><strong>Screenshot:</strong> <code>block-01-header-hero.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>header</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Utility navigation (Personal/Business toggle)</li>
+<li>AT&#x26;T Business logo</li>
+<li>Search box with placeholder "Let's find what you need..."</li>
+<li>Hamburger menu (mobile)</li>
+<li>Sticky behavior on scroll</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Logo (image)</li>
+<li>Search placeholder text</li>
+<li>Navigation items (from /nav)</li>
+</ul></div>
+<div><h3 id="hero-block">2. Hero Block</h3><p><strong>Screenshot:</strong> <code>block-01-header-hero.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>hero</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code>, <code>split</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Eyebrow text ("AT&#x26;T Business")</li>
+<li>Main heading ("Give your team an edge")</li>
+<li>Description text</li>
+<li>Background image (split layout with business professionals)</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Eyebrow (text)</li>
+<li>Heading (text)</li>
+<li>Description (richtext)</li>
+<li>Background Image (image)</li>
+</ul></div>
+<div><h3 id="product-tabs-block">3. Product Tabs Block</h3><p><strong>Screenshot:</strong> <code>block-02-product-tabs.png</code>, <code>block-03-product-cards.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>hero-tabbed</code> or <code>product-tabs</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Fast, reliable, and secure")</li>
+<li>Section description</li>
+<li>Tabbed/carousel product cards (6 categories)</li>
+<li>Each tab contains a product card</li>
+</ul><p><strong>Product Categories:</strong></p><ol>
+<li><strong>Mobile</strong> - $20/mo starting price</li>
+<li><strong>Internet</strong> - $30/mo starting price</li>
+<li><strong>Voice</strong> - $15/mo starting price</li>
+<li><strong>Security</strong> - Custom pricing</li>
+<li><strong>Network</strong> - Custom pricing</li>
+<li><strong>Specialty</strong> - Custom pricing</li>
+</ol><p><strong>Content Model per Card:</strong></p><ul>
+<li>Category image (image)</li>
+<li>Title (text)</li>
+<li>Description (richtext)</li>
+<li>Price (pricing component)</li>
+<li>Legal text (small text)</li>
+<li>CTA button (link)</li>
+</ul></div>
+<div><h3 id="promotional-banner-block">4. Promotional Banner Block</h3><p><strong>Screenshot:</strong> <code>block-06-promo-banner.png</code>, <code>block-07-awards.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>promo-banner</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>product</code>, <code>campaign</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Eyebrow text ("AT&#x26;T Dynamic Defense®")</li>
+<li>Heading ("Get peace of mind with around-the-clock protection")</li>
+<li>Description text</li>
+<li>Legal disclaimer</li>
+<li>Primary CTA ("Learn more")</li>
+<li>Secondary CTA ("See Craig's solutions")</li>
+<li>Background image</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Eyebrow (text)</li>
+<li>Heading (text)</li>
+<li>Description (richtext)</li>
+<li>Legal text (text)</li>
+<li>Primary CTA (link)</li>
+<li>Secondary CTA (link)</li>
+<li>Background Image (image)</li>
+</ul></div>
+<div><h3 id="awards-banner-block">5. Awards Banner Block</h3><p><strong>Screenshot:</strong> <code>block-07-awards.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>awards-banner</code> or <code>carousel</code></div></div><div><div>Priority</div><div>P2</div></div><div><div>Variants</div><div><code>awards</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>J.D. Power award recognition</li>
+<li>Award description text</li>
+<li>Legal disclaimer with link</li>
+<li>Carousel dots for multiple awards</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Award headline (text)</li>
+<li>Award description (richtext)</li>
+<li>Legal link (link)</li>
+</ul></div>
+<div><h3 id="value-props-cards-block">6. Value Props Cards Block</h3><p><strong>Screenshot:</strong> <code>block-08-value-props.png</code>, <code>block-09-value-props-more.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>cards</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>icon</code>, <code>value-props</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Why work with AT&#x26;T Business?")</li>
+<li>Section subheading</li>
+<li>4 value proposition cards in grid</li>
+</ul><p><strong>Cards Identified:</strong></p><ol>
+<li><strong>The AT&#x26;T Guarantee</strong> - Badge icon, description, legal text, CTA</li>
+<li><strong>Reliability of fiber and 5G</strong> - 5G icon, description, CTA</li>
+<li><strong>Security that starts at the network</strong> - Globe/security icon, description, CTA</li>
+<li><strong>Experts who know business</strong> - Expert icon, description, CTA</li>
+</ol><p><strong>Content Model per Card:</strong></p><ul>
+<li>Icon (image/svg)</li>
+<li>Title (text)</li>
+<li>Description (richtext)</li>
+<li>Legal text (optional)</li>
+<li>CTA link (link)</li>
+</ul></div>
+<div><h3 id="deals-carousel-block">7. Deals Carousel Block</h3><p><strong>Screenshot:</strong> <code>block-10-deals-carousel.png</code>, <code>block-11-deals-more.png</code>, <code>block-12-solutions-carousel.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>carousel</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>deals</code>, <code>offers</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Great deals and the latest tech for your business")</li>
+<li>Horizontal scrolling deal cards</li>
+<li>Each card has unique styling based on offer type</li>
+</ul><p><strong>Deal Cards Identified:</strong></p><ol>
+<li><strong>iPhone 17 Pro for $0</strong> - "All customers" badge, dark background</li>
+<li><strong>Wireless plans $20/mo</strong> - "Online only" badge</li>
+<li><strong>Business internet $30/mo</strong> - "New &#x26; existing customers" badge</li>
+</ol><p><strong>Content Model per Card:</strong></p><ul>
+<li>Badge/Tag (text)</li>
+<li>Heading (text)</li>
+<li>Description (richtext)</li>
+<li>Legal text (text)</li>
+<li>CTA button (link)</li>
+<li>Background image (image)</li>
+</ul></div>
+<div><h3 id="solutions-carousel-block">8. Solutions Carousel Block</h3><p><strong>Screenshot:</strong> <code>block-13-solutions.png</code>, <code>block-14-solutions-cards.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>carousel</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>solutions</code>, <code>sectors</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Solutions for every kind of business")</li>
+<li>Section description</li>
+<li>Carousel with pagination dots</li>
+<li>Image cards with icons</li>
+</ul><p><strong>Solution Cards Identified:</strong></p><ol>
+<li><strong>Small business</strong> - Store icon</li>
+<li><strong>FirstNet®, built with AT&#x26;T</strong> - FirstNet badge</li>
+<li><strong>Public sector</strong> - Government icon</li>
+<li><strong>Industry solutions</strong> - Factory icon</li>
+</ol><p><strong>Content Model per Card:</strong></p><ul>
+<li>Icon (image/svg)</li>
+<li>Image (image)</li>
+<li>Title (text)</li>
+<li>Description (text)</li>
+<li>Link (link)</li>
+</ul></div>
+<div><h3 id="guarantee-cta-block">9. Guarantee CTA Block</h3><p><strong>Screenshot:</strong> <code>block-15-guarantee.png</code>, <code>block-16-guarantee-list.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>cta-banner</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>guarantee</code>, <code>checklist</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Dark background with image</li>
+<li>Heading with trademark ("Get backed by the AT&#x26;T Guarantee℠")</li>
+<li>Description text</li>
+<li>Checklist with icons:
+<ul>
+<li>✓ Connectivity you depend on</li>
+<li>✓ Deals you want</li>
+<li>✓ Prompt, friendly service you deserve</li>
+</ul>
+</li>
+<li>Dual CTAs ("Shop deals", "Learn more")</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>Description (richtext)</li>
+<li>Checklist items (list)</li>
+<li>Primary CTA (link)</li>
+<li>Secondary CTA (link)</li>
+<li>Background image (image)</li>
+</ul></div>
+<div><h3 id="success-stories-block">10. Success Stories Block</h3><p><strong>Screenshot:</strong> <code>block-17-success-stories.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>hero</code> or <code>cta-banner</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>testimonial</code>, <code>stories</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Full-width background image</li>
+<li>Heading ("Success stories from our customers")</li>
+<li>CTA button ("Read more")</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>CTA link (link)</li>
+<li>Background image (image)</li>
+</ul></div>
+<div><h3 id="contact-form-block-rai-form">11. Contact Form Block (RAI Form)</h3><p><strong>Screenshot:</strong> <code>block-18-contact-form.png</code>, <code>block-19-form-more.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>form</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>rai</code>, <code>contact</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Talk to an AT&#x26;T Business sales expert")</li>
+<li>Phone number link</li>
+<li>Description text</li>
+<li>Business hours note</li>
+<li>Form fields:
+<ul>
+<li>First name (required)</li>
+<li>Last name (required)</li>
+<li>Email address (required)</li>
+<li>Phone (required)</li>
+<li>Company name (required)</li>
+<li>Add comment (textarea)</li>
+<li>Newsletter opt-in checkbox</li>
+</ul>
+</li>
+<li>Submit button</li>
+<li>Privacy link</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>Phone number (link)</li>
+<li>Description (richtext)</li>
+<li>Business hours (text)</li>
+<li>Form ID (for Marketo/Eloqua integration)</li>
+<li>Privacy link (link)</li>
+</ul></div>
+<div><h3 id="link-list-block">12. Link List Block</h3><p><strong>Screenshot:</strong> <code>block-20-link-list.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>link-list</code></div></div><div><div>Priority</div><div>P1</div></div><div><div>Variants</div><div><code>grid</code>, <code>columns</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>Section heading ("Looking for more?")</li>
+<li>4-column grid of categorized links</li>
+<li>Links organized by topic</li>
+</ul><p><strong>Link Categories:</strong></p><ul>
+<li>Column 1: Wireless &#x26; mobility links</li>
+<li>Column 2: Network &#x26; internet links</li>
+<li>Column 3: Cloud &#x26; security links</li>
+<li>Column 4: Consulting &#x26; industry links</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Heading (text)</li>
+<li>Link columns (list of links)</li>
+</ul></div>
+<div><h3 id="footer-block">13. Footer Block</h3><p><strong>Screenshot:</strong> <code>block-21-footer.png</code>, <code>block-22-footer-legal.png</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>footer</code></div></div><div><div>Priority</div><div>P0</div></div><div><div>Variants</div><div><code>default</code></div></div></div><p><strong>Features:</strong></p><ul>
+<li>AT&#x26;T Business logo</li>
+<li>Social media icons (Facebook, LinkedIn, YouTube, X, Instagram)</li>
+<li>Expandable navigation sections (accordion style)</li>
+<li>Quick links row</li>
+<li>Legal links row</li>
+<li>Copyright text</li>
+</ul><p><strong>Navigation Sections:</strong></p><ul>
+<li>Business Internet</li>
+<li>Business wireless &#x26; mobility</li>
+<li>Collaboration solutions</li>
+<li>Networking services</li>
+<li>IoT solutions</li>
+<li>5G business internet</li>
+<li>Cloud services</li>
+<li>Cybersecurity</li>
+<li>Support</li>
+<li>Business blog &#x26; resources</li>
+<li>Sectors</li>
+<li>Partners</li>
+</ul><p><strong>Legal Links:</strong></p><ul>
+<li>Terms of use</li>
+<li>Your privacy center</li>
+<li>Accessibility</li>
+<li>Your Privacy Choices</li>
+<li>Health Privacy Notice</li>
+<li>Cyber Security</li>
+</ul><p><strong>Content Model:</strong></p><ul>
+<li>Logo (image)</li>
+<li>Social links (list of links with icons)</li>
+<li>Navigation sections (accordion items)</li>
+<li>Quick links (list of links)</li>
+<li>Legal links (list of links)</li>
+<li>Copyright text (text)</li>
+</ul></div>
+<div><h3 id="chat-widget">14. Chat Widget</h3><p><strong>Observed in:</strong> All screenshots</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="property"><div><div>Block Name</div><div><code>chat-widget</code></div></div><div><div>Priority</div><div>P2</div></div><div><div>Type</div><div>Third-party integration</div></div></div><p><strong>Features:</strong></p><ul>
+<li>Floating chat button</li>
+<li>"Chat" label</li>
+<li>Positioned bottom-right</li>
+</ul></div>
+<div><h2 id="block-summary-table">Block Summary Table</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div><div><div>1</div><div>header</div><div>P0</div><div>default</div><div>block-01</div></div><div><div>2</div><div>hero</div><div>P0</div><div>default, split</div><div>block-01</div></div><div><div>3</div><div>product-tabs</div><div>P0</div><div>default</div><div>block-02, block-03</div></div><div><div>4</div><div>cards (product)</div><div>P0</div><div>pricing</div><div>block-03, block-04, block-05</div></div><div><div>5</div><div>promo-banner</div><div>P1</div><div>product</div><div>block-06, block-07</div></div><div><div>6</div><div>carousel (awards)</div><div>P2</div><div>awards</div><div>block-07</div></div><div><div>7</div><div>cards (value-props)</div><div>P0</div><div>icon</div><div>block-08, block-09</div></div><div><div>8</div><div>carousel (deals)</div><div>P1</div><div>deals</div><div>block-10, block-11, block-12</div></div><div><div>9</div><div>carousel (solutions)</div><div>P1</div><div>solutions</div><div>block-13, block-14</div></div><div><div>10</div><div>cta-banner</div><div>P0</div><div>guarantee</div><div>block-15, block-16</div></div><div><div>11</div><div>hero (stories)</div><div>P1</div><div>stories</div><div>block-17</div></div><div><div>12</div><div>form</div><div>P0</div><div>rai</div><div>block-18, block-19</div></div><div><div>13</div><div>link-list</div><div>P1</div><div>grid</div><div>block-20</div></div><div><div>14</div><div>footer</div><div>P0</div><div>default</div><div>block-21, block-22</div></div></div></div>
+<div><h2 id="priority-legend">Priority Legend</h2><ul>
+<li><strong>P0</strong> - Must have for launch (core functionality)</li>
+<li><strong>P1</strong> - Should have (important features)</li>
+<li><strong>P2</strong> - Nice to have (enhancements)</li>
+</ul></div>
+<div><h2 id="screenshots-location">Screenshots Location</h2><p>All screenshots are saved in: <code>/tmp/playwright/</code></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="file"><div><div>block-01-header-hero.png</div><div>Header + Hero</div></div><div><div>block-02-product-tabs.png</div><div>Product section heading</div></div><div><div>block-03-product-cards.png</div><div>Mobile + Internet cards</div></div><div><div>block-04-more-products.png</div><div>Voice + Security cards</div></div><div><div>block-05-network-specialty.png</div><div>Network + Specialty cards</div></div><div><div>block-06-promo-banner.png</div><div>Dynamic Defense promo</div></div><div><div>block-07-awards.png</div><div>J.D. Power awards</div></div><div><div>block-08-value-props.png</div><div>Why work with AT&#x26;T</div></div><div><div>block-09-value-props-more.png</div><div>Security + Experts cards</div></div><div><div>block-10-deals-carousel.png</div><div>Deals heading + iPhone</div></div><div><div>block-11-deals-more.png</div><div>Wireless plans deal</div></div><div><div>block-12-solutions-carousel.png</div><div>Internet deal</div></div><div><div>block-13-solutions.png</div><div>Solutions heading</div></div><div><div>block-14-solutions-cards.png</div><div>Small business + FirstNet</div></div><div><div>block-15-guarantee.png</div><div>AT&#x26;T Guarantee</div></div><div><div>block-16-guarantee-list.png</div><div>Guarantee checklist</div></div><div><div>block-17-success-stories.png</div><div>Success stories</div></div><div><div>block-18-contact-form.png</div><div>RAI form header</div></div><div><div>block-19-form-more.png</div><div>RAI form fields</div></div><div><div>block-20-link-list.png</div><div>Looking for more</div></div><div><div>block-21-footer.png</div><div>Footer navigation</div></div><div><div>block-22-footer-legal.png</div><div>Footer legal</div></div></div></div>
+<div><p><em>Document Generated: January 2026</em>
+<em>Source: https://www.business.att.com/</em></p></div>
+</main>
+<footer></footer>
+</body>
+</html>

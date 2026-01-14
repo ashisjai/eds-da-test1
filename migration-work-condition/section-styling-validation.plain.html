@@ -1,0 +1,130 @@
+<div><h1 id="step-3e-section-styling-validation">Step 3e: Section Styling Validation</h1>
+<h2 id="sections-requiring-validation">Sections Requiring Validation</h2>
+<p>Sections with exactly ONE sequence that need background styling validation:</p>
+<h3 id="section-1-light---hero">Section 1 (light) - Hero</h3>
+<ul>
+<li><strong>Sequence</strong>: hero-pharma block</li>
+<li><strong>Background Analysis</strong>: Large background image with light/white overlay. Hero content sits on top of background image.</li>
+<li><strong>Layout</strong>: Full-width background with hero content centered</li>
+<li><strong>Q1 - Is background an image?</strong> YES - Background is a photographic image</li>
+<li><strong>Q2 - Edge-to-edge or padded?</strong> Full-bleed background, content centered on image</li>
+<li><strong>Q3 - Does hero typically have own background?</strong> YES - Hero blocks typically include background images</li>
+<li><strong>Decision</strong>: <strong>SKIP section-metadata</strong></li>
+<li><strong>Reason</strong>: Background image is part of hero block design, not section container styling. Hero-pharma variant should control its own background.</li>
+</ul>
+<h3 id="section-3-light---isi-callout">Section 3 (light) - ISI Callout</h3>
+<ul>
+<li><strong>Sequence</strong>: DEFAULT CONTENT (heading + text)</li>
+<li><strong>Background Analysis</strong>: Light/white background, standard section padding</li>
+<li><strong>Layout</strong>: Content centered with standard padding</li>
+<li><strong>Decision</strong>: <strong>KEEP section-metadata style="light"</strong></li>
+<li><strong>Reason</strong>: Single default content sequence on light background. Section provides container styling.</li>
+</ul>
+<h3 id="section-4-white---poll">Section 4 (white) - Poll</h3>
+<ul>
+<li><strong>Sequence</strong>: embed block (poll)</li>
+<li><strong>Background Analysis</strong>: White/clean background</li>
+<li><strong>Layout</strong>: Poll component centered with padding</li>
+<li><strong>Q1 - Is background an image?</strong> NO - Solid white background</li>
+<li><strong>Q2 - Edge-to-edge or padded?</strong> Content centered with visible section padding</li>
+<li><strong>Q3 - Does embed typically have own background?</strong> NO - Embed blocks inherit section styling</li>
+<li><strong>Decision</strong>: <strong>KEEP section-metadata style="white"</strong></li>
+<li><strong>Reason</strong>: Section provides clean white background container for poll widget. Embed inherits this styling.</li>
+</ul>
+<h3 id="section-6-yellow---quiz">Section 6 (yellow) - Quiz</h3>
+<ul>
+<li><strong>Sequence</strong>: columns block (quiz + image)</li>
+<li><strong>Background Analysis</strong>: Bright yellow background (#FFD700 or similar)</li>
+<li><strong>Layout</strong>: Content fills section with yellow background extending full-width</li>
+<li><strong>Q1 - Is background an image?</strong> NO - Solid yellow background</li>
+<li><strong>Q2 - Edge-to-edge or padded?</strong> Full-width yellow background, content centered</li>
+<li><strong>Q3 - Does columns typically have own background?</strong> NO - Columns blocks typically inherit section styling</li>
+<li><strong>Decision</strong>: <strong>KEEP section-metadata style="yellow"</strong></li>
+<li><strong>Reason</strong>: Yellow background is section container styling that makes this quiz stand out. Columns block inherits the vibrant background.</li>
+</ul>
+<h3 id="section-7-light---isi-summary">Section 7 (light) - ISI Summary</h3>
+<ul>
+<li><strong>Sequence</strong>: DEFAULT CONTENT (headings + paragraphs + lists)</li>
+<li><strong>Background Analysis</strong>: Light/white background</li>
+<li><strong>Layout</strong>: Text content with standard section padding</li>
+<li><strong>Decision</strong>: <strong>KEEP section-metadata style="light"</strong></li>
+<li><strong>Reason</strong>: Default content on light background. Section provides container.</li>
+</ul>
+<h3 id="section-8-dark---full-isi">Section 8 (dark) - Full ISI</h3>
+<ul>
+<li><strong>Sequence</strong>: DEFAULT CONTENT (extensive text, headings, lists)</li>
+<li><strong>Background Analysis</strong>: Dark background (#1a1a1a or similar)</li>
+<li><strong>Layout</strong>: Full-width dark background with extensive ISI text</li>
+<li><strong>Decision</strong>: <strong>KEEP section-metadata style="dark"</strong></li>
+<li><strong>Reason</strong>: Dark background differentiates ISI section from rest of page. Section styling is intentional container design.</li>
+</ul>
+<h2 id="updated-section-styling-summary">Updated Section Styling Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section"><div><div>1</div><div>light</div><div>hero-pharma block</div><div><strong>SKIP</strong> - Hero has own background</div></div><div><div>2</div><div>light</div><div>default + columns block</div><div><strong>KEEP</strong> - Multi-sequence section</div></div><div><div>3</div><div>light</div><div>default content</div><div><strong>KEEP</strong> - Section container</div></div><div><div>4</div><div>white</div><div>embed block</div><div><strong>KEEP</strong> - Section container for widget</div></div><div><div>5</div><div>light</div><div>default + columns block</div><div><strong>KEEP</strong> - Multi-sequence section</div></div><div><div>6</div><div>yellow</div><div>columns block</div><div><strong>KEEP</strong> - Distinctive section styling</div></div><div><div>7</div><div>light</div><div>default content</div><div><strong>KEEP</strong> - Section container</div></div><div><div>8</div><div>dark</div><div>default content</div><div><strong>KEEP</strong> - Distinctive ISI styling</div></div></div>
+<h2 id="validation-complete">Validation Complete</h2>
+<ul>
+<li>✅ Identified 6 single-sequence sections</li>
+<li>✅ Examined screenshot for each</li>
+<li>✅ Answered Q1, Q2, Q3 for each</li>
+<li>✅ Made skip/keep decisions for each</li>
+<li>✅ Documented reasoning</li>
+</ul>
+<p><strong>Result:</strong> Only Section 1 (hero) should skip section-metadata. All other sections keep their styling.</p></div>

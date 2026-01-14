@@ -1,0 +1,220 @@
+{
+  "url": "https://www.rinvoq.com/",
+  "timestamp": "2025-12-19T10:21:38.283Z",
+  "paths": {
+    "documentPath": "/index",
+    "htmlFilePath": "/index.plain.html",
+    "mdFilePath": "/index.md",
+    "dirPath": "",
+    "filename": "index"
+  },
+  "screenshot": "migration-work/screenshot.png",
+  "html": {
+    "filePath": "migration-work/cleaned.html",
+    "size": 397332
+  },
+  "metadata": {
+    "title": "RINVOQ® (upadacitinib) for RA, PsA, AD, AS, nr-axSpA, UC, CD, pJIA & JPsA",
+    "viewport": "width=device-width, initial-scale=1",
+    "og:title": "RINVOQ® (upadacitinib)",
+    "og:description": "Learn about RINVOQ®. See full Prescribing & Safety Info, and Boxed Warning.",
+    "og:url": "https://www.rinvoq.com",
+    "og:type": "Article",
+    "twitter:card": "Summary",
+    "og:image": "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/giant-cell-arteritis/og/rinvoq-logo-og-image-800x1200_r7_allviews.png",
+    "keywords": "Generic Indication,Indication Reset",
+    "description": "Learn about RINVOQ® (upadacitinib), a once-daily pill that helps tame symptoms in eight conditions. See full Prescribing & Safety Info, and BOXED WARNING.",
+    "language": "en",
+    "country": "US",
+    "pagename": "RINVOQ® (upadacitinib) for RA, PsA, AD, AS, nr-axSpA, UC, CD, pJIA & JPsA",
+    "templatename": "full-width-content-page",
+    "pageurl": "/",
+    "franchise": "Cross Franchise (Cross)",
+    "content-journey": "Other",
+    "patient-journey": "Other",
+    "forcedmodaloverlay": "no",
+    "indication-id": "generic-indication",
+    "sitename": "rinvoq",
+    "globalisi": "US-RNQ-250009",
+    "epassnumber": "US-RNQ-240342",
+    "canonical": "https://www.rinvoq.com/",
+    "jsonLd": {
+      "@context": "http://schema.org",
+      "@type": "MedicalWebPage",
+      "audience": "https://health-lifesci.schema.org/Patient",
+      "specialty": "http://health-lifesci.schema.org/Rheumatology",
+      "reviewedBy": "AbbVie Inc.",
+      "dateModified": "2022-10-21",
+      "headline": "RINVOQ® (upadacitinib) Treatment for RA, PsA, AD, AS, nr-axSpA and UC",
+      "description": "Learn about RINVOQ® (upadacitinib), a once-daily pill that helps tame symptoms in six conditions. See full Prescribing & Safety Info, and BOXED WARNING.",
+      "url": "https://www.rinvoq.com/",
+      "primaryImageOfPage": [
+        {
+          "@type": "ImageObject",
+          "name": "Rinvoq Relief is Possible: RINVOQ is a once-daily pill that helps tame symptoms in 6 conditions",
+          "url": "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/rinvoq-relief-is-here_1200-1800.png"
+        }
+      ],
+      "potentialaction": [
+        {
+          "@type": "ViewAction",
+          "name": "Eczema",
+          "url": "https://www.rinvoq.com/atopic-dermatitis"
+        },
+        {
+          "@type": "ViewAction",
+          "name": "Rheumatoid Arthritis",
+          "url": "https://www.rinvoq.com/rheumatoid-arthritis"
+        },
+        {
+          "@type": "ViewAction",
+          "name": "Psoriatic Arthritis",
+          "url": "https://www.rinvoq.com/psoriatic-arthritis"
+        },
+        {
+          "@type": "ViewAction",
+          "name": "Ankylosing Spondylitis",
+          "url": "https://www.rinvoq.com/ankylosing-spondylitis"
+        },
+        {
+          "@type": "ViewAction",
+          "name": "Non-radiographic Axial Spondyloarthritis",
+          "url": "https://www.rinvoq.com/non-radiographic-axial-spondyloarthritis"
+        },
+        {
+          "@type": "ViewAction",
+          "name": "Ulcerative Colitis",
+          "url": "https://www.rinvoq.com/ulcerative-colitis"
+        }
+      ],
+      "image": [
+        {
+          "@type": "ImageObject",
+          "name": "RINVOQ® Complete logo",
+          "contentUrl": "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/rinvoq-complete-logo-white-brushstroke-desktop-r9.png"
+        }
+      ],
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "text": "What is the most important information I should know about RINVOQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": [
+              "RINVOQ may cause serious side effects, including: Serious infections. RINVOQ can lower your ability to fight infections. Serious infections have happened while taking RINVOQ, including tuberculosis (TB) and infections caused by bacteria, fungi, or viruses that can spread throughout the body. Some people have died from these infections. Your healthcare provider (HCP) should test you for TB before starting RINVOQ and check you closely for signs and symptoms of TB during treatment with RINVOQ. You should not start taking RINVOQ if you have any kind of infection unless your HCP tells you it is okay. If you get a serious infection, your HCP may stop your treatment until your infection is controlled. You may be at higher risk of developing shingles (herpes zoster).Increased risk of death in people 50 years and older who have at least 1 heart disease (cardiovascular) risk factor.Cancer and immune system problems. RINVOQ may increase your risk of certain cancers. Lymphoma and other cancers, including skin cancers, can happen. Current or past smokers are at higher risk of certain cancers, including lymphoma and lung cancer. Follow your HCP’s advice about having your skin checked for skin cancer during treatment with RINVOQ. Limit the amount of time you spend in sunlight. Wear protective clothing when you are in the sun and use sunscreen.Increased risk of major cardiovascular (CV) events, such as heart attack, stroke, or death, in people 50 years and older who have at least 1 heart disease (CV) risk factor, especially if you are a current or past smoker. Blood clots. Blood clots in the veins of the legs or lungs and arteries can happen with RINVOQ. This may be life-threatening and cause death. Blood clots in the veins of the legs and lungs have happened more often in people who are 50 years and older and with at least 1 heart disease (CV) risk factor.Allergic reactions. Symptoms such as rash (hives), trouble breathing, feeling faint or dizzy, or swelling of your lips, tongue, or throat, that may mean you are having an allergic reaction have been seen in people taking RINVOQ. Some of these reactions were serious. If any of these symptoms occur during treatment with RINVOQ, stop taking RINVOQ and get emergency medical help right away. Tears in the stomach or intestines and changes in certain laboratory tests. Your HCP should do blood tests before you start taking RINVOQ and while you take it. Your HCP may stop your RINVOQ treatment for a period of time if needed because of changes in these blood test results."
+            ]
+          }
+        },
+        {
+          "@type": "Question",
+          "text": "What should I tell my HCP before taking RINVOQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": [
+              "Tell your HCP if you: Are being treated for an infection, have an infection that won’t go away or keeps coming back, or have symptoms of an infection, such as: - Fever, sweating, or chills - Shortness of breath - Warm, red, or painful skin or sores on your body - Muscle aches - Feeling tired - Blood in phlegm - Diarrhea or stomach pain - Cough - Weight loss - Burning when urinating or urinating more often than normal. Have TB or have been in close contact with someone with TB. Are a current or past smoker. Have had a heart attack, other heart problems, or stroke. Have or have had any type of cancer, hepatitis B or C, shingles (herpes zoster), blood clots in the veins of your legs or lungs, diverticulitis (inflammation in parts of the large intestine), or ulcers in your stomach or intestines. Have other medical conditions, including liver problems, low blood cell counts, diabetes, chronic lung disease, HIV, or a weak immune system. Live, have lived, or have traveled to parts of the country, such as the Ohio and Mississippi River valleys and the Southwest, that increase your risk of getting certain kinds of fungal infections. If you are unsure if you've been to these types of areas, ask your HCP. Have recently received or are scheduled to receive a vaccine. People who take RINVOQ should not receive live vaccines. Are pregnant or plan to become pregnant. Based on animal studies, RINVOQ may harm your unborn baby. Your HCP will check whether or not you are pregnant before you start RINVOQ. You should use effective birth control (contraception) to avoid becoming pregnant during treatment with RINVOQ and for 4 weeks after your last dose. Are breastfeeding or plan to breastfeed. RINVOQ may pass into your breast milk. Do not breastfeed during treatment with RINVOQ and for 6 days after your last dose. Tell your HCP about all the medicines you take, including prescription and over-the-counter medicines, vitamins, and herbal supplements. RINVOQ and other medicines may affect each other, causing side effects. Especially tell your HCP if you take: Medicines for fungal or bacterial infections, Rifampicin or phenytoin, Medicines that affect your immune system, If you are not sure if you are taking any of these medicines, ask your HCP or pharmacist."
+            ]
+          }
+        },
+        {
+          "@type": "Question",
+          "text": "What should I tell my HCP after starting RINVOQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": [
+              "Tell your HCP right away if you have any symptoms of an infection. RINVOQ can make you more likely to get infections or make any infections you have worse. Get emergency help right away if you have any symptoms of a heart attack or stroke while taking RINVOQ, including: - Discomfort in the center of your chest that lasts for more than a few minutes or that goes away and comes back - Severe tightness, pain, pressure, or heaviness in your chest, throat, neck, or jaw - Pain or discomfort in your arms, back, neck, jaw, or stomach - Shortness of breath with or without chest discomfort - Breaking out in a cold sweat - Nausea or vomiting - Feeling lightheaded - Weakness in one part or on one side of your body - Slurred speech. Tell your HCP right away if you have any signs or symptoms of blood clots during treatment with RINVOQ, including: - Swelling - Pain or tenderness in one or both legs - Sudden unexplained chest or upper back pain - Shortness of breath or difficulty breathing. Tell your HCP right away if you have a fever or stomach-area pain that does not go away, and a change in your bowel habits."
+            ]
+          }
+        },
+        {
+          "@type": "Question",
+          "text": "What are the common side effects of RINVOQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": [
+              "These include upper respiratory tract infections (common cold, sinus infections), shingles (herpes zoster), herpes simplex virus infections, including cold sores, bronchitis, nausea, cough, fever, acne, headache, increased blood levels of creatine phosphokinase, allergic reactions, inflammation of hair follicles, stomach-area (abdominal) pain, increased weight, flu, tiredness, low white blood cell count (neutropenia), muscle pain, and flu-like illness. A separation or tear to the lining of the back part of the eye (retinal detachment) has happened in people with atopic dermatitis treated with RINVOQ. Call your HCP right away if you have any sudden changes in your vision during treatment with RINVOQ. These are not all the possible side effects of RINVOQ."
+            ]
+          }
+        },
+        {
+          "@type": "Question",
+          "text": "How should I take RINVOQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": [
+              "RINVOQ is taken once a day with or without food. Do not split, break, crush, or chew the tablet. Take RINVOQ exactly as your HCP tells you to use it. RINVOQ is available in 15 mg and 30 mg extended-release tablets."
+            ]
+          }
+        }
+      ],
+      "about": [
+        {
+          "@type": "Drug",
+          "name": "RINVOQ",
+          "nonProprietaryName": "upadacitinib",
+          "image": {
+            "@type": "ImageObject",
+            "name": "Rinvoq (upadacitinib) Logo",
+            "contentUrl": "https://www.rinvoq.com/content/dam/rinvoq/images/common/rinvoq-logo-white-desktop-r9.png"
+          },
+          "description": "RINVOQ™ (upadacitinib) is indicated for the treatment of adults with moderately to severely active rheumatoid arthritis who have had an inadequate response or intolerance to methotrexate. ",
+          "prescribingInfo": "https://www.rxabbvie.com/pdf/rinvoq_pi.pdf",
+          "warning": "Serious infections leading to hospitalization or death, including tuberculosis and bacterial, invasive fungal, viral, and other opportunistic infections, have occurred in patients receiving RINVOQ. If a serious infection develops, interrupt RINVOQ until the infection is controlled. Prior to starting RINVOQ, perform a test for latent tuberculosis; if it is positive, start treatment for tuberculosis prior to starting RINVOQ. Monitor all patients for active tuberculosis during treatment, even if the initial latent tuberculosis test is negative. Lymphoma and other malignancies have been observed in patients treated with RINVOQ. Thrombosis, including deep vein thrombosis, pulmonary embolism, and arterial thrombosis, have occurred in patients treated with Janus kinase inhibitors used to treat inflammatory conditions.",
+          "pregnancyWarning": "The limited human data on use of RINVOQ in pregnant women are not sufficient to evaluate a drug-associated risk for major birth defects or  iscarriage. Based on animal studies, upadacitinib has the potential to adversely affect a developing fetus. ",
+          "breastfeedingWarning": "There are no data on the presence of upadacitinib in human milk, the effects on the breastfed infant, or the effects on milk production. Available pharmacodynamic/toxicological data in animals have shown excretion of upadacitinib in milk. When a drug is present in animal milk, it is likely that the drug will be present in human milk. Because of the potential for serious adverse reactions in the breastfed infant, advise patients that breastfeeding is not recommended during treatment with upadacitinib, and for 6 days (approximately 10 half-lives) after the last dose. ",
+          "prescriptionStatus": "https://health-lifesci.schema.org/PrescriptionOnly",
+          "dosageForm": [
+            "Tablet"
+          ],
+          "administrationRoute": "oral",
+          "doseSchedule": {
+            "@type": "DoseSchedule",
+            "frequency": "daily",
+            "doseValue": "15",
+            "doseUnit": "mg"
+          },
+          "manufacturer": {
+            "@type": "Corporation",
+            "name": "Abbvie"
+          }
+        }
+      ]
+    }
+  },
+  "images": {
+    "count": 24,
+    "mapping": {
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/rinvoq-logo-white-desktop-r9.png": "./images/e659f87e7fe03f58e8ba027a6fc430b7.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/lightbulb-icon_r4_allviews.svg": "./images/098adcf3b67fa21bbdaf3cdd49745513.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/relief-brushstroke_r4_allviews.svg": "./images/268150aff55edb23289429eee0ebebf8.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/rinvoq-homepage-hero_r4_2x_desktop.jpg": "./images/a9b79b7ec20252ce846b93d7f92f799a.jpg",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/ISI-swash1.png": "./images/04f7a4ed2cfd46bfab7d39f7618a9e10.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/speak-network-background_r4_2x_desktop.png": "./images/080e35b4506feb39cc2f8297515da58e.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/plus.svg": "./images/3a35ccf080f07e7b558d073e4dbfa612.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/common/privacy-choices-black.svg": "./images/4a0713c923cbe799381181ddbd00f883.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/speak-network-email_r16_allviews.svg": "./images/2dbf19474eaabff08e8d1003f528354e.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/speak-network-phone_r16_allviews.svg": "./images/12c7fd2c476ad8c5b3a5991c2488c3f3.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/abbvie-copyright-2025_r7_desktop.svg": "./images/ec9f214bd989f16b1de7f943c60ee33c.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/rinvoq-bottle-pill-disclaimer_r4_2x_allviews.png": "./images/b43859924ed94a150a9375a5b717a606.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/upadacitinib-oral-solution_r4_2x_allviews.png": "./images/31152e9437465526cab33a37b971e77b.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/complete-logo_r4_desktop.svg": "./images/81869efe1922194d91824b6212de0505.png",
+      "https://dpm.demdex.net/ibs:dpid=903&dpuuid=be6b4b5e-c82f-4205-9268-29538f0b6b45": "./images/5c700ddf2752d63ff79ffa1674ebe1ab.png",
+      "https://obs.powerstarsbuilding.com/tracker/tc_imp.gif?e=37dfbd8ee84e00126ce8c636e34182949225c24f567d43d6da1908be6245cad7bd70a976750ef80ed89373bfe70e9c20c1e53e8d56198e6f2e17071a10acf9f29f671b83d0dd51253d1aad7d2600823a8b34c150620021c056090c64010995bc3a4c77be26bb25cb43e2963fee5b6fb2082c6412d341f054bbd4829d6ce67d59bb6ccaba2832c45d6d1f205b9cc80274ed1aaee7ddf33116e30cc7a771e027b56dc049957460ee71509e41147f758f562ba5d8a2f761ff65967eb86e8f52612fe08c62694c2f0ade3a908d61a55561a4c6f2613e226089db7b3f8a845f002a5a760302ae9028701e56f2ab0b2093aef6298ee35d60013ee9f3e4869265bed5d90feb05cd513f30ccb99ab2f660c1dcb13d93660ad1ffcd7f1d14f26439ba8c063abbcaf1718906f743b5980a870d97dd75d66071d2d964d27a8f95afb491adba476ca96ea8e8a5744e26a0c137c5a648b2595443820c19da8ec39092afd57e882b90c6f5bf49ae323b34c42078dad4864d6788bb3deb11e0974a8667a86d0213148c78ff0cd687f63fb98d3fd44af59ddd9b29ce554779f65b174575447287f423b8059a8c822784906efa9c3af184a9a63dc0f0a91f627ea9e75543d7a1225c42acacad74b828d8b64ee58b2fb37ebc309553c817d7ad20c61b22f8af92663f3f7c022a0b5c14b6e08c6cd204ab444e432af8a84cc385190ffea4c2bcbd6ddef0e2fe86e4b2f24e4a20e64186b6457385436407ca655d7570eb7daf7474def99526d334c52f99aa32ccbf0b9f7a0c28260a750dd9c3ac807d1c33c0470c90978ac4f5ce41198cf3f824c2dd7969d9cc133b6fff90da5f27bf2e9b3cdf4ebf65fa679abc54b9c232b99bd4c0845526aab96f718864a793b1ac109a6d371f039c615d37e0a33cf7ea699ffff19c3cbadbdc5a1c2b55fc7dfd17a03edf9d7bd4761a334b3a616db50bcad04f0aea3e84feaa6bbb9a1ad52b2dbd1b7d308dbc844848e470f48c0cc8476c5158b63a3090ef8a3d8945349b8411bdcd9da2c250d05d49304ab12474409691104ee57fb4ab833f85d2ed0c416efd29734a16c5174cf4c0b84d039a636dc1c6c453c3d5bec9582aa622f9433310de447d3a898c1853d2959a9690ee4cb261ff308237cbd95398aead66&cri=mAbc9WokdQ&ts=45&cb=1766139689376": "./images/f917fe71c4d91a97ea8ab699b3624f5f.png",
+      "https://cdn.cookielaw.org/logos/baa8d3f1-40eb-408e-9928-100470b8ea17/11839441-74e2-4684-8791-51cf7652d41d/552a3368-6dbe-4c84-a400-7d550f405d28/abbvie-logo-1.png": "./images/21beb81b49da11f4768950d227dec5ab.png",
+      "https://cdn.cookielaw.org/logos/static/powered_by_logo.svg": "./images/a9584a367ebcccfac48987ce1fec5eae.png",
+      "https://cdn.cookielaw.org/logos/static/ot_close.svg": "./images/cec4a77b663a079574d478e06d310304.png",
+      "https://di.rlcdn.com/api/segment?pdata=MCID%3D17609263340225342904533606165185892214&pid=468066&redirect=1": "./images/3dd846c666a178bfaf17ad22640a0127.png",
+      "https://sync.graph.bluecava.com/ds.png?p=9274e5db-ddcb-11ea-a80b-0242ac110002&segment=ytuhzlex04bu1hgpuolexvij8lwcbobk&uid=&CampaignID=2237C&Channel=Website&CreativeID=&Placement=&MAID=&Keyword=&Medium=&Source=default&PageName=home&Event=pageload&Key1=&Key2=&Key3=&Key4=&Key5=": "./images/f5355288c6c9ca11af53fec153f0bd0e.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/rinvoq-homepage-hero_r4_2x_mobile.jpg": "./images/f072b840f349856adf1af6b92d1bcf89.jpg",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/speak-network-background_r4_2x_mobile.png": "./images/95a16dc8b158925a6fb32dda1e8ad000.png",
+      "https://www.rinvoq.com/content/dam/rinvoq/images/homepage/abbvie-copyright-2025_r7_mobile.svg": "./images/f84406053ab201fd2ff436cdca4e80b5.png"
+    },
+    "stats": {
+      "total": 28,
+      "converted": 14,
+      "skipped": 10,
+      "failed": 4,
+      "tooLarge": 0,
+      "limitReached": 0
+    }
+  }
+}

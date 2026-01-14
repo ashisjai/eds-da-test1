@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="att-business-website-migration-to-aem-edge-delivery-services-eds-with-universal-editor">AT&#x26;T Business Website Migration to AEM Edge Delivery Services (EDS) with Universal Editor</h1><h2 id="executive-summary">Executive Summary</h2><p>This document outlines a comprehensive plan for migrating the AT&#x26;T Business website (https://www.business.att.com/) to Adobe Experience Manager Edge Delivery Services (EDS) with Universal Editor (UE) support. The migration involves analyzing the existing site structure, identifying reusable components, and creating a phased implementation approach.</p></div>
+<div><h2 id="site-analysis">1. Site Analysis</h2><h3 id="site-structure-overview">1.1 Site Structure Overview</h3><p>The AT&#x26;T Business website is organized into the following primary sections:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section"><div><div>Homepage</div><div><code>/</code></div><div>Main landing page with hero, product highlights, deals</div></div><div><div>Portfolios</div><div><code>/portfolios/*.html</code></div><div>Product category pages (mobility, internet, cloud, etc.)</div></div><div><div>Products</div><div><code>/products/*.html</code></div><div>Individual product detail pages</div></div><div><div>Industries</div><div><code>/industries/*.html</code></div><div>Vertical-specific solution pages</div></div><div><div>Small Business</div><div><code>/small-business.html</code></div><div>SMB-focused landing page</div></div><div><div>Customer Stories</div><div><code>/learn/customer-stories.html</code></div><div>Case studies and testimonials</div></div><div><div>Blog/Learn</div><div><code>/learn/*.html</code></div><div>Articles, insights, research</div></div><div><div>Support</div><div><code>/support.html</code></div><div>Help and support resources</div></div><div><div>Offers</div><div><code>/offers.html</code></div><div>Current deals and promotions</div></div></div><h3 id="page-types-identified">1.2 Page Types Identified</h3><ol>
+<li><strong>Homepage</strong> - Complex layout with multiple sections, carousels, and CTAs</li>
+<li><strong>Portfolio Pages</strong> - Category-level product listings with feature grids</li>
+<li><strong>Product Detail Pages</strong> - Individual product info, pricing, features, FAQs</li>
+<li><strong>Industry Pages</strong> - Vertical-focused content with solutions and case studies</li>
+<li><strong>Landing Pages</strong> - Campaign/segment specific (small business, etc.)</li>
+<li><strong>Article/Blog Pages</strong> - Content-focused with related articles</li>
+<li><strong>Listing Pages</strong> - Customer stories, offers with filtering</li>
+<li><strong>Support Pages</strong> - Help documentation and resources</li>
+</ol></div>
+<div><h2 id="componentblock-inventory">2. Component/Block Inventory</h2><h3 id="global-components">2.1 Global Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Header/Navigation</strong></div><div>Top nav with search, mega menu, Personal/Business toggle</div><div>P0</div></div><div><div><strong>Footer</strong></div><div>Multi-column footer with social links, legal links</div><div>P0</div></div><div><div><strong>Cookie Banner</strong></div><div>GDPR/privacy consent banner</div><div>P0</div></div><div><div><strong>Breadcrumb</strong></div><div>Navigation breadcrumbs on inner pages</div><div>P1</div></div></div><h3 id="hero-blocks">2.2 Hero Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><strong>hero</strong></div><div><code>default</code>, <code>video</code>, <code>split</code></div><div>Main hero banner with heading, text, CTAs</div></div><div><div><strong>hero-tabbed</strong></div><div>-</div><div>Hero with tabbed content sections (Homepage products)</div></div><div><div><strong>hero-promo</strong></div><div>-</div><div>Promotional banner with offer details</div></div><div><div><strong>hero-industry</strong></div><div>-</div><div>Industry page hero with anchor navigation</div></div></div><h3 id="content-blocks">2.3 Content Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><strong>cards</strong></div><div><code>default</code>, <code>icon</code>, <code>image</code>, <code>pricing</code></div><div>Multi-card layouts</div></div><div><div><strong>carousel</strong></div><div><code>cards</code>, <code>products</code>, <code>testimonials</code>, <code>deals</code></div><div>Sliding content carousels</div></div><div><div><strong>columns</strong></div><div><code>2-col</code>, <code>3-col</code>, <code>4-col</code></div><div>Multi-column layouts</div></div><div><div><strong>tabs</strong></div><div><code>horizontal</code>, <code>vertical</code></div><div>Tabbed content containers</div></div><div><div><strong>accordion</strong></div><div><code>faq</code>, <code>features</code></div><div>Collapsible content sections</div></div><div><div><strong>feature-grid</strong></div><div>-</div><div>Grid of features with icons</div></div><div><div><strong>pricing-table</strong></div><div><code>comparison</code>, <code>plans</code></div><div>Product pricing comparisons</div></div><div><div><strong>stats</strong></div><div>-</div><div>Statistics/metrics display</div></div><div><div><strong>quote</strong></div><div><code>testimonial</code>, <code>award</code></div><div>Customer quotes and accolades</div></div></div><h3 id="media-blocks">2.4 Media Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><strong>video</strong></div><div><code>inline</code>, <code>modal</code>, <code>background</code></div><div>Video embed and players</div></div><div><div><strong>image</strong></div><div><code>full-width</code>, <code>captioned</code></div><div>Image display</div></div><div><div><strong>image-text</strong></div><div><code>left</code>, <code>right</code></div><div>Image with adjacent text</div></div><div><div><strong>gallery</strong></div><div>-</div><div>Image gallery/lightbox</div></div></div><h3 id="interactive-blocks">2.5 Interactive Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><strong>form</strong></div><div><code>contact</code>, <code>rai</code>, <code>newsletter</code></div><div>Lead generation forms</div></div><div><div><strong>cta-banner</strong></div><div><code>primary</code>, <code>secondary</code></div><div>Call-to-action banners</div></div><div><div><strong>product-selector</strong></div><div>-</div><div>Interactive product selection</div></div><div><div><strong>search</strong></div><div>-</div><div>Site search functionality</div></div><div><div><strong>filter</strong></div><div>-</div><div>Content filtering (customer stories)</div></div></div><h3 id="navigation-blocks">2.6 Navigation Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><strong>anchor-nav</strong></div><div>-</div><div>In-page anchor navigation</div></div><div><div><strong>link-list</strong></div><div><code>horizontal</code>, <code>vertical</code></div><div>Lists of related links</div></div><div><div><strong>pagination</strong></div><div>-</div><div>Page navigation for listings</div></div></div><h3 id="promotional-blocks">2.7 Promotional Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><strong>promo-banner</strong></div><div><code>sticky</code>, <code>inline</code></div><div>Promotional announcements</div></div><div><div><strong>deal-card</strong></div><div>-</div><div>Special offer cards with pricing</div></div><div><div><strong>badge</strong></div><div><code>new</code>, <code>sale</code>, <code>featured</code></div><div>Content badges/labels</div></div></div></div>
+<div><h2 id="design-system-analysis">3. Design System Analysis</h2><h3 id="color-palette">3.1 Color Palette</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="token"><div><div><code>--color-primary</code></div><div><code>#0057B8</code></div><div>AT&#x26;T Blue - Primary brand color</div></div><div><div><code>--color-secondary</code></div><div><code>#009FDB</code></div><div>Light Blue - Secondary accent</div></div><div><div><code>--color-accent</code></div><div><code>#FF7200</code></div><div>Orange - CTAs and highlights</div></div><div><div><code>--color-dark</code></div><div><code>#1A1A1A</code></div><div>Dark backgrounds</div></div><div><div><code>--color-gray-900</code></div><div><code>#333333</code></div><div>Text primary</div></div><div><div><code>--color-gray-600</code></div><div><code>#666666</code></div><div>Text secondary</div></div><div><div><code>--color-gray-300</code></div><div><code>#CCCCCC</code></div><div>Borders</div></div><div><div><code>--color-gray-100</code></div><div><code>#F5F5F5</code></div><div>Light backgrounds</div></div><div><div><code>--color-white</code></div><div><code>#FFFFFF</code></div><div>White</div></div><div><div><code>--color-success</code></div><div><code>#00A651</code></div><div>Success states</div></div><div><div><code>--color-error</code></div><div><code>#D32F2F</code></div><div>Error states</div></div></div><h3 id="typography">3.2 Typography</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="token"><div><div><code>--font-family-primary</code></div><div><code>ATT Aleck Sans, Helvetica, Arial, sans-serif</code></div><div>Primary font</div></div><div><div><code>--font-family-secondary</code></div><div><code>ATT Aleck Slab, Georgia, serif</code></div><div>Headings accent</div></div><div><div><code>--font-size-xxl</code></div><div><code>48px</code></div><div>Hero headings</div></div><div><div><code>--font-size-xl</code></div><div><code>36px</code></div><div>Section headings</div></div><div><div><code>--font-size-lg</code></div><div><code>24px</code></div><div>Subheadings</div></div><div><div><code>--font-size-md</code></div><div><code>18px</code></div><div>Lead text</div></div><div><div><code>--font-size-base</code></div><div><code>16px</code></div><div>Body text</div></div><div><div><code>--font-size-sm</code></div><div><code>14px</code></div><div>Small text</div></div><div><div><code>--font-size-xs</code></div><div><code>12px</code></div><div>Legal/fine print</div></div></div><h3 id="spacing-scale">3.3 Spacing Scale</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="token"><div><div><code>--spacing-xs</code></div><div><code>4px</code></div></div><div><div><code>--spacing-sm</code></div><div><code>8px</code></div></div><div><div><code>--spacing-md</code></div><div><code>16px</code></div></div><div><div><code>--spacing-lg</code></div><div><code>24px</code></div></div><div><div><code>--spacing-xl</code></div><div><code>32px</code></div></div><div><div><code>--spacing-xxl</code></div><div><code>48px</code></div></div><div><div><code>--spacing-section</code></div><div><code>64px</code></div></div></div><h3 id="breakpoints">3.4 Breakpoints</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="token"><div><div><code>--breakpoint-mobile</code></div><div><code>375px</code></div><div>Mobile devices</div></div><div><div><code>--breakpoint-tablet</code></div><div><code>768px</code></div><div>Tablet devices</div></div><div><div><code>--breakpoint-desktop</code></div><div><code>1024px</code></div><div>Desktop</div></div><div><div><code>--breakpoint-wide</code></div><div><code>1280px</code></div><div>Wide desktop</div></div><div><div><code>--breakpoint-max</code></div><div><code>1440px</code></div><div>Max content width</div></div></div></div>
+<div><h2 id="page-templates">4. Page Templates</h2><h3 id="template-structure">4.1 Template Structure</h3><pre><code>Template Hierarchy:
+├── base-template (common header/footer)
+│   ├── homepage-template
+│   ├── portfolio-template
+│   ├── product-template
+│   ├── industry-template
+│   ├── landing-template
+│   ├── article-template
+│   ├── listing-template
+│   └── support-template
+</code></pre><h3 id="template-details">4.2 Template Details</h3><h4 id="homepage-template">Homepage Template</h4><ul>
+<li>Hero section (tabbed product selector)</li>
+<li>Featured products carousel</li>
+<li>Value proposition cards</li>
+<li>Awards/recognition section</li>
+<li>Customer stories carousel</li>
+<li>Lead generation form</li>
+<li>Related links section</li>
+</ul><h4 id="portfolio-template">Portfolio Template</h4><ul>
+<li>Hero with category intro</li>
+<li>Product cards carousel</li>
+<li>Services grid (icon + text)</li>
+<li>Guarantee banner</li>
+<li>Industry recognition</li>
+<li>Contact form</li>
+</ul><h4 id="product-template">Product Template</h4><ul>
+<li>Product hero with CTA</li>
+<li>Feature highlights</li>
+<li>Pricing/plans comparison table</li>
+<li>How it works section</li>
+<li>Case study highlight</li>
+<li>Benefits carousel</li>
+<li>FAQ accordion</li>
+<li>Contact form</li>
+</ul><h4 id="industry-template">Industry Template</h4><ul>
+<li>Hero with anchor navigation</li>
+<li>Solution cards</li>
+<li>Case studies section</li>
+<li>Insights/resources</li>
+<li>Contact section</li>
+</ul></div>
+<div><h2 id="universal-editor-ue-configuration">5. Universal Editor (UE) Configuration</h2><h3 id="component-models">5.1 Component Models</h3><p>Each block requires a component model definition for UE authoring:</p><pre><code class="language-json">{
+  "id": "hero",
+  "fields": [
+    { "name": "eyebrow", "type": "text", "label": "Eyebrow Text" },
+    { "name": "heading", "type": "text", "label": "Heading" },
+    { "name": "description", "type": "richtext", "label": "Description" },
+    { "name": "primaryCta", "type": "link", "label": "Primary CTA" },
+    { "name": "secondaryCta", "type": "link", "label": "Secondary CTA" },
+    { "name": "backgroundImage", "type": "image", "label": "Background Image" },
+    { "name": "variant", "type": "select", "options": ["default", "video", "split"] }
+  ]
+}
+</code></pre><h3 id="content-fragments">5.2 Content Fragments</h3><p>For reusable content, define fragment models:</p><ul>
+<li><strong>Product Fragment</strong> - Name, description, price, features, CTA</li>
+<li><strong>Offer Fragment</strong> - Title, description, terms, expiry, CTA</li>
+<li><strong>Testimonial Fragment</strong> - Quote, author, company, image</li>
+<li><strong>Award Fragment</strong> - Name, year, organization, image</li>
+</ul><h3 id="component-filters">5.3 Component Filters</h3><p>Define which blocks can be placed in specific sections:</p><ul>
+<li>Hero section: hero, hero-tabbed, hero-promo</li>
+<li>Content section: All content blocks</li>
+<li>Sidebar: form, link-list, promo-banner</li>
+</ul></div>
+<div><h2 id="migration-phases">6. Migration Phases</h2><h3 id="phase-1-foundation-weeks-1-4">Phase 1: Foundation (Weeks 1-4)</h3><p><strong>Deliverables:</strong></p><ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> EDS project setup and configuration</li>
+<li class="task-list-item"><input type="checkbox" disabled> Global styles (CSS custom properties)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Header/navigation block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Footer block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Base page template</li>
+<li class="task-list-item"><input type="checkbox" disabled> Cookie consent integration</li>
+</ul><p><strong>Pages:</strong></p><ul>
+<li>Homepage (basic structure)</li>
+<li>404 page</li>
+</ul><h3 id="phase-2-core-blocks-weeks-5-8">Phase 2: Core Blocks (Weeks 5-8)</h3><p><strong>Deliverables:</strong></p><ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Hero block (all variants)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Cards block (all variants)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Columns block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Carousel block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Image-text block</li>
+<li class="task-list-item"><input type="checkbox" disabled> CTA banner block</li>
+</ul><p><strong>Pages:</strong></p><ul>
+<li>Homepage (complete)</li>
+<li>2-3 Portfolio pages</li>
+</ul><h3 id="phase-3-advanced-blocks-weeks-9-12">Phase 3: Advanced Blocks (Weeks 9-12)</h3><p><strong>Deliverables:</strong></p><ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Tabs block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Accordion/FAQ block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Pricing table block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Form block (RAI form)</li>
+<li class="task-list-item"><input type="checkbox" disabled> Video block</li>
+<li class="task-list-item"><input type="checkbox" disabled> Stats block</li>
+</ul><p><strong>Pages:</strong></p><ul>
+<li>Product detail pages (5-10)</li>
+<li>Industry pages (2-3)</li>
+</ul><h3 id="phase-4-templates--listings-weeks-13-16">Phase 4: Templates &#x26; Listings (Weeks 13-16)</h3><p><strong>Deliverables:</strong></p><ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Article template</li>
+<li class="task-list-item"><input type="checkbox" disabled> Listing template with filters</li>
+<li class="task-list-item"><input type="checkbox" disabled> Search functionality</li>
+<li class="task-list-item"><input type="checkbox" disabled> Pagination</li>
+<li class="task-list-item"><input type="checkbox" disabled> Customer stories listing</li>
+</ul><p><strong>Pages:</strong></p><ul>
+<li>Customer stories section</li>
+<li>Blog/Learn section</li>
+<li>Offers page</li>
+</ul><h3 id="phase-5-polish--launch-weeks-17-20">Phase 5: Polish &#x26; Launch (Weeks 17-20)</h3><p><strong>Deliverables:</strong></p><ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> Performance optimization</li>
+<li class="task-list-item"><input type="checkbox" disabled> Accessibility audit and fixes</li>
+<li class="task-list-item"><input type="checkbox" disabled> SEO optimization</li>
+<li class="task-list-item"><input type="checkbox" disabled> Analytics integration</li>
+<li class="task-list-item"><input type="checkbox" disabled> A/B testing setup</li>
+<li class="task-list-item"><input type="checkbox" disabled> Content migration automation</li>
+</ul><p><strong>Pages:</strong></p><ul>
+<li>All remaining pages</li>
+<li>Redirects and URL mapping</li>
+</ul></div>
+<div><h2 id="technical-considerations">7. Technical Considerations</h2><h3 id="third-party-integrations">7.1 Third-Party Integrations</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Adobe Analytics</div><div>Site analytics</div><div>P0</div></div><div><div>Adobe Target</div><div>Personalization</div><div>P1</div></div><div><div>ChiliPiper</div><div>Scheduling</div><div>P1</div></div><div><div>Marketo/Eloqua</div><div>Lead capture</div><div>P0</div></div><div><div>Salesforce</div><div>CRM integration</div><div>P1</div></div><div><div>Live Chat</div><div>Customer support</div><div>P2</div></div></div><h3 id="performance-requirements">7.2 Performance Requirements</h3><ul>
+<li>Lighthouse Performance Score: > 90</li>
+<li>Core Web Vitals: All "Good"</li>
+<li>First Contentful Paint: &#x3C; 1.5s</li>
+<li>Largest Contentful Paint: &#x3C; 2.5s</li>
+<li>Cumulative Layout Shift: &#x3C; 0.1</li>
+</ul><h3 id="seo-considerations">7.3 SEO Considerations</h3><ul>
+<li>Preserve existing URL structure where possible</li>
+<li>Implement 301 redirects for URL changes</li>
+<li>Maintain meta tags and structured data</li>
+<li>XML sitemap generation</li>
+<li>robots.txt configuration</li>
+</ul><h3 id="accessibility-requirements">7.4 Accessibility Requirements</h3><ul>
+<li>WCAG 2.1 AA compliance</li>
+<li>Keyboard navigation support</li>
+<li>Screen reader compatibility</li>
+<li>Color contrast ratios</li>
+<li>Focus states for interactive elements</li>
+</ul></div>
+<div><h2 id="content-migration-strategy">8. Content Migration Strategy</h2><h3 id="automated-migration">8.1 Automated Migration</h3><p>Use EDS import tools for:</p><ul>
+<li>Page structure extraction</li>
+<li>Image asset download</li>
+<li>Metadata preservation</li>
+<li>Link mapping</li>
+</ul><h3 id="manual-review">8.2 Manual Review</h3><p>Content requiring manual attention:</p><ul>
+<li>Complex interactive components</li>
+<li>Form configurations</li>
+<li>Video embeds</li>
+<li>Dynamic pricing data</li>
+<li>Legal/compliance content</li>
+</ul><h3 id="asset-management">8.3 Asset Management</h3><ul>
+<li>Organize images by section/page</li>
+<li>Optimize images for web (WebP format)</li>
+<li>Implement responsive images</li>
+<li>Set up DAM integration if applicable</li>
+</ul></div>
+<div><h2 id="risk-assessment">9. Risk Assessment</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="risk"><div><div>Complex interactive components</div><div>High</div><div>Medium</div><div>Prioritize core features, progressive enhancement</div></div><div><div>Third-party integration delays</div><div>Medium</div><div>Medium</div><div>Early integration testing, fallback options</div></div><div><div>Content volume underestimated</div><div>Medium</div><div>High</div><div>Automated migration tools, phased rollout</div></div><div><div>Design system complexity</div><div>Medium</div><div>Medium</div><div>Establish design tokens early, component library</div></div><div><div>SEO ranking impact</div><div>High</div><div>Low</div><div>Preserve URLs, implement redirects, monitor rankings</div></div></div></div>
+<div><h2 id="success-metrics">10. Success Metrics</h2><h3 id="technical-metrics">10.1 Technical Metrics</h3><ul>
+<li>Page load time improvement: > 30%</li>
+<li>Lighthouse score: > 90 all categories</li>
+<li>Zero critical accessibility issues</li>
+<li>100% URL redirect coverage</li>
+</ul><h3 id="business-metrics">10.2 Business Metrics</h3><ul>
+<li>Form submission rate maintained/improved</li>
+<li>Bounce rate reduction: > 10%</li>
+<li>Session duration maintained</li>
+<li>Conversion rate maintained/improved</li>
+</ul></div>
+<div><h2 id="team--resources">11. Team &#x26; Resources</h2><h3 id="recommended-team-structure">Recommended Team Structure</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div>Technical Lead</div><div>1</div><div>Architecture, code review</div></div><div><div>Frontend Developers</div><div>2-3</div><div>Block development, styling</div></div><div><div>Content Authors</div><div>2</div><div>Content migration, UE authoring</div></div><div><div>QA Engineer</div><div>1</div><div>Testing, accessibility</div></div><div><div>Project Manager</div><div>1</div><div>Coordination, timeline</div></div></div></div>
+<div><h2 id="next-steps">12. Next Steps</h2><ol>
+<li>
+<p><strong>Immediate Actions:</strong></p>
+<ul>
+<li>Set up EDS project repository</li>
+<li>Configure development environment</li>
+<li>Begin header/footer block development</li>
+<li>Extract and document design tokens</li>
+</ul>
+</li>
+<li>
+<p><strong>Week 1 Goals:</strong></p>
+<ul>
+<li>Complete project scaffolding</li>
+<li>Implement global styles</li>
+<li>Create first hero block prototype</li>
+<li>Begin content inventory</li>
+</ul>
+</li>
+<li>
+<p><strong>Stakeholder Alignment:</strong></p>
+<ul>
+<li>Review and approve this plan</li>
+<li>Confirm timeline and resources</li>
+<li>Establish communication cadence</li>
+<li>Define approval process for blocks</li>
+</ul>
+</li>
+</ol></div>
+<div><h2 id="appendix-a-url-mapping-sample">Appendix A: URL Mapping Sample</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="source-url"><div><div><code>/</code></div><div><code>/</code></div><div>Homepage</div></div><div><div><code>/portfolios/mobility.html</code></div><div><code>/portfolios/mobility</code></div><div>Remove .html</div></div><div><div><code>/products/att-dynamic-defense.html</code></div><div><code>/products/att-dynamic-defense</code></div><div>Remove .html</div></div><div><div><code>/industries/healthcare.html</code></div><div><code>/industries/healthcare</code></div><div>Remove .html</div></div><div><div><code>/learn/customer-stories.html</code></div><div><code>/learn/customer-stories</code></div><div>Remove .html</div></div></div><h2 id="appendix-b-block-priority-matrix">Appendix B: Block Priority Matrix</h2><pre><code>Priority 0 (Must Have):
+├── header
+├── footer
+├── hero
+├── cards
+├── columns
+├── form
+└── cta-banner
+
+Priority 1 (Should Have):
+├── carousel
+├── tabs
+├── accordion
+├── pricing-table
+├── image-text
+└── video
+
+Priority 2 (Nice to Have):
+├── stats
+├── quote
+├── gallery
+├── filter
+└── search
+</code></pre></div>
+<div><p><em>Document Version: 1.0</em>
+<em>Last Updated: January 2026</em>
+<em>Prepared for: AT&#x26;T Business EDS Migration Project</em></p></div>
+</main>
+<footer></footer>
+</body>
+</html>

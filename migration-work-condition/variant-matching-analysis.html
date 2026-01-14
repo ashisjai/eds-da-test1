@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="block-variant-matching-analysis">Block Variant Matching Analysis</h1><h2 id="phase-2-smart-matching-results">Phase 2: Smart Matching Results</h2><h3 id="block-1-hero-pharma-section-1">Block 1: hero-pharma (Section 1)</h3><p><strong>Current Context:</strong></p><ul>
+<li>colorScheme: light</li>
+<li>density: minimal</li>
+<li>purpose: pharma</li>
+<li>imagePattern: large</li>
+<li>structure: "Relief branding + product name + heading"</li>
+</ul><p><strong>Existing Variant: hero-pharma</strong></p><ul>
+<li>colorScheme: light ✅</li>
+<li>density: minimal ✅</li>
+<li>purpose: pharma ✅</li>
+<li>imagePattern: large ✅</li>
+<li>structure: "branded graphic + heading" ✅</li>
+</ul><p><strong>Similarity Score: 100%</strong> (Perfect match!)</p><p><strong>Decision: ♻️ REUSE hero-pharma</strong></p></div>
+<div><h3 id="block-2-columns-section-2-sequence-2---benefits">Block 2: columns (Section 2, Sequence 2) - Benefits</h3><p><strong>Current Context:</strong></p><ul>
+<li>colorScheme: light</li>
+<li>density: wide</li>
+<li>purpose: benefits</li>
+<li>imagePattern: noimg</li>
+<li>structure: "3 columns with heading + text each"</li>
+</ul><p><strong>Check existing columns-product:</strong></p><ul>
+<li>colorScheme: light ✅</li>
+<li>density: wide ✅</li>
+<li>purpose: product ❌ (different purpose)</li>
+<li>imagePattern: large ❌ (has images vs none)</li>
+<li>structure: "2 columns with product images" ❌ (different structure)</li>
+</ul><p><strong>Similarity Score: 40%</strong> (Below 70% threshold)</p><p><strong>Decision: 🆕 CREATE columns-benefits</strong></p><ul>
+<li>3-column layout for benefits (Fast Relief, Skin Clearance, Long-term Results)</li>
+<li>Text-only columns</li>
+<li>Specific to condition page benefits pattern</li>
+</ul></div>
+<div><h3 id="block-3-columns-section-5-sequence-2---patient-story">Block 3: columns (Section 5, Sequence 2) - Patient Story</h3><p><strong>Current Context:</strong></p><ul>
+<li>colorScheme: light</li>
+<li>density: wide</li>
+<li>purpose: testimonial</li>
+<li>imagePattern: large</li>
+<li>structure: "2 columns: text + patient image"</li>
+</ul><p><strong>Check existing columns-product:</strong></p><ul>
+<li>colorScheme: light ✅</li>
+<li>density: wide ✅</li>
+<li>purpose: product ❌ (different purpose)</li>
+<li>imagePattern: large ✅</li>
+<li>structure: "2 columns with product images" ⚠️ (similar but different content)</li>
+</ul><p><strong>Similarity Score: 60%</strong> (Below 70% threshold)</p><p><strong>Decision: 🆕 CREATE columns-patient-story</strong></p><ul>
+<li>2-column layout for patient testimonials</li>
+<li>Text content + patient photo with yellow brushstroke styling</li>
+<li>Will recur across condition pages</li>
+</ul></div>
+<div><h3 id="block-4-columns-section-6---quiz">Block 4: columns (Section 6) - Quiz</h3><p><strong>Current Context:</strong></p><ul>
+<li>colorScheme: yellow</li>
+<li>density: wide</li>
+<li>purpose: quiz</li>
+<li>imagePattern: large</li>
+<li>structure: "2 columns: quiz form + lifestyle image"</li>
+</ul><p><strong>Check existing columns-product:</strong></p><ul>
+<li>colorScheme: light ❌ (different - yellow section)</li>
+<li>density: wide ✅</li>
+<li>purpose: product ❌ (different purpose)</li>
+<li>imagePattern: large ✅</li>
+<li>structure: "2 columns with product images" ❌ (quiz vs images)</li>
+</ul><p><strong>Similarity Score: 40%</strong> (Below 70% threshold)</p><p><strong>Decision: 🆕 CREATE columns-quiz</strong></p><ul>
+<li>2-column layout for interactive quiz CTA</li>
+<li>Quiz form + lifestyle image</li>
+<li>Yellow section background styling</li>
+</ul></div>
+<div><h3 id="block-5-embed-section-4---poll">Block 5: embed (Section 4) - Poll</h3><p><strong>No custom variants exist for embed</strong></p><p><strong>Decision: ✅ USE STANDARD embed block</strong></p><ul>
+<li>Standard embed block is appropriate</li>
+<li>No variant needed for simple poll widget</li>
+</ul></div>
+<div><h2 id="summary">Summary</h2><p><strong>Reuse Decisions:</strong></p><ul>
+<li>♻️ hero-pharma (100% match)</li>
+</ul><p><strong>New Variants Needed:</strong></p><ul>
+<li>🆕 columns-benefits (3-column benefits pattern)</li>
+<li>🆕 columns-patient-story (2-column testimonial pattern)</li>
+<li>🆕 columns-quiz (2-column quiz CTA pattern)</li>
+</ul><p><strong>Standard Blocks:</strong></p><ul>
+<li>✅ embed (no variant needed)</li>
+</ul><p><strong>Total:</strong> 1 reused, 3 new variants to create, 1 standard block</p></div>
+</main>
+<footer></footer>
+</body>
+</html>

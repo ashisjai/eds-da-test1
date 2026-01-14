@@ -1,0 +1,48 @@
+{
+  "variantMapping": {
+    "hero-pharma": "REUSED",
+    "columns-benefits": "CREATED",
+    "columns-patient-story": "CREATED",
+    "columns-quiz": "CREATED",
+    "embed": "STANDARD"
+  },
+  "summary": {
+    "reusedVariants": 1,
+    "createdVariants": 3,
+    "standardBlocks": 1,
+    "total": 5
+  },
+  "details": {
+    "reused": [
+      {
+        "variantName": "hero-pharma",
+        "baseBlock": "hero",
+        "similarityScore": "100%",
+        "updatedUsage": true
+      }
+    ],
+    "created": [
+      {
+        "variantName": "columns-benefits",
+        "baseBlock": "columns",
+        "purpose": "3-column benefits pattern for condition pages"
+      },
+      {
+        "variantName": "columns-patient-story",
+        "baseBlock": "columns",
+        "purpose": "2-column patient testimonial layout"
+      },
+      {
+        "variantName": "columns-quiz",
+        "baseBlock": "columns",
+        "purpose": "2-column quiz CTA with yellow background"
+      }
+    ],
+    "standard": [
+      {
+        "blockName": "embed",
+        "usage": "Interactive poll widget"
+      }
+    ]
+  }
+}
