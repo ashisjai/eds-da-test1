@@ -6,12 +6,12 @@ This document outlines the comprehensive migration plan for migrating **https://
 
 | Metric | Value |
 |--------|-------|
-| **Total Pages** | ~1,000+ |
-| **Page Templates** | 10 |
+| **Total Pages** | ~600-700 |
+| **Page Templates** | 12 |
 | **Unique Blocks** | 25+ |
-| **Estimated Total Effort** | 2,800-3,400 person-hours |
-| **Recommended Team Size** | 6-8 resources |
-| **Estimated Duration** | 16-20 weeks |
+| **Estimated Total Effort** | 2,400-2,900 person-hours |
+| **Recommended Team Size** | 5-7 resources |
+| **Estimated Duration** | 14-18 weeks |
 
 ---
 
@@ -19,22 +19,36 @@ This document outlines the comprehensive migration plan for migrating **https://
 
 ### Page Inventory by Type
 
-| Page Type | Count | Template | Priority |
-|-----------|-------|----------|----------|
-| Homepage | 1 | `homepage` | P0 |
-| Portfolio Pages | 10 | `portfolio` | P0 |
-| Product Pages | 150+ | `product` | P0 |
-| Industry Pages | 30 | `industry` | P1 |
-| Category Pages | 30 | `category` | P1 |
-| Learn - Tech Advice | 100+ | `article` | P1 |
-| Learn - Customer Stories | 100+ | `story` | P1 |
-| Learn - Research Reports | 50+ | `report` | P2 |
-| Learn - Top Voices | 30+ | `article` | P2 |
-| Support Pages | 50+ | `support` | P1 |
-| Offers/Deals | 20+ | `offers` | P0 |
-| Small Business | 50+ | `landing` | P1 |
-| Legal/Admin | 30+ | `basic` | P2 |
-| Regional Pages | 50+ | `regional` | P2 |
+| Page Type | Count | Template | Priority | Wave |
+|-----------|-------|----------|----------|------|
+| Homepage | 1 | `homepage` | P0 | 1 |
+| Portfolio Pages | 9 | `portfolio` | P0 | 1 |
+| Product Pages | 75+ | `product` | P0/P1 | 1-2 |
+| Category Pages | 25+ | `category` | P1 | 2 |
+| Industry Pages | 15+ | `industry` | P1 | 2 |
+| Industry Solutions | 10+ | `industry-solution` | P1 | 2 |
+| Business Solutions | 5 | `solution` | P1 | 2 |
+| Learn - Tech Advice | 100+ | `article` | P1 | 2 |
+| Learn - Customer Stories | 50+ | `story` | P1 | 2 |
+| Learn - Research Reports | 30+ | `report` | P2 | 3 |
+| Learn - Top Voices | 20+ | `article` | P2 | 3 |
+| Support Pages | 10+ | `support` | P1 | 2 |
+| About/Resources | 10+ | `landing` | P1 | 2 |
+| Offers/Deals | 5+ | `offers` | P0 | 1 |
+| Small Business | 20+ | `landing` | P1 | 2 |
+| Explore Pages | 10+ | `landing` | P1 | 2 |
+| Regional/Area Pages | 50+ | `regional` | P2 | 3 |
+| Partner Solutions | 60+ | `partner` | P2 | 3 |
+| Utility Pages | 5+ | `basic` | P2 | 3 |
+| **TOTAL** | **~600-700** | | | |
+
+### Priority Summary
+
+| Priority | Page Count | Description |
+|----------|------------|-------------|
+| **P0** | ~100 | Must have for launch (homepage, portfolios, key products, offers) |
+| **P1** | ~300 | Should have (industries, categories, articles, support) |
+| **P2** | ~250 | Nice to have (regional, partners, older content) |
 
 ### Block Inventory
 
@@ -71,7 +85,7 @@ This document outlines the comprehensive migration plan for migrating **https://
 ## Phase Breakdown with Estimates
 
 ### Phase 1: Foundation & Setup
-**Duration: 2-3 weeks | Effort: 200-280 hours**
+**Duration: 2-3 weeks | Effort: 200-260 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
@@ -96,7 +110,7 @@ This document outlines the comprehensive migration plan for migrating **https://
 ---
 
 ### Phase 2: Core Blocks Development
-**Duration: 4-5 weeks | Effort: 600-720 hours**
+**Duration: 4-5 weeks | Effort: 580-680 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
@@ -111,11 +125,11 @@ This document outlines the comprehensive migration plan for migrating **https://
 | Columns block | 16 | 1 Dev |
 | Breadcrumb block | 16 | 1 Dev |
 | Fragment support | 24 | 1 Dev |
-| UE component models & definitions | 80 | 1 Dev |
-| UE component filters | 24 | 1 Dev |
-| Block documentation | 40 | 1 Tech Writer |
-| QA & testing | 60 | 1 QA |
-| **Phase 2 Total** | **748** | |
+| UE component models & definitions | 60 | 1 Dev |
+| UE component filters | 20 | 1 Dev |
+| Block documentation | 32 | 1 Tech Writer |
+| QA & testing | 48 | 1 QA |
+| **Phase 2 Total** | **704** | |
 
 **Deliverables:**
 - All P0 blocks functional
@@ -126,51 +140,53 @@ This document outlines the comprehensive migration plan for migrating **https://
 ---
 
 ### Phase 3: Template Development
-**Duration: 3-4 weeks | Effort: 400-480 hours**
+**Duration: 2-3 weeks | Effort: 320-400 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
 | Homepage template | 40 | 1 Dev |
-| Portfolio template | 32 | 1 Dev |
-| Product template | 40 | 1 Dev |
-| Industry template | 32 | 1 Dev |
+| Portfolio template | 28 | 1 Dev |
+| Product template | 36 | 1 Dev |
+| Industry template | 28 | 1 Dev |
 | Category template | 24 | 1 Dev |
-| Article template | 32 | 1 Dev |
+| Article template | 28 | 1 Dev |
 | Customer story template | 24 | 1 Dev |
-| Support template | 24 | 1 Dev |
-| Offers template | 32 | 1 Dev |
-| Landing page template | 32 | 1 Dev |
-| Template documentation | 24 | 1 Tech Writer |
-| UE template configuration | 40 | 1 Dev |
-| QA & testing | 48 | 1 QA |
-| **Phase 3 Total** | **424** | |
+| Support template | 20 | 1 Dev |
+| Offers template | 28 | 1 Dev |
+| Landing page template | 28 | 1 Dev |
+| Regional template | 20 | 1 Dev |
+| Partner template | 20 | 1 Dev |
+| Template documentation | 20 | 1 Tech Writer |
+| UE template configuration | 32 | 1 Dev |
+| QA & testing | 40 | 1 QA |
+| **Phase 3 Total** | **416** | |
 
 **Deliverables:**
-- All page templates
+- All 12 page templates
 - UE template authoring
 - Template documentation
 
 ---
 
 ### Phase 4: Secondary Blocks & Features
-**Duration: 2-3 weeks | Effort: 280-360 hours**
+**Duration: 2 weeks | Effort: 240-300 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
 | Accordion block | 24 | 1 Dev |
-| Table block (pricing, comparison) | 40 | 1 Dev |
-| Video block | 32 | 1 Dev |
+| Table block (pricing, comparison) | 36 | 1 Dev |
+| Video block | 28 | 1 Dev |
 | Quote block | 16 | 1 Dev |
-| Stats block | 24 | 1 Dev |
+| Stats block | 20 | 1 Dev |
 | Icon-grid block | 24 | 1 Dev |
-| Search results block | 48 | 1 Dev |
-| Related content block | 24 | 1 Dev |
-| Social share block | 16 | 1 Dev |
-| Image gallery block | 24 | 1 Dev |
-| Embed block | 16 | 1 Dev |
-| UE enhancements | 24 | 1 Dev |
-| QA & testing | 40 | 1 QA |
-| **Phase 4 Total** | **352** | |
+| Search results block | 40 | 1 Dev |
+| Related content block | 20 | 1 Dev |
+| Social share block | 12 | 1 Dev |
+| Image gallery block | 20 | 1 Dev |
+| Embed block | 12 | 1 Dev |
+| UE enhancements | 20 | 1 Dev |
+| QA & testing | 32 | 1 QA |
+| **Phase 4 Total** | **304** | |
 
 **Deliverables:**
 - All P1/P2 blocks
@@ -180,20 +196,20 @@ This document outlines the comprehensive migration plan for migrating **https://
 ---
 
 ### Phase 5: Integrations
-**Duration: 2-3 weeks | Effort: 280-360 hours**
+**Duration: 2-3 weeks | Effort: 260-320 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
-| Adobe Analytics integration | 40 | 1 Dev |
-| Adobe Target integration | 40 | 1 Dev |
-| Marketo/Eloqua form integration | 48 | 1 Dev |
-| ChiliPiper calendar integration | 32 | 1 Dev |
-| Chat widget integration | 24 | 1 Dev |
-| Search integration (Coveo/Algolia) | 48 | 1 Dev |
-| CDN configuration (Fastly) | 24 | 1 DevOps |
-| Performance optimization | 32 | 1 Dev |
-| QA & testing | 32 | 1 QA |
-| **Phase 5 Total** | **320** | |
+| Adobe Analytics integration | 36 | 1 Dev |
+| Adobe Target integration | 36 | 1 Dev |
+| Marketo/Eloqua form integration | 44 | 1 Dev |
+| ChiliPiper calendar integration | 28 | 1 Dev |
+| Chat widget integration | 20 | 1 Dev |
+| Search integration (Coveo/Algolia) | 44 | 1 Dev |
+| CDN configuration (Fastly) | 20 | 1 DevOps |
+| Performance optimization | 28 | 1 Dev |
+| QA & testing | 28 | 1 QA |
+| **Phase 5 Total** | **284** | |
 
 **Deliverables:**
 - All third-party integrations
@@ -204,48 +220,58 @@ This document outlines the comprehensive migration plan for migrating **https://
 ---
 
 ### Phase 6: Content Migration
-**Duration: 3-4 weeks | Effort: 480-600 hours**
+**Duration: 3-4 weeks | Effort: 380-480 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
-| Import script development | 80 | 1 Dev |
+| Import script development | 60 | 1 Dev |
+| **Wave 1 - P0 Pages (~100 pages)** | | |
 | Homepage migration | 16 | 1 Content |
-| Portfolio pages (10) | 40 | 1 Content |
-| Product pages (150) - automated | 80 | 1 Dev + 1 Content |
-| Industry pages (30) | 48 | 1 Content |
-| Category pages (30) | 48 | 1 Content |
-| Learn pages (300+) - automated | 80 | 1 Dev + 1 Content |
-| Support pages (50) | 40 | 1 Content |
-| Offers pages (20) | 24 | 1 Content |
-| Image/asset migration | 40 | 1 Content |
-| Content QA & validation | 80 | 1 QA + 1 Content |
-| Redirects mapping | 24 | 1 Dev |
-| **Phase 6 Total** | **600** | |
+| Portfolio pages (9) | 27 | 1 Content |
+| Product pages (50 priority) | 25 | 1 Dev + 1 Content |
+| Offers pages (5) | 10 | 1 Content |
+| **Wave 2 - P1 Pages (~300 pages)** | | |
+| Remaining product pages (25) | 13 | Automated |
+| Industry pages (15) | 23 | 1 Content |
+| Category pages (25) | 25 | 1 Content |
+| Article pages (100) - automated | 25 | Automated |
+| Customer Stories (50) - automated | 25 | Automated |
+| Support/About/Explore pages (30) | 23 | 1 Content |
+| Small Business pages (20) | 15 | 1 Content |
+| **Wave 3 - P2 Pages (~250 pages)** | | |
+| Regional pages (50) - automated | 13 | Automated |
+| Partner pages (60) - automated | 15 | Automated |
+| Research/Top Voices (50) - automated | 13 | Automated |
+| Other pages (90) - automated | 23 | Automated |
+| Image/asset migration | 32 | 1 Content |
+| Content QA & validation | 60 | 1 QA + 1 Content |
+| Redirects mapping (600+ URLs) | 32 | 1 Dev |
+| **Phase 6 Total** | **515** | |
 
 **Deliverables:**
-- All content migrated
+- All ~650 pages migrated
 - Assets transferred
-- Redirect mapping
-- Content validation
+- 600+ redirect mappings
+- Content validation complete
 
 ---
 
 ### Phase 7: Testing & Launch
-**Duration: 2-3 weeks | Effort: 240-320 hours**
+**Duration: 2 weeks | Effort: 200-260 hours**
 
 | Task | Hours | Resources |
 |------|-------|-----------|
-| Cross-browser testing | 40 | 1 QA |
-| Mobile/responsive testing | 40 | 1 QA |
-| Accessibility testing (WCAG 2.1) | 48 | 1 QA |
-| Performance testing (Lighthouse) | 32 | 1 QA |
-| SEO validation | 32 | 1 SEO |
-| UAT support | 40 | 1 Dev + 1 QA |
-| Bug fixes & refinements | 60 | 2 Dev |
-| DNS cutover planning | 16 | 1 DevOps |
-| Go-live execution | 16 | Team |
-| Post-launch monitoring | 24 | 1 DevOps |
-| **Phase 7 Total** | **348** | |
+| Cross-browser testing | 32 | 1 QA |
+| Mobile/responsive testing | 32 | 1 QA |
+| Accessibility testing (WCAG 2.1) | 40 | 1 QA |
+| Performance testing (Lighthouse) | 28 | 1 QA |
+| SEO validation | 28 | 1 SEO |
+| UAT support | 32 | 1 Dev + 1 QA |
+| Bug fixes & refinements | 48 | 2 Dev |
+| DNS cutover planning | 12 | 1 DevOps |
+| Go-live execution | 12 | Team |
+| Post-launch monitoring | 20 | 1 DevOps |
+| **Phase 7 Total** | **284** | |
 
 **Deliverables:**
 - Test reports
@@ -259,16 +285,63 @@ This document outlines the comprehensive migration plan for migrating **https://
 
 | Phase | Hours (Low) | Hours (High) |
 |-------|-------------|--------------|
-| Phase 1: Foundation | 200 | 280 |
-| Phase 2: Core Blocks | 600 | 720 |
-| Phase 3: Templates | 400 | 480 |
-| Phase 4: Secondary Blocks | 280 | 360 |
-| Phase 5: Integrations | 280 | 360 |
-| Phase 6: Content Migration | 480 | 600 |
-| Phase 7: Testing & Launch | 240 | 320 |
-| **TOTAL** | **2,480** | **3,120** |
+| Phase 1: Foundation | 200 | 260 |
+| Phase 2: Core Blocks | 580 | 680 |
+| Phase 3: Templates | 320 | 400 |
+| Phase 4: Secondary Blocks | 240 | 300 |
+| Phase 5: Integrations | 260 | 320 |
+| Phase 6: Content Migration | 380 | 480 |
+| Phase 7: Testing & Launch | 200 | 260 |
+| **TOTAL** | **2,180** | **2,700** |
 
-**With 20% contingency: 2,976 - 3,744 hours**
+**With 20% contingency: 2,616 - 3,240 hours**
+
+---
+
+## Migration Waves Detail
+
+### Wave 1 (P0) - Weeks 1-8
+**~100 pages | Core Experience**
+
+| Page Type | Count | Effort |
+|-----------|-------|--------|
+| Homepage | 1 | 16 hrs |
+| Portfolios | 9 | 27 hrs |
+| Key Products | 50 | 25 hrs |
+| Offers/Bundles | 5 | 10 hrs |
+| Business Guarantee | 1 | 3 hrs |
+| Small Business Landing | 1 | 3 hrs |
+| **Wave 1 Total** | **~67** | **84 hrs** |
+
+### Wave 2 (P1) - Weeks 9-14
+**~300 pages | Extended Content**
+
+| Page Type | Count | Effort |
+|-----------|-------|--------|
+| Remaining Products | 25 | 13 hrs |
+| Categories | 25 | 25 hrs |
+| Industries | 15 | 23 hrs |
+| Industry Solutions | 10 | 15 hrs |
+| Business Solutions | 5 | 8 hrs |
+| Tech Advice Articles | 100 | 25 hrs |
+| Customer Stories | 50 | 25 hrs |
+| Support Pages | 10 | 10 hrs |
+| About/Resources | 10 | 10 hrs |
+| Small Business | 20 | 15 hrs |
+| Explore Pages | 10 | 8 hrs |
+| **Wave 2 Total** | **~280** | **177 hrs** |
+
+### Wave 3 (P2) - Weeks 15-18
+**~250 pages | Supplementary Content**
+
+| Page Type | Count | Effort |
+|-----------|-------|--------|
+| Regional/Area Pages | 50 | 13 hrs |
+| Partner Solutions | 60 | 15 hrs |
+| Research Reports | 30 | 8 hrs |
+| Top Voices | 20 | 5 hrs |
+| Other/Utility | 90 | 23 hrs |
+| **Wave 3 Total** | **~250** | **64 hrs** |
 
 ---
 
@@ -276,17 +349,16 @@ This document outlines the comprehensive migration plan for migrating **https://
 
 ### Recommended Team Composition
 
-| Role | Count | Phases |
-|------|-------|--------|
-| Tech Lead / Architect | 1 | All |
-| EDS/Frontend Developer | 3 | 1-5, 7 |
-| UE Configuration Specialist | 1 | 2-4 |
-| Content Migration Specialist | 2 | 6 |
-| QA Engineer | 1 | All |
-| DevOps Engineer | 1 | 1, 5, 7 |
-| Technical Writer | 0.5 | 2-4 |
+| Role | Count | Phases | Utilization |
+|------|-------|--------|-------------|
+| Tech Lead / Architect | 1 | All | 100% |
+| EDS/Frontend Developer | 2-3 | 1-5, 7 | 100% |
+| UE Configuration Specialist | 1 | 2-4 | 75% |
+| Content Migration Specialist | 1-2 | 6 | 100% |
+| QA Engineer | 1 | All | 75% |
+| DevOps Engineer | 0.5 | 1, 5, 7 | 50% |
 
-**Total: 6-8 FTEs**
+**Total: 5-7 FTEs**
 
 ### Skill Requirements
 
@@ -301,15 +373,16 @@ This document outlines the comprehensive migration plan for migrating **https://
 ## Timeline (Gantt Overview)
 
 ```
-Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20
-       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-P1:    ████████                                                      Foundation
-P2:          ████████████████████                                    Core Blocks
-P3:                      ████████████████                            Templates
-P4:                                  ████████████                    Secondary
-P5:                                        ████████████              Integrations
-P6:                                              ████████████████    Migration
-P7:                                                          ████████ Testing/Launch
+Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+P1:    ██████                                                   Foundation (2-3 wks)
+P2:        ██████████████████                                   Core Blocks (4-5 wks)
+P3:                  ████████████                               Templates (2-3 wks)
+P4:                        ████████                             Secondary (2 wks)
+P5:                            ████████████                     Integrations (2-3 wks)
+P6:                                  ████████████████           Migration (3-4 wks)
+P7:                                              ████████       Testing/Launch (2 wks)
+       |______Wave 1______|____Wave 2____|__Wave 3__|
 ```
 
 ---
@@ -318,12 +391,12 @@ P7:                                                          ██████�
 
 | Risk | Probability | Impact | Mitigation |
 |------|-------------|--------|------------|
-| Content complexity underestimated | High | Medium | Detailed content audit, phased migration |
+| Content complexity underestimated | Medium | Medium | Detailed content audit complete, phased migration |
 | Third-party integration delays | Medium | High | Early POC, parallel development |
 | Performance targets not met | Medium | High | Early Lighthouse testing, CDN optimization |
 | UE configuration complexity | Medium | Medium | Experienced UE specialist, early training |
 | Stakeholder approval delays | Medium | High | Clear governance, staged reviews |
-| Scope creep | High | High | Change control process, fixed scope phases |
+| Scope creep | Medium | High | Change control process, fixed scope phases |
 
 ---
 
@@ -349,6 +422,7 @@ P7:                                                          ██████�
 5. Third-party API documentation available
 6. Dedicated author training resources
 7. DNS/domain control available for cutover
+8. ~40% of pages can be automated via import scripts
 
 ---
 
@@ -398,40 +472,70 @@ P7:                                                          ██████�
 | form | 3 | 16 | 48 | 16 | 80 |
 | cta-banner | 3 | 12 | 20 | 12 | 44 |
 | link-list | 2 | 8 | 16 | 8 | 32 |
-| table | 3 | 12 | 28 | 12 | 52 |
-| video | 2 | 8 | 20 | 8 | 36 |
+| table | 3 | 12 | 24 | 12 | 48 |
+| video | 2 | 8 | 16 | 8 | 32 |
 | quote | 2 | 8 | 12 | 8 | 28 |
-| stats | 2 | 8 | 16 | 8 | 32 |
+| stats | 2 | 8 | 12 | 8 | 28 |
 | icon-grid | 2 | 8 | 16 | 8 | 32 |
 | breadcrumb | 1 | 4 | 12 | 4 | 20 |
-| search-results | 1 | 12 | 32 | 12 | 56 |
-| related-content | 2 | 8 | 16 | 8 | 32 |
-| social-share | 1 | 4 | 12 | 4 | 20 |
-| image-gallery | 1 | 8 | 20 | 8 | 36 |
-| embed | 3 | 8 | 12 | 8 | 28 |
+| search-results | 1 | 12 | 28 | 12 | 52 |
+| related-content | 2 | 8 | 12 | 8 | 28 |
+| social-share | 1 | 4 | 8 | 4 | 16 |
+| image-gallery | 1 | 8 | 16 | 8 | 32 |
+| embed | 3 | 8 | 8 | 8 | 24 |
 | columns | 3 | 8 | 12 | 8 | 28 |
+| **TOTAL** | | | | | **1,068** |
 
 ---
 
-## Appendix B: Page Migration Estimates
+## Appendix B: Page Migration Estimates (Updated)
 
 | Page Type | Count | Hours/Page | Automated | Total Hours |
 |-----------|-------|------------|-----------|-------------|
 | Homepage | 1 | 16 | No | 16 |
-| Portfolio | 10 | 4 | Partial | 40 |
-| Product | 150 | 0.5 | Yes | 75 |
-| Industry | 30 | 2 | Partial | 60 |
-| Category | 30 | 1.5 | Partial | 45 |
-| Article | 200 | 0.25 | Yes | 50 |
-| Customer Story | 100 | 0.5 | Yes | 50 |
-| Research Report | 50 | 1 | Partial | 50 |
-| Support | 50 | 1 | Partial | 50 |
-| Offers | 20 | 2 | No | 40 |
-| Regional | 50 | 0.5 | Yes | 25 |
-| Other | 100+ | 0.5 | Yes | 50 |
+| Portfolio | 9 | 3 | Partial | 27 |
+| Product (P0) | 50 | 0.5 | Yes | 25 |
+| Product (P1) | 25 | 0.5 | Yes | 13 |
+| Industry | 15 | 1.5 | Partial | 23 |
+| Industry Solutions | 10 | 1.5 | Partial | 15 |
+| Category | 25 | 1 | Partial | 25 |
+| Business Solutions | 5 | 1.5 | Partial | 8 |
+| Article (Tech Advice) | 100 | 0.25 | Yes | 25 |
+| Customer Story | 50 | 0.5 | Yes | 25 |
+| Research Report | 30 | 0.25 | Yes | 8 |
+| Top Voices | 20 | 0.25 | Yes | 5 |
+| Support | 10 | 1 | Partial | 10 |
+| About/Resources | 10 | 1 | Partial | 10 |
+| Offers | 5 | 2 | No | 10 |
+| Small Business | 20 | 0.75 | Partial | 15 |
+| Explore | 10 | 0.75 | Partial | 8 |
+| Regional | 50 | 0.25 | Yes | 13 |
+| Partner | 60 | 0.25 | Yes | 15 |
+| Other/Utility | 95 | 0.25 | Yes | 24 |
+| **TOTAL** | **~650** | | | **315** |
+
+*Note: Additional 200 hours for import script development, QA validation, and redirect mapping*
 
 ---
 
-*Document Version: 1.0*
+## Appendix C: Cost Estimation (Optional)
+
+| Resource Type | Hours | Rate Range | Cost Range |
+|---------------|-------|------------|------------|
+| Tech Lead | 400 | $150-200/hr | $60,000-80,000 |
+| Senior Developer | 1,200 | $125-175/hr | $150,000-210,000 |
+| UE Specialist | 300 | $125-150/hr | $37,500-45,000 |
+| Content Specialist | 400 | $75-100/hr | $30,000-40,000 |
+| QA Engineer | 300 | $100-125/hr | $30,000-37,500 |
+| DevOps | 150 | $125-150/hr | $18,750-22,500 |
+| **TOTAL** | **2,750** | | **$326,250-435,000** |
+
+*Note: Rates are estimates and may vary by region and vendor*
+
+---
+
+*Document Version: 2.0*
+*Total Pages: ~600-700*
+*Total Effort: 2,616-3,240 hours (with contingency)*
 *Created: January 2026*
 *Last Updated: January 2026*
