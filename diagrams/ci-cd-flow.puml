@@ -1,0 +1,26 @@
+@startuml
+
+title Code Deployment / CI Flow
+
+actor "Developer" as Dev
+participant "GitHub (repo)" as GH
+participant "GitHub Actions" as Actions
+participant "EDS Build" as EDSBuild
+participant "Fastly CDN" as CDN
+
+Dev -> GH : Create branch / PR
+GH -> Actions : PR triggers workflow
+Actions -> Actions : Run lint / test / build
+Actions -> EDSBuild : Push build artifact
+EDSBuild -> CDN : Deploy site + invalidate cache
+Actions -> GH : Post status (success / failure)
+GH -> Dev : Notify build status
+
+note right of Actions
+  • lint
+  • unit tests
+  • visual tests (Playwright)
+  • lighthouse CI
+end note
+
+@enduml
