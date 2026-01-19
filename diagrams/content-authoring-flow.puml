@@ -1,0 +1,22 @@
+@startuml
+title Content Authoring Flow
+
+actor "Content Author" as Author
+participant "Universal Editor" as UE
+participant "SharePoint" as SP
+participant "EDS Preview" as Preview
+participant "Fastly CDN / Publish" as CDN
+
+Author -> UE : Create/Edit page (blocks)
+UE -> SP : Save content (markdown/blocks)
+SP -> UE : Confirm saved
+UE -> Preview : Trigger preview build
+Preview -> SP : Fetch latest content
+Preview -> Author : Show preview
+Author -> UE : Publish
+UE -> SP : Mark as published
+SP -> EDS : Notify (or EDS polls)
+EDS -> CDN : Publish to Fastly (invalidate/push)
+CDN -> Users : Live content served
+
+@enduml
