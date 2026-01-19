@@ -1,0 +1,31 @@
+@startuml
+skinparam componentStyle uml2
+title AT&T Business — High-level Architecture
+
+actor "End Users\n(Desktop / Mobile / Tablet)" as Users
+
+node "Fastly CDN\n(Edge Caching, SSL)" as CDN
+
+container "EDS Delivery Tier\n(HTML Rendering, CSS/JS, Image Opt)" as EDS
+container "Universal Editor\n(Content Editing, Block Authoring, Preview)" as UE
+cloud "Third-party Services\n(Adobe Analytics, Target, Marketo,\nChiliPiper, Salesforce, Live Chat)" as Third
+database "Content Sources\n(SharePoint, GitHub, AEM Assets)" as Content
+
+Users --> CDN : Requests (HTTP/HTTPS)
+CDN --> EDS : Cache miss -> Forward to EDS
+Users --> CDN : Cached content served
+
+UE --> EDS : Preview / Authoring API
+EDS --> Content : Read content (SharePoint/GitHub/AEM)
+EDS --> Third : Integrations (analytics, personalization)
+UE --> Content : Author pushes content to SharePoint/GitHub
+Third --> CDN : Tracking / personalization (client-side)
+
+note right of EDS
+  • HTML Rendering (Helix)
+  • CSS/JS Delivery
+  • Image Optimization
+  • Markdown/Block processing
+end note
+
+@enduml
