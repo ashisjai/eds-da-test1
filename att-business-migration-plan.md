@@ -5,7 +5,7 @@
 
 ## Executive Summary
 
-This document outlines a comprehensive migration plan for **www.business.att.com** to AEM Edge Delivery Services. The AT&T Business website is a large enterprise B2B site with approximately **100+ pages** across multiple content types including products, portfolios, industry solutions, customer stories, and support content.
+This document outlines a comprehensive migration plan for **www.business.att.com** to AEM Edge Delivery Services. The AT&T Business website is a large enterprise B2B site with approximately **150+ pages** across multiple content types including products, portfolios, industry solutions, customer stories, and support content.
 
 ---
 
@@ -34,7 +34,7 @@ This document outlines a comprehensive migration plan for **www.business.att.com
 - **Purpose:** Main entry point with promotional content, product highlights, and navigation
 - **Complexity:** High (multiple carousels, hero sections, form)
 
-### 2. Product Pages (~40+ pages)
+### 2. Product Pages (~45+ pages)
 Individual product/service detail pages with specifications and CTAs.
 
 | Product | URL |
@@ -69,7 +69,7 @@ Individual product/service detail pages with specifications and CTAs.
 | Protect Advantage for Business | `/products/protect-advantage-for-business.html` |
 | ... and more | |
 
-### 3. Portfolio Pages (~10 pages)
+### 3. Portfolio Pages (~9 pages)
 Solution category landing pages grouping related products.
 
 | Portfolio | URL |
@@ -84,7 +84,7 @@ Solution category landing pages grouping related products.
 | Networking | `/portfolios/networking.html` |
 | Consulting Services | `/portfolios/att-consulting-and-professional-services.html` |
 
-### 4. Industry Pages (~12 pages)
+### 4. Industry Pages (~14 pages + 6 sub-pages)
 Vertical market solutions.
 
 | Industry | URL |
@@ -102,7 +102,7 @@ Vertical market solutions.
 | AT&T Global Business | `/industries/att-global-business.html` |
 | Worldwide | `/industries/worldwide.html` |
 
-### 5. Category Pages (~15+ pages)
+### 5. Category Pages (~18+ pages)
 Product grouping/filter pages.
 
 | Category | URL |
@@ -122,18 +122,18 @@ Product grouping/filter pages.
 | Next Generation 9-1-1 | `/categories/next-generation-9-1-1.html` |
 | Device Management Services | `/categories/device-management-services.html` |
 
-### 6. Learn/Content Hub (~50+ pages)
+### 6. Learn/Content Hub (~31+ pages)
 Articles, customer stories, research reports, and thought leadership.
 
 | Content Type | URL Pattern | Estimated Count |
 |--------------|-------------|-----------------|
-| Customer Stories | `/learn/customer-stories/*.html` | ~25+ |
-| Research Reports | `/learn/research-reports.html` | ~5 |
-| Tech Advice | `/learn/tech-advice.html` | ~10+ |
-| Top Voices | `/learn/top-voices.html` | ~5+ |
-| Articles | `/learn/articles/*.html` | ~10+ |
+| Customer Stories | `/learn/customer-stories/*.html` | ~27+ |
+| Customer Stories Listing | `/learn/customer-stories.html` | 1 |
+| Research Reports | `/learn/research-reports.html` | 1 |
+| Tech Advice | `/learn/tech-advice.html` | 1 |
+| Top Voices | `/learn/top-voices.html` | 1 |
 
-### 7. Support Pages (~5 pages)
+### 7. Support Pages (~3 pages)
 | Page | URL |
 |------|-----|
 | Contact | `/support/contact.html` |
@@ -554,12 +554,14 @@ Industry award displays.
 | P1 - Critical | Offers | 1 | Revenue driver |
 | P1 - Critical | Wireless Plans | 1 | Top converting page |
 | P2 - High | Product Pages (top 10) | 10 | High traffic products |
-| P2 - High | Portfolio Pages | 10 | Category navigation |
-| P3 - Medium | Industry Pages | 12 | Vertical targeting |
-| P3 - Medium | Remaining Products | 30+ | Full catalog |
-| P4 - Lower | Customer Stories | 25+ | Supporting content |
-| P4 - Lower | Articles/Learn | 20+ | SEO content |
-| P5 - Lowest | Support/About | 10 | Low change frequency |
+| P2 - High | Portfolio Pages | 9 | Category navigation |
+| P3 - Medium | Industry Pages | 14 | Vertical targeting |
+| P3 - Medium | Industry Solutions | 6 | Vertical sub-pages |
+| P3 - Medium | Remaining Products | 35+ | Full catalog |
+| P3 - Medium | Category Pages | 18+ | Product groupings |
+| P4 - Lower | Customer Stories | 27+ | Supporting content |
+| P4 - Lower | Content Hub Listings | 4 | SEO content |
+| P5 - Lowest | Support/Utility | 5 | Low change frequency |
 
 ---
 
@@ -600,17 +602,20 @@ Industry award displays.
 
 ## Estimated Page Counts Summary
 
-| Category | Estimated Pages |
-|----------|-----------------|
-| Homepage | 1 |
-| Products | 40+ |
-| Portfolios | 10 |
-| Industries | 12 |
-| Categories | 15+ |
-| Learn/Content | 50+ |
-| Support | 5 |
-| Promotional | 10+ |
-| **Total** | **~145+ pages** |
+| Category | Estimated Pages | Notes |
+|----------|-----------------|-------|
+| Homepage | 1 | Main entry point |
+| Products | 45+ | Individual product/service pages |
+| Portfolios | 9 | Solution category hubs |
+| Industries | 14 | Vertical market pages |
+| Industry Solutions | 6 | Sub-pages (Finance, Manufacturing) |
+| Categories | 18+ | Product grouping pages |
+| Customer Stories | 27+ | Case study articles |
+| Content Hub Listings | 4 | Stories, Reports, Advice, Voices |
+| Support | 3 | Contact, Premier, Business Center |
+| Promotional/Landing | 10+ | Offers, Bundles, Campaigns |
+| Utility | 2 | Sitemap, Industries index |
+| **Total** | **~150+ pages** | |
 
 ---
 
