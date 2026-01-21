@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="att-business-website-migration-plan">AT&#x26;T Business Website Migration Plan</h1><h2 id="migration-to-aem-edge-delivery-services">Migration to AEM Edge Delivery Services</h2></div>
+<div><h2 id="executive-summary">Executive Summary</h2><p>This document outlines a comprehensive migration plan for <strong>www.business.att.com</strong> to AEM Edge Delivery Services. The AT&#x26;T Business website is a large enterprise B2B site with approximately <strong>100+ pages</strong> across multiple content types including products, portfolios, industry solutions, customer stories, and support content.</p></div>
+<div><h2 id="site-structure-overview">Site Structure Overview</h2><h3 id="primary-navigation-categories">Primary Navigation Categories</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Products</div><div><code>/products/*.html</code></div><div>Individual product/service pages</div></div><div><div>Portfolios</div><div><code>/portfolios/*.html</code></div><div>Solution category landing pages</div></div><div><div>Industries</div><div><code>/industries/*.html</code></div><div>Vertical market pages</div></div><div><div>Categories</div><div><code>/categories/*.html</code></div><div>Product grouping pages</div></div><div><div>Learn</div><div><code>/learn/*.html</code></div><div>Content hub (articles, stories, reports)</div></div><div><div>Support</div><div><code>/support/*.html</code></div><div>Customer support pages</div></div><div><div>Explore</div><div><code>/explore/*.html</code></div><div>Campaign/landing pages</div></div><div><div>About</div><div><code>/about/*.html</code></div><div>Company information</div></div><div><div>Offers</div><div><code>/offers.html</code></div><div>Deals and promotions</div></div><div><div>Bundles</div><div><code>/bundles.html</code></div><div>Service bundles</div></div></div></div>
+<div><h2 id="page-inventory-by-type">Page Inventory by Type</h2><h3 id="homepage-1-page">1. Homepage (1 page)</h3><ul>
+<li><strong>URL:</strong> <code>/</code> (index.html)</li>
+<li><strong>Purpose:</strong> Main entry point with promotional content, product highlights, and navigation</li>
+<li><strong>Complexity:</strong> High (multiple carousels, hero sections, form)</li>
+</ul><h3 id="product-pages-40-pages">2. Product Pages (~40+ pages)</h3><p>Individual product/service detail pages with specifications and CTAs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="product"><div><div>Wireless Plans</div><div><code>/products/wireless-plans.html</code></div></div><div><div>AT&#x26;T Dynamic Defense</div><div><code>/products/att-dynamic-defense.html</code></div></div><div><div>Business Fiber Internet</div><div><code>/products/business-fiber-internet.html</code></div></div><div><div>Office@Hand</div><div><code>/products/office-at-hand.html</code></div></div><div><div>IP Toll-Free</div><div><code>/products/ip-toll-free.html</code></div></div><div><div>SIP Trunking</div><div><code>/products/sip-trunking.html</code></div></div><div><div>Cloud Voice for Microsoft Teams</div><div><code>/products/att-cloud-voice-for-microsoft-teams.html</code></div></div><div><div>Mobile 5G</div><div><code>/products/mobile-5g.html</code></div></div><div><div>AT&#x26;T Private Cellular Networks</div><div><code>/products/att-private-cellular-networks.html</code></div></div><div><div>Colocation</div><div><code>/products/colocation.html</code></div></div><div><div>CDN</div><div><code>/products/cdn.html</code></div></div><div><div>NetBond</div><div><code>/products/netbond.html</code></div></div><div><div>AT&#x26;T Managed Cloud Connect</div><div><code>/products/att-managed-cloud-connect.html</code></div></div><div><div>Cloud Connections On-Demand</div><div><code>/products/cloud-connections-on-demand.html</code></div></div><div><div>AT&#x26;T Cell Booster Pro</div><div><code>/products/att-cell-booster-pro.html</code></div></div><div><div>Enhanced Push-to-Talk</div><div><code>/products/enhanced-push-to-talk.html</code></div></div><div><div>AT&#x26;T International Day Pass</div><div><code>/products/att-international-day-pass-for-business.html</code></div></div><div><div>Business Passport</div><div><code>/products/att-business-passport.html</code></div></div><div><div>AT&#x26;T Phone for Business</div><div><code>/products/att-phone-for-business.html</code></div></div><div><div>Wireless Internet</div><div><code>/products/wireless-internet.html</code></div></div><div><div>AT&#x26;T Smart Label</div><div><code>/products/att-smart-label.html</code></div></div><div><div>PowerFleet GPS Tracker</div><div><code>/products/powerfleet.html</code></div></div><div><div>AT&#x26;T ActiveArmor</div><div><code>/products/att-activearmor.html</code></div></div><div><div>BYOD</div><div><code>/products/bring-your-own-device-byod.html</code></div></div><div><div>Device Management Program</div><div><code>/products/device-management-program.html</code></div></div><div><div>Business Trade-in</div><div><code>/products/business-device-trade-in.html</code></div></div><div><div>Business Protect</div><div><code>/products/business-protect.html</code></div></div><div><div>Protect Advantage for Business</div><div><code>/products/protect-advantage-for-business.html</code></div></div><div><div>... and more</div><div></div></div></div><h3 id="portfolio-pages-10-pages">3. Portfolio Pages (~10 pages)</h3><p>Solution category landing pages grouping related products.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="portfolio"><div><div>Mobility/Wireless</div><div><code>/portfolios/mobility.html</code></div></div><div><div>Business Internet</div><div><code>/portfolios/business-internet.html</code></div></div><div><div>5G for Business</div><div><code>/portfolios/5G-for-business.html</code></div></div><div><div>Cybersecurity</div><div><code>/portfolios/cybersecurity.html</code></div></div><div><div>Internet of Things</div><div><code>/portfolios/internet-of-things.html</code></div></div><div><div>Voice &#x26; Collaboration</div><div><code>/portfolios/collaboration.html</code></div></div><div><div>Cloud</div><div><code>/portfolios/cloud.html</code></div></div><div><div>Networking</div><div><code>/portfolios/networking.html</code></div></div><div><div>Consulting Services</div><div><code>/portfolios/att-consulting-and-professional-services.html</code></div></div></div><h3 id="industry-pages-12-pages">4. Industry Pages (~12 pages)</h3><p>Vertical market solutions.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="industry"><div><div>Healthcare</div><div><code>/industries/healthcare.html</code></div></div><div><div>Financial Services</div><div><code>/industries/finance.html</code></div></div><div><div>Hospitality</div><div><code>/industries/hospitality.html</code></div></div><div><div>Manufacturing</div><div><code>/industries/manufacturing.html</code></div></div><div><div>Retail</div><div><code>/industries/retail.html</code></div></div><div><div>Transportation</div><div><code>/industries/transportation.html</code></div></div><div><div>Public Sector</div><div><code>/industries/public-sector.html</code></div></div><div><div>Wholesale</div><div><code>/industries/wholesale.html</code></div></div><div><div>Small Business</div><div><code>/industries/smallbusiness.html</code></div></div><div><div>Partner Solutions</div><div><code>/industries/partner-solutions.html</code></div></div><div><div>AT&#x26;T Global Business</div><div><code>/industries/att-global-business.html</code></div></div><div><div>Worldwide</div><div><code>/industries/worldwide.html</code></div></div></div><h3 id="category-pages-15-pages">5. Category Pages (~15+ pages)</h3><p>Product grouping/filter pages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>International Add-ons</div><div><code>/categories/international-add-ons.html</code></div></div><div><div>Mobile Workforce Tools</div><div><code>/categories/mobile-workforce-tools.html</code></div></div><div><div>Mobile Business Solutions</div><div><code>/categories/mobile-business-solutions.html</code></div></div><div><div>Mobile Remote Access</div><div><code>/categories/mobile-remote-access.html</code></div></div><div><div>Mobility Professional Services</div><div><code>/categories/mobility-professional-services.html</code></div></div><div><div>In-building Wireless</div><div><code>/categories/inbuilding-wireless.html</code></div></div><div><div>IoT Platforms</div><div><code>/categories/iot-platforms.html</code></div></div><div><div>Vehicle Solutions</div><div><code>/categories/vehicle-solutions.html</code></div></div><div><div>Asset Management</div><div><code>/categories/asset-management.html</code></div></div><div><div>IoT Professional Services</div><div><code>/categories/iot-professional-services.html</code></div></div><div><div>Smart Cities</div><div><code>/categories/smart-cities.html</code></div></div><div><div>AT&#x26;T On-Premise Edge</div><div><code>/categories/att-on-premise-edge.html</code></div></div><div><div>Next Generation 9-1-1</div><div><code>/categories/next-generation-9-1-1.html</code></div></div><div><div>Device Management Services</div><div><code>/categories/device-management-services.html</code></div></div></div><h3 id="learncontent-hub-50-pages">6. Learn/Content Hub (~50+ pages)</h3><p>Articles, customer stories, research reports, and thought leadership.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-type"><div><div>Customer Stories</div><div><code>/learn/customer-stories/*.html</code></div><div>~25+</div></div><div><div>Research Reports</div><div><code>/learn/research-reports.html</code></div><div>~5</div></div><div><div>Tech Advice</div><div><code>/learn/tech-advice.html</code></div><div>~10+</div></div><div><div>Top Voices</div><div><code>/learn/top-voices.html</code></div><div>~5+</div></div><div><div>Articles</div><div><code>/learn/articles/*.html</code></div><div>~10+</div></div></div><h3 id="support-pages-5-pages">7. Support Pages (~5 pages)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page"><div><div>Contact</div><div><code>/support/contact.html</code></div></div><div><div>Premier Support</div><div><code>/support/premier.html</code></div></div><div><div>Business Center Support</div><div><code>/support/business-center.html</code></div></div></div><h3 id="promotionallanding-pages-10-pages">8. Promotional/Landing Pages (~10+ pages)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page"><div><div>Offers</div><div><code>/offers.html</code></div></div><div><div>Bundles</div><div><code>/bundles.html</code></div></div><div><div>Small Business</div><div><code>/small-business.html</code></div></div><div><div>30-Day Risk Free</div><div><code>/explore/30-day-risk-free.html</code></div></div><div><div>Referral Program</div><div><code>/explore/referral.html</code></div></div><div><div>Switch Carrier</div><div><code>/explore/cell-phone-switch-carrier.html</code></div></div><div><div>Business Guarantee</div><div><code>/about/business-guarantee.html</code></div></div><div><div>Why AT&#x26;T Business</div><div><code>/about/why-att-business.html</code></div></div><div><div>Business Continuity</div><div><code>/about/business-continuity.html</code></div></div></div></div>
+<div><h2 id="block-inventory-with-variations">Block Inventory with Variations</h2><h3 id="screenshot-reference-directory">Screenshot Reference Directory</h3><p>All block screenshots are stored in <code>/workspace/block-screenshots/</code> with naming convention: <code>block-{name}-{variant}-{page}.png</code></p></div>
+<div><h3 id="navigation-blocks">1. Navigation Blocks</h3><h4 id="quick-links-carousel">1.1 Quick Links Carousel</h4><p>Horizontal scrollable navigation pills with icons for quick access to key sections.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage</strong></div><div>6 pill links with icons (Phones, BYOD, Deals, etc.)</div><div><code>/</code></div><div><code>block-quick-links-carousel-homepage.png</code></div></div><div><div><strong>Product Page</strong></div><div>Context-specific links related to product category</div><div><code>/products/wireless-plans.html</code></div><div>Same component, different links</div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>Horizontally scrollable on mobile</li>
+<li>Each pill has icon + text label</li>
+<li>Links to key conversion pages</li>
+</ul></div>
+<div><h3 id="hero-blocks">2. Hero Blocks</h3><h4 id="promo-banner-carousel">2.1 Promo Banner Carousel</h4><p>Narrow promotional banner at top of page with rotating messages.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Standard</strong></div><div>Single promo message with "Learn more" CTA</div><div><code>/</code></div><div><code>block-promo-banner-carousel-homepage.png</code></div></div><div><div><strong>Risk-Free</strong></div><div>30-day guarantee messaging</div><div><code>/products/wireless-plans.html</code></div><div>Same component</div></div></div><h4 id="hero-with-offer-cards">2.2 Hero with Offer Cards</h4><p>Large hero section with product/offer card carousel overlay.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage Hero</strong></div><div>Blue gradient background, "Explore AT&#x26;T Business" heading, 4+ offer cards carousel</div><div><code>/</code></div><div><code>block-hero-offer-cards-homepage.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>Dark blue gradient background</li>
+<li>Large heading with subtext</li>
+<li>Card carousel with pricing, terms, CTAs</li>
+<li>Cards show strikethrough pricing, monthly rates</li>
+</ul><h4 id="video-hero-banner">2.3 Video Hero Banner</h4><p>Hero section with embedded/playable video and text overlay.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Product Video Hero</strong></div><div>Video thumbnail with "Fast. Secure. Reliable." messaging</div><div><code>/</code></div><div><code>block-video-hero-banner-homepage.png</code></div></div><div><div><strong>Article Video Hero</strong></div><div>Full-width hero with video play button, company logo overlay</div><div><code>/learn/customer-stories/portx.html</code></div><div><code>block-hero-article-video-story.png</code></div></div></div><h4 id="product-hero-with-savings-badge">2.4 Product Hero with Savings Badge</h4><p>Product page hero with promotional savings callout.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Savings Hero</strong></div><div>"More lines, bigger savings" badge, "Save $15/mo." headline</div><div><code>/products/wireless-plans.html</code></div><div><code>block-hero-product-savings-wireless.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>Green "More lines, bigger savings" badge</li>
+<li>Large savings headline</li>
+<li>Expandable terms/conditions</li>
+<li>"View plans" CTA button</li>
+</ul><h4 id="industry-hero">2.5 Industry Hero</h4><p>Minimal hero for industry vertical pages with breadcrumb navigation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry Standard</strong></div><div>Breadcrumb + "Solutions for [Industry]" heading + phone CTA</div><div><code>/industries/healthcare.html</code></div><div><code>block-hero-industry-healthcare.png</code></div></div></div></div>
+<div><h3 id="card--carousel-blocks">3. Card &#x26; Carousel Blocks</h3><h4 id="pricing-cards-carousel">3.1 Pricing Cards Carousel</h4><p>Plan comparison cards with pricing, features, and CTAs.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Wireless Plans</strong></div><div>4 plan cards (Turbo, Premium, Advanced, Standard) with tiered pricing</div><div><code>/products/wireless-plans.html</code></div><div><code>block-pricing-cards-carousel-wireless.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>"New!" badge for featured plans</li>
+<li>Strikethrough original pricing</li>
+<li>Per-line/per-month pricing</li>
+<li>Feature checklist with icons</li>
+<li>Expandable savings callout</li>
+<li>"Select plan" CTA buttons</li>
+<li>Carousel navigation dots</li>
+</ul><h4 id="product-cards-carousel">3.2 Product Cards Carousel</h4><p>Product/service showcase cards in horizontal carousel.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage Products</strong></div><div>Service cards (Turbo, Switch Assist, International)</div><div><code>/</code></div><div><code>block-product-cards-carousel-homepage.png</code></div></div><div><div><strong>Premium Benefits</strong></div><div>"Explore premium benefits" section</div><div><code>/products/wireless-plans.html</code></div><div>Similar layout</div></div></div><h4 id="industry-cards-carousel">3.3 Industry Cards Carousel</h4><p>Industry vertical solution cards.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage Industries</strong></div><div>Cards for Healthcare, Finance, etc. with icons</div><div><code>/</code></div><div><code>block-industry-cards-carousel-homepage.png</code></div></div></div><h4 id="offer-cards-deals">3.4 Offer Cards (Deals)</h4><p>Promotional offer cards with pricing and terms.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Deal Cards</strong></div><div>"All customers" / "New customers" badges, savings headline, terms</div><div><code>/products/wireless-plans.html</code></div><div>Part of page</div></div></div><h4 id="solution-link-cards">3.5 Solution Link Cards</h4><p>Cards with icons linking to solution categories.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry Solutions</strong></div><div>Icon + title + description cards for Mobility, Cybersecurity, etc.</div><div><code>/industries/healthcare.html</code></div><div><code>block-solution-cards-industry.png</code></div></div></div><h4 id="story-cards-with-overlay">3.6 Story Cards with Overlay</h4><p>Customer story cards with image background and text overlay.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry Stories</strong></div><div>Image background, logo, story title overlay</div><div><code>/industries/healthcare.html</code></div><div><code>block-story-cards-overlay-industry.png</code></div></div></div><h4 id="insightsresource-cards">3.7 Insights/Resource Cards</h4><p>Resource and article cards.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry Insights</strong></div><div>"Insights &#x26; resources" cards with thumbnails</div><div><code>/industries/healthcare.html</code></div><div><code>block-insights-cards-industry.png</code></div></div></div></div>
+<div><h3 id="feature-blocks">4. Feature Blocks</h3><h4 id="feature-cards-grid">4.1 Feature Cards Grid</h4><p>Multi-column feature highlight cards.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>4-Column Homepage</strong></div><div>"Why work with AT&#x26;T" - 4 cards with icons and descriptions</div><div><code>/</code></div><div><code>block-feature-cards-grid-homepage.png</code></div></div><div><div><strong>4-Column Product</strong></div><div>"All AT&#x26;T Business wireless plans include" features</div><div><code>/products/wireless-plans.html</code></div><div><code>block-features-grid-wireless.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>2-4 column responsive grid</li>
+<li>Icon or image per card</li>
+<li>Heading + description text</li>
+<li>Optional footnote/disclaimer</li>
+</ul><h4 id="guarantee-checklist-block">4.2 Guarantee Checklist Block</h4><p>AT&#x26;T Guarantee messaging with checkmark list.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage Guarantee</strong></div><div>"AT&#x26;T Guarantee" heading, 3 checkmark items, disclaimer</div><div><code>/</code></div><div><code>block-guarantee-checklist-homepage.png</code></div></div><div><div><strong>Product Guarantee</strong></div><div>"Deals you want backed by AT&#x26;T Guarantee" variant</div><div><code>/products/wireless-plans.html</code></div><div>Similar layout</div></div></div></div>
+<div><h3 id="content-blocks">5. Content Blocks</h3><h4 id="image--text-split">5.1 Image + Text Split</h4><p>Side-by-side image and text content.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry Split</strong></div><div>Image left, text + CTA right</div><div><code>/industries/healthcare.html</code></div><div><code>block-image-text-split-industry.png</code></div></div></div><h4 id="highlightsstats-block">5.2 Highlights/Stats Block</h4><p>Key statistics or highlights display.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Customer Story Stats</strong></div><div>3-column Challenge/Results/Solution with numbers</div><div><code>/learn/customer-stories/portx.html</code></div><div><code>block-highlights-stats-story.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>Large stat numbers (e.g., "$50B+", "100+")</li>
+<li>Category labels</li>
+<li>Supporting description text</li>
+</ul><h4 id="about-section-with-download">5.3 About Section with Download</h4><p>Company/product information with downloadable resource.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Customer Story About</strong></div><div>Company logo, description, "Download PDF" link</div><div><code>/learn/customer-stories/portx.html</code></div><div><code>block-about-download-story.png</code></div></div></div><h4 id="anchor-navigation-pills">5.4 Anchor Navigation Pills</h4><p>In-page jump link navigation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry Nav</strong></div><div>Horizontal pills for page sections</div><div><code>/industries/healthcare.html</code></div><div><code>block-anchor-nav-industry.png</code></div></div></div><h4 id="faq-accordion">5.5 FAQ Accordion</h4><p>Expandable FAQ sections.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Product FAQ</strong></div><div>"Frequently asked questions" with expand/collapse</div><div><code>/products/wireless-plans.html</code></div><div><code>block-faq-accordion-wireless.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>"Expand all" button</li>
+<li>Clickable question headers</li>
+<li>Animated expand/collapse</li>
+<li>"View more" link for additional FAQs</li>
+</ul><h4 id="link-list-block">5.6 Link List Block</h4><p>Multi-column categorized link lists.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage Links</strong></div><div>"Looking for more?" 4-column link categories</div><div><code>/</code></div><div><code>block-link-list-homepage.png</code></div></div></div></div>
+<div><h3 id="form-blocks">6. Form Blocks</h3><h4 id="lead-form-rai---request-a-call">6.1 Lead Form (RAI - Request a Call)</h4><p>Lead generation form with validation.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Homepage Form</strong></div><div>"Talk to an AT&#x26;T Business expert" with 6 fields</div><div><code>/</code></div><div><code>block-lead-form-rai-homepage.png</code></div></div><div><div><strong>Industry Form</strong></div><div>Similar form with industry-specific context</div><div><code>/industries/healthcare.html</code></div><div><code>block-lead-form-industry.png</code></div></div></div><p><strong>Fields:</strong></p><ul>
+<li>First name (required)</li>
+<li>Last name (required)</li>
+<li>Email address (required)</li>
+<li>Phone (required)</li>
+<li>Company name (required)</li>
+<li>Add comment (optional)</li>
+<li>Newsletter opt-in checkbox</li>
+</ul></div>
+<div><h3 id="cta--contact-blocks">7. CTA &#x26; Contact Blocks</h3><h4 id="contact-cta-banner">7.1 Contact CTA Banner</h4><p>Full-width call-to-action banner with phone number.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Industry CTA</strong></div><div>Blue background, "Connect with an AT&#x26;T rep" heading, phone number</div><div><code>/industries/healthcare.html</code></div><div><code>block-contact-cta-industry.png</code></div></div></div><h4 id="support-contact-block">7.2 Support Contact Block</h4><p>Multi-column contact information with phone numbers.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>Product Support</strong></div><div>3-column: Wireless support, Internet support, Video library</div><div><code>/products/wireless-plans.html</code></div><div><code>block-support-contact-wireless.png</code></div></div></div><p><strong>Key Features:</strong></p><ul>
+<li>Business hours display</li>
+<li>Click-to-call phone links</li>
+<li>Support category headings</li>
+</ul></div>
+<div><h3 id="trust--social-proof-blocks">8. Trust &#x26; Social Proof Blocks</h3><h4 id="award-badge">8.1 Award Badge</h4><p>Industry award displays.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="variation"><div><div><strong>J.D. Power Badge</strong></div><div>"#1 in Customer Satisfaction" with link to award info</div><div><code>/products/wireless-plans.html</code></div><div><code>block-award-badge-wireless.png</code></div></div></div></div>
+<div><h3 id="block-priority-summary">Block Priority Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="priority"><div><div><strong>Critical</strong></div><div>Hero, Pricing Cards, Lead Form, Header/Footer</div><div>6</div><div>Must have for launch</div></div><div><div><strong>High</strong></div><div>Card Carousels, Feature Grids, FAQ, Link Lists</div><div>10</div><div>Core content blocks</div></div><div><div><strong>Medium</strong></div><div>Stats, Image+Text, Anchor Nav, Award Badges</div><div>8</div><div>Supporting content</div></div><div><div><strong>Low</strong></div><div>Promo Banners, Disclaimers</div><div>4</div><div>Nice to have</div></div></div></div>
+<div><h3 id="screenshot-inventory">Screenshot Inventory</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="screenshot-file"><div><div><code>block-quick-links-carousel-homepage.png</code></div><div>Quick Links</div><div>Homepage</div></div><div><div><code>block-promo-banner-carousel-homepage.png</code></div><div>Promo Banner</div><div>Homepage</div></div><div><div><code>block-hero-offer-cards-homepage.png</code></div><div>Hero with Cards</div><div>Homepage</div></div><div><div><code>block-video-hero-banner-homepage.png</code></div><div>Video Hero</div><div>Homepage</div></div><div><div><code>block-feature-cards-grid-homepage.png</code></div><div>Feature Grid</div><div>Homepage</div></div><div><div><code>block-product-cards-carousel-homepage.png</code></div><div>Product Cards</div><div>Homepage</div></div><div><div><code>block-industry-cards-carousel-homepage.png</code></div><div>Industry Cards</div><div>Homepage</div></div><div><div><code>block-guarantee-checklist-homepage.png</code></div><div>Guarantee Block</div><div>Homepage</div></div><div><div><code>block-lead-form-rai-homepage.png</code></div><div>Lead Form</div><div>Homepage</div></div><div><div><code>block-link-list-homepage.png</code></div><div>Link List</div><div>Homepage</div></div><div><div><code>block-hero-product-savings-wireless.png</code></div><div>Product Hero</div><div>Wireless Plans</div></div><div><div><code>block-pricing-cards-carousel-wireless.png</code></div><div>Pricing Cards</div><div>Wireless Plans</div></div><div><div><code>block-features-grid-wireless.png</code></div><div>Features Grid</div><div>Wireless Plans</div></div><div><div><code>block-faq-accordion-wireless.png</code></div><div>FAQ Accordion</div><div>Wireless Plans</div></div><div><div><code>block-award-badge-wireless.png</code></div><div>Award Badge</div><div>Wireless Plans</div></div><div><div><code>block-support-contact-wireless.png</code></div><div>Support Contact</div><div>Wireless Plans</div></div><div><div><code>block-hero-industry-healthcare.png</code></div><div>Industry Hero</div><div>Healthcare</div></div><div><div><code>block-anchor-nav-industry.png</code></div><div>Anchor Nav</div><div>Healthcare</div></div><div><div><code>block-solution-cards-industry.png</code></div><div>Solution Cards</div><div>Healthcare</div></div><div><div><code>block-image-text-split-industry.png</code></div><div>Image+Text</div><div>Healthcare</div></div><div><div><code>block-story-cards-overlay-industry.png</code></div><div>Story Cards</div><div>Healthcare</div></div><div><div><code>block-insights-cards-industry.png</code></div><div>Insights Cards</div><div>Healthcare</div></div><div><div><code>block-contact-cta-industry.png</code></div><div>Contact CTA</div><div>Healthcare</div></div><div><div><code>block-lead-form-industry.png</code></div><div>Lead Form</div><div>Healthcare</div></div><div><div><code>block-hero-article-video-story.png</code></div><div>Article Hero</div><div>Customer Story</div></div><div><div><code>block-highlights-stats-story.png</code></div><div>Stats Block</div><div>Customer Story</div></div><div><div><code>block-about-download-story.png</code></div><div>About Section</div><div>Customer Story</div></div></div></div>
+<div><h2 id="migration-strategy">Migration Strategy</h2><h3 id="phase-1-foundation-weeks-1-2">Phase 1: Foundation (Weeks 1-2)</h3><p><strong>Goal:</strong> Establish core infrastructure and global components</p><ol>
+<li>
+<p><strong>Project Setup</strong></p>
+<ul>
+<li>Initialize AEM Edge Delivery project</li>
+<li>Configure build pipeline and deployment</li>
+<li>Set up content authoring in Google Docs/SharePoint</li>
+</ul>
+</li>
+<li>
+<p><strong>Global Components</strong></p>
+<ul>
+<li>Header block with navigation</li>
+<li>Footer block</li>
+<li>Base CSS variables (colors, typography, spacing)</li>
+<li>Design system foundation</li>
+</ul>
+</li>
+<li>
+<p><strong>Pilot Page</strong></p>
+<ul>
+<li>Migrate one simple product page as proof of concept</li>
+<li>Validate block authoring workflow</li>
+</ul>
+</li>
+</ol><h3 id="phase-2-core-blocks-weeks-3-5">Phase 2: Core Blocks (Weeks 3-5)</h3><p><strong>Goal:</strong> Build reusable block library</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="week"><div><div>Week 3</div><div>Hero Banner, Hero Carousel, Card Carousel, Feature Cards</div></div><div><div>Week 4</div><div>Pricing Cards, Offer Cards, Lead Form (RAI), Accordion/FAQ</div></div><div><div>Week 5</div><div>Link List, Quote Block, Video Block, Image+Text, Tab Panel</div></div></div><h3 id="phase-3-page-templates-weeks-6-8">Phase 3: Page Templates (Weeks 6-8)</h3><p><strong>Goal:</strong> Create and migrate primary page types</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="week"><div><div>Week 6</div><div>Homepage, 5 Product pages</div><div>6</div></div><div><div>Week 7</div><div>Portfolio pages, Industry pages</div><div>15</div></div><div><div>Week 8</div><div>Offers page, Bundles page, Category pages</div><div>10</div></div></div><h3 id="phase-4-content-migration-weeks-9-12">Phase 4: Content Migration (Weeks 9-12)</h3><p><strong>Goal:</strong> Full content migration</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="week"><div><div>Week 9-10</div><div>Remaining Product pages</div><div>30+</div></div><div><div>Week 11</div><div>Customer Stories, Articles</div><div>30+</div></div><div><div>Week 12</div><div>Support pages, remaining content</div><div>10+</div></div></div><h3 id="phase-5-qa--launch-weeks-13-14">Phase 5: QA &#x26; Launch (Weeks 13-14)</h3><p><strong>Goal:</strong> Testing, optimization, and go-live</p><ol>
+<li>
+<p><strong>Quality Assurance</strong></p>
+<ul>
+<li>Cross-browser testing</li>
+<li>Mobile responsiveness validation</li>
+<li>Accessibility audit (WCAG 2.1 AA)</li>
+<li>Performance optimization (Core Web Vitals)</li>
+</ul>
+</li>
+<li>
+<p><strong>Content Validation</strong></p>
+<ul>
+<li>Link checking</li>
+<li>Image optimization</li>
+<li>SEO metadata verification</li>
+</ul>
+</li>
+<li>
+<p><strong>Go-Live</strong></p>
+<ul>
+<li>DNS cutover</li>
+<li>Redirect mapping</li>
+<li>Monitoring setup</li>
+</ul>
+</li>
+</ol></div>
+<div><h2 id="page-type-priority-matrix">Page Type Priority Matrix</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="priority"><div><div>P1 - Critical</div><div>Homepage</div><div>1</div><div>Primary entry point</div></div><div><div>P1 - Critical</div><div>Offers</div><div>1</div><div>Revenue driver</div></div><div><div>P1 - Critical</div><div>Wireless Plans</div><div>1</div><div>Top converting page</div></div><div><div>P2 - High</div><div>Product Pages (top 10)</div><div>10</div><div>High traffic products</div></div><div><div>P2 - High</div><div>Portfolio Pages</div><div>10</div><div>Category navigation</div></div><div><div>P3 - Medium</div><div>Industry Pages</div><div>12</div><div>Vertical targeting</div></div><div><div>P3 - Medium</div><div>Remaining Products</div><div>30+</div><div>Full catalog</div></div><div><div>P4 - Lower</div><div>Customer Stories</div><div>25+</div><div>Supporting content</div></div><div><div>P4 - Lower</div><div>Articles/Learn</div><div>20+</div><div>SEO content</div></div><div><div>P5 - Lowest</div><div>Support/About</div><div>10</div><div>Low change frequency</div></div></div></div>
+<div><h2 id="technical-recommendations">Technical Recommendations</h2><h3 id="design-system">1. Design System</h3><ul>
+<li>Extract AT&#x26;T brand colors, typography, and spacing from existing site</li>
+<li>Create CSS custom properties for consistent theming</li>
+<li>Build component library with documented variants</li>
+</ul><h3 id="form-integration">2. Form Integration</h3><ul>
+<li>Lead form (RAI) requires backend integration</li>
+<li>Implement form validation matching current behavior</li>
+<li>Consider progressive enhancement for accessibility</li>
+</ul><h3 id="carouselslider-implementation">3. Carousel/Slider Implementation</h3><ul>
+<li>Use touch-friendly, accessible carousel library</li>
+<li>Implement lazy loading for off-screen slides</li>
+<li>Ensure keyboard navigation support</li>
+</ul><h3 id="content-modeling">4. Content Modeling</h3><ul>
+<li>Structure content for reusability across pages</li>
+<li>Use fragments for shared content (legal disclaimers, CTAs)</li>
+<li>Plan for multi-language support if needed</li>
+</ul><h3 id="performance-targets">5. Performance Targets</h3><ul>
+<li>Lighthouse Performance: 90+</li>
+<li>First Contentful Paint: &#x3C; 1.5s</li>
+<li>Largest Contentful Paint: &#x3C; 2.5s</li>
+<li>Cumulative Layout Shift: &#x3C; 0.1</li>
+</ul><h3 id="seo-considerations">6. SEO Considerations</h3><ul>
+<li>Maintain URL structure or create redirect mapping</li>
+<li>Preserve meta titles, descriptions, and structured data</li>
+<li>Implement canonical URLs for similar pages</li>
+</ul></div>
+<div><h2 id="estimated-page-counts-summary">Estimated Page Counts Summary</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Homepage</div><div>1</div></div><div><div>Products</div><div>40+</div></div><div><div>Portfolios</div><div>10</div></div><div><div>Industries</div><div>12</div></div><div><div>Categories</div><div>15+</div></div><div><div>Learn/Content</div><div>50+</div></div><div><div>Support</div><div>5</div></div><div><div>Promotional</div><div>10+</div></div><div><div><strong>Total</strong></div><div><strong>~145+ pages</strong></div></div></div></div>
+<div><h2 id="next-steps">Next Steps</h2><ol>
+<li><strong>Stakeholder Review</strong> - Review and approve migration plan</li>
+<li><strong>Content Audit</strong> - Detailed inventory of all pages and assets</li>
+<li><strong>Design Extraction</strong> - Document design tokens and component specs</li>
+<li><strong>Environment Setup</strong> - Initialize AEM Edge Delivery project</li>
+<li><strong>Pilot Migration</strong> - Begin with Phase 1 foundation work</li>
+</ol></div>
+<div><p><em>Generated for AT&#x26;T Business website migration to AEM Edge Delivery Services</em></p></div>
+</main>
+<footer></footer>
+</body>
+</html>
