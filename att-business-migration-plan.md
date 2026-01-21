@@ -5,7 +5,9 @@
 
 ## Executive Summary
 
-This document outlines a comprehensive migration plan for **www.business.att.com** to AEM Edge Delivery Services. The AT&T Business website is a large enterprise B2B site with approximately **150+ pages** across multiple content types including products, portfolios, industry solutions, customer stories, and support content.
+This document outlines a comprehensive migration plan for **www.business.att.com** to AEM Edge Delivery Services. The AT&T Business website is a large enterprise B2B site with approximately **749 pages** (per client sitemap/robots.txt) across multiple content types including products, portfolios, industry solutions, customer stories, and support content.
+
+> **Note:** This document catalogs the primary page types and templates. The 749-page total from the client sitemap includes additional content such as archived pages, regional variations, legacy URLs, and dynamically generated pages not visible in the main navigation.
 
 ---
 
@@ -602,20 +604,38 @@ Industry award displays.
 
 ## Estimated Page Counts Summary
 
-| Category | Estimated Pages | Notes |
-|----------|-----------------|-------|
-| Homepage | 1 | Main entry point |
-| Products | 45+ | Individual product/service pages |
-| Portfolios | 9 | Solution category hubs |
-| Industries | 14 | Vertical market pages |
-| Industry Solutions | 6 | Sub-pages (Finance, Manufacturing) |
-| Categories | 18+ | Product grouping pages |
-| Customer Stories | 27+ | Case study articles |
-| Content Hub Listings | 4 | Stories, Reports, Advice, Voices |
-| Support | 3 | Contact, Premier, Business Center |
-| Promotional/Landing | 10+ | Offers, Bundles, Campaigns |
-| Utility | 2 | Sitemap, Industries index |
-| **Total** | **~150+ pages** | |
+### Client Provided Total: 749 Pages
+(From sitemap.xml and robots.txt analysis)
+
+### Cataloged Page Templates (Representative Sample)
+
+| Category | Documented | Est. Total | Notes |
+|----------|------------|------------|-------|
+| Homepage | 1 | 1 | Main entry point |
+| Products | 45+ | 100+ | Individual product/service pages |
+| Portfolios | 9 | 15+ | Solution category hubs |
+| Industries | 14 | 25+ | Vertical market pages |
+| Industry Solutions | 6 | 20+ | Sub-pages per vertical |
+| Categories | 18+ | 40+ | Product grouping pages |
+| Customer Stories | 27+ | 150+ | Case study articles |
+| Content Hub (Articles) | 4 | 200+ | Blog posts, research, guides |
+| Support | 3 | 50+ | Help articles, FAQs |
+| Promotional/Landing | 10+ | 100+ | Campaigns, offers, seasonal |
+| Utility/Legacy | 2 | 50+ | Redirects, archived content |
+| **Documented** | **~150** | | Representative templates |
+| **Total (Client)** | | **749** | Full sitemap count |
+
+### Page Distribution Analysis
+
+| Page Type | % of Total | Est. Count |
+|-----------|------------|------------|
+| Content/Articles | ~40% | ~300 |
+| Product Pages | ~20% | ~150 |
+| Customer Stories | ~15% | ~112 |
+| Industry/Category | ~10% | ~75 |
+| Support/Help | ~8% | ~60 |
+| Landing/Promo | ~5% | ~37 |
+| Core Navigation | ~2% | ~15 |
 
 ---
 

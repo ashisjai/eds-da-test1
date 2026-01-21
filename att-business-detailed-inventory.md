@@ -3,8 +3,11 @@
 ## Overview
 Complete inventory of pages and assets for www.business.att.com migration to AEM Edge Delivery Services.
 
-**Total Estimated Pages: 150+**
+**Total Pages (Client Sitemap): 749**
+**Documented Templates: ~150** (Representative sample of page types)
 **Inventory Date:** January 2026
+
+> **Note:** This inventory documents the primary page templates and content types visible in the main navigation. The client-provided total of 749 pages includes additional content such as archived articles, legacy URLs, regional variations, and pages not linked from the main navigation.
 
 ---
 
@@ -313,20 +316,36 @@ Complete inventory of pages and assets for www.business.att.com migration to AEM
 
 ## 11. Page Count Summary
 
-| Category | Count | Priority |
-|----------|-------|----------|
-| Homepage | 1 | P1 |
-| Product Pages | 45+ | P1-P2 |
-| Portfolio Pages | 9 | P2 |
-| Category Pages | 18+ | P3 |
-| Industry Pages | 14+ | P2-P3 |
-| Industry Solutions | 6 | P3 |
-| Customer Stories | 27+ | P3-P4 |
-| Content Hub (Listings) | 4 | P3 |
-| Support Pages | 3 | P3 |
-| Promotional/Landing | 10+ | P2-P3 |
-| Utility Pages | 2 | P4 |
-| **TOTAL** | **~150+ pages** | |
+### Client Total: 749 Pages (from sitemap.xml/robots.txt)
+
+| Category | Documented | Est. Total | Priority |
+|----------|------------|------------|----------|
+| Homepage | 1 | 1 | P1 |
+| Product Pages | 45+ | 100+ | P1-P2 |
+| Portfolio Pages | 9 | 15+ | P2 |
+| Category Pages | 18+ | 40+ | P3 |
+| Industry Pages | 14+ | 25+ | P2-P3 |
+| Industry Solutions | 6 | 20+ | P3 |
+| Customer Stories | 27+ | 150+ | P3-P4 |
+| Content Hub (Articles) | 4 | 200+ | P3 |
+| Support Pages | 3 | 50+ | P3 |
+| Promotional/Landing | 10+ | 100+ | P2-P3 |
+| Utility/Legacy | 2 | 50+ | P4 |
+| **Documented** | **~150** | | Templates |
+| **Client Total** | | **749** | All pages |
+
+### Undocumented Page Categories (Estimated ~600 pages)
+These pages likely exist in the sitemap but weren't captured in main navigation exploration:
+
+| Category | Est. Count | Description |
+|----------|------------|-------------|
+| Blog/Article Archive | ~200 | Historical blog posts, news articles |
+| Additional Customer Stories | ~100 | Older case studies |
+| Product Variations | ~75 | Regional/variant product pages |
+| Help/Support Articles | ~50 | FAQ pages, troubleshooting guides |
+| Campaign Landing Pages | ~75 | Seasonal, promotional, event pages |
+| Legacy/Redirect Pages | ~50 | Old URLs maintained for SEO |
+| Regional/Localized | ~50 | Location-specific content |
 
 ---
 
