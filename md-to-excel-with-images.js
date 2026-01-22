@@ -19,7 +19,7 @@ async function createMigrationPlanExcel() {
   ws1.addRow(['Total Pages:', '749 (per client sitemap/robots.txt)']);
   ws1.addRow(['Website:', 'www.business.att.com']);
   ws1.addRow(['Project Type:', 'Enterprise B2B Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '38']);
+  ws1.addRow(['Block Variations Documented:', '45']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
@@ -120,7 +120,16 @@ async function createMigrationPlanExcel() {
 
     // Other blocks
     { type: 'Award Badge', variation: 'Wireless Plans', desc: '#1 in Customer Satisfaction', page: '/products/wireless-plans.html', screenshot: 'block-award-badge-wireless.png' },
-    { type: 'Support Contact Block', variation: 'Wireless Plans', desc: '3-column contact info', page: '/products/wireless-plans.html', screenshot: 'block-support-contact-wireless.png' }
+    { type: 'Support Contact Block', variation: 'Wireless Plans', desc: '3-column contact info', page: '/products/wireless-plans.html', screenshot: 'block-support-contact-wireless.png' },
+
+    // Business Internet Portfolio blocks (NEW)
+    { type: 'Check Availability Form', variation: 'Business Internet', desc: 'Address input with availability check button', page: '/portfolios/business-internet.html', screenshot: 'block-check-availability-internet.png' },
+    { type: 'Value Props Grid', variation: 'Business Internet', desc: '"Why businesses choose AT&T" - Speed, Reliability, Security', page: '/portfolios/business-internet.html', screenshot: 'block-value-props-internet.png' },
+    { type: 'Products Carousel Cards', variation: 'Business Internet', desc: '"Explore our internet solutions" - 4 product cards', page: '/portfolios/business-internet.html', screenshot: 'block-products-carousel-internet.png' },
+    { type: 'Comparison Table', variation: 'Business Internet', desc: '"Compare our solutions" feature matrix', page: '/portfolios/business-internet.html', screenshot: 'block-comparison-table-internet.png' },
+    { type: 'Award Badge with Image', variation: 'Business Internet', desc: 'J.D. Power 8 years award with trophy', page: '/portfolios/business-internet.html', screenshot: 'block-award-badge-jdpower-internet.png' },
+    { type: 'Multi-Button CTA', variation: 'Business Internet', desc: '"Ready to get started?" with Shop Fiber, Shop Internet Air, Call', page: '/portfolios/business-internet.html', screenshot: 'block-cta-multi-button-internet.png' },
+    { type: 'Promo Block with Image', variation: 'Business Internet', desc: 'AT&T Dynamic Defense security promo', page: '/portfolios/business-internet.html', screenshot: 'block-promo-image-security-internet.png' }
   ];
 
   let currentRow = 2;
@@ -172,7 +181,14 @@ async function createMigrationPlanExcel() {
     ['Support Contact Block', '1', '/products/wireless-plans.html'],
     ['Quick Links Carousel', '1', '/'],
     ['Promo Banner Carousel', '1', '/'],
-    ['Video Hero Banner', '1', '/']
+    ['Video Hero Banner', '1', '/'],
+    ['Check Availability Form', '1', '/portfolios/business-internet.html'],
+    ['Value Props Grid', '1', '/portfolios/business-internet.html'],
+    ['Products Carousel Cards', '1', '/portfolios/business-internet.html'],
+    ['Comparison Table', '1', '/portfolios/business-internet.html'],
+    ['Award Badge with Image', '1', '/portfolios/business-internet.html'],
+    ['Multi-Button CTA', '1', '/portfolios/business-internet.html'],
+    ['Promo Block with Image', '1', '/portfolios/business-internet.html']
   ];
   reuseData.forEach(row => {
     const dataRow = ws4.addRow(row);
@@ -237,7 +253,7 @@ async function createMigrationPlanExcel() {
   ws7.getRow(10).font = { bold: true };
 
   await workbook.xlsx.writeFile('/workspace/att-business-migration-plan.xlsx');
-  console.log('Created: att-business-migration-plan.xlsx with 36 block variations');
+  console.log('Created: att-business-migration-plan.xlsx with 45 block variations');
 }
 
 async function createDetailedInventoryExcel() {
@@ -253,9 +269,9 @@ async function createDetailedInventoryExcel() {
   ws1.addRow([]);
   ws1.addRow(['Total Pages (Client Provided):', '749']);
   ws1.addRow(['Documented Page Templates:', '~150']);
-  ws1.addRow(['Block Types Documented:', '20']);
-  ws1.addRow(['Block Variations (with pages):', '36']);
-  ws1.addRow(['Screenshot References:', '38']);
+  ws1.addRow(['Block Types Documented:', '30']);
+  ws1.addRow(['Block Variations (with pages):', '43']);
+  ws1.addRow(['Screenshot References:', '47']);
 
   // Sheet 2: All Pages
   const ws2 = workbook.addWorksheet('All Pages');
@@ -346,7 +362,15 @@ async function createDetailedInventoryExcel() {
     { block: 'Lead Form (RAI)', pageType: 'Industry', page: '/industries/healthcare.html', file: 'block-lead-form-industry.png' },
     { block: 'Article Video Hero', pageType: 'Customer Story', page: '/learn/customer-stories/portx.html', file: 'block-hero-article-video-story.png' },
     { block: 'Highlights/Stats', pageType: 'Customer Story', page: '/learn/customer-stories/portx.html', file: 'block-highlights-stats-story.png' },
-    { block: 'About Section', pageType: 'Customer Story', page: '/learn/customer-stories/portx.html', file: 'block-about-download-story.png' }
+    { block: 'About Section', pageType: 'Customer Story', page: '/learn/customer-stories/portx.html', file: 'block-about-download-story.png' },
+    // Business Internet Portfolio blocks (NEW)
+    { block: 'Check Availability Form', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-check-availability-internet.png' },
+    { block: 'Value Props Grid', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-value-props-internet.png' },
+    { block: 'Products Carousel Cards', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-products-carousel-internet.png' },
+    { block: 'Comparison Table', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-comparison-table-internet.png' },
+    { block: 'Award Badge with Image', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-award-badge-jdpower-internet.png' },
+    { block: 'Multi-Button CTA', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-cta-multi-button-internet.png' },
+    { block: 'Promo Block with Image', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-promo-image-security-internet.png' }
   ];
 
   let currentRow = 2;
@@ -369,7 +393,7 @@ async function createDetailedInventoryExcel() {
   }
 
   await workbook.xlsx.writeFile('/workspace/att-business-detailed-inventory.xlsx');
-  console.log('Created: att-business-detailed-inventory.xlsx with 36 screenshot variations');
+  console.log('Created: att-business-detailed-inventory.xlsx with 43 screenshot variations');
 }
 
 async function main() {
