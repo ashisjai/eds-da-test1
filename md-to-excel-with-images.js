@@ -19,7 +19,7 @@ async function createMigrationPlanExcel() {
   ws1.addRow(['Total Pages:', '749 (per client sitemap/robots.txt)']);
   ws1.addRow(['Website:', 'www.business.att.com']);
   ws1.addRow(['Project Type:', 'Enterprise B2B Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '45']);
+  ws1.addRow(['Block Variations Documented:', '52']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
@@ -129,7 +129,20 @@ async function createMigrationPlanExcel() {
     { type: 'Comparison Table', variation: 'Business Internet', desc: '"Compare our solutions" feature matrix', page: '/portfolios/business-internet.html', screenshot: 'block-comparison-table-internet.png' },
     { type: 'Award Badge with Image', variation: 'Business Internet', desc: 'J.D. Power 8 years award with trophy', page: '/portfolios/business-internet.html', screenshot: 'block-award-badge-jdpower-internet.png' },
     { type: 'Multi-Button CTA', variation: 'Business Internet', desc: '"Ready to get started?" with Shop Fiber, Shop Internet Air, Call', page: '/portfolios/business-internet.html', screenshot: 'block-cta-multi-button-internet.png' },
-    { type: 'Promo Block with Image', variation: 'Business Internet', desc: 'AT&T Dynamic Defense security promo', page: '/portfolios/business-internet.html', screenshot: 'block-promo-image-security-internet.png' }
+    { type: 'Promo Block with Image', variation: 'Business Internet', desc: 'AT&T Dynamic Defense security promo', page: '/portfolios/business-internet.html', screenshot: 'block-promo-image-security-internet.png' },
+
+    // Category Page blocks (NEW)
+    { type: 'Benefits Table', variation: 'Category Page', desc: 'Feature comparison table with checkmarks', page: '/categories/mobile-workforce-tools.html', screenshot: 'block-benefits-table-category.png' },
+    { type: 'Product Comparison Table', variation: 'Category Page', desc: 'Side-by-side product comparison grid', page: '/categories/mobile-workforce-tools.html', screenshot: 'block-product-comparison-table-category.png' },
+
+    // Areas/Regional Page blocks (NEW)
+    { type: 'Regional Hero', variation: 'Areas Page', desc: 'City-specific hero with location name', page: '/areas/los-angeles.html', screenshot: 'areas-page-full.png' },
+    { type: 'Product Cards Grid', variation: 'Areas Page', desc: '6-card grid of internet products', page: '/areas/los-angeles.html', screenshot: 'areas-page-full.png' },
+    { type: 'Why Choose Us Grid', variation: 'Areas Page', desc: '3-column value propositions', page: '/areas/los-angeles.html', screenshot: 'areas-page-full.png' },
+
+    // Explore/Landing Page blocks (NEW)
+    { type: 'Current Customer CTA', variation: 'Explore Page', desc: '3-button CTA for existing customers', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' },
+    { type: 'Feature List Checkmarks', variation: 'Explore Page', desc: 'Vertical list with green checkmarks', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' }
   ];
 
   let currentRow = 2;
@@ -188,7 +201,14 @@ async function createMigrationPlanExcel() {
     ['Comparison Table', '1', '/portfolios/business-internet.html'],
     ['Award Badge with Image', '1', '/portfolios/business-internet.html'],
     ['Multi-Button CTA', '1', '/portfolios/business-internet.html'],
-    ['Promo Block with Image', '1', '/portfolios/business-internet.html']
+    ['Promo Block with Image', '1', '/portfolios/business-internet.html'],
+    ['Benefits Table', '1', '/categories/mobile-workforce-tools.html'],
+    ['Product Comparison Table', '1', '/categories/mobile-workforce-tools.html'],
+    ['Regional Hero', '1', '/areas/los-angeles.html'],
+    ['Product Cards Grid', '1', '/areas/los-angeles.html'],
+    ['Why Choose Us Grid', '1', '/areas/los-angeles.html'],
+    ['Current Customer CTA', '1', '/explore/new-service.html'],
+    ['Feature List Checkmarks', '1', '/explore/new-service.html']
   ];
   reuseData.forEach(row => {
     const dataRow = ws4.addRow(row);
@@ -253,7 +273,7 @@ async function createMigrationPlanExcel() {
   ws7.getRow(10).font = { bold: true };
 
   await workbook.xlsx.writeFile('/workspace/att-business-migration-plan.xlsx');
-  console.log('Created: att-business-migration-plan.xlsx with 45 block variations');
+  console.log('Created: att-business-migration-plan.xlsx with 52 block variations');
 }
 
 async function createDetailedInventoryExcel() {
@@ -269,9 +289,9 @@ async function createDetailedInventoryExcel() {
   ws1.addRow([]);
   ws1.addRow(['Total Pages (Client Provided):', '749']);
   ws1.addRow(['Documented Page Templates:', '~150']);
-  ws1.addRow(['Block Types Documented:', '30']);
-  ws1.addRow(['Block Variations (with pages):', '43']);
-  ws1.addRow(['Screenshot References:', '47']);
+  ws1.addRow(['Block Types Documented:', '37']);
+  ws1.addRow(['Block Variations (with pages):', '52']);
+  ws1.addRow(['Screenshot References:', '54']);
 
   // Sheet 2: All Pages
   const ws2 = workbook.addWorksheet('All Pages');
@@ -370,7 +390,17 @@ async function createDetailedInventoryExcel() {
     { block: 'Comparison Table', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-comparison-table-internet.png' },
     { block: 'Award Badge with Image', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-award-badge-jdpower-internet.png' },
     { block: 'Multi-Button CTA', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-cta-multi-button-internet.png' },
-    { block: 'Promo Block with Image', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-promo-image-security-internet.png' }
+    { block: 'Promo Block with Image', pageType: 'Portfolio', page: '/portfolios/business-internet.html', file: 'block-promo-image-security-internet.png' },
+    // Category Page blocks (NEW)
+    { block: 'Benefits Table', pageType: 'Category', page: '/categories/mobile-workforce-tools.html', file: 'block-benefits-table-category.png' },
+    { block: 'Product Comparison Table', pageType: 'Category', page: '/categories/mobile-workforce-tools.html', file: 'block-product-comparison-table-category.png' },
+    // Areas/Regional Page blocks (NEW)
+    { block: 'Regional Hero', pageType: 'Areas', page: '/areas/los-angeles.html', file: 'areas-page-full.png' },
+    { block: 'Product Cards Grid', pageType: 'Areas', page: '/areas/los-angeles.html', file: 'areas-page-full.png' },
+    { block: 'Why Choose Us Grid', pageType: 'Areas', page: '/areas/los-angeles.html', file: 'areas-page-full.png' },
+    // Explore/Landing Page blocks (NEW)
+    { block: 'Current Customer CTA', pageType: 'Explore', page: '/explore/new-service.html', file: 'explore-page-full.png' },
+    { block: 'Feature List Checkmarks', pageType: 'Explore', page: '/explore/new-service.html', file: 'explore-page-full.png' }
   ];
 
   let currentRow = 2;
@@ -393,7 +423,7 @@ async function createDetailedInventoryExcel() {
   }
 
   await workbook.xlsx.writeFile('/workspace/att-business-detailed-inventory.xlsx');
-  console.log('Created: att-business-detailed-inventory.xlsx with 43 screenshot variations');
+  console.log('Created: att-business-detailed-inventory.xlsx with 52 block variations');
 }
 
 async function main() {
