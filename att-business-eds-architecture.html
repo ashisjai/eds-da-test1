@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AT&T Business - AEM EDS Architecture</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      padding: 20px;
+    }
+    .title {
+      background: #009FDB;
+      color: white;
+      padding: 8px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 15px;
+      border-radius: 4px;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+    .diagram {
+      border: 1px solid #ddd;
+      padding: 30px;
+      position: relative;
+      min-height: 900px;
+      background: linear-gradient(180deg, #fafafa 0%, #fff 100%);
+    }
+
+    /* Legend */
+    .legend {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: 1px solid #ddd;
+      padding: 15px;
+      font-size: 10px;
+      background: white;
+      border-radius: 6px;
+    }
+    .legend-title { font-weight: bold; margin-bottom: 10px; font-size: 11px; }
+    .legend-item { display: flex; align-items: center; margin: 6px 0; }
+    .legend-line { width: 30px; height: 2px; margin-right: 8px; }
+    .legend-line.ootb { border-top: 2px solid #009FDB; }
+    .legend-line.api { border-top: 2px dashed #4CAF50; }
+    .legend-line.data { border-top: 2px dashed #FF9800; }
+
+    /* Layer styles */
+    .layer {
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background: white;
+    }
+    .layer-title {
+      font-size: 11px;
+      font-weight: bold;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Box styles */
+    .box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px 16px;
+      background: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .box-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .box-content { line-height: 1.3; }
+    .box-title { font-weight: 600; color: #333; }
+    .box-desc { font-size: 10px; color: #888; }
+
+    /* User Layer */
+    .user-layer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    .user-box {
+      background: linear-gradient(135deg, #009FDB 0%, #0077B6 100%);
+      color: white;
+      border: none;
+    }
+    .user-box .box-title { color: white; }
+    .user-box .box-desc { color: rgba(255,255,255,0.8); }
+
+    /* CDN Layer */
+    .cdn-layer {
+      text-align: center;
+      background: #e3f2fd;
+    }
+
+    /* AEM EDS Layer */
+    .eds-layer {
+      background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+      border-color: #4CAF50;
+    }
+    .eds-layer .layer-title { color: #2E7D32; }
+
+    .eds-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .eds-box {
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+      padding: 12px;
+      background: white;
+      text-align: center;
+      min-height: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .eds-box.primary {
+      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+      color: white;
+    }
+    .eds-box.primary .eds-box-title { color: white; }
+    .eds-box.primary .eds-box-desc { color: rgba(255,255,255,0.85); }
+    .eds-box-title { font-weight: bold; font-size: 12px; color: #2E7D32; }
+    .eds-box-desc { font-size: 10px; color: #666; margin-top: 4px; }
+
+    /* Integration Layer */
+    .integration-layer {
+      background: #FFF8E1;
+      border-color: #FF9800;
+    }
+    .integration-layer .layer-title { color: #E65100; }
+
+    .integration-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .int-box {
+      border: 1px solid #FFB74D;
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      text-align: center;
+    }
+    .int-box-icon { font-size: 20px; margin-bottom: 5px; }
+    .int-box-title { font-weight: 600; font-size: 11px; color: #E65100; }
+    .int-box-desc { font-size: 9px; color: #888; margin-top: 3px; }
+
+    /* Data Layer */
+    .data-layer {
+      background: #E3F2FD;
+      border-color: #2196F3;
+    }
+    .data-layer .layer-title { color: #1565C0; }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .data-box {
+      border: 1px solid #64B5F6;
+      border-radius: 8px;
+      padding: 10px;
+      background: white;
+      text-align: center;
+    }
+    .data-box-icon { font-size: 18px; margin-bottom: 5px; }
+    .data-box-title { font-weight: 600; font-size: 11px; color: #1565C0; }
+    .data-box-desc { font-size: 9px; color: #888; margin-top: 3px; }
+
+    /* Flow arrows */
+    .flow-arrow {
+      text-align: center;
+      padding: 8px 0;
+      color: #999;
+      font-size: 20px;
+    }
+
+    /* Section headers within layers */
+    .section-header {
+      font-size: 10px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 15px 0 10px 0;
+      padding-top: 10px;
+      border-top: 1px dashed #ddd;
+    }
+    .section-header:first-of-type {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">AT&T Business - AEM Edge Delivery Services Architecture</div>
+  <div class="subtitle">www.business.att.com | AEM Author + Universal Editor | Multi-cloud SaaS</div>
+
+  <div class="diagram">
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-title">Integration Types</div>
+      <div class="legend-item"><div class="legend-line ootb"></div> OOTB / Native</div>
+      <div class="legend-item"><div class="legend-line api"></div> API Integration</div>
+      <div class="legend-item"><div class="legend-line data"></div> Data Flow</div>
+    </div>
+
+    <!-- User/Customer Layer -->
+    <div class="layer user-layer">
+      <div class="layer-title">Customer Experience Layer</div>
+      <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+        <div class="box user-box">
+          <div class="box-icon">👤</div>
+          <div class="box-content">
+            <div class="box-title">B2B Customers</div>
+            <div class="box-desc">Enterprise & SMB</div>
+          </div>
+        </div>
+        <div class="box user-box">
+          <div class="box-icon">💻</div>
+          <div class="box-content">
+            <div class="box-title">Desktop & Mobile</div>
+            <div class="box-desc">Responsive Experience</div>
+          </div>
+        </div>
+        <div class="box user-box">
+          <div class="box-icon">🌐</div>
+          <div class="box-content">
+            <div class="box-title">business.att.com</div>
+            <div class="box-desc">749+ Pages</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">▼</div>
+
+    <!-- CDN Layer -->
+    <div class="layer cdn-layer">
+      <div class="layer-title">Content Delivery Network</div>
+      <div style="display: flex; justify-content: center; gap: 30px;">
+        <div class="box">
+          <div class="box-icon">⚡</div>
+          <div class="box-content">
+            <div class="box-title">Akamai CDN</div>
+            <div class="box-desc">Global Edge Caching</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-icon">🔒</div>
+          <div class="box-content">
+            <div class="box-title">WAF / Security</div>
+            <div class="box-desc">DDoS Protection</div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-icon">📊</div>
+          <div class="box-content">
+            <div class="box-title">Edge Analytics</div>
+            <div class="box-desc">Real-time Metrics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">▼</div>
+
+    <!-- AEM EDS Layer -->
+    <div class="layer eds-layer">
+      <div class="layer-title">AEM Edge Delivery Services (Multi-cloud SaaS)</div>
+
+      <div class="section-header">Authoring & Content Management</div>
+      <div class="eds-grid">
+        <div class="eds-box primary">
+          <div class="eds-box-title">Universal Editor</div>
+          <div class="eds-box-desc">WYSIWYG In-context Editing</div>
+        </div>
+        <div class="eds-box primary">
+          <div class="eds-box-title">AEM Author</div>
+          <div class="eds-box-desc">Content Source & Workflows</div>
+        </div>
+        <div class="eds-box primary">
+          <div class="eds-box-title">AEM Assets</div>
+          <div class="eds-box-desc">DAM & Dynamic Media</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Content Fragments</div>
+          <div class="eds-box-desc">Headless Content</div>
+        </div>
+      </div>
+
+      <div class="section-header">Delivery & Development</div>
+      <div class="eds-grid">
+        <div class="eds-box primary">
+          <div class="eds-box-title">Edge Delivery CDN</div>
+          <div class="eds-box-desc">Adobe Managed • 100 Lighthouse</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">GitHub</div>
+          <div class="eds-box-desc">Code Repository & CI/CD</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Block Library</div>
+          <div class="eds-box-desc">38+ Reusable Components</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Sidekick</div>
+          <div class="eds-box-desc">Preview & Publish</div>
+        </div>
+      </div>
+
+      <div class="section-header">Personalization & Optimization</div>
+      <div class="eds-grid">
+        <div class="eds-box">
+          <div class="eds-box-title">Adobe Target</div>
+          <div class="eds-box-desc">A/B Testing & Personalization</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Adobe Launch</div>
+          <div class="eds-box-desc">Tag Management</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Real-time CDP</div>
+          <div class="eds-box-desc">Customer Profiles</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Experimentation</div>
+          <div class="eds-box-desc">Edge-based Testing</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">▼</div>
+
+    <!-- Integration Layer -->
+    <div class="layer integration-layer">
+      <div class="layer-title">Third-Party Integrations</div>
+      <div class="integration-grid">
+        <div class="int-box">
+          <div class="int-box-icon">📈</div>
+          <div class="int-box-title">Adobe Analytics</div>
+          <div class="int-box-desc">AppMeasurement</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">🔍</div>
+          <div class="int-box-title">CLUDO Search</div>
+          <div class="int-box-desc">Site Search SaaS</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">📝</div>
+          <div class="int-box-title">Lead Form (RAI)</div>
+          <div class="int-box-desc">Request a Call</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">💬</div>
+          <div class="int-box-title">Live Chat</div>
+          <div class="int-box-desc">Customer Support</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">📋</div>
+          <div class="int-box-title">Foresee Survey</div>
+          <div class="int-box-desc">Feedback Tool</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">✉️</div>
+          <div class="int-box-title">Oracle Eloqua</div>
+          <div class="int-box-desc">Email Marketing</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">☁️</div>
+          <div class="int-box-title">Salesforce CRM</div>
+          <div class="int-box-desc">Lead Management</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">🎯</div>
+          <div class="int-box-title">Demandbase</div>
+          <div class="int-box-desc">ABM Analytics</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">🔥</div>
+          <div class="int-box-title">Bombora</div>
+          <div class="int-box-desc">Intent Data</div>
+        </div>
+        <div class="int-box">
+          <div class="int-box-icon">📊</div>
+          <div class="int-box-title">Quantum Metrics</div>
+          <div class="int-box-desc">Digital Analytics</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow-arrow">▼</div>
+
+    <!-- Data & Backend Layer -->
+    <div class="layer data-layer">
+      <div class="layer-title">Data & Backend Systems</div>
+      <div class="data-grid">
+        <div class="data-box">
+          <div class="data-box-icon">❄️</div>
+          <div class="data-box-title">Snowflake</div>
+          <div class="data-box-desc">Cloud Data Warehouse</div>
+        </div>
+        <div class="data-box">
+          <div class="data-box-icon">📊</div>
+          <div class="data-box-title">Marketing Data Platform</div>
+          <div class="data-box-desc">Unified Customer Data</div>
+        </div>
+        <div class="data-box">
+          <div class="data-box-icon">🔌</div>
+          <div class="data-box-title">API Gateway</div>
+          <div class="data-box-desc">Backend Services</div>
+        </div>
+        <div class="data-box">
+          <div class="data-box-icon">🛒</div>
+          <div class="data-box-title">Commerce APIs</div>
+          <div class="data-box-desc">Pricing & Catalog</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
