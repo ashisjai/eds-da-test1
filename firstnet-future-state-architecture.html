@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FirstNet Future State Architecture</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      padding: 20px;
+    }
+    .title {
+      background: #4CAF50;
+      color: white;
+      padding: 5px 15px;
+      font-size: 12px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .diagram {
+      border: 1px solid #ddd;
+      padding: 30px;
+      position: relative;
+      min-height: 900px;
+    }
+    .legend {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      border: 1px solid #ddd;
+      padding: 15px;
+      font-size: 11px;
+    }
+    .legend-title { font-weight: bold; margin-bottom: 10px; }
+    .legend-item { display: flex; align-items: center; margin: 5px 0; }
+    .legend-line { width: 40px; height: 2px; margin-right: 10px; }
+    .legend-line.ootb { border-top: 2px dashed #4CAF50; }
+    .legend-line.api { border-top: 2px dashed #4CAF50; }
+    .legend-line.etl { border-top: 2px dashed #2196F3; }
+    .legend-line.system { border-top: 2px solid #333; }
+    .legend-icon { width: 20px; height: 20px; background: #f5f5f5; border: 1px solid #ddd; margin-right: 10px; }
+
+    .box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px 20px;
+      background: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      position: absolute;
+    }
+    .box-icon {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box-icon img { max-width: 100%; max-height: 100%; }
+
+    /* Main components positioning */
+    .b2b-customer { top: 30px; left: 50%; transform: translateX(-50%); }
+    .firstnet-websites { top: 100px; left: 50%; transform: translateX(-50%); background: #E8F5E9; }
+    .akamai-cdn { top: 180px; left: 50%; transform: translateX(-50%); }
+
+    /* AEM EDS Section */
+    .aem-eds-container {
+      position: absolute;
+      top: 250px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      background: #FAFAFA;
+      width: 500px;
+    }
+    .aem-eds-title {
+      font-weight: bold;
+      font-size: 13px;
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .aem-eds-subtitle {
+      font-size: 11px;
+      color: #666;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .eds-components {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .eds-box {
+      border: 1px solid #4CAF50;
+      border-radius: 6px;
+      padding: 10px 15px;
+      background: white;
+      font-size: 11px;
+      text-align: center;
+      min-width: 120px;
+    }
+    .eds-box.highlight {
+      background: #E8F5E9;
+      border-color: #2E7D32;
+    }
+    .eds-box-title { font-weight: bold; color: #2E7D32; }
+    .eds-box-desc { font-size: 10px; color: #666; margin-top: 3px; }
+
+    /* CLUDO Search */
+    .cludo-search { top: 270px; right: 100px; }
+
+    /* Adobe DTM */
+    .adobe-dtm { top: 420px; left: 200px; }
+
+    /* Cloud Data Storage */
+    .cloud-storage { top: 480px; left: 30px; }
+    .marketing-platform { top: 560px; left: 30px; }
+
+    /* Adobe Cloud SAAS */
+    .adobe-cloud-container {
+      position: absolute;
+      top: 480px;
+      left: 220px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: #FFF8E1;
+      width: 180px;
+    }
+    .adobe-cloud-title { font-weight: bold; font-size: 11px; margin-bottom: 10px; }
+    .adobe-cloud-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      background: white;
+      border-radius: 4px;
+      margin: 5px 0;
+      font-size: 10px;
+    }
+
+    /* Email Marketing */
+    .email-marketing { top: 480px; left: 450px; }
+    .crm-salesforce { top: 560px; left: 450px; }
+
+    /* Feedback Tool */
+    .feedback-tool { top: 480px; left: 650px; }
+
+    /* B2B Marketing */
+    .b2b-marketing-container {
+      position: absolute;
+      top: 480px;
+      left: 850px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      background: #E3F2FD;
+      width: 220px;
+    }
+    .b2b-title { font-weight: bold; font-size: 11px; margin-bottom: 10px; }
+    .b2b-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+    .b2b-item {
+      background: white;
+      border-radius: 4px;
+      padding: 6px;
+      font-size: 9px;
+      text-align: center;
+    }
+
+    /* AppNexus & Flashtalking */
+    .appnexus { top: 480px; right: 200px; }
+    .flashtalking { top: 480px; right: 30px; }
+
+    /* Connection lines - simplified with CSS */
+    .connector {
+      position: absolute;
+      border-left: 2px dashed #4CAF50;
+    }
+    .connector-h {
+      position: absolute;
+      border-top: 2px dashed #4CAF50;
+    }
+
+    svg.connections {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">FirstNet Future State (AEM EDS with Universal Editor)</div>
+
+  <div class="diagram">
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-title">Legend</div>
+      <div class="legend-item"><div class="legend-line ootb"></div> OOTB Integration</div>
+      <div class="legend-item"><div class="legend-line api"></div> API Integration</div>
+      <div class="legend-item"><div class="legend-line etl"></div> ETL</div>
+      <div class="legend-item"><div class="legend-line system"></div> System Action</div>
+      <div class="legend-item"><div class="legend-icon"></div> Database</div>
+    </div>
+
+    <!-- B2B Customer -->
+    <div class="box b2b-customer">
+      <div class="box-icon">👤</div>
+      <span>B2B Customer</span>
+    </div>
+
+    <!-- FirstNet Websites -->
+    <div class="box firstnet-websites">
+      <div class="box-icon">☰</div>
+      <span>FirstNet Websites</span>
+    </div>
+
+    <!-- Akamai CDN -->
+    <div class="box akamai-cdn">
+      <div class="box-icon">🌐</div>
+      <span>Akamai CDN</span>
+    </div>
+
+    <!-- AEM EDS Container (REPLACED SECTION) -->
+    <div class="aem-eds-container">
+      <div class="aem-eds-title">AEM Edge Delivery Services with Universal Editor</div>
+      <div class="aem-eds-subtitle">Document-based Authoring + Visual Editing</div>
+      <div class="eds-components">
+        <div class="eds-box highlight">
+          <div class="eds-box-title">Edge Delivery</div>
+          <div class="eds-box-desc">CDN + Fast Rendering</div>
+        </div>
+        <div class="eds-box highlight">
+          <div class="eds-box-title">Universal Editor</div>
+          <div class="eds-box-desc">Visual WYSIWYG</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Google Drive</div>
+          <div class="eds-box-desc">Content Source</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">SharePoint</div>
+          <div class="eds-box-desc">Content Source</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">AEM Assets</div>
+          <div class="eds-box-desc">DAM Integration</div>
+        </div>
+        <div class="eds-box">
+          <div class="eds-box-title">Block Library</div>
+          <div class="eds-box-desc">Reusable Components</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLUDO Search -->
+    <div class="box cludo-search">
+      <span style="color: #4CAF50; font-weight: bold;">C</span>
+      <span>CLUDO Search SAAS</span>
+    </div>
+
+    <!-- Adobe DTM/Tag -->
+    <div class="box adobe-dtm">
+      <div class="box-icon">🏷️</div>
+      <span>Adobe DTM/Tag (ATT Hosted)</span>
+    </div>
+
+    <!-- Cloud Data Storage -->
+    <div class="box cloud-storage">
+      <div class="box-icon">❄️</div>
+      <div>
+        <div><strong>Cloud Data Storage</strong></div>
+        <div style="font-size: 10px; color: #666;">Snowflake</div>
+      </div>
+    </div>
+
+    <!-- Marketing Data Platform -->
+    <div class="box marketing-platform">
+      <div class="box-icon">📊</div>
+      <div>
+        <div><strong>Marketing</strong></div>
+        <div style="font-size: 10px; color: #666;">Data Platform</div>
+      </div>
+    </div>
+
+    <!-- Adobe Cloud SAAS -->
+    <div class="adobe-cloud-container">
+      <div class="adobe-cloud-title">Adobe Cloud SAAS</div>
+      <div class="adobe-cloud-item">
+        <span>📈</span>
+        <div>
+          <div><strong>Adobe Analytics</strong></div>
+          <div style="font-size: 9px; color: #666;">(Appmeasurement)</div>
+        </div>
+      </div>
+      <div class="adobe-cloud-item">
+        <span>🎯</span>
+        <div><strong>Adobe Target</strong></div>
+      </div>
+    </div>
+
+    <!-- Email Marketing -->
+    <div class="box email-marketing">
+      <div class="box-icon" style="color: #E91E63;">✉️</div>
+      <div>
+        <div><strong>Email Marketing</strong></div>
+        <div style="font-size: 10px; color: #666;">Oracle Eloqua</div>
+      </div>
+    </div>
+
+    <!-- CRM Salesforce -->
+    <div class="box crm-salesforce">
+      <div class="box-icon" style="color: #2196F3;">☁️</div>
+      <div>
+        <div><strong>Customer Relationship</strong></div>
+        <div><strong>Management</strong></div>
+        <div style="font-size: 10px; color: #666;">Salesforce</div>
+      </div>
+    </div>
+
+    <!-- Feedback Tool -->
+    <div class="box feedback-tool">
+      <div>
+        <div><strong>Feedback SaaS Tool</strong></div>
+        <div style="font-size: 10px; color: #666; margin-top: 5px;">Foresee Survey</div>
+      </div>
+    </div>
+
+    <!-- B2B Marketing Container -->
+    <div class="b2b-marketing-container">
+      <div class="b2b-title">B2B Marketing Intent/Analytics SaaS Tool</div>
+      <div class="b2b-grid">
+        <div class="b2b-item">🔥 Bombora Analytics</div>
+        <div class="b2b-item">📊 Demandbase Analytics</div>
+        <div class="b2b-item">☁️ Clarity Analytics</div>
+        <div class="b2b-item">📈 Quantum Metrics</div>
+        <div class="b2b-item">⚡ Thunderhead</div>
+        <div class="b2b-item">💡 Floodlight/GTag</div>
+        <div class="b2b-item" style="grid-column: span 2;">🔴 Oracle CX Infinity</div>
+      </div>
+    </div>
+
+    <!-- AppNexus -->
+    <div class="box appnexus">
+      <div class="box-icon">📱</div>
+      <div>
+        <div><strong>AppNexus</strong></div>
+        <div style="font-size: 10px; color: #666;">xandr(DSP)</div>
+      </div>
+    </div>
+
+    <!-- Flashtalking -->
+    <div class="box flashtalking">
+      <div>
+        <div style="text-decoration: line-through; font-size: 10px; color: #999;">Dynamic Content</div>
+        <div style="text-decoration: line-through; font-size: 10px; color: #999;">Optimization</div>
+        <div><strong>flashtalking</strong></div>
+        <div style="font-size: 10px; color: #666;">Flashtalking</div>
+      </div>
+    </div>
+
+    <!-- SVG for connection lines -->
+    <svg class="connections" viewBox="0 0 1200 700">
+      <!-- Vertical line from B2B Customer to FirstNet -->
+      <line x1="600" y1="60" x2="600" y2="100" stroke="#333" stroke-width="2"/>
+      <!-- Vertical line from FirstNet to Akamai -->
+      <line x1="600" y1="140" x2="600" y2="180" stroke="#333" stroke-width="2"/>
+      <!-- Vertical line from Akamai to AEM EDS -->
+      <line x1="600" y1="210" x2="600" y2="250" stroke="#333" stroke-width="2"/>
+
+      <!-- Horizontal line from FirstNet to CLUDO -->
+      <line x1="680" y1="120" x2="900" y2="120" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5"/>
+      <line x1="900" y1="120" x2="900" y2="280" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5"/>
+
+      <!-- Line from AEM EDS to Adobe DTM -->
+      <line x1="400" y1="420" x2="400" y2="450" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5"/>
+
+      <!-- Adobe Tag lines -->
+      <line x1="500" y1="360" x2="1100" y2="360" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+      <text x="1000" y="355" font-size="10" fill="#999">Adobe Tag</text>
+    </svg>
+  </div>
+</body>
+</html>
