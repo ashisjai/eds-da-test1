@@ -19,7 +19,7 @@ async function createMigrationPlanExcel() {
   ws1.addRow(['Total Pages:', '749 (per client sitemap/robots.txt)']);
   ws1.addRow(['Website:', 'www.business.att.com']);
   ws1.addRow(['Project Type:', 'Enterprise B2B Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '52']);
+  ws1.addRow(['Block Variations Documented:', '82']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
@@ -142,7 +142,44 @@ async function createMigrationPlanExcel() {
 
     // Explore/Landing Page blocks (NEW)
     { type: 'Current Customer CTA', variation: 'Explore Page', desc: '3-button CTA for existing customers', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' },
-    { type: 'Feature List Checkmarks', variation: 'Explore Page', desc: 'Vertical list with green checkmarks', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' }
+    { type: 'Feature List Checkmarks', variation: 'Explore Page', desc: 'Vertical list with green checkmarks', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' },
+
+    // Product Page blocks (COMPREHENSIVE CRAWL)
+    { type: 'Bundle Pricing Cards', variation: 'Phone Product', desc: 'Fiber + Phone bundle carousel with 5 tiers', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
+    { type: 'Features Collapsible List', variation: 'Phone Product', desc: 'Expandable feature list with descriptions', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
+    { type: 'Related Product Promo', variation: 'Phone Product', desc: 'Image + text promoting related service', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
+    { type: 'International Calling Block', variation: 'Phone Product', desc: 'Benefits checklist for international service', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
+
+    // Bundles Page blocks (COMPREHENSIVE CRAWL)
+    { type: 'Complete Solution Promo', variation: 'Bundles Page', desc: 'Fiber + security + backup promo banner', page: '/bundles.html', screenshot: 'bundles-page-full.png' },
+    { type: 'Risk-Free Trial Block', variation: 'Bundles Page', desc: '30-day trial with 3-column features', page: '/bundles.html', screenshot: 'bundles-page-full.png' },
+
+    // Learn Hub blocks (COMPREHENSIVE CRAWL)
+    { type: 'Blog Hero Banner', variation: 'Learn Hub', desc: 'AT&T Business Insights hero with subscribe', page: '/learn.html', screenshot: 'learn-hub-page-full.png' },
+    { type: 'Featured Article Block', variation: 'Learn Hub', desc: 'Article preview with table of contents', page: '/learn.html', screenshot: 'learn-hub-page-full.png' },
+    { type: 'Latest Articles Grid', variation: 'Learn Hub', desc: '2-column article cards with load more', page: '/learn.html', screenshot: 'learn-hub-page-full.png' },
+    { type: 'Blog Search & Filter', variation: 'Learn Hub', desc: 'Search input with filter dropdown', page: '/learn.html', screenshot: 'learn-hub-page-full.png' },
+    { type: 'Top Topics Carousel', variation: 'Learn Hub', desc: 'Horizontal scrolling topic cards', page: '/learn.html', screenshot: 'learn-hub-page-full.png' },
+    { type: 'Email Subscription Form', variation: 'Learn Hub', desc: 'Blue background newsletter signup', page: '/learn.html', screenshot: 'learn-hub-page-full.png' },
+
+    // Support Page blocks (COMPREHENSIVE CRAWL)
+    { type: 'Support Quick Actions Grid', variation: 'Support Page', desc: '6 icon cards for common actions', page: '/support.html', screenshot: 'support-page-full.png' },
+    { type: 'Support Tabs Accordion', variation: 'Support Page', desc: 'Expandable topic sections', page: '/support.html', screenshot: 'support-page-full.png' },
+    { type: 'Support Portal Cards', variation: 'Support Page', desc: '3 linked cards to support portals', page: '/support.html', screenshot: 'support-page-full.png' },
+    { type: 'Resource Cards (Blue)', variation: 'Support Page', desc: 'Video Library, Social, Training cards', page: '/support.html', screenshot: 'support-page-full.png' },
+    { type: 'Guided Courses Block', variation: 'Support Page', desc: 'Image + text with course links', page: '/support.html', screenshot: 'support-page-full.png' },
+
+    // Offers Page blocks (COMPREHENSIVE CRAWL)
+    { type: 'Sticky Anchor Navigation', variation: 'Offers Page', desc: 'Jump links to page sections', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Featured Offers Cards', variation: 'Offers Page', desc: '2-up side-by-side offer cards', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Full-width Promo Banner', variation: 'Offers Page', desc: 'Large image banner with savings CTA', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Device Offers Carousel', variation: 'Offers Page', desc: '9-card device deal carousel', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Wireless Plan Offers Carousel', variation: 'Offers Page', desc: '3-card plan offers carousel', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Accessories Offers Carousel', variation: 'Offers Page', desc: '5-card accessories deal carousel', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Internet Offers Carousel', variation: 'Offers Page', desc: '4-card internet offers with checklist', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Bundles Offers Carousel', variation: 'Offers Page', desc: '2-card bundle deals with features list', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Referral Program Block', variation: 'Offers Page', desc: 'Earn rewards checklist promo', page: '/offers.html', screenshot: 'offers-page-full.png' },
+    { type: 'Collapsible SEO Content', variation: 'Multiple Pages', desc: 'Expandable text content for SEO', page: '/offers.html', screenshot: 'offers-page-full.png' }
   ];
 
   let currentRow = 2;
@@ -208,7 +245,34 @@ async function createMigrationPlanExcel() {
     ['Product Cards Grid', '1', '/areas/los-angeles.html'],
     ['Why Choose Us Grid', '1', '/areas/los-angeles.html'],
     ['Current Customer CTA', '1', '/explore/new-service.html'],
-    ['Feature List Checkmarks', '1', '/explore/new-service.html']
+    ['Feature List Checkmarks', '1', '/explore/new-service.html'],
+    ['Bundle Pricing Cards', '1', '/products/att-phone-for-business.html'],
+    ['Features Collapsible List', '1', '/products/att-phone-for-business.html'],
+    ['Related Product Promo', '1', '/products/att-phone-for-business.html'],
+    ['International Calling Block', '1', '/products/att-phone-for-business.html'],
+    ['Complete Solution Promo', '1', '/bundles.html'],
+    ['Risk-Free Trial Block', '2', '/bundles.html, /offers.html'],
+    ['Blog Hero Banner', '1', '/learn.html'],
+    ['Featured Article Block', '1', '/learn.html'],
+    ['Latest Articles Grid', '1', '/learn.html'],
+    ['Blog Search & Filter', '1', '/learn.html'],
+    ['Top Topics Carousel', '1', '/learn.html'],
+    ['Email Subscription Form', '1', '/learn.html'],
+    ['Support Quick Actions Grid', '1', '/support.html'],
+    ['Support Tabs Accordion', '1', '/support.html'],
+    ['Support Portal Cards', '1', '/support.html'],
+    ['Resource Cards (Blue)', '1', '/support.html'],
+    ['Guided Courses Block', '1', '/support.html'],
+    ['Sticky Anchor Navigation', '1', '/offers.html'],
+    ['Featured Offers Cards', '1', '/offers.html'],
+    ['Full-width Promo Banner', '1', '/offers.html'],
+    ['Device Offers Carousel', '1', '/offers.html'],
+    ['Wireless Plan Offers Carousel', '1', '/offers.html'],
+    ['Accessories Offers Carousel', '1', '/offers.html'],
+    ['Internet Offers Carousel', '1', '/offers.html'],
+    ['Bundles Offers Carousel', '1', '/offers.html'],
+    ['Referral Program Block', '1', '/offers.html'],
+    ['Collapsible SEO Content', '3', '/offers.html, /bundles.html, /products/att-phone-for-business.html']
   ];
   reuseData.forEach(row => {
     const dataRow = ws4.addRow(row);
@@ -273,7 +337,7 @@ async function createMigrationPlanExcel() {
   ws7.getRow(10).font = { bold: true };
 
   await workbook.xlsx.writeFile('/workspace/att-business-migration-plan.xlsx');
-  console.log('Created: att-business-migration-plan.xlsx with 52 block variations');
+  console.log('Created: att-business-migration-plan.xlsx with 82 block variations');
 }
 
 async function createDetailedInventoryExcel() {
@@ -289,9 +353,9 @@ async function createDetailedInventoryExcel() {
   ws1.addRow([]);
   ws1.addRow(['Total Pages (Client Provided):', '749']);
   ws1.addRow(['Documented Page Templates:', '~150']);
-  ws1.addRow(['Block Types Documented:', '37']);
-  ws1.addRow(['Block Variations (with pages):', '52']);
-  ws1.addRow(['Screenshot References:', '54']);
+  ws1.addRow(['Block Types Documented:', '67']);
+  ws1.addRow(['Block Variations (with pages):', '82']);
+  ws1.addRow(['Screenshot References:', '62']);
 
   // Sheet 2: All Pages
   const ws2 = workbook.addWorksheet('All Pages');
@@ -423,7 +487,7 @@ async function createDetailedInventoryExcel() {
   }
 
   await workbook.xlsx.writeFile('/workspace/att-business-detailed-inventory.xlsx');
-  console.log('Created: att-business-detailed-inventory.xlsx with 52 block variations');
+  console.log('Created: att-business-detailed-inventory.xlsx with 82 block variations');
 }
 
 async function main() {
