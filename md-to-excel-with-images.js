@@ -142,36 +142,42 @@ async function createMigrationPlanExcel() {
     currentRow++;
   }
 
-  // Sheet 4: Block Reuse Summary
+  // Sheet 4: Block Reuse Summary with URLs
   const ws4 = workbook.addWorksheet('Block Reuse Summary');
-  ws4.columns = [{ width: 25 }, { width: 15 }, { width: 60 }];
-  ws4.addRow(['Block Type', 'Page Count', 'Pages Used On']);
+  ws4.columns = [{ width: 25 }, { width: 12 }, { width: 90 }];
+  ws4.addRow(['Block Type', 'Page Count', 'Page URLs']);
   ws4.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
   ws4.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF009FDB' } };
 
   const reuseData = [
-    ['Hero Blocks', '5', 'Homepage, Wireless Plans, Business Fiber, Healthcare, Mobility, Customer Stories'],
-    ['Pricing Cards Carousel', '2', 'Wireless Plans, Business Fiber'],
-    ['Feature Cards Grid', '3', 'Homepage, Wireless Plans, Business Fiber'],
-    ['Offer Cards Carousel', '2', 'Business Fiber, Mobility Portfolio'],
-    ['Guarantee Checklist', '2', 'Homepage, Mobility Portfolio'],
-    ['FAQ Accordion', '2', 'Wireless Plans, Business Fiber'],
-    ['Lead Form (RAI)', '3', 'Homepage, Healthcare Industry, Business Fiber'],
-    ['Product Cards Carousel', '1', 'Homepage'],
-    ['Industry Cards Carousel', '1', 'Homepage'],
-    ['Link List Block', '1', 'Homepage'],
-    ['Anchor Navigation', '1', 'Industry Pages'],
-    ['Solution Link Cards', '1', 'Industry Pages'],
-    ['Image + Text Split', '1', 'Industry Pages'],
-    ['Story Cards Overlay', '1', 'Industry Pages'],
-    ['Insights Cards', '1', 'Industry Pages'],
-    ['Contact CTA Banner', '1', 'Industry Pages'],
-    ['Highlights/Stats', '1', 'Customer Stories'],
-    ['About Section', '1', 'Customer Stories'],
-    ['Award Badge', '1', 'Product Pages'],
-    ['Support Contact Block', '1', 'Product Pages']
+    ['Hero Blocks', '6', '/, /products/wireless-plans.html, /products/business-fiber-internet.html, /industries/healthcare.html, /portfolios/mobility.html, /learn/customer-stories/portx.html'],
+    ['Pricing Cards Carousel', '2', '/products/wireless-plans.html, /products/business-fiber-internet.html'],
+    ['Feature Cards Grid', '3', '/, /products/wireless-plans.html, /products/business-fiber-internet.html'],
+    ['Offer Cards Carousel', '2', '/products/business-fiber-internet.html, /portfolios/mobility.html'],
+    ['Guarantee Checklist', '2', '/, /portfolios/mobility.html'],
+    ['FAQ Accordion', '2', '/products/wireless-plans.html, /products/business-fiber-internet.html'],
+    ['Lead Form (RAI)', '3', '/, /industries/healthcare.html, /products/business-fiber-internet.html'],
+    ['Product Cards Carousel', '1', '/'],
+    ['Industry Cards Carousel', '1', '/'],
+    ['Link List Block', '1', '/'],
+    ['Anchor Navigation', '1', '/industries/healthcare.html'],
+    ['Solution Link Cards', '1', '/industries/healthcare.html'],
+    ['Image + Text Split', '1', '/industries/healthcare.html'],
+    ['Story Cards Overlay', '1', '/industries/healthcare.html'],
+    ['Insights Cards', '1', '/industries/healthcare.html'],
+    ['Contact CTA Banner', '1', '/industries/healthcare.html'],
+    ['Highlights/Stats', '1', '/learn/customer-stories/portx.html'],
+    ['About Section', '1', '/learn/customer-stories/portx.html'],
+    ['Award Badge', '1', '/products/wireless-plans.html'],
+    ['Support Contact Block', '1', '/products/wireless-plans.html'],
+    ['Quick Links Carousel', '1', '/'],
+    ['Promo Banner Carousel', '1', '/'],
+    ['Video Hero Banner', '1', '/']
   ];
-  reuseData.forEach(row => ws4.addRow(row));
+  reuseData.forEach(row => {
+    const dataRow = ws4.addRow(row);
+    dataRow.getCell(3).alignment = { wrapText: true };
+  });
 
   // Sheet 5: Migration Phases
   const ws5 = workbook.addWorksheet('Migration Phases');
