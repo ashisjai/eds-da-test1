@@ -19,7 +19,7 @@ async function createFirstNetInventoryExcel() {
   ws1.addRow(['Total Pages:', '700+ (per sitemap)']);
   ws1.addRow(['Website:', 'www.firstnet.com']);
   ws1.addRow(['Project Type:', 'Public Safety Network Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '95']);
+  ws1.addRow(['Block Variations Documented:', '106']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Devices, Rate Plans, Coverage, Industry Solutions, Community, Support, Apps']);
@@ -60,6 +60,9 @@ async function createFirstNetInventoryExcel() {
     ['Eligibility', 'https://www.firstnet.com/eligibility-verification.html', 'Eligibility verification'],
     ['Mission Critical', 'https://www.firstnet.com/mission-critical.html', 'Push-to-talk solutions'],
     ['Offers', 'https://www.firstnet.com/offers/*.html', 'Current promotions'],
+    ['Why FirstNet', 'https://www.firstnet.com/why-firstnet.html', 'Benefits and comparison page'],
+    ['Phones by Brand', 'https://www.firstnet.com/devices/phones.html', 'Phones grouped by manufacturer'],
+    ['Accessories by Brand', 'https://www.firstnet.com/devices/accessories.html', 'Accessories grouped by brand'],
     ['404 Error', 'https://www.firstnet.com/404', 'Page not found']
   ];
   siteData.forEach(row => ws2.addRow(row));
@@ -233,7 +236,23 @@ async function createFirstNetInventoryExcel() {
     { type: 'Warning Note', variation: 'Eligibility', desc: 'Important notice text block', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-warning-note.png' },
     { type: 'Impacts Table', variation: 'Eligibility', desc: 'Complex table with eligibility impacts', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-impacts-table.png' },
     { type: 'FAQ Accordion', variation: 'Eligibility', desc: 'Verification-related FAQs', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-faq-accordion.png' },
-    { type: 'Need Help Section', variation: 'Eligibility', desc: 'Contact customer service CTA', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-need-help.png' }
+    { type: 'Need Help Section', variation: 'Eligibility', desc: 'Contact customer service CTA', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-need-help.png' },
+
+    // Why FirstNet Page Blocks
+    { type: 'Hero with CTA', variation: 'Why FirstNet', desc: 'Full-width hero with eligibility verification CTA', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-hero.png' },
+    { type: 'Benefits Grid', variation: 'Why FirstNet', desc: '3-column benefits with icons and descriptions', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-benefits.png' },
+    { type: 'Comparison Image', variation: 'Why FirstNet', desc: 'Static image comparing FirstNet vs competitors', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-comparison.png' },
+    { type: 'Audience Cards', variation: 'Why FirstNet', desc: '3 persona cards (Individuals, Agencies, Essential Services)', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-audience-cards.png' },
+    { type: 'FirstNet Promise', variation: 'Why FirstNet', desc: 'Image + text section with video CTA', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-promise.png' },
+    { type: 'Insights Carousel', variation: 'Why FirstNet', desc: 'First responder insights story cards carousel', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-insights-carousel.png' },
+
+    // Phones Page - Additional Variations
+    { type: 'Hero Offer Carousel', variation: 'Phones', desc: 'Rotating hero with device offers and pagination dots', page: 'https://www.firstnet.com/devices/phones.html', screenshot: 'blocks/phones-hero-offer-carousel.png' },
+    { type: 'Product Cards by Brand', variation: 'Apple', desc: 'Product grid organized by Apple brand', page: 'https://www.firstnet.com/devices/phones.html', screenshot: 'blocks/phones-apple-grid.png' },
+    { type: 'Product Cards by Brand', variation: 'Samsung', desc: 'Product grid organized by Samsung brand', page: 'https://www.firstnet.com/devices/phones.html', screenshot: 'blocks/phones-samsung-grid.png' },
+
+    // Accessories Page - Additional Variations
+    { type: 'Product Cards by Brand', variation: 'Accessories', desc: 'Accessory product grid organized by brand (Klein, Nite Ize, Samsung, Sonim)', page: 'https://www.firstnet.com/devices/accessories.html', screenshot: 'blocks/accessories-klein-grid.png' }
   ];
 
   let currentRow = 2;
@@ -546,7 +565,7 @@ async function createFirstNetInventoryExcel() {
   });
 
   await workbook.xlsx.writeFile('/workspace/firstnet-migration-plan.xlsx');
-  console.log('Created: firstnet-migration-plan.xlsx with 96 block variations, migration phases, and effort estimates');
+  console.log('Created: firstnet-migration-plan.xlsx with 106 block variations, migration phases, and effort estimates');
 }
 
 createFirstNetInventoryExcel().catch(console.error);
