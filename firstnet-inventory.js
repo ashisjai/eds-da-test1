@@ -19,7 +19,7 @@ async function createFirstNetInventoryExcel() {
   ws1.addRow(['Total Pages:', '700+ (per sitemap)']);
   ws1.addRow(['Website:', 'www.firstnet.com']);
   ws1.addRow(['Project Type:', 'Public Safety Network Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '106']);
+  ws1.addRow(['Block Variations Documented:', '58 (consolidated from 106 variations)']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Devices, Rate Plans, Coverage, Industry Solutions, Community, Support, Apps']);
@@ -81,178 +81,102 @@ async function createFirstNetInventoryExcel() {
   ws3.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
   ws3.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
 
-  // Complete block data with full URLs - Using block-specific screenshots where available
+  // Consolidated block data - similar variations grouped together
   const blockData = [
-    // Global Components
-    { type: 'Header Navigation', variation: 'Global', desc: 'Logo, hamburger menu, sign up, login', page: 'https://www.firstnet.com/ (all pages)', screenshot: 'blocks/homepage-header.png' },
-    { type: 'Footer', variation: 'Global', desc: 'Logo, sitemap, support links, social, legal', page: 'https://www.firstnet.com/ (all pages)', screenshot: 'blocks/homepage-footer.png' },
-    { type: 'Email Subscription Form', variation: 'Global', desc: 'Blue background with email input + category dropdown', page: 'https://www.firstnet.com/ (all pages)', screenshot: 'blocks/homepage-email-subscription.png' },
+    // === GLOBAL COMPONENTS ===
+    { type: 'Header Navigation', variation: 'Global', desc: 'Logo, hamburger menu, sign up, login', page: 'All pages', screenshot: 'blocks/homepage-header.png' },
+    { type: 'Footer', variation: 'Global', desc: 'Logo, sitemap, support links, social, legal', page: 'All pages', screenshot: 'blocks/homepage-footer.png' },
+    { type: 'Email Subscription Form', variation: 'Global', desc: 'Blue background with email input + category dropdown', page: 'All pages', screenshot: 'blocks/homepage-email-subscription.png' },
 
-    // Homepage Blocks
-    { type: 'Quick Links Carousel', variation: 'Homepage', desc: '8 icon pill links horizontal carousel', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-quick-links.png' },
-    { type: 'Hero Section', variation: 'Homepage', desc: 'Mission-critical messaging with background image', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-hero.png' },
-    { type: 'Offer Cards Carousel', variation: 'Homepage', desc: '3 device/plan offer cards with images', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-offer-cards.png' },
-    { type: 'Why FirstNet Section', variation: 'Homepage', desc: '3-column value props with heading', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-why-firstnet.png' },
-    { type: 'News Cards', variation: 'Homepage', desc: '3 article preview cards with images', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-news-cards.png' },
-    { type: 'Contact CTA Banner', variation: 'Homepage', desc: 'Dark background "Connect with specialist"', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-contact-cta.png' },
+    // === HERO BLOCKS (Consolidated) ===
+    { type: 'Hero Block', variation: 'Homepage', desc: 'Mission-critical messaging with background image', page: 'Homepage', screenshot: 'blocks/homepage-hero.png' },
+    { type: 'Hero Block', variation: 'Standard Pages', desc: 'Breadcrumb + heading + description/CTA', page: 'Plans, Coverage, Community, Help, Contact, Eligibility', screenshot: 'blocks/plans-page-hero.png' },
+    { type: 'Hero Block', variation: 'Product Pages', desc: 'Expandable offer banner + hero or carousel', page: 'Devices, Phones, Apps', screenshot: 'blocks/devices-hero.png' },
+    { type: 'Hero Block', variation: 'Industry Pages', desc: 'Multi-slide carousel with industry messaging', page: 'Industry Solutions, Law Enforcement', screenshot: 'blocks/law-hero-carousel.png' },
+    { type: 'Hero Block', variation: 'Conversion Pages', desc: 'Hero with eligibility/signup CTA', page: 'Sign Up, Mission Critical, Why FirstNet', screenshot: 'blocks/signup-hero.png' },
+    { type: 'Hero Block', variation: 'Device Detail', desc: 'Product image + feature bullet list', page: 'Device detail pages', screenshot: 'blocks/device-detail-hero.png' },
 
-    // Plans Page Blocks
-    { type: 'Page Hero', variation: 'Plans', desc: 'Breadcrumb + heading + description', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-page-hero.png' },
-    { type: 'Anchor Navigation', variation: 'Plans', desc: 'Horizontal jump links to sections', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-anchor-nav.png' },
-    { type: 'Individual Plan Section', variation: 'Plans', desc: 'Tabbed content with plan details', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-individual-tabs.png' },
-    { type: 'Rate Plan Features', variation: 'Plans', desc: '4-column features with icons', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-rate-features.png' },
-    { type: 'Promo Banner', variation: 'Plans', desc: '$300 reward card offer banner', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-promo-banner.png' },
-    { type: 'Agency Pricing Cards', variation: 'Plans', desc: 'Tabbed 3-column pricing cards', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-agency-tabs.png' },
-    { type: 'International Plans Cards', variation: 'Plans', desc: '3 international plan comparison cards', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-international-cards.png' },
-    { type: 'PDF Download Links', variation: 'Plans', desc: 'Arrow links to PDF documents', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-pdf-links.png' },
-    { type: 'Legal Disclaimers', variation: 'Plans', desc: 'Expandable legal text section', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-legal-disclaimers.png' },
+    // === NAVIGATION BLOCKS (Consolidated) ===
+    { type: 'Quick Links Carousel', variation: 'Multiple Pages', desc: 'Horizontal icon pill links for quick navigation', page: 'Homepage, Devices', screenshot: 'blocks/homepage-quick-links.png' },
+    { type: 'Anchor Navigation', variation: 'Multiple Pages', desc: 'Horizontal jump links for page sections', page: 'Plans, Coverage, Law Enforcement, Sign Up, Mission Critical, Eligibility', screenshot: 'blocks/plans-anchor-nav.png' },
 
-    // Coverage Page Blocks
-    { type: 'Hero with CTA', variation: 'Coverage', desc: 'Purpose-built messaging with Get started CTA', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-hero.png' },
-    { type: 'Interactive Map', variation: 'Coverage', desc: 'Embedded Leaflet coverage map with layers', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-map.png' },
-    { type: 'Coverage Benefits', variation: 'Coverage', desc: '3-column Band 14, 5G, Investment features', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-benefits.png' },
-    { type: 'Connectivity Ecosystem', variation: 'Coverage', desc: '3 image+text cards (In-building, In-field, In-vehicle)', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-connectivity-ecosystem.png' },
-    { type: 'Satellite Innovation', variation: 'Coverage', desc: 'Text block about satellite connectivity', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-satellite-innovation.png' },
-    { type: 'Response Operations Group', variation: 'Coverage', desc: 'Blue background promo section', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-response-ops.png' },
-    { type: 'Customer Stories Carousel', variation: 'Coverage', desc: '5 story cards with overlay text', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-customer-stories.png' },
-    { type: 'Get Started Cards', variation: 'Coverage', desc: '2-column Agencies vs Individuals cards', page: 'https://www.firstnet.com/coverage.html', screenshot: 'blocks/coverage-get-started-cards.png' },
+    // === PRODUCT CARDS (Consolidated) ===
+    { type: 'Product Cards Grid', variation: 'Device Categories', desc: 'Product cards for Phones, Tablets, Watches, Connected, Accessories, Enhancements', page: 'Devices page', screenshot: 'blocks/devices-phones-grid.png' },
+    { type: 'Product Cards by Brand', variation: 'Brand Grouping', desc: 'Product grid organized by brand (Apple, Samsung, etc.)', page: 'Phones, Accessories pages', screenshot: 'blocks/phones-apple-grid.png' },
+    { type: 'Industry Category Cards', variation: 'Industry', desc: '8 industry category cards in grid', page: 'Industry Solutions', screenshot: 'blocks/industry-cards-row1.png' },
 
-    // Devices Page Blocks
-    { type: 'Hero with Offer Banner', variation: 'Devices', desc: 'Expandable offer banner + hero', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-hero.png' },
-    { type: 'Compatibility Link', variation: 'Devices', desc: 'Arrow link to check device compatibility', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-compatibility-link.png' },
-    { type: 'Quick Links Inline', variation: 'Devices', desc: 'Horizontal text quick links', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-quick-links.png' },
-    { type: 'Catalog Overview', variation: 'Devices', desc: 'Heading + description text block', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-hero.png' },
-    { type: 'Product Cards Grid', variation: 'Phones', desc: '3 phone product cards with images', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-phones-grid.png' },
-    { type: 'Product Cards Grid', variation: 'Tablets', desc: '3 tablet product cards with images', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-tablets-grid.png' },
-    { type: 'Product Cards Grid', variation: 'Watches', desc: '3 smartwatch product cards', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-watches-grid.png' },
-    { type: 'Product Cards Grid', variation: 'Connected Devices', desc: '3 router/IoT device cards', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-connected-grid.png' },
-    { type: 'Product Cards Grid', variation: 'Accessories', desc: '3 accessory product cards', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-accessories-grid.png' },
-    { type: 'Product Cards Grid', variation: 'Enhancements', desc: '3 coverage enhancement device cards', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-enhancements-grid.png' },
-    { type: 'FAQ Accordion', variation: 'Devices', desc: 'Expandable device FAQ questions', page: 'https://www.firstnet.com/devices.html', screenshot: 'blocks/devices-faq-accordion.png' },
+    // === OFFER & PRICING BLOCKS (Consolidated) ===
+    { type: 'Offer Cards Carousel', variation: 'Multiple Pages', desc: 'Device/plan offer cards with images and CTAs', page: 'Homepage, Offers', screenshot: 'blocks/homepage-offer-cards.png' },
+    { type: 'Pricing Cards', variation: 'Plans', desc: 'Tabbed pricing cards for Individual, Agency, International plans', page: 'Plans page', screenshot: 'blocks/plans-agency-tabs.png' },
+    { type: 'Plan Comparison', variation: 'Offers', desc: 'FirstNet vs Family plan cards with tabs', page: 'Offers pages', screenshot: 'blocks/plans-agency-tabs.png' },
 
-    // Community Page Blocks
-    { type: 'Hero Simple', variation: 'Community', desc: 'Breadcrumb + heading + eligibility CTA', page: 'https://www.firstnet.com/community.html', screenshot: 'blocks/community-hero.png' },
-    { type: 'Featured Case Study', variation: 'Community', desc: 'Full-width text block with read more', page: 'https://www.firstnet.com/community.html', screenshot: 'blocks/community-featured-case-study.png' },
-    { type: 'Case Studies Carousel', variation: 'Community', desc: '12 overlay cards carousel', page: 'https://www.firstnet.com/community.html', screenshot: 'blocks/community-case-studies-carousel.png' },
-    { type: 'Health Wellness Promo', variation: 'Community', desc: 'Blue background resource promo', page: 'https://www.firstnet.com/community.html', screenshot: 'blocks/community-health-wellness.png' },
-    { type: 'News Articles List', variation: 'Community', desc: 'Date + title + description list', page: 'https://www.firstnet.com/community.html', screenshot: 'blocks/community-news-list.png' },
-    { type: 'Blogs/Videos Tabs', variation: 'Community', desc: 'Tabbed content for blogs and videos', page: 'https://www.firstnet.com/community.html', screenshot: 'blocks/community-blogs-tabs.png' },
+    // === FEATURE/VALUE PROP BLOCKS (Consolidated) ===
+    { type: 'Value Props Section', variation: 'Multiple Pages', desc: '3-4 column feature/value props with icons', page: 'Homepage, Coverage, Plans, Why FirstNet', screenshot: 'blocks/homepage-why-firstnet.png' },
+    { type: 'Benefits Grid/Row', variation: 'Multiple Pages', desc: 'Icon cards showing plan/offer benefits', page: 'Offers, Sign Up, Why FirstNet', screenshot: 'blocks/signup-benefits-row.png' },
+    { type: 'Connectivity Ecosystem', variation: 'Coverage', desc: '3 image+text cards (In-building, In-field, In-vehicle)', page: 'Coverage page', screenshot: 'blocks/coverage-connectivity-ecosystem.png' },
 
-    // Industry Solutions Page
-    { type: 'Promo Banner Top', variation: 'Industry', desc: 'FirstNet and Family promotional banner', page: 'https://www.firstnet.com/industry-solutions.html', screenshot: 'blocks/industry-promo-banner.png' },
-    { type: 'Industry Hero', variation: 'Industry', desc: 'Industries heading with description and eligibility CTA', page: 'https://www.firstnet.com/industry-solutions.html', screenshot: 'blocks/industry-hero.png' },
-    { type: 'Industry Category Cards', variation: 'Industry', desc: '8 industry category cards in 2 rows', page: 'https://www.firstnet.com/industry-solutions.html', screenshot: 'blocks/industry-cards-row1.png' },
+    // === FAQ & ACCORDION BLOCKS (Consolidated) ===
+    { type: 'FAQ Accordion', variation: 'Multiple Pages', desc: 'Expandable FAQ sections (Devices, Plans, Troubleshooting, Eligibility, Offers)', page: 'Devices, FAQ, Offers, Sign Up, Eligibility', screenshot: 'blocks/devices-faq-accordion.png' },
+    { type: 'Help Accordion', variation: 'Help Pages', desc: 'Expandable help sections (Eligibility, Device, Product Guides)', page: 'Help page', screenshot: 'blocks/help-eligibility-accordion.png' },
 
-    // Help Page Blocks
-    { type: 'Hero with Login', variation: 'Help', desc: 'Login to manage account CTA', page: 'https://www.firstnet.com/help.html', screenshot: 'blocks/help-hero.png' },
-    { type: 'Popular Topics Grid', variation: 'Help', desc: '6 icon topic cards', page: 'https://www.firstnet.com/help.html', screenshot: 'blocks/help-popular-topics.png' },
-    { type: 'Eligibility Accordion', variation: 'Help', desc: 'Expandable eligibility help sections', page: 'https://www.firstnet.com/help.html', screenshot: 'blocks/help-eligibility-accordion.png' },
-    { type: 'Refer-A-Friend Promo', variation: 'Help', desc: 'Reward card promotional block', page: 'https://www.firstnet.com/help.html', screenshot: 'blocks/help-refer-friend.png' },
-    { type: 'Device Help Accordion', variation: 'Help', desc: 'NumberSync, eSIM, FirstNet Ready tabs', page: 'https://www.firstnet.com/help.html', screenshot: 'blocks/help-device-accordion.png' },
-    { type: 'Product Guides Accordion', variation: 'Help', desc: 'Cell Booster, Deployables, MegaRange guides', page: 'https://www.firstnet.com/help.html', screenshot: 'blocks/help-product-guides.png' },
+    // === CASE STUDY & STORY BLOCKS (Consolidated) ===
+    { type: 'Customer Stories Carousel', variation: 'Multiple Pages', desc: 'Overlay story cards with video/PDF links', page: 'Coverage, Community, Law Enforcement, Power', screenshot: 'blocks/coverage-customer-stories.png' },
+    { type: 'Case Study Feature', variation: 'Multiple Pages', desc: 'Featured case study with image + text', page: 'Community, Mission Critical', screenshot: 'blocks/community-featured-case-study.png' },
 
-    // FAQ Page Blocks
-    { type: 'Help Links Cards', variation: 'FAQ', desc: '3 action cards (Login, Eligibility, Support)', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-help-cards.png' },
-    { type: 'Quick Links Tabbed', variation: 'FAQ', desc: 'Tabbed support articles with image', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-quick-links-tabbed.png' },
-    { type: 'FAQ Accordion', variation: 'Troubleshooting', desc: 'Expandable troubleshooting FAQs', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-troubleshooting-accordion.png' },
-    { type: 'Migration CTA', variation: 'FAQ', desc: 'FirstNet and Family migration promo', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-migration-cta.png' },
-    { type: 'FAQ Accordion', variation: 'Plans/Offers', desc: 'Expandable plan and offer FAQs', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-plans-accordion.png' },
-    { type: 'Products Cards Row', variation: 'FAQ', desc: '4 product category cards', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-products-cards.png' },
+    // === CTA & PROMO BLOCKS (Consolidated) ===
+    { type: 'Contact CTA Banner', variation: 'Multiple Pages', desc: 'Dark/blue background "Connect with specialist" banner', page: 'Homepage, Coverage, Power', screenshot: 'blocks/homepage-contact-cta.png' },
+    { type: 'Promo Banner', variation: 'Multiple Pages', desc: 'Promotional message banners (rewards, offers, migration)', page: 'Plans, Industry, Help, FAQ', screenshot: 'blocks/plans-promo-banner.png' },
+    { type: 'Download CTA Banner', variation: 'Apps', desc: 'Blue background with PDF download button', page: 'Apps page', screenshot: 'blocks/apps-download-cta.png' },
 
-    // Device Detail Page
-    { type: 'Device Hero', variation: 'Detail', desc: 'Product image + feature bullet list', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'blocks/device-detail-hero.png' },
-    { type: 'Shop Now CTA', variation: 'Detail', desc: 'Primary shop button', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'blocks/device-shop-cta.png' },
-    { type: 'Legal Footnotes', variation: 'Detail', desc: 'Detailed product disclaimers', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'blocks/device-legal-footnotes.png' },
+    // === GET STARTED BLOCKS (Consolidated) ===
+    { type: 'Get Started Cards', variation: 'Multiple Pages', desc: '2-column Agencies vs Individuals signup cards', page: 'Coverage, Law Enforcement, Offers, Mission Critical', screenshot: 'blocks/coverage-get-started-cards.png' },
+    { type: 'Eligibility Cards', variation: 'Conversion', desc: '2-column Individual vs Agency signup cards', page: 'Sign Up, Eligibility', screenshot: 'blocks/signup-eligibility-cards.png' },
 
-    // Apps Page Blocks
-    { type: 'App Hero Carousel', variation: 'Apps', desc: '5-slide carousel with app features and CTAs', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-hero-carousel.png' },
-    { type: 'App Catalog Features', variation: 'Apps', desc: 'Image + text section about app library', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-catalog-features.png' },
-    { type: 'App Uses Carousel', variation: 'Apps', desc: '6 overlay cards for app use cases', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-uses-carousel.png' },
-    { type: 'Featured Apps Carousel', variation: 'Apps', desc: '9 app cards with descriptions and CTAs', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-featured-carousel.png' },
-    { type: 'FirstNet Central Section', variation: 'Apps', desc: 'Image + text block about network control', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-firstnet-central.png' },
-    { type: 'Developer Program Section', variation: 'Apps', desc: 'Text + CTA for app developers', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-developer-program.png' },
-    { type: 'Download CTA Banner', variation: 'Apps', desc: 'Blue background with PDF download button', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-download-cta.png' },
+    // === CONTENT BLOCKS ===
+    { type: 'News/Article Cards', variation: 'Multiple Pages', desc: 'Article preview cards with date, title, description', page: 'Homepage, Community', screenshot: 'blocks/homepage-news-cards.png' },
+    { type: 'Article Content Block', variation: 'News Articles', desc: 'Header, date, hero image, body content', page: 'News article pages', screenshot: 'blocks/news-article-header.png' },
+    { type: 'Blogs/Videos Tabs', variation: 'Community', desc: 'Tabbed content for blogs and videos', page: 'Community page', screenshot: 'blocks/community-blogs-tabs.png' },
 
-    // Contact Page Blocks
-    { type: 'Contact Hero', variation: 'Contact', desc: 'Simple heading "Reach out to our experts"', page: 'https://www.firstnet.com/contact-us.html', screenshot: 'blocks/contact-hero.png' },
-    { type: 'Contact Cards Grid', variation: 'Contact', desc: '4 icon cards for contact options', page: 'https://www.firstnet.com/contact-us.html', screenshot: 'blocks/contact-cards-grid.png' },
+    // === SUPPORT BLOCKS ===
+    { type: 'Popular Topics Grid', variation: 'Help', desc: '6 icon topic cards', page: 'Help page', screenshot: 'blocks/help-popular-topics.png' },
+    { type: 'Help Links Cards', variation: 'FAQ', desc: '3-4 action cards (Login, Eligibility, Support, Products)', page: 'FAQ page', screenshot: 'blocks/faq-help-cards.png' },
+    { type: 'Contact Cards Grid', variation: 'Contact', desc: '4 icon cards for contact options', page: 'Contact page', screenshot: 'blocks/contact-cards-grid.png' },
+    { type: 'Need Help Section', variation: 'Eligibility', desc: 'Contact customer service CTA', page: 'Eligibility page', screenshot: 'blocks/eligibility-need-help.png' },
 
-    // Power of FirstNet Page Blocks
-    { type: 'Page Hero with CTA', variation: 'Power', desc: 'Full-width hero with eligibility CTA', page: 'https://www.firstnet.com/power-of-firstnet.html', screenshot: 'blocks/power-hero.png' },
-    { type: 'History Text Section', variation: 'Power', desc: 'Long-form text about FirstNet origins', page: 'https://www.firstnet.com/power-of-firstnet.html', screenshot: 'blocks/power-history-text.png' },
-    { type: 'Contact Specialist CTA', variation: 'Power', desc: 'Blue button to contact specialist', page: 'https://www.firstnet.com/power-of-firstnet.html', screenshot: 'blocks/power-hero.png' },
-    { type: 'Video Feature Block', variation: 'Power', desc: 'Image + text with Watch Now button', page: 'https://www.firstnet.com/power-of-firstnet.html', screenshot: 'blocks/power-video-feature.png' },
-    { type: 'Story Cards Carousel', variation: 'Power', desc: '6 overlay cards with video/explore links', page: 'https://www.firstnet.com/power-of-firstnet.html', screenshot: 'blocks/power-story-cards.png' },
+    // === APP BLOCKS ===
+    { type: 'App Carousel', variation: 'Apps', desc: 'Hero carousel and featured apps cards', page: 'Apps page', screenshot: 'blocks/apps-hero-carousel.png' },
+    { type: 'App Feature Section', variation: 'Apps', desc: 'Image + text sections (Catalog, Uses, Central)', page: 'Apps page', screenshot: 'blocks/apps-catalog-features.png' },
+    { type: 'Developer Program Section', variation: 'Apps', desc: 'Text + CTA for app developers', page: 'Apps page', screenshot: 'blocks/apps-developer-program.png' },
 
-    // 404 Error Page Blocks
-    { type: 'Error Page Content', variation: '404', desc: '"Page not found" messaging with tips', page: 'https://www.firstnet.com/404', screenshot: 'blocks/404-error-content.png' },
-    { type: 'Recommended Pages List', variation: '404', desc: 'List of suggested page links', page: 'https://www.firstnet.com/404', screenshot: 'blocks/404-recommended-pages.png' },
+    // === INDUSTRY BLOCKS ===
+    { type: 'Why FirstNet Section', variation: 'Industry Detail', desc: '2-column text block about benefits', page: 'Law Enforcement and other industry pages', screenshot: 'blocks/law-why-firstnet.png' },
+    { type: 'Appreciation Section', variation: 'Industry Detail', desc: 'Thank you message with video CTA', page: 'Industry detail pages', screenshot: 'blocks/law-appreciation.png' },
+    { type: 'Customer Quote Block', variation: 'Industry Detail', desc: 'Blue banner with quote and attribution', page: 'Industry detail pages', screenshot: 'blocks/law-customer-quote.png' },
+    { type: 'Features Carousel', variation: 'Industry Detail', desc: 'Feature cards carousel', page: 'Industry detail pages', screenshot: 'blocks/law-features-carousel.png' },
 
-    // News Article Page Blocks
-    { type: 'Article Header', variation: 'News', desc: 'Title + subtitle headline block', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-header.png' },
-    { type: 'Article Date', variation: 'News', desc: 'Publication date display', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-date.png' },
-    { type: 'Article Hero Image', variation: 'News', desc: 'Full-width featured image', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-hero-image.png' },
-    { type: 'Article Body Content', variation: 'News', desc: 'Rich text with headings, lists, links', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-body.png' },
+    // === COMPARISON & TABLE BLOCKS ===
+    { type: 'Comparison Image', variation: 'Why FirstNet', desc: 'Static image comparing FirstNet vs competitors', page: 'Why FirstNet page', screenshot: 'blocks/why-firstnet-comparison.png' },
+    { type: 'Impacts Table', variation: 'Eligibility', desc: 'Complex table with eligibility impacts', page: 'Eligibility page', screenshot: 'blocks/eligibility-impacts-table.png' },
+    { type: 'Document Cards', variation: 'Eligibility', desc: 'Cards for verification scenarios', page: 'Eligibility page', screenshot: 'blocks/eligibility-document-cards.png' },
 
-    // Law Enforcement (Industry Detail) Page Blocks
-    { type: 'Industry Hero Carousel', variation: 'Law Enforcement', desc: '2-slide hero with messaging', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-hero-carousel.png' },
-    { type: 'Anchor Navigation', variation: 'Law Enforcement', desc: 'Horizontal jump links for sections', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-anchor-nav.png' },
-    { type: 'Why FirstNet Section', variation: 'Law Enforcement', desc: '2-column text block about benefits', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-why-firstnet.png' },
-    { type: 'Appreciation Section', variation: 'Law Enforcement', desc: 'Thank you message with video CTA', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-appreciation.png' },
-    { type: 'Customer Quote Block', variation: 'Law Enforcement', desc: 'Blue banner with quote and attribution', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-customer-quote.png' },
-    { type: 'Features Carousel', variation: 'Law Enforcement', desc: '3-card carousel (Modernized, Ready, Secure)', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-features-carousel.png' },
-    { type: 'Customer Stories Carousel', variation: 'Law Enforcement', desc: '9 video/PDF story cards', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-customer-stories.png' },
-    { type: 'Get Started Cards', variation: 'Law Enforcement', desc: '2-column Agencies vs Individuals cards', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-get-started-cards.png' },
+    // === SPECIALTY BLOCKS ===
+    { type: 'Interactive Map', variation: 'Coverage', desc: 'Embedded Leaflet coverage map with layers', page: 'Coverage page', screenshot: 'blocks/coverage-map.png' },
+    { type: 'Video Feature Block', variation: 'Power', desc: 'Image + text with Watch Now button', page: 'Power of FirstNet', screenshot: 'blocks/power-video-feature.png' },
+    { type: 'History Text Section', variation: 'Power', desc: 'Long-form text about FirstNet origins', page: 'Power of FirstNet', screenshot: 'blocks/power-history-text.png' },
+    { type: 'Audience Cards', variation: 'Why FirstNet', desc: 'Persona cards (Individuals, Agencies, Essential Services)', page: 'Why FirstNet', screenshot: 'blocks/why-firstnet-audience-cards.png' },
+    { type: 'FirstNet Promise', variation: 'Why FirstNet', desc: 'Image + text section with video CTA', page: 'Why FirstNet', screenshot: 'blocks/why-firstnet-promise.png' },
+    { type: 'Solutions Product Cards', variation: 'Mission Critical', desc: 'Product cards (Fusion, Rapid Response)', page: 'Mission Critical', screenshot: 'blocks/mission-solutions-cards.png' },
 
-    // Offers Page Blocks
-    { type: 'Offer Hero', variation: 'FirstNet & Family', desc: 'Discount headline with plan pricing', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/signup-offer-card.png' },
-    { type: 'Benefits Grid', variation: 'FirstNet & Family', desc: '4 icon cards showing plan benefits', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/signup-benefits-row.png' },
-    { type: 'Legal Disclaimers Expanded', variation: 'FirstNet & Family', desc: 'Full legal terms in text blocks', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/plans-legal-disclaimers.png' },
-    { type: 'Tabbed Plan Comparison', variation: 'FirstNet & Family', desc: 'FirstNet vs Family plan cards with tabs', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/plans-agency-tabs.png' },
-    { type: 'Device Offer Cards', variation: 'FirstNet & Family', desc: '3 product cards with pricing/CTAs', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/homepage-offer-cards.png' },
-    { type: 'FAQ Accordion', variation: 'FirstNet & Family', desc: 'Expandable offer FAQs', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/signup-faq-accordion.png' },
-    { type: 'Get Started Cards', variation: 'FirstNet & Family', desc: 'New vs Existing customer cards', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/signup-eligibility-cards.png' },
+    // === LEGAL & UTILITY BLOCKS ===
+    { type: 'Legal Disclaimers', variation: 'Multiple Pages', desc: 'Expandable legal text sections', page: 'Plans, Offers', screenshot: 'blocks/plans-legal-disclaimers.png' },
+    { type: 'PDF Download Links', variation: 'Plans', desc: 'Arrow links to PDF documents', page: 'Plans page', screenshot: 'blocks/plans-pdf-links.png' },
+    { type: 'Shop Now CTA', variation: 'Device Detail', desc: 'Primary shop button', page: 'Device detail pages', screenshot: 'blocks/device-shop-cta.png' },
+    { type: 'Compatibility Link', variation: 'Devices', desc: 'Arrow link to check device compatibility', page: 'Devices page', screenshot: 'blocks/devices-compatibility-link.png' },
+    { type: 'Warning Note', variation: 'Eligibility', desc: 'Important notice text block', page: 'Eligibility page', screenshot: 'blocks/eligibility-warning-note.png' },
 
-    // Sign Up Page Blocks
-    { type: 'Sign Up Hero', variation: 'Sign Up', desc: 'Hero with eligibility messaging and CTA', page: 'https://www.firstnet.com/sign-up.html', screenshot: 'blocks/signup-hero.png' },
-    { type: 'Anchor Navigation', variation: 'Sign Up', desc: 'Horizontal jump links for sections', page: 'https://www.firstnet.com/sign-up.html', screenshot: 'blocks/signup-hero.png' },
-    { type: 'Eligibility Cards', variation: 'Sign Up', desc: '2-column Individual vs Agency signup cards', page: 'https://www.firstnet.com/sign-up.html', screenshot: 'blocks/signup-eligibility-cards.png' },
-    { type: 'Featured Offer Card', variation: 'Sign Up', desc: 'Large offer card with image', page: 'https://www.firstnet.com/sign-up.html', screenshot: 'blocks/signup-offer-card.png' },
-    { type: 'Benefits Row', variation: 'Sign Up', desc: '3 value prop icons with descriptions', page: 'https://www.firstnet.com/sign-up.html', screenshot: 'blocks/signup-benefits-row.png' },
-    { type: 'FAQ Accordion', variation: 'Sign Up', desc: 'Expandable sign-up related FAQs', page: 'https://www.firstnet.com/sign-up.html', screenshot: 'blocks/signup-faq-accordion.png' },
-
-    // Mission Critical Page Blocks
-    { type: 'Mission Critical Hero', variation: 'Mission Critical', desc: 'Hero with PTT solutions messaging', page: 'https://www.firstnet.com/mission-critical.html', screenshot: 'blocks/mission-hero.png' },
-    { type: 'Anchor Navigation', variation: 'Mission Critical', desc: 'Solutions, Resources, Get started links', page: 'https://www.firstnet.com/mission-critical.html', screenshot: 'blocks/mission-hero.png' },
-    { type: 'Solutions Product Cards', variation: 'Mission Critical', desc: '2 product cards (Fusion, Rapid Response)', page: 'https://www.firstnet.com/mission-critical.html', screenshot: 'blocks/mission-solutions-cards.png' },
-    { type: 'Case Study Feature', variation: 'Mission Critical', desc: 'Image + text case study highlight', page: 'https://www.firstnet.com/mission-critical.html', screenshot: 'blocks/mission-case-study.png' },
-    { type: 'Secondary Case Study', variation: 'Mission Critical', desc: 'Text-only case study block', page: 'https://www.firstnet.com/mission-critical.html', screenshot: 'blocks/mission-case-study.png' },
-    { type: 'Get Started Cards', variation: 'Mission Critical', desc: '2-column Agency signup cards', page: 'https://www.firstnet.com/mission-critical.html', screenshot: 'blocks/mission-get-started-cards.png' },
-
-    // Eligibility Verification Page Blocks
-    { type: 'Eligibility Hero', variation: 'Eligibility', desc: 'Hero with verify now CTA', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-hero.png' },
-    { type: 'Anchor Navigation', variation: 'Eligibility', desc: 'Documents, Impacts, FAQ links', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-hero.png' },
-    { type: 'Document Cards', variation: 'Eligibility', desc: '2 cards for verification scenarios', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-document-cards.png' },
-    { type: 'Warning Note', variation: 'Eligibility', desc: 'Important notice text block', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-warning-note.png' },
-    { type: 'Impacts Table', variation: 'Eligibility', desc: 'Complex table with eligibility impacts', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-impacts-table.png' },
-    { type: 'FAQ Accordion', variation: 'Eligibility', desc: 'Verification-related FAQs', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-faq-accordion.png' },
-    { type: 'Need Help Section', variation: 'Eligibility', desc: 'Contact customer service CTA', page: 'https://www.firstnet.com/eligibility-verification.html', screenshot: 'blocks/eligibility-need-help.png' },
-
-    // Why FirstNet Page Blocks
-    { type: 'Hero with CTA', variation: 'Why FirstNet', desc: 'Full-width hero with eligibility verification CTA', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-hero.png' },
-    { type: 'Benefits Grid', variation: 'Why FirstNet', desc: '3-column benefits with icons and descriptions', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-benefits.png' },
-    { type: 'Comparison Image', variation: 'Why FirstNet', desc: 'Static image comparing FirstNet vs competitors', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-comparison.png' },
-    { type: 'Audience Cards', variation: 'Why FirstNet', desc: '3 persona cards (Individuals, Agencies, Essential Services)', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-audience-cards.png' },
-    { type: 'FirstNet Promise', variation: 'Why FirstNet', desc: 'Image + text section with video CTA', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-promise.png' },
-    { type: 'Insights Carousel', variation: 'Why FirstNet', desc: 'First responder insights story cards carousel', page: 'https://www.firstnet.com/why-firstnet.html', screenshot: 'blocks/why-firstnet-insights-carousel.png' },
-
-    // Phones Page - Additional Variations
-    { type: 'Hero Offer Carousel', variation: 'Phones', desc: 'Rotating hero with device offers and pagination dots', page: 'https://www.firstnet.com/devices/phones.html', screenshot: 'blocks/phones-hero-offer-carousel.png' },
-    { type: 'Product Cards by Brand', variation: 'Apple', desc: 'Product grid organized by Apple brand', page: 'https://www.firstnet.com/devices/phones.html', screenshot: 'blocks/phones-apple-grid.png' },
-    { type: 'Product Cards by Brand', variation: 'Samsung', desc: 'Product grid organized by Samsung brand', page: 'https://www.firstnet.com/devices/phones.html', screenshot: 'blocks/phones-samsung-grid.png' },
-
-    // Accessories Page - Additional Variations
-    { type: 'Product Cards by Brand', variation: 'Accessories', desc: 'Accessory product grid organized by brand (Klein, Nite Ize, Samsung, Sonim)', page: 'https://www.firstnet.com/devices/accessories.html', screenshot: 'blocks/accessories-klein-grid.png' }
+    // === ERROR PAGE BLOCKS ===
+    { type: 'Error Page Content', variation: '404', desc: '"Page not found" messaging with tips', page: '404 page', screenshot: 'blocks/404-error-content.png' },
+    { type: 'Recommended Pages List', variation: '404', desc: 'List of suggested page links', page: '404 page', screenshot: 'blocks/404-recommended-pages.png' }
   ];
 
   let currentRow = 2;
@@ -779,7 +703,7 @@ async function createFirstNetInventoryExcel() {
   });
 
   await workbook.xlsx.writeFile('/workspace/firstnet-migration-plan.xlsx');
-  console.log('Created: firstnet-migration-plan.xlsx with 106 block variations, resources, cost estimates, and timeline');
+  console.log('Created: firstnet-migration-plan.xlsx with 58 consolidated block variations, resources, cost estimates, and timeline');
 }
 
 createFirstNetInventoryExcel().catch(console.error);

@@ -19,7 +19,7 @@ async function createMigrationPlanExcel() {
   ws1.addRow(['Total Pages:', '749 (per client sitemap/robots.txt)']);
   ws1.addRow(['Website:', 'www.business.att.com']);
   ws1.addRow(['Project Type:', 'Enterprise B2B Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '117']);
+  ws1.addRow(['Block Types Documented:', '68 (consolidated from 117 variations)']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
@@ -69,180 +69,113 @@ async function createMigrationPlanExcel() {
   ws3.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
   ws3.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF009FDB' } };
 
-  // Complete block data with ALL variations across pages
+  // Consolidated block data - similar variations grouped together
   const blockData = [
-    // Navigation Blocks
-    { type: 'Quick Links Carousel', variation: 'Homepage', desc: '6 pill links with icons', page: '/', screenshot: 'block-quick-links-carousel-homepage.png' },
+    // === GLOBAL/NAVIGATION BLOCKS ===
+    { type: 'Quick Links Carousel', variation: 'Homepage', desc: 'Horizontal pill links with icons for quick navigation', page: '/', screenshot: 'block-quick-links-carousel-homepage.png' },
+    { type: 'Anchor Navigation', variation: 'Multiple Pages', desc: 'Horizontal jump links for page sections (sticky, pills, tabs)', page: 'Industries, Offers, Contact, Knowledge Center', screenshot: 'block-anchor-nav-industry.png' },
 
-    // Hero Blocks - Multiple pages
-    { type: 'Promo Banner Carousel', variation: 'Homepage', desc: 'Single promo message with CTA', page: '/', screenshot: 'block-promo-banner-carousel-homepage.png' },
-    { type: 'Hero with Offer Cards', variation: 'Homepage', desc: 'Blue gradient, 4+ offer cards carousel', page: '/', screenshot: 'block-hero-offer-cards-homepage.png' },
-    { type: 'Video Hero Banner', variation: 'Homepage', desc: 'Video thumbnail with messaging', page: '/', screenshot: 'block-video-hero-banner-homepage.png' },
-    { type: 'Product Hero', variation: 'Wireless Plans', desc: 'Savings badge, headline, terms', page: '/products/wireless-plans.html', screenshot: 'block-hero-product-savings-wireless.png' },
-    { type: 'Product Hero', variation: 'Business Fiber', desc: 'Product hero with pricing CTA', page: '/products/business-fiber-internet.html', screenshot: 'block-hero-product-fiber.png' },
-    { type: 'Industry Hero', variation: 'Healthcare', desc: 'Breadcrumb + heading + phone CTA', page: '/industries/healthcare.html', screenshot: 'block-hero-industry-healthcare.png' },
-    { type: 'Portfolio Hero', variation: 'Mobility', desc: 'Solution overview with quick links', page: '/portfolios/mobility.html', screenshot: 'block-hero-portfolio-mobility.png' },
-    { type: 'Article Video Hero', variation: 'Customer Story', desc: 'Full-width hero with video play', page: '/learn/customer-stories/portx.html', screenshot: 'block-hero-article-video-story.png' },
+    // === HERO BLOCKS (Consolidated) ===
+    { type: 'Hero Block', variation: 'Homepage (Offer Cards)', desc: 'Blue gradient hero with 4+ offer cards carousel', page: '/', screenshot: 'block-hero-offer-cards-homepage.png' },
+    { type: 'Hero Block', variation: 'Homepage (Video)', desc: 'Video thumbnail with messaging and CTA', page: '/', screenshot: 'block-video-hero-banner-homepage.png' },
+    { type: 'Hero Block', variation: 'Product Pages', desc: 'Savings badge, headline, terms, pricing CTA', page: 'Products (Wireless, Fiber, Phone)', screenshot: 'block-hero-product-savings-wireless.png' },
+    { type: 'Hero Block', variation: 'Portfolio/Industry', desc: 'Breadcrumb + heading + phone/quick links CTA', page: 'Portfolios, Industries', screenshot: 'block-hero-industry-healthcare.png' },
+    { type: 'Hero Block', variation: 'Content Pages', desc: 'Full-width hero with video play or subscribe', page: 'Learn Hub, Customer Stories, Business Solutions', screenshot: 'block-blog-hero-banner.png' },
+    { type: 'Hero Block', variation: 'Regional/Areas', desc: 'City-specific hero with location name', page: '/areas/*.html', screenshot: 'areas-page-full.png' },
+    { type: 'Hero Block', variation: '404 Error', desc: 'Globe graphic with "oops" messaging', page: '/404.html', screenshot: '404-page-full.png' },
 
-    // Pricing Cards - Multiple products
-    { type: 'Pricing Cards Carousel', variation: 'Wireless Plans', desc: '4 plan cards with tiered pricing', page: '/products/wireless-plans.html', screenshot: 'block-pricing-cards-carousel-wireless.png' },
-    { type: 'Pricing Cards Carousel', variation: 'Business Fiber', desc: '5 speed tier cards with pricing', page: '/products/business-fiber-internet.html', screenshot: 'block-pricing-cards-fiber.png' },
+    // === PRICING & PLAN BLOCKS (Consolidated) ===
+    { type: 'Pricing Cards Carousel', variation: 'Product Pages', desc: 'Tabbed/carousel pricing cards with tiered plans (3-5 cards)', page: 'Products (Wireless, Fiber, Phone)', screenshot: 'block-pricing-cards-carousel-wireless.png' },
 
-    // Feature Cards Grid - Multiple pages
-    { type: 'Feature Cards Grid', variation: 'Homepage', desc: '"Why work with AT&T" - 4 cards', page: '/', screenshot: 'block-feature-cards-grid-homepage.png' },
-    { type: 'Feature Cards Grid', variation: 'Wireless Plans', desc: '"All plans include" features', page: '/products/wireless-plans.html', screenshot: 'block-features-grid-wireless.png' },
-    { type: 'Feature Cards Grid', variation: 'Business Fiber', desc: '"Why AT&T Business Fiber" features', page: '/products/business-fiber-internet.html', screenshot: 'block-features-grid-fiber.png' },
+    // === FEATURE/VALUE PROP BLOCKS (Consolidated) ===
+    { type: 'Feature Cards Grid', variation: 'Multiple Pages', desc: 'Icon + text feature cards (3-4 columns)', page: 'Homepage, Products, Portfolios, Why AT&T', screenshot: 'block-feature-cards-grid-homepage.png' },
+    { type: 'Value Props Grid', variation: 'Portfolio/Landing', desc: 'Speed, Reliability, Security value propositions', page: 'Business Internet, Areas, Explore', screenshot: 'block-value-props-internet.png' },
 
-    // Product/Offer Cards - Multiple pages
-    { type: 'Product Cards Carousel', variation: 'Homepage', desc: 'Service cards carousel', page: '/', screenshot: 'block-product-cards-carousel-homepage.png' },
-    { type: 'Industry Cards Carousel', variation: 'Homepage', desc: 'Cards for Healthcare, Finance, etc.', page: '/', screenshot: 'block-industry-cards-carousel-homepage.png' },
-    { type: 'Offer Cards Carousel', variation: 'Business Fiber', desc: 'Deal cards with offers', page: '/products/business-fiber-internet.html', screenshot: 'block-offer-cards-fiber.png' },
-    { type: 'Offer Cards Carousel', variation: 'Mobility Portfolio', desc: 'Device deal cards', page: '/portfolios/mobility.html', screenshot: 'block-offer-cards-mobility.png' },
+    // === CARD CAROUSEL BLOCKS (Consolidated) ===
+    { type: 'Product/Service Cards Carousel', variation: 'Multiple Pages', desc: 'Service, industry, or product cards in carousel format', page: 'Homepage, Portfolios', screenshot: 'block-product-cards-carousel-homepage.png' },
+    { type: 'Offer Cards Carousel', variation: 'Multiple Pages', desc: 'Deal/promotion cards with images and CTAs', page: 'Products, Portfolios, Offers', screenshot: 'block-offer-cards-fiber.png' },
+    { type: 'Resource/Insights Cards', variation: 'Multiple Pages', desc: 'Article, video, or resource cards with thumbnails', page: 'Industries, Portfolios, Business Solutions', screenshot: 'block-insights-cards-industry.png' },
+    { type: 'Story Cards Overlay', variation: 'Multiple Pages', desc: 'Image background with text overlay for case studies', page: 'Industries, Portfolios, Power of FirstNet', screenshot: 'block-story-cards-overlay-industry.png' },
 
-    // Guarantee Checklist - Multiple pages
-    { type: 'Guarantee Checklist', variation: 'Homepage', desc: 'AT&T Guarantee with 3 checkmarks', page: '/', screenshot: 'block-guarantee-checklist-homepage.png' },
-    { type: 'Guarantee Checklist', variation: 'Mobility Portfolio', desc: 'Deals backed by AT&T Guarantee', page: '/portfolios/mobility.html', screenshot: 'block-guarantee-mobility.png' },
+    // === FORM BLOCKS ===
+    { type: 'Lead Form (RAI)', variation: 'Multiple Pages', desc: '"Talk to an AT&T Business expert" contact form', page: 'Homepage, Industries, Products', screenshot: 'block-lead-form-rai-homepage.png' },
+    { type: 'Check Availability Form', variation: 'Portfolio', desc: 'Address input with availability check button', page: '/portfolios/business-internet.html', screenshot: 'block-check-availability-internet.png' },
+    { type: 'Email Subscription Form', variation: 'Multiple Pages', desc: 'Blue background newsletter signup', page: 'Learn Hub, Learn Articles', screenshot: 'block-email-subscription-form.png' },
+    { type: 'Search Block', variation: '404/Support', desc: 'Search input for finding content', page: '404, Support', screenshot: '404-page-full.png' },
 
-    // FAQ Accordion - Multiple products
-    { type: 'FAQ Accordion', variation: 'Wireless Plans', desc: 'Expandable FAQ sections', page: '/products/wireless-plans.html', screenshot: 'block-faq-accordion-wireless.png' },
-    { type: 'FAQ Accordion', variation: 'Business Fiber', desc: 'Fiber-specific FAQs', page: '/products/business-fiber-internet.html', screenshot: 'block-faq-accordion-fiber.png' },
+    // === FAQ & ACCORDION BLOCKS (Consolidated) ===
+    { type: 'FAQ Accordion', variation: 'Multiple Pages', desc: 'Expandable FAQ sections with product/topic-specific content', page: 'Products, Support', screenshot: 'block-faq-accordion-wireless.png' },
+    { type: 'Support Tabs Accordion', variation: 'Support', desc: 'Expandable topic sections for help content', page: '/support.html', screenshot: 'block-support-tabs-accordion.png' },
+    { type: 'Features Collapsible List', variation: 'Products', desc: 'Expandable feature list with descriptions', page: 'Product detail pages', screenshot: 'phone-product-page-full.png' },
 
-    // Lead Form (RAI) - Multiple pages
-    { type: 'Lead Form (RAI)', variation: 'Homepage', desc: '"Talk to an AT&T Business expert"', page: '/', screenshot: 'block-lead-form-rai-homepage.png' },
-    { type: 'Lead Form (RAI)', variation: 'Healthcare Industry', desc: 'Industry-specific context form', page: '/industries/healthcare.html', screenshot: 'block-lead-form-industry.png' },
-    { type: 'Lead Form (RAI)', variation: 'Business Fiber', desc: 'Product-specific lead form', page: '/products/business-fiber-internet.html', screenshot: 'block-lead-form-fiber.png' },
+    // === CTA & PROMO BLOCKS (Consolidated) ===
+    { type: 'Promo Banner', variation: 'Multiple Pages', desc: 'Single promo message with CTA (carousel or static)', page: 'Homepage, Offers', screenshot: 'block-promo-banner-carousel-homepage.png' },
+    { type: 'Full-width Promo Banner', variation: 'Multiple Pages', desc: 'Large image banner with savings/action CTA', page: 'Offers, Partner Solutions', screenshot: 'block-fullwidth-promo-offers.png' },
+    { type: 'Contact CTA Banner', variation: 'Multiple Pages', desc: 'Blue/dark background with phone number or specialist CTA', page: 'Industries, Why AT&T', screenshot: 'block-contact-cta-industry.png' },
+    { type: 'Multi-Button CTA', variation: 'Portfolios', desc: '"Ready to get started?" with multiple action buttons', page: 'Business Internet Portfolio', screenshot: 'block-cta-multi-button-internet.png' },
+    { type: 'Current Customer CTA', variation: 'Landing Pages', desc: '3-button CTA for existing customers', page: '/explore/*.html', screenshot: 'explore-page-full.png' },
 
-    // Link List Block
-    { type: 'Link List Block', variation: 'Homepage', desc: '"Looking for more?" 4-column links', page: '/', screenshot: 'block-link-list-homepage.png' },
+    // === TRUST & AWARD BLOCKS (Consolidated) ===
+    { type: 'Guarantee Checklist', variation: 'Multiple Pages', desc: 'AT&T Guarantee with checkmarks', page: 'Homepage, Portfolios', screenshot: 'block-guarantee-checklist-homepage.png' },
+    { type: 'Award Badge', variation: 'Multiple Pages', desc: 'J.D. Power, Frost & Sullivan awards with badges', page: 'Products, Portfolios, Why AT&T', screenshot: 'block-award-badge-wireless.png' },
+    { type: 'Customer Testimonials Carousel', variation: 'Why AT&T', desc: 'Quote cards with industry tags', page: '/about/why-att-business.html', screenshot: 'block-customer-testimonials-carousel.png' },
 
-    // Industry-specific blocks
-    { type: 'Anchor Navigation', variation: 'Healthcare Industry', desc: 'Horizontal pills for page sections', page: '/industries/healthcare.html', screenshot: 'block-anchor-nav-industry.png' },
-    { type: 'Solution Link Cards', variation: 'Healthcare Industry', desc: 'Icon + title + description cards', page: '/industries/healthcare.html', screenshot: 'block-solution-cards-industry.png' },
-    { type: 'Image + Text Split', variation: 'Healthcare Industry', desc: 'Image left, text + CTA right', page: '/industries/healthcare.html', screenshot: 'block-image-text-split-industry.png' },
-    { type: 'Story Cards Overlay', variation: 'Healthcare Industry', desc: 'Image background with text overlay', page: '/industries/healthcare.html', screenshot: 'block-story-cards-overlay-industry.png' },
-    { type: 'Insights Cards', variation: 'Healthcare Industry', desc: 'Resource cards with thumbnails', page: '/industries/healthcare.html', screenshot: 'block-insights-cards-industry.png' },
-    { type: 'Contact CTA Banner', variation: 'Healthcare Industry', desc: 'Blue background with phone number', page: '/industries/healthcare.html', screenshot: 'block-contact-cta-industry.png' },
+    // === TABLE/COMPARISON BLOCKS (Consolidated) ===
+    { type: 'Comparison Table', variation: 'Multiple Pages', desc: 'Feature matrix comparing solutions or products', page: 'Business Internet, Category, Business Solutions', screenshot: 'block-comparison-table-internet.png' },
+    { type: 'Benefits Table', variation: 'Category Pages', desc: 'Feature comparison table with checkmarks', page: '/categories/*.html', screenshot: 'block-benefits-table-category.png' },
+    { type: 'Use Cases Table', variation: 'Business Solutions', desc: 'Problem/Benefits/Solution format', page: '/business-solutions/*.html', screenshot: 'block-use-cases-table.png' },
 
-    // Customer Story blocks
-    { type: 'Highlights/Stats', variation: 'Customer Story', desc: '3-column Challenge/Results/Solution', page: '/learn/customer-stories/portx.html', screenshot: 'block-highlights-stats-story.png' },
-    { type: 'About Section', variation: 'Customer Story', desc: 'Company logo, description, PDF', page: '/learn/customer-stories/portx.html', screenshot: 'block-about-download-story.png' },
-
-    // Other blocks
-    { type: 'Award Badge', variation: 'Wireless Plans', desc: '#1 in Customer Satisfaction', page: '/products/wireless-plans.html', screenshot: 'block-award-badge-wireless.png' },
-    { type: 'Support Contact Block', variation: 'Wireless Plans', desc: '3-column contact info', page: '/products/wireless-plans.html', screenshot: 'block-support-contact-wireless.png' },
-
-    // Business Internet Portfolio blocks (NEW)
-    { type: 'Check Availability Form', variation: 'Business Internet', desc: 'Address input with availability check button', page: '/portfolios/business-internet.html', screenshot: 'block-check-availability-internet.png' },
-    { type: 'Value Props Grid', variation: 'Business Internet', desc: '"Why businesses choose AT&T" - Speed, Reliability, Security', page: '/portfolios/business-internet.html', screenshot: 'block-value-props-internet.png' },
-    { type: 'Products Carousel Cards', variation: 'Business Internet', desc: '"Explore our internet solutions" - 4 product cards', page: '/portfolios/business-internet.html', screenshot: 'block-products-carousel-internet.png' },
-    { type: 'Comparison Table', variation: 'Business Internet', desc: '"Compare our solutions" feature matrix', page: '/portfolios/business-internet.html', screenshot: 'block-comparison-table-internet.png' },
-    { type: 'Award Badge with Image', variation: 'Business Internet', desc: 'J.D. Power 8 years award with trophy', page: '/portfolios/business-internet.html', screenshot: 'block-award-badge-jdpower-internet.png' },
-    { type: 'Multi-Button CTA', variation: 'Business Internet', desc: '"Ready to get started?" with Shop Fiber, Shop Internet Air, Call', page: '/portfolios/business-internet.html', screenshot: 'block-cta-multi-button-internet.png' },
-    { type: 'Promo Block with Image', variation: 'Business Internet', desc: 'AT&T Dynamic Defense security promo', page: '/portfolios/business-internet.html', screenshot: 'block-promo-image-security-internet.png' },
-
-    // Category Page blocks (NEW)
-    { type: 'Benefits Table', variation: 'Category Page', desc: 'Feature comparison table with checkmarks', page: '/categories/mobile-workforce-tools.html', screenshot: 'block-benefits-table-category.png' },
-    { type: 'Product Comparison Table', variation: 'Category Page', desc: 'Side-by-side product comparison grid', page: '/categories/mobile-workforce-tools.html', screenshot: 'block-product-comparison-table-category.png' },
-
-    // Areas/Regional Page blocks (NEW)
-    { type: 'Regional Hero', variation: 'Areas Page', desc: 'City-specific hero with location name', page: '/areas/los-angeles.html', screenshot: 'areas-page-full.png' },
-    { type: 'Product Cards Grid', variation: 'Areas Page', desc: '6-card grid of internet products', page: '/areas/los-angeles.html', screenshot: 'areas-page-full.png' },
-    { type: 'Why Choose Us Grid', variation: 'Areas Page', desc: '3-column value propositions', page: '/areas/los-angeles.html', screenshot: 'areas-page-full.png' },
-
-    // Explore/Landing Page blocks (NEW)
-    { type: 'Current Customer CTA', variation: 'Explore Page', desc: '3-button CTA for existing customers', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' },
-    { type: 'Feature List Checkmarks', variation: 'Explore Page', desc: 'Vertical list with green checkmarks', page: '/explore/new-service.html', screenshot: 'explore-page-full.png' },
-
-    // Product Page blocks (COMPREHENSIVE CRAWL)
-    { type: 'Bundle Pricing Cards', variation: 'Phone Product', desc: 'Fiber + Phone bundle carousel with 5 tiers', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
-    { type: 'Features Collapsible List', variation: 'Phone Product', desc: 'Expandable feature list with descriptions', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
-    { type: 'Related Product Promo', variation: 'Phone Product', desc: 'Image + text promoting related service', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
-    { type: 'International Calling Block', variation: 'Phone Product', desc: 'Benefits checklist for international service', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
-
-    // Bundles Page blocks (COMPREHENSIVE CRAWL)
-    { type: 'Complete Solution Promo', variation: 'Bundles Page', desc: 'Fiber + security + backup promo banner', page: '/bundles.html', screenshot: 'bundles-page-full.png' },
-    { type: 'Risk-Free Trial Block', variation: 'Bundles Page', desc: '30-day trial with 3-column features', page: '/bundles.html', screenshot: 'bundles-page-full.png' },
-
-    // Learn Hub blocks (COMPREHENSIVE CRAWL)
-    { type: 'Blog Hero Banner', variation: 'Learn Hub', desc: 'AT&T Business Insights hero with subscribe', page: '/learn.html', screenshot: 'block-blog-hero-banner.png' },
+    // === CONTENT/ARTICLE BLOCKS ===
     { type: 'Featured Article Block', variation: 'Learn Hub', desc: 'Article preview with table of contents', page: '/learn.html', screenshot: 'block-featured-article.png' },
     { type: 'Latest Articles Grid', variation: 'Learn Hub', desc: '2-column article cards with load more', page: '/learn.html', screenshot: 'block-latest-articles-grid.png' },
-    { type: 'Blog Search & Filter', variation: 'Learn Hub', desc: 'Search input with filter dropdown', page: '/learn.html', screenshot: 'block-blog-search-filter.png' },
+    { type: 'Article Header with Byline', variation: 'Learn Articles', desc: 'Title, subtitle, author, date, read time', page: '/learn/tech-advice/*.html', screenshot: 'block-article-header-byline.png' },
+    { type: 'Article Tags', variation: 'Learn Articles', desc: 'Category labels at article top', page: '/learn/tech-advice/*.html', screenshot: 'block-article-tags.png' },
+    { type: 'Shareable Quote Block', variation: 'Learn Articles', desc: 'Pull quote with social share', page: '/learn/tech-advice/*.html', screenshot: 'block-shareable-quote.png' },
+    { type: 'Social Share Block', variation: 'Learn Articles', desc: 'X, LinkedIn, Facebook, Mail buttons', page: '/learn/tech-advice/*.html', screenshot: 'block-social-share.png' },
+    { type: 'More Stories Grid', variation: 'Learn Articles', desc: '3 related articles with images', page: '/learn/tech-advice/*.html', screenshot: 'block-more-stories-grid.png' },
     { type: 'Top Topics Carousel', variation: 'Learn Hub', desc: 'Horizontal scrolling topic cards', page: '/learn.html', screenshot: 'block-top-topics-carousel.png' },
-    { type: 'Email Subscription Form', variation: 'Learn Hub', desc: 'Blue background newsletter signup', page: '/learn.html', screenshot: 'block-email-subscription-form.png' },
 
-    // Support Page blocks (COMPREHENSIVE CRAWL)
-    { type: 'Support Quick Actions Grid', variation: 'Support Page', desc: '6 icon cards for common actions', page: '/support.html', screenshot: 'block-support-quick-actions-grid.png' },
-    { type: 'Support Tabs Accordion', variation: 'Support Page', desc: 'Expandable topic sections', page: '/support.html', screenshot: 'block-support-tabs-accordion.png' },
-    { type: 'Support Portal Cards', variation: 'Support Page', desc: '3 linked cards to support portals', page: '/support.html', screenshot: 'block-support-portal-cards.png' },
-    { type: 'Resource Cards (Blue)', variation: 'Support Page', desc: 'Video Library, Social, Training cards', page: '/support.html', screenshot: 'block-resource-cards-blue.png' },
-    { type: 'Guided Courses Block', variation: 'Support Page', desc: 'Image + text with course links', page: '/support.html', screenshot: 'block-guided-courses.png' },
+    // === SUPPORT BLOCKS ===
+    { type: 'Support Quick Actions Grid', variation: 'Support Pages', desc: 'Icon cards for common actions (chat, call, etc.)', page: 'Support, Contact', screenshot: 'block-support-quick-actions-grid.png' },
+    { type: 'Support Portal Cards', variation: 'Support', desc: 'Linked cards to support portals', page: '/support.html', screenshot: 'block-support-portal-cards.png' },
+    { type: 'Resource Cards (Blue)', variation: 'Support', desc: 'Video Library, Social, Training cards', page: '/support.html', screenshot: 'block-resource-cards-blue.png' },
+    { type: 'Guided Courses Block', variation: 'Support', desc: 'Image + text with course links', page: '/support.html', screenshot: 'block-guided-courses.png' },
+    { type: 'Contact Tables', variation: 'Contact', desc: 'Categorized phone numbers by service', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
+    { type: 'Support Contact Block', variation: 'Products', desc: '3-column contact info', page: 'Product pages', screenshot: 'block-support-contact-wireless.png' },
 
-    // Offers Page blocks (COMPREHENSIVE CRAWL)
-    { type: 'Sticky Anchor Navigation', variation: 'Offers Page', desc: 'Jump links to page sections', page: '/offers.html', screenshot: 'block-sticky-anchor-nav-offers.png' },
-    { type: 'Featured Offers Cards', variation: 'Offers Page', desc: '2-up side-by-side offer cards', page: '/offers.html', screenshot: 'block-featured-offers-cards.png' },
-    { type: 'Full-width Promo Banner', variation: 'Offers Page', desc: 'Large image banner with savings CTA', page: '/offers.html', screenshot: 'block-fullwidth-promo-offers.png' },
-    { type: 'Device Offers Carousel', variation: 'Offers Page', desc: '9-card device deal carousel', page: '/offers.html', screenshot: 'block-device-offers-carousel.png' },
-    { type: 'Wireless Plan Offers Carousel', variation: 'Offers Page', desc: '3-card plan offers carousel', page: '/offers.html', screenshot: 'block-wireless-plan-offers-carousel.png' },
-    { type: 'Accessories Offers Carousel', variation: 'Offers Page', desc: '5-card accessories deal carousel', page: '/offers.html', screenshot: 'block-accessories-offers-carousel.png' },
-    { type: 'Internet Offers Carousel', variation: 'Offers Page', desc: '4-card internet offers with checklist', page: '/offers.html', screenshot: 'block-internet-offers-carousel.png' },
-    { type: 'Bundles Offers Carousel', variation: 'Offers Page', desc: '2-card bundle deals with features list', page: '/offers.html', screenshot: 'block-bundles-offers-carousel.png' },
-    { type: 'Referral Program Block', variation: 'Offers Page', desc: 'Earn rewards checklist promo', page: '/offers.html', screenshot: 'block-referral-program-offers.png' },
-    { type: 'Risk-Free Trial Block', variation: 'Offers Page', desc: '30-day risk-free cancellation policy', page: '/offers.html', screenshot: 'block-risk-free-trial-offers.png' },
+    // === INDUSTRY/SOLUTION BLOCKS ===
+    { type: 'Solution Link Cards', variation: 'Industry Pages', desc: 'Icon + title + description cards for solutions', page: '/industries/*.html', screenshot: 'block-solution-cards-industry.png' },
+    { type: 'Image + Text Split', variation: 'Multiple Pages', desc: 'Image left/right with text + CTA', page: 'Industries, Knowledge Center', screenshot: 'block-image-text-split-industry.png' },
+    { type: 'Partner Cards Grid', variation: 'Partner Solutions', desc: 'Card grid with image backgrounds', page: '/industries/partner-solutions.html', screenshot: 'partner-solutions-full.png' },
 
-    // 404 Error Page blocks (COMPREHENSIVE CRAWL)
-    { type: 'Error Page Hero', variation: '404 Page', desc: 'Globe graphic with "oops" messaging', page: '/404.html', screenshot: '404-page-full.png' },
-    { type: 'Search Block', variation: '404 Page', desc: 'Search input for finding content', page: '/404.html', screenshot: '404-page-full.png' },
-    { type: 'Helpful Links Cards', variation: '404 Page', desc: 'Carousel of suggested pages', page: '/404.html', screenshot: '404-page-full.png' },
+    // === CUSTOMER STORY BLOCKS ===
+    { type: 'Highlights/Stats Block', variation: 'Customer Stories', desc: '3-column Challenge/Results/Solution metrics', page: '/learn/customer-stories/*.html', screenshot: 'block-highlights-stats-story.png' },
+    { type: 'About Section', variation: 'Customer Stories', desc: 'Company logo, description, PDF download', page: '/learn/customer-stories/*.html', screenshot: 'block-about-download-story.png' },
+    { type: 'Case Study Stats Block', variation: 'Portfolios', desc: '3-column stats with metrics', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
 
-    // Cybersecurity Portfolio blocks (COMPREHENSIVE CRAWL)
-    { type: 'Award Recognition Block', variation: 'Cybersecurity Portfolio', desc: 'Frost & Sullivan award with image badge', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
-    { type: 'Case Study Stats Block', variation: 'Cybersecurity Portfolio', desc: '3-column stats with metrics', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
-    { type: 'Video Content Cards', variation: 'Cybersecurity Portfolio', desc: 'Video thumbnail cards carousel', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
+    // === VIDEO BLOCKS ===
+    { type: 'Video Embed Block', variation: 'Portfolios', desc: 'Embedded video player with controls', page: 'Portfolios (5G, Cybersecurity)', screenshot: '5g-portfolio-full.png' },
+    { type: 'Video Content Cards', variation: 'Portfolios', desc: 'Video thumbnail cards carousel', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
 
-    // Contact Page blocks (COMPREHENSIVE CRAWL)
-    { type: 'Horizontal Jump Links', variation: 'Contact Page', desc: 'Pill-style anchor navigation', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
-    { type: 'Support Quick Actions Row', variation: 'Contact Page', desc: 'Icon buttons for chat, call, etc.', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
-    { type: 'Contact Tables', variation: 'Contact Page', desc: 'Categorized phone numbers by service', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
-
-    // 5G Portfolio blocks (COMPREHENSIVE CRAWL)
-    { type: 'Video Embed Block', variation: '5G Portfolio', desc: 'Embedded video player with controls', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
-    { type: 'Data-driven Insights Cards', variation: '5G Portfolio', desc: 'Stats cards with percentages/numbers', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
-    { type: 'Looking for More Links', variation: '5G Portfolio', desc: 'Grid of related resource links', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
-
-    // Partner Solutions Page blocks (ADDITIONAL CRAWL)
-    { type: 'Partner Cards Grid', variation: 'Partner Solutions', desc: '6-card grid with image backgrounds', page: '/industries/partner-solutions.html', screenshot: 'partner-solutions-full.png' },
-    { type: 'Full-width Promo Banner', variation: 'Partner Solutions', desc: 'Blue "Explore networking" banner', page: '/industries/partner-solutions.html', screenshot: 'partner-solutions-full.png' },
-
-    // Knowledge Center Page blocks (ADDITIONAL CRAWL)
-    { type: 'Category Anchor Tabs', variation: 'Knowledge Center', desc: 'Horizontal scrolling category tabs', page: '/resources/knowledge-center.html', screenshot: 'knowledge-center-full.png' },
-    { type: 'Image + Article Links', variation: 'Knowledge Center', desc: 'Image left with article links right', page: '/resources/knowledge-center.html', screenshot: 'knowledge-center-full.png' },
-
-    // About/Why AT&T Page blocks (ADDITIONAL CRAWL)
-    { type: 'Three-column Feature Block', variation: 'Why AT&T', desc: '5G, Fiber, Expertise with icons', page: '/about/why-att-business.html', screenshot: 'block-three-column-feature.png' },
-    { type: 'Customer Testimonials Carousel', variation: 'Why AT&T', desc: 'Quote cards with industry tags', page: '/about/why-att-business.html', screenshot: 'block-customer-testimonials-carousel.png' },
-    { type: 'AT&T Guarantee CTA Banner', variation: 'Why AT&T', desc: 'Dark background guarantee promo', page: '/about/why-att-business.html', screenshot: 'block-att-guarantee-cta-banner.png' },
-    { type: 'J.D. Power Award Block', variation: 'Why AT&T', desc: '#1 Customer Satisfaction badge', page: '/about/why-att-business.html', screenshot: 'block-jdpower-award.png' },
-    { type: 'Contact Options 2-Column', variation: 'Why AT&T', desc: 'Call specialist vs Schedule cards', page: '/about/why-att-business.html', screenshot: 'block-contact-options-2column.png' },
+    // === LINK/NAVIGATION BLOCKS ===
+    { type: 'Link List Block', variation: 'Multiple Pages', desc: '"Looking for more?" multi-column links', page: 'Homepage, Portfolios', screenshot: 'block-link-list-homepage.png' },
     { type: 'Additional Resources Grid', variation: 'Why AT&T', desc: '4-column extensive links list', page: '/about/why-att-business.html', screenshot: 'block-additional-resources-grid.png' },
+    { type: 'Helpful Links Cards', variation: '404', desc: 'Carousel of suggested pages', page: '/404.html', screenshot: '404-page-full.png' },
+    { type: 'Solutions Sidebar', variation: 'Learn Articles', desc: 'Links to related solutions', page: '/learn/tech-advice/*.html', screenshot: 'block-solutions-sidebar.png' },
 
-    // Business Solutions Page blocks (ADDITIONAL CRAWL)
-    { type: 'Video Hero with Play Button', variation: 'Business Solutions', desc: 'Background video with watch button', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-video-hero-play-button.png' },
-    { type: 'Benefits Grid with Icons', variation: 'Business Solutions', desc: '4 benefit cards with icons', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-benefits-grid-icons.png' },
-    { type: 'Business Center CTA Card', variation: 'Business Solutions', desc: 'Single promo card with login link', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-business-center-cta-card.png' },
-    { type: 'Feature Comparison Table', variation: 'Business Solutions', desc: 'Product vs competitor comparison', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-feature-comparison-table.png' },
-    { type: 'Use Cases Table', variation: 'Business Solutions', desc: 'Problem/Benefits/Solution format', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-use-cases-table.png' },
-    { type: 'Related Products Cards', variation: 'Business Solutions', desc: '3 cards with View product links', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-related-products-cards.png' },
-    { type: 'Resources Cards Carousel', variation: 'Business Solutions', desc: '4 resource cards with thumbnails', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'block-resources-cards-carousel.png' },
+    // === OFFER-SPECIFIC BLOCKS ===
+    { type: 'Featured Offers Cards', variation: 'Offers', desc: '2-up side-by-side offer cards', page: '/offers.html', screenshot: 'block-featured-offers-cards.png' },
+    { type: 'Category Offers Carousel', variation: 'Offers', desc: 'Device, Wireless, Accessories, Internet, Bundles carousels', page: '/offers.html', screenshot: 'block-device-offers-carousel.png' },
+    { type: 'Referral Program Block', variation: 'Offers', desc: 'Earn rewards checklist promo', page: '/offers.html', screenshot: 'block-referral-program-offers.png' },
+    { type: 'Risk-Free Trial Block', variation: 'Multiple Pages', desc: '30-day risk-free cancellation/trial policy', page: 'Offers, Bundles', screenshot: 'block-risk-free-trial-offers.png' },
 
-    // Learn Article Page blocks (ADDITIONAL CRAWL)
-    { type: 'Article Tags', variation: 'Learn Article', desc: 'Category labels at article top', page: '/learn/tech-advice/*.html', screenshot: 'block-article-tags.png' },
-    { type: 'Article Header with Byline', variation: 'Learn Article', desc: 'Title, subtitle, author, date, read time', page: '/learn/tech-advice/*.html', screenshot: 'block-article-header-byline.png' },
-    { type: 'Shareable Quote Block', variation: 'Learn Article', desc: 'Pull quote with Twitter share', page: '/learn/tech-advice/*.html', screenshot: 'block-shareable-quote.png' },
-    { type: 'Social Share Block', variation: 'Learn Article', desc: 'X, LinkedIn, Facebook, Mail buttons', page: '/learn/tech-advice/*.html', screenshot: 'block-social-share.png' },
-    { type: 'Article Email Subscription', variation: 'Learn Article', desc: 'Newsletter signup with country select', page: '/learn/tech-advice/*.html', screenshot: 'block-article-email-subscription.png' },
-    { type: 'Solutions Sidebar', variation: 'Learn Article', desc: 'Links to related solutions', page: '/learn/tech-advice/*.html', screenshot: 'block-solutions-sidebar.png' },
-    { type: 'More Stories Grid', variation: 'Learn Article', desc: '3 related articles with images', page: '/learn/tech-advice/*.html', screenshot: 'block-more-stories-grid.png' }
+    // === MISCELLANEOUS BLOCKS ===
+    { type: 'Complete Solution Promo', variation: 'Bundles', desc: 'Fiber + security + backup promo banner', page: '/bundles.html', screenshot: 'bundles-page-full.png' },
+    { type: 'Related Products Cards', variation: 'Business Solutions', desc: 'Cards with View product links', page: '/business-solutions/*.html', screenshot: 'block-related-products-cards.png' },
+    { type: 'International Calling Block', variation: 'Phone Product', desc: 'Benefits checklist for international service', page: '/products/att-phone-for-business.html', screenshot: 'phone-product-page-full.png' },
+    { type: 'Contact Options 2-Column', variation: 'Why AT&T', desc: 'Call specialist vs Schedule cards', page: '/about/why-att-business.html', screenshot: 'block-contact-options-2column.png' },
+    { type: 'Business Center CTA Card', variation: 'Business Solutions', desc: 'Single promo card with login link', page: '/business-solutions/*.html', screenshot: 'block-business-center-cta-card.png' },
+    { type: 'Data-driven Insights Cards', variation: '5G Portfolio', desc: 'Stats cards with percentages/numbers', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' }
   ];
 
   let currentRow = 2;
@@ -716,7 +649,7 @@ async function createMigrationPlanExcel() {
   });
 
   await workbook.xlsx.writeFile('/workspace/att-business-migration-plan.xlsx');
-  console.log('Created: att-business-migration-plan.xlsx with 117 block variations and resource planning');
+  console.log('Created: att-business-migration-plan.xlsx with 68 consolidated block variations and resource planning');
 }
 
 async function createDetailedInventoryExcel() {
@@ -891,7 +824,7 @@ async function createDetailedInventoryExcel() {
   }
 
   await workbook.xlsx.writeFile('/workspace/att-business-detailed-inventory.xlsx');
-  console.log('Created: att-business-detailed-inventory.xlsx with 117 block variations');
+  console.log('Created: att-business-detailed-inventory.xlsx with 68 consolidated block variations');
 }
 
 async function main() {
