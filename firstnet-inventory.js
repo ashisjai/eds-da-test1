@@ -97,14 +97,14 @@ async function createFirstNetInventoryExcel() {
     { type: 'Contact CTA Banner', variation: 'Homepage', desc: 'Dark background "Connect with specialist"', page: 'https://www.firstnet.com/', screenshot: 'blocks/homepage-contact-cta.png' },
 
     // Plans Page Blocks
-    { type: 'Page Hero', variation: 'Plans', desc: 'Breadcrumb + heading + description', page: 'https://www.firstnet.com/plans.html', screenshot: 'firstnet-plans-full.png' },
-    { type: 'Anchor Navigation', variation: 'Plans', desc: 'Horizontal jump links to sections', page: 'https://www.firstnet.com/plans.html', screenshot: 'firstnet-plans-full.png' },
-    { type: 'Individual Plan Section', variation: 'Plans', desc: 'Tabbed content with plan details', page: 'https://www.firstnet.com/plans.html', screenshot: 'firstnet-plans-full.png' },
+    { type: 'Page Hero', variation: 'Plans', desc: 'Breadcrumb + heading + description', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-page-hero.png' },
+    { type: 'Anchor Navigation', variation: 'Plans', desc: 'Horizontal jump links to sections', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-anchor-nav.png' },
+    { type: 'Individual Plan Section', variation: 'Plans', desc: 'Tabbed content with plan details', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-individual-tabs.png' },
     { type: 'Rate Plan Features', variation: 'Plans', desc: '4-column features with icons', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-rate-features.png' },
     { type: 'Promo Banner', variation: 'Plans', desc: '$300 reward card offer banner', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-promo-banner.png' },
     { type: 'Agency Pricing Cards', variation: 'Plans', desc: 'Tabbed 3-column pricing cards', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-agency-tabs.png' },
     { type: 'International Plans Cards', variation: 'Plans', desc: '3 international plan comparison cards', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-international-cards.png' },
-    { type: 'PDF Download Links', variation: 'Plans', desc: 'Arrow links to PDF documents', page: 'https://www.firstnet.com/plans.html', screenshot: 'firstnet-plans-full.png' },
+    { type: 'PDF Download Links', variation: 'Plans', desc: 'Arrow links to PDF documents', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-pdf-links.png' },
     { type: 'Legal Disclaimers', variation: 'Plans', desc: 'Expandable legal text section', page: 'https://www.firstnet.com/plans.html', screenshot: 'blocks/plans-legal-disclaimers.png' },
 
     // Coverage Page Blocks
@@ -160,9 +160,9 @@ async function createFirstNetInventoryExcel() {
     { type: 'Products Cards Row', variation: 'FAQ', desc: '4 product category cards', page: 'https://www.firstnet.com/faq.html', screenshot: 'blocks/faq-products-cards.png' },
 
     // Device Detail Page
-    { type: 'Device Hero', variation: 'Detail', desc: 'Product image + feature bullet list', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'firstnet-device-detail-full.png' },
-    { type: 'Shop Now CTA', variation: 'Detail', desc: 'Primary shop button', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'firstnet-device-detail-full.png' },
-    { type: 'Legal Footnotes', variation: 'Detail', desc: 'Detailed product disclaimers', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'firstnet-device-detail-full.png' },
+    { type: 'Device Hero', variation: 'Detail', desc: 'Product image + feature bullet list', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'blocks/device-detail-hero.png' },
+    { type: 'Shop Now CTA', variation: 'Detail', desc: 'Primary shop button', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'blocks/device-shop-cta.png' },
+    { type: 'Legal Footnotes', variation: 'Detail', desc: 'Detailed product disclaimers', page: 'https://www.firstnet.com/devices/phones/iphone-17-pro.html', screenshot: 'blocks/device-legal-footnotes.png' },
 
     // Apps Page Blocks
     { type: 'App Hero Carousel', variation: 'Apps', desc: '5-slide carousel with app features and CTAs', page: 'https://www.firstnet.com/apps.html', screenshot: 'blocks/apps-hero-carousel.png' },
@@ -185,24 +185,24 @@ async function createFirstNetInventoryExcel() {
     { type: 'Story Cards Carousel', variation: 'Power', desc: '6 overlay cards with video/explore links', page: 'https://www.firstnet.com/power-of-firstnet.html', screenshot: 'blocks/power-story-cards.png' },
 
     // 404 Error Page Blocks
-    { type: 'Error Page Content', variation: '404', desc: '"Page not found" messaging with tips', page: 'https://www.firstnet.com/404', screenshot: 'firstnet-404-full.png' },
-    { type: 'Recommended Pages List', variation: '404', desc: 'List of suggested page links', page: 'https://www.firstnet.com/404', screenshot: 'firstnet-404-full.png' },
+    { type: 'Error Page Content', variation: '404', desc: '"Page not found" messaging with tips', page: 'https://www.firstnet.com/404', screenshot: 'blocks/404-error-content.png' },
+    { type: 'Recommended Pages List', variation: '404', desc: 'List of suggested page links', page: 'https://www.firstnet.com/404', screenshot: 'blocks/404-recommended-pages.png' },
 
     // News Article Page Blocks
-    { type: 'Article Header', variation: 'News', desc: 'Title + subtitle headline block', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'firstnet-news-article-full.png' },
-    { type: 'Article Date', variation: 'News', desc: 'Publication date display', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'firstnet-news-article-full.png' },
-    { type: 'Article Hero Image', variation: 'News', desc: 'Full-width featured image', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'firstnet-news-article-full.png' },
-    { type: 'Article Body Content', variation: 'News', desc: 'Rich text with headings, lists, links', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'firstnet-news-article-full.png' },
+    { type: 'Article Header', variation: 'News', desc: 'Title + subtitle headline block', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-header.png' },
+    { type: 'Article Date', variation: 'News', desc: 'Publication date display', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-date.png' },
+    { type: 'Article Hero Image', variation: 'News', desc: 'Full-width featured image', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-hero-image.png' },
+    { type: 'Article Body Content', variation: 'News', desc: 'Rich text with headings, lists, links', page: 'https://www.firstnet.com/community/news/att-10-year-investment-transform-public-safety-broadband-network.html', screenshot: 'blocks/news-article-body.png' },
 
     // Law Enforcement (Industry Detail) Page Blocks
-    { type: 'Industry Hero Carousel', variation: 'Law Enforcement', desc: '2-slide hero with messaging', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Anchor Navigation', variation: 'Law Enforcement', desc: 'Horizontal jump links for sections', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Why FirstNet Section', variation: 'Law Enforcement', desc: '2-column text block about benefits', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Appreciation Section', variation: 'Law Enforcement', desc: 'Thank you message with video CTA', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Customer Quote Block', variation: 'Law Enforcement', desc: 'Blue banner with quote and attribution', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Features Carousel', variation: 'Law Enforcement', desc: '3-card carousel (Modernized, Ready, Secure)', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Customer Stories Carousel', variation: 'Law Enforcement', desc: '9 video/PDF story cards', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
-    { type: 'Get Started Cards', variation: 'Law Enforcement', desc: '2-column Agencies vs Individuals cards', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'firstnet-law-enforcement-full.png' },
+    { type: 'Industry Hero Carousel', variation: 'Law Enforcement', desc: '2-slide hero with messaging', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-hero-carousel.png' },
+    { type: 'Anchor Navigation', variation: 'Law Enforcement', desc: 'Horizontal jump links for sections', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-anchor-nav.png' },
+    { type: 'Why FirstNet Section', variation: 'Law Enforcement', desc: '2-column text block about benefits', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-why-firstnet.png' },
+    { type: 'Appreciation Section', variation: 'Law Enforcement', desc: 'Thank you message with video CTA', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-appreciation.png' },
+    { type: 'Customer Quote Block', variation: 'Law Enforcement', desc: 'Blue banner with quote and attribution', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-customer-quote.png' },
+    { type: 'Features Carousel', variation: 'Law Enforcement', desc: '3-card carousel (Modernized, Ready, Secure)', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-features-carousel.png' },
+    { type: 'Customer Stories Carousel', variation: 'Law Enforcement', desc: '9 video/PDF story cards', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-customer-stories.png' },
+    { type: 'Get Started Cards', variation: 'Law Enforcement', desc: '2-column Agencies vs Individuals cards', page: 'https://www.firstnet.com/industry-solutions/law-enforcement.html', screenshot: 'blocks/law-get-started-cards.png' },
 
     // Offers Page Blocks
     { type: 'Offer Hero', variation: 'FirstNet & Family', desc: 'Discount headline with plan pricing', page: 'https://www.firstnet.com/offers/firstnet-and-family.html', screenshot: 'blocks/signup-offer-card.png' },
