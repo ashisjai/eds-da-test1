@@ -19,7 +19,7 @@ async function createMigrationPlanExcel() {
   ws1.addRow(['Total Pages:', '749 (per client sitemap/robots.txt)']);
   ws1.addRow(['Website:', 'www.business.att.com']);
   ws1.addRow(['Project Type:', 'Enterprise B2B Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '82']);
+  ws1.addRow(['Block Variations Documented:', '94']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
@@ -179,7 +179,27 @@ async function createMigrationPlanExcel() {
     { type: 'Internet Offers Carousel', variation: 'Offers Page', desc: '4-card internet offers with checklist', page: '/offers.html', screenshot: 'offers-page-full.png' },
     { type: 'Bundles Offers Carousel', variation: 'Offers Page', desc: '2-card bundle deals with features list', page: '/offers.html', screenshot: 'offers-page-full.png' },
     { type: 'Referral Program Block', variation: 'Offers Page', desc: 'Earn rewards checklist promo', page: '/offers.html', screenshot: 'offers-page-full.png' },
-    { type: 'Collapsible SEO Content', variation: 'Multiple Pages', desc: 'Expandable text content for SEO', page: '/offers.html', screenshot: 'offers-page-full.png' }
+    { type: 'Collapsible SEO Content', variation: 'Multiple Pages', desc: 'Expandable text content for SEO', page: '/offers.html', screenshot: 'offers-page-full.png' },
+
+    // 404 Error Page blocks (COMPREHENSIVE CRAWL)
+    { type: 'Error Page Hero', variation: '404 Page', desc: 'Globe graphic with "oops" messaging', page: '/404.html', screenshot: '404-page-full.png' },
+    { type: 'Search Block', variation: '404 Page', desc: 'Search input for finding content', page: '/404.html', screenshot: '404-page-full.png' },
+    { type: 'Helpful Links Cards', variation: '404 Page', desc: 'Carousel of suggested pages', page: '/404.html', screenshot: '404-page-full.png' },
+
+    // Cybersecurity Portfolio blocks (COMPREHENSIVE CRAWL)
+    { type: 'Award Recognition Block', variation: 'Cybersecurity Portfolio', desc: 'Frost & Sullivan award with image badge', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
+    { type: 'Case Study Stats Block', variation: 'Cybersecurity Portfolio', desc: '3-column stats with metrics', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
+    { type: 'Video Content Cards', variation: 'Cybersecurity Portfolio', desc: 'Video thumbnail cards carousel', page: '/portfolios/cybersecurity.html', screenshot: 'cybersecurity-portfolio-full.png' },
+
+    // Contact Page blocks (COMPREHENSIVE CRAWL)
+    { type: 'Horizontal Jump Links', variation: 'Contact Page', desc: 'Pill-style anchor navigation', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
+    { type: 'Support Quick Actions Row', variation: 'Contact Page', desc: 'Icon buttons for chat, call, etc.', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
+    { type: 'Contact Tables', variation: 'Contact Page', desc: 'Categorized phone numbers by service', page: '/support/contact.html', screenshot: 'contact-page-full.png' },
+
+    // 5G Portfolio blocks (COMPREHENSIVE CRAWL)
+    { type: 'Video Embed Block', variation: '5G Portfolio', desc: 'Embedded video player with controls', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
+    { type: 'Data-driven Insights Cards', variation: '5G Portfolio', desc: 'Stats cards with percentages/numbers', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
+    { type: 'Looking for More Links', variation: '5G Portfolio', desc: 'Grid of related resource links', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' }
   ];
 
   let currentRow = 2;
@@ -272,7 +292,19 @@ async function createMigrationPlanExcel() {
     ['Internet Offers Carousel', '1', '/offers.html'],
     ['Bundles Offers Carousel', '1', '/offers.html'],
     ['Referral Program Block', '1', '/offers.html'],
-    ['Collapsible SEO Content', '3', '/offers.html, /bundles.html, /products/att-phone-for-business.html']
+    ['Collapsible SEO Content', '3', '/offers.html, /bundles.html, /products/att-phone-for-business.html'],
+    ['Error Page Hero', '1', '/404.html'],
+    ['Search Block', '1', '/404.html'],
+    ['Helpful Links Cards', '1', '/404.html'],
+    ['Award Recognition Block', '1', '/portfolios/cybersecurity.html'],
+    ['Case Study Stats Block', '1', '/portfolios/cybersecurity.html'],
+    ['Video Content Cards', '1', '/portfolios/cybersecurity.html'],
+    ['Horizontal Jump Links', '1', '/support/contact.html'],
+    ['Support Quick Actions Row', '1', '/support/contact.html'],
+    ['Contact Tables', '1', '/support/contact.html'],
+    ['Video Embed Block', '1', '/portfolios/5G-for-business.html'],
+    ['Data-driven Insights Cards', '1', '/portfolios/5G-for-business.html'],
+    ['Looking for More Links', '1', '/portfolios/5G-for-business.html']
   ];
   reuseData.forEach(row => {
     const dataRow = ws4.addRow(row);
@@ -337,7 +369,7 @@ async function createMigrationPlanExcel() {
   ws7.getRow(10).font = { bold: true };
 
   await workbook.xlsx.writeFile('/workspace/att-business-migration-plan.xlsx');
-  console.log('Created: att-business-migration-plan.xlsx with 82 block variations');
+  console.log('Created: att-business-migration-plan.xlsx with 94 block variations');
 }
 
 async function createDetailedInventoryExcel() {
@@ -353,9 +385,9 @@ async function createDetailedInventoryExcel() {
   ws1.addRow([]);
   ws1.addRow(['Total Pages (Client Provided):', '749']);
   ws1.addRow(['Documented Page Templates:', '~150']);
-  ws1.addRow(['Block Types Documented:', '67']);
-  ws1.addRow(['Block Variations (with pages):', '82']);
-  ws1.addRow(['Screenshot References:', '62']);
+  ws1.addRow(['Block Types Documented:', '79']);
+  ws1.addRow(['Block Variations (with pages):', '94']);
+  ws1.addRow(['Screenshot References:', '66']);
 
   // Sheet 2: All Pages
   const ws2 = workbook.addWorksheet('All Pages');
@@ -464,7 +496,23 @@ async function createDetailedInventoryExcel() {
     { block: 'Why Choose Us Grid', pageType: 'Areas', page: '/areas/los-angeles.html', file: 'areas-page-full.png' },
     // Explore/Landing Page blocks (NEW)
     { block: 'Current Customer CTA', pageType: 'Explore', page: '/explore/new-service.html', file: 'explore-page-full.png' },
-    { block: 'Feature List Checkmarks', pageType: 'Explore', page: '/explore/new-service.html', file: 'explore-page-full.png' }
+    { block: 'Feature List Checkmarks', pageType: 'Explore', page: '/explore/new-service.html', file: 'explore-page-full.png' },
+    // 404 Page blocks (COMPREHENSIVE CRAWL)
+    { block: 'Error Page Hero', pageType: '404 Page', page: '/404.html', file: '404-page-full.png' },
+    { block: 'Search Block', pageType: '404 Page', page: '/404.html', file: '404-page-full.png' },
+    { block: 'Helpful Links Cards', pageType: '404 Page', page: '/404.html', file: '404-page-full.png' },
+    // Cybersecurity Portfolio blocks (COMPREHENSIVE CRAWL)
+    { block: 'Award Recognition Block', pageType: 'Portfolio', page: '/portfolios/cybersecurity.html', file: 'cybersecurity-portfolio-full.png' },
+    { block: 'Case Study Stats Block', pageType: 'Portfolio', page: '/portfolios/cybersecurity.html', file: 'cybersecurity-portfolio-full.png' },
+    { block: 'Video Content Cards', pageType: 'Portfolio', page: '/portfolios/cybersecurity.html', file: 'cybersecurity-portfolio-full.png' },
+    // Contact Page blocks (COMPREHENSIVE CRAWL)
+    { block: 'Horizontal Jump Links', pageType: 'Contact', page: '/support/contact.html', file: 'contact-page-full.png' },
+    { block: 'Support Quick Actions Row', pageType: 'Contact', page: '/support/contact.html', file: 'contact-page-full.png' },
+    { block: 'Contact Tables', pageType: 'Contact', page: '/support/contact.html', file: 'contact-page-full.png' },
+    // 5G Portfolio blocks (COMPREHENSIVE CRAWL)
+    { block: 'Video Embed Block', pageType: 'Portfolio', page: '/portfolios/5G-for-business.html', file: '5g-portfolio-full.png' },
+    { block: 'Data-driven Insights Cards', pageType: 'Portfolio', page: '/portfolios/5G-for-business.html', file: '5g-portfolio-full.png' },
+    { block: 'Looking for More Links', pageType: 'Portfolio', page: '/portfolios/5G-for-business.html', file: '5g-portfolio-full.png' }
   ];
 
   let currentRow = 2;
@@ -487,7 +535,7 @@ async function createDetailedInventoryExcel() {
   }
 
   await workbook.xlsx.writeFile('/workspace/att-business-detailed-inventory.xlsx');
-  console.log('Created: att-business-detailed-inventory.xlsx with 82 block variations');
+  console.log('Created: att-business-detailed-inventory.xlsx with 94 block variations');
 }
 
 async function main() {
