@@ -13,16 +13,16 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 | **Unique Blocks** | 68 (consolidated) | 58 (consolidated) | 126 | **96** (after reuse) |
 | **Block Variations** | 117 original | 106 original | 223 original | consolidated |
 | **Shared Blocks** | - | - | - | **30** (built once) |
-| **Base Effort (hrs)** | 2,755 | 3,205 | 5,960 | **4,392** |
-| **With 20% Contingency** | 3,306 | 3,846 | 7,152 | **5,270** |
-| **Duration** | 14-18 weeks | 22-26 weeks | 36-44 weeks | **30-36 weeks** |
+| **Base Effort (hrs)** | 2,755 | 2,899 | 5,654 | **4,042** |
+| **With 20% Contingency** | 3,306 | 3,479 | 6,785 | **4,850** |
+| **Duration** | 14-18 weeks | 18-22 weeks | 32-40 weeks | **28-34 weeks** |
 | **Team Size** | 5-7 | 6-8 | 11-15 | **8-10** |
-| **Cost Estimate** | $326K-$435K | $416K-$558K | $930K-$1.18M | **$673K-$882K** |
+| **Cost Estimate** | $326K-$435K | $350K-$460K | $850K-$1.05M | **$608K-$797K** |
 
 ### Synergy Savings
-- **Effort Savings:** ~1,568 hours (26% reduction)
-- **Duration Savings:** 6-8 weeks (parallel execution)
-- **Cost Savings:** ~$257K-$298K (26% reduction)
+- **Effort Savings:** ~1,612 hours (29% reduction)
+- **Duration Savings:** 6-10 weeks (parallel execution)
+- **Cost Savings:** ~$242K-$253K (29% reduction)
 
 ---
 
@@ -100,7 +100,7 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 - FirstNet: **58 consolidated blocks** (from 106 original variations)
 - **Combined Total:** 126 blocks
 - **Truly Shared (built once):** 30 blocks
-- **Effective Unique Blocks:** 96 blocks (66 AT&T-only/unique + 30 shared)
+- **Effective Unique Blocks:** 96 blocks (38 AT&T-only + 28 FirstNet-only + 30 shared)
 
 | Block Category | AT&T Business | FirstNet | Shared Blocks | Reuse % | Hours Saved |
 |----------------|---------------|----------|---------------|---------|-------------|
@@ -313,15 +313,15 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 #### FirstNet Migration
 | Wave | Pages | Hours |
 |------|-------|-------|
-| Wave 1 (P0) | ~220 | 159 |
-| Wave 2 (P1) | ~450 | 161 |
-| Wave 3 (P2) | ~520 | 138 |
-| Asset migration | - | 48 |
-| Redirects (1,200+) | - | 48 |
-| QA validation | - | 72 |
-| **FirstNet Subtotal** | **~1,187** | **626** |
+| Wave 1 (P0) | ~150 | 95 |
+| Wave 2 (P1) | ~300 | 115 |
+| Wave 3 (P2) | ~250 | 65 |
+| Asset migration | - | 40 |
+| Redirects (700+) | - | 40 |
+| QA validation | - | 60 |
+| **FirstNet Subtotal** | **~700** | **415** |
 
-**Phase 6 Total: 1,283 hours**
+**Phase 6 Total: 1,072 hours**
 
 ### Phase 7: Testing & Launch
 **Duration: 4-5 weeks | Effort: 480-580 hours**
@@ -354,9 +354,9 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 | Templates | 416 | 464 | 880 |
 | Secondary Blocks | 304 | 272 | 576 |
 | Integrations | 284 | 368 | 652 |
-| Content Migration | 515 | 745 | 1,260 |
+| Content Migration | 515 | 439 | 954 |
 | Testing & Launch | 284 | 352 | 636 |
-| **TOTAL** | **2,755** | **3,205** | **5,960** |
+| **TOTAL** | **2,755** | **2,899** | **5,654** |
 
 ### With Synergies (Combined)
 
@@ -367,29 +367,31 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 | Site-Specific Blocks (66 unique) | 760 | -184 | ATT: 38 blocks, FN: 28 blocks |
 | Template Development | 524 | 356 | 8 shared templates (~156 hrs) |
 | Integrations | 468 | 184 | Analytics, CDN, chat shared |
-| Content Migration | 1,200 | 60 | Shared import framework |
+| Content Migration | 850 | 104 | Shared import framework |
 | Testing & Launch | 520 | 116 | Shared test infrastructure |
-| **TOTAL** | **4,392** | **1,568** | |
+| **TOTAL** | **4,042** | **1,612** | |
 
-**With 20% contingency: 5,270 hours**
+**With 20% contingency: 4,850 hours**
 
 ### Synergy Breakdown
 
 | Category | Hours Saved | Details |
 |----------|-------------|---------|
-| Shared Blocks (30 blocks) | ~600 hrs | Hero, Carousels, Forms, FAQ, CTAs, Tables, etc. |
-| Shared Templates (8 templates) | ~156 hrs | Article, Support, Category, Offers, Landing, etc. |
+| Shared Blocks (30 blocks) | ~660 hrs | Hero, Carousels, Forms, FAQ, CTAs, Tables, etc. (844 core - 184 site-specific) |
+| Shared Templates (8 templates) | ~356 hrs | Article, Support, Category, Offers, Landing, etc. |
 | Shared Integrations | ~184 hrs | Analytics, Target, CDN, CI/CD |
 | Shared Infrastructure | ~192 hrs | Design tokens, repo setup, staging |
-| **Total Synergy Savings** | **~1,132 hrs** | |
+| Content Migration Efficiency | ~104 hrs | Shared import framework, bulk tools |
+| Testing Consolidation | ~116 hrs | Shared test infrastructure, QA process |
+| **Total Synergy Savings** | **~1,612 hrs** | |
 
 ### Savings Summary
 
 | Metric | Sequential | Combined | Savings |
 |--------|------------|----------|---------|
-| Total Hours | 5,960 | 4,392 | **1,568 hrs (26%)** |
-| With Contingency | 7,152 | 5,270 | **1,882 hrs** |
-| Duration | 36-44 weeks | 30-36 weeks | **6-8 weeks** |
+| Total Hours | 5,654 | 4,042 | **1,612 hrs (29%)** |
+| With Contingency | 6,785 | 4,850 | **1,935 hrs** |
+| Duration | 36-44 weeks | 28-34 weeks | **6-10 weeks** |
 | Team Size | 11-15 FTEs | 8-10 FTEs | **3-5 FTEs** |
 
 ---
@@ -465,34 +467,34 @@ P7:                                                                             
 
 | Resource Type | Hours | Rate Range | Cost Range |
 |---------------|-------|------------|------------|
-| Program Manager | 350 | $150-175/hr | $52,500-61,250 |
-| Tech Lead | 550 | $150-200/hr | $82,500-110,000 |
-| Senior Developer (×3) | 1,800 | $125-175/hr | $225,000-315,000 |
-| UE Specialist | 350 | $125-150/hr | $43,750-52,500 |
-| Content Lead | 280 | $100-125/hr | $28,000-35,000 |
-| Content Specialist (×2) | 500 | $75-100/hr | $37,500-50,000 |
-| QA Lead | 350 | $125-150/hr | $43,750-52,500 |
-| QA Engineer | 280 | $100-125/hr | $28,000-35,000 |
-| DevOps | 160 | $125-150/hr | $20,000-24,000 |
-| **BASE TOTAL** | **4,620** | | **$561,000-735,250** |
-| Contingency (20%) | 924 | - | $112,200-147,050 |
-| **GRAND TOTAL** | **5,544** | | **$673,200-882,300** |
+| Program Manager | 320 | $150-175/hr | $48,000-56,000 |
+| Tech Lead | 500 | $150-200/hr | $75,000-100,000 |
+| Senior Developer (×3) | 1,650 | $125-175/hr | $206,250-288,750 |
+| UE Specialist | 320 | $125-150/hr | $40,000-48,000 |
+| Content Lead | 240 | $100-125/hr | $24,000-30,000 |
+| Content Specialist (×2) | 420 | $75-100/hr | $31,500-42,000 |
+| QA Lead | 320 | $125-150/hr | $40,000-48,000 |
+| QA Engineer | 240 | $100-125/hr | $24,000-30,000 |
+| DevOps | 140 | $125-150/hr | $17,500-21,000 |
+| **BASE TOTAL** | **4,150** | | **$506,250-663,750** |
+| Contingency (20%) | 830 | - | $101,250-132,750 |
+| **GRAND TOTAL** | **4,980** | | **$607,500-796,500** |
 
 ### Cost Comparison
 
 | Approach | Hours | Cost Range | Notes |
 |----------|-------|------------|-------|
-| Sequential (separate projects) | 7,152 | $930K-$1.18M | Full teams for each site |
-| Combined (with synergies) | 5,270 | $673K-$882K | Shared resources |
-| **Savings** | **1,882 hrs** | **$257K-$298K** | **~26% reduction** |
+| Sequential (separate projects) | 6,785 | $850K-$1.05M | Full teams for each site |
+| Combined (with synergies) | 4,850 | $608K-$797K | Shared resources |
+| **Savings** | **1,935 hrs** | **$242K-$253K** | **~29% reduction** |
 
 ### Cost Per Page
 
 | Metric | Sequential | Combined |
 |--------|------------|----------|
 | Total Pages | 1,449 | 1,449 |
-| Cost per Page | $642-$814 | $465-$609 |
-| Savings per Page | - | $177-$205 |
+| Cost per Page | $587-$724 | $420-$550 |
+| Savings per Page | - | $167-$174 |
 
 ---
 
@@ -684,8 +686,9 @@ P7:                                                                             
 |--------|---------------|----------|----------|
 | **Consolidated Blocks** | 68 | 58 | **126** |
 | **Original Variations** | 117 | 106 | **223** |
-| **Shared/Reusable** | ~45 | ~35 | **~75** (with synergies) |
-| **Site-Specific** | ~23 | ~23 | **~46** |
+| **Shared Blocks** | - | - | **30** (built once) |
+| **Site-Specific** | 38 | 28 | **66** |
+| **Effective Unique to Build** | - | - | **96** (66 + 30) |
 
 ---
 
@@ -796,17 +799,18 @@ See [FIRSTNET-PAGE-INVENTORY.md](./FIRSTNET-PAGE-INVENTORY.md) for complete URL 
 
 ---
 
-*Document Version: 2.2*
-*Combined Total Pages: ~1,449*
+*Document Version: 2.4*
+*Combined Total Pages: ~1,449 (749 AT&T Business + 700 FirstNet)*
 *AT&T Business: 68 consolidated blocks (from 117 variations)*
 *FirstNet: 58 consolidated blocks (from 106 variations)*
 *Shared Blocks: 30 (built once for both sites)*
 *Effective Unique Blocks: 96*
-*Combined Base Effort: 4,392 hours*
-*Combined Total Effort: 5,270 hours (with 20% contingency)*
-*Synergy Savings: ~1,568 hours (26%)*
-*Combined Duration: 30-36 weeks*
-*Cost Estimate: $673K-$882K (with synergies)*
-*Cost Savings: $257K-$298K vs sequential approach*
+*Combined Base Effort: 4,042 hours*
+*Combined Total Effort: 4,850 hours (with 20% contingency)*
+*Synergy Savings: ~1,612 hours (29%)*
+*Combined Duration: 28-34 weeks*
+*Cost Estimate: $608K-$797K (with synergies)*
+*Cost Savings: $242K-$253K vs sequential approach*
+*Cost Per Page: $420-$550 (combined) vs $587-$724 (sequential)*
 *Created: January 2026*
 *Last Updated: January 2026*
