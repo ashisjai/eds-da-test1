@@ -2,38 +2,29 @@
 
 ## Executive Summary
 
-| Site | Total Pages | P0 | P1 | P2 |
-|------|-------------|----|----|-----|
-| AT&T Business | ~700 | ~100 | ~300 | ~300 |
-| FirstNet | ~1,187 | ~220 | ~450 | ~520 |
-| **COMBINED** | **~1,887** | **~320** | **~750** | **~820** |
+| Site | Total Pages | P0 | P1 | P2 | Blocks |
+|------|-------------|----|----|-----|--------|
+| AT&T Business | ~749 | ~100 | ~350 | ~299 | 68 (consolidated) |
+| FirstNet | ~700 | ~150 | ~300 | ~250 | 58 (consolidated) |
+| **COMBINED** | **~1,449** | **~250** | **~650** | **~549** | **126 total** |
 
 ---
 
 # PART 1: AT&T BUSINESS (business.att.com)
 
-## AT&T Business Page Summary (~700 pages)
+## AT&T Business Page Summary (~749 pages)
 
-| Category | Count | Priority |
-|----------|-------|----------|
-| Homepage | 1 | P0 |
-| Portfolios | 9 | P0 |
-| Products | 75+ | P0/P1 |
-| Categories | 25+ | P1 |
-| Industries | 15+ | P1 |
-| Industry Solutions | 10+ | P1 |
-| Business Solutions | 5 | P1 |
-| Learn - Tech Advice | 100+ | P1 |
-| Learn - Customer Stories | 50+ | P1 |
-| Learn - Research Reports | 30+ | P2 |
-| Learn - Top Voices | 20+ | P2 |
-| Support | 10+ | P1 |
-| About/Resources | 10+ | P1 |
-| Offers/Deals | 5+ | P0 |
-| Small Business | 20+ | P1 |
-| Regional/Areas | 50+ | P2 |
-| Partner Solutions | 60+ | P2 |
-| Explore | 10+ | P1 |
+| Category | % of Total | Est. Count | Priority |
+|----------|------------|------------|----------|
+| Content/Articles | 40% | ~300 | P1 |
+| Product Pages | 20% | ~150 | P0/P1 |
+| Customer Stories | 15% | ~112 | P1 |
+| Industry/Category | 10% | ~75 | P1 |
+| Support/Help | 8% | ~60 | P1 |
+| Landing/Promo | 5% | ~37 | P0 |
+| Core Navigation | 2% | ~15 | P0 |
+
+**Consolidated Blocks: 68** (from 117 original variations)
 
 ---
 

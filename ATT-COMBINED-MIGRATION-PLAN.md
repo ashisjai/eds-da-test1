@@ -8,13 +8,14 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 
 | Metric | AT&T Business | FirstNet | Combined | With Synergies |
 |--------|---------------|----------|----------|----------------|
-| **Total Pages** | ~700 | ~1,187 | **~1,887** | ~1,887 |
-| **Page Templates** | 12 | 12 | 24 | **18** (shared) |
-| **Unique Blocks** | 25+ | 17+ | 42+ | **30** (shared) |
+| **Total Pages** | ~749 | ~700 | **~1,449** | ~1,449 |
+| **Page Templates** | 12 | 10 | 22 | **16** (shared) |
+| **Unique Blocks** | 68 (consolidated) | 58 (consolidated) | 126 | **75** (shared) |
+| **Block Variations** | 117 original | 106 original | 223 original | consolidated |
 | **Base Effort (hrs)** | 2,616-3,240 | 3,264-3,984 | 5,880-7,224 | **5,200-6,400** |
 | **Duration** | 14-18 weeks | 22-26 weeks | 36-44 weeks | **28-34 weeks** |
 | **Team Size** | 5-7 | 6-8 | 11-15 | **8-10** |
-| **Cost Estimate** | $326K-$435K | $416K-$558K | $742K-$993K | **$650K-$870K** |
+| **Cost Estimate** | $687K-$1.06M | $1.07M-$1.45M | $1.76M-$2.51M | **$1.5M-$2.1M** |
 
 ### Synergy Savings
 - **Effort Savings:** ~680-824 hours (12% reduction)
@@ -31,23 +32,17 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 |----------|------------|
 | Homepage | 1 |
 | Portfolio Pages | 9 |
-| Product Pages | 75+ |
-| Category Pages | 25+ |
-| Industry Pages | 15+ |
-| Industry Solutions | 10+ |
-| Business Solutions | 5 |
-| Learn - Tech Advice | 100+ |
-| Learn - Customer Stories | 50+ |
-| Learn - Research Reports | 30+ |
-| Learn - Top Voices | 20+ |
-| Support Pages | 10+ |
-| About/Resources | 10+ |
-| Offers/Deals | 5+ |
-| Small Business | 20+ |
-| Regional/Areas | 50+ |
-| Partner Solutions | 60+ |
-| Explore Pages | 10+ |
-| **TOTAL** | **~700** |
+| Product Pages | ~150 |
+| Category Pages | ~75 |
+| Industry Pages | ~14 |
+| Business Solutions | ~10 |
+| Learn - Content/Articles | ~300 |
+| Learn - Customer Stories | ~112 |
+| Support Pages | ~60 |
+| Offers/Deals | ~37 |
+| Regional/Areas | ~15 |
+| Core Navigation | ~15 |
+| **TOTAL** | **~749** |
 
 ### FirstNet (firstnet.com)
 
@@ -57,22 +52,15 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 | Power of FirstNet | 10 |
 | Coverage | 11 |
 | Rate Plans | 4 |
-| Devices - Phones | 198 |
-| Devices - Tablets | 88 |
-| Devices - Smart Devices | 21 |
-| Devices - Connected Devices | 39 |
-| Devices - Accessories | 25 |
-| Industry Solutions | 90+ |
-| Apps | 18 |
-| Community - News | 180+ |
-| Community - Videos/Events | 50+ |
-| Community - Case Studies | 4+ |
-| Mission Critical | 15+ |
-| Support/Help | 60+ |
-| Offers & Sign-Up | 30+ |
-| Resources/Legal | 25+ |
-| Campaigns | 50+ |
-| **TOTAL** | **~1,187** |
+| Devices - Phones | ~175 |
+| Devices - Tablets/Other | ~105 |
+| Industry Solutions | ~70 |
+| Apps | ~56 |
+| Community - News/Blogs | ~140 |
+| Mission Critical | 15 |
+| Support/Help | ~105 |
+| Core Pages | ~49 |
+| **TOTAL** | **~700** |
 
 ---
 
@@ -82,22 +70,22 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 
 | Priority | AT&T Business | FirstNet | Combined |
 |----------|---------------|----------|----------|
-| **P0** (Must Have) | ~100 | ~220 | **~320** |
-| **P1** (Should Have) | ~300 | ~450 | **~750** |
-| **P2** (Nice to Have) | ~300 | ~520 | **~820** |
-| **TOTAL** | **~700** | **~1,187** | **~1,887** |
+| **P0** (Must Have) | ~100 | ~150 | **~250** |
+| **P1** (Should Have) | ~350 | ~300 | **~650** |
+| **P2** (Nice to Have) | ~299 | ~250 | **~549** |
+| **TOTAL** | **~749** | **~700** | **~1,449** |
 
 ### Page Type Comparison
 
 | Page Type | AT&T Business | FirstNet | Notes |
 |-----------|---------------|----------|-------|
 | Homepage | 1 | 5 | Different layouts |
-| Product/Device Pages | 75+ | 371 | FirstNet device-heavy |
-| Industry/Solution Pages | 30+ | 90+ | Similar structure |
-| Article/Content Pages | 200+ | 280+ | Can share templates |
-| Support Pages | 10+ | 60+ | FirstNet more comprehensive |
-| Offer Pages | 5+ | 30+ | Similar structure |
-| Regional/Campaign | 110+ | 50+ | AT&T Business more regional |
+| Product/Device Pages | ~150 | ~280 | FirstNet device-heavy |
+| Industry/Solution Pages | ~24 | ~70 | Similar structure |
+| Article/Content Pages | ~412 | ~140 | AT&T content-heavy |
+| Support Pages | ~60 | ~105 | FirstNet more comprehensive |
+| Offer Pages | ~37 | ~30 | Similar structure |
+| Core/Landing Pages | ~65 | ~70 | Similar structure |
 
 ---
 
@@ -105,27 +93,30 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 
 ### Block Reusability Analysis
 
-| Block | AT&T Business | FirstNet | Reuse % | Savings |
-|-------|---------------|----------|---------|---------|
-| header | Yes | Yes (simpler) | 60% | 22 hrs |
-| footer | Yes | Yes | 70% | 25 hrs |
-| hero | 5 variants | 4 variants | 75% | 48 hrs |
-| cards | 8 variants | 8 variants | 80% | 96 hrs |
-| carousel | 4 variants | 2 variants | 70% | 40 hrs |
-| tabs | 2 variants | 3 variants | 80% | 29 hrs |
-| accordion | 2 variants | 2 variants | 90% | 29 hrs |
-| promo-banner | 3 variants | - | 0% | 0 hrs |
-| form | 3 variants | 4 variants | 65% | 52 hrs |
-| cta-banner | 3 variants | 3 variants | 85% | 37 hrs |
-| link-list | 2 variants | - | 0% | 0 hrs |
-| table | 3 variants | 4 variants | 75% | 36 hrs |
-| video | 2 variants | 2 variants | 90% | 29 hrs |
-| breadcrumb | 1 variant | 1 variant | 100% | 16 hrs |
-| columns | 3 variants | 3 variants | 100% | 24 hrs |
-| icon-nav | - | 2 variants | 0% | 0 hrs |
-| device-gallery | - | 2 variants | 0% | 0 hrs |
-| value-props | - | 2 variants | 50% | 20 hrs |
-| **TOTAL BLOCK SAVINGS** | | | | **~503 hrs** |
+**Consolidated Block Counts:**
+- AT&T Business: **68 consolidated blocks** (from 117 original variations)
+- FirstNet: **58 consolidated blocks** (from 106 original variations)
+
+| Block Category | AT&T Business | FirstNet | Reuse % | Savings |
+|----------------|---------------|----------|---------|---------|
+| Header/Navigation | 2 blocks | 3 blocks | 70% | 28 hrs |
+| Footer | 1 block | 1 block | 80% | 25 hrs |
+| Hero Blocks | 7 variants | 6 variants | 75% | 60 hrs |
+| Card Carousels | 4 blocks | 4 blocks | 80% | 96 hrs |
+| Feature/Value Props | 2 blocks | 3 blocks | 70% | 40 hrs |
+| Form Blocks | 4 blocks | 3 blocks | 65% | 52 hrs |
+| FAQ/Accordion | 3 blocks | 2 blocks | 90% | 36 hrs |
+| CTA/Promo Banners | 5 blocks | 4 blocks | 85% | 48 hrs |
+| Table/Comparison | 3 blocks | 3 blocks | 75% | 36 hrs |
+| Article/Content | 8 blocks | 3 blocks | 60% | 40 hrs |
+| Support Blocks | 6 blocks | 4 blocks | 70% | 35 hrs |
+| Video Blocks | 2 blocks | 1 block | 90% | 25 hrs |
+| Industry/Solution | 3 blocks | 4 blocks | 65% | 30 hrs |
+| Customer Story | 3 blocks | 2 blocks | 80% | 24 hrs |
+| Offer-Specific | 4 blocks | 3 blocks | 70% | 28 hrs |
+| Link/Navigation | 4 blocks | 2 blocks | 60% | 20 hrs |
+| Miscellaneous | 7 blocks | 10 blocks | 50% | 40 hrs |
+| **TOTAL BLOCK SAVINGS** | **68 blocks** | **58 blocks** | | **~663 hrs** |
 
 ### Template Reusability
 
@@ -530,91 +521,181 @@ P7:                                                                            â
 
 ## Appendix A: Combined Block Inventory
 
-| Block | Variants | AT&T | FirstNet | Complexity |
-|-------|----------|------|----------|------------|
-| header | 2 | Yes | Yes | Medium |
-| footer | 2 | Yes | Yes | Medium |
-| hero | 9 | 5 | 4 | High |
-| cards | 16 | 8 | 8 | High |
-| carousel | 6 | 4 | 2 | High |
-| tabs | 5 | 2 | 3 | Medium |
-| accordion | 4 | 2 | 2 | Medium |
-| promo-banner | 3 | 3 | - | Medium |
-| form | 7 | 3 | 4 | High |
-| cta-banner | 6 | 3 | 3 | Medium |
-| link-list | 2 | 2 | - | Low |
-| table | 7 | 3 | 4 | Medium |
-| video | 4 | 2 | 2 | Medium |
-| quote | 2 | 2 | - | Low |
-| stats | 2 | 2 | - | Low |
-| icon-grid | 2 | 2 | - | Medium |
-| breadcrumb | 1 | 1 | 1 | Low |
-| search-results | 1 | 1 | - | High |
-| related-content | 2 | 2 | - | Medium |
-| social-share | 1 | 1 | - | Low |
-| image-gallery | 1 | 1 | - | Medium |
-| embed | 3 | 3 | - | Low |
-| columns | 3 | 3 | 3 | Low |
-| icon-nav | 2 | - | 2 | Medium |
-| device-gallery | 2 | - | 2 | High |
-| value-props | 2 | - | 2 | Medium |
-| section-heading | 2 | - | 2 | Low |
-| cta-link | 2 | - | 2 | Low |
-| **TOTAL** | **~90** | **~50** | **~40** | |
+### AT&T Business Blocks (68 Consolidated)
+
+| Category | Block Type | Variations | Complexity |
+|----------|-----------|------------|------------|
+| **Global** | Quick Links Carousel | 1 | Medium |
+| | Anchor Navigation | Multiple Pages | Medium |
+| **Hero** | Hero Block | 7 (Homepage Offer Cards, Homepage Video, Product, Portfolio/Industry, Content, Regional, 404) | High |
+| **Pricing** | Pricing Cards Carousel | Product Pages | High |
+| **Features** | Feature Cards Grid | Multiple Pages | Medium |
+| | Value Props Grid | Portfolio/Landing | Medium |
+| **Carousels** | Product/Service Cards Carousel | Multiple Pages | High |
+| | Offer Cards Carousel | Multiple Pages | High |
+| | Resource/Insights Cards | Multiple Pages | Medium |
+| | Story Cards Overlay | Multiple Pages | Medium |
+| **Forms** | Lead Form (RAI) | Multiple Pages | High |
+| | Check Availability Form | Portfolio | Medium |
+| | Email Subscription Form | Multiple Pages | Medium |
+| | Search Block | 404/Support | Medium |
+| **FAQ** | FAQ Accordion | Multiple Pages | Medium |
+| | Support Tabs Accordion | Support | Medium |
+| | Features Collapsible List | Products | Medium |
+| **CTA** | Promo Banner | Multiple Pages | Low |
+| | Full-width Promo Banner | Multiple Pages | Medium |
+| | Contact CTA Banner | Multiple Pages | Medium |
+| | Multi-Button CTA | Portfolios | Low |
+| | Current Customer CTA | Landing Pages | Low |
+| **Trust** | Guarantee Checklist | Multiple Pages | Low |
+| | Award Badge | Multiple Pages | Low |
+| | Customer Testimonials Carousel | Why AT&T | Medium |
+| **Tables** | Comparison Table | Multiple Pages | High |
+| | Benefits Table | Category Pages | Medium |
+| | Use Cases Table | Business Solutions | Medium |
+| **Content** | Featured Article Block | Learn Hub | Medium |
+| | Latest Articles Grid | Learn Hub | Medium |
+| | Article Header with Byline | Learn Articles | Low |
+| | Article Tags | Learn Articles | Low |
+| | Shareable Quote Block | Learn Articles | Low |
+| | Social Share Block | Learn Articles | Low |
+| | More Stories Grid | Learn Articles | Medium |
+| | Top Topics Carousel | Learn Hub | Medium |
+| **Support** | Support Quick Actions Grid | Support Pages | Medium |
+| | Support Portal Cards | Support | Medium |
+| | Resource Cards (Blue) | Support | Medium |
+| | Guided Courses Block | Support | Medium |
+| | Contact Tables | Contact | Medium |
+| | Support Contact Block | Products | Low |
+| **Industry** | Solution Link Cards | Industry Pages | Medium |
+| | Image + Text Split | Multiple Pages | Medium |
+| | Partner Cards Grid | Partner Solutions | Medium |
+| **Stories** | Highlights/Stats Block | Customer Stories | Medium |
+| | About Section | Customer Stories | Medium |
+| | Case Study Stats Block | Portfolios | Medium |
+| **Video** | Video Embed Block | Portfolios | Medium |
+| | Video Content Cards | Portfolios | Medium |
+| **Links** | Link List Block | Multiple Pages | Low |
+| | Additional Resources Grid | Why AT&T | Low |
+| | Helpful Links Cards | 404 | Low |
+| | Solutions Sidebar | Learn Articles | Low |
+| **Offers** | Featured Offers Cards | Offers | Medium |
+| | Category Offers Carousel | Offers | Medium |
+| | Referral Program Block | Offers | Low |
+| | Risk-Free Trial Block | Multiple Pages | Low |
+| **Misc** | Complete Solution Promo | Bundles | Medium |
+| | Related Products Cards | Business Solutions | Medium |
+| | International Calling Block | Phone Product | Low |
+| | Contact Options 2-Column | Why AT&T | Low |
+| | Business Center CTA Card | Business Solutions | Low |
+| | Data-driven Insights Cards | 5G Portfolio | Medium |
+
+### FirstNet Blocks (58 Consolidated)
+
+| Category | Block Type | Variations | Complexity |
+|----------|-----------|------------|------------|
+| **Global** | Header Navigation | Global | High |
+| | Footer | Global | Medium |
+| | Email Subscription Form | Global | Medium |
+| **Hero** | Hero Block | 6 (Homepage, Standard, Product, Industry, Conversion, Device Detail) | High |
+| **Navigation** | Quick Links Carousel | Multiple Pages | Medium |
+| | Anchor Navigation | Multiple Pages | Medium |
+| **Products** | Product Cards Grid | Device Categories | High |
+| | Product Cards by Brand | Brand Grouping | Medium |
+| | Industry Category Cards | Industry | Medium |
+| **Offers** | Offer Cards Carousel | Multiple Pages | High |
+| | Pricing Cards | Plans | High |
+| | Plan Comparison | Offers | Medium |
+| **Features** | Value Props Section | Multiple Pages | Medium |
+| | Benefits Grid/Row | Multiple Pages | Medium |
+| | Connectivity Ecosystem | Coverage | Medium |
+| **FAQ** | FAQ Accordion | Multiple Pages | Medium |
+| | Help Accordion | Help Pages | Medium |
+| **Stories** | Customer Stories Carousel | Multiple Pages | High |
+| | Case Study Feature | Multiple Pages | Medium |
+| **CTA** | Contact CTA Banner | Multiple Pages | Medium |
+| | Promo Banner | Multiple Pages | Low |
+| | Download CTA Banner | Apps | Low |
+| **Conversion** | Get Started Cards | Multiple Pages | Medium |
+| | Eligibility Cards | Conversion | Medium |
+| **Content** | News/Article Cards | Multiple Pages | Medium |
+| | Article Content Block | News Articles | Medium |
+| | Blogs/Videos Tabs | Community | Medium |
+| **Support** | Popular Topics Grid | Help | Medium |
+| | Help Links Cards | FAQ | Low |
+| | Contact Cards Grid | Contact | Medium |
+| | Need Help Section | Eligibility | Low |
+| **Apps** | App Carousel | Apps | High |
+| | App Feature Section | Apps | Medium |
+| | Developer Program Section | Apps | Low |
+| **Industry** | Why FirstNet Section | Industry Detail | Medium |
+| | Appreciation Section | Industry Detail | Medium |
+| | Customer Quote Block | Industry Detail | Low |
+| | Features Carousel | Industry Detail | Medium |
+| **Tables** | Comparison Image | Why FirstNet | Low |
+| | Impacts Table | Eligibility | High |
+| | Document Cards | Eligibility | Medium |
+| **Specialty** | Interactive Map | Coverage | High |
+| | Video Feature Block | Power | Medium |
+| | History Text Section | Power | Low |
+| | Audience Cards | Why FirstNet | Medium |
+| | FirstNet Promise | Why FirstNet | Medium |
+| | Solutions Product Cards | Mission Critical | Medium |
+| **Legal** | Legal Disclaimers | Multiple Pages | Low |
+| | PDF Download Links | Plans | Low |
+| | Shop Now CTA | Device Detail | Low |
+| | Compatibility Link | Devices | Low |
+| | Warning Note | Eligibility | Low |
+| **Error** | Error Page Content | 404 | Low |
+| | Recommended Pages List | 404 | Low |
+
+### Combined Totals
+
+| Metric | AT&T Business | FirstNet | Combined |
+|--------|---------------|----------|----------|
+| **Consolidated Blocks** | 68 | 58 | **126** |
+| **Original Variations** | 117 | 106 | **223** |
+| **Shared/Reusable** | ~45 | ~35 | **~75** (with synergies) |
+| **Site-Specific** | ~23 | ~23 | **~46** |
 
 ---
 
 ## Appendix B: Combined Page Inventory Summary
 
-### AT&T Business Pages (~700)
+### AT&T Business Pages (~749)
 
-| Category | P0 | P1 | P2 | Total |
-|----------|----|----|-------|
-| Homepage | 1 | - | - | 1 |
-| Portfolios | 9 | - | - | 9 |
-| Products | 50 | 25 | - | 75 |
-| Categories | - | 25 | - | 25 |
-| Industries | - | 25 | - | 25 |
-| Articles | - | 100 | 100 | 200 |
-| Support | - | 10 | - | 10 |
-| Offers | 5 | - | - | 5 |
-| Small Business | 1 | 19 | - | 20 |
-| Regional | - | - | 50 | 50 |
-| Partners | - | - | 60 | 60 |
-| Other | 34 | 96 | 90 | 220 |
-| **Total** | **~100** | **~300** | **~300** | **~700** |
+| Category | % of Total | Est. Count |
+|----------|------------|------------|
+| Content/Articles | 40% | ~300 |
+| Product Pages | 20% | ~150 |
+| Customer Stories | 15% | ~112 |
+| Industry/Category | 10% | ~75 |
+| Support/Help | 8% | ~60 |
+| Landing/Promo | 5% | ~37 |
+| Core Navigation | 2% | ~15 |
+| **TOTAL** | **100%** | **~749** |
 
-### FirstNet Pages (~1,187)
+### FirstNet Pages (~700)
 
-| Category | P0 | P1 | P2 | Total |
-|----------|----|----|-------|
-| Homepage & Main | 5 | - | - | 5 |
-| Power of FirstNet | 8 | 2 | - | 10 |
-| Coverage | 6 | 5 | - | 11 |
-| Plans | 4 | - | - | 4 |
-| Phones | 60 | 70 | 68 | 198 |
-| Tablets | 4 | 60 | 24 | 88 |
-| Smart Devices | - | 15 | 6 | 21 |
-| Connected Devices | 4 | 30 | 5 | 39 |
-| Accessories | - | - | 25 | 25 |
-| Industry Solutions | 15 | 75 | - | 90 |
-| Apps | 5 | 13 | - | 18 |
-| Community | 5 | 60 | 225 | 290 |
-| Mission Critical | 10 | 5 | - | 15 |
-| Support | 5 | 55 | - | 60 |
-| Offers/Sign-Up | 15 | 15 | - | 30 |
-| Legal/Campaigns | - | - | 75 | 75 |
-| Other | 74 | 45 | 89 | 208 |
-| **Total** | **~220** | **~450** | **~520** | **~1,187** |
+| Category | % of Total | Est. Count |
+|----------|------------|------------|
+| Devices (Phones) | 25% | ~175 |
+| Devices (Tablets/Other) | 15% | ~105 |
+| Community/News | 20% | ~140 |
+| Help/Support | 15% | ~105 |
+| Industry Solutions | 10% | ~70 |
+| Apps | 8% | ~56 |
+| Core Pages | 7% | ~49 |
+| **TOTAL** | **100%** | **~700** |
 
 ### Combined Totals
 
 | Priority | AT&T Business | FirstNet | Combined |
 |----------|---------------|----------|----------|
-| P0 | ~100 | ~220 | **~320** |
-| P1 | ~300 | ~450 | **~750** |
-| P2 | ~300 | ~520 | **~820** |
-| **TOTAL** | **~700** | **~1,187** | **~1,887** |
+| P0 (Must Have) | ~100 | ~150 | **~250** |
+| P1 (Should Have) | ~350 | ~300 | **~650** |
+| P2 (Nice to Have) | ~299 | ~250 | **~549** |
+| **TOTAL** | **~749** | **~700** | **~1,449** |
 
 ---
 
@@ -686,8 +767,10 @@ See [FIRSTNET-PAGE-INVENTORY.md](./FIRSTNET-PAGE-INVENTORY.md) for complete URL 
 
 ---
 
-*Document Version: 1.0*
-*Combined Total Pages: ~1,887*
+*Document Version: 2.0*
+*Combined Total Pages: ~1,449*
+*AT&T Business: 68 consolidated blocks (from 117 variations)*
+*FirstNet: 58 consolidated blocks (from 106 variations)*
 *Combined Total Effort: 5,274 hours (with contingency)*
 *Combined Duration: 28-34 weeks*
 *Created: January 2026*
