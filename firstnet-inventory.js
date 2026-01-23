@@ -305,8 +305,248 @@ async function createFirstNetInventoryExcel() {
   distData.forEach(row => ws5.addRow(row));
   ws5.getRow(10).font = { bold: true };
 
+  // Sheet 6: Migration Phases
+  const ws6 = workbook.addWorksheet('Migration Phases');
+  ws6.columns = [{ width: 12 }, { width: 30 }, { width: 50 }, { width: 20 }, { width: 15 }];
+  ws6.addRow(['Phase', 'Focus Area', 'Deliverables', 'Dependencies', 'Complexity']);
+  ws6.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws6.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const phaseData = [
+    ['Phase 1', 'Foundation & Global Components', 'Header, Footer, Email Subscription, Global Styles, Design Tokens', 'None', 'Medium'],
+    ['Phase 2', 'Core Page Templates', 'Homepage, Plans, Coverage - high traffic pages', 'Phase 1', 'High'],
+    ['Phase 3', 'Product Catalog', 'Devices listing, Device detail template, Product cards', 'Phase 1', 'High'],
+    ['Phase 4', 'Content Pages', 'Community, News articles, Blog posts, Case studies', 'Phase 1', 'Medium'],
+    ['Phase 5', 'Support Infrastructure', 'Help center, FAQ, Contact, 404 page', 'Phase 1', 'Medium'],
+    ['Phase 6', 'Industry Solutions', 'Industry landing, Industry detail pages (8 verticals)', 'Phase 2', 'Medium'],
+    ['Phase 7', 'Conversion Flows', 'Sign Up, Eligibility, Offers pages', 'Phase 2', 'High'],
+    ['Phase 8', 'Specialty Pages', 'Apps, Mission Critical, Power of FirstNet', 'Phase 1', 'Medium'],
+    ['Phase 9', 'Content Migration', 'Bulk import of 700+ pages using templates', 'Phases 1-8', 'Low'],
+    ['Phase 10', 'QA & Launch', 'Visual regression, Performance testing, SEO validation, Go-live', 'Phase 9', 'Medium']
+  ];
+  phaseData.forEach(row => {
+    const dataRow = ws6.addRow(row);
+    dataRow.getCell(3).alignment = { wrapText: true };
+  });
+
+  // Sheet 7: Effort Estimates
+  const ws7 = workbook.addWorksheet('Effort Estimates');
+  ws7.columns = [{ width: 30 }, { width: 15 }, { width: 18 }, { width: 45 }];
+  ws7.addRow(['Component', 'Est. Days', 'Team Size', 'Notes']);
+  ws7.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws7.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const effortData = [
+    ['', '', '', ''],
+    ['PHASE 1: FOUNDATION', '', '', ''],
+    ['Project Setup & Boilerplate', '2-3', '1 Dev', 'AEM EDS repo, CI/CD, staging environment'],
+    ['Design Token Extraction', '3-5', '1 Dev', 'Colors, typography, spacing from FirstNet brand'],
+    ['Global Header Block', '5-8', '1 Dev', 'Responsive nav, hamburger menu, dropdowns'],
+    ['Global Footer Block', '3-5', '1 Dev', 'Multi-column layout, social links'],
+    ['Email Subscription Block', '2-3', '1 Dev', 'Form integration, validation'],
+    ['Phase 1 Subtotal', '15-24', '', ''],
+    ['', '', '', ''],
+    ['PHASE 2: CORE PAGES', '', '', ''],
+    ['Hero Block (Multiple Variants)', '5-7', '1 Dev', '6+ hero variations across site'],
+    ['Offer Cards Carousel', '4-6', '1 Dev', 'Swiper/carousel, responsive cards'],
+    ['Anchor Navigation Block', '2-3', '1 Dev', 'Sticky jump links, smooth scroll'],
+    ['Pricing/Plan Cards Block', '5-7', '1 Dev', 'Tabbed interface, comparison layout'],
+    ['FAQ Accordion Block', '3-4', '1 Dev', 'Expandable sections, multiple styles'],
+    ['CTA Banner Blocks', '2-3', '1 Dev', 'Multiple color/layout variations'],
+    ['Homepage Template', '3-5', '1 Dev', 'Page assembly and testing'],
+    ['Plans Page Template', '3-5', '1 Dev', 'Complex layout with tabs'],
+    ['Coverage Page Template', '3-5', '1 Dev', 'Map integration considerations'],
+    ['Phase 2 Subtotal', '30-45', '', ''],
+    ['', '', '', ''],
+    ['PHASE 3: PRODUCT CATALOG', '', '', ''],
+    ['Product Card Grid Block', '4-6', '1 Dev', '6 variations (phones, tablets, etc.)'],
+    ['Device Detail Hero', '3-5', '1 Dev', 'Image gallery, feature list'],
+    ['Product Filters (if needed)', '5-8', '1 Dev', 'Category filtering, search'],
+    ['Devices Listing Template', '2-3', '1 Dev', 'Page with multiple grids'],
+    ['Device Detail Template', '2-3', '1 Dev', 'Single product page'],
+    ['Phase 3 Subtotal', '16-25', '', ''],
+    ['', '', '', ''],
+    ['PHASE 4: CONTENT PAGES', '', '', ''],
+    ['Case Study Carousel', '3-5', '1 Dev', 'Overlay cards, video links'],
+    ['News/Article List Block', '2-3', '1 Dev', 'Date, title, excerpt format'],
+    ['Article Body Block', '2-3', '1 Dev', 'Rich text styling'],
+    ['Blogs/Videos Tabs Block', '3-4', '1 Dev', 'Tabbed content interface'],
+    ['Community Template', '2-3', '1 Dev', 'Page assembly'],
+    ['News Article Template', '2-3', '1 Dev', 'Article page layout'],
+    ['Phase 4 Subtotal', '14-21', '', ''],
+    ['', '', '', ''],
+    ['PHASE 5: SUPPORT', '', '', ''],
+    ['Popular Topics Grid', '2-3', '1 Dev', 'Icon cards grid'],
+    ['Help Accordion Variants', '2-3', '1 Dev', 'Multiple accordion styles'],
+    ['Contact Cards Grid', '2-3', '1 Dev', '4-column icon cards'],
+    ['404 Error Page', '1-2', '1 Dev', 'Simple error layout'],
+    ['Help Template', '2-3', '1 Dev', 'Page assembly'],
+    ['FAQ Template', '2-3', '1 Dev', 'Page assembly'],
+    ['Phase 5 Subtotal', '11-17', '', ''],
+    ['', '', '', ''],
+    ['PHASE 6: INDUSTRY SOLUTIONS', '', '', ''],
+    ['Industry Category Cards', '3-4', '1 Dev', '8-card grid layout'],
+    ['Industry Hero Carousel', '3-4', '1 Dev', 'Multi-slide hero'],
+    ['Customer Quote Block', '2-3', '1 Dev', 'Testimonial banner'],
+    ['Industry Landing Template', '2-3', '1 Dev', 'Page assembly'],
+    ['Industry Detail Template', '2-3', '1 Dev', 'Vertical-specific pages'],
+    ['Phase 6 Subtotal', '12-17', '', ''],
+    ['', '', '', ''],
+    ['PHASE 7: CONVERSION FLOWS', '', '', ''],
+    ['Eligibility Cards Block', '3-4', '1 Dev', 'CTA-focused cards'],
+    ['Benefits Row Block', '2-3', '1 Dev', 'Icon + text value props'],
+    ['Impacts Table Block', '3-5', '1 Dev', 'Complex data table'],
+    ['Sign Up Template', '2-3', '1 Dev', 'Conversion-focused layout'],
+    ['Eligibility Template', '2-3', '1 Dev', 'Page assembly'],
+    ['Offers Template', '2-3', '1 Dev', 'Promotional layout'],
+    ['Phase 7 Subtotal', '14-21', '', ''],
+    ['', '', '', ''],
+    ['PHASE 8: SPECIALTY', '', '', ''],
+    ['App Catalog Carousel', '3-5', '1 Dev', 'App cards with CTAs'],
+    ['Solutions Product Cards', '2-3', '1 Dev', '2-column feature cards'],
+    ['Video Feature Block', '2-3', '1 Dev', 'Image + video CTA'],
+    ['Story Cards Carousel', '3-4', '1 Dev', 'Overlay cards carousel'],
+    ['Apps Template', '2-3', '1 Dev', 'Page assembly'],
+    ['Mission Critical Template', '2-3', '1 Dev', 'Page assembly'],
+    ['Phase 8 Subtotal', '14-21', '', ''],
+    ['', '', '', ''],
+    ['PHASE 9: CONTENT MIGRATION', '', '', ''],
+    ['Import Script Development', '5-8', '1 Dev', 'Automated content extraction'],
+    ['Device Pages Bulk Import', '3-5', '1 Dev', '~280 device pages'],
+    ['News/Blog Bulk Import', '2-4', '1 Dev', '~140 articles'],
+    ['Help/Support Bulk Import', '2-3', '1 Dev', '~105 pages'],
+    ['Remaining Pages Import', '3-5', '1 Dev', '~175 misc pages'],
+    ['Phase 9 Subtotal', '15-25', '', ''],
+    ['', '', '', ''],
+    ['PHASE 10: QA & LAUNCH', '', '', ''],
+    ['Visual Regression Testing', '5-8', '1 QA', 'Cross-browser, responsive'],
+    ['Performance Optimization', '3-5', '1 Dev', 'Core Web Vitals, LCP, CLS'],
+    ['SEO Validation', '2-3', '1 Dev', 'Redirects, meta, structured data'],
+    ['Accessibility Audit', '3-5', '1 Dev', 'WCAG compliance'],
+    ['UAT & Bug Fixes', '5-8', '1 Dev + QA', 'Stakeholder review'],
+    ['Go-Live & Monitoring', '2-3', '1 Dev', 'DNS, CDN, monitoring'],
+    ['Phase 10 Subtotal', '20-32', '', ''],
+    ['', '', '', ''],
+    ['TOTAL ESTIMATE', '146-248 days', '', 'Range accounts for complexity and unknowns']
+  ];
+  effortData.forEach(row => {
+    const dataRow = ws7.addRow(row);
+    if (row[0].includes('PHASE') || row[0].includes('Subtotal') || row[0].includes('TOTAL')) {
+      dataRow.font = { bold: true };
+      if (row[0].includes('PHASE')) {
+        dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE8E8E8' } };
+      }
+    }
+    dataRow.getCell(4).alignment = { wrapText: true };
+  });
+
+  // Sheet 8: Block Priority Matrix
+  const ws8 = workbook.addWorksheet('Block Priority');
+  ws8.columns = [{ width: 25 }, { width: 12 }, { width: 12 }, { width: 12 }, { width: 40 }];
+  ws8.addRow(['Block Name', 'Priority', 'Reuse', 'Complexity', 'Rationale']);
+  ws8.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws8.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const priorityData = [
+    ['Header Navigation', 'P0 - Critical', 'All Pages', 'High', 'Global component, blocks all pages'],
+    ['Footer', 'P0 - Critical', 'All Pages', 'Medium', 'Global component, blocks all pages'],
+    ['Hero Section', 'P0 - Critical', 'High', 'Medium', '6+ variations, homepage first impression'],
+    ['Product Cards Grid', 'P0 - Critical', 'High', 'Medium', '6 variations, 40% of site pages'],
+    ['FAQ Accordion', 'P1 - High', 'High', 'Low', '4+ pages, reusable component'],
+    ['Offer Cards Carousel', 'P1 - High', 'Medium', 'Medium', 'Homepage, conversion pages'],
+    ['Anchor Navigation', 'P1 - High', 'Medium', 'Low', '5+ pages with sections'],
+    ['CTA Banner', 'P1 - High', 'Medium', 'Low', 'Multiple pages, simple variations'],
+    ['Case Studies Carousel', 'P1 - High', 'Medium', 'Medium', 'Community, industry pages'],
+    ['Email Subscription', 'P1 - High', 'All Pages', 'Medium', 'Global, form integration'],
+    ['Pricing Cards', 'P2 - Medium', 'Low', 'High', 'Plans page, complex tabs'],
+    ['Interactive Map', 'P2 - Medium', 'Low', 'High', 'Coverage page only, Leaflet integration'],
+    ['Industry Cards', 'P2 - Medium', 'Low', 'Medium', 'Industry solutions pages'],
+    ['Article Body', 'P2 - Medium', 'Medium', 'Low', 'News/blog pages'],
+    ['Video Feature', 'P2 - Medium', 'Low', 'Medium', 'Power, Apps pages'],
+    ['Impacts Table', 'P3 - Low', 'Low', 'High', 'Eligibility page only'],
+    ['Developer Program', 'P3 - Low', 'Low', 'Low', 'Apps page only'],
+    ['404 Error Content', 'P3 - Low', 'Low', 'Low', 'Single page']
+  ];
+  priorityData.forEach(row => {
+    const dataRow = ws8.addRow(row);
+    dataRow.getCell(5).alignment = { wrapText: true };
+    // Color code priority
+    if (row[1].includes('P0')) {
+      dataRow.getCell(2).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF6B6B' } };
+    } else if (row[1].includes('P1')) {
+      dataRow.getCell(2).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFFD93D' } };
+    } else if (row[1].includes('P2')) {
+      dataRow.getCell(2).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF6BCB77' } };
+    }
+  });
+
+  // Sheet 9: Template Strategy
+  const ws9 = workbook.addWorksheet('Template Strategy');
+  ws9.columns = [{ width: 25 }, { width: 15 }, { width: 50 }, { width: 20 }];
+  ws9.addRow(['Template Name', 'Page Count', 'Blocks Used', 'Import Strategy']);
+  ws9.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws9.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const templateData = [
+    ['Device Detail', '~280', 'Device Hero, Shop CTA, Legal Footnotes', 'Bulk import - highest volume'],
+    ['News Article', '~100', 'Article Header, Date, Hero Image, Body Content', 'Bulk import from CMS'],
+    ['Blog Post', '~40', 'Article Header, Date, Body Content', 'Bulk import from CMS'],
+    ['Industry Detail', '~8', 'Industry Hero, Anchor Nav, Features, Stories, Get Started', 'Manual - unique content'],
+    ['Help Topic', '~50', 'Hero with Login, Topic Grid, Accordions', 'Semi-automated'],
+    ['FAQ Category', '~30', 'Help Cards, Quick Links, FAQ Accordions', 'Semi-automated'],
+    ['Offer Landing', '~25', 'Offer Hero, Benefits, Device Cards, FAQ', 'Manual - promotional'],
+    ['Core Landing', '~15', 'Hero, Feature Cards, CTAs, Email Subscription', 'Manual - high visibility'],
+    ['App Detail', '~50', 'App Hero, Catalog Features, CTAs', 'Bulk import'],
+    ['Case Study', '~30', 'Article layout with embedded media', 'Semi-automated'],
+    ['', '', '', ''],
+    ['TOTAL', '~700', '', '']
+  ];
+  templateData.forEach(row => {
+    const dataRow = ws9.addRow(row);
+    dataRow.getCell(3).alignment = { wrapText: true };
+    if (row[0] === 'TOTAL') {
+      dataRow.font = { bold: true };
+    }
+  });
+
+  // Sheet 10: Risk Assessment
+  const ws10 = workbook.addWorksheet('Risk Assessment');
+  ws10.columns = [{ width: 30 }, { width: 12 }, { width: 12 }, { width: 45 }];
+  ws10.addRow(['Risk', 'Likelihood', 'Impact', 'Mitigation']);
+  ws10.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws10.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const riskData = [
+    ['Interactive Map Complexity', 'High', 'Medium', 'Consider iframe embed or simplified static map initially'],
+    ['Dynamic Content/Personalization', 'Medium', 'High', 'Identify personalized sections early, plan for edge functions'],
+    ['Form Integrations', 'Medium', 'Medium', 'Document current form backends, plan API integration'],
+    ['Authentication Flows', 'Low', 'High', 'Login/account pages may need custom solution'],
+    ['Third-party Scripts', 'Medium', 'Medium', 'Audit current analytics, chat, tracking scripts'],
+    ['SEO Redirect Complexity', 'Medium', 'High', 'Build comprehensive redirect map early'],
+    ['Content Freeze Coordination', 'High', 'Medium', 'Plan migration window with content team'],
+    ['Brand/Design Changes', 'Medium', 'Medium', 'Lock design tokens early, plan for updates'],
+    ['Device Catalog Updates', 'High', 'Low', 'Build flexible import scripts for ongoing updates'],
+    ['Performance Targets', 'Low', 'Medium', 'EDS typically exceeds targets, monitor LCP for carousels']
+  ];
+  riskData.forEach(row => {
+    const dataRow = ws10.addRow(row);
+    dataRow.getCell(4).alignment = { wrapText: true };
+    // Color code likelihood
+    if (row[1] === 'High') {
+      dataRow.getCell(2).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF6B6B' } };
+    } else if (row[1] === 'Medium') {
+      dataRow.getCell(2).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFFD93D' } };
+    }
+    // Color code impact
+    if (row[2] === 'High') {
+      dataRow.getCell(3).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF6B6B' } };
+    } else if (row[2] === 'Medium') {
+      dataRow.getCell(3).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFFD93D' } };
+    }
+  });
+
   await workbook.xlsx.writeFile('/workspace/firstnet-migration-plan.xlsx');
-  console.log('Created: firstnet-migration-plan.xlsx with 96 block variations (86 with block-specific screenshots)');
+  console.log('Created: firstnet-migration-plan.xlsx with 96 block variations, migration phases, and effort estimates');
 }
 
 createFirstNetInventoryExcel().catch(console.error);
