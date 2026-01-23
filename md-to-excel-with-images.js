@@ -19,7 +19,7 @@ async function createMigrationPlanExcel() {
   ws1.addRow(['Total Pages:', '749 (per client sitemap/robots.txt)']);
   ws1.addRow(['Website:', 'www.business.att.com']);
   ws1.addRow(['Project Type:', 'Enterprise B2B Site Migration']);
-  ws1.addRow(['Block Variations Documented:', '94']);
+  ws1.addRow(['Block Variations Documented:', '117']);
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
@@ -199,7 +199,41 @@ async function createMigrationPlanExcel() {
     // 5G Portfolio blocks (COMPREHENSIVE CRAWL)
     { type: 'Video Embed Block', variation: '5G Portfolio', desc: 'Embedded video player with controls', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
     { type: 'Data-driven Insights Cards', variation: '5G Portfolio', desc: 'Stats cards with percentages/numbers', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
-    { type: 'Looking for More Links', variation: '5G Portfolio', desc: 'Grid of related resource links', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' }
+    { type: 'Looking for More Links', variation: '5G Portfolio', desc: 'Grid of related resource links', page: '/portfolios/5G-for-business.html', screenshot: '5g-portfolio-full.png' },
+
+    // Partner Solutions Page blocks (ADDITIONAL CRAWL)
+    { type: 'Partner Cards Grid', variation: 'Partner Solutions', desc: '6-card grid with image backgrounds', page: '/industries/partner-solutions.html', screenshot: 'partner-solutions-full.png' },
+    { type: 'Full-width Promo Banner', variation: 'Partner Solutions', desc: 'Blue "Explore networking" banner', page: '/industries/partner-solutions.html', screenshot: 'partner-solutions-full.png' },
+
+    // Knowledge Center Page blocks (ADDITIONAL CRAWL)
+    { type: 'Category Anchor Tabs', variation: 'Knowledge Center', desc: 'Horizontal scrolling category tabs', page: '/resources/knowledge-center.html', screenshot: 'knowledge-center-full.png' },
+    { type: 'Image + Article Links', variation: 'Knowledge Center', desc: 'Image left with article links right', page: '/resources/knowledge-center.html', screenshot: 'knowledge-center-full.png' },
+
+    // About/Why AT&T Page blocks (ADDITIONAL CRAWL)
+    { type: 'Three-column Feature Block', variation: 'Why AT&T', desc: '5G, Fiber, Expertise with icons', page: '/about/why-att-business.html', screenshot: 'why-att-business-full.png' },
+    { type: 'Customer Testimonials Carousel', variation: 'Why AT&T', desc: 'Quote cards with industry tags', page: '/about/why-att-business.html', screenshot: 'why-att-business-full.png' },
+    { type: 'AT&T Guarantee CTA Banner', variation: 'Why AT&T', desc: 'Dark background guarantee promo', page: '/about/why-att-business.html', screenshot: 'why-att-business-full.png' },
+    { type: 'J.D. Power Award Block', variation: 'Why AT&T', desc: '#1 Customer Satisfaction badge', page: '/about/why-att-business.html', screenshot: 'why-att-business-full.png' },
+    { type: 'Contact Options 2-Column', variation: 'Why AT&T', desc: 'Call specialist vs Schedule cards', page: '/about/why-att-business.html', screenshot: 'why-att-business-full.png' },
+    { type: 'Additional Resources Grid', variation: 'Why AT&T', desc: '4-column extensive links list', page: '/about/why-att-business.html', screenshot: 'why-att-business-full.png' },
+
+    // Business Solutions Page blocks (ADDITIONAL CRAWL)
+    { type: 'Video Hero with Play Button', variation: 'Business Solutions', desc: 'Background video with watch button', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+    { type: 'Benefits Grid with Icons', variation: 'Business Solutions', desc: '4 benefit cards with icons', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+    { type: 'Business Center CTA Card', variation: 'Business Solutions', desc: 'Single promo card with login link', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+    { type: 'Feature Comparison Table', variation: 'Business Solutions', desc: 'Product vs competitor comparison', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+    { type: 'Use Cases Table', variation: 'Business Solutions', desc: 'Problem/Benefits/Solution format', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+    { type: 'Related Products Cards', variation: 'Business Solutions', desc: '3 cards with View product links', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+    { type: 'Resources Cards Carousel', variation: 'Business Solutions', desc: '4 resource cards with thumbnails', page: '/business-solutions/att-dynamic-exchange.html', screenshot: 'business-solutions-full.png' },
+
+    // Learn Article Page blocks (ADDITIONAL CRAWL)
+    { type: 'Article Tags', variation: 'Learn Article', desc: 'Category labels at article top', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' },
+    { type: 'Article Header with Byline', variation: 'Learn Article', desc: 'Title, subtitle, author, date, read time', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' },
+    { type: 'Shareable Quote Block', variation: 'Learn Article', desc: 'Pull quote with Twitter share', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' },
+    { type: 'Social Share Block', variation: 'Learn Article', desc: 'X, LinkedIn, Facebook, Mail buttons', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' },
+    { type: 'Article Email Subscription', variation: 'Learn Article', desc: 'Newsletter signup with country select', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' },
+    { type: 'Solutions Sidebar', variation: 'Learn Article', desc: 'Links to related solutions', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' },
+    { type: 'More Stories Grid', variation: 'Learn Article', desc: '3 related articles with images', page: '/learn/tech-advice/*.html', screenshot: 'learn-article-full.png' }
   ];
 
   let currentRow = 2;
@@ -369,7 +403,7 @@ async function createMigrationPlanExcel() {
   ws7.getRow(10).font = { bold: true };
 
   await workbook.xlsx.writeFile('/workspace/att-business-migration-plan.xlsx');
-  console.log('Created: att-business-migration-plan.xlsx with 94 block variations');
+  console.log('Created: att-business-migration-plan.xlsx with 117 block variations');
 }
 
 async function createDetailedInventoryExcel() {
@@ -385,9 +419,9 @@ async function createDetailedInventoryExcel() {
   ws1.addRow([]);
   ws1.addRow(['Total Pages (Client Provided):', '749']);
   ws1.addRow(['Documented Page Templates:', '~150']);
-  ws1.addRow(['Block Types Documented:', '79']);
-  ws1.addRow(['Block Variations (with pages):', '94']);
-  ws1.addRow(['Screenshot References:', '66']);
+  ws1.addRow(['Block Types Documented:', '95']);
+  ws1.addRow(['Block Variations (with pages):', '117']);
+  ws1.addRow(['Screenshot References:', '71']);
 
   // Sheet 2: All Pages
   const ws2 = workbook.addWorksheet('All Pages');
@@ -535,7 +569,7 @@ async function createDetailedInventoryExcel() {
   }
 
   await workbook.xlsx.writeFile('/workspace/att-business-detailed-inventory.xlsx');
-  console.log('Created: att-business-detailed-inventory.xlsx with 94 block variations');
+  console.log('Created: att-business-detailed-inventory.xlsx with 117 block variations');
 }
 
 async function main() {
