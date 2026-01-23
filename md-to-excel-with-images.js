@@ -23,6 +23,15 @@ async function createMigrationPlanExcel() {
   ws1.addRow([]);
   ws1.addRow(['Content Types:']);
   ws1.addRow(['Products, Portfolios, Industry Solutions, Customer Stories, Support Content, Landing Pages']);
+  ws1.addRow([]);
+  ws1.addRow([]);
+  const disclaimerRow1 = ws1.addRow(['DISCLAIMER:']);
+  disclaimerRow1.font = { bold: true, color: { argb: 'FFCC0000' } };
+  ws1.addRow(['This block inventory was compiled through automated crawling and manual review of www.business.att.com.']);
+  ws1.addRow(['Block variations represent patterns observed at the time of analysis and may not capture all edge cases,']);
+  ws1.addRow(['dynamic content states, or pages behind authentication. Actual implementation may require additional']);
+  ws1.addRow(['blocks or variations not documented here. Screenshots are point-in-time captures and page content']);
+  ws1.addRow(['may have changed since collection. This document is intended for planning purposes only.']);
 
   // Sheet 2: Site Structure
   const ws2 = workbook.addWorksheet('Site Structure');
@@ -422,6 +431,15 @@ async function createDetailedInventoryExcel() {
   ws1.addRow(['Block Types Documented:', '95']);
   ws1.addRow(['Block Variations (with pages):', '117']);
   ws1.addRow(['Screenshot References:', '71']);
+  ws1.addRow([]);
+  ws1.addRow([]);
+  const disclaimerRow2 = ws1.addRow(['DISCLAIMER:']);
+  disclaimerRow2.font = { bold: true, color: { argb: 'FFCC0000' } };
+  ws1.addRow(['This block inventory was compiled through automated crawling and manual review of www.business.att.com.']);
+  ws1.addRow(['Block variations represent patterns observed at the time of analysis and may not capture all edge cases,']);
+  ws1.addRow(['dynamic content states, or pages behind authentication. Actual implementation may require additional']);
+  ws1.addRow(['blocks or variations not documented here. Screenshots are point-in-time captures and page content']);
+  ws1.addRow(['may have changed since collection. This document is intended for planning purposes only.']);
 
   // Sheet 2: All Pages
   const ws2 = workbook.addWorksheet('All Pages');
