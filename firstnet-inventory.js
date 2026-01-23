@@ -564,8 +564,222 @@ async function createFirstNetInventoryExcel() {
     }
   });
 
+  // Sheet 11: Team Composition & Roles
+  const ws11 = workbook.addWorksheet('Team Composition');
+  ws11.columns = [{ width: 22 }, { width: 15 }, { width: 40 }, { width: 35 }, { width: 20 }];
+  ws11.addRow(['Role', 'Headcount', 'Responsibilities', 'Required Skills', 'Allocation']);
+  ws11.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws11.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const teamData = [
+    ['', '', '', '', ''],
+    ['CORE TEAM', '', '', '', ''],
+    ['Tech Lead / Architect', '1', 'Architecture decisions, code reviews, technical guidance, stakeholder communication', 'AEM EDS expert, 5+ years web dev, system design', '100%'],
+    ['Senior EDS Developer', '2', 'Block development, JavaScript decoration, complex components, performance optimization', 'AEM EDS, JavaScript, CSS, responsive design', '100%'],
+    ['Mid-Level Developer', '2', 'Block implementation, content migration scripts, bug fixes, documentation', 'HTML, CSS, JavaScript, Git, 2+ years experience', '100%'],
+    ['QA Engineer', '1', 'Test planning, visual regression, cross-browser testing, accessibility audits', 'Test automation, Playwright/Cypress, WCAG standards', '100%'],
+    ['', '', '', '', ''],
+    ['EXTENDED TEAM', '', '', '', ''],
+    ['UX/UI Designer', '1', 'Design token extraction, visual QA, style guide maintenance', 'Figma, CSS, design systems, brand guidelines', '50%'],
+    ['Content Strategist', '1', 'Content audit, migration mapping, URL strategy, metadata planning', 'Content management, SEO, information architecture', '50%'],
+    ['DevOps Engineer', '0.5', 'CI/CD pipeline, staging environments, DNS/CDN configuration', 'GitHub Actions, CloudFlare/Fastly, monitoring', '25%'],
+    ['Project Manager', '1', 'Sprint planning, stakeholder reporting, risk management, resource coordination', 'Agile/Scrum, JIRA, technical PM experience', '100%'],
+    ['', '', '', '', ''],
+    ['CLIENT-SIDE RESOURCES', '', '', '', ''],
+    ['Product Owner', '1', 'Requirements validation, acceptance criteria, priority decisions', 'Domain expertise, decision authority', '25%'],
+    ['Content Authors', '2-3', 'Content review, UAT testing, migration validation', 'CMS experience, content ownership', '25%'],
+    ['Brand/Legal Review', '1', 'Brand compliance, legal disclaimer review', 'Brand guidelines, legal requirements', '10%'],
+    ['', '', '', '', ''],
+    ['TOTAL CORE TEAM', '7 FTE', '', '', ''],
+    ['TOTAL EXTENDED', '4.5 FTE', '', '', ''],
+    ['PEAK TEAM SIZE', '8-10', 'During Phases 2-3 and Phase 10', '', '']
+  ];
+  teamData.forEach(row => {
+    const dataRow = ws11.addRow(row);
+    dataRow.getCell(3).alignment = { wrapText: true };
+    dataRow.getCell(4).alignment = { wrapText: true };
+    if (row[0].includes('CORE TEAM') || row[0].includes('EXTENDED') || row[0].includes('CLIENT-SIDE') || row[0].includes('TOTAL') || row[0].includes('PEAK')) {
+      dataRow.font = { bold: true };
+      if (row[0].includes('TOTAL') || row[0].includes('PEAK')) {
+        dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE8E8E8' } };
+      }
+    }
+  });
+
+  // Sheet 12: Resource Allocation by Phase
+  const ws12 = workbook.addWorksheet('Resource Allocation');
+  ws12.columns = [{ width: 12 }, { width: 12 }, { width: 10 }, { width: 10 }, { width: 10 }, { width: 8 }, { width: 8 }, { width: 10 }, { width: 8 }, { width: 15 }];
+  ws12.addRow(['Phase', 'Duration', 'Tech Lead', 'Sr Dev', 'Mid Dev', 'QA', 'UX', 'Content', 'PM', 'Total FTE']);
+  ws12.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws12.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const allocationData = [
+    ['Phase 1', '3-4 weeks', '1.0', '1.0', '1.0', '0.25', '1.0', '0.5', '1.0', '5.75'],
+    ['Phase 2', '5-6 weeks', '1.0', '2.0', '1.0', '0.5', '0.5', '0.25', '1.0', '6.25'],
+    ['Phase 3', '4-5 weeks', '0.5', '2.0', '2.0', '0.5', '0.25', '0.25', '1.0', '6.5'],
+    ['Phase 4', '3-4 weeks', '0.5', '1.0', '2.0', '0.5', '0.25', '0.5', '1.0', '5.75'],
+    ['Phase 5', '2-3 weeks', '0.25', '1.0', '1.0', '0.5', '0.25', '0.25', '0.5', '3.75'],
+    ['Phase 6', '2-3 weeks', '0.25', '1.0', '1.0', '0.5', '0.25', '0.25', '0.5', '3.75'],
+    ['Phase 7', '3-4 weeks', '0.5', '1.0', '1.0', '0.5', '0.5', '0.25', '1.0', '4.75'],
+    ['Phase 8', '3-4 weeks', '0.25', '1.0', '1.0', '0.5', '0.25', '0.25', '0.5', '3.75'],
+    ['Phase 9', '3-5 weeks', '0.5', '1.0', '2.0', '0.5', '0', '1.0', '1.0', '6.0'],
+    ['Phase 10', '4-6 weeks', '1.0', '1.0', '1.0', '1.0', '0.5', '0.5', '1.0', '6.0'],
+    ['', '', '', '', '', '', '', '', '', ''],
+    ['AVERAGE', '32-44 wks', '0.6', '1.2', '1.3', '0.5', '0.4', '0.4', '0.9', '5.2']
+  ];
+  allocationData.forEach(row => {
+    const dataRow = ws12.addRow(row);
+    if (row[0] === 'AVERAGE') {
+      dataRow.font = { bold: true };
+      dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE8E8E8' } };
+    }
+  });
+
+  // Sheet 13: Cost Estimation
+  const ws13 = workbook.addWorksheet('Cost Estimation');
+  ws13.columns = [{ width: 30 }, { width: 15 }, { width: 15 }, { width: 15 }, { width: 35 }];
+  ws13.addRow(['Cost Category', 'Low Estimate', 'High Estimate', 'Basis', 'Notes']);
+  ws13.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws13.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const costData = [
+    ['', '', '', '', ''],
+    ['LABOR COSTS (Rate Assumptions)', '', '', '', ''],
+    ['Tech Lead ($175/hr)', '$91,000', '$122,500', '520-700 hrs', 'Architecture, reviews, guidance'],
+    ['Senior EDS Developer ($150/hr × 2)', '$312,000', '$420,000', '2080-2800 hrs', 'Complex block development'],
+    ['Mid-Level Developer ($120/hr × 2)', '$249,600', '$336,000', '2080-2800 hrs', 'Block implementation, scripts'],
+    ['QA Engineer ($110/hr)', '$57,200', '$77,000', '520-700 hrs', 'Testing, automation'],
+    ['UX/UI Designer ($130/hr)', '$33,800', '$45,500', '260-350 hrs', '50% allocation'],
+    ['Content Strategist ($100/hr)', '$26,000', '$35,000', '260-350 hrs', '50% allocation'],
+    ['DevOps Engineer ($140/hr)', '$18,200', '$24,500', '130-175 hrs', '25% allocation'],
+    ['Project Manager ($125/hr)', '$65,000', '$87,500', '520-700 hrs', 'Full-time coordination'],
+    ['', '', '', '', ''],
+    ['LABOR SUBTOTAL', '$852,800', '$1,148,000', '', 'Based on 146-248 day estimate'],
+    ['', '', '', '', ''],
+    ['INFRASTRUCTURE & TOOLS', '', '', '', ''],
+    ['AEM EDS License', 'Included', 'Included', '', 'Typically included in AEM contract'],
+    ['Staging/Preview Environments', '$2,000', '$5,000', '', 'CloudFlare/Fastly CDN'],
+    ['CI/CD & DevOps Tools', '$1,500', '$3,000', '', 'GitHub Actions, monitoring'],
+    ['Testing Tools', '$2,000', '$4,000', '', 'Playwright, BrowserStack, axe'],
+    ['Design Tools', '$500', '$1,000', '', 'Figma team licenses'],
+    ['', '', '', '', ''],
+    ['INFRASTRUCTURE SUBTOTAL', '$6,000', '$13,000', '', ''],
+    ['', '', '', '', ''],
+    ['CONTINGENCY & RISK', '', '', '', ''],
+    ['Technical Contingency (15%)', '$127,920', '$172,200', '', 'Unknown complexity, integrations'],
+    ['Scope Contingency (10%)', '$85,280', '$114,800', '', 'Requirements changes'],
+    ['', '', '', '', ''],
+    ['CONTINGENCY SUBTOTAL', '$213,200', '$287,000', '', ''],
+    ['', '', '', '', ''],
+    ['GRAND TOTAL', '$1,072,000', '$1,448,000', '', 'Full project estimate'],
+    ['', '', '', '', ''],
+    ['COST PER PAGE (700 pages)', '$1,531', '$2,069', '', 'All-in cost per page migrated']
+  ];
+  costData.forEach(row => {
+    const dataRow = ws13.addRow(row);
+    dataRow.getCell(5).alignment = { wrapText: true };
+    if (row[0].includes('LABOR COSTS') || row[0].includes('INFRASTRUCTURE &') || row[0].includes('CONTINGENCY &')) {
+      dataRow.font = { bold: true };
+      dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE8E8E8' } };
+    }
+    if (row[0].includes('SUBTOTAL') || row[0].includes('GRAND TOTAL') || row[0].includes('COST PER PAGE')) {
+      dataRow.font = { bold: true };
+    }
+    if (row[0].includes('GRAND TOTAL')) {
+      dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+      dataRow.font = { bold: true, color: { argb: 'FFFFFFFF' } };
+    }
+  });
+
+  // Sheet 14: Timeline Overview
+  const ws14 = workbook.addWorksheet('Timeline Overview');
+  ws14.columns = [{ width: 12 }, { width: 30 }, { width: 12 }, { width: 12 }, { width: 40 }];
+  ws14.addRow(['Phase', 'Focus Area', 'Start Week', 'End Week', 'Key Milestones']);
+  ws14.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws14.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const timelineData = [
+    ['Phase 1', 'Foundation & Global Components', 'Week 1', 'Week 4', 'Repo setup, design tokens, header/footer blocks'],
+    ['Phase 2', 'Core Page Templates', 'Week 3', 'Week 9', 'Homepage, Plans, Coverage live on staging'],
+    ['Phase 3', 'Product Catalog', 'Week 5', 'Week 10', 'Device listing and detail templates complete'],
+    ['Phase 4', 'Content Pages', 'Week 8', 'Week 12', 'Community, News, Blog templates ready'],
+    ['Phase 5', 'Support Infrastructure', 'Week 10', 'Week 13', 'Help, FAQ, Contact, 404 complete'],
+    ['Phase 6', 'Industry Solutions', 'Week 11', 'Week 14', 'All 8 industry verticals migrated'],
+    ['Phase 7', 'Conversion Flows', 'Week 12', 'Week 16', 'Sign Up, Eligibility, Offers live'],
+    ['Phase 8', 'Specialty Pages', 'Week 14', 'Week 18', 'Apps, Mission Critical, Power pages'],
+    ['Phase 9', 'Content Migration', 'Week 16', 'Week 22', '700+ pages bulk imported and validated'],
+    ['Phase 10', 'QA & Launch', 'Week 20', 'Week 26', 'UAT complete, go-live, monitoring active'],
+    ['', '', '', '', ''],
+    ['TOTAL', '', 'Week 1', 'Week 26', '6-7 months total duration (with parallel work)'],
+    ['', '', '', '', ''],
+    ['KEY DEPENDENCIES:', '', '', '', ''],
+    ['', 'Phase 2-8 can partially overlap', '', '', 'Blocks developed in Phase 1-2 enable parallel template work'],
+    ['', 'Phase 9 requires Phases 1-8', '', '', 'All templates must be ready before bulk import'],
+    ['', 'Phase 10 requires Phase 9', '', '', 'QA begins with pilot pages during Phase 9']
+  ];
+  timelineData.forEach(row => {
+    const dataRow = ws14.addRow(row);
+    dataRow.getCell(5).alignment = { wrapText: true };
+    if (row[0] === 'TOTAL' || row[0] === 'KEY DEPENDENCIES:') {
+      dataRow.font = { bold: true };
+      if (row[0] === 'TOTAL') {
+        dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE8E8E8' } };
+      }
+    }
+  });
+
+  // Sheet 15: Assumptions & Constraints
+  const ws15 = workbook.addWorksheet('Assumptions');
+  ws15.columns = [{ width: 12 }, { width: 70 }];
+  ws15.addRow(['Category', 'Assumption / Constraint']);
+  ws15.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
+  ws15.getRow(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0057B8' } };
+
+  const assumptionsData = [
+    ['', ''],
+    ['SCOPE', ''],
+    ['', 'Migration covers ~700 pages as identified in sitemap analysis'],
+    ['', 'Interactive coverage map will use iframe embed or simplified implementation'],
+    ['', 'Authentication/login flows are out of scope (redirect to existing AT&T portal)'],
+    ['', 'E-commerce/checkout flows are out of scope (redirect to existing shop)'],
+    ['', 'No new features - visual and functional parity with current site'],
+    ['', ''],
+    ['TECHNICAL', ''],
+    ['', 'AEM Edge Delivery Services infrastructure is available and licensed'],
+    ['', 'Source content is accessible for automated extraction'],
+    ['', 'No major CMS or backend changes during migration'],
+    ['', 'Third-party integrations (analytics, chat) can be replicated'],
+    ['', 'Mobile-responsive design patterns exist in current site'],
+    ['', ''],
+    ['RESOURCES', ''],
+    ['', 'Dedicated team available for project duration'],
+    ['', 'Client resources available for UAT and content review (25% allocation)'],
+    ['', 'Product Owner available for timely decisions'],
+    ['', 'No competing priorities that would reduce team allocation'],
+    ['', ''],
+    ['TIMELINE', ''],
+    ['', 'Estimates assume no major scope changes after Phase 2'],
+    ['', 'Holiday periods may extend calendar duration'],
+    ['', 'Content freeze coordination with marketing team'],
+    ['', 'Parallel workstreams possible with proper coordination'],
+    ['', ''],
+    ['BUDGET', ''],
+    ['', 'Rates based on US market contractor/agency rates'],
+    ['', 'Infrastructure costs assume cloud-based CDN (CloudFlare/Fastly)'],
+    ['', 'No AEM license costs included (assumed existing contract)'],
+    ['', '15-25% contingency recommended for unknown complexity']
+  ];
+  assumptionsData.forEach(row => {
+    const dataRow = ws15.addRow(row);
+    dataRow.getCell(2).alignment = { wrapText: true };
+    if (row[0] && !row[1]) {
+      dataRow.font = { bold: true };
+      dataRow.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE8E8E8' } };
+    }
+  });
+
   await workbook.xlsx.writeFile('/workspace/firstnet-migration-plan.xlsx');
-  console.log('Created: firstnet-migration-plan.xlsx with 106 block variations, migration phases, and effort estimates');
+  console.log('Created: firstnet-migration-plan.xlsx with 106 block variations, resources, cost estimates, and timeline');
 }
 
 createFirstNetInventoryExcel().catch(console.error);
