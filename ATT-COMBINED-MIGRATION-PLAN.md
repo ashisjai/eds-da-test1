@@ -13,15 +13,16 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 | **Unique Blocks** | 68 (consolidated) | 58 (consolidated) | 126 | **96** (after reuse) |
 | **Block Variations** | 117 original | 106 original | 223 original | consolidated |
 | **Shared Blocks** | - | - | - | **30** (built once) |
-| **Base Effort (hrs)** | 2,616-3,240 | 3,264-3,984 | 5,880-7,224 | **4,960-6,080** |
+| **Base Effort (hrs)** | 2,755 | 3,205 | 5,960 | **4,392** |
+| **With 20% Contingency** | 3,306 | 3,846 | 7,152 | **5,270** |
 | **Duration** | 14-18 weeks | 22-26 weeks | 36-44 weeks | **30-36 weeks** |
 | **Team Size** | 5-7 | 6-8 | 11-15 | **8-10** |
-| **Cost Estimate** | $687K-$1.06M | $1.07M-$1.45M | $1.76M-$2.51M | **$1.42M-$1.95M** |
+| **Cost Estimate** | $326K-$435K | $416K-$558K | $930K-$1.18M | **$673K-$882K** |
 
 ### Synergy Savings
-- **Effort Savings:** ~920-1,144 hours (16% reduction)
+- **Effort Savings:** ~1,568 hours (26% reduction)
 - **Duration Savings:** 6-8 weeks (parallel execution)
-- **Cost Savings:** ~$340K-$560K
+- **Cost Savings:** ~$257K-$298K (26% reduction)
 
 ---
 
@@ -795,15 +796,17 @@ See [FIRSTNET-PAGE-INVENTORY.md](./FIRSTNET-PAGE-INVENTORY.md) for complete URL 
 
 ---
 
-*Document Version: 2.1*
+*Document Version: 2.2*
 *Combined Total Pages: ~1,449*
 *AT&T Business: 68 consolidated blocks (from 117 variations)*
 *FirstNet: 58 consolidated blocks (from 106 variations)*
 *Shared Blocks: 30 (built once for both sites)*
 *Effective Unique Blocks: 96*
+*Combined Base Effort: 4,392 hours*
 *Combined Total Effort: 5,270 hours (with 20% contingency)*
 *Synergy Savings: ~1,568 hours (26%)*
 *Combined Duration: 30-36 weeks*
 *Cost Estimate: $673K-$882K (with synergies)*
+*Cost Savings: $257K-$298K vs sequential approach*
 *Created: January 2026*
 *Last Updated: January 2026*
