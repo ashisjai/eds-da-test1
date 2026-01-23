@@ -1,2792 +1,2872 @@
-<div><h1>AT&amp;T Business &amp; FirstNet - Combined EDS Migration Plan</h1></div>
-<div><h2>Executive Summary</h2></div>
-<div><p>This document outlines the comprehensive migration plan for migrating both <strong>AT&amp;T Business (business.att.com)</strong> and <strong>FirstNet (firstnet.com)</strong> websites to AEM Edge Delivery Services (EDS) with Universal Editor (UE).</p></div>
-<div><h3>Combined Metrics</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Metric</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Combined</th></div>
-<div><th>With Synergies</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td><strong>Total Pages</strong></td></div>
-<div><td>~749</td></div>
-<div><td>~700</td></div>
-<div><td><strong>~1,449</strong></td></div>
-<div><td>~1,449</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Page Templates</strong></td></div>
-<div><td>12</td></div>
-<div><td>10</td></div>
-<div><td>22</td></div>
-<div><td><strong>16</strong> (shared)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Unique Blocks</strong></td></div>
-<div><td>68 (consolidated)</td></div>
-<div><td>58 (consolidated)</td></div>
-<div><td>126</td></div>
-<div><td><strong>75</strong> (shared)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Block Variations</strong></td></div>
-<div><td>117 original</td></div>
-<div><td>106 original</td></div>
-<div><td>223 original</td></div>
-<div><td>consolidated</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Base Effort (hrs)</strong></td></div>
-<div><td>2,616-3,240</td></div>
-<div><td>3,264-3,984</td></div>
-<div><td>5,880-7,224</td></div>
-<div><td><strong>5,200-6,400</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Duration</strong></td></div>
-<div><td>14-18 weeks</td></div>
-<div><td>22-26 weeks</td></div>
-<div><td>36-44 weeks</td></div>
-<div><td><strong>28-34 weeks</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Team Size</strong></td></div>
-<div><td>5-7</td></div>
-<div><td>6-8</td></div>
-<div><td>11-15</td></div>
-<div><td><strong>8-10</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Cost Estimate</strong></td></div>
-<div><td>$687K-$1.06M</td></div>
-<div><td>$1.07M-$1.45M</td></div>
-<div><td>$1.76M-$2.51M</td></div>
-<div><td><strong>$1.5M-$2.1M</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Synergy Savings</h3></div>
-<div><ul></div>
-<div><li><strong>Effort Savings:</strong> ~680-824 hours (12% reduction)</li></div>
-<div><li><strong>Duration Savings:</strong> 8-10 weeks (parallel execution)</li></div>
-<div><li><strong>Cost Savings:</strong> ~$92K-$123K</li></div>
-<div></ul></div>
-<div><hr></div>
-<div><h2>Site Overview</h2></div>
-<div><h3>AT&amp;T Business (business.att.com)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Category</th></div>
-<div><th>Page Count</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Homepage</td></div>
-<div><td>1</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Portfolio Pages</td></div>
-<div><td>9</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Product Pages</td></div>
-<div><td>~150</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Category Pages</td></div>
-<div><td>~75</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Industry Pages</td></div>
-<div><td>~14</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Business Solutions</td></div>
-<div><td>~10</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Learn - Content/Articles</td></div>
-<div><td>~300</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Learn - Customer Stories</td></div>
-<div><td>~112</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Support Pages</td></div>
-<div><td>~60</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Offers/Deals</td></div>
-<div><td>~37</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Regional/Areas</td></div>
-<div><td>~15</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Navigation</td></div>
-<div><td>~15</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>~749</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>FirstNet (firstnet.com)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Category</th></div>
-<div><th>Page Count</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Homepage &amp; Main Pages</td></div>
-<div><td>5</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Power of FirstNet</td></div>
-<div><td>10</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Coverage</td></div>
-<div><td>11</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Rate Plans</td></div>
-<div><td>4</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Devices - Phones</td></div>
-<div><td>~175</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Devices - Tablets/Other</td></div>
-<div><td>~105</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Industry Solutions</td></div>
-<div><td>~70</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Apps</td></div>
-<div><td>~56</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Community - News/Blogs</td></div>
-<div><td>~140</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Mission Critical</td></div>
-<div><td>15</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Support/Help</td></div>
-<div><td>~105</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Pages</td></div>
-<div><td>~49</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>~700</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Combined Page Inventory</h2></div>
-<div><h3>Priority Distribution</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Priority</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Combined</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td><strong>P0</strong> (Must Have)</td></div>
-<div><td>~100</td></div>
-<div><td>~150</td></div>
-<div><td><strong>~250</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>P1</strong> (Should Have)</td></div>
-<div><td>~350</td></div>
-<div><td>~300</td></div>
-<div><td><strong>~650</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>P2</strong> (Nice to Have)</td></div>
-<div><td>~299</td></div>
-<div><td>~250</td></div>
-<div><td><strong>~549</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>~749</strong></td></div>
-<div><td><strong>~700</strong></td></div>
-<div><td><strong>~1,449</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Page Type Comparison</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Page Type</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Notes</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Homepage</td></div>
-<div><td>1</td></div>
-<div><td>5</td></div>
-<div><td>Different layouts</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Product/Device Pages</td></div>
-<div><td>~150</td></div>
-<div><td>~280</td></div>
-<div><td>FirstNet device-heavy</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Industry/Solution Pages</td></div>
-<div><td>~24</td></div>
-<div><td>~70</td></div>
-<div><td>Similar structure</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Article/Content Pages</td></div>
-<div><td>~412</td></div>
-<div><td>~140</td></div>
-<div><td>AT&amp;T content-heavy</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Support Pages</td></div>
-<div><td>~60</td></div>
-<div><td>~105</td></div>
-<div><td>FirstNet more comprehensive</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Offer Pages</td></div>
-<div><td>~37</td></div>
-<div><td>~30</td></div>
-<div><td>Similar structure</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core/Landing Pages</td></div>
-<div><td>~65</td></div>
-<div><td>~70</td></div>
-<div><td>Similar structure</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Shared Components &amp; Synergies</h2></div>
-<div><h3>Block Reusability Analysis</h3></div>
-<div><p><strong>Consolidated Block Counts:</strong></p></div>
-<div><ul></div>
-<div><li>AT&amp;T Business: <strong>68 consolidated blocks</strong> (from 117 original variations)</li></div>
-<div><li>FirstNet: <strong>58 consolidated blocks</strong> (from 106 original variations)</li></div>
-<div></ul></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Block Category</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Reuse %</th></div>
-<div><th>Savings</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Header/Navigation</td></div>
-<div><td>2 blocks</td></div>
-<div><td>3 blocks</td></div>
-<div><td>70%</td></div>
-<div><td>28 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Footer</td></div>
-<div><td>1 block</td></div>
-<div><td>1 block</td></div>
-<div><td>80%</td></div>
-<div><td>25 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Hero Blocks</td></div>
-<div><td>7 variants</td></div>
-<div><td>6 variants</td></div>
-<div><td>75%</td></div>
-<div><td>60 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Card Carousels</td></div>
-<div><td>4 blocks</td></div>
-<div><td>4 blocks</td></div>
-<div><td>80%</td></div>
-<div><td>96 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Feature/Value Props</td></div>
-<div><td>2 blocks</td></div>
-<div><td>3 blocks</td></div>
-<div><td>70%</td></div>
-<div><td>40 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Form Blocks</td></div>
-<div><td>4 blocks</td></div>
-<div><td>3 blocks</td></div>
-<div><td>65%</td></div>
-<div><td>52 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>FAQ/Accordion</td></div>
-<div><td>3 blocks</td></div>
-<div><td>2 blocks</td></div>
-<div><td>90%</td></div>
-<div><td>36 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>CTA/Promo Banners</td></div>
-<div><td>5 blocks</td></div>
-<div><td>4 blocks</td></div>
-<div><td>85%</td></div>
-<div><td>48 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Table/Comparison</td></div>
-<div><td>3 blocks</td></div>
-<div><td>3 blocks</td></div>
-<div><td>75%</td></div>
-<div><td>36 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Article/Content</td></div>
-<div><td>8 blocks</td></div>
-<div><td>3 blocks</td></div>
-<div><td>60%</td></div>
-<div><td>40 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Support Blocks</td></div>
-<div><td>6 blocks</td></div>
-<div><td>4 blocks</td></div>
-<div><td>70%</td></div>
-<div><td>35 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Video Blocks</td></div>
-<div><td>2 blocks</td></div>
-<div><td>1 block</td></div>
-<div><td>90%</td></div>
-<div><td>25 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Industry/Solution</td></div>
-<div><td>3 blocks</td></div>
-<div><td>4 blocks</td></div>
-<div><td>65%</td></div>
-<div><td>30 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Customer Story</td></div>
-<div><td>3 blocks</td></div>
-<div><td>2 blocks</td></div>
-<div><td>80%</td></div>
-<div><td>24 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Offer-Specific</td></div>
-<div><td>4 blocks</td></div>
-<div><td>3 blocks</td></div>
-<div><td>70%</td></div>
-<div><td>28 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Link/Navigation</td></div>
-<div><td>4 blocks</td></div>
-<div><td>2 blocks</td></div>
-<div><td>60%</td></div>
-<div><td>20 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Miscellaneous</td></div>
-<div><td>7 blocks</td></div>
-<div><td>10 blocks</td></div>
-<div><td>50%</td></div>
-<div><td>40 hrs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL BLOCK SAVINGS</strong></td></div>
-<div><td><strong>68 blocks</strong></td></div>
-<div><td><strong>58 blocks</strong></td></div>
-<div><td></td></div>
-<div><td><strong>~663 hrs</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Template Reusability</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Template</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Shared</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>homepage</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>No (different)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>product/device</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Partial (60%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>category/industry</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (80%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>article</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (90%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>support</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (85%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>offers</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (75%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>landing</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (70%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>regional/campaign</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Partial (50%)</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Template Savings:</strong> ~120 hours</p></div>
-<div><h3>Integration Reusability</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Integration</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Shared</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Adobe Analytics</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (90%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Adobe Target</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (90%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Marketo/Eloqua</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (80%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Chat Widget</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (100%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Fastly CDN</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (100%)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>CI/CD Pipeline</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes (100%)</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Integration Savings:</strong> ~80 hours</p></div>
-<div><hr></div>
-<div><h2>Combined Phase Breakdown</h2></div>
-<div><h3>Phase 1: Foundation &amp; Shared Infrastructure</h3></div>
-<div><p><strong>Duration: 3-4 weeks | Effort: 320-400 hours</strong></p></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Task</th></div>
-<div><th>Hours</th></div>
-<div><th>Notes</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Shared EDS project setup</td></div>
-<div><td>32</td></div>
-<div><td>Monorepo or multi-site</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>GitHub/SharePoint integration</td></div>
-<div><td>24</td></div>
-<div><td>Shared infrastructure</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>AEM Universal Editor setup</td></div>
-<div><td>48</td></div>
-<div><td>Single UE instance</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Shared design tokens</td></div>
-<div><td>48</td></div>
-<div><td>Brand-specific overrides</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Global styles framework</td></div>
-<div><td>40</td></div>
-<div><td>Theming support</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Shared header component</td></div>
-<div><td>40</td></div>
-<div><td>Brand variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Shared footer component</td></div>
-<div><td>32</td></div>
-<div><td>Brand variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Navigation structure (both)</td></div>
-<div><td>32</td></div>
-<div><td>Separate navs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>CI/CD pipeline</td></div>
-<div><td>24</td></div>
-<div><td>Shared deployment</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Phase 1 Total</strong></td></div>
-<div><td><strong>320</strong></td></div>
-<div><td></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Phase 2: Core Blocks Development (Shared)</h3></div>
-<div><p><strong>Duration: 6-7 weeks | Effort: 800-950 hours</strong></p></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Task</th></div>
-<div><th>Hours</th></div>
-<div><th>Notes</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Hero block (all variants)</td></div>
-<div><td>96</td></div>
-<div><td>9 total variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Cards block (all variants)</td></div>
-<div><td>160</td></div>
-<div><td>16 total variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Carousel block</td></div>
-<div><td>80</td></div>
-<div><td>6 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Tabs block</td></div>
-<div><td>48</td></div>
-<div><td>5 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Accordion block</td></div>
-<div><td>36</td></div>
-<div><td>4 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Form block</td></div>
-<div><td>100</td></div>
-<div><td>7 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>CTA-banner block</td></div>
-<div><td>48</td></div>
-<div><td>6 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Table block</td></div>
-<div><td>60</td></div>
-<div><td>7 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Video block</td></div>
-<div><td>36</td></div>
-<div><td>4 variants</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Breadcrumb block</td></div>
-<div><td>16</td></div>
-<div><td>Shared</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Columns block</td></div>
-<div><td>20</td></div>
-<div><td>Shared</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Fragment support</td></div>
-<div><td>24</td></div>
-<div><td>Shared</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>UE component models</td></div>
-<div><td>80</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Block documentation</td></div>
-<div><td>40</td></div>
-<div><td>Combined docs</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA &amp; testing</td></div>
-<div><td>64</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Phase 2 Total</strong></td></div>
-<div><td><strong>908</strong></td></div>
-<div><td></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Phase 3: Site-Specific Blocks</h3></div>
-<div><p><strong>Duration: 3-4 weeks | Effort: 360-440 hours</strong></p></div>
-<div><h4>AT&amp;T Business Specific</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Task</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Promo-banner block</td></div>
-<div><td>48</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Link-list block</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Search-results block</td></div>
-<div><td>52</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>RAI form integration</td></div>
-<div><td>40</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>AT&amp;T-specific UE config</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>AT&amp;T Subtotal</strong></td></div>
-<div><td><strong>204</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>FirstNet Specific</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Task</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Icon-nav block</td></div>
-<div><td>36</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Device-gallery block</td></div>
-<div><td>60</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Value-props block</td></div>
-<div><td>40</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Eligibility form</td></div>
-<div><td>48</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>FirstNet-specific UE config</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>FirstNet Subtotal</strong></td></div>
-<div><td><strong>216</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Phase 3 Total: 420 hours</strong></p></div>
-<div><h3>Phase 4: Template Development</h3></div>
-<div><p><strong>Duration: 4-5 weeks | Effort: 520-640 hours</strong></p></div>
-<div><h4>Shared Templates</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Template</th></div>
-<div><th>Hours</th></div>
-<div><th>Sites</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Article template</td></div>
-<div><td>32</td></div>
-<div><td>Both</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Support template</td></div>
-<div><td>28</td></div>
-<div><td>Both</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Category/Industry template</td></div>
-<div><td>36</td></div>
-<div><td>Both</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Offers template</td></div>
-<div><td>32</td></div>
-<div><td>Both</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Landing template</td></div>
-<div><td>32</td></div>
-<div><td>Both</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Shared Subtotal</strong></td></div>
-<div><td><strong>160</strong></td></div>
-<div><td></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>AT&amp;T Business Templates</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Template</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Homepage</td></div>
-<div><td>40</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Portfolio</td></div>
-<div><td>28</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Product</td></div>
-<div><td>36</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Regional</td></div>
-<div><td>20</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Partner</td></div>
-<div><td>20</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>AT&amp;T Subtotal</strong></td></div>
-<div><td><strong>144</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>FirstNet Templates</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Template</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Homepage</td></div>
-<div><td>40</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Device</td></div>
-<div><td>56</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Plans</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Feature/Mission Critical</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Coverage</td></div>
-<div><td>28</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Sign-up</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>FirstNet Subtotal</strong></td></div>
-<div><td><strong>220</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Phase 4 Total: 524 hours</strong></p></div>
-<div><h3>Phase 5: Integrations</h3></div>
-<div><p><strong>Duration: 4-5 weeks | Effort: 440-540 hours</strong></p></div>
-<div><h4>Shared Integrations</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Integration</th></div>
-<div><th>Hours</th></div>
-<div><th>Notes</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Adobe Analytics</td></div>
-<div><td>48</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Adobe Target</td></div>
-<div><td>48</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Marketo/Eloqua forms</td></div>
-<div><td>48</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Chat widget</td></div>
-<div><td>28</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Fastly CDN</td></div>
-<div><td>32</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Performance optimization</td></div>
-<div><td>40</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Shared Subtotal</strong></td></div>
-<div><td><strong>244</strong></td></div>
-<div><td></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>AT&amp;T Business Specific</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Integration</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>ChiliPiper calendar</td></div>
-<div><td>28</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Search (Coveo/Algolia)</td></div>
-<div><td>44</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>AT&amp;T Subtotal</strong></td></div>
-<div><td><strong>72</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>FirstNet Specific</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Integration</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Eligibility API</td></div>
-<div><td>48</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>LocalControl/SSO</td></div>
-<div><td>56</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>FirstNet Subtotal</strong></td></div>
-<div><td><strong>104</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Phase 5 Total: 420 hours</strong></p></div>
-<div><h3>Phase 6: Content Migration</h3></div>
-<div><p><strong>Duration: 8-10 weeks | Effort: 1,100-1,400 hours</strong></p></div>
-<div><h4>Import Script Development</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Task</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Shared import framework</td></div>
-<div><td>80</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>AT&amp;T Business parsers</td></div>
-<div><td>60</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>FirstNet device parsers</td></div>
-<div><td>80</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Script Subtotal</strong></td></div>
-<div><td><strong>220</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>AT&amp;T Business Migration</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Wave</th></div>
-<div><th>Pages</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Wave 1 (P0)</td></div>
-<div><td>~100</td></div>
-<div><td>84</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Wave 2 (P1)</td></div>
-<div><td>~300</td></div>
-<div><td>177</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Wave 3 (P2)</td></div>
-<div><td>~300</td></div>
-<div><td>64</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Asset migration</td></div>
-<div><td>-</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Redirects (700+)</td></div>
-<div><td>-</td></div>
-<div><td>32</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA validation</td></div>
-<div><td>-</td></div>
-<div><td>48</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>AT&amp;T Subtotal</strong></td></div>
-<div><td><strong>~700</strong></td></div>
-<div><td><strong>437</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h4>FirstNet Migration</h4></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Wave</th></div>
-<div><th>Pages</th></div>
-<div><th>Hours</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Wave 1 (P0)</td></div>
-<div><td>~220</td></div>
-<div><td>159</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Wave 2 (P1)</td></div>
-<div><td>~450</td></div>
-<div><td>161</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Wave 3 (P2)</td></div>
-<div><td>~520</td></div>
-<div><td>138</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Asset migration</td></div>
-<div><td>-</td></div>
-<div><td>48</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Redirects (1,200+)</td></div>
-<div><td>-</td></div>
-<div><td>48</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA validation</td></div>
-<div><td>-</td></div>
-<div><td>72</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>FirstNet Subtotal</strong></td></div>
-<div><td><strong>~1,187</strong></td></div>
-<div><td><strong>626</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Phase 6 Total: 1,283 hours</strong></p></div>
-<div><h3>Phase 7: Testing &amp; Launch</h3></div>
-<div><p><strong>Duration: 4-5 weeks | Effort: 480-580 hours</strong></p></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Task</th></div>
-<div><th>Hours</th></div>
-<div><th>Notes</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Cross-browser testing</td></div>
-<div><td>56</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Mobile/responsive testing</td></div>
-<div><td>64</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Accessibility (WCAG 2.1)</td></div>
-<div><td>72</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Performance (Lighthouse)</td></div>
-<div><td>48</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>SEO validation</td></div>
-<div><td>40</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Security testing</td></div>
-<div><td>40</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>UAT support</td></div>
-<div><td>56</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Bug fixes &amp; refinements</td></div>
-<div><td>80</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>DNS cutover planning</td></div>
-<div><td>16</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Go-live execution</td></div>
-<div><td>16</td></div>
-<div><td>Staged rollout</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Post-launch monitoring</td></div>
-<div><td>32</td></div>
-<div><td>Both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Phase 7 Total</strong></td></div>
-<div><td><strong>520</strong></td></div>
-<div><td></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Total Effort Summary</h2></div>
-<div><h3>Without Synergies (Sequential)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Phase</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Total</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Foundation</td></div>
-<div><td>248</td></div>
-<div><td>264</td></div>
-<div><td>512</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Blocks</td></div>
-<div><td>704</td></div>
-<div><td>740</td></div>
-<div><td>1,444</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Templates</td></div>
-<div><td>416</td></div>
-<div><td>464</td></div>
-<div><td>880</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Secondary Blocks</td></div>
-<div><td>304</td></div>
-<div><td>272</td></div>
-<div><td>576</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Integrations</td></div>
-<div><td>284</td></div>
-<div><td>368</td></div>
-<div><td>652</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Migration</td></div>
-<div><td>515</td></div>
-<div><td>745</td></div>
-<div><td>1,260</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Testing &amp; Launch</td></div>
-<div><td>284</td></div>
-<div><td>352</td></div>
-<div><td>636</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>2,755</strong></td></div>
-<div><td><strong>3,205</strong></td></div>
-<div><td><strong>5,960</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>With Synergies (Combined)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Phase</th></div>
-<div><th>Hours</th></div>
-<div><th>Savings</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Foundation &amp; Shared Infrastructure</td></div>
-<div><td>320</td></div>
-<div><td>192</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Blocks (Shared)</td></div>
-<div><td>908</td></div>
-<div><td>536</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Site-Specific Blocks</td></div>
-<div><td>420</td></div>
-<div><td>156</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Template Development</td></div>
-<div><td>524</td></div>
-<div><td>356</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Integrations</td></div>
-<div><td>420</td></div>
-<div><td>232</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Migration</td></div>
-<div><td>1,283</td></div>
-<div><td>-23 (more efficient)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Testing &amp; Launch</td></div>
-<div><td>520</td></div>
-<div><td>116</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>4,395</strong></td></div>
-<div><td><strong>1,565</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>With 20% contingency: 5,274 hours</strong></p></div>
-<div><h3>Savings Summary</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Metric</th></div>
-<div><th>Sequential</th></div>
-<div><th>Combined</th></div>
-<div><th>Savings</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Total Hours</td></div>
-<div><td>5,960</td></div>
-<div><td>4,395</td></div>
-<div><td><strong>1,565 hrs (26%)</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>With Contingency</td></div>
-<div><td>7,152</td></div>
-<div><td>5,274</td></div>
-<div><td><strong>1,878 hrs</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Duration</td></div>
-<div><td>36-44 weeks</td></div>
-<div><td>28-34 weeks</td></div>
-<div><td><strong>8-10 weeks</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Team Size</td></div>
-<div><td>11-15 FTEs</td></div>
-<div><td>8-10 FTEs</td></div>
-<div><td><strong>3-5 FTEs</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Combined Timeline</h2></div>
-<div><pre><code>Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34</div>
-<div>       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|</div>
-<div>P1:    ████████████                                                                                            Foundation (3-4 wks)</div>
-<div>P2:            ████████████████████████████                                                                    Core Blocks (6-7 wks)</div>
-<div>P3:                        ████████████████                                                                    Site-Specific (3-4 wks)</div>
-<div>P4:                                ████████████████████                                                        Templates (4-5 wks)</div>
-<div>P5:                                        ████████████████████                                                Integrations (4-5 wks)</div>
-<div>P6-ATT:                                            ████████████████████████████████                            AT&amp;T Migration (8 wks)</div>
-<div>P6-FN:                                                    ████████████████████████████████████                 FirstNet Migration (10 wks)</div>
-<div>P7:                                                                            ████████████████████            Testing/Launch (4-5 wks)</div>
-<div>       |______Shared Foundation______|___ATT Wave 1___|___FN Wave 1___|__Wave 2__|__Wave 3__|_Launch_|</div>
-<div></code></pre></div>
-<div><h3>Milestone Schedule</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Milestone</th></div>
-<div><th>Week</th></div>
-<div><th>Description</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Project Kickoff</td></div>
-<div><td>1</td></div>
-<div><td>Team onboarding, environment setup</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Foundation Complete</td></div>
-<div><td>4</td></div>
-<div><td>Shared infrastructure ready</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Blocks Complete</td></div>
-<div><td>11</td></div>
-<div><td>All shared blocks functional</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Site-Specific Blocks</td></div>
-<div><td>15</td></div>
-<div><td>All blocks ready for both sites</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Templates Complete</td></div>
-<div><td>20</td></div>
-<div><td>All page templates ready</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Integrations Complete</td></div>
-<div><td>24</td></div>
-<div><td>All third-party integrations</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>AT&amp;T Business P0 Launch</td></div>
-<div><td>26</td></div>
-<div><td>AT&amp;T Business core pages live</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>FirstNet P0 Launch</td></div>
-<div><td>28</td></div>
-<div><td>FirstNet core pages live</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Full Migration Complete</td></div>
-<div><td>32</td></div>
-<div><td>All pages migrated</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Final Launch</td></div>
-<div><td>34</td></div>
-<div><td>Both sites fully launched</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Resource Requirements</h2></div>
-<div><h3>Combined Team Composition</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Role</th></div>
-<div><th>Count</th></div>
-<div><th>Phases</th></div>
-<div><th>Allocation</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Program Manager</td></div>
-<div><td>1</td></div>
-<div><td>All</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Tech Lead / Architect</td></div>
-<div><td>1</td></div>
-<div><td>All</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>EDS/Frontend Developer</td></div>
-<div><td>4</td></div>
-<div><td>1-5, 7</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>UE Configuration Specialist</td></div>
-<div><td>1</td></div>
-<div><td>2-4</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Migration Lead</td></div>
-<div><td>1</td></div>
-<div><td>6</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Migration Specialist</td></div>
-<div><td>2</td></div>
-<div><td>6</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA Lead</td></div>
-<div><td>1</td></div>
-<div><td>All</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA Engineer</td></div>
-<div><td>1</td></div>
-<div><td>All</td></div>
-<div><td>75%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>DevOps Engineer</td></div>
-<div><td>1</td></div>
-<div><td>1, 5, 7</td></div>
-<div><td>50%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>14</strong></td></div>
-<div><td></td></div>
-<div><td></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><p><strong>Effective FTEs: 8-10</strong></p></div>
-<div><h3>Skill Matrix</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Skill</th></div>
-<div><th>Required For</th></div>
-<div><th>Team Members</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>EDS/Franklin Development</td></div>
-<div><td>Blocks, Templates</td></div>
-<div><td>4 Developers</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Universal Editor</td></div>
-<div><td>UE Configuration</td></div>
-<div><td>1 Specialist + Developers</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Adobe Analytics/Target</td></div>
-<div><td>Integrations</td></div>
-<div><td>1 Developer</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>AT&amp;T APIs (SSO, LocalControl)</td></div>
-<div><td>FirstNet Integrations</td></div>
-<div><td>1 Developer</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Migration</td></div>
-<div><td>Import Scripts</td></div>
-<div><td>1 Lead + 2 Specialists</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA/Testing</td></div>
-<div><td>All Phases</td></div>
-<div><td>1 Lead + 1 Engineer</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Cost Estimation</h2></div>
-<div><h3>Combined Cost Breakdown</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Resource Type</th></div>
-<div><th>Hours</th></div>
-<div><th>Rate Range</th></div>
-<div><th>Cost Range</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Program Manager</td></div>
-<div><td>400</td></div>
-<div><td>$150-175/hr</td></div>
-<div><td>$60,000-70,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Tech Lead</td></div>
-<div><td>680</td></div>
-<div><td>$150-200/hr</td></div>
-<div><td>$102,000-136,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Senior Developer</td></div>
-<div><td>2,200</td></div>
-<div><td>$125-175/hr</td></div>
-<div><td>$275,000-385,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>UE Specialist</td></div>
-<div><td>400</td></div>
-<div><td>$125-150/hr</td></div>
-<div><td>$50,000-60,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Lead</td></div>
-<div><td>320</td></div>
-<div><td>$100-125/hr</td></div>
-<div><td>$32,000-40,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Specialist</td></div>
-<div><td>600</td></div>
-<div><td>$75-100/hr</td></div>
-<div><td>$45,000-60,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA Lead</td></div>
-<div><td>400</td></div>
-<div><td>$125-150/hr</td></div>
-<div><td>$50,000-60,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>QA Engineer</td></div>
-<div><td>320</td></div>
-<div><td>$100-125/hr</td></div>
-<div><td>$32,000-40,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>DevOps</td></div>
-<div><td>180</td></div>
-<div><td>$125-150/hr</td></div>
-<div><td>$22,500-27,000</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>5,500</strong></td></div>
-<div><td></td></div>
-<div><td><strong>$668,500-878,000</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Cost Comparison</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Approach</th></div>
-<div><th>Cost Range</th></div>
-<div><th>Notes</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Sequential (separate projects)</td></div>
-<div><td>$742K-$993K</td></div>
-<div><td>Full teams for each</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Combined (with synergies)</td></div>
-<div><td>$668K-$878K</td></div>
-<div><td>Shared resources</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Savings</strong></td></div>
-<div><td><strong>$74K-$115K</strong></td></div>
-<div><td><strong>10-12%</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Risk Assessment</h2></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Risk</th></div>
-<div><th>Probability</th></div>
-<div><th>Impact</th></div>
-<div><th>Mitigation</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Resource contention between sites</td></div>
-<div><td>High</td></div>
-<div><td>Medium</td></div>
-<div><td>Clear sprint allocation, dedicated leads</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Scope creep from stakeholders</td></div>
-<div><td>Medium</td></div>
-<div><td>High</td></div>
-<div><td>Fixed scope phases, change control</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Integration complexity</td></div>
-<div><td>Medium</td></div>
-<div><td>High</td></div>
-<div><td>Early POCs, parallel development</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Brand consistency challenges</td></div>
-<div><td>Medium</td></div>
-<div><td>Medium</td></div>
-<div><td>Shared design system with overrides</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Timeline slippage</td></div>
-<div><td>Medium</td></div>
-<div><td>High</td></div>
-<div><td>Buffer in schedule, phased delivery</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content volume underestimated</td></div>
-<div><td>Medium</td></div>
-<div><td>Medium</td></div>
-<div><td>Automated import, bulk tools</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>UE configuration complexity</td></div>
-<div><td>Medium</td></div>
-<div><td>Medium</td></div>
-<div><td>Dedicated UE specialist</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Third-party API delays</td></div>
-<div><td>Medium</td></div>
-<div><td>High</td></div>
-<div><td>Fallback options, early testing</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Success Criteria</h2></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Metric</th></div>
-<div><th>Target</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Lighthouse Performance</td></div>
-<div><td>&gt; 90</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Lighthouse Accessibility</td></div>
-<div><td>&gt; 95</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Page Load Time (LCP)</td></div>
-<div><td>&lt; 2.5s</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Content Migration Accuracy</td></div>
-<div><td>&gt; 99%</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Zero Critical Bugs at Launch</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Author Training Completion</td></div>
-<div><td>100%</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Redirect Coverage</td></div>
-<div><td>&gt; 99.5%</td></div>
-<div><td>Yes</td></div>
-<div><td>Yes</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Governance &amp; Communication</h2></div>
-<div><h3>Steering Committee</h3></div>
-<div><ul></div>
-<div><li>Monthly executive reviews</li></div>
-<div><li>Go/No-go decisions for launches</li></div>
-<div><li>Budget and scope approvals</li></div>
-<div></ul></div>
-<div><h3>Project Cadence</h3></div>
-<div><ul></div>
-<div><li>Daily standups (15 min)</li></div>
-<div><li>Weekly sprint reviews</li></div>
-<div><li>Bi-weekly stakeholder demos</li></div>
-<div><li>Monthly steering committee</li></div>
-<div></ul></div>
-<div><h3>Decision Making</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Decision Type</th></div>
-<div><th>Authority</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Technical architecture</td></div>
-<div><td>Tech Lead</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Sprint priorities</td></div>
-<div><td>Program Manager</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Scope changes</td></div>
-<div><td>Steering Committee</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Launch approval</td></div>
-<div><td>Steering Committee</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Appendix A: Combined Block Inventory</h2></div>
-<div><h3>AT&amp;T Business Blocks (68 Consolidated)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Category</th></div>
-<div><th>Block Type</th></div>
-<div><th>Variations</th></div>
-<div><th>Complexity</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td><strong>Global</strong></td></div>
-<div><td>Quick Links Carousel</td></div>
-<div><td>1</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Anchor Navigation</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Hero</strong></td></div>
-<div><td>Hero Block</td></div>
-<div><td>7 (Homepage Offer Cards, Homepage Video, Product, Portfolio/Industry, Content, Regional, 404)</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Pricing</strong></td></div>
-<div><td>Pricing Cards Carousel</td></div>
-<div><td>Product Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Features</strong></td></div>
-<div><td>Feature Cards Grid</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Value Props Grid</td></div>
-<div><td>Portfolio/Landing</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Carousels</strong></td></div>
-<div><td>Product/Service Cards Carousel</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Offer Cards Carousel</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Resource/Insights Cards</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Story Cards Overlay</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Forms</strong></td></div>
-<div><td>Lead Form (RAI)</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Check Availability Form</td></div>
-<div><td>Portfolio</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Email Subscription Form</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Search Block</td></div>
-<div><td>404/Support</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>FAQ</strong></td></div>
-<div><td>FAQ Accordion</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Support Tabs Accordion</td></div>
-<div><td>Support</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Features Collapsible List</td></div>
-<div><td>Products</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>CTA</strong></td></div>
-<div><td>Promo Banner</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Full-width Promo Banner</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Contact CTA Banner</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Multi-Button CTA</td></div>
-<div><td>Portfolios</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Current Customer CTA</td></div>
-<div><td>Landing Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Trust</strong></td></div>
-<div><td>Guarantee Checklist</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Award Badge</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Customer Testimonials Carousel</td></div>
-<div><td>Why AT&amp;T</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Tables</strong></td></div>
-<div><td>Comparison Table</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Benefits Table</td></div>
-<div><td>Category Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Use Cases Table</td></div>
-<div><td>Business Solutions</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Content</strong></td></div>
-<div><td>Featured Article Block</td></div>
-<div><td>Learn Hub</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Latest Articles Grid</td></div>
-<div><td>Learn Hub</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Article Header with Byline</td></div>
-<div><td>Learn Articles</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Article Tags</td></div>
-<div><td>Learn Articles</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Shareable Quote Block</td></div>
-<div><td>Learn Articles</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Social Share Block</td></div>
-<div><td>Learn Articles</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>More Stories Grid</td></div>
-<div><td>Learn Articles</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Top Topics Carousel</td></div>
-<div><td>Learn Hub</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Support</strong></td></div>
-<div><td>Support Quick Actions Grid</td></div>
-<div><td>Support Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Support Portal Cards</td></div>
-<div><td>Support</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Resource Cards (Blue)</td></div>
-<div><td>Support</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Guided Courses Block</td></div>
-<div><td>Support</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Contact Tables</td></div>
-<div><td>Contact</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Support Contact Block</td></div>
-<div><td>Products</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Industry</strong></td></div>
-<div><td>Solution Link Cards</td></div>
-<div><td>Industry Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Image + Text Split</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Partner Cards Grid</td></div>
-<div><td>Partner Solutions</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Stories</strong></td></div>
-<div><td>Highlights/Stats Block</td></div>
-<div><td>Customer Stories</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>About Section</td></div>
-<div><td>Customer Stories</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Case Study Stats Block</td></div>
-<div><td>Portfolios</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Video</strong></td></div>
-<div><td>Video Embed Block</td></div>
-<div><td>Portfolios</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Video Content Cards</td></div>
-<div><td>Portfolios</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Links</strong></td></div>
-<div><td>Link List Block</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Additional Resources Grid</td></div>
-<div><td>Why AT&amp;T</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Helpful Links Cards</td></div>
-<div><td>404</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Solutions Sidebar</td></div>
-<div><td>Learn Articles</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Offers</strong></td></div>
-<div><td>Featured Offers Cards</td></div>
-<div><td>Offers</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Category Offers Carousel</td></div>
-<div><td>Offers</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Referral Program Block</td></div>
-<div><td>Offers</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Risk-Free Trial Block</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Misc</strong></td></div>
-<div><td>Complete Solution Promo</td></div>
-<div><td>Bundles</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Related Products Cards</td></div>
-<div><td>Business Solutions</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>International Calling Block</td></div>
-<div><td>Phone Product</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Contact Options 2-Column</td></div>
-<div><td>Why AT&amp;T</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Business Center CTA Card</td></div>
-<div><td>Business Solutions</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Data-driven Insights Cards</td></div>
-<div><td>5G Portfolio</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>FirstNet Blocks (58 Consolidated)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Category</th></div>
-<div><th>Block Type</th></div>
-<div><th>Variations</th></div>
-<div><th>Complexity</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td><strong>Global</strong></td></div>
-<div><td>Header Navigation</td></div>
-<div><td>Global</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Footer</td></div>
-<div><td>Global</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Email Subscription Form</td></div>
-<div><td>Global</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Hero</strong></td></div>
-<div><td>Hero Block</td></div>
-<div><td>6 (Homepage, Standard, Product, Industry, Conversion, Device Detail)</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Navigation</strong></td></div>
-<div><td>Quick Links Carousel</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Anchor Navigation</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Products</strong></td></div>
-<div><td>Product Cards Grid</td></div>
-<div><td>Device Categories</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Product Cards by Brand</td></div>
-<div><td>Brand Grouping</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Industry Category Cards</td></div>
-<div><td>Industry</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Offers</strong></td></div>
-<div><td>Offer Cards Carousel</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Pricing Cards</td></div>
-<div><td>Plans</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Plan Comparison</td></div>
-<div><td>Offers</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Features</strong></td></div>
-<div><td>Value Props Section</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Benefits Grid/Row</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Connectivity Ecosystem</td></div>
-<div><td>Coverage</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>FAQ</strong></td></div>
-<div><td>FAQ Accordion</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Help Accordion</td></div>
-<div><td>Help Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Stories</strong></td></div>
-<div><td>Customer Stories Carousel</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Case Study Feature</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>CTA</strong></td></div>
-<div><td>Contact CTA Banner</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Promo Banner</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Download CTA Banner</td></div>
-<div><td>Apps</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Conversion</strong></td></div>
-<div><td>Get Started Cards</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Eligibility Cards</td></div>
-<div><td>Conversion</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Content</strong></td></div>
-<div><td>News/Article Cards</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Article Content Block</td></div>
-<div><td>News Articles</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Blogs/Videos Tabs</td></div>
-<div><td>Community</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Support</strong></td></div>
-<div><td>Popular Topics Grid</td></div>
-<div><td>Help</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Help Links Cards</td></div>
-<div><td>FAQ</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Contact Cards Grid</td></div>
-<div><td>Contact</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Need Help Section</td></div>
-<div><td>Eligibility</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Apps</strong></td></div>
-<div><td>App Carousel</td></div>
-<div><td>Apps</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>App Feature Section</td></div>
-<div><td>Apps</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Developer Program Section</td></div>
-<div><td>Apps</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Industry</strong></td></div>
-<div><td>Why FirstNet Section</td></div>
-<div><td>Industry Detail</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Appreciation Section</td></div>
-<div><td>Industry Detail</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Customer Quote Block</td></div>
-<div><td>Industry Detail</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Features Carousel</td></div>
-<div><td>Industry Detail</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Tables</strong></td></div>
-<div><td>Comparison Image</td></div>
-<div><td>Why FirstNet</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Impacts Table</td></div>
-<div><td>Eligibility</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Document Cards</td></div>
-<div><td>Eligibility</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Specialty</strong></td></div>
-<div><td>Interactive Map</td></div>
-<div><td>Coverage</td></div>
-<div><td>High</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Video Feature Block</td></div>
-<div><td>Power</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>History Text Section</td></div>
-<div><td>Power</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Audience Cards</td></div>
-<div><td>Why FirstNet</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>FirstNet Promise</td></div>
-<div><td>Why FirstNet</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Solutions Product Cards</td></div>
-<div><td>Mission Critical</td></div>
-<div><td>Medium</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Legal</strong></td></div>
-<div><td>Legal Disclaimers</td></div>
-<div><td>Multiple Pages</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>PDF Download Links</td></div>
-<div><td>Plans</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Shop Now CTA</td></div>
-<div><td>Device Detail</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Compatibility Link</td></div>
-<div><td>Devices</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Warning Note</td></div>
-<div><td>Eligibility</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Error</strong></td></div>
-<div><td>Error Page Content</td></div>
-<div><td>404</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td></td></div>
-<div><td>Recommended Pages List</td></div>
-<div><td>404</td></div>
-<div><td>Low</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Combined Totals</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Metric</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Combined</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td><strong>Consolidated Blocks</strong></td></div>
-<div><td>68</td></div>
-<div><td>58</td></div>
-<div><td><strong>126</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Original Variations</strong></td></div>
-<div><td>117</td></div>
-<div><td>106</td></div>
-<div><td><strong>223</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Shared/Reusable</strong></td></div>
-<div><td>~45</td></div>
-<div><td>~35</td></div>
-<div><td><strong>~75</strong> (with synergies)</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>Site-Specific</strong></td></div>
-<div><td>~23</td></div>
-<div><td>~23</td></div>
-<div><td><strong>~46</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Appendix B: Combined Page Inventory Summary</h2></div>
-<div><h3>AT&amp;T Business Pages (~749)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Category</th></div>
-<div><th>% of Total</th></div>
-<div><th>Est. Count</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Content/Articles</td></div>
-<div><td>40%</td></div>
-<div><td>~300</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Product Pages</td></div>
-<div><td>20%</td></div>
-<div><td>~150</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Customer Stories</td></div>
-<div><td>15%</td></div>
-<div><td>~112</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Industry/Category</td></div>
-<div><td>10%</td></div>
-<div><td>~75</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Support/Help</td></div>
-<div><td>8%</td></div>
-<div><td>~60</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Landing/Promo</td></div>
-<div><td>5%</td></div>
-<div><td>~37</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Navigation</td></div>
-<div><td>2%</td></div>
-<div><td>~15</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>100%</strong></td></div>
-<div><td><strong>~749</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>FirstNet Pages (~700)</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Category</th></div>
-<div><th>% of Total</th></div>
-<div><th>Est. Count</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Devices (Phones)</td></div>
-<div><td>25%</td></div>
-<div><td>~175</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Devices (Tablets/Other)</td></div>
-<div><td>15%</td></div>
-<div><td>~105</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Community/News</td></div>
-<div><td>20%</td></div>
-<div><td>~140</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Help/Support</td></div>
-<div><td>15%</td></div>
-<div><td>~105</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Industry Solutions</td></div>
-<div><td>10%</td></div>
-<div><td>~70</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Apps</td></div>
-<div><td>8%</td></div>
-<div><td>~56</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Core Pages</td></div>
-<div><td>7%</td></div>
-<div><td>~49</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>100%</strong></td></div>
-<div><td><strong>~700</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><h3>Combined Totals</h3></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Priority</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Combined</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>P0 (Must Have)</td></div>
-<div><td>~100</td></div>
-<div><td>~150</td></div>
-<div><td><strong>~250</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>P1 (Should Have)</td></div>
-<div><td>~350</td></div>
-<div><td>~300</td></div>
-<div><td><strong>~650</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>P2 (Nice to Have)</td></div>
-<div><td>~299</td></div>
-<div><td>~250</td></div>
-<div><td><strong>~549</strong></td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td><strong>TOTAL</strong></td></div>
-<div><td><strong>~749</strong></td></div>
-<div><td><strong>~700</strong></td></div>
-<div><td><strong>~1,449</strong></td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Appendix C: Detailed URL Lists</h2></div>
-<div><h3>AT&amp;T Business - Key Pages</h3></div>
-<div><p>See <a href="./ATT-BUSINESS-PAGE-INVENTORY.md">ATT-BUSINESS-PAGE-INVENTORY.md</a> for complete URL listing including:</p></div>
-<div><ul></div>
-<div><li>9 Portfolio pages</li></div>
-<div><li>75+ Product pages</li></div>
-<div><li>25+ Category pages</li></div>
-<div><li>200+ Article pages</li></div>
-<div><li>50+ Regional pages</li></div>
-<div><li>60+ Partner pages</li></div>
-<div></ul></div>
-<div><h3>FirstNet - Key Pages</h3></div>
-<div><p>See <a href="./FIRSTNET-PAGE-INVENTORY.md">FIRSTNET-PAGE-INVENTORY.md</a> for complete URL listing including:</p></div>
-<div><ul></div>
-<div><li>198 Phone pages</li></div>
-<div><li>88 Tablet pages</li></div>
-<div><li>21 Smart Device pages</li></div>
-<div><li>39 Connected Device pages</li></div>
-<div><li>90+ Industry Solution pages</li></div>
-<div><li>180+ News articles</li></div>
-<div></ul></div>
-<div><hr></div>
-<div><h2>Appendix D: Integration Matrix</h2></div>
-<div><table></div>
-<div><thead></div>
-<div><tr></div>
-<div><th>Integration</th></div>
-<div><th>AT&amp;T Business</th></div>
-<div><th>FirstNet</th></div>
-<div><th>Shared Code</th></div>
-<div></tr></div>
-<div></thead></div>
-<div><tbody><tr></div>
-<div><td>Adobe Analytics</td></div>
-<div><td>✓</td></div>
-<div><td>✓</td></div>
-<div><td>90%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Adobe Target</td></div>
-<div><td>✓</td></div>
-<div><td>✓</td></div>
-<div><td>90%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Marketo Forms</td></div>
-<div><td>✓</td></div>
-<div><td>✓</td></div>
-<div><td>80%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Eloqua Forms</td></div>
-<div><td>✓</td></div>
-<div><td>✓</td></div>
-<div><td>80%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>ChiliPiper</td></div>
-<div><td>✓</td></div>
-<div><td>-</td></div>
-<div><td>0%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Coveo/Algolia Search</td></div>
-<div><td>✓</td></div>
-<div><td>-</td></div>
-<div><td>0%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Chat Widget</td></div>
-<div><td>✓</td></div>
-<div><td>✓</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Feedback Widget</td></div>
-<div><td>-</td></div>
-<div><td>✓</td></div>
-<div><td>0%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>LocalControl</td></div>
-<div><td>-</td></div>
-<div><td>✓</td></div>
-<div><td>0%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>AT&amp;T SSO</td></div>
-<div><td>-</td></div>
-<div><td>✓</td></div>
-<div><td>0%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Eligibility API</td></div>
-<div><td>-</td></div>
-<div><td>✓</td></div>
-<div><td>0%</td></div>
-<div></tr></div>
-<div><tr></div>
-<div><td>Fastly CDN</td></div>
-<div><td>✓</td></div>
-<div><td>✓</td></div>
-<div><td>100%</td></div>
-<div></tr></div>
-<div></tbody></table></div>
-<div><hr></div>
-<div><h2>Next Steps</h2></div>
-<div><h3>Immediate Actions (Week 1-2)</h3></div>
-<div><ol></div>
-<div><li>Stakeholder alignment meeting</li></div>
-<div><li>Team assembly and onboarding</li></div>
-<div><li>Environment setup</li></div>
-<div><li>Design system review</li></div>
-<div><li>Integration API access requests</li></div>
-<div></ol></div>
-<div><h3>Discovery Phase (Week 2-4)</h3></div>
-<div><ol></div>
-<div><li>Complete content audit</li></div>
-<div><li>Integration POCs</li></div>
-<div><li>UE configuration planning</li></div>
-<div><li>Migration script prototypes</li></div>
-<div><li>Risk mitigation planning</li></div>
-<div></ol></div>
-<div><h3>Sprint 0 (Week 4-5)</h3></div>
-<div><ol></div>
-<div><li>Technical spikes</li></div>
-<div><li>Architecture finalization</li></div>
-<div><li>Shared component library setup</li></div>
-<div><li>CI/CD pipeline configuration</li></div>
-<div><li>First block prototypes</li></div>
-<div></ol></div>
-<div><hr></div>
-<div><p><em>Document Version: 2.0</em></div>
-<div><em>Combined Total Pages: ~1,449</em></div>
-<div><em>AT&amp;T Business: 68 consolidated blocks (from 117 variations)</em></div>
-<div><em>FirstNet: 58 consolidated blocks (from 106 variations)</em></div>
-<div><em>Combined Total Effort: 5,274 hours (with contingency)</em></div>
-<div><em>Combined Duration: 28-34 weeks</em></div>
-<div><em>Created: January 2026</em></div>
-<div><em>Last Updated: January 2026</em></p></div>
-<div></div>
+<div><h1 id="att-business--firstnet---combined-eds-migration-plan">AT&#x26;T Business &#x26; FirstNet - Combined EDS Migration Plan</h1><h2 id="executive-summary">Executive Summary</h2><p>This document outlines the comprehensive migration plan for migrating both <strong>AT&#x26;T Business (business.att.com)</strong> and <strong>FirstNet (firstnet.com)</strong> websites to AEM Edge Delivery Services (EDS) with Universal Editor (UE).</p><h3 id="combined-metrics">Combined Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div><strong>Total Pages</strong></div><div>~749</div><div>~700</div><div><strong>~1,449</strong></div><div>~1,449</div></div><div><div><strong>Page Templates</strong></div><div>12</div><div>10</div><div>22</div><div><strong>14</strong> (shared)</div></div><div><div><strong>Unique Blocks</strong></div><div>68 (consolidated)</div><div>58 (consolidated)</div><div>126</div><div><strong>96</strong> (after reuse)</div></div><div><div><strong>Block Variations</strong></div><div>117 original</div><div>106 original</div><div>223 original</div><div>consolidated</div></div><div><div><strong>Shared Blocks</strong></div><div>-</div><div>-</div><div>-</div><div><strong>30</strong> (built once)</div></div><div><div><strong>Base Effort (hrs)</strong></div><div>2,616-3,240</div><div>3,264-3,984</div><div>5,880-7,224</div><div><strong>4,960-6,080</strong></div></div><div><div><strong>Duration</strong></div><div>14-18 weeks</div><div>22-26 weeks</div><div>36-44 weeks</div><div><strong>30-36 weeks</strong></div></div><div><div><strong>Team Size</strong></div><div>5-7</div><div>6-8</div><div>11-15</div><div><strong>8-10</strong></div></div><div><div><strong>Cost Estimate</strong></div><div>$687K-$1.06M</div><div>$1.07M-$1.45M</div><div>$1.76M-$2.51M</div><div><strong>$1.42M-$1.95M</strong></div></div></div><h3 id="synergy-savings">Synergy Savings</h3><ul>
+<li><strong>Effort Savings:</strong> ~920-1,144 hours (16% reduction)</li>
+<li><strong>Duration Savings:</strong> 6-8 weeks (parallel execution)</li>
+<li><strong>Cost Savings:</strong> ~$340K-$560K</li>
+</ul></div>
+<div><h2 id="site-overview">Site Overview</h2><h3 id="att-business-businessattcom">AT&#x26;T Business (business.att.com)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Homepage</div><div>1</div></div><div><div>Portfolio Pages</div><div>9</div></div><div><div>Product Pages</div><div>~150</div></div><div><div>Category Pages</div><div>~75</div></div><div><div>Industry Pages</div><div>~14</div></div><div><div>Business Solutions</div><div>~10</div></div><div><div>Learn - Content/Articles</div><div>~300</div></div><div><div>Learn - Customer Stories</div><div>~112</div></div><div><div>Support Pages</div><div>~60</div></div><div><div>Offers/Deals</div><div>~37</div></div><div><div>Regional/Areas</div><div>~15</div></div><div><div>Core Navigation</div><div>~15</div></div><div><div><strong>TOTAL</strong></div><div><strong>~749</strong></div></div></div><h3 id="firstnet-firstnetcom">FirstNet (firstnet.com)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Homepage &#x26; Main Pages</div><div>5</div></div><div><div>Power of FirstNet</div><div>10</div></div><div><div>Coverage</div><div>11</div></div><div><div>Rate Plans</div><div>4</div></div><div><div>Devices - Phones</div><div>~175</div></div><div><div>Devices - Tablets/Other</div><div>~105</div></div><div><div>Industry Solutions</div><div>~70</div></div><div><div>Apps</div><div>~56</div></div><div><div>Community - News/Blogs</div><div>~140</div></div><div><div>Mission Critical</div><div>15</div></div><div><div>Support/Help</div><div>~105</div></div><div><div>Core Pages</div><div>~49</div></div><div><div><strong>TOTAL</strong></div><div><strong>~700</strong></div></div></div></div>
+<div><h2 id="combined-page-inventory">Combined Page Inventory</h2><h3 id="priority-distribution">Priority Distribution</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="priority"><div><div><strong>P0</strong> (Must Have)</div><div>~100</div><div>~150</div><div><strong>~250</strong></div></div><div><div><strong>P1</strong> (Should Have)</div><div>~350</div><div>~300</div><div><strong>~650</strong></div></div><div><div><strong>P2</strong> (Nice to Have)</div><div>~299</div><div>~250</div><div><strong>~549</strong></div></div><div><div><strong>TOTAL</strong></div><div><strong>~749</strong></div><div><strong>~700</strong></div><div><strong>~1,449</strong></div></div></div><h3 id="page-type-comparison">Page Type Comparison</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="page-type"><div><div>Homepage</div><div>1</div><div>5</div><div>Different layouts</div></div><div><div>Product/Device Pages</div><div>~150</div><div>~280</div><div>FirstNet device-heavy</div></div><div><div>Industry/Solution Pages</div><div>~24</div><div>~70</div><div>Similar structure</div></div><div><div>Article/Content Pages</div><div>~412</div><div>~140</div><div>AT&#x26;T content-heavy</div></div><div><div>Support Pages</div><div>~60</div><div>~105</div><div>FirstNet more comprehensive</div></div><div><div>Offer Pages</div><div>~37</div><div>~30</div><div>Similar structure</div></div><div><div>Core/Landing Pages</div><div>~65</div><div>~70</div><div>Similar structure</div></div></div></div>
+<div><h2 id="shared-components--synergies">Shared Components &#x26; Synergies</h2><h3 id="block-reusability-analysis">Block Reusability Analysis</h3><p><strong>Consolidated Block Counts:</strong></p><ul>
+<li>AT&#x26;T Business: <strong>68 consolidated blocks</strong> (from 117 original variations)</li>
+<li>FirstNet: <strong>58 consolidated blocks</strong> (from 106 original variations)</li>
+<li><strong>Combined Total:</strong> 126 blocks</li>
+<li><strong>Truly Shared (built once):</strong> 30 blocks</li>
+<li><strong>Effective Unique Blocks:</strong> 96 blocks (66 AT&#x26;T-only/unique + 30 shared)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-category"><div><div>Header/Navigation</div><div>2 blocks</div><div>3 blocks</div><div>2 (Quick Links, Anchor Nav)</div><div>80%</div><div>32 hrs</div></div><div><div>Footer</div><div>1 block</div><div>1 block</div><div>1 (Footer)</div><div>85%</div><div>24 hrs</div></div><div><div>Hero Blocks</div><div>7 variants</div><div>6 variants</div><div>1 (Base Hero Component)</div><div>65%</div><div>48 hrs</div></div><div><div>Card Carousels</div><div>4 blocks</div><div>4 blocks</div><div>3 (Offer, Product, Story Cards)</div><div>75%</div><div>72 hrs</div></div><div><div>Feature/Value Props</div><div>2 blocks</div><div>3 blocks</div><div>2 (Feature Grid, Value Props)</div><div>70%</div><div>40 hrs</div></div><div><div>Form Blocks</div><div>4 blocks</div><div>3 blocks</div><div>2 (Email Sub, Form Base)</div><div>55%</div><div>36 hrs</div></div><div><div>FAQ/Accordion</div><div>3 blocks</div><div>2 blocks</div><div>1 (Accordion Base)</div><div>90%</div><div>32 hrs</div></div><div><div>CTA/Promo Banners</div><div>5 blocks</div><div>4 blocks</div><div>3 (Promo, Contact CTA, Banner)</div><div>80%</div><div>56 hrs</div></div><div><div>Table/Comparison</div><div>3 blocks</div><div>3 blocks</div><div>2 (Comparison, Data Table)</div><div>70%</div><div>40 hrs</div></div><div><div>Article/Content</div><div>8 blocks</div><div>3 blocks</div><div>2 (Article Card, Content Block)</div><div>55%</div><div>36 hrs</div></div><div><div>Support Blocks</div><div>6 blocks</div><div>4 blocks</div><div>2 (Support Grid, Contact Cards)</div><div>65%</div><div>40 hrs</div></div><div><div>Video Blocks</div><div>2 blocks</div><div>1 block</div><div>1 (Video Embed)</div><div>85%</div><div>24 hrs</div></div><div><div>Industry/Solution</div><div>3 blocks</div><div>4 blocks</div><div>2 (Solution Cards, Image+Text)</div><div>55%</div><div>32 hrs</div></div><div><div>Customer Story</div><div>3 blocks</div><div>2 blocks</div><div>2 (Stats Block, Story Card)</div><div>75%</div><div>28 hrs</div></div><div><div>Offer-Specific</div><div>4 blocks</div><div>3 blocks</div><div>2 (Offer Cards, Pricing Pattern)</div><div>65%</div><div>32 hrs</div></div><div><div>Link/Navigation</div><div>4 blocks</div><div>2 blocks</div><div>1 (Link List)</div><div>60%</div><div>16 hrs</div></div><div><div>Miscellaneous</div><div>7 blocks</div><div>10 blocks</div><div>1 (Error Page)</div><div>40%</div><div>12 hrs</div></div><div><div><strong>TOTALS</strong></div><div><strong>68 blocks</strong></div><div><strong>58 blocks</strong></div><div><strong>30 shared</strong></div><div><strong>~67% avg</strong></div><div><strong>~600 hrs</strong></div></div></div><p><strong>Site-Specific Blocks (No Reuse):</strong></p><ul>
+<li><strong>AT&#x26;T Business Only (~38 blocks):</strong> RAI Lead Form, Check Availability, Article Tags/Share/Quote, Guided Courses, Business Center CTA, International Calling, Award Badges, etc.</li>
+<li><strong>FirstNet Only (~28 blocks):</strong> Interactive Map, Device Gallery/Detail, Eligibility Forms, App Carousel/Features, Why FirstNet Section, FirstNet Promise, History Text, etc.</li>
+</ul><h3 id="template-reusability">Template Reusability</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template"><div><div>homepage</div><div>Yes</div><div>Yes</div><div>No (different layouts)</div><div>0 hrs</div></div><div><div>product/device</div><div>Yes</div><div>Yes</div><div>Partial (60% shared)</div><div>24 hrs</div></div><div><div>category/industry</div><div>Yes</div><div>Yes</div><div>Yes (80% shared)</div><div>32 hrs</div></div><div><div>article</div><div>Yes</div><div>Yes</div><div>Yes (90% shared)</div><div>28 hrs</div></div><div><div>support</div><div>Yes</div><div>Yes</div><div>Yes (85% shared)</div><div>24 hrs</div></div><div><div>offers</div><div>Yes</div><div>Yes</div><div>Yes (75% shared)</div><div>20 hrs</div></div><div><div>landing</div><div>Yes</div><div>Yes</div><div>Yes (70% shared)</div><div>16 hrs</div></div><div><div>regional/campaign</div><div>Yes</div><div>Yes</div><div>Partial (50% shared)</div><div>12 hrs</div></div></div><p><strong>Template Savings:</strong> ~156 hours</p><h3 id="integration-reusability">Integration Reusability</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Adobe Analytics</div><div>Yes</div><div>Yes</div><div>Yes (90% shared)</div><div>40 hrs</div></div><div><div>Adobe Target</div><div>Yes</div><div>Yes</div><div>Yes (90% shared)</div><div>40 hrs</div></div><div><div>Marketo/Eloqua</div><div>Yes</div><div>Yes</div><div>Yes (80% shared)</div><div>32 hrs</div></div><div><div>Chat Widget</div><div>Yes</div><div>Yes</div><div>Yes (100% shared)</div><div>24 hrs</div></div><div><div>Fastly CDN</div><div>Yes</div><div>Yes</div><div>Yes (100% shared)</div><div>28 hrs</div></div><div><div>CI/CD Pipeline</div><div>Yes</div><div>Yes</div><div>Yes (100% shared)</div><div>20 hrs</div></div></div><p><strong>Integration Savings:</strong> ~184 hours</p></div>
+<div><h2 id="combined-phase-breakdown">Combined Phase Breakdown</h2><h3 id="phase-1-foundation--shared-infrastructure">Phase 1: Foundation &#x26; Shared Infrastructure</h3><p><strong>Duration: 3-4 weeks | Effort: 320-400 hours</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div>Shared EDS project setup</div><div>32</div><div>Monorepo or multi-site</div></div><div><div>GitHub/SharePoint integration</div><div>24</div><div>Shared infrastructure</div></div><div><div>AEM Universal Editor setup</div><div>48</div><div>Single UE instance</div></div><div><div>Shared design tokens</div><div>48</div><div>Brand-specific overrides</div></div><div><div>Global styles framework</div><div>40</div><div>Theming support</div></div><div><div>Shared header component</div><div>40</div><div>Brand variants</div></div><div><div>Shared footer component</div><div>32</div><div>Brand variants</div></div><div><div>Navigation structure (both)</div><div>32</div><div>Separate navs</div></div><div><div>CI/CD pipeline</div><div>24</div><div>Shared deployment</div></div><div><div><strong>Phase 1 Total</strong></div><div><strong>320</strong></div><div></div></div></div><h3 id="phase-2-core-blocks-development-shared">Phase 2: Core Blocks Development (Shared)</h3><p><strong>Duration: 6-7 weeks | Effort: 800-950 hours</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div>Hero block (all variants)</div><div>96</div><div>9 total variants</div></div><div><div>Cards block (all variants)</div><div>160</div><div>16 total variants</div></div><div><div>Carousel block</div><div>80</div><div>6 variants</div></div><div><div>Tabs block</div><div>48</div><div>5 variants</div></div><div><div>Accordion block</div><div>36</div><div>4 variants</div></div><div><div>Form block</div><div>100</div><div>7 variants</div></div><div><div>CTA-banner block</div><div>48</div><div>6 variants</div></div><div><div>Table block</div><div>60</div><div>7 variants</div></div><div><div>Video block</div><div>36</div><div>4 variants</div></div><div><div>Breadcrumb block</div><div>16</div><div>Shared</div></div><div><div>Columns block</div><div>20</div><div>Shared</div></div><div><div>Fragment support</div><div>24</div><div>Shared</div></div><div><div>UE component models</div><div>80</div><div>Both sites</div></div><div><div>Block documentation</div><div>40</div><div>Combined docs</div></div><div><div>QA &#x26; testing</div><div>64</div><div>Both sites</div></div><div><div><strong>Phase 2 Total</strong></div><div><strong>908</strong></div><div></div></div></div><h3 id="phase-3-site-specific-blocks">Phase 3: Site-Specific Blocks</h3><p><strong>Duration: 3-4 weeks | Effort: 360-440 hours</strong></p><h4 id="att-business-specific">AT&#x26;T Business Specific</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div>Promo-banner block</div><div>48</div></div><div><div>Link-list block</div><div>32</div></div><div><div>Search-results block</div><div>52</div></div><div><div>RAI form integration</div><div>40</div></div><div><div>AT&#x26;T-specific UE config</div><div>32</div></div><div><div><strong>AT&#x26;T Subtotal</strong></div><div><strong>204</strong></div></div></div><h4 id="firstnet-specific">FirstNet Specific</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div>Icon-nav block</div><div>36</div></div><div><div>Device-gallery block</div><div>60</div></div><div><div>Value-props block</div><div>40</div></div><div><div>Eligibility form</div><div>48</div></div><div><div>FirstNet-specific UE config</div><div>32</div></div><div><div><strong>FirstNet Subtotal</strong></div><div><strong>216</strong></div></div></div><p><strong>Phase 3 Total: 420 hours</strong></p><h3 id="phase-4-template-development">Phase 4: Template Development</h3><p><strong>Duration: 4-5 weeks | Effort: 520-640 hours</strong></p><h4 id="shared-templates">Shared Templates</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template"><div><div>Article template</div><div>32</div><div>Both</div></div><div><div>Support template</div><div>28</div><div>Both</div></div><div><div>Category/Industry template</div><div>36</div><div>Both</div></div><div><div>Offers template</div><div>32</div><div>Both</div></div><div><div>Landing template</div><div>32</div><div>Both</div></div><div><div><strong>Shared Subtotal</strong></div><div><strong>160</strong></div><div></div></div></div><h4 id="att-business-templates">AT&#x26;T Business Templates</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template"><div><div>Homepage</div><div>40</div></div><div><div>Portfolio</div><div>28</div></div><div><div>Product</div><div>36</div></div><div><div>Regional</div><div>20</div></div><div><div>Partner</div><div>20</div></div><div><div><strong>AT&#x26;T Subtotal</strong></div><div><strong>144</strong></div></div></div><h4 id="firstnet-templates">FirstNet Templates</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template"><div><div>Homepage</div><div>40</div></div><div><div>Device</div><div>56</div></div><div><div>Plans</div><div>32</div></div><div><div>Feature/Mission Critical</div><div>32</div></div><div><div>Coverage</div><div>28</div></div><div><div>Sign-up</div><div>32</div></div><div><div><strong>FirstNet Subtotal</strong></div><div><strong>220</strong></div></div></div><p><strong>Phase 4 Total: 524 hours</strong></p><h3 id="phase-5-integrations">Phase 5: Integrations</h3><p><strong>Duration: 4-5 weeks | Effort: 440-540 hours</strong></p><h4 id="shared-integrations">Shared Integrations</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Adobe Analytics</div><div>48</div><div>Both sites</div></div><div><div>Adobe Target</div><div>48</div><div>Both sites</div></div><div><div>Marketo/Eloqua forms</div><div>48</div><div>Both sites</div></div><div><div>Chat widget</div><div>28</div><div>Both sites</div></div><div><div>Fastly CDN</div><div>32</div><div>Both sites</div></div><div><div>Performance optimization</div><div>40</div><div>Both sites</div></div><div><div><strong>Shared Subtotal</strong></div><div><strong>244</strong></div><div></div></div></div><h4 id="att-business-specific-1">AT&#x26;T Business Specific</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>ChiliPiper calendar</div><div>28</div></div><div><div>Search (Coveo/Algolia)</div><div>44</div></div><div><div><strong>AT&#x26;T Subtotal</strong></div><div><strong>72</strong></div></div></div><h4 id="firstnet-specific-1">FirstNet Specific</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Eligibility API</div><div>48</div></div><div><div>LocalControl/SSO</div><div>56</div></div><div><div><strong>FirstNet Subtotal</strong></div><div><strong>104</strong></div></div></div><p><strong>Phase 5 Total: 420 hours</strong></p><h3 id="phase-6-content-migration">Phase 6: Content Migration</h3><p><strong>Duration: 8-10 weeks | Effort: 1,100-1,400 hours</strong></p><h4 id="import-script-development">Import Script Development</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div>Shared import framework</div><div>80</div></div><div><div>AT&#x26;T Business parsers</div><div>60</div></div><div><div>FirstNet device parsers</div><div>80</div></div><div><div><strong>Script Subtotal</strong></div><div><strong>220</strong></div></div></div><h4 id="att-business-migration">AT&#x26;T Business Migration</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wave"><div><div>Wave 1 (P0)</div><div>~100</div><div>84</div></div><div><div>Wave 2 (P1)</div><div>~300</div><div>177</div></div><div><div>Wave 3 (P2)</div><div>~300</div><div>64</div></div><div><div>Asset migration</div><div>-</div><div>32</div></div><div><div>Redirects (700+)</div><div>-</div><div>32</div></div><div><div>QA validation</div><div>-</div><div>48</div></div><div><div><strong>AT&#x26;T Subtotal</strong></div><div><strong>~700</strong></div><div><strong>437</strong></div></div></div><h4 id="firstnet-migration">FirstNet Migration</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wave"><div><div>Wave 1 (P0)</div><div>~220</div><div>159</div></div><div><div>Wave 2 (P1)</div><div>~450</div><div>161</div></div><div><div>Wave 3 (P2)</div><div>~520</div><div>138</div></div><div><div>Asset migration</div><div>-</div><div>48</div></div><div><div>Redirects (1,200+)</div><div>-</div><div>48</div></div><div><div>QA validation</div><div>-</div><div>72</div></div><div><div><strong>FirstNet Subtotal</strong></div><div><strong>~1,187</strong></div><div><strong>626</strong></div></div></div><p><strong>Phase 6 Total: 1,283 hours</strong></p><h3 id="phase-7-testing--launch">Phase 7: Testing &#x26; Launch</h3><p><strong>Duration: 4-5 weeks | Effort: 480-580 hours</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div>Cross-browser testing</div><div>56</div><div>Both sites</div></div><div><div>Mobile/responsive testing</div><div>64</div><div>Both sites</div></div><div><div>Accessibility (WCAG 2.1)</div><div>72</div><div>Both sites</div></div><div><div>Performance (Lighthouse)</div><div>48</div><div>Both sites</div></div><div><div>SEO validation</div><div>40</div><div>Both sites</div></div><div><div>Security testing</div><div>40</div><div>Both sites</div></div><div><div>UAT support</div><div>56</div><div>Both sites</div></div><div><div>Bug fixes &#x26; refinements</div><div>80</div><div>Both sites</div></div><div><div>DNS cutover planning</div><div>16</div><div>Both sites</div></div><div><div>Go-live execution</div><div>16</div><div>Staged rollout</div></div><div><div>Post-launch monitoring</div><div>32</div><div>Both sites</div></div><div><div><strong>Phase 7 Total</strong></div><div><strong>520</strong></div><div></div></div></div></div>
+<div><h2 id="total-effort-summary">Total Effort Summary</h2><h3 id="without-synergies-sequential">Without Synergies (Sequential)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="phase"><div><div>Foundation</div><div>248</div><div>264</div><div>512</div></div><div><div>Core Blocks</div><div>704</div><div>740</div><div>1,444</div></div><div><div>Templates</div><div>416</div><div>464</div><div>880</div></div><div><div>Secondary Blocks</div><div>304</div><div>272</div><div>576</div></div><div><div>Integrations</div><div>284</div><div>368</div><div>652</div></div><div><div>Content Migration</div><div>515</div><div>745</div><div>1,260</div></div><div><div>Testing &#x26; Launch</div><div>284</div><div>352</div><div>636</div></div><div><div><strong>TOTAL</strong></div><div><strong>2,755</strong></div><div><strong>3,205</strong></div><div><strong>5,960</strong></div></div></div><h3 id="with-synergies-combined">With Synergies (Combined)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="phase"><div><div>Foundation &#x26; Shared Infrastructure</div><div>320</div><div>192</div><div>Shared repo, CI/CD, design tokens</div></div><div><div>Core Blocks (30 Shared)</div><div>600</div><div>844</div><div>Build shared blocks once (~600 hrs saved)</div></div><div><div>Site-Specific Blocks (66 unique)</div><div>760</div><div>-184</div><div>ATT: 38 blocks, FN: 28 blocks</div></div><div><div>Template Development</div><div>524</div><div>356</div><div>8 shared templates (~156 hrs)</div></div><div><div>Integrations</div><div>468</div><div>184</div><div>Analytics, CDN, chat shared</div></div><div><div>Content Migration</div><div>1,200</div><div>60</div><div>Shared import framework</div></div><div><div>Testing &#x26; Launch</div><div>520</div><div>116</div><div>Shared test infrastructure</div></div><div><div><strong>TOTAL</strong></div><div><strong>4,392</strong></div><div><strong>1,568</strong></div><div></div></div></div><p><strong>With 20% contingency: 5,270 hours</strong></p><h3 id="synergy-breakdown">Synergy Breakdown</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Shared Blocks (30 blocks)</div><div>~600 hrs</div><div>Hero, Carousels, Forms, FAQ, CTAs, Tables, etc.</div></div><div><div>Shared Templates (8 templates)</div><div>~156 hrs</div><div>Article, Support, Category, Offers, Landing, etc.</div></div><div><div>Shared Integrations</div><div>~184 hrs</div><div>Analytics, Target, CDN, CI/CD</div></div><div><div>Shared Infrastructure</div><div>~192 hrs</div><div>Design tokens, repo setup, staging</div></div><div><div><strong>Total Synergy Savings</strong></div><div><strong>~1,132 hrs</strong></div><div></div></div></div><h3 id="savings-summary">Savings Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Total Hours</div><div>5,960</div><div>4,392</div><div><strong>1,568 hrs (26%)</strong></div></div><div><div>With Contingency</div><div>7,152</div><div>5,270</div><div><strong>1,882 hrs</strong></div></div><div><div>Duration</div><div>36-44 weeks</div><div>30-36 weeks</div><div><strong>6-8 weeks</strong></div></div><div><div>Team Size</div><div>11-15 FTEs</div><div>8-10 FTEs</div><div><strong>3-5 FTEs</strong></div></div></div></div>
+<div><h2 id="combined-timeline">Combined Timeline</h2><pre><code>Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+P1:    ████████████                                                                                                Foundation (3-4 wks)
+P2:            ████████████████████████████                                                                        Shared Blocks (6-7 wks)
+P3:                        ████████████████████                                                                    Site-Specific (4-5 wks)
+P4:                                ████████████████████                                                            Templates (4-5 wks)
+P5:                                        ████████████████████                                                    Integrations (4-5 wks)
+P6-ATT:                                            ████████████████████████████████                                AT&#x26;T Migration (8 wks)
+P6-FN:                                                    ████████████████████████████████████████                 FirstNet Migration (10 wks)
+P7:                                                                                ████████████████████            Testing/Launch (4-5 wks)
+       |______Shared Foundation______|__Shared Blocks__|___Parallel Migration___|__QA &#x26; Launch___|
+</code></pre><h3 id="milestone-schedule">Milestone Schedule</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="milestone"><div><div>Project Kickoff</div><div>1</div><div>Team onboarding, environment setup</div></div><div><div>Foundation Complete</div><div>4</div><div>Shared infrastructure ready</div></div><div><div>Shared Blocks Complete</div><div>11</div><div>30 shared blocks functional</div></div><div><div>Site-Specific Blocks</div><div>16</div><div>All 96 blocks ready for both sites</div></div><div><div>Templates Complete</div><div>21</div><div>All 14 page templates ready</div></div><div><div>Integrations Complete</div><div>25</div><div>All third-party integrations</div></div><div><div>AT&#x26;T Business P0 Launch</div><div>28</div><div>AT&#x26;T Business core pages live</div></div><div><div>FirstNet P0 Launch</div><div>30</div><div>FirstNet core pages live</div></div><div><div>Full Migration Complete</div><div>34</div><div>All 1,449 pages migrated</div></div><div><div>Final Launch</div><div>36</div><div>Both sites fully launched</div></div></div></div>
+<div><h2 id="resource-requirements">Resource Requirements</h2><h3 id="combined-team-composition">Combined Team Composition</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div>Program Manager</div><div>1</div><div>All</div><div>100%</div></div><div><div>Tech Lead / Architect</div><div>1</div><div>All</div><div>100%</div></div><div><div>EDS/Frontend Developer</div><div>4</div><div>1-5, 7</div><div>100%</div></div><div><div>UE Configuration Specialist</div><div>1</div><div>2-4</div><div>100%</div></div><div><div>Content Migration Lead</div><div>1</div><div>6</div><div>100%</div></div><div><div>Content Migration Specialist</div><div>2</div><div>6</div><div>100%</div></div><div><div>QA Lead</div><div>1</div><div>All</div><div>100%</div></div><div><div>QA Engineer</div><div>1</div><div>All</div><div>75%</div></div><div><div>DevOps Engineer</div><div>1</div><div>1, 5, 7</div><div>50%</div></div><div><div><strong>TOTAL</strong></div><div><strong>14</strong></div><div></div><div></div></div></div><p><strong>Effective FTEs: 8-10</strong></p><h3 id="skill-matrix">Skill Matrix</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="skill"><div><div>EDS/Franklin Development</div><div>Blocks, Templates</div><div>4 Developers</div></div><div><div>Universal Editor</div><div>UE Configuration</div><div>1 Specialist + Developers</div></div><div><div>Adobe Analytics/Target</div><div>Integrations</div><div>1 Developer</div></div><div><div>AT&#x26;T APIs (SSO, LocalControl)</div><div>FirstNet Integrations</div><div>1 Developer</div></div><div><div>Content Migration</div><div>Import Scripts</div><div>1 Lead + 2 Specialists</div></div><div><div>QA/Testing</div><div>All Phases</div><div>1 Lead + 1 Engineer</div></div></div></div>
+<div><h2 id="cost-estimation">Cost Estimation</h2><h3 id="combined-cost-breakdown-with-synergies">Combined Cost Breakdown (With Synergies)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="resource-type"><div><div>Program Manager</div><div>350</div><div>$150-175/hr</div><div>$52,500-61,250</div></div><div><div>Tech Lead</div><div>550</div><div>$150-200/hr</div><div>$82,500-110,000</div></div><div><div>Senior Developer (×3)</div><div>1,800</div><div>$125-175/hr</div><div>$225,000-315,000</div></div><div><div>UE Specialist</div><div>350</div><div>$125-150/hr</div><div>$43,750-52,500</div></div><div><div>Content Lead</div><div>280</div><div>$100-125/hr</div><div>$28,000-35,000</div></div><div><div>Content Specialist (×2)</div><div>500</div><div>$75-100/hr</div><div>$37,500-50,000</div></div><div><div>QA Lead</div><div>350</div><div>$125-150/hr</div><div>$43,750-52,500</div></div><div><div>QA Engineer</div><div>280</div><div>$100-125/hr</div><div>$28,000-35,000</div></div><div><div>DevOps</div><div>160</div><div>$125-150/hr</div><div>$20,000-24,000</div></div><div><div><strong>BASE TOTAL</strong></div><div><strong>4,620</strong></div><div></div><div><strong>$561,000-735,250</strong></div></div><div><div>Contingency (20%)</div><div>924</div><div>-</div><div>$112,200-147,050</div></div><div><div><strong>GRAND TOTAL</strong></div><div><strong>5,544</strong></div><div></div><div><strong>$673,200-882,300</strong></div></div></div><h3 id="cost-comparison">Cost Comparison</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="approach"><div><div>Sequential (separate projects)</div><div>7,152</div><div>$930K-$1.18M</div><div>Full teams for each site</div></div><div><div>Combined (with synergies)</div><div>5,270</div><div>$673K-$882K</div><div>Shared resources</div></div><div><div><strong>Savings</strong></div><div><strong>1,882 hrs</strong></div><div><strong>$257K-$298K</strong></div><div><strong>~26% reduction</strong></div></div></div><h3 id="cost-per-page">Cost Per Page</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Total Pages</div><div>1,449</div><div>1,449</div></div><div><div>Cost per Page</div><div>$642-$814</div><div>$465-$609</div></div><div><div>Savings per Page</div><div>-</div><div>$177-$205</div></div></div></div>
+<div><h2 id="risk-assessment">Risk Assessment</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="risk"><div><div>Resource contention between sites</div><div>High</div><div>Medium</div><div>Clear sprint allocation, dedicated leads</div></div><div><div>Scope creep from stakeholders</div><div>Medium</div><div>High</div><div>Fixed scope phases, change control</div></div><div><div>Integration complexity</div><div>Medium</div><div>High</div><div>Early POCs, parallel development</div></div><div><div>Brand consistency challenges</div><div>Medium</div><div>Medium</div><div>Shared design system with overrides</div></div><div><div>Timeline slippage</div><div>Medium</div><div>High</div><div>Buffer in schedule, phased delivery</div></div><div><div>Content volume underestimated</div><div>Medium</div><div>Medium</div><div>Automated import, bulk tools</div></div><div><div>UE configuration complexity</div><div>Medium</div><div>Medium</div><div>Dedicated UE specialist</div></div><div><div>Third-party API delays</div><div>Medium</div><div>High</div><div>Fallback options, early testing</div></div></div></div>
+<div><h2 id="success-criteria">Success Criteria</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Lighthouse Performance</div><div>> 90</div><div>Yes</div><div>Yes</div></div><div><div>Lighthouse Accessibility</div><div>> 95</div><div>Yes</div><div>Yes</div></div><div><div>Page Load Time (LCP)</div><div>&#x3C; 2.5s</div><div>Yes</div><div>Yes</div></div><div><div>Content Migration Accuracy</div><div>> 99%</div><div>Yes</div><div>Yes</div></div><div><div>Zero Critical Bugs at Launch</div><div>Yes</div><div>Yes</div><div>Yes</div></div><div><div>Author Training Completion</div><div>100%</div><div>Yes</div><div>Yes</div></div><div><div>Redirect Coverage</div><div>> 99.5%</div><div>Yes</div><div>Yes</div></div></div></div>
+<div><h2 id="governance--communication">Governance &#x26; Communication</h2><h3 id="steering-committee">Steering Committee</h3><ul>
+<li>Monthly executive reviews</li>
+<li>Go/No-go decisions for launches</li>
+<li>Budget and scope approvals</li>
+</ul><h3 id="project-cadence">Project Cadence</h3><ul>
+<li>Daily standups (15 min)</li>
+<li>Weekly sprint reviews</li>
+<li>Bi-weekly stakeholder demos</li>
+<li>Monthly steering committee</li>
+</ul><h3 id="decision-making">Decision Making</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="decision-type"><div><div>Technical architecture</div><div>Tech Lead</div></div><div><div>Sprint priorities</div><div>Program Manager</div></div><div><div>Scope changes</div><div>Steering Committee</div></div><div><div>Launch approval</div><div>Steering Committee</div></div></div></div>
+<div><h2 id="appendix-a-combined-block-inventory">Appendix A: Combined Block Inventory</h2><h3 id="att-business-blocks-68-consolidated">AT&#x26;T Business Blocks (68 Consolidated)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div><strong>Global</strong></div><div>Quick Links Carousel</div><div>1</div><div>Medium</div></div><div><div></div><div>Anchor Navigation</div><div>Multiple Pages</div><div>Medium</div></div><div><div><strong>Hero</strong></div><div>Hero Block</div><div>7 (Homepage Offer Cards, Homepage Video, Product, Portfolio/Industry, Content, Regional, 404)</div><div>High</div></div><div><div><strong>Pricing</strong></div><div>Pricing Cards Carousel</div><div>Product Pages</div><div>High</div></div><div><div><strong>Features</strong></div><div>Feature Cards Grid</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Value Props Grid</div><div>Portfolio/Landing</div><div>Medium</div></div><div><div><strong>Carousels</strong></div><div>Product/Service Cards Carousel</div><div>Multiple Pages</div><div>High</div></div><div><div></div><div>Offer Cards Carousel</div><div>Multiple Pages</div><div>High</div></div><div><div></div><div>Resource/Insights Cards</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Story Cards Overlay</div><div>Multiple Pages</div><div>Medium</div></div><div><div><strong>Forms</strong></div><div>Lead Form (RAI)</div><div>Multiple Pages</div><div>High</div></div><div><div></div><div>Check Availability Form</div><div>Portfolio</div><div>Medium</div></div><div><div></div><div>Email Subscription Form</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Search Block</div><div>404/Support</div><div>Medium</div></div><div><div><strong>FAQ</strong></div><div>FAQ Accordion</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Support Tabs Accordion</div><div>Support</div><div>Medium</div></div><div><div></div><div>Features Collapsible List</div><div>Products</div><div>Medium</div></div><div><div><strong>CTA</strong></div><div>Promo Banner</div><div>Multiple Pages</div><div>Low</div></div><div><div></div><div>Full-width Promo Banner</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Contact CTA Banner</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Multi-Button CTA</div><div>Portfolios</div><div>Low</div></div><div><div></div><div>Current Customer CTA</div><div>Landing Pages</div><div>Low</div></div><div><div><strong>Trust</strong></div><div>Guarantee Checklist</div><div>Multiple Pages</div><div>Low</div></div><div><div></div><div>Award Badge</div><div>Multiple Pages</div><div>Low</div></div><div><div></div><div>Customer Testimonials Carousel</div><div>Why AT&#x26;T</div><div>Medium</div></div><div><div><strong>Tables</strong></div><div>Comparison Table</div><div>Multiple Pages</div><div>High</div></div><div><div></div><div>Benefits Table</div><div>Category Pages</div><div>Medium</div></div><div><div></div><div>Use Cases Table</div><div>Business Solutions</div><div>Medium</div></div><div><div><strong>Content</strong></div><div>Featured Article Block</div><div>Learn Hub</div><div>Medium</div></div><div><div></div><div>Latest Articles Grid</div><div>Learn Hub</div><div>Medium</div></div><div><div></div><div>Article Header with Byline</div><div>Learn Articles</div><div>Low</div></div><div><div></div><div>Article Tags</div><div>Learn Articles</div><div>Low</div></div><div><div></div><div>Shareable Quote Block</div><div>Learn Articles</div><div>Low</div></div><div><div></div><div>Social Share Block</div><div>Learn Articles</div><div>Low</div></div><div><div></div><div>More Stories Grid</div><div>Learn Articles</div><div>Medium</div></div><div><div></div><div>Top Topics Carousel</div><div>Learn Hub</div><div>Medium</div></div><div><div><strong>Support</strong></div><div>Support Quick Actions Grid</div><div>Support Pages</div><div>Medium</div></div><div><div></div><div>Support Portal Cards</div><div>Support</div><div>Medium</div></div><div><div></div><div>Resource Cards (Blue)</div><div>Support</div><div>Medium</div></div><div><div></div><div>Guided Courses Block</div><div>Support</div><div>Medium</div></div><div><div></div><div>Contact Tables</div><div>Contact</div><div>Medium</div></div><div><div></div><div>Support Contact Block</div><div>Products</div><div>Low</div></div><div><div><strong>Industry</strong></div><div>Solution Link Cards</div><div>Industry Pages</div><div>Medium</div></div><div><div></div><div>Image + Text Split</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Partner Cards Grid</div><div>Partner Solutions</div><div>Medium</div></div><div><div><strong>Stories</strong></div><div>Highlights/Stats Block</div><div>Customer Stories</div><div>Medium</div></div><div><div></div><div>About Section</div><div>Customer Stories</div><div>Medium</div></div><div><div></div><div>Case Study Stats Block</div><div>Portfolios</div><div>Medium</div></div><div><div><strong>Video</strong></div><div>Video Embed Block</div><div>Portfolios</div><div>Medium</div></div><div><div></div><div>Video Content Cards</div><div>Portfolios</div><div>Medium</div></div><div><div><strong>Links</strong></div><div>Link List Block</div><div>Multiple Pages</div><div>Low</div></div><div><div></div><div>Additional Resources Grid</div><div>Why AT&#x26;T</div><div>Low</div></div><div><div></div><div>Helpful Links Cards</div><div>404</div><div>Low</div></div><div><div></div><div>Solutions Sidebar</div><div>Learn Articles</div><div>Low</div></div><div><div><strong>Offers</strong></div><div>Featured Offers Cards</div><div>Offers</div><div>Medium</div></div><div><div></div><div>Category Offers Carousel</div><div>Offers</div><div>Medium</div></div><div><div></div><div>Referral Program Block</div><div>Offers</div><div>Low</div></div><div><div></div><div>Risk-Free Trial Block</div><div>Multiple Pages</div><div>Low</div></div><div><div><strong>Misc</strong></div><div>Complete Solution Promo</div><div>Bundles</div><div>Medium</div></div><div><div></div><div>Related Products Cards</div><div>Business Solutions</div><div>Medium</div></div><div><div></div><div>International Calling Block</div><div>Phone Product</div><div>Low</div></div><div><div></div><div>Contact Options 2-Column</div><div>Why AT&#x26;T</div><div>Low</div></div><div><div></div><div>Business Center CTA Card</div><div>Business Solutions</div><div>Low</div></div><div><div></div><div>Data-driven Insights Cards</div><div>5G Portfolio</div><div>Medium</div></div></div><h3 id="firstnet-blocks-58-consolidated">FirstNet Blocks (58 Consolidated)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div><strong>Global</strong></div><div>Header Navigation</div><div>Global</div><div>High</div></div><div><div></div><div>Footer</div><div>Global</div><div>Medium</div></div><div><div></div><div>Email Subscription Form</div><div>Global</div><div>Medium</div></div><div><div><strong>Hero</strong></div><div>Hero Block</div><div>6 (Homepage, Standard, Product, Industry, Conversion, Device Detail)</div><div>High</div></div><div><div><strong>Navigation</strong></div><div>Quick Links Carousel</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Anchor Navigation</div><div>Multiple Pages</div><div>Medium</div></div><div><div><strong>Products</strong></div><div>Product Cards Grid</div><div>Device Categories</div><div>High</div></div><div><div></div><div>Product Cards by Brand</div><div>Brand Grouping</div><div>Medium</div></div><div><div></div><div>Industry Category Cards</div><div>Industry</div><div>Medium</div></div><div><div><strong>Offers</strong></div><div>Offer Cards Carousel</div><div>Multiple Pages</div><div>High</div></div><div><div></div><div>Pricing Cards</div><div>Plans</div><div>High</div></div><div><div></div><div>Plan Comparison</div><div>Offers</div><div>Medium</div></div><div><div><strong>Features</strong></div><div>Value Props Section</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Benefits Grid/Row</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Connectivity Ecosystem</div><div>Coverage</div><div>Medium</div></div><div><div><strong>FAQ</strong></div><div>FAQ Accordion</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Help Accordion</div><div>Help Pages</div><div>Medium</div></div><div><div><strong>Stories</strong></div><div>Customer Stories Carousel</div><div>Multiple Pages</div><div>High</div></div><div><div></div><div>Case Study Feature</div><div>Multiple Pages</div><div>Medium</div></div><div><div><strong>CTA</strong></div><div>Contact CTA Banner</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Promo Banner</div><div>Multiple Pages</div><div>Low</div></div><div><div></div><div>Download CTA Banner</div><div>Apps</div><div>Low</div></div><div><div><strong>Conversion</strong></div><div>Get Started Cards</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Eligibility Cards</div><div>Conversion</div><div>Medium</div></div><div><div><strong>Content</strong></div><div>News/Article Cards</div><div>Multiple Pages</div><div>Medium</div></div><div><div></div><div>Article Content Block</div><div>News Articles</div><div>Medium</div></div><div><div></div><div>Blogs/Videos Tabs</div><div>Community</div><div>Medium</div></div><div><div><strong>Support</strong></div><div>Popular Topics Grid</div><div>Help</div><div>Medium</div></div><div><div></div><div>Help Links Cards</div><div>FAQ</div><div>Low</div></div><div><div></div><div>Contact Cards Grid</div><div>Contact</div><div>Medium</div></div><div><div></div><div>Need Help Section</div><div>Eligibility</div><div>Low</div></div><div><div><strong>Apps</strong></div><div>App Carousel</div><div>Apps</div><div>High</div></div><div><div></div><div>App Feature Section</div><div>Apps</div><div>Medium</div></div><div><div></div><div>Developer Program Section</div><div>Apps</div><div>Low</div></div><div><div><strong>Industry</strong></div><div>Why FirstNet Section</div><div>Industry Detail</div><div>Medium</div></div><div><div></div><div>Appreciation Section</div><div>Industry Detail</div><div>Medium</div></div><div><div></div><div>Customer Quote Block</div><div>Industry Detail</div><div>Low</div></div><div><div></div><div>Features Carousel</div><div>Industry Detail</div><div>Medium</div></div><div><div><strong>Tables</strong></div><div>Comparison Image</div><div>Why FirstNet</div><div>Low</div></div><div><div></div><div>Impacts Table</div><div>Eligibility</div><div>High</div></div><div><div></div><div>Document Cards</div><div>Eligibility</div><div>Medium</div></div><div><div><strong>Specialty</strong></div><div>Interactive Map</div><div>Coverage</div><div>High</div></div><div><div></div><div>Video Feature Block</div><div>Power</div><div>Medium</div></div><div><div></div><div>History Text Section</div><div>Power</div><div>Low</div></div><div><div></div><div>Audience Cards</div><div>Why FirstNet</div><div>Medium</div></div><div><div></div><div>FirstNet Promise</div><div>Why FirstNet</div><div>Medium</div></div><div><div></div><div>Solutions Product Cards</div><div>Mission Critical</div><div>Medium</div></div><div><div><strong>Legal</strong></div><div>Legal Disclaimers</div><div>Multiple Pages</div><div>Low</div></div><div><div></div><div>PDF Download Links</div><div>Plans</div><div>Low</div></div><div><div></div><div>Shop Now CTA</div><div>Device Detail</div><div>Low</div></div><div><div></div><div>Compatibility Link</div><div>Devices</div><div>Low</div></div><div><div></div><div>Warning Note</div><div>Eligibility</div><div>Low</div></div><div><div><strong>Error</strong></div><div>Error Page Content</div><div>404</div><div>Low</div></div><div><div></div><div>Recommended Pages List</div><div>404</div><div>Low</div></div></div><h3 id="combined-totals">Combined Totals</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div><strong>Consolidated Blocks</strong></div><div>68</div><div>58</div><div><strong>126</strong></div></div><div><div><strong>Original Variations</strong></div><div>117</div><div>106</div><div><strong>223</strong></div></div><div><div><strong>Shared/Reusable</strong></div><div>~45</div><div>~35</div><div><strong>~75</strong> (with synergies)</div></div><div><div><strong>Site-Specific</strong></div><div>~23</div><div>~23</div><div><strong>~46</strong></div></div></div></div>
+<div><h2 id="appendix-b-combined-page-inventory-summary">Appendix B: Combined Page Inventory Summary</h2><h3 id="att-business-pages-749">AT&#x26;T Business Pages (~749)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Content/Articles</div><div>40%</div><div>~300</div></div><div><div>Product Pages</div><div>20%</div><div>~150</div></div><div><div>Customer Stories</div><div>15%</div><div>~112</div></div><div><div>Industry/Category</div><div>10%</div><div>~75</div></div><div><div>Support/Help</div><div>8%</div><div>~60</div></div><div><div>Landing/Promo</div><div>5%</div><div>~37</div></div><div><div>Core Navigation</div><div>2%</div><div>~15</div></div><div><div><strong>TOTAL</strong></div><div><strong>100%</strong></div><div><strong>~749</strong></div></div></div><h3 id="firstnet-pages-700">FirstNet Pages (~700)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Devices (Phones)</div><div>25%</div><div>~175</div></div><div><div>Devices (Tablets/Other)</div><div>15%</div><div>~105</div></div><div><div>Community/News</div><div>20%</div><div>~140</div></div><div><div>Help/Support</div><div>15%</div><div>~105</div></div><div><div>Industry Solutions</div><div>10%</div><div>~70</div></div><div><div>Apps</div><div>8%</div><div>~56</div></div><div><div>Core Pages</div><div>7%</div><div>~49</div></div><div><div><strong>TOTAL</strong></div><div><strong>100%</strong></div><div><strong>~700</strong></div></div></div><h3 id="combined-totals-1">Combined Totals</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="priority"><div><div>P0 (Must Have)</div><div>~100</div><div>~150</div><div><strong>~250</strong></div></div><div><div>P1 (Should Have)</div><div>~350</div><div>~300</div><div><strong>~650</strong></div></div><div><div>P2 (Nice to Have)</div><div>~299</div><div>~250</div><div><strong>~549</strong></div></div><div><div><strong>TOTAL</strong></div><div><strong>~749</strong></div><div><strong>~700</strong></div><div><strong>~1,449</strong></div></div></div></div>
+<div><h2 id="appendix-c-detailed-url-lists">Appendix C: Detailed URL Lists</h2><h3 id="att-business---key-pages">AT&#x26;T Business - Key Pages</h3><p>See <a href="./ATT-BUSINESS-PAGE-INVENTORY.md">ATT-BUSINESS-PAGE-INVENTORY.md</a> for complete URL listing including:</p><ul>
+<li>9 Portfolio pages</li>
+<li>75+ Product pages</li>
+<li>25+ Category pages</li>
+<li>200+ Article pages</li>
+<li>50+ Regional pages</li>
+<li>60+ Partner pages</li>
+</ul><h3 id="firstnet---key-pages">FirstNet - Key Pages</h3><p>See <a href="./FIRSTNET-PAGE-INVENTORY.md">FIRSTNET-PAGE-INVENTORY.md</a> for complete URL listing including:</p><ul>
+<li>198 Phone pages</li>
+<li>88 Tablet pages</li>
+<li>21 Smart Device pages</li>
+<li>39 Connected Device pages</li>
+<li>90+ Industry Solution pages</li>
+<li>180+ News articles</li>
+</ul></div>
+<div><h2 id="appendix-d-integration-matrix">Appendix D: Integration Matrix</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Adobe Analytics</div><div>✓</div><div>✓</div><div>90%</div></div><div><div>Adobe Target</div><div>✓</div><div>✓</div><div>90%</div></div><div><div>Marketo Forms</div><div>✓</div><div>✓</div><div>80%</div></div><div><div>Eloqua Forms</div><div>✓</div><div>✓</div><div>80%</div></div><div><div>ChiliPiper</div><div>✓</div><div>-</div><div>0%</div></div><div><div>Coveo/Algolia Search</div><div>✓</div><div>-</div><div>0%</div></div><div><div>Chat Widget</div><div>✓</div><div>✓</div><div>100%</div></div><div><div>Feedback Widget</div><div>-</div><div>✓</div><div>0%</div></div><div><div>LocalControl</div><div>-</div><div>✓</div><div>0%</div></div><div><div>AT&#x26;T SSO</div><div>-</div><div>✓</div><div>0%</div></div><div><div>Eligibility API</div><div>-</div><div>✓</div><div>0%</div></div><div><div>Fastly CDN</div><div>✓</div><div>✓</div><div>100%</div></div></div></div>
+<div><h2 id="next-steps">Next Steps</h2><h3 id="immediate-actions-week-1-2">Immediate Actions (Week 1-2)</h3><ol>
+<li>Stakeholder alignment meeting</li>
+<li>Team assembly and onboarding</li>
+<li>Environment setup</li>
+<li>Design system review</li>
+<li>Integration API access requests</li>
+</ol><h3 id="discovery-phase-week-2-4">Discovery Phase (Week 2-4)</h3><ol>
+<li>Complete content audit</li>
+<li>Integration POCs</li>
+<li>UE configuration planning</li>
+<li>Migration script prototypes</li>
+<li>Risk mitigation planning</li>
+</ol><h3 id="sprint-0-week-4-5">Sprint 0 (Week 4-5)</h3><ol>
+<li>Technical spikes</li>
+<li>Architecture finalization</li>
+<li>Shared component library setup</li>
+<li>CI/CD pipeline configuration</li>
+<li>First block prototypes</li>
+</ol></div>
+<div><p><em>Document Version: 2.1</em>
+<em>Combined Total Pages: ~1,449</em>
+<em>AT&#x26;T Business: 68 consolidated blocks (from 117 variations)</em>
+<em>FirstNet: 58 consolidated blocks (from 106 variations)</em>
+<em>Shared Blocks: 30 (built once for both sites)</em>
+<em>Effective Unique Blocks: 96</em>
+<em>Combined Total Effort: 5,270 hours (with 20% contingency)</em>
+<em>Synergy Savings: ~1,568 hours (26%)</em>
+<em>Combined Duration: 30-36 weeks</em>
+<em>Cost Estimate: $673K-$882K (with synergies)</em>
+<em>Created: January 2026</em>
+<em>Last Updated: January 2026</em></p></div>

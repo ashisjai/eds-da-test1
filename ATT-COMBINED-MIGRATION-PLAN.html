@@ -24,14 +24,14 @@
 <td>12</td>
 <td>10</td>
 <td>22</td>
-<td><strong>16</strong> (shared)</td>
+<td><strong>14</strong> (shared)</td>
 </tr>
 <tr>
 <td><strong>Unique Blocks</strong></td>
 <td>68 (consolidated)</td>
 <td>58 (consolidated)</td>
 <td>126</td>
-<td><strong>75</strong> (shared)</td>
+<td><strong>96</strong> (after reuse)</td>
 </tr>
 <tr>
 <td><strong>Block Variations</strong></td>
@@ -41,18 +41,25 @@
 <td>consolidated</td>
 </tr>
 <tr>
+<td><strong>Shared Blocks</strong></td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td><strong>30</strong> (built once)</td>
+</tr>
+<tr>
 <td><strong>Base Effort (hrs)</strong></td>
 <td>2,616-3,240</td>
 <td>3,264-3,984</td>
 <td>5,880-7,224</td>
-<td><strong>5,200-6,400</strong></td>
+<td><strong>4,960-6,080</strong></td>
 </tr>
 <tr>
 <td><strong>Duration</strong></td>
 <td>14-18 weeks</td>
 <td>22-26 weeks</td>
 <td>36-44 weeks</td>
-<td><strong>28-34 weeks</strong></td>
+<td><strong>30-36 weeks</strong></td>
 </tr>
 <tr>
 <td><strong>Team Size</strong></td>
@@ -66,14 +73,14 @@
 <td>$687K-$1.06M</td>
 <td>$1.07M-$1.45M</td>
 <td>$1.76M-$2.51M</td>
-<td><strong>$1.5M-$2.1M</strong></td>
+<td><strong>$1.42M-$1.95M</strong></td>
 </tr>
 </tbody></table>
 <h3>Synergy Savings</h3>
 <ul>
-<li><strong>Effort Savings:</strong> ~680-824 hours (12% reduction)</li>
-<li><strong>Duration Savings:</strong> 8-10 weeks (parallel execution)</li>
-<li><strong>Cost Savings:</strong> ~$92K-$123K</li>
+<li><strong>Effort Savings:</strong> ~920-1,144 hours (16% reduction)</li>
+<li><strong>Duration Savings:</strong> 6-8 weeks (parallel execution)</li>
+<li><strong>Cost Savings:</strong> ~$340K-$560K</li>
 </ul>
 <hr>
 <h2>Site Overview</h2>
@@ -296,6 +303,9 @@
 <ul>
 <li>AT&amp;T Business: <strong>68 consolidated blocks</strong> (from 117 original variations)</li>
 <li>FirstNet: <strong>58 consolidated blocks</strong> (from 106 original variations)</li>
+<li><strong>Combined Total:</strong> 126 blocks</li>
+<li><strong>Truly Shared (built once):</strong> 30 blocks</li>
+<li><strong>Effective Unique Blocks:</strong> 96 blocks (66 AT&amp;T-only/unique + 30 shared)</li>
 </ul>
 <table>
 <thead>
@@ -303,42 +313,48 @@
 <th>Block Category</th>
 <th>AT&amp;T Business</th>
 <th>FirstNet</th>
+<th>Shared Blocks</th>
 <th>Reuse %</th>
-<th>Savings</th>
+<th>Hours Saved</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Header/Navigation</td>
 <td>2 blocks</td>
 <td>3 blocks</td>
-<td>70%</td>
-<td>28 hrs</td>
+<td>2 (Quick Links, Anchor Nav)</td>
+<td>80%</td>
+<td>32 hrs</td>
 </tr>
 <tr>
 <td>Footer</td>
 <td>1 block</td>
 <td>1 block</td>
-<td>80%</td>
-<td>25 hrs</td>
+<td>1 (Footer)</td>
+<td>85%</td>
+<td>24 hrs</td>
 </tr>
 <tr>
 <td>Hero Blocks</td>
 <td>7 variants</td>
 <td>6 variants</td>
-<td>75%</td>
-<td>60 hrs</td>
+<td>1 (Base Hero Component)</td>
+<td>65%</td>
+<td>48 hrs</td>
 </tr>
 <tr>
 <td>Card Carousels</td>
 <td>4 blocks</td>
 <td>4 blocks</td>
-<td>80%</td>
-<td>96 hrs</td>
+<td>3 (Offer, Product, Story Cards)</td>
+<td>75%</td>
+<td>72 hrs</td>
 </tr>
 <tr>
 <td>Feature/Value Props</td>
 <td>2 blocks</td>
 <td>3 blocks</td>
+<td>2 (Feature Grid, Value Props)</td>
 <td>70%</td>
 <td>40 hrs</td>
 </tr>
@@ -346,94 +362,112 @@
 <td>Form Blocks</td>
 <td>4 blocks</td>
 <td>3 blocks</td>
-<td>65%</td>
-<td>52 hrs</td>
+<td>2 (Email Sub, Form Base)</td>
+<td>55%</td>
+<td>36 hrs</td>
 </tr>
 <tr>
 <td>FAQ/Accordion</td>
 <td>3 blocks</td>
 <td>2 blocks</td>
+<td>1 (Accordion Base)</td>
 <td>90%</td>
-<td>36 hrs</td>
+<td>32 hrs</td>
 </tr>
 <tr>
 <td>CTA/Promo Banners</td>
 <td>5 blocks</td>
 <td>4 blocks</td>
-<td>85%</td>
-<td>48 hrs</td>
+<td>3 (Promo, Contact CTA, Banner)</td>
+<td>80%</td>
+<td>56 hrs</td>
 </tr>
 <tr>
 <td>Table/Comparison</td>
 <td>3 blocks</td>
 <td>3 blocks</td>
-<td>75%</td>
-<td>36 hrs</td>
+<td>2 (Comparison, Data Table)</td>
+<td>70%</td>
+<td>40 hrs</td>
 </tr>
 <tr>
 <td>Article/Content</td>
 <td>8 blocks</td>
 <td>3 blocks</td>
-<td>60%</td>
-<td>40 hrs</td>
+<td>2 (Article Card, Content Block)</td>
+<td>55%</td>
+<td>36 hrs</td>
 </tr>
 <tr>
 <td>Support Blocks</td>
 <td>6 blocks</td>
 <td>4 blocks</td>
-<td>70%</td>
-<td>35 hrs</td>
+<td>2 (Support Grid, Contact Cards)</td>
+<td>65%</td>
+<td>40 hrs</td>
 </tr>
 <tr>
 <td>Video Blocks</td>
 <td>2 blocks</td>
 <td>1 block</td>
-<td>90%</td>
-<td>25 hrs</td>
+<td>1 (Video Embed)</td>
+<td>85%</td>
+<td>24 hrs</td>
 </tr>
 <tr>
 <td>Industry/Solution</td>
 <td>3 blocks</td>
 <td>4 blocks</td>
-<td>65%</td>
-<td>30 hrs</td>
+<td>2 (Solution Cards, Image+Text)</td>
+<td>55%</td>
+<td>32 hrs</td>
 </tr>
 <tr>
 <td>Customer Story</td>
 <td>3 blocks</td>
 <td>2 blocks</td>
-<td>80%</td>
-<td>24 hrs</td>
+<td>2 (Stats Block, Story Card)</td>
+<td>75%</td>
+<td>28 hrs</td>
 </tr>
 <tr>
 <td>Offer-Specific</td>
 <td>4 blocks</td>
 <td>3 blocks</td>
-<td>70%</td>
-<td>28 hrs</td>
+<td>2 (Offer Cards, Pricing Pattern)</td>
+<td>65%</td>
+<td>32 hrs</td>
 </tr>
 <tr>
 <td>Link/Navigation</td>
 <td>4 blocks</td>
 <td>2 blocks</td>
+<td>1 (Link List)</td>
 <td>60%</td>
-<td>20 hrs</td>
+<td>16 hrs</td>
 </tr>
 <tr>
 <td>Miscellaneous</td>
 <td>7 blocks</td>
 <td>10 blocks</td>
-<td>50%</td>
-<td>40 hrs</td>
+<td>1 (Error Page)</td>
+<td>40%</td>
+<td>12 hrs</td>
 </tr>
 <tr>
-<td><strong>TOTAL BLOCK SAVINGS</strong></td>
+<td><strong>TOTALS</strong></td>
 <td><strong>68 blocks</strong></td>
 <td><strong>58 blocks</strong></td>
-<td></td>
-<td><strong>~663 hrs</strong></td>
+<td><strong>30 shared</strong></td>
+<td><strong>~67% avg</strong></td>
+<td><strong>~600 hrs</strong></td>
 </tr>
 </tbody></table>
+<p><strong>Site-Specific Blocks (No Reuse):</strong></p>
+<ul>
+<li><strong>AT&amp;T Business Only (~38 blocks):</strong> RAI Lead Form, Check Availability, Article Tags/Share/Quote, Guided Courses, Business Center CTA, International Calling, Award Badges, etc.</li>
+<li><strong>FirstNet Only (~28 blocks):</strong> Interactive Map, Device Gallery/Detail, Eligibility Forms, App Carousel/Features, Why FirstNet Section, FirstNet Promise, History Text, etc.</li>
+</ul>
 <h3>Template Reusability</h3>
 <table>
 <thead>
@@ -442,58 +476,67 @@
 <th>AT&amp;T Business</th>
 <th>FirstNet</th>
 <th>Shared</th>
+<th>Hours Saved</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>homepage</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>No (different)</td>
+<td>No (different layouts)</td>
+<td>0 hrs</td>
 </tr>
 <tr>
 <td>product/device</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Partial (60%)</td>
+<td>Partial (60% shared)</td>
+<td>24 hrs</td>
 </tr>
 <tr>
 <td>category/industry</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (80%)</td>
+<td>Yes (80% shared)</td>
+<td>32 hrs</td>
 </tr>
 <tr>
 <td>article</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (90%)</td>
+<td>Yes (90% shared)</td>
+<td>28 hrs</td>
 </tr>
 <tr>
 <td>support</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (85%)</td>
+<td>Yes (85% shared)</td>
+<td>24 hrs</td>
 </tr>
 <tr>
 <td>offers</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (75%)</td>
+<td>Yes (75% shared)</td>
+<td>20 hrs</td>
 </tr>
 <tr>
 <td>landing</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (70%)</td>
+<td>Yes (70% shared)</td>
+<td>16 hrs</td>
 </tr>
 <tr>
 <td>regional/campaign</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Partial (50%)</td>
+<td>Partial (50% shared)</td>
+<td>12 hrs</td>
 </tr>
 </tbody></table>
-<p><strong>Template Savings:</strong> ~120 hours</p>
+<p><strong>Template Savings:</strong> ~156 hours</p>
 <h3>Integration Reusability</h3>
 <table>
 <thead>
@@ -502,46 +545,53 @@
 <th>AT&amp;T Business</th>
 <th>FirstNet</th>
 <th>Shared</th>
+<th>Hours Saved</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Adobe Analytics</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (90%)</td>
+<td>Yes (90% shared)</td>
+<td>40 hrs</td>
 </tr>
 <tr>
 <td>Adobe Target</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (90%)</td>
+<td>Yes (90% shared)</td>
+<td>40 hrs</td>
 </tr>
 <tr>
 <td>Marketo/Eloqua</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (80%)</td>
+<td>Yes (80% shared)</td>
+<td>32 hrs</td>
 </tr>
 <tr>
 <td>Chat Widget</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (100%)</td>
+<td>Yes (100% shared)</td>
+<td>24 hrs</td>
 </tr>
 <tr>
 <td>Fastly CDN</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (100%)</td>
+<td>Yes (100% shared)</td>
+<td>28 hrs</td>
 </tr>
 <tr>
 <td>CI/CD Pipeline</td>
 <td>Yes</td>
 <td>Yes</td>
-<td>Yes (100%)</td>
+<td>Yes (100% shared)</td>
+<td>20 hrs</td>
 </tr>
 </tbody></table>
-<p><strong>Integration Savings:</strong> ~80 hours</p>
+<p><strong>Integration Savings:</strong> ~184 hours</p>
 <hr>
 <h2>Combined Phase Breakdown</h2>
 <h3>Phase 1: Foundation &amp; Shared Infrastructure</h3>
@@ -1225,50 +1275,94 @@
 <th>Phase</th>
 <th>Hours</th>
 <th>Savings</th>
+<th>Savings Source</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Foundation &amp; Shared Infrastructure</td>
 <td>320</td>
 <td>192</td>
+<td>Shared repo, CI/CD, design tokens</td>
 </tr>
 <tr>
-<td>Core Blocks (Shared)</td>
-<td>908</td>
-<td>536</td>
+<td>Core Blocks (30 Shared)</td>
+<td>600</td>
+<td>844</td>
+<td>Build shared blocks once (~600 hrs saved)</td>
 </tr>
 <tr>
-<td>Site-Specific Blocks</td>
-<td>420</td>
-<td>156</td>
+<td>Site-Specific Blocks (66 unique)</td>
+<td>760</td>
+<td>-184</td>
+<td>ATT: 38 blocks, FN: 28 blocks</td>
 </tr>
 <tr>
 <td>Template Development</td>
 <td>524</td>
 <td>356</td>
+<td>8 shared templates (~156 hrs)</td>
 </tr>
 <tr>
 <td>Integrations</td>
-<td>420</td>
-<td>232</td>
+<td>468</td>
+<td>184</td>
+<td>Analytics, CDN, chat shared</td>
 </tr>
 <tr>
 <td>Content Migration</td>
-<td>1,283</td>
-<td>-23 (more efficient)</td>
+<td>1,200</td>
+<td>60</td>
+<td>Shared import framework</td>
 </tr>
 <tr>
 <td>Testing &amp; Launch</td>
 <td>520</td>
 <td>116</td>
+<td>Shared test infrastructure</td>
 </tr>
 <tr>
 <td><strong>TOTAL</strong></td>
-<td><strong>4,395</strong></td>
-<td><strong>1,565</strong></td>
+<td><strong>4,392</strong></td>
+<td><strong>1,568</strong></td>
+<td></td>
 </tr>
 </tbody></table>
-<p><strong>With 20% contingency: 5,274 hours</strong></p>
+<p><strong>With 20% contingency: 5,270 hours</strong></p>
+<h3>Synergy Breakdown</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Hours Saved</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Shared Blocks (30 blocks)</td>
+<td>~600 hrs</td>
+<td>Hero, Carousels, Forms, FAQ, CTAs, Tables, etc.</td>
+</tr>
+<tr>
+<td>Shared Templates (8 templates)</td>
+<td>~156 hrs</td>
+<td>Article, Support, Category, Offers, Landing, etc.</td>
+</tr>
+<tr>
+<td>Shared Integrations</td>
+<td>~184 hrs</td>
+<td>Analytics, Target, CDN, CI/CD</td>
+</tr>
+<tr>
+<td>Shared Infrastructure</td>
+<td>~192 hrs</td>
+<td>Design tokens, repo setup, staging</td>
+</tr>
+<tr>
+<td><strong>Total Synergy Savings</strong></td>
+<td><strong>~1,132 hrs</strong></td>
+<td></td>
+</tr>
+</tbody></table>
 <h3>Savings Summary</h3>
 <table>
 <thead>
@@ -1282,20 +1376,20 @@
 <tbody><tr>
 <td>Total Hours</td>
 <td>5,960</td>
-<td>4,395</td>
-<td><strong>1,565 hrs (26%)</strong></td>
+<td>4,392</td>
+<td><strong>1,568 hrs (26%)</strong></td>
 </tr>
 <tr>
 <td>With Contingency</td>
 <td>7,152</td>
-<td>5,274</td>
-<td><strong>1,878 hrs</strong></td>
+<td>5,270</td>
+<td><strong>1,882 hrs</strong></td>
 </tr>
 <tr>
 <td>Duration</td>
 <td>36-44 weeks</td>
-<td>28-34 weeks</td>
-<td><strong>8-10 weeks</strong></td>
+<td>30-36 weeks</td>
+<td><strong>6-8 weeks</strong></td>
 </tr>
 <tr>
 <td>Team Size</td>
@@ -1306,17 +1400,17 @@
 </tbody></table>
 <hr>
 <h2>Combined Timeline</h2>
-<pre><code>Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34
-       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-P1:    ████████████                                                                                            Foundation (3-4 wks)
-P2:            ████████████████████████████                                                                    Core Blocks (6-7 wks)
-P3:                        ████████████████                                                                    Site-Specific (3-4 wks)
-P4:                                ████████████████████                                                        Templates (4-5 wks)
-P5:                                        ████████████████████                                                Integrations (4-5 wks)
-P6-ATT:                                            ████████████████████████████████                            AT&amp;T Migration (8 wks)
-P6-FN:                                                    ████████████████████████████████████                 FirstNet Migration (10 wks)
-P7:                                                                            ████████████████████            Testing/Launch (4-5 wks)
-       |______Shared Foundation______|___ATT Wave 1___|___FN Wave 1___|__Wave 2__|__Wave 3__|_Launch_|
+<pre><code>Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+P1:    ████████████                                                                                                Foundation (3-4 wks)
+P2:            ████████████████████████████                                                                        Shared Blocks (6-7 wks)
+P3:                        ████████████████████                                                                    Site-Specific (4-5 wks)
+P4:                                ████████████████████                                                            Templates (4-5 wks)
+P5:                                        ████████████████████                                                    Integrations (4-5 wks)
+P6-ATT:                                            ████████████████████████████████                                AT&amp;T Migration (8 wks)
+P6-FN:                                                    ████████████████████████████████████████                 FirstNet Migration (10 wks)
+P7:                                                                                ████████████████████            Testing/Launch (4-5 wks)
+       |______Shared Foundation______|__Shared Blocks__|___Parallel Migration___|__QA &amp; Launch___|
 </code></pre>
 <h3>Milestone Schedule</h3>
 <table>
@@ -1338,43 +1432,43 @@ P7:                                                                            �
 <td>Shared infrastructure ready</td>
 </tr>
 <tr>
-<td>Core Blocks Complete</td>
+<td>Shared Blocks Complete</td>
 <td>11</td>
-<td>All shared blocks functional</td>
+<td>30 shared blocks functional</td>
 </tr>
 <tr>
 <td>Site-Specific Blocks</td>
-<td>15</td>
-<td>All blocks ready for both sites</td>
+<td>16</td>
+<td>All 96 blocks ready for both sites</td>
 </tr>
 <tr>
 <td>Templates Complete</td>
-<td>20</td>
-<td>All page templates ready</td>
+<td>21</td>
+<td>All 14 page templates ready</td>
 </tr>
 <tr>
 <td>Integrations Complete</td>
-<td>24</td>
+<td>25</td>
 <td>All third-party integrations</td>
 </tr>
 <tr>
 <td>AT&amp;T Business P0 Launch</td>
-<td>26</td>
+<td>28</td>
 <td>AT&amp;T Business core pages live</td>
 </tr>
 <tr>
 <td>FirstNet P0 Launch</td>
-<td>28</td>
+<td>30</td>
 <td>FirstNet core pages live</td>
 </tr>
 <tr>
 <td>Full Migration Complete</td>
-<td>32</td>
-<td>All pages migrated</td>
+<td>34</td>
+<td>All 1,449 pages migrated</td>
 </tr>
 <tr>
 <td>Final Launch</td>
-<td>34</td>
+<td>36</td>
 <td>Both sites fully launched</td>
 </tr>
 </tbody></table>
@@ -1494,7 +1588,7 @@ P7:                                                                            �
 </tbody></table>
 <hr>
 <h2>Cost Estimation</h2>
-<h3>Combined Cost Breakdown</h3>
+<h3>Combined Cost Breakdown (With Synergies)</h3>
 <table>
 <thead>
 <tr>
@@ -1506,63 +1600,75 @@ P7:                                                                            �
 </thead>
 <tbody><tr>
 <td>Program Manager</td>
-<td>400</td>
+<td>350</td>
 <td>$150-175/hr</td>
-<td>$60,000-70,000</td>
+<td>$52,500-61,250</td>
 </tr>
 <tr>
 <td>Tech Lead</td>
-<td>680</td>
+<td>550</td>
 <td>$150-200/hr</td>
-<td>$102,000-136,000</td>
+<td>$82,500-110,000</td>
 </tr>
 <tr>
-<td>Senior Developer</td>
-<td>2,200</td>
+<td>Senior Developer (×3)</td>
+<td>1,800</td>
 <td>$125-175/hr</td>
-<td>$275,000-385,000</td>
+<td>$225,000-315,000</td>
 </tr>
 <tr>
 <td>UE Specialist</td>
-<td>400</td>
+<td>350</td>
 <td>$125-150/hr</td>
-<td>$50,000-60,000</td>
+<td>$43,750-52,500</td>
 </tr>
 <tr>
 <td>Content Lead</td>
-<td>320</td>
+<td>280</td>
 <td>$100-125/hr</td>
-<td>$32,000-40,000</td>
+<td>$28,000-35,000</td>
 </tr>
 <tr>
-<td>Content Specialist</td>
-<td>600</td>
+<td>Content Specialist (×2)</td>
+<td>500</td>
 <td>$75-100/hr</td>
-<td>$45,000-60,000</td>
+<td>$37,500-50,000</td>
 </tr>
 <tr>
 <td>QA Lead</td>
-<td>400</td>
+<td>350</td>
 <td>$125-150/hr</td>
-<td>$50,000-60,000</td>
+<td>$43,750-52,500</td>
 </tr>
 <tr>
 <td>QA Engineer</td>
-<td>320</td>
+<td>280</td>
 <td>$100-125/hr</td>
-<td>$32,000-40,000</td>
+<td>$28,000-35,000</td>
 </tr>
 <tr>
 <td>DevOps</td>
-<td>180</td>
+<td>160</td>
 <td>$125-150/hr</td>
-<td>$22,500-27,000</td>
+<td>$20,000-24,000</td>
 </tr>
 <tr>
-<td><strong>TOTAL</strong></td>
-<td><strong>5,500</strong></td>
+<td><strong>BASE TOTAL</strong></td>
+<td><strong>4,620</strong></td>
 <td></td>
-<td><strong>$668,500-878,000</strong></td>
+<td><strong>$561,000-735,250</strong></td>
+</tr>
+<tr>
+<td>Contingency (20%)</td>
+<td>924</td>
+<td>-</td>
+<td>$112,200-147,050</td>
+</tr>
+<tr>
+<td><strong>GRAND TOTAL</strong></td>
+<td><strong>5,544</strong></td>
+<td></td>
+<td><strong>$673,200-882,300</strong></td>
 </tr>
 </tbody></table>
 <h3>Cost Comparison</h3>
@@ -1570,24 +1676,53 @@ P7:                                                                            �
 <thead>
 <tr>
 <th>Approach</th>
+<th>Hours</th>
 <th>Cost Range</th>
 <th>Notes</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>Sequential (separate projects)</td>
-<td>$742K-$993K</td>
-<td>Full teams for each</td>
+<td>7,152</td>
+<td>$930K-$1.18M</td>
+<td>Full teams for each site</td>
 </tr>
 <tr>
 <td>Combined (with synergies)</td>
-<td>$668K-$878K</td>
+<td>5,270</td>
+<td>$673K-$882K</td>
 <td>Shared resources</td>
 </tr>
 <tr>
 <td><strong>Savings</strong></td>
-<td><strong>$74K-$115K</strong></td>
-<td><strong>10-12%</strong></td>
+<td><strong>1,882 hrs</strong></td>
+<td><strong>$257K-$298K</strong></td>
+<td><strong>~26% reduction</strong></td>
+</tr>
+</tbody></table>
+<h3>Cost Per Page</h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Sequential</th>
+<th>Combined</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Total Pages</td>
+<td>1,449</td>
+<td>1,449</td>
+</tr>
+<tr>
+<td>Cost per Page</td>
+<td>$642-$814</td>
+<td>$465-$609</td>
+</tr>
+<tr>
+<td>Savings per Page</td>
+<td>-</td>
+<td>$177-$205</td>
 </tr>
 </tbody></table>
 <hr>
@@ -2781,11 +2916,15 @@ P7:                                                                            �
 <li>First block prototypes</li>
 </ol>
 <hr>
-<p><em>Document Version: 2.0</em>
+<p><em>Document Version: 2.1</em>
 <em>Combined Total Pages: ~1,449</em>
 <em>AT&amp;T Business: 68 consolidated blocks (from 117 variations)</em>
 <em>FirstNet: 58 consolidated blocks (from 106 variations)</em>
-<em>Combined Total Effort: 5,274 hours (with contingency)</em>
-<em>Combined Duration: 28-34 weeks</em>
+<em>Shared Blocks: 30 (built once for both sites)</em>
+<em>Effective Unique Blocks: 96</em>
+<em>Combined Total Effort: 5,270 hours (with 20% contingency)</em>
+<em>Synergy Savings: ~1,568 hours (26%)</em>
+<em>Combined Duration: 30-36 weeks</em>
+<em>Cost Estimate: $673K-$882K (with synergies)</em>
 <em>Created: January 2026</em>
 <em>Last Updated: January 2026</em></p>

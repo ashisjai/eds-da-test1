@@ -9,18 +9,19 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 | Metric | AT&T Business | FirstNet | Combined | With Synergies |
 |--------|---------------|----------|----------|----------------|
 | **Total Pages** | ~749 | ~700 | **~1,449** | ~1,449 |
-| **Page Templates** | 12 | 10 | 22 | **16** (shared) |
-| **Unique Blocks** | 68 (consolidated) | 58 (consolidated) | 126 | **75** (shared) |
+| **Page Templates** | 12 | 10 | 22 | **14** (shared) |
+| **Unique Blocks** | 68 (consolidated) | 58 (consolidated) | 126 | **96** (after reuse) |
 | **Block Variations** | 117 original | 106 original | 223 original | consolidated |
-| **Base Effort (hrs)** | 2,616-3,240 | 3,264-3,984 | 5,880-7,224 | **5,200-6,400** |
-| **Duration** | 14-18 weeks | 22-26 weeks | 36-44 weeks | **28-34 weeks** |
+| **Shared Blocks** | - | - | - | **30** (built once) |
+| **Base Effort (hrs)** | 2,616-3,240 | 3,264-3,984 | 5,880-7,224 | **4,960-6,080** |
+| **Duration** | 14-18 weeks | 22-26 weeks | 36-44 weeks | **30-36 weeks** |
 | **Team Size** | 5-7 | 6-8 | 11-15 | **8-10** |
-| **Cost Estimate** | $687K-$1.06M | $1.07M-$1.45M | $1.76M-$2.51M | **$1.5M-$2.1M** |
+| **Cost Estimate** | $687K-$1.06M | $1.07M-$1.45M | $1.76M-$2.51M | **$1.42M-$1.95M** |
 
 ### Synergy Savings
-- **Effort Savings:** ~680-824 hours (12% reduction)
-- **Duration Savings:** 8-10 weeks (parallel execution)
-- **Cost Savings:** ~$92K-$123K
+- **Effort Savings:** ~920-1,144 hours (16% reduction)
+- **Duration Savings:** 6-8 weeks (parallel execution)
+- **Cost Savings:** ~$340K-$560K
 
 ---
 
@@ -96,55 +97,62 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 **Consolidated Block Counts:**
 - AT&T Business: **68 consolidated blocks** (from 117 original variations)
 - FirstNet: **58 consolidated blocks** (from 106 original variations)
+- **Combined Total:** 126 blocks
+- **Truly Shared (built once):** 30 blocks
+- **Effective Unique Blocks:** 96 blocks (66 AT&T-only/unique + 30 shared)
 
-| Block Category | AT&T Business | FirstNet | Reuse % | Savings |
-|----------------|---------------|----------|---------|---------|
-| Header/Navigation | 2 blocks | 3 blocks | 70% | 28 hrs |
-| Footer | 1 block | 1 block | 80% | 25 hrs |
-| Hero Blocks | 7 variants | 6 variants | 75% | 60 hrs |
-| Card Carousels | 4 blocks | 4 blocks | 80% | 96 hrs |
-| Feature/Value Props | 2 blocks | 3 blocks | 70% | 40 hrs |
-| Form Blocks | 4 blocks | 3 blocks | 65% | 52 hrs |
-| FAQ/Accordion | 3 blocks | 2 blocks | 90% | 36 hrs |
-| CTA/Promo Banners | 5 blocks | 4 blocks | 85% | 48 hrs |
-| Table/Comparison | 3 blocks | 3 blocks | 75% | 36 hrs |
-| Article/Content | 8 blocks | 3 blocks | 60% | 40 hrs |
-| Support Blocks | 6 blocks | 4 blocks | 70% | 35 hrs |
-| Video Blocks | 2 blocks | 1 block | 90% | 25 hrs |
-| Industry/Solution | 3 blocks | 4 blocks | 65% | 30 hrs |
-| Customer Story | 3 blocks | 2 blocks | 80% | 24 hrs |
-| Offer-Specific | 4 blocks | 3 blocks | 70% | 28 hrs |
-| Link/Navigation | 4 blocks | 2 blocks | 60% | 20 hrs |
-| Miscellaneous | 7 blocks | 10 blocks | 50% | 40 hrs |
-| **TOTAL BLOCK SAVINGS** | **68 blocks** | **58 blocks** | | **~663 hrs** |
+| Block Category | AT&T Business | FirstNet | Shared Blocks | Reuse % | Hours Saved |
+|----------------|---------------|----------|---------------|---------|-------------|
+| Header/Navigation | 2 blocks | 3 blocks | 2 (Quick Links, Anchor Nav) | 80% | 32 hrs |
+| Footer | 1 block | 1 block | 1 (Footer) | 85% | 24 hrs |
+| Hero Blocks | 7 variants | 6 variants | 1 (Base Hero Component) | 65% | 48 hrs |
+| Card Carousels | 4 blocks | 4 blocks | 3 (Offer, Product, Story Cards) | 75% | 72 hrs |
+| Feature/Value Props | 2 blocks | 3 blocks | 2 (Feature Grid, Value Props) | 70% | 40 hrs |
+| Form Blocks | 4 blocks | 3 blocks | 2 (Email Sub, Form Base) | 55% | 36 hrs |
+| FAQ/Accordion | 3 blocks | 2 blocks | 1 (Accordion Base) | 90% | 32 hrs |
+| CTA/Promo Banners | 5 blocks | 4 blocks | 3 (Promo, Contact CTA, Banner) | 80% | 56 hrs |
+| Table/Comparison | 3 blocks | 3 blocks | 2 (Comparison, Data Table) | 70% | 40 hrs |
+| Article/Content | 8 blocks | 3 blocks | 2 (Article Card, Content Block) | 55% | 36 hrs |
+| Support Blocks | 6 blocks | 4 blocks | 2 (Support Grid, Contact Cards) | 65% | 40 hrs |
+| Video Blocks | 2 blocks | 1 block | 1 (Video Embed) | 85% | 24 hrs |
+| Industry/Solution | 3 blocks | 4 blocks | 2 (Solution Cards, Image+Text) | 55% | 32 hrs |
+| Customer Story | 3 blocks | 2 blocks | 2 (Stats Block, Story Card) | 75% | 28 hrs |
+| Offer-Specific | 4 blocks | 3 blocks | 2 (Offer Cards, Pricing Pattern) | 65% | 32 hrs |
+| Link/Navigation | 4 blocks | 2 blocks | 1 (Link List) | 60% | 16 hrs |
+| Miscellaneous | 7 blocks | 10 blocks | 1 (Error Page) | 40% | 12 hrs |
+| **TOTALS** | **68 blocks** | **58 blocks** | **30 shared** | **~67% avg** | **~600 hrs** |
+
+**Site-Specific Blocks (No Reuse):**
+- **AT&T Business Only (~38 blocks):** RAI Lead Form, Check Availability, Article Tags/Share/Quote, Guided Courses, Business Center CTA, International Calling, Award Badges, etc.
+- **FirstNet Only (~28 blocks):** Interactive Map, Device Gallery/Detail, Eligibility Forms, App Carousel/Features, Why FirstNet Section, FirstNet Promise, History Text, etc.
 
 ### Template Reusability
 
-| Template | AT&T Business | FirstNet | Shared |
-|----------|---------------|----------|--------|
-| homepage | Yes | Yes | No (different) |
-| product/device | Yes | Yes | Partial (60%) |
-| category/industry | Yes | Yes | Yes (80%) |
-| article | Yes | Yes | Yes (90%) |
-| support | Yes | Yes | Yes (85%) |
-| offers | Yes | Yes | Yes (75%) |
-| landing | Yes | Yes | Yes (70%) |
-| regional/campaign | Yes | Yes | Partial (50%) |
+| Template | AT&T Business | FirstNet | Shared | Hours Saved |
+|----------|---------------|----------|--------|-------------|
+| homepage | Yes | Yes | No (different layouts) | 0 hrs |
+| product/device | Yes | Yes | Partial (60% shared) | 24 hrs |
+| category/industry | Yes | Yes | Yes (80% shared) | 32 hrs |
+| article | Yes | Yes | Yes (90% shared) | 28 hrs |
+| support | Yes | Yes | Yes (85% shared) | 24 hrs |
+| offers | Yes | Yes | Yes (75% shared) | 20 hrs |
+| landing | Yes | Yes | Yes (70% shared) | 16 hrs |
+| regional/campaign | Yes | Yes | Partial (50% shared) | 12 hrs |
 
-**Template Savings:** ~120 hours
+**Template Savings:** ~156 hours
 
 ### Integration Reusability
 
-| Integration | AT&T Business | FirstNet | Shared |
-|-------------|---------------|----------|--------|
-| Adobe Analytics | Yes | Yes | Yes (90%) |
-| Adobe Target | Yes | Yes | Yes (90%) |
-| Marketo/Eloqua | Yes | Yes | Yes (80%) |
-| Chat Widget | Yes | Yes | Yes (100%) |
-| Fastly CDN | Yes | Yes | Yes (100%) |
-| CI/CD Pipeline | Yes | Yes | Yes (100%) |
+| Integration | AT&T Business | FirstNet | Shared | Hours Saved |
+|-------------|---------------|----------|--------|-------------|
+| Adobe Analytics | Yes | Yes | Yes (90% shared) | 40 hrs |
+| Adobe Target | Yes | Yes | Yes (90% shared) | 40 hrs |
+| Marketo/Eloqua | Yes | Yes | Yes (80% shared) | 32 hrs |
+| Chat Widget | Yes | Yes | Yes (100% shared) | 24 hrs |
+| Fastly CDN | Yes | Yes | Yes (100% shared) | 28 hrs |
+| CI/CD Pipeline | Yes | Yes | Yes (100% shared) | 20 hrs |
 
-**Integration Savings:** ~80 hours
+**Integration Savings:** ~184 hours
 
 ---
 
@@ -351,26 +359,36 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 
 ### With Synergies (Combined)
 
-| Phase | Hours | Savings |
-|-------|-------|---------|
-| Foundation & Shared Infrastructure | 320 | 192 |
-| Core Blocks (Shared) | 908 | 536 |
-| Site-Specific Blocks | 420 | 156 |
-| Template Development | 524 | 356 |
-| Integrations | 420 | 232 |
-| Content Migration | 1,283 | -23 (more efficient) |
-| Testing & Launch | 520 | 116 |
-| **TOTAL** | **4,395** | **1,565** |
+| Phase | Hours | Savings | Savings Source |
+|-------|-------|---------|----------------|
+| Foundation & Shared Infrastructure | 320 | 192 | Shared repo, CI/CD, design tokens |
+| Core Blocks (30 Shared) | 600 | 844 | Build shared blocks once (~600 hrs saved) |
+| Site-Specific Blocks (66 unique) | 760 | -184 | ATT: 38 blocks, FN: 28 blocks |
+| Template Development | 524 | 356 | 8 shared templates (~156 hrs) |
+| Integrations | 468 | 184 | Analytics, CDN, chat shared |
+| Content Migration | 1,200 | 60 | Shared import framework |
+| Testing & Launch | 520 | 116 | Shared test infrastructure |
+| **TOTAL** | **4,392** | **1,568** | |
 
-**With 20% contingency: 5,274 hours**
+**With 20% contingency: 5,270 hours**
+
+### Synergy Breakdown
+
+| Category | Hours Saved | Details |
+|----------|-------------|---------|
+| Shared Blocks (30 blocks) | ~600 hrs | Hero, Carousels, Forms, FAQ, CTAs, Tables, etc. |
+| Shared Templates (8 templates) | ~156 hrs | Article, Support, Category, Offers, Landing, etc. |
+| Shared Integrations | ~184 hrs | Analytics, Target, CDN, CI/CD |
+| Shared Infrastructure | ~192 hrs | Design tokens, repo setup, staging |
+| **Total Synergy Savings** | **~1,132 hrs** | |
 
 ### Savings Summary
 
 | Metric | Sequential | Combined | Savings |
 |--------|------------|----------|---------|
-| Total Hours | 5,960 | 4,395 | **1,565 hrs (26%)** |
-| With Contingency | 7,152 | 5,274 | **1,878 hrs** |
-| Duration | 36-44 weeks | 28-34 weeks | **8-10 weeks** |
+| Total Hours | 5,960 | 4,392 | **1,568 hrs (26%)** |
+| With Contingency | 7,152 | 5,270 | **1,882 hrs** |
+| Duration | 36-44 weeks | 30-36 weeks | **6-8 weeks** |
 | Team Size | 11-15 FTEs | 8-10 FTEs | **3-5 FTEs** |
 
 ---
@@ -378,17 +396,17 @@ This document outlines the comprehensive migration plan for migrating both **AT&
 ## Combined Timeline
 
 ```
-Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34
-       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
-P1:    ████████████                                                                                            Foundation (3-4 wks)
-P2:            ████████████████████████████                                                                    Core Blocks (6-7 wks)
-P3:                        ████████████████                                                                    Site-Specific (3-4 wks)
-P4:                                ████████████████████                                                        Templates (4-5 wks)
-P5:                                        ████████████████████                                                Integrations (4-5 wks)
-P6-ATT:                                            ████████████████████████████████                            AT&T Migration (8 wks)
-P6-FN:                                                    ████████████████████████████████████                 FirstNet Migration (10 wks)
-P7:                                                                            ████████████████████            Testing/Launch (4-5 wks)
-       |______Shared Foundation______|___ATT Wave 1___|___FN Wave 1___|__Wave 2__|__Wave 3__|_Launch_|
+Week:  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+       |--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|
+P1:    ████████████                                                                                                Foundation (3-4 wks)
+P2:            ████████████████████████████                                                                        Shared Blocks (6-7 wks)
+P3:                        ████████████████████                                                                    Site-Specific (4-5 wks)
+P4:                                ████████████████████                                                            Templates (4-5 wks)
+P5:                                        ████████████████████                                                    Integrations (4-5 wks)
+P6-ATT:                                            ████████████████████████████████                                AT&T Migration (8 wks)
+P6-FN:                                                    ████████████████████████████████████████                 FirstNet Migration (10 wks)
+P7:                                                                                ████████████████████            Testing/Launch (4-5 wks)
+       |______Shared Foundation______|__Shared Blocks__|___Parallel Migration___|__QA & Launch___|
 ```
 
 ### Milestone Schedule
@@ -397,14 +415,14 @@ P7:                                                                            �
 |-----------|------|-------------|
 | Project Kickoff | 1 | Team onboarding, environment setup |
 | Foundation Complete | 4 | Shared infrastructure ready |
-| Core Blocks Complete | 11 | All shared blocks functional |
-| Site-Specific Blocks | 15 | All blocks ready for both sites |
-| Templates Complete | 20 | All page templates ready |
-| Integrations Complete | 24 | All third-party integrations |
-| AT&T Business P0 Launch | 26 | AT&T Business core pages live |
-| FirstNet P0 Launch | 28 | FirstNet core pages live |
-| Full Migration Complete | 32 | All pages migrated |
-| Final Launch | 34 | Both sites fully launched |
+| Shared Blocks Complete | 11 | 30 shared blocks functional |
+| Site-Specific Blocks | 16 | All 96 blocks ready for both sites |
+| Templates Complete | 21 | All 14 page templates ready |
+| Integrations Complete | 25 | All third-party integrations |
+| AT&T Business P0 Launch | 28 | AT&T Business core pages live |
+| FirstNet P0 Launch | 30 | FirstNet core pages live |
+| Full Migration Complete | 34 | All 1,449 pages migrated |
+| Final Launch | 36 | Both sites fully launched |
 
 ---
 
@@ -442,28 +460,38 @@ P7:                                                                            �
 
 ## Cost Estimation
 
-### Combined Cost Breakdown
+### Combined Cost Breakdown (With Synergies)
 
 | Resource Type | Hours | Rate Range | Cost Range |
 |---------------|-------|------------|------------|
-| Program Manager | 400 | $150-175/hr | $60,000-70,000 |
-| Tech Lead | 680 | $150-200/hr | $102,000-136,000 |
-| Senior Developer | 2,200 | $125-175/hr | $275,000-385,000 |
-| UE Specialist | 400 | $125-150/hr | $50,000-60,000 |
-| Content Lead | 320 | $100-125/hr | $32,000-40,000 |
-| Content Specialist | 600 | $75-100/hr | $45,000-60,000 |
-| QA Lead | 400 | $125-150/hr | $50,000-60,000 |
-| QA Engineer | 320 | $100-125/hr | $32,000-40,000 |
-| DevOps | 180 | $125-150/hr | $22,500-27,000 |
-| **TOTAL** | **5,500** | | **$668,500-878,000** |
+| Program Manager | 350 | $150-175/hr | $52,500-61,250 |
+| Tech Lead | 550 | $150-200/hr | $82,500-110,000 |
+| Senior Developer (×3) | 1,800 | $125-175/hr | $225,000-315,000 |
+| UE Specialist | 350 | $125-150/hr | $43,750-52,500 |
+| Content Lead | 280 | $100-125/hr | $28,000-35,000 |
+| Content Specialist (×2) | 500 | $75-100/hr | $37,500-50,000 |
+| QA Lead | 350 | $125-150/hr | $43,750-52,500 |
+| QA Engineer | 280 | $100-125/hr | $28,000-35,000 |
+| DevOps | 160 | $125-150/hr | $20,000-24,000 |
+| **BASE TOTAL** | **4,620** | | **$561,000-735,250** |
+| Contingency (20%) | 924 | - | $112,200-147,050 |
+| **GRAND TOTAL** | **5,544** | | **$673,200-882,300** |
 
 ### Cost Comparison
 
-| Approach | Cost Range | Notes |
-|----------|------------|-------|
-| Sequential (separate projects) | $742K-$993K | Full teams for each |
-| Combined (with synergies) | $668K-$878K | Shared resources |
-| **Savings** | **$74K-$115K** | **10-12%** |
+| Approach | Hours | Cost Range | Notes |
+|----------|-------|------------|-------|
+| Sequential (separate projects) | 7,152 | $930K-$1.18M | Full teams for each site |
+| Combined (with synergies) | 5,270 | $673K-$882K | Shared resources |
+| **Savings** | **1,882 hrs** | **$257K-$298K** | **~26% reduction** |
+
+### Cost Per Page
+
+| Metric | Sequential | Combined |
+|--------|------------|----------|
+| Total Pages | 1,449 | 1,449 |
+| Cost per Page | $642-$814 | $465-$609 |
+| Savings per Page | - | $177-$205 |
 
 ---
 
@@ -767,11 +795,15 @@ See [FIRSTNET-PAGE-INVENTORY.md](./FIRSTNET-PAGE-INVENTORY.md) for complete URL 
 
 ---
 
-*Document Version: 2.0*
+*Document Version: 2.1*
 *Combined Total Pages: ~1,449*
 *AT&T Business: 68 consolidated blocks (from 117 variations)*
 *FirstNet: 58 consolidated blocks (from 106 variations)*
-*Combined Total Effort: 5,274 hours (with contingency)*
-*Combined Duration: 28-34 weeks*
+*Shared Blocks: 30 (built once for both sites)*
+*Effective Unique Blocks: 96*
+*Combined Total Effort: 5,270 hours (with 20% contingency)*
+*Synergy Savings: ~1,568 hours (26%)*
+*Combined Duration: 30-36 weeks*
+*Cost Estimate: $673K-$882K (with synergies)*
 *Created: January 2026*
 *Last Updated: January 2026*

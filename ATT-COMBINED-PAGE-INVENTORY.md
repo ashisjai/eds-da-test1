@@ -8,6 +8,13 @@
 | FirstNet | ~700 | ~150 | ~300 | ~250 | 58 (consolidated) |
 | **COMBINED** | **~1,449** | **~250** | **~650** | **~549** | **126 total** |
 
+### Synergy Analysis
+- **Shared Blocks:** 30 blocks (built once for both sites)
+- **AT&T-Specific Blocks:** 38 blocks
+- **FirstNet-Specific Blocks:** 28 blocks
+- **Effective Unique Blocks:** 96 blocks
+- **Effort Savings:** ~1,568 hours (26%)
+
 ---
 
 # PART 1: AT&T BUSINESS (business.att.com)
