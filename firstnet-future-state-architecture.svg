@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1100" height="750" fill="#ffffff"/>
+
+  <!-- Title -->
+  <rect x="20" y="15" width="380" height="25" fill="#4CAF50"/>
+  <text x="30" y="33" font-size="12" font-weight="bold" fill="white">FirstNet Future State (AEM EDS with Universal Editor)</text>
+
+  <!-- Legend -->
+  <rect x="20" y="55" width="150" height="110" fill="white" stroke="#ddd"/>
+  <text x="30" y="75" font-size="11" font-weight="bold" fill="#333">Legend</text>
+  <line x1="30" y1="90" x2="60" y2="90" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="70" y="94" font-size="10" fill="#333">OOTB Integration</text>
+  <line x1="30" y1="110" x2="60" y2="110" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="70" y="114" font-size="10" fill="#333">API Integration</text>
+  <line x1="30" y1="130" x2="60" y2="130" stroke="#2196F3" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="70" y="134" font-size="10" fill="#333">ETL</text>
+  <line x1="30" y1="150" x2="60" y2="150" stroke="#333" stroke-width="2"/>
+  <text x="70" y="154" font-size="10" fill="#333">System Action</text>
+
+  <!-- B2B Customer -->
+  <rect x="480" y="55" width="140" height="40" rx="8" fill="white" stroke="#ddd"/>
+  <text x="515" y="80" font-size="12" fill="#333">B2B Customer</text>
+
+  <!-- Connection line -->
+  <line x1="550" y1="95" x2="550" y2="115" stroke="#333" stroke-width="2"/>
+
+  <!-- FirstNet Websites -->
+  <rect x="460" y="115" width="180" height="40" rx="8" fill="#E8F5E9" stroke="#ddd"/>
+  <text x="500" y="140" font-size="12" fill="#333">FirstNet Websites</text>
+
+  <!-- Connection line -->
+  <line x1="550" y1="155" x2="550" y2="175" stroke="#333" stroke-width="2"/>
+
+  <!-- Akamai CDN -->
+  <rect x="480" y="175" width="140" height="40" rx="8" fill="white" stroke="#ddd"/>
+  <text x="512" y="200" font-size="12" fill="#333">Akamai CDN</text>
+
+  <!-- Connection to CLUDO -->
+  <line x1="640" y1="135" x2="800" y2="135" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="800" y1="135" x2="800" y2="230" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- CLUDO Search -->
+  <rect x="750" y="230" width="160" height="40" rx="8" fill="white" stroke="#ddd"/>
+  <text x="765" y="255" font-size="12" fill="#333">CLUDO Search SAAS</text>
+
+  <!-- Connection line -->
+  <line x1="550" y1="215" x2="550" y2="240" stroke="#333" stroke-width="2"/>
+
+  <!-- AEM EDS Container -->
+  <rect x="240" y="240" width="620" height="200" rx="8" fill="#FAFAFA" stroke="#ddd"/>
+  <text x="450" y="265" font-size="13" font-weight="bold" fill="#333">AEM Edge Delivery Services</text>
+  <text x="400" y="285" font-size="11" fill="#666">Multi-cloud SaaS • Pure Front-end Development</text>
+
+  <!-- EDS Components Row 1 -->
+  <rect x="260" y="300" width="120" height="50" rx="6" fill="#E8F5E9" stroke="#2E7D32"/>
+  <text x="275" y="322" font-size="10" font-weight="bold" fill="#2E7D32">Universal Editor</text>
+  <text x="272" y="338" font-size="9" fill="#666">WYSIWYG In-context</text>
+
+  <rect x="395" y="300" width="120" height="50" rx="6" fill="#E8F5E9" stroke="#2E7D32"/>
+  <text x="398" y="322" font-size="10" font-weight="bold" fill="#2E7D32">Document Authoring</text>
+  <text x="405" y="338" font-size="9" fill="#666">Word / Google Docs</text>
+
+  <rect x="530" y="300" width="120" height="50" rx="6" fill="#E8F5E9" stroke="#2E7D32"/>
+  <text x="560" y="322" font-size="10" font-weight="bold" fill="#2E7D32">AEM Author</text>
+  <text x="555" y="338" font-size="9" fill="#666">Content Source</text>
+
+  <rect x="665" y="300" width="120" height="50" rx="6" fill="white" stroke="#4CAF50"/>
+  <text x="700" y="322" font-size="10" font-weight="bold" fill="#2E7D32">GitHub</text>
+  <text x="690" y="338" font-size="9" fill="#666">Code &amp; Deploy</text>
+
+  <!-- EDS Components Row 2 -->
+  <rect x="260" y="365" width="120" height="50" rx="6" fill="white" stroke="#4CAF50"/>
+  <text x="290" y="387" font-size="10" font-weight="bold" fill="#2E7D32">Edge CDN</text>
+  <text x="275" y="403" font-size="9" fill="#666">Adobe Managed</text>
+
+  <rect x="395" y="365" width="120" height="50" rx="6" fill="white" stroke="#4CAF50"/>
+  <text x="420" y="387" font-size="10" font-weight="bold" fill="#2E7D32">AEM Assets</text>
+  <text x="415" y="403" font-size="9" fill="#666">DAM Integration</text>
+
+  <rect x="530" y="365" width="120" height="50" rx="6" fill="white" stroke="#4CAF50"/>
+  <text x="555" y="387" font-size="10" font-weight="bold" fill="#2E7D32">Block Library</text>
+  <text x="560" y="403" font-size="9" fill="#666">Components</text>
+
+  <rect x="665" y="365" width="120" height="50" rx="6" fill="white" stroke="#4CAF50"/>
+  <text x="685" y="387" font-size="10" font-weight="bold" fill="#2E7D32">Target / Launch</text>
+  <text x="690" y="403" font-size="9" fill="#666">Personalization</text>
+
+  <!-- Adobe DTM -->
+  <rect x="100" y="460" width="200" height="40" rx="8" fill="white" stroke="#ddd"/>
+  <text x="125" y="485" font-size="11" fill="#333">Adobe DTM/Tag (ATT Hosted)</text>
+
+  <!-- Connection from EDS to DTM -->
+  <line x1="350" y1="440" x2="350" y2="480" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="300" y1="480" x2="350" y2="480" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- Cloud Data Storage -->
+  <rect x="30" y="520" width="140" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="45" y="542" font-size="11" font-weight="bold" fill="#333">Cloud Data Storage</text>
+  <text x="75" y="560" font-size="10" fill="#666">Snowflake</text>
+
+  <!-- Marketing Data Platform -->
+  <rect x="30" y="590" width="140" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="70" y="612" font-size="11" font-weight="bold" fill="#333">Marketing</text>
+  <text x="58" y="630" font-size="10" fill="#666">Data Platform</text>
+
+  <!-- Adobe Cloud SAAS Container -->
+  <rect x="190" y="520" width="170" height="130" rx="8" fill="#FFF8E1" stroke="#ddd"/>
+  <text x="210" y="545" font-size="11" font-weight="bold" fill="#333">Adobe Cloud SAAS</text>
+
+  <rect x="205" y="555" width="140" height="35" rx="4" fill="white"/>
+  <text x="215" y="572" font-size="10" font-weight="bold" fill="#333">Adobe Analytics</text>
+  <text x="215" y="585" font-size="9" fill="#666">(Appmeasurement)</text>
+
+  <rect x="205" y="600" width="140" height="35" rx="4" fill="white"/>
+  <text x="215" y="622" font-size="10" font-weight="bold" fill="#333">Adobe Target</text>
+
+  <!-- Email Marketing -->
+  <rect x="380" y="520" width="140" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="395" y="542" font-size="11" font-weight="bold" fill="#333">Email Marketing</text>
+  <text x="410" y="560" font-size="10" fill="#666">Oracle Eloqua</text>
+
+  <!-- CRM Salesforce -->
+  <rect x="380" y="590" width="140" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="400" y="607" font-size="11" font-weight="bold" fill="#333">Customer</text>
+  <text x="400" y="622" font-size="11" font-weight="bold" fill="#333">Relationship Mgmt</text>
+  <text x="420" y="638" font-size="10" fill="#666">Salesforce</text>
+
+  <!-- Feedback Tool -->
+  <rect x="540" y="520" width="140" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="553" y="542" font-size="11" font-weight="bold" fill="#333">Feedback SaaS Tool</text>
+  <text x="570" y="560" font-size="10" fill="#666">Foresee Survey</text>
+
+  <!-- B2B Marketing Container -->
+  <rect x="700" y="520" width="200" height="140" rx="8" fill="#E3F2FD" stroke="#ddd"/>
+  <text x="715" y="545" font-size="10" font-weight="bold" fill="#333">B2B Marketing Intent/Analytics</text>
+
+  <rect x="715" y="555" width="80" height="30" rx="4" fill="white"/>
+  <text x="720" y="575" font-size="8" fill="#333">Bombora Analytics</text>
+
+  <rect x="805" y="555" width="80" height="30" rx="4" fill="white"/>
+  <text x="810" y="575" font-size="8" fill="#333">Demandbase</text>
+
+  <rect x="715" y="595" width="80" height="30" rx="4" fill="white"/>
+  <text x="720" y="615" font-size="8" fill="#333">Clarity Analytics</text>
+
+  <rect x="805" y="595" width="80" height="30" rx="4" fill="white"/>
+  <text x="810" y="615" font-size="8" fill="#333">Quantum Metrics</text>
+
+  <rect x="715" y="635" width="80" height="25" rx="4" fill="white"/>
+  <text x="720" y="652" font-size="8" fill="#333">Thunderhead</text>
+
+  <rect x="805" y="635" width="80" height="25" rx="4" fill="white"/>
+  <text x="810" y="652" font-size="8" fill="#333">Floodlight/GTag</text>
+
+  <!-- AppNexus -->
+  <rect x="920" y="520" width="130" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="955" y="542" font-size="11" font-weight="bold" fill="#333">AppNexus</text>
+  <text x="955" y="560" font-size="10" fill="#666">xandr (DSP)</text>
+
+  <!-- Flashtalking -->
+  <rect x="920" y="590" width="130" height="55" rx="8" fill="white" stroke="#ddd"/>
+  <text x="955" y="615" font-size="11" font-weight="bold" fill="#333">flashtalking</text>
+  <text x="955" y="632" font-size="10" fill="#666">Flashtalking</text>
+
+  <!-- Adobe Tag line -->
+  <line x1="200" y1="500" x2="900" y2="500" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="850" y="495" font-size="9" fill="#999">Adobe Tag</text>
+
+</svg>
