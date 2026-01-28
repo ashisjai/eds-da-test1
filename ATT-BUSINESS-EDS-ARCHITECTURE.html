@@ -1,0 +1,769 @@
+<h1>AT&amp;T Business - Edge Delivery Services Architecture</h1>
+<h2>Universal Editor with AEM as Content Source</h2>
+<hr>
+<h2>High-Level Architecture Overview</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                    AT&amp;T BUSINESS EDS ARCHITECTURE (UE + AEM)                             │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+
+                                    ┌─────────────────┐
+                                    │   CONTENT       │
+                                    │   AUTHORS       │
+                                    │   (Marketing)   │
+                                    └────────┬────────┘
+                                             │
+                                             ▼
+                    ┌────────────────────────────────────────────────┐
+                    │              UNIVERSAL EDITOR                   │
+                    │         experience.adobe.com/aem/editor         │
+                    │                                                 │
+                    │   ┌─────────────┐  ┌─────────────┐  ┌────────┐ │
+                    │   │  Component  │  │   Content   │  │Preview │ │
+                    │   │   Library   │  │   Palette   │  │ Panel  │ │
+                    │   └─────────────┘  └─────────────┘  └────────┘ │
+                    └────────────────────────┬───────────────────────┘
+                                             │
+                                             │ AEM Content API
+                                             ▼
+                    ┌────────────────────────────────────────────────┐
+                    │           AEM AS A CLOUD SERVICE                │
+                    │              (Content Source)                   │
+                    │                                                 │
+                    │   ┌─────────────────────────────────────────┐  │
+                    │   │           CONTENT REPOSITORY             │  │
+                    │   │                                         │  │
+                    │   │  /content/att-business/                 │  │
+                    │   │  ├── /en/                               │  │
+                    │   │  │   ├── index                          │  │
+                    │   │  │   ├── /products/                     │  │
+                    │   │  │   ├── /portfolios/                   │  │
+                    │   │   │   ├── /learn/                        │  │
+                    │   │  │   └── /support/                      │  │
+                    │   │  └── /es/ (future)                      │  │
+                    │   └─────────────────────────────────────────┘  │
+                    │                                                 │
+                    │   ┌─────────────────────────────────────────┐  │
+                    │   │              AEM ASSETS (DAM)            │  │
+                    │   │                                         │  │
+                    │   │  /content/dam/att-business/             │  │
+                    │   │  ├── /images/                           │  │
+                    │   │  ├── /videos/                           │  │
+                    │   │  ├── /documents/                        │  │
+                    │   │  └── /icons/                            │  │
+                    │   └─────────────────────────────────────────┘  │
+                    └────────────────────────┬───────────────────────┘
+                                             │
+                                             │ Content Sync
+                                             ▼
+                              ┌─────────────────────────┐
+                              │      GITHUB REPO        │
+                              │  ashisjai/eds-da-test1  │
+                              │                         │
+                              │  ├── blocks/  (68)      │
+                              │  ├── styles/            │
+                              │  ├── scripts/           │
+                              │  └── component-*.json   │
+                              └───────────┬─────────────┘
+                                          │
+                          ┌───────────────┼───────────────┐
+                          │               │               │
+                          ▼               ▼               ▼
+               ┌─────────────────┐ ┌─────────────┐ ┌─────────────────┐
+               │   AEM.PAGE      │ │  AEM.LIVE   │ │   FASTLY CDN    │
+               │   (Preview)     │ │ (Staging)   │ │   (Production)  │
+               │                 │ │             │ │                 │
+               │ main--att--     │ │ Staging     │ │ business.att.com│
+               │ aem.page        │ │ Environment │ │                 │
+               └────────┬────────┘ └──────┬──────┘ └────────┬────────┘
+                        └─────────────────┼─────────────────┘
+                                          ▼
+                              ┌─────────────────────────┐
+                              │       END USERS         │
+                              │    business.att.com     │
+                              └─────────────────────────┘
+</code></pre>
+<hr>
+<h2>Detailed AEM + Universal Editor Architecture</h2>
+<h3>1. Content Authoring Layer</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                           CONTENT AUTHORING LAYER                                        │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│  ┌───────────────────────────────────────────────────────────────────────────────────┐ │
+│  │                        UNIVERSAL EDITOR (UE)                                       │ │
+│  │                   experience.adobe.com/aem/editor                                  │ │
+│  │                                                                                    │ │
+│  │   ┌────────────────────────────────────────────────────────────────────────────┐  │ │
+│  │   │                         EDITING INTERFACE                                   │  │ │
+│  │   │                                                                            │  │ │
+│  │   │  ┌──────────────┐  ┌──────────────────┐  ┌──────────────┐  ┌───────────┐  │  │ │
+│  │   │  │  Component   │  │   Properties     │  │   Preview    │  │  Publish  │  │  │ │
+│  │   │  │   Library    │  │   Inspector      │  │    Panel     │  │  Actions  │  │  │ │
+│  │   │  │              │  │                  │  │              │  │           │  │  │ │
+│  │   │  │ ┌──────────┐ │  │ • Title          │  │ ┌──────────┐ │  │ • Preview │  │  │ │
+│  │   │  │ │  Hero    │ │  │ • Description    │  │ │ Desktop  │ │  │ • Publish │  │  │ │
+│  │   │  │ │  Cards   │ │  │ • Image          │  │ │ Tablet   │ │  │ • Schedule│  │  │ │
+│  │   │  │ │  Carousel│ │  │ • CTA Link       │  │ │ Mobile   │ │  │ • Revert  │  │  │ │
+│  │   │  │ │  Tabs    │ │  │ • Background     │  │ └──────────┘ │  │           │  │  │ │
+│  │   │  │ │  Form    │ │  │ • Styling        │  │              │  │           │  │  │ │
+│  │   │  │ │  Table   │ │  │                  │  │              │  │           │  │  │ │
+│  │   │  │ └──────────┘ │  │                  │  │              │  │           │  │  │ │
+│  │   │  └──────────────┘  └──────────────────┘  └──────────────┘  └───────────┘  │  │ │
+│  │   └────────────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                                    │ │
+│  │   ┌────────────────────────────────────────────────────────────────────────────┐  │ │
+│  │   │                      COMPONENT DEFINITIONS                                  │  │ │
+│  │   │                                                                            │  │ │
+│  │   │   component-definition.json                                                │  │ │
+│  │   │   ├── groups: [hero, cards, content, media, forms, navigation]            │  │ │
+│  │   │   ├── components:                                                          │  │ │
+│  │   │   │   ├── hero: { fields: [title, subtitle, image, cta, background] }     │  │ │
+│  │   │   │   ├── cards: { fields: [items[], layout, columns, style] }            │  │ │
+│  │   │   │   ├── carousel: { fields: [slides[], autoplay, duration] }            │  │ │
+│  │   │   │   ├── form: { fields: [action, method, fields[], validation] }        │  │ │
+│  │   │   │   └── ... (68 total components)                                       │  │ │
+│  │   │   └── filters: { page-templates, allowed-components }                      │  │ │
+│  │   │                                                                            │  │ │
+│  │   │   component-models.json                                                    │  │ │
+│  │   │   ├── models:                                                              │  │ │
+│  │   │   │   ├── hero-model: { title: text, image: reference, cta: object }      │  │ │
+│  │   │   │   ├── cards-model: { items: multifield, layout: select }              │  │ │
+│  │   │   │   └── ... (field definitions for all components)                      │  │ │
+│  │   └────────────────────────────────────────────────────────────────────────────┘  │ │
+│  └───────────────────────────────────────────────────────────────────────────────────┘ │
+│                                             │                                           │
+│                                             │ IMS Authentication                        │
+│                                             │ Content API (CRUD)                        │
+│                                             ▼                                           │
+│  ┌───────────────────────────────────────────────────────────────────────────────────┐ │
+│  │                      AEM AS A CLOUD SERVICE                                        │ │
+│  │                                                                                    │ │
+│  │   ┌──────────────────────────────┐    ┌──────────────────────────────┐           │ │
+│  │   │     AUTHOR ENVIRONMENT       │    │    PUBLISH ENVIRONMENT       │           │ │
+│  │   │                              │    │                              │           │ │
+│  │   │  • Content creation          │    │  • Content delivery          │           │ │
+│  │   │  • Workflow management       │───▶│  • CDN integration           │           │ │
+│  │   │  • Preview                   │    │  • Cache management          │           │ │
+│  │   │  • Version control           │    │  • Replication               │           │ │
+│  │   │                              │    │                              │           │ │
+│  │   └──────────────────────────────┘    └──────────────────────────────┘           │ │
+│  │                                                                                    │ │
+│  │   ┌────────────────────────────────────────────────────────────────────────────┐  │ │
+│  │   │                        CONTENT STRUCTURE                                    │  │ │
+│  │   │                                                                            │  │ │
+│  │   │   /content/att-business/                                                   │  │ │
+│  │   │   │                                                                        │  │ │
+│  │   │   ├── /en/                           # English content                     │  │ │
+│  │   │   │   ├── index                      # Homepage                            │  │ │
+│  │   │   │   ├── /portfolios/               # Portfolio pages (9)                 │  │ │
+│  │   │   │   │   ├── mobility               # Wireless services                   │  │ │
+│  │   │   │   │   ├── business-internet      # Internet services                   │  │ │
+│  │   │   │   │   ├── cybersecurity          # Security solutions                  │  │ │
+│  │   │   │   │   └── ...                                                          │  │ │
+│  │   │   │   ├── /products/                 # Product pages (~150)                │  │ │
+│  │   │   │   │   ├── att-business-fiber                                           │  │ │
+│  │   │   │   │   ├── wireless-plans                                               │  │ │
+│  │   │   │   │   └── ...                                                          │  │ │
+│  │   │   │   ├── /learn/                    # Content hub (~400)                  │  │ │
+│  │   │   │   │   ├── /customer-stories/     # Case studies (112)                  │  │ │
+│  │   │   │   │   ├── /tech-advice/          # Articles                            │  │ │
+│  │   │   │   │   └── /research-reports/     # Reports                             │  │ │
+│  │   │   │   ├── /industries/               # Industry pages (14)                 │  │ │
+│  │   │   │   ├── /support/                  # Support pages (60)                  │  │ │
+│  │   │   │   └── /offers/                   # Offer pages (37)                    │  │ │
+│  │   │   │                                                                        │  │ │
+│  │   │   └── /es/ (future)                  # Spanish content                     │  │ │
+│  │   │                                                                            │  │ │
+│  │   └────────────────────────────────────────────────────────────────────────────┘  │ │
+│  │                                                                                    │ │
+│  │   ┌────────────────────────────────────────────────────────────────────────────┐  │ │
+│  │   │                        AEM ASSETS (DAM)                                     │  │ │
+│  │   │                                                                            │  │ │
+│  │   │   /content/dam/att-business/                                               │  │ │
+│  │   │   │                                                                        │  │ │
+│  │   │   ├── /images/                       # Image assets                        │  │ │
+│  │   │   │   ├── /heroes/                   # Hero background images              │  │ │
+│  │   │   │   ├── /products/                 # Product images                      │  │ │
+│  │   │   │   ├── /team/                     # Team/author photos                  │  │ │
+│  │   │   │   └── /icons/                    # UI icons                            │  │ │
+│  │   │   │                                                                        │  │ │
+│  │   │   ├── /videos/                       # Video assets                        │  │ │
+│  │   │   │   ├── /product-demos/                                                  │  │ │
+│  │   │   │   └── /testimonials/                                                   │  │ │
+│  │   │   │                                                                        │  │ │
+│  │   │   └── /documents/                    # PDF/downloadables                   │  │ │
+│  │   │       ├── /datasheets/                                                     │  │ │
+│  │   │       └── /whitepapers/                                                    │  │ │
+│  │   │                                                                            │  │ │
+│  │   │   ASSET FEATURES:                                                          │  │ │
+│  │   │   • Smart Crop (AI-powered)                                                │  │ │
+│  │   │   • Dynamic Media delivery                                                 │  │ │
+│  │   │   • Renditions (web, mobile, thumbnail)                                    │  │ │
+│  │   │   • Metadata management                                                    │  │ │
+│  │   │   • Asset versioning                                                       │  │ │
+│  │   │                                                                            │  │ │
+│  │   └────────────────────────────────────────────────────────────────────────────┘  │ │
+│  └───────────────────────────────────────────────────────────────────────────────────┘ │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>2. Code Repository Structure (EDS + UE)</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                    GITHUB REPOSITORY (EDS + UE)                              │
+│                     ashisjai/eds-da-test1                                   │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   att-business/                                                             │
+│   │                                                                         │
+│   ├── blocks/                              # 68 Block Components            │
+│   │   ├── hero/                                                             │
+│   │   │   ├── hero.js                      # Block decoration logic        │
+│   │   │   └── hero.css                     # Block styling                 │
+│   │   ├── cards/                                                            │
+│   │   ├── carousel/                                                         │
+│   │   ├── accordion/                                                        │
+│   │   ├── tabs/                                                             │
+│   │   ├── form/                                                             │
+│   │   ├── rai-form/                        # AT&amp;T-specific                  │
+│   │   └── ... (58 more blocks)                                              │
+│   │                                                                         │
+│   ├── styles/                              # Global Styles                  │
+│   │   ├── styles.css                       # Main stylesheet               │
+│   │   ├── fonts.css                        # AT&amp;T Aleck Sans               │
+│   │   └── tokens.css                       # Design tokens                 │
+│   │                                                                         │
+│   ├── scripts/                             # Core Scripts                   │
+│   │   ├── scripts.js                       # Main scripts                  │
+│   │   ├── aem.js                           # AEM utilities                 │
+│   │   └── delayed.js                       # Lazy-loaded scripts           │
+│   │                                                                         │
+│   │   ╔═══════════════════════════════════════════════════════════════╗    │
+│   │   ║              UNIVERSAL EDITOR CONFIGURATION                    ║    │
+│   │   ╚═══════════════════════════════════════════════════════════════╝    │
+│   │                                                                         │
+│   ├── component-definition.json            # UE Component Definitions      │
+│   │   {                                                                     │
+│   │     &quot;groups&quot;: [                                                         │
+│   │       { &quot;title&quot;: &quot;Hero&quot;, &quot;id&quot;: &quot;hero&quot; },                               │
+│   │       { &quot;title&quot;: &quot;Cards&quot;, &quot;id&quot;: &quot;cards&quot; },                             │
+│   │       { &quot;title&quot;: &quot;Content&quot;, &quot;id&quot;: &quot;content&quot; }                          │
+│   │     ],                                                                  │
+│   │     &quot;components&quot;: [                                                     │
+│   │       { &quot;title&quot;: &quot;Hero&quot;, &quot;id&quot;: &quot;hero&quot;, &quot;plugins&quot;: {...} },             │
+│   │       { &quot;title&quot;: &quot;Cards&quot;, &quot;id&quot;: &quot;cards&quot;, &quot;plugins&quot;: {...} }            │
+│   │     ]                                                                   │
+│   │   }                                                                     │
+│   │                                                                         │
+│   ├── component-models.json                # UE Component Models           │
+│   │   {                                                                     │
+│   │     &quot;models&quot;: [                                                         │
+│   │       {                                                                 │
+│   │         &quot;id&quot;: &quot;hero&quot;,                                                   │
+│   │         &quot;fields&quot;: [                                                     │
+│   │           { &quot;component&quot;: &quot;text&quot;, &quot;name&quot;: &quot;title&quot; },                    │
+│   │           { &quot;component&quot;: &quot;reference&quot;, &quot;name&quot;: &quot;image&quot; },               │
+│   │           { &quot;component&quot;: &quot;aem-content&quot;, &quot;name&quot;: &quot;cta&quot; }                │
+│   │         ]                                                               │
+│   │       }                                                                 │
+│   │     ]                                                                   │
+│   │   }                                                                     │
+│   │                                                                         │
+│   ├── component-filters.json               # UE Component Filters          │
+│   │   {                                                                     │
+│   │     &quot;filters&quot;: [                                                        │
+│   │       { &quot;id&quot;: &quot;homepage&quot;, &quot;components&quot;: [&quot;hero&quot;, &quot;cards&quot;, &quot;carousel&quot;] },│
+│   │       { &quot;id&quot;: &quot;product&quot;, &quot;components&quot;: [&quot;hero&quot;, &quot;tabs&quot;, &quot;comparison&quot;] } │
+│   │     ]                                                                   │
+│   │   }                                                                     │
+│   │                                                                         │
+│   ├── tools/                               # Development Tools              │
+│   │   └── sidekick/                                                         │
+│   │       └── library.json                 # Block library config          │
+│   │                                                                         │
+│   ├── head.html                            # Custom head elements          │
+│   ├── fstab.yaml                           # AEM Content Source mapping    │
+│   │   mountpoints:                                                          │
+│   │     /:                                                                  │
+│   │       url: https://author-xxxxx.adobeaemcloud.com/content/att-business │
+│   │       type: markup                                                      │
+│   │                                                                         │
+│   └── paths.json                           # URL path mappings              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>3. Data Flow Architecture (AEM + UE)</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                      DATA FLOW ARCHITECTURE (AEM + UE)                                   │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│  AUTHORING FLOW                                                                         │
+│  ═════════════                                                                          │
+│                                                                                         │
+│  ┌──────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────────┐              │
+│  │  Author  │───▶│  Universal   │───▶│    AEM       │───▶│   Content    │              │
+│  │ (Browser)│    │   Editor     │    │  Author      │    │   Published  │              │
+│  └──────────┘    └──────────────┘    └──────────────┘    └──────────────┘              │
+│       │                │                    │                    │                      │
+│       │                │                    │                    │                      │
+│       │          IMS Auth            JCR Storage          Replication                  │
+│       │          GraphQL API         Version Control      to Publish                   │
+│       │                                    │                    │                      │
+│       │                                    ▼                    ▼                      │
+│       │                           ┌──────────────┐    ┌──────────────┐                 │
+│       │                           │    AEM       │    │   AEM        │                 │
+│       │                           │  Workflows   │    │  Publish     │                 │
+│       │                           │              │    │              │                 │
+│       │                           │ • Approval   │    │ • Content    │                 │
+│       │                           │ • Review     │    │   Delivery   │                 │
+│       │                           │ • Scheduling │    │ • API        │                 │
+│       │                           └──────────────┘    └──────────────┘                 │
+│       │                                                      │                         │
+│       │                                                      │ Content Sync            │
+│       │                                                      ▼                         │
+│       │                                            ┌──────────────────┐                │
+│       │                                            │   HELIX PIPELINE │                │
+│       │                                            │                  │                │
+│       │                                            │  • Fetch content │                │
+│       │                                            │  • Apply blocks  │                │
+│       │                                            │  • Generate HTML │                │
+│       │                                            │  • Optimize      │                │
+│       │                                            └────────┬─────────┘                │
+│       │                                                     │                          │
+│       │              ┌──────────────────────────────────────┼──────────────┐           │
+│       │              │                                      │              │           │
+│       │              ▼                                      ▼              ▼           │
+│       │    ┌──────────────────┐              ┌──────────────────┐ ┌─────────────┐     │
+│       │    │    AEM.PAGE      │              │    AEM.LIVE      │ │   FASTLY    │     │
+│       │    │    (Preview)     │              │    (Staging)     │ │    CDN      │     │
+│       │    │                  │              │                  │ │             │     │
+│       │    │  main--att--     │              │  Live content    │ │ Production  │     │
+│       │    │  aem.page        │              │  staging         │ │ delivery    │     │
+│       │    └────────┬─────────┘              └────────┬─────────┘ └──────┬──────┘     │
+│       │             │                                 │                  │            │
+│       │             └─────────────────────────────────┼──────────────────┘            │
+│       │                                               │                               │
+│       └───────────────────────────────────────────────┼───────────────────────────────│
+│                                                       │                               │
+│                                                       ▼                               │
+│  DELIVERY FLOW                                 ┌─────────────┐                        │
+│  ═════════════                                 │  END USER   │                        │
+│                                                │   Request   │                        │
+│  ┌──────────┐    ┌──────────┐    ┌──────────┐ └──────┬──────┘                        │
+│  │   User   │───▶│  Fastly  │───▶│   Edge   │        │                               │
+│  │ Request  │    │   CDN    │    │  Cache   │        │                               │
+│  └──────────┘    └──────────┘    └──────────┘        │                               │
+│                                       │              │                               │
+│                        Cache Miss ────┘              │                               │
+│                                       │              │                               │
+│                                       ▼              │                               │
+│                              ┌──────────────┐        │                               │
+│                              │ Helix Origin │        │                               │
+│                              │              │        │                               │
+│                              │ • Fetch AEM  │        │                               │
+│                              │ • Decorate   │        │                               │
+│                              │ • Return HTML│        │                               │
+│                              └──────────────┘        │                               │
+│                                       │              │                               │
+│                                       └──────────────┘                               │
+│                                               │                                      │
+│                                               ▼                                      │
+│                              ┌──────────────────────────────────┐                    │
+│                              │      CLIENT-SIDE RENDERING       │                    │
+│                              │                                  │                    │
+│                              │  1. HTML skeleton (&lt; 100ms)      │                    │
+│                              │  2. CSS loads                    │                    │
+│                              │  3. JS decorates blocks          │                    │
+│                              │  4. Lazy load images             │                    │
+│                              │  5. Delayed third-party          │                    │
+│                              └──────────────────────────────────┘                    │
+│                                                                                      │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>4. AEM + EDS Integration Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                        AEM + EDS INTEGRATION ARCHITECTURE                                │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│                              ┌────────────────────────────┐                             │
+│                              │      ADOBE EXPERIENCE      │                             │
+│                              │          CLOUD             │                             │
+│                              └────────────────────────────┘                             │
+│                                           │                                             │
+│              ┌────────────────────────────┼────────────────────────────┐                │
+│              │                            │                            │                │
+│              ▼                            ▼                            ▼                │
+│   ┌────────────────────┐     ┌────────────────────┐     ┌────────────────────┐         │
+│   │   ADOBE IMS        │     │   AEM AS A CLOUD   │     │  UNIVERSAL EDITOR  │         │
+│   │                    │     │      SERVICE       │     │                    │         │
+│   │  • Authentication  │     │                    │     │  • Visual editing  │         │
+│   │  • Authorization   │◀───▶│  • Author env      │◀───▶│  • Live preview    │         │
+│   │  • SSO             │     │  • Publish env     │     │  • Component lib   │         │
+│   │  • Token mgmt      │     │  • Assets (DAM)    │     │  • Properties      │         │
+│   │                    │     │  • Workflows       │     │                    │         │
+│   └────────────────────┘     └─────────┬──────────┘     └────────────────────┘         │
+│                                        │                                                │
+│                                        │ Content API                                    │
+│                                        ▼                                                │
+│                         ┌──────────────────────────────┐                               │
+│                         │     CONTENT SYNC LAYER       │                               │
+│                         │                              │                               │
+│                         │  • Markup API (HTML)         │                               │
+│                         │  • JSON API (structured)     │                               │
+│                         │  • Asset delivery API        │                               │
+│                         │  • Cache invalidation        │                               │
+│                         └──────────────┬───────────────┘                               │
+│                                        │                                                │
+│              ┌─────────────────────────┼─────────────────────────┐                      │
+│              │                         │                         │                      │
+│              ▼                         ▼                         ▼                      │
+│   ┌────────────────────┐   ┌────────────────────┐   ┌────────────────────┐             │
+│   │    GITHUB REPO     │   │   HELIX PIPELINE   │   │    FASTLY CDN      │             │
+│   │                    │   │                    │   │                    │             │
+│   │  • Block code      │   │  • Content fetch   │   │  • Edge caching    │             │
+│   │  • Styles          │   │  • HTML generation │   │  • Global delivery │             │
+│   │  • Scripts         │──▶│  • Block decorate  │──▶│  • SSL/TLS         │             │
+│   │  • Component defs  │   │  • Optimization    │   │  • DDoS protection │             │
+│   │                    │   │                    │   │                    │             │
+│   └────────────────────┘   └────────────────────┘   └────────────────────┘             │
+│                                                                 │                      │
+│                                                                 ▼                      │
+│                                                      ┌────────────────────┐            │
+│                                                      │   BUSINESS.ATT.COM │            │
+│                                                      │                    │            │
+│                                                      │   • 749 pages      │            │
+│                                                      │   • 68 blocks      │            │
+│                                                      │   • &lt; 2.5s LCP     │            │
+│                                                      └────────────────────┘            │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>5. Block Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                           BLOCK ARCHITECTURE                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   BLOCK CATEGORIES (68 Total)                                               │
+│   ═══════════════════════════                                               │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │  NAVIGATION (2)        │  HERO (7)              │  CARDS (4)        │   │
+│   │  ├── header            │  ├── hero-full         │  ├── cards        │   │
+│   │  ├── footer            │  ├── hero-split        │  ├── cards-offer  │   │
+│   │  └── quick-links       │  ├── hero-video        │  ├── cards-story  │   │
+│   │                        │  ├── hero-animated     │  └── cards-product│   │
+│   │                        │  ├── hero-carousel     │                   │   │
+│   │                        │  ├── hero-minimal      │                   │   │
+│   │                        │  └── hero-industry     │                   │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │  CONTENT (8)           │  INTERACTIVE (7)       │  FORMS (4)        │   │
+│   │  ├── columns           │  ├── carousel          │  ├── form         │   │
+│   │  ├── article           │  ├── tabs              │  ├── rai-form     │   │
+│   │  ├── quote             │  ├── accordion         │  ├── email-signup │   │
+│   │  ├── stats             │  ├── modal             │  └── contact-form │   │
+│   │  ├── testimonial       │  ├── tooltip           │                   │   │
+│   │  ├── author            │  ├── mega-menu         │                   │   │
+│   │  ├── tags              │  └── search            │                   │   │
+│   │  └── share             │                        │                   │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │  MEDIA (3)             │  CTA/PROMO (5)         │  TABLES (3)       │   │
+│   │  ├── video             │  ├── cta-banner        │  ├── table        │   │
+│   │  ├── image-gallery     │  ├── promo             │  ├── comparison   │   │
+│   │  └── embed             │  ├── alert             │  └── pricing      │   │
+│   │                        │  ├── announcement      │                   │   │
+│   │                        │  └── sticky-cta        │                   │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │  SUPPORT (6)           │  INDUSTRY (3)          │  OFFERS (4)       │   │
+│   │  ├── support-grid      │  ├── solution-cards    │  ├── offer-card   │   │
+│   │  ├── contact-card      │  ├── industry-hero     │  ├── deal-banner  │   │
+│   │  ├── faq               │  └── use-case          │  ├── promo-tile   │   │
+│   │  ├── chat-widget       │                        │  └── bundle       │   │
+│   │  ├── help-topic        │                        │                   │   │
+│   │  └── resource-links    │                        │                   │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>6. Delivery &amp; CDN Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                      DELIVERY &amp; CDN ARCHITECTURE                             │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                         ORIGIN LAYER                                 │   │
+│   │                                                                      │   │
+│   │    ┌──────────────────┐         ┌──────────────────┐                │   │
+│   │    │   AEM PUBLISH    │         │   GITHUB REPO    │                │   │
+│   │    │                  │         │                  │                │   │
+│   │    │  • Content API   │         │  • Block code    │                │   │
+│   │    │  • Asset API     │         │  • Styles/CSS    │                │   │
+│   │    │  • Markup API    │         │  • Scripts/JS    │                │   │
+│   │    └────────┬─────────┘         └────────┬─────────┘                │   │
+│   │             │                            │                          │   │
+│   │             └────────────┬───────────────┘                          │   │
+│   │                          │                                          │   │
+│   │                          ▼                                          │   │
+│   │               ┌──────────────────────┐                              │   │
+│   │               │   HELIX PIPELINE     │                              │   │
+│   │               │                      │                              │   │
+│   │               │  • Fetch AEM content │                              │   │
+│   │               │  • Apply blocks      │                              │   │
+│   │               │  • Generate HTML     │                              │   │
+│   │               │  • Inject styles     │                              │   │
+│   │               │  • Optimize assets   │                              │   │
+│   │               └──────────┬───────────┘                              │   │
+│   │                          │                                          │   │
+│   └──────────────────────────┼──────────────────────────────────────────┘   │
+│                              │                                              │
+│   ┌──────────────────────────┼──────────────────────────────────────────┐   │
+│   │                          ▼          CDN LAYER                        │   │
+│   │               ┌──────────────────────┐                              │   │
+│   │               │     FASTLY CDN       │                              │   │
+│   │               │                      │                              │   │
+│   │               │  • Edge caching      │                              │   │
+│   │               │  • SSL termination   │                              │   │
+│   │               │  • WAF protection    │                              │   │
+│   │               │  • DDoS mitigation   │                              │   │
+│   │               │  • Geographic routing│                              │   │
+│   │               └──────────┬───────────┘                              │   │
+│   │                          │                                          │   │
+│   │         ┌────────────────┼────────────────┐                         │   │
+│   │         │                │                │                         │   │
+│   │         ▼                ▼                ▼                         │   │
+│   │   ┌───────────┐   ┌───────────┐   ┌───────────┐                    │   │
+│   │   │  Americas │   │   EMEA    │   │   APAC    │                    │   │
+│   │   │  POPs     │   │   POPs    │   │   POPs    │                    │   │
+│   │   │           │   │           │   │           │                    │   │
+│   │   │ US, CA,   │   │ UK, DE,   │   │ JP, AU,   │                    │   │
+│   │   │ MX, BR    │   │ FR, NL    │   │ SG, IN    │                    │   │
+│   │   └───────────┘   └───────────┘   └───────────┘                    │   │
+│   │                                                                      │   │
+│   └──────────────────────────────────────────────────────────────────────┘   │
+│                              │                                              │
+│                              ▼                                              │
+│                   ┌──────────────────────┐                                  │
+│                   │      END USERS       │                                  │
+│                   │   business.att.com   │                                  │
+│                   │                      │                                  │
+│                   │  PERFORMANCE:        │                                  │
+│                   │  • LCP &lt; 2.5s        │                                  │
+│                   │  • FID &lt; 100ms       │                                  │
+│                   │  • CLS &lt; 0.1         │                                  │
+│                   │  • Lighthouse &gt; 90   │                                  │
+│                   └──────────────────────┘                                  │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>7. Integration Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                       INTEGRATION ARCHITECTURE                               │
+├──────────────────���──────────────────────────────────────────────────────────┤
+│                                                                             │
+│                          ┌───────────────────┐                              │
+│                          │   AT&amp;T BUSINESS   │                              │
+│                          │   EDS + AEM       │                              │
+│                          └─────────┬─────────┘                              │
+│                                    │                                        │
+│      ┌─────────────────────────────┼─────────────────────────────┐         │
+│      │                             │                             │         │
+│      ▼                             ▼                             ▼         │
+│ ┌─────────────┐           ┌─────────────────┐           ┌─────────────┐   │
+│ │  ANALYTICS  │           │   MARKETING     │           │   COMMERCE  │   │
+│ │             │           │   AUTOMATION    │           │             │   │
+│ │ ┌─────────┐ │           │ ┌─────────────┐ │           │ ┌─────────┐ │   │
+│ │ │ Adobe   │ │           │ │   Marketo   │ │           │ │ Product │ │   │
+│ │ │Analytics│ │           │ │   /Eloqua   │ │           │ │ Catalog │ │   │
+│ │ └─────────┘ │           │ └─────────────┘ │           │ └─────────┘ │   │
+│ │ ┌─────────┐ │           │ ┌─────────────┐ │           │ ┌─────────┐ │   │
+│ │ │ Adobe   │ │           │ │   Chili     │ │           │ │ Pricing │ │   │
+│ │ │ Target  │ │           │ │   Piper     │ │           │ │   API   │ │   │
+│ │ └─────────┘ │           │ └─────────────┘ │           │ └─────────┘ │   │
+│ └─────────────┘           └─────────────────┘           └─────────────┘   │
+│                                                                             │
+│      ┌─────────────────────────────┼─────────────────────────────┐         │
+│      │                             │                             │         │
+│      ▼                             ▼                             ▼         │
+│ ┌─────────────┐           ┌─────────────────┐           ┌─────────────┐   │
+│ │   SEARCH    │           │    SUPPORT      │           │    MEDIA    │   │
+│ │             │           │                 │           │             │   │
+│ │ ┌─────────┐ │           │ ┌─────────────┐ │           │ ┌─────────┐ │   │
+│ │ │ Algolia │ │           │ │Live Chat    │ │           │ │AEM Assets│ │   │
+│ │ │ Search  │ │           │ │Widget       │ │           │ │ (DAM)   │ │   │
+│ │ └─────────┘ │           │ └─────────────┘ │           │ └─────────┘ │   │
+│ │ ┌─────────┐ │           │ ┌─────────────┐ │           │ ┌─────────┐ │   │
+│ │ │AEM Search│ │           │ │ Contact     │ │           │ │ Dynamic │ │   │
+│ │ │ Index   │ │           │ │ Center API  │ │           │ │ Media   │ │   │
+│ │ └─────────┘ │           │ └─────────────┘ │           │ └─────────┘ │   │
+│ └─────────────┘           └─────────────────┘           └─────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h3>8. Security Architecture</h3>
+<pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                        SECURITY ARCHITECTURE                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                      ADOBE IMS (Identity)                            │   │
+│   │                                                                      │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │   │
+│   │   │   SSO        │  │   OAuth 2.0  │  │   JWT        │              │   │
+│   │   │   Login      │  │   Tokens     │  │   Auth       │              │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘              │   │
+│   │                                                                      │   │
+│   │   ROLE-BASED ACCESS (RBAC):                                         │   │
+│   │   • Admin - Full AEM + UE access                                    │   │
+│   │   • Author - Content editing in UE                                  │   │
+│   │   • Reviewer - Preview only access                                  │   │
+│   │   • Developer - Code repo + preview                                 │   │
+│   │                                                                      │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                        EDGE SECURITY                                 │   │
+│   │                                                                      │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │   │
+│   │   │   Fastly     │  │    WAF       │  │   DDoS       │              │   │
+│   │   │   Shield     │  │  Protection  │  │ Mitigation   │              │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘              │   │
+│   │                                                                      │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │   │
+│   │   │   SSL/TLS    │  │    Bot       │  │   Rate       │              │   │
+│   │   │   (HTTPS)    │  │  Management  │  │  Limiting    │              │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘              │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                     APPLICATION SECURITY                             │   │
+│   │                                                                      │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │   │
+│   │   │    CSP       │  │   CORS       │  │  Input       │              │   │
+│   │   │  Headers     │  │  Policy      │  │ Validation   │              │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘              │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+│   ┌─────────────────────────────────────────────────────────────────────┐   │
+│   │                       PRIVACY &amp; COMPLIANCE                           │   │
+│   │                                                                      │   │
+│   │   ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │   │
+│   │   │  OneTrust    │  │    GDPR      │  │    CCPA      │              │   │
+│   │   │   Consent    │  │  Compliance  │  │  Compliance  │              │   │
+│   │   └──────────────┘  └──────────────┘  └──────────────┘              │   │
+│   └─────────────────────────────────────────────────────────────────────┘   │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2>Environment URLs</h2>
+<table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>URL</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>AEM Author</strong></td>
+<td><code>https://author-pXXXX-eYYYY.adobeaemcloud.com</code></td>
+<td>Content authoring</td>
+</tr>
+<tr>
+<td><strong>AEM Publish</strong></td>
+<td><code>https://publish-pXXXX-eYYYY.adobeaemcloud.com</code></td>
+<td>Content delivery API</td>
+</tr>
+<tr>
+<td><strong>Universal Editor</strong></td>
+<td><code>https://experience.adobe.com/aem/editor</code></td>
+<td>Visual authoring</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td><code>https://main--att-business--ashisjai.aem.page</code></td>
+<td>Development preview</td>
+</tr>
+<tr>
+<td><strong>Live</strong></td>
+<td><code>https://main--att-business--ashisjai.aem.live</code></td>
+<td>Staging/UAT</td>
+</tr>
+<tr>
+<td><strong>Production</strong></td>
+<td><code>https://business.att.com</code></td>
+<td>Live site (Fastly CDN)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Key Architecture Decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Choice</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Content Source</strong></td>
+<td>AEM as a Cloud Service</td>
+<td>Enterprise CMS, workflow support, DAM integration</td>
+</tr>
+<tr>
+<td><strong>Authoring</strong></td>
+<td>Universal Editor</td>
+<td>Visual editing, real-time preview, component library</td>
+</tr>
+<tr>
+<td><strong>CDN</strong></td>
+<td>Fastly (custom)</td>
+<td>Existing AT&amp;T infrastructure, global edge</td>
+</tr>
+<tr>
+<td><strong>Asset Management</strong></td>
+<td>AEM Assets (DAM)</td>
+<td>Smart crop, renditions, metadata</td>
+</tr>
+<tr>
+<td><strong>Analytics</strong></td>
+<td>Adobe Analytics</td>
+<td>Existing AT&amp;T stack, deep integration</td>
+</tr>
+<tr>
+<td><strong>Personalization</strong></td>
+<td>Adobe Target</td>
+<td>AEM integration, A/B testing</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>Adobe IMS</td>
+<td>SSO, enterprise identity</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Configuration Files</h2>
+<h3>fstab.yaml (AEM Content Source)</h3>
+<pre><code class="language-yaml">mountpoints:
+  /:
+    url: https://author-pXXXX-eYYYY.adobeaemcloud.com/content/att-business/en
+    type: markup
+</code></pre>
+<h3>component-definition.json (UE Components)</h3>
+<pre><code class="language-json">{
+  &quot;groups&quot;: [
+    { &quot;title&quot;: &quot;Hero&quot;, &quot;id&quot;: &quot;hero&quot;, &quot;components&quot;: [&quot;hero&quot;, &quot;hero-split&quot;, &quot;hero-video&quot;] },
+    { &quot;title&quot;: &quot;Cards&quot;, &quot;id&quot;: &quot;cards&quot;, &quot;components&quot;: [&quot;cards&quot;, &quot;cards-offer&quot;, &quot;cards-story&quot;] },
+    { &quot;title&quot;: &quot;Content&quot;, &quot;id&quot;: &quot;content&quot;, &quot;components&quot;: [&quot;columns&quot;, &quot;accordion&quot;, &quot;tabs&quot;] }
+  ]
+}
+</code></pre>
+<hr>
+<p><em>Document Version: 2.0 (UE + AEM)</em>
+<em>Updated: January 2026</em>
+<em>Architecture: Universal Editor with AEM as Content Source</em></p>
+
