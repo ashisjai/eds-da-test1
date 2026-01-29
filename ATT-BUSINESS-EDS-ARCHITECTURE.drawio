@@ -1,0 +1,433 @@
+<mxfile host="app.diagrams.net" modified="2026-01-29T00:00:00.000Z" agent="Claude" version="22.0.0" type="device">
+  <diagram id="att-eds-architecture" name="AT&amp;T Business EDS Architecture">
+    <mxGraphModel dx="1800" dy="2400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Main Title -->
+        <mxCell id="main-title" value="AT&amp;T BUSINESS EDS ARCHITECTURE&#xa;Universal Editor + AEM as Content Source" style="text;html=1;strokeColor=none;fillColor=#009FDB;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontStyle=1;fontSize=20;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="600" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 1: HIGH-LEVEL OVERVIEW ==================== -->
+        <mxCell id="section1-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="90" width="760" height="550" as="geometry"/>
+        </mxCell>
+        <mxCell id="section1-title" value="HIGH-LEVEL ARCHITECTURE" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="100" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Content Authors -->
+        <mxCell id="authors" value="CONTENT AUTHORS&#xa;(Marketing)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;fontStyle=1;fontSize=11;fontColor=#01579B;" vertex="1" parent="1">
+          <mxGeometry x="300" y="130" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Universal Editor -->
+        <mxCell id="ue-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="180" y="200" width="400" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="ue-title" value="UNIVERSAL EDITOR&#xa;experience.adobe.com/aem/editor" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="205" width="240" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ue-comp-lib" value="Component&#xa;Library" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="248" width="80" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ue-content" value="Content&#xa;Palette" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="248" width="80" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ue-preview" value="Preview&#xa;Panel" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="248" width="80" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ue-publish" value="Publish&#xa;Actions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="248" width="80" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow from authors to UE -->
+        <mxCell id="arrow1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="authors" target="ue-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- AEM as a Cloud Service -->
+        <mxCell id="aem-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="130" y="310" width="500" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="aem-title" value="AEM AS A CLOUD SERVICE (Content Source)" style="text;html=1;strokeColor=none;fillColor=#F57C00;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="315" width="320" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="aem-content" value="CONTENT REPOSITORY&#xa;/content/att-business/&#xa;├── /en/ (749 pages)&#xa;├── /products/ (~150)&#xa;└── /learn/ (~400)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="145" y="345" width="180" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="aem-dam" value="AEM ASSETS (DAM)&#xa;/content/dam/att-business/&#xa;├── /images/&#xa;├── /videos/&#xa;└── /documents/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="340" y="345" width="180" height="85" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow from UE to AEM -->
+        <mxCell id="arrow2" value="AEM Content API" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;verticalAlign=bottom;" edge="1" parent="1" source="ue-box" target="aem-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- GitHub Repo -->
+        <mxCell id="github" value="GITHUB REPO&#xa;ashisjai/eds-da-test1&#xa;├── blocks/ (68)&#xa;├── styles/&#xa;├── scripts/&#xa;└── component-*.json" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=9;fontColor=#4A148C;fontStyle=1;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="300" y="460" width="160" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow from AEM to GitHub -->
+        <mxCell id="arrow3" value="Content Sync" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="aem-box" target="github">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Delivery environments -->
+        <mxCell id="aem-page" value="AEM.PAGE&#xa;(Preview)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="570" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="aem-live" value="AEM.LIVE&#xa;(Staging)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="570" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="fastly" value="FASTLY CDN&#xa;(Production)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="570" width="90" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrows from GitHub to delivery -->
+        <mxCell id="arrow4" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="github" target="aem-page">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow5" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="github" target="aem-live">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow6" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="github" target="fastly">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- End Users -->
+        <mxCell id="endusers" value="END USERS&#xa;business.att.com" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#009FDB;strokeColor=#006B8F;fontSize=11;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="570" width="130" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Arrow to end users -->
+        <mxCell id="arrow7" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="fastly" target="endusers">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 2: BLOCK ARCHITECTURE ==================== -->
+        <mxCell id="section2-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="800" y="90" width="480" height="550" as="geometry"/>
+        </mxCell>
+        <mxCell id="section2-title" value="BLOCK ARCHITECTURE (68 Blocks)" style="text;html=1;strokeColor=none;fillColor=#388E3C;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="100" width="250" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Block categories -->
+        <mxCell id="nav-blocks" value="NAVIGATION (2)&#xa;├── header&#xa;├── footer&#xa;└── quick-links" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="145" width="130" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="hero-blocks" value="HERO (7)&#xa;├── hero-full&#xa;├── hero-split&#xa;├── hero-video&#xa;├── hero-animated&#xa;├── hero-carousel&#xa;├── hero-minimal&#xa;└── hero-industry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="960" y="145" width="130" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="cards-blocks" value="CARDS (4)&#xa;├── cards&#xa;├── cards-offer&#xa;├── cards-story&#xa;└── cards-product" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="145" width="130" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="content-blocks" value="CONTENT (8)&#xa;├── columns&#xa;├── article&#xa;├── quote&#xa;├── stats&#xa;├── testimonial&#xa;├── author&#xa;├── tags&#xa;└── share" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="275" width="130" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="interactive-blocks" value="INTERACTIVE (7)&#xa;├── carousel&#xa;├── tabs&#xa;├── accordion&#xa;├── modal&#xa;├── tooltip&#xa;├── mega-menu&#xa;└── search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="960" y="275" width="130" height="115" as="geometry"/>
+        </mxCell>
+        <mxCell id="forms-blocks" value="FORMS (4)&#xa;├── form&#xa;├── rai-form&#xa;├── email-signup&#xa;└── contact-form" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="275" width="130" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="media-blocks" value="MEDIA (3)&#xa;├── video&#xa;├── image-gallery&#xa;└── embed" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="415" width="130" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="cta-blocks" value="CTA/PROMO (5)&#xa;├── cta-banner&#xa;├── promo&#xa;├── alert&#xa;├── announcement&#xa;└── sticky-cta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="960" y="405" width="130" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="tables-blocks" value="TABLES (3)&#xa;├── table&#xa;├── comparison&#xa;└── pricing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="415" width="130" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="support-blocks" value="SUPPORT (6)&#xa;├── support-grid&#xa;├── contact-card&#xa;├── faq&#xa;├── chat-widget&#xa;├── help-topic&#xa;└── resource-links" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="500" width="130" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="industry-blocks" value="INDUSTRY (3)&#xa;├── solution-cards&#xa;├── industry-hero&#xa;└── use-case" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="960" y="515" width="130" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="offers-blocks" value="OFFERS (4)&#xa;├── offer-card&#xa;├── deal-banner&#xa;├── promo-tile&#xa;└── bundle" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="500" width="130" height="85" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 3: DATA FLOW ==================== -->
+        <mxCell id="section3-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="660" width="760" height="350" as="geometry"/>
+        </mxCell>
+        <mxCell id="section3-title" value="DATA FLOW ARCHITECTURE" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="670" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Authoring Flow -->
+        <mxCell id="flow-label1" value="AUTHORING FLOW" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=11;fontColor=#7B1FA2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="710" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-author" value="Author&#xa;(Browser)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;fontSize=9;fontColor=#01579B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="735" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-ue" value="Universal&#xa;Editor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="735" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-aem-author" value="AEM&#xa;Author" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="240" y="735" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-published" value="Content&#xa;Published" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="340" y="735" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="flow-author" target="flow-ue">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="flow-ue" target="flow-aem-author">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="flow-aem-author" target="flow-published">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Helix Pipeline -->
+        <mxCell id="helix" value="HELIX PIPELINE&#xa;• Fetch content&#xa;• Apply blocks&#xa;• Generate HTML&#xa;• Optimize" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=9;fontColor=#4A148C;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="460" y="710" width="130" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow4" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="flow-published" target="helix">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Delivery Flow -->
+        <mxCell id="flow-label2" value="DELIVERY FLOW" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=11;fontColor=#7B1FA2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="810" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-user" value="User&#xa;Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0288D1;fontSize=9;fontColor=#01579B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="835" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-fastly" value="Fastly&#xa;CDN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="140" y="835" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-edge" value="Edge&#xa;Cache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="240" y="835" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-origin" value="Helix&#xa;Origin" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=9;fontColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="340" y="835" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow5" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="flow-user" target="flow-fastly">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow6" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="flow-fastly" target="flow-edge">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow7" value="Cache Miss" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;dashed=1;" edge="1" parent="1" source="flow-edge" target="flow-origin">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Client-side rendering -->
+        <mxCell id="client-render" value="CLIENT-SIDE RENDERING&#xa;1. HTML skeleton (&lt; 100ms)&#xa;2. CSS loads&#xa;3. JS decorates blocks&#xa;4. Lazy load images&#xa;5. Delayed third-party" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="460" y="820" width="180" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow8" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="helix" target="client-render">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Performance metrics -->
+        <mxCell id="perf-metrics" value="PERFORMANCE&#xa;• LCP &lt; 2.5s&#xa;• FID &lt; 100ms&#xa;• CLS &lt; 0.1&#xa;• Lighthouse &gt; 90" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#009FDB;strokeColor=#006B8F;fontSize=9;fontColor=#FFFFFF;fontStyle=1;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="660" y="820" width="110" height="95" as="geometry"/>
+        </mxCell>
+        <mxCell id="flow-arrow9" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#666666;" edge="1" parent="1" source="client-render" target="perf-metrics">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 4: INTEGRATIONS ==================== -->
+        <mxCell id="section4-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="800" y="660" width="480" height="350" as="geometry"/>
+        </mxCell>
+        <mxCell id="section4-title" value="INTEGRATION ARCHITECTURE" style="text;html=1;strokeColor=none;fillColor=#F57C00;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="670" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Central hub -->
+        <mxCell id="hub" value="AT&amp;T BUSINESS&#xa;EDS + AEM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#009FDB;strokeColor=#006B8F;fontSize=11;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="965" y="720" width="130" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Analytics -->
+        <mxCell id="analytics-box" value="ANALYTICS&#xa;• Adobe Analytics&#xa;• Adobe Target" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="790" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Marketing -->
+        <mxCell id="marketing-box" value="MARKETING&#xa;• Marketo/Eloqua&#xa;• Chili Piper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="975" y="790" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Commerce -->
+        <mxCell id="commerce-box" value="COMMERCE&#xa;• Product Catalog&#xa;• Pricing API" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="790" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Search -->
+        <mxCell id="search-box" value="SEARCH&#xa;• Algolia Search&#xa;• AEM Search" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=9;fontColor=#4A148C;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="820" y="870" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Support -->
+        <mxCell id="support-box" value="SUPPORT&#xa;• Live Chat&#xa;• Contact Center" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="975" y="870" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Media -->
+        <mxCell id="media-box" value="MEDIA&#xa;• AEM Assets&#xa;• Dynamic Media" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00796B;fontSize=9;fontColor=#004D40;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="870" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Integration arrows -->
+        <mxCell id="int-arrow1" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#666666;" edge="1" parent="1" source="hub" target="analytics-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="int-arrow2" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#666666;" edge="1" parent="1" source="hub" target="marketing-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="int-arrow3" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#666666;" edge="1" parent="1" source="hub" target="commerce-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="int-arrow4" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#666666;" edge="1" parent="1" source="hub" target="search-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="int-arrow5" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#666666;" edge="1" parent="1" source="hub" target="support-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="int-arrow6" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=1;strokeColor=#666666;" edge="1" parent="1" source="hub" target="media-box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 5: SECURITY ==================== -->
+        <mxCell id="section5-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#BDBDBD;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1030" width="1260" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="section5-title" value="SECURITY ARCHITECTURE" style="text;html=1;strokeColor=none;fillColor=#C2185B;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1040" width="200" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Adobe IMS -->
+        <mxCell id="ims-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1085" width="280" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="ims-title" value="ADOBE IMS (Identity)" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1095" width="150" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="ims-sso" value="SSO&#xa;Login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1130" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ims-oauth" value="OAuth 2.0&#xa;Tokens" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="135" y="1130" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ims-jwt" value="JWT&#xa;Auth" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#1976D2;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="215" y="1130" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="ims-rbac" value="RBAC: Admin, Author, Reviewer, Developer" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontColor=#1565C0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="1175" width="260" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge Security -->
+        <mxCell id="edge-sec-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#388E3C;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="340" y="1085" width="280" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-sec-title" value="EDGE SECURITY" style="text;html=1;strokeColor=none;fillColor=#388E3C;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1095" width="130" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-fastly" value="Fastly&#xa;Shield" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="355" y="1130" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-waf" value="WAF&#xa;Protection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="435" y="1130" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-ddos" value="DDoS&#xa;Mitigation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#388E3C;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="515" y="1130" width="70" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-extras" value="SSL/TLS • Bot Management • Rate Limiting" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=9;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1175" width="260" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Application Security -->
+        <mxCell id="app-sec-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="640" y="1085" width="220" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="app-sec-title" value="APPLICATION SECURITY" style="text;html=1;strokeColor=none;fillColor=#F57C00;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1095" width="160" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="app-csp" value="CSP&#xa;Headers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="655" y="1130" width="60" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="app-cors" value="CORS&#xa;Policy" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="725" y="1130" width="60" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="app-input" value="Input&#xa;Validation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#F57C00;fontSize=9;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="795" y="1130" width="60" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- Privacy -->
+        <mxCell id="privacy-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#C2185B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1085" width="220" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="privacy-title" value="PRIVACY &amp; COMPLIANCE" style="text;html=1;strokeColor=none;fillColor=#C2185B;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="1095" width="160" height="25" as="geometry"/>
+        </mxCell>
+        <mxCell id="privacy-onetrust" value="OneTrust&#xa;Consent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;" vertex="1" parent="1">
+          <mxGeometry x="895" y="1130" width="60" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="privacy-gdpr" value="GDPR" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;" vertex="1" parent="1">
+          <mxGeometry x="965" y="1130" width="60" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="privacy-ccpa" value="CCPA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C2185B;fontSize=9;fontColor=#880E4F;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="1130" width="60" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 6: ENVIRONMENT URLS ==================== -->
+        <mxCell id="section6-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00ACC1;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1250" width="1260" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="section6-title" value="ENVIRONMENT URLs" style="text;html=1;strokeColor=none;fillColor=#00ACC1;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="1260" width="180" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="env-author" value="AEM AUTHOR&#xa;author-pXXXX-eYYYY.adobeaemcloud.com&#xa;Content authoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#00ACC1;fontSize=9;fontColor=#006064;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1300" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-ue" value="UNIVERSAL EDITOR&#xa;experience.adobe.com/aem/editor&#xa;Visual authoring" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#00ACC1;fontSize=9;fontColor=#006064;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1300" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-preview" value="PREVIEW&#xa;main--att-business--ashisjai.aem.page&#xa;Development preview" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#00ACC1;fontSize=9;fontColor=#006064;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="1300" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-live" value="LIVE&#xa;main--att-business--ashisjai.aem.live&#xa;Staging/UAT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#00ACC1;fontSize=9;fontColor=#006064;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1300" width="190" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-prod" value="PRODUCTION&#xa;business.att.com&#xa;Live site (Fastly CDN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#009FDB;strokeColor=#006B8F;fontSize=9;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="1300" width="190" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- Flow arrows between environments -->
+        <mxCell id="env-arrow1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#00ACC1;" edge="1" parent="1" source="env-author" target="env-ue">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-arrow2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#00ACC1;" edge="1" parent="1" source="env-ue" target="env-preview">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-arrow3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#00ACC1;" edge="1" parent="1" source="env-preview" target="env-live">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="env-arrow4" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#00ACC1;" edge="1" parent="1" source="env-live" target="env-prod">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Key Stats -->
+        <mxCell id="stats-box" value="749 Pages | 68 Blocks | 9 Portfolios | 14 Industries" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#009FDB;strokeColor=#006B8F;fontSize=12;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="1300" width="180" height="55" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
