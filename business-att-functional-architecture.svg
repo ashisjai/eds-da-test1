@@ -1,0 +1,348 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1300" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1400" height="1300" fill="#ffffff"/>
+
+  <!-- Title -->
+  <rect x="20" y="15" width="480" height="40" rx="4" fill="#009FDB"/>
+  <text x="35" y="43" font-size="18" font-weight="bold" fill="white">business.att.com - Functional Architecture</text>
+  <text x="520" y="43" font-size="12" fill="#666">B2B Digital Experience Platform | 749+ Pages | 68 Components</text>
+
+  <!-- ==================== USER TOUCHPOINTS ==================== -->
+  <rect x="20" y="70" width="1360" height="120" rx="10" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+  <text x="40" y="95" font-size="12" font-weight="bold" fill="#1565C0" letter-spacing="1">USER TOUCHPOINTS</text>
+
+  <rect x="40" y="110" width="180" height="65" rx="8" fill="white" stroke="#64B5F6"/>
+  <text x="75" y="135" font-size="11" font-weight="bold" fill="#1565C0">Enterprise Buyers</text>
+  <text x="60" y="155" font-size="9" fill="#666">Large business decisions</text>
+  <text x="60" y="168" font-size="9" fill="#666">RFP research, procurement</text>
+
+  <rect x="240" y="110" width="180" height="65" rx="8" fill="white" stroke="#64B5F6"/>
+  <text x="285" y="135" font-size="11" font-weight="bold" fill="#1565C0">SMB Owners</text>
+  <text x="260" y="155" font-size="9" fill="#666">Small/medium business</text>
+  <text x="260" y="168" font-size="9" fill="#666">Self-service purchasing</text>
+
+  <rect x="440" y="110" width="180" height="65" rx="8" fill="white" stroke="#64B5F6"/>
+  <text x="475" y="135" font-size="11" font-weight="bold" fill="#1565C0">IT Decision Makers</text>
+  <text x="460" y="155" font-size="9" fill="#666">Technical evaluation</text>
+  <text x="460" y="168" font-size="9" fill="#666">Solution architecture</text>
+
+  <rect x="640" y="110" width="180" height="65" rx="8" fill="white" stroke="#64B5F6"/>
+  <text x="680" y="135" font-size="11" font-weight="bold" fill="#1565C0">Sales Partners</text>
+  <text x="660" y="155" font-size="9" fill="#666">Channel partners</text>
+  <text x="660" y="168" font-size="9" fill="#666">Reseller enablement</text>
+
+  <rect x="840" y="110" width="180" height="65" rx="8" fill="white" stroke="#64B5F6"/>
+  <text x="865" y="135" font-size="11" font-weight="bold" fill="#1565C0">Existing Customers</text>
+  <text x="860" y="155" font-size="9" fill="#666">Account management</text>
+  <text x="860" y="168" font-size="9" fill="#666">Support, upgrades</text>
+
+  <rect x="1040" y="110" width="180" height="65" rx="8" fill="white" stroke="#64B5F6"/>
+  <text x="1085" y="135" font-size="11" font-weight="bold" fill="#1565C0">Researchers</text>
+  <text x="1060" y="155" font-size="9" fill="#666">Industry analysts</text>
+  <text x="1060" y="168" font-size="9" fill="#666">Content consumers</text>
+
+  <!-- Arrow down -->
+  <polygon points="700,195 710,210 690,210" fill="#666"/>
+
+  <!-- ==================== DIGITAL EXPERIENCE FUNCTIONS ==================== -->
+  <rect x="20" y="220" width="1360" height="280" rx="10" fill="#E8F5E9" stroke="#388E3C" stroke-width="2"/>
+  <text x="40" y="245" font-size="12" font-weight="bold" fill="#2E7D32" letter-spacing="1">DIGITAL EXPERIENCE FUNCTIONS</text>
+
+  <!-- Row 1 -->
+  <rect x="40" y="260" width="210" height="100" rx="8" fill="white" stroke="#81C784"/>
+  <text x="60" y="285" font-size="11" font-weight="bold" fill="#2E7D32">PRODUCT DISCOVERY</text>
+  <text x="60" y="305" font-size="9" fill="#666">Portfolio browsing (9 categories)</text>
+  <text x="60" y="320" font-size="9" fill="#666">Product catalog (~150 products)</text>
+  <text x="60" y="335" font-size="9" fill="#666">Solution finder</text>
+  <text x="60" y="350" font-size="9" fill="#666">Comparison tools</text>
+
+  <rect x="270" y="260" width="210" height="100" rx="8" fill="white" stroke="#81C784"/>
+  <text x="290" y="285" font-size="11" font-weight="bold" fill="#2E7D32">CONTENT CONSUMPTION</text>
+  <text x="290" y="305" font-size="9" fill="#666">Customer stories (112)</text>
+  <text x="290" y="320" font-size="9" fill="#666">Tech advice articles</text>
+  <text x="290" y="335" font-size="9" fill="#666">Research reports</text>
+  <text x="290" y="350" font-size="9" fill="#666">Video content</text>
+
+  <rect x="500" y="260" width="210" height="100" rx="8" fill="white" stroke="#81C784"/>
+  <text x="520" y="285" font-size="11" font-weight="bold" fill="#2E7D32">INDUSTRY SOLUTIONS</text>
+  <text x="520" y="305" font-size="9" fill="#666">14 industry verticals</text>
+  <text x="520" y="320" font-size="9" fill="#666">Use case showcases</text>
+  <text x="520" y="335" font-size="9" fill="#666">Vertical-specific content</text>
+  <text x="520" y="350" font-size="9" fill="#666">Industry expertise</text>
+
+  <rect x="730" y="260" width="210" height="100" rx="8" fill="white" stroke="#81C784"/>
+  <text x="750" y="285" font-size="11" font-weight="bold" fill="#2E7D32">SEARCH &amp; NAVIGATION</text>
+  <text x="750" y="305" font-size="9" fill="#666">CLUDO site search</text>
+  <text x="750" y="320" font-size="9" fill="#666">Mega menu navigation</text>
+  <text x="750" y="335" font-size="9" fill="#666">Breadcrumb trails</text>
+  <text x="750" y="350" font-size="9" fill="#666">Quick links</text>
+
+  <rect x="960" y="260" width="210" height="100" rx="8" fill="white" stroke="#81C784"/>
+  <text x="980" y="285" font-size="11" font-weight="bold" fill="#2E7D32">OFFERS &amp; PROMOTIONS</text>
+  <text x="980" y="305" font-size="9" fill="#666">Current deals (37 offer pages)</text>
+  <text x="980" y="320" font-size="9" fill="#666">Bundle packages</text>
+  <text x="980" y="335" font-size="9" fill="#666">Promotional banners</text>
+  <text x="980" y="350" font-size="9" fill="#666">Limited-time offers</text>
+
+  <rect x="1190" y="260" width="170" height="100" rx="8" fill="white" stroke="#81C784"/>
+  <text x="1210" y="285" font-size="11" font-weight="bold" fill="#2E7D32">PERSONALIZATION</text>
+  <text x="1210" y="305" font-size="9" fill="#666">Adobe Target A/B</text>
+  <text x="1210" y="320" font-size="9" fill="#666">Segment targeting</text>
+  <text x="1210" y="335" font-size="9" fill="#666">Recommendations</text>
+  <text x="1210" y="350" font-size="9" fill="#666">Dynamic content</text>
+
+  <!-- Row 2 -->
+  <rect x="40" y="375" width="210" height="110" rx="8" fill="white" stroke="#81C784"/>
+  <text x="60" y="400" font-size="11" font-weight="bold" fill="#2E7D32">LEAD GENERATION</text>
+  <text x="60" y="420" font-size="9" fill="#666">RAI Form (Request a Call)</text>
+  <text x="60" y="435" font-size="9" fill="#666">Contact forms</text>
+  <text x="60" y="450" font-size="9" fill="#666">Email signup</text>
+  <text x="60" y="465" font-size="9" fill="#666">Gated content downloads</text>
+  <text x="60" y="480" font-size="9" fill="#666">Quote requests</text>
+
+  <rect x="270" y="375" width="210" height="110" rx="8" fill="white" stroke="#81C784"/>
+  <text x="290" y="400" font-size="11" font-weight="bold" fill="#2E7D32">CUSTOMER SUPPORT</text>
+  <text x="290" y="420" font-size="9" fill="#666">Support hub (60 pages)</text>
+  <text x="290" y="435" font-size="9" fill="#666">FAQ sections</text>
+  <text x="290" y="450" font-size="9" fill="#666">Help topics</text>
+  <text x="290" y="465" font-size="9" fill="#666">Contact options</text>
+  <text x="290" y="480" font-size="9" fill="#666">Resource downloads</text>
+
+  <rect x="500" y="375" width="210" height="110" rx="8" fill="white" stroke="#81C784"/>
+  <text x="520" y="400" font-size="11" font-weight="bold" fill="#2E7D32">LIVE ENGAGEMENT</text>
+  <text x="520" y="420" font-size="9" fill="#666">Live chat widget</text>
+  <text x="520" y="435" font-size="9" fill="#666">Click-to-call</text>
+  <text x="520" y="450" font-size="9" fill="#666">Callback scheduling</text>
+  <text x="520" y="465" font-size="9" fill="#666">Sales rep connect</text>
+  <text x="520" y="480" font-size="9" fill="#666">Virtual consultation</text>
+
+  <rect x="730" y="375" width="210" height="110" rx="8" fill="white" stroke="#81C784"/>
+  <text x="750" y="400" font-size="11" font-weight="bold" fill="#2E7D32">FEEDBACK &amp; SURVEYS</text>
+  <text x="750" y="420" font-size="9" fill="#666">Foresee surveys</text>
+  <text x="750" y="435" font-size="9" fill="#666">NPS collection</text>
+  <text x="750" y="450" font-size="9" fill="#666">User feedback forms</text>
+  <text x="750" y="465" font-size="9" fill="#666">Experience ratings</text>
+  <text x="750" y="480" font-size="9" fill="#666">Content helpfulness</text>
+
+  <rect x="960" y="375" width="210" height="110" rx="8" fill="white" stroke="#81C784"/>
+  <text x="980" y="400" font-size="11" font-weight="bold" fill="#2E7D32">MEDIA &amp; RESOURCES</text>
+  <text x="980" y="420" font-size="9" fill="#666">Video library</text>
+  <text x="980" y="435" font-size="9" fill="#666">Downloadable PDFs</text>
+  <text x="980" y="450" font-size="9" fill="#666">Datasheets</text>
+  <text x="980" y="465" font-size="9" fill="#666">Whitepapers</text>
+  <text x="980" y="480" font-size="9" fill="#666">Infographics</text>
+
+  <rect x="1190" y="375" width="170" height="110" rx="8" fill="white" stroke="#81C784"/>
+  <text x="1210" y="400" font-size="11" font-weight="bold" fill="#2E7D32">SOCIAL SHARING</text>
+  <text x="1210" y="420" font-size="9" fill="#666">Share buttons</text>
+  <text x="1210" y="435" font-size="9" fill="#666">Social proof</text>
+  <text x="1210" y="450" font-size="9" fill="#666">Reviews/ratings</text>
+  <text x="1210" y="465" font-size="9" fill="#666">Testimonials</text>
+  <text x="1210" y="480" font-size="9" fill="#666">Case study links</text>
+
+  <!-- Arrow down -->
+  <polygon points="700,505 710,520 690,520" fill="#666"/>
+
+  <!-- ==================== CONTENT MANAGEMENT FUNCTIONS ==================== -->
+  <rect x="20" y="530" width="680" height="200" rx="10" fill="#FFF3E0" stroke="#F57C00" stroke-width="2"/>
+  <text x="40" y="555" font-size="12" font-weight="bold" fill="#E65100" letter-spacing="1">CONTENT MANAGEMENT FUNCTIONS</text>
+
+  <rect x="40" y="570" width="200" height="145" rx="8" fill="white" stroke="#FFB74D"/>
+  <text x="60" y="595" font-size="11" font-weight="bold" fill="#E65100">AUTHORING</text>
+  <text x="60" y="615" font-size="9" fill="#666">Universal Editor WYSIWYG</text>
+  <text x="60" y="630" font-size="9" fill="#666">In-context editing</text>
+  <text x="60" y="645" font-size="9" fill="#666">Component drag-drop</text>
+  <text x="60" y="660" font-size="9" fill="#666">Multi-device preview</text>
+  <text x="60" y="675" font-size="9" fill="#666">Rich text editing</text>
+  <text x="60" y="690" font-size="9" fill="#666">Image selection</text>
+  <text x="60" y="705" font-size="9" fill="#666">Link management</text>
+
+  <rect x="260" y="570" width="200" height="145" rx="8" fill="white" stroke="#FFB74D"/>
+  <text x="280" y="595" font-size="11" font-weight="bold" fill="#E65100">WORKFLOW</text>
+  <text x="280" y="615" font-size="9" fill="#666">Content creation</text>
+  <text x="280" y="630" font-size="9" fill="#666">Review &amp; approval</text>
+  <text x="280" y="645" font-size="9" fill="#666">Legal compliance check</text>
+  <text x="280" y="660" font-size="9" fill="#666">Scheduled publishing</text>
+  <text x="280" y="675" font-size="9" fill="#666">Version rollback</text>
+  <text x="280" y="690" font-size="9" fill="#666">Multi-site governance</text>
+  <text x="280" y="705" font-size="9" fill="#666">Audit trail</text>
+
+  <rect x="480" y="570" width="200" height="145" rx="8" fill="white" stroke="#FFB74D"/>
+  <text x="500" y="595" font-size="11" font-weight="bold" fill="#E65100">ASSET MANAGEMENT</text>
+  <text x="500" y="615" font-size="9" fill="#666">DAM (Digital Assets)</text>
+  <text x="500" y="630" font-size="9" fill="#666">Image library</text>
+  <text x="500" y="645" font-size="9" fill="#666">Video hosting</text>
+  <text x="500" y="660" font-size="9" fill="#666">Document repository</text>
+  <text x="500" y="675" font-size="9" fill="#666">Smart crop (AI)</text>
+  <text x="500" y="690" font-size="9" fill="#666">Auto-renditions</text>
+  <text x="500" y="705" font-size="9" fill="#666">Metadata tagging</text>
+
+  <!-- ==================== ANALYTICS & OPTIMIZATION ==================== -->
+  <rect x="720" y="530" width="660" height="200" rx="10" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="740" y="555" font-size="12" font-weight="bold" fill="#7B1FA2" letter-spacing="1">ANALYTICS &amp; OPTIMIZATION FUNCTIONS</text>
+
+  <rect x="740" y="570" width="200" height="145" rx="8" fill="white" stroke="#CE93D8"/>
+  <text x="760" y="595" font-size="11" font-weight="bold" fill="#7B1FA2">WEB ANALYTICS</text>
+  <text x="760" y="615" font-size="9" fill="#666">Adobe Analytics</text>
+  <text x="760" y="630" font-size="9" fill="#666">Page views &amp; sessions</text>
+  <text x="760" y="645" font-size="9" fill="#666">User journeys</text>
+  <text x="760" y="660" font-size="9" fill="#666">Conversion tracking</text>
+  <text x="760" y="675" font-size="9" fill="#666">Event tracking</text>
+  <text x="760" y="690" font-size="9" fill="#666">Custom dimensions</text>
+  <text x="760" y="705" font-size="9" fill="#666">Real-time dashboards</text>
+
+  <rect x="960" y="570" width="200" height="145" rx="8" fill="white" stroke="#CE93D8"/>
+  <text x="980" y="595" font-size="11" font-weight="bold" fill="#7B1FA2">EXPERIMENTATION</text>
+  <text x="980" y="615" font-size="9" fill="#666">Adobe Target</text>
+  <text x="980" y="630" font-size="9" fill="#666">A/B testing</text>
+  <text x="980" y="645" font-size="9" fill="#666">Multivariate tests</text>
+  <text x="980" y="660" font-size="9" fill="#666">Experience targeting</text>
+  <text x="980" y="675" font-size="9" fill="#666">Auto-personalization</text>
+  <text x="980" y="690" font-size="9" fill="#666">Recommendations</text>
+  <text x="980" y="705" font-size="9" fill="#666">Audience segments</text>
+
+  <rect x="1180" y="570" width="180" height="145" rx="8" fill="white" stroke="#CE93D8"/>
+  <text x="1200" y="595" font-size="11" font-weight="bold" fill="#7B1FA2">B2B INTELLIGENCE</text>
+  <text x="1200" y="615" font-size="9" fill="#666">Demandbase ABM</text>
+  <text x="1200" y="630" font-size="9" fill="#666">Bombora intent</text>
+  <text x="1200" y="645" font-size="9" fill="#666">Quantum Metrics</text>
+  <text x="1200" y="660" font-size="9" fill="#666">Account identification</text>
+  <text x="1200" y="675" font-size="9" fill="#666">Firmographic data</text>
+  <text x="1200" y="690" font-size="9" fill="#666">Buying signals</text>
+  <text x="1200" y="705" font-size="9" fill="#666">Lead scoring</text>
+
+  <!-- Arrow down -->
+  <polygon points="700,735 710,750 690,750" fill="#666"/>
+
+  <!-- ==================== MARKETING AUTOMATION ==================== -->
+  <rect x="20" y="760" width="450" height="170" rx="10" fill="#E1F5FE" stroke="#0288D1" stroke-width="2"/>
+  <text x="40" y="785" font-size="12" font-weight="bold" fill="#0277BD" letter-spacing="1">MARKETING AUTOMATION</text>
+
+  <rect x="40" y="800" width="200" height="115" rx="8" fill="white" stroke="#4FC3F7"/>
+  <text x="60" y="825" font-size="11" font-weight="bold" fill="#0277BD">LEAD MANAGEMENT</text>
+  <text x="60" y="845" font-size="9" fill="#666">Salesforce CRM sync</text>
+  <text x="60" y="860" font-size="9" fill="#666">Lead routing</text>
+  <text x="60" y="875" font-size="9" fill="#666">Lead scoring</text>
+  <text x="60" y="890" font-size="9" fill="#666">Nurture campaigns</text>
+  <text x="60" y="905" font-size="9" fill="#666">Sales notifications</text>
+
+  <rect x="260" y="800" width="190" height="115" rx="8" fill="white" stroke="#4FC3F7"/>
+  <text x="280" y="825" font-size="11" font-weight="bold" fill="#0277BD">EMAIL MARKETING</text>
+  <text x="280" y="845" font-size="9" fill="#666">Oracle Eloqua</text>
+  <text x="280" y="860" font-size="9" fill="#666">Newsletter signups</text>
+  <text x="280" y="875" font-size="9" fill="#666">Drip campaigns</text>
+  <text x="280" y="890" font-size="9" fill="#666">Triggered emails</text>
+  <text x="280" y="905" font-size="9" fill="#666">Preference center</text>
+
+  <!-- ==================== COMMERCE FUNCTIONS ==================== -->
+  <rect x="490" y="760" width="450" height="170" rx="10" fill="#FBE9E7" stroke="#E64A19" stroke-width="2"/>
+  <text x="510" y="785" font-size="12" font-weight="bold" fill="#D84315" letter-spacing="1">COMMERCE FUNCTIONS</text>
+
+  <rect x="510" y="800" width="200" height="115" rx="8" fill="white" stroke="#FFAB91"/>
+  <text x="530" y="825" font-size="11" font-weight="bold" fill="#D84315">PRODUCT INFORMATION</text>
+  <text x="530" y="845" font-size="9" fill="#666">Product catalog API</text>
+  <text x="530" y="860" font-size="9" fill="#666">Pricing display</text>
+  <text x="530" y="875" font-size="9" fill="#666">Plan comparison</text>
+  <text x="530" y="890" font-size="9" fill="#666">Feature matrices</text>
+  <text x="530" y="905" font-size="9" fill="#666">Availability check</text>
+
+  <rect x="730" y="800" width="190" height="115" rx="8" fill="white" stroke="#FFAB91"/>
+  <text x="750" y="825" font-size="11" font-weight="bold" fill="#D84315">QUOTING &amp; ORDERS</text>
+  <text x="750" y="845" font-size="9" fill="#666">Quote builder</text>
+  <text x="750" y="860" font-size="9" fill="#666">Configuration tools</text>
+  <text x="750" y="875" font-size="9" fill="#666">Order initiation</text>
+  <text x="750" y="890" font-size="9" fill="#666">Cart handoff</text>
+  <text x="750" y="905" font-size="9" fill="#666">Sales handover</text>
+
+  <!-- ==================== COMPLIANCE & GOVERNANCE ==================== -->
+  <rect x="960" y="760" width="420" height="170" rx="10" fill="#FCE4EC" stroke="#C2185B" stroke-width="2"/>
+  <text x="980" y="785" font-size="12" font-weight="bold" fill="#C2185B" letter-spacing="1">COMPLIANCE &amp; GOVERNANCE</text>
+
+  <rect x="980" y="800" width="190" height="115" rx="8" fill="white" stroke="#F48FB1"/>
+  <text x="1000" y="825" font-size="11" font-weight="bold" fill="#C2185B">PRIVACY</text>
+  <text x="1000" y="845" font-size="9" fill="#666">OneTrust consent</text>
+  <text x="1000" y="860" font-size="9" fill="#666">Cookie management</text>
+  <text x="1000" y="875" font-size="9" fill="#666">GDPR compliance</text>
+  <text x="1000" y="890" font-size="9" fill="#666">CCPA compliance</text>
+  <text x="1000" y="905" font-size="9" fill="#666">Privacy policy</text>
+
+  <rect x="1190" y="800" width="170" height="115" rx="8" fill="white" stroke="#F48FB1"/>
+  <text x="1210" y="825" font-size="11" font-weight="bold" fill="#C2185B">ACCESSIBILITY</text>
+  <text x="1210" y="845" font-size="9" fill="#666">WCAG 2.1 AA</text>
+  <text x="1210" y="860" font-size="9" fill="#666">Screen reader support</text>
+  <text x="1210" y="875" font-size="9" fill="#666">Keyboard navigation</text>
+  <text x="1210" y="890" font-size="9" fill="#666">Alt text for images</text>
+  <text x="1210" y="905" font-size="9" fill="#666">Color contrast</text>
+
+  <!-- ==================== TECHNICAL ENABLEMENT ==================== -->
+  <rect x="20" y="950" width="1360" height="130" rx="10" fill="#ECEFF1" stroke="#607D8B" stroke-width="2"/>
+  <text x="40" y="975" font-size="12" font-weight="bold" fill="#455A64" letter-spacing="1">TECHNICAL ENABLEMENT FUNCTIONS</text>
+
+  <rect x="40" y="995" width="180" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="60" y="1020" font-size="10" font-weight="bold" fill="#455A64">Edge Delivery</text>
+  <text x="60" y="1038" font-size="8" fill="#666">Helix Pipeline</text>
+  <text x="60" y="1053" font-size="8" fill="#666">Sub-second TTFB</text>
+
+  <rect x="240" y="995" width="180" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="260" y="1020" font-size="10" font-weight="bold" fill="#455A64">Block Components</text>
+  <text x="260" y="1038" font-size="8" fill="#666">68 reusable blocks</text>
+  <text x="260" y="1053" font-size="8" fill="#666">Modular architecture</text>
+
+  <rect x="440" y="995" width="180" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="460" y="1020" font-size="10" font-weight="bold" fill="#455A64">CDN &amp; Caching</text>
+  <text x="460" y="1038" font-size="8" fill="#666">Fastly global CDN</text>
+  <text x="460" y="1053" font-size="8" fill="#666">Edge caching</text>
+
+  <rect x="640" y="995" width="180" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="660" y="1020" font-size="10" font-weight="bold" fill="#455A64">Performance</text>
+  <text x="660" y="1038" font-size="8" fill="#666">LCP &lt; 2.5s</text>
+  <text x="660" y="1053" font-size="8" fill="#666">Lighthouse &gt; 90</text>
+
+  <rect x="840" y="995" width="180" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="860" y="1020" font-size="10" font-weight="bold" fill="#455A64">Tag Management</text>
+  <text x="860" y="1038" font-size="8" fill="#666">Adobe Launch</text>
+  <text x="860" y="1053" font-size="8" fill="#666">Third-party scripts</text>
+
+  <rect x="1040" y="995" width="180" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="1060" y="1020" font-size="10" font-weight="bold" fill="#455A64">SEO</text>
+  <text x="1060" y="1038" font-size="8" fill="#666">Semantic HTML</text>
+  <text x="1060" y="1053" font-size="8" fill="#666">Schema.org markup</text>
+
+  <rect x="1240" y="995" width="120" height="70" rx="6" fill="white" stroke="#90A4AE"/>
+  <text x="1260" y="1020" font-size="10" font-weight="bold" fill="#455A64">Security</text>
+  <text x="1260" y="1038" font-size="8" fill="#666">WAF, SSL/TLS</text>
+  <text x="1260" y="1053" font-size="8" fill="#666">DDoS protection</text>
+
+  <!-- ==================== KEY METRICS ==================== -->
+  <rect x="20" y="1100" width="1360" height="80" rx="10" fill="#E8EAF6" stroke="#3F51B5" stroke-width="2"/>
+  <text x="40" y="1125" font-size="12" font-weight="bold" fill="#303F9F" letter-spacing="1">KEY FUNCTIONAL METRICS</text>
+
+  <rect x="40" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="70" y="1160" font-size="9" font-weight="600" fill="#303F9F">749+ Pages</text>
+
+  <rect x="210" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="235" y="1160" font-size="9" font-weight="600" fill="#303F9F">68 Components</text>
+
+  <rect x="380" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="405" y="1160" font-size="9" font-weight="600" fill="#303F9F">9 Portfolios</text>
+
+  <rect x="550" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="570" y="1160" font-size="9" font-weight="600" fill="#303F9F">~150 Products</text>
+
+  <rect x="720" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="745" y="1160" font-size="9" font-weight="600" fill="#303F9F">14 Industries</text>
+
+  <rect x="890" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="905" y="1160" font-size="9" font-weight="600" fill="#303F9F">112 Case Studies</text>
+
+  <rect x="1060" y="1140" width="150" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="1085" y="1160" font-size="9" font-weight="600" fill="#303F9F">60 Support Pages</text>
+
+  <rect x="1230" y="1140" width="130" height="30" rx="4" fill="white" stroke="#7986CB"/>
+  <text x="1255" y="1160" font-size="9" font-weight="600" fill="#303F9F">37 Offers</text>
+
+  <!-- Footer -->
+  <text x="40" y="1220" font-size="10" fill="#666">Functional Architecture v1.0 | business.att.com | Edge Delivery Services + AEM Cloud + Universal Editor</text>
+  <text x="40" y="1240" font-size="9" fill="#999">B2B Digital Experience Platform | Enterprise &amp; SMB Solutions | January 2026</text>
+
+</svg>
