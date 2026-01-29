@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1100" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1400" height="1100" fill="#ffffff"/>
+
+  <!-- Title -->
+  <rect x="20" y="15" width="450" height="40" rx="4" fill="#009FDB"/>
+  <text x="35" y="43" font-size="18" font-weight="bold" fill="white">business.att.com - Logical Architecture</text>
+  <text x="490" y="43" font-size="12" fill="#666">Edge Delivery Services | AEM Cloud | Universal Editor</text>
+
+  <!-- ==================== PRESENTATION LAYER ==================== -->
+  <rect x="20" y="70" width="1360" height="200" rx="10" fill="#E3F2FD" stroke="#1976D2" stroke-width="2"/>
+  <text x="40" y="95" font-size="12" font-weight="bold" fill="#1565C0" letter-spacing="1">PRESENTATION LAYER</text>
+
+  <!-- Client Devices -->
+  <rect x="40" y="110" width="300" height="145" rx="8" fill="white" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="60" y="135" font-size="11" font-weight="bold" fill="#1565C0">CLIENT DEVICES</text>
+
+  <rect x="60" y="150" width="80" height="45" rx="6" fill="#BBDEFB"/>
+  <text x="75" y="170" font-size="9" font-weight="600" fill="#1565C0">Desktop</text>
+  <text x="70" y="185" font-size="8" fill="#666">Chrome, Edge</text>
+
+  <rect x="150" y="150" width="80" height="45" rx="6" fill="#BBDEFB"/>
+  <text x="170" y="170" font-size="9" font-weight="600" fill="#1565C0">Mobile</text>
+  <text x="160" y="185" font-size="8" fill="#666">iOS, Android</text>
+
+  <rect x="240" y="150" width="80" height="45" rx="6" fill="#BBDEFB"/>
+  <text x="260" y="170" font-size="9" font-weight="600" fill="#1565C0">Tablet</text>
+  <text x="255" y="185" font-size="8" fill="#666">iPad, Surface</text>
+
+  <text x="60" y="215" font-size="9" fill="#666">B2B Customers | Enterprise | SMB</text>
+  <text x="60" y="230" font-size="9" fill="#666">749+ Pages | Responsive Design</text>
+
+  <!-- Web Experience -->
+  <rect x="360" y="110" width="320" height="145" rx="8" fill="white" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="380" y="135" font-size="11" font-weight="bold" fill="#1565C0">WEB EXPERIENCE</text>
+
+  <rect x="380" y="150" width="130" height="35" rx="4" fill="#BBDEFB"/>
+  <text x="400" y="173" font-size="9" font-weight="600" fill="#1565C0">Static HTML/CSS/JS</text>
+
+  <rect x="530" y="150" width="130" height="35" rx="4" fill="#BBDEFB"/>
+  <text x="550" y="173" font-size="9" font-weight="600" fill="#1565C0">Block Components</text>
+
+  <rect x="380" y="195" width="130" height="35" rx="4" fill="#BBDEFB"/>
+  <text x="395" y="218" font-size="9" font-weight="600" fill="#1565C0">Lazy-Load Images</text>
+
+  <rect x="530" y="195" width="130" height="35" rx="4" fill="#BBDEFB"/>
+  <text x="545" y="218" font-size="9" font-weight="600" fill="#1565C0">Third-Party Scripts</text>
+
+  <!-- Performance Metrics -->
+  <rect x="700" y="110" width="320" height="145" rx="8" fill="white" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="720" y="135" font-size="11" font-weight="bold" fill="#1565C0">PERFORMANCE (Core Web Vitals)</text>
+
+  <rect x="720" y="150" width="130" height="30" rx="4" fill="#C8E6C9"/>
+  <text x="755" y="170" font-size="9" font-weight="600" fill="#2E7D32">LCP &lt; 2.5s</text>
+
+  <rect x="870" y="150" width="130" height="30" rx="4" fill="#C8E6C9"/>
+  <text x="905" y="170" font-size="9" font-weight="600" fill="#2E7D32">FID &lt; 100ms</text>
+
+  <rect x="720" y="190" width="130" height="30" rx="4" fill="#C8E6C9"/>
+  <text x="760" y="210" font-size="9" font-weight="600" fill="#2E7D32">CLS &lt; 0.1</text>
+
+  <rect x="870" y="190" width="130" height="30" rx="4" fill="#C8E6C9"/>
+  <text x="890" y="210" font-size="9" font-weight="600" fill="#2E7D32">Lighthouse &gt; 90</text>
+
+  <!-- SEO -->
+  <rect x="1040" y="110" width="320" height="145" rx="8" fill="white" stroke="#64B5F6" stroke-width="1.5"/>
+  <text x="1060" y="135" font-size="11" font-weight="bold" fill="#1565C0">SEO &amp; ACCESSIBILITY</text>
+
+  <text x="1060" y="160" font-size="9" fill="#666">Semantic HTML5 Structure</text>
+  <text x="1060" y="178" font-size="9" fill="#666">Open Graph / Schema.org Markup</text>
+  <text x="1060" y="196" font-size="9" fill="#666">WCAG 2.1 AA Compliance</text>
+  <text x="1060" y="214" font-size="9" fill="#666">Sitemap.xml / Robots.txt</text>
+  <text x="1060" y="232" font-size="9" fill="#666">Canonical URLs / Meta Tags</text>
+
+  <!-- Arrow down -->
+  <polygon points="700,275 710,290 690,290" fill="#666"/>
+
+  <!-- ==================== EDGE/CDN LAYER ==================== -->
+  <rect x="20" y="300" width="1360" height="130" rx="10" fill="#E8F5E9" stroke="#388E3C" stroke-width="2"/>
+  <text x="40" y="325" font-size="12" font-weight="bold" fill="#2E7D32" letter-spacing="1">EDGE / CDN LAYER</text>
+
+  <rect x="40" y="340" width="200" height="75" rx="8" fill="white" stroke="#81C784" stroke-width="1.5"/>
+  <text x="60" y="365" font-size="11" font-weight="bold" fill="#2E7D32">FASTLY CDN</text>
+  <text x="60" y="385" font-size="9" fill="#666">Edge Caching</text>
+  <text x="60" y="400" font-size="9" fill="#666">Global PoPs (40+ locations)</text>
+
+  <rect x="260" y="340" width="200" height="75" rx="8" fill="white" stroke="#81C784" stroke-width="1.5"/>
+  <text x="280" y="365" font-size="11" font-weight="bold" fill="#2E7D32">WAF / SECURITY</text>
+  <text x="280" y="385" font-size="9" fill="#666">DDoS Protection</text>
+  <text x="280" y="400" font-size="9" fill="#666">Bot Management</text>
+
+  <rect x="480" y="340" width="200" height="75" rx="8" fill="white" stroke="#81C784" stroke-width="1.5"/>
+  <text x="500" y="365" font-size="11" font-weight="bold" fill="#2E7D32">SSL / TLS</text>
+  <text x="500" y="385" font-size="9" fill="#666">HTTPS Termination</text>
+  <text x="500" y="400" font-size="9" fill="#666">Certificate Management</text>
+
+  <rect x="700" y="340" width="200" height="75" rx="8" fill="white" stroke="#81C784" stroke-width="1.5"/>
+  <text x="720" y="365" font-size="11" font-weight="bold" fill="#2E7D32">EDGE COMPUTE</text>
+  <text x="720" y="385" font-size="9" fill="#666">Redirects / Rewrites</text>
+  <text x="720" y="400" font-size="9" fill="#666">A/B Testing at Edge</text>
+
+  <rect x="920" y="340" width="220" height="75" rx="8" fill="white" stroke="#81C784" stroke-width="1.5"/>
+  <text x="940" y="365" font-size="11" font-weight="bold" fill="#2E7D32">CACHE STRATEGY</text>
+  <text x="940" y="385" font-size="9" fill="#666">HTML: s-maxage=600</text>
+  <text x="940" y="400" font-size="9" fill="#666">Assets: immutable, 1 year</text>
+
+  <rect x="1160" y="340" width="200" height="75" rx="8" fill="white" stroke="#81C784" stroke-width="1.5"/>
+  <text x="1180" y="365" font-size="11" font-weight="bold" fill="#2E7D32">IMAGE OPTIMIZATION</text>
+  <text x="1180" y="385" font-size="9" fill="#666">WebP / AVIF Conversion</text>
+  <text x="1180" y="400" font-size="9" fill="#666">Responsive Srcset</text>
+
+  <!-- Arrow down -->
+  <polygon points="700,435 710,450 690,450" fill="#666"/>
+
+  <!-- ==================== APPLICATION LAYER ==================== -->
+  <rect x="20" y="460" width="1360" height="180" rx="10" fill="#FFF3E0" stroke="#F57C00" stroke-width="2"/>
+  <text x="40" y="485" font-size="12" font-weight="bold" fill="#E65100" letter-spacing="1">APPLICATION LAYER (Edge Delivery Services)</text>
+
+  <!-- Helix Pipeline -->
+  <rect x="40" y="500" width="400" height="125" rx="8" fill="white" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="60" y="525" font-size="11" font-weight="bold" fill="#E65100">HELIX PIPELINE</text>
+
+  <rect x="60" y="540" width="85" height="35" rx="4" fill="#FFE0B2"/>
+  <text x="70" y="563" font-size="8" font-weight="600" fill="#E65100">Content Fetch</text>
+
+  <rect x="155" y="540" width="85" height="35" rx="4" fill="#FFE0B2"/>
+  <text x="165" y="563" font-size="8" font-weight="600" fill="#E65100">HTML Generate</text>
+
+  <rect x="250" y="540" width="85" height="35" rx="4" fill="#FFE0B2"/>
+  <text x="260" y="563" font-size="8" font-weight="600" fill="#E65100">Block Decorate</text>
+
+  <rect x="345" y="540" width="75" height="35" rx="4" fill="#FFE0B2"/>
+  <text x="355" y="563" font-size="8" font-weight="600" fill="#E65100">Optimize</text>
+
+  <text x="60" y="600" font-size="9" fill="#666">Content-first rendering | Sub-second TTFB</text>
+
+  <!-- Block Library -->
+  <rect x="460" y="500" width="280" height="125" rx="8" fill="white" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="480" y="525" font-size="11" font-weight="bold" fill="#E65100">BLOCK LIBRARY (68 Components)</text>
+
+  <text x="480" y="548" font-size="9" fill="#555">Navigation: header, footer, mega-menu</text>
+  <text x="480" y="565" font-size="9" fill="#555">Hero: full, split, video, carousel (7)</text>
+  <text x="480" y="582" font-size="9" fill="#555">Cards: standard, offer, story, product (4)</text>
+  <text x="480" y="599" font-size="9" fill="#555">Interactive: tabs, accordion, carousel (7)</text>
+  <text x="480" y="616" font-size="9" fill="#555">Forms: rai-form, contact, email-signup (4)</text>
+
+  <!-- Scripts & Styles -->
+  <rect x="760" y="500" width="280" height="125" rx="8" fill="white" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="780" y="525" font-size="11" font-weight="bold" fill="#E65100">SCRIPTS &amp; STYLES</text>
+
+  <rect x="780" y="540" width="110" height="30" rx="4" fill="#FFE0B2"/>
+  <text x="800" y="560" font-size="9" font-weight="600" fill="#E65100">scripts.js</text>
+
+  <rect x="900" y="540" width="110" height="30" rx="4" fill="#FFE0B2"/>
+  <text x="925" y="560" font-size="9" font-weight="600" fill="#E65100">styles.css</text>
+
+  <rect x="780" y="580" width="110" height="30" rx="4" fill="#FFE0B2"/>
+  <text x="800" y="600" font-size="9" font-weight="600" fill="#E65100">delayed.js</text>
+
+  <rect x="900" y="580" width="110" height="30" rx="4" fill="#FFE0B2"/>
+  <text x="925" y="600" font-size="9" font-weight="600" fill="#E65100">fonts.css</text>
+
+  <!-- Sidekick -->
+  <rect x="1060" y="500" width="300" height="125" rx="8" fill="white" stroke="#FFB74D" stroke-width="1.5"/>
+  <text x="1080" y="525" font-size="11" font-weight="bold" fill="#E65100">PREVIEW / PUBLISH</text>
+
+  <rect x="1080" y="540" width="120" height="35" rx="4" fill="#C8E6C9"/>
+  <text x="1105" y="563" font-size="9" font-weight="600" fill="#2E7D32">aem.page</text>
+  <text x="1110" y="575" font-size="7" fill="#666">Preview</text>
+
+  <rect x="1220" y="540" width="120" height="35" rx="4" fill="#BBDEFB"/>
+  <text x="1250" y="563" font-size="9" font-weight="600" fill="#1565C0">aem.live</text>
+  <text x="1255" y="575" font-size="7" fill="#666">Staging</text>
+
+  <text x="1080" y="605" font-size="9" fill="#666">Sidekick Extension</text>
+  <text x="1080" y="620" font-size="9" fill="#666">Instant Preview &amp; Publish</text>
+
+  <!-- Arrow down -->
+  <polygon points="700,645 710,660 690,660" fill="#666"/>
+
+  <!-- ==================== CONTENT MANAGEMENT LAYER ==================== -->
+  <rect x="20" y="670" width="880" height="180" rx="10" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="40" y="695" font-size="12" font-weight="bold" fill="#7B1FA2" letter-spacing="1">CONTENT MANAGEMENT LAYER</text>
+
+  <!-- Universal Editor -->
+  <rect x="40" y="710" width="260" height="125" rx="8" fill="white" stroke="#CE93D8" stroke-width="1.5"/>
+  <text x="60" y="735" font-size="11" font-weight="bold" fill="#7B1FA2">UNIVERSAL EDITOR</text>
+  <text x="60" y="755" font-size="9" fill="#666">WYSIWYG In-Context Editing</text>
+  <text x="60" y="772" font-size="9" fill="#666">Component Library (68 blocks)</text>
+  <text x="60" y="789" font-size="9" fill="#666">Properties Inspector</text>
+  <text x="60" y="806" font-size="9" fill="#666">Multi-device Preview</text>
+  <text x="60" y="823" font-size="9" fill="#666">experience.adobe.com/aem/editor</text>
+
+  <!-- AEM Author -->
+  <rect x="320" y="710" width="260" height="125" rx="8" fill="white" stroke="#CE93D8" stroke-width="1.5"/>
+  <text x="340" y="735" font-size="11" font-weight="bold" fill="#7B1FA2">AEM AS A CLOUD SERVICE</text>
+  <text x="340" y="755" font-size="9" fill="#666">Content Repository (JCR)</text>
+  <text x="340" y="772" font-size="9" fill="#666">Workflow Management</text>
+  <text x="340" y="789" font-size="9" fill="#666">Version Control</text>
+  <text x="340" y="806" font-size="9" fill="#666">Replication &amp; Publishing</text>
+  <text x="340" y="823" font-size="9" fill="#666">author-pXXXX.adobeaemcloud.com</text>
+
+  <!-- AEM Assets -->
+  <rect x="600" y="710" width="280" height="125" rx="8" fill="white" stroke="#CE93D8" stroke-width="1.5"/>
+  <text x="620" y="735" font-size="11" font-weight="bold" fill="#7B1FA2">AEM ASSETS (DAM)</text>
+  <text x="620" y="755" font-size="9" fill="#666">/content/dam/att-business/</text>
+  <text x="620" y="772" font-size="9" fill="#666">images/ | videos/ | documents/</text>
+  <text x="620" y="789" font-size="9" fill="#666">Smart Crop (AI-powered)</text>
+  <text x="620" y="806" font-size="9" fill="#666">Dynamic Media Delivery</text>
+  <text x="620" y="823" font-size="9" fill="#666">Renditions &amp; Metadata</text>
+
+  <!-- ==================== CODE REPOSITORY ==================== -->
+  <rect x="920" y="670" width="460" height="180" rx="10" fill="#ECEFF1" stroke="#607D8B" stroke-width="2"/>
+  <text x="940" y="695" font-size="12" font-weight="bold" fill="#455A64" letter-spacing="1">CODE REPOSITORY</text>
+
+  <rect x="940" y="710" width="420" height="125" rx="8" fill="white" stroke="#90A4AE" stroke-width="1.5"/>
+  <text x="960" y="735" font-size="11" font-weight="bold" fill="#455A64">GITHUB: ashisjai/eds-da-test1</text>
+
+  <text x="960" y="758" font-size="9" fill="#555">blocks/ ─────────── 68 component implementations</text>
+  <text x="960" y="775" font-size="9" fill="#555">styles/ ─────────── Global CSS + design tokens</text>
+  <text x="960" y="792" font-size="9" fill="#555">scripts/ ────────── Core JS + utilities</text>
+  <text x="960" y="809" font-size="9" fill="#555">component-*.json ── UE definitions &amp; models</text>
+  <text x="960" y="826" font-size="9" fill="#555">fstab.yaml ──────── AEM content source mapping</text>
+
+  <!-- ==================== INTEGRATION LAYER ==================== -->
+  <rect x="20" y="870" width="1360" height="110" rx="10" fill="#FFFDE7" stroke="#FBC02D" stroke-width="2"/>
+  <text x="40" y="895" font-size="12" font-weight="bold" fill="#F57F17" letter-spacing="1">INTEGRATION LAYER</text>
+
+  <rect x="40" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="60" y="932" font-size="9" font-weight="bold" fill="#F57F17">Adobe Analytics</text>
+  <text x="60" y="950" font-size="8" fill="#666">AppMeasurement</text>
+
+  <rect x="210" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="230" y="932" font-size="9" font-weight="bold" fill="#F57F17">Adobe Target</text>
+  <text x="230" y="950" font-size="8" fill="#666">A/B Testing</text>
+
+  <rect x="380" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="400" y="932" font-size="9" font-weight="bold" fill="#F57F17">Adobe Launch</text>
+  <text x="400" y="950" font-size="8" fill="#666">Tag Management</text>
+
+  <rect x="550" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="570" y="932" font-size="9" font-weight="bold" fill="#F57F17">CLUDO Search</text>
+  <text x="570" y="950" font-size="8" fill="#666">Site Search</text>
+
+  <rect x="720" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="740" y="932" font-size="9" font-weight="bold" fill="#F57F17">RAI Form</text>
+  <text x="740" y="950" font-size="8" fill="#666">Lead Capture</text>
+
+  <rect x="890" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="910" y="932" font-size="9" font-weight="bold" fill="#F57F17">Live Chat</text>
+  <text x="910" y="950" font-size="8" fill="#666">Customer Support</text>
+
+  <rect x="1060" y="910" width="150" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="1080" y="932" font-size="9" font-weight="bold" fill="#F57F17">Salesforce CRM</text>
+  <text x="1080" y="950" font-size="8" fill="#666">Lead Management</text>
+
+  <rect x="1230" y="910" width="130" height="55" rx="6" fill="white" stroke="#FFF176"/>
+  <text x="1250" y="932" font-size="9" font-weight="bold" fill="#F57F17">OneTrust</text>
+  <text x="1250" y="950" font-size="8" fill="#666">Consent Mgmt</text>
+
+  <!-- ==================== SECURITY BADGES ==================== -->
+  <rect x="20" y="1000" width="1360" height="80" rx="10" fill="#FCE4EC" stroke="#C2185B" stroke-width="2"/>
+  <text x="40" y="1025" font-size="12" font-weight="bold" fill="#C2185B" letter-spacing="1">SECURITY &amp; COMPLIANCE</text>
+
+  <rect x="40" y="1040" width="170" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="70" y="1060" font-size="9" font-weight="600" fill="#C2185B">Adobe IMS (SSO)</text>
+
+  <rect x="230" y="1040" width="170" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="260" y="1060" font-size="9" font-weight="600" fill="#C2185B">OAuth 2.0 / JWT</text>
+
+  <rect x="420" y="1040" width="170" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="465" y="1060" font-size="9" font-weight="600" fill="#C2185B">RBAC</text>
+
+  <rect x="610" y="1040" width="170" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="650" y="1060" font-size="9" font-weight="600" fill="#C2185B">CSP Headers</text>
+
+  <rect x="800" y="1040" width="170" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="835" y="1060" font-size="9" font-weight="600" fill="#C2185B">CORS Policy</text>
+
+  <rect x="990" y="1040" width="170" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="1010" y="1060" font-size="9" font-weight="600" fill="#C2185B">GDPR / CCPA</text>
+
+  <rect x="1180" y="1040" width="180" height="30" rx="4" fill="white" stroke="#F48FB1"/>
+  <text x="1205" y="1060" font-size="9" font-weight="600" fill="#C2185B">SOC 2 Type II</text>
+
+</svg>
