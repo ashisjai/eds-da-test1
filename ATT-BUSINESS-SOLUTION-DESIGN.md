@@ -98,7 +98,7 @@ This Solution Design Document (SDD) provides the technical blueprint for migrati
 ```
 Content Authoring Flow:
 ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-│  Author  │───▶│Universal │───▶│SharePoint│───▶│   EDS    │───▶│   CDN    │
+│  Author  │───▶│Universal │───▶│   AEM   │───▶│   EDS    │───▶│   CDN    │
 │          │    │  Editor  │    │          │    │ Preview  │    │ Publish  │
 └──────────┘    └──────────┘    └──────────┘    └──────────┘    └──────────┘
 
