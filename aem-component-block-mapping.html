@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/scripts/aem.js" type="module"></script>
+<script src="/scripts/scripts.js" type="module"></script>
+<link rel="stylesheet" href="/styles/styles.css"/>
+</head>
+<body>
+<header></header>
+<main>
+<div><h1 id="aem-components--eds-blocks-mapping">AEM Components → EDS Blocks Mapping</h1><h2 id="businessattcom--68-block-components">business.att.com | 68 Block Components</h2></div>
+<div><h2 id="overview">Overview</h2><p>This document maps traditional AEM components to their Edge Delivery Services (EDS) block equivalents for the business.att.com migration. EDS uses a simplified content model with table-based authoring and client-side block decoration.</p><h3 id="key-differences">Key Differences</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="aspect"><div><div><strong>Architecture</strong></div><div>Server-side rendering (HTL + Sling Models)</div><div>Client-side decoration (Vanilla JS)</div></div><div><div><strong>Content Model</strong></div><div>JCR nodes with dialog-defined properties</div><div>Table-based markdown/HTML</div></div><div><div><strong>Styling</strong></div><div>SCSS/LESS with clientlibs</div><div>Plain CSS with design tokens</div></div><div><div><strong>Authoring</strong></div><div>Touch UI dialogs</div><div>Universal Editor / Document Authoring</div></div><div><div><strong>Variations</strong></div><div>Style System + policies</div><div>Block variants (block-name-variant)</div></div></div></div>
+<div><h2 id="navigation-components">1. Navigation Components</h2><h3 id="aem-components">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Header Component</strong></div><div><code>com.att.business/header</code></div><div>Sling Model + HTL, site header</div></div><div><div><strong>Footer Component</strong></div><div><code>com.att.business/footer</code></div><div>Sling Model + HTL, site footer</div></div><div><div><strong>Navigation Component</strong></div><div><code>wcm/core/navigation</code></div><div>Multi-level menu generation</div></div></div><h3 id="eds-blocks">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>header</strong></div><div><code>/blocks/header/</code></div><div>header.js + header.css</div></div><div><div><strong>footer</strong></div><div><code>/blocks/footer/</code></div><div>footer.js + footer.css</div></div><div><div><strong>mega-menu</strong></div><div><code>/blocks/mega-menu/</code></div><div>Multi-tier navigation with flyouts</div></div></div><h3 id="mapping">Mapping</h3><pre><code>Header Component      →  header
+Footer Component      →  footer
+Navigation Component  →  mega-menu
+</code></pre></div>
+<div><h2 id="hero-components">2. Hero Components</h2><h3 id="aem-components-1">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Teaser Component</strong></div><div><code>wcm/core/teaser</code></div><div>Title, Description, Image, CTA, Background options, Style System variants</div></div><div><div><strong>Experience Fragment</strong></div><div><code>cq/experience-fragments</code></div><div>Reusable hero patterns, Master + variations, Live Copy support</div></div></div><h3 id="eds-blocks-1n-mapping">EDS Blocks (1:N Mapping)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>hero</strong></div><div>Standard full-width hero</div><div>Default hero layout</div></div><div><div><strong>hero-split</strong></div><div>50/50 layout</div><div>Text + image side by side</div></div><div><div><strong>hero-video</strong></div><div>Video background</div><div>Engaging video heroes</div></div><div><div><strong>hero-carousel</strong></div><div>Rotating heroes</div><div>Multiple messages</div></div><div><div><strong>hero-animated</strong></div><div>Motion effects</div><div>Dynamic entrance</div></div><div><div><strong>hero-minimal</strong></div><div>Simple text hero</div><div>Text-focused pages</div></div><div><div><strong>hero-industry</strong></div><div>Vertical-specific</div><div>Industry landing pages</div></div></div><h3 id="mapping-1">Mapping</h3><pre><code>Teaser Component          ⇢  hero, hero-split, hero-video, hero-carousel
+Experience Fragment       ⇢  hero-animated, hero-minimal, hero-industry
+(Style System variants)   ⇢  (Block variants)
+</code></pre></div>
+<div><h2 id="card-components">3. Card Components</h2><h3 id="aem-components-2">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Card / List Component</strong></div><div><code>wcm/core/list</code> + card styling</div><div>Dynamic or static items, Grid layout</div></div><div><div><strong>Content Fragment List</strong></div><div><code>dam/cfm/components/list</code></div><div>Query-based content, Structured data</div></div></div><h3 id="eds-blocks-1">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>cards</strong></div><div>Standard cards</div><div>General card layouts</div></div><div><div><strong>cards-offer</strong></div><div>Promotional cards</div><div>Pricing, deals display</div></div><div><div><strong>cards-story</strong></div><div>Case study cards</div><div>Customer stories</div></div><div><div><strong>cards-product</strong></div><div>Product cards</div><div>Product feature highlights</div></div></div><h3 id="mapping-2">Mapping</h3><pre><code>Card / List Component     →  cards, cards-offer
+Content Fragment List     →  cards-story, cards-product
+</code></pre></div>
+<div><h2 id="interactive-components">4. Interactive Components</h2><h3 id="aem-components-3">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Tabs Component</strong></div><div><code>wcm/core/tabs</code></div><div>Container component, Nested content</div></div><div><div><strong>Accordion</strong></div><div><code>wcm/core/accordion</code></div><div>Expandable panels, FAQ support</div></div><div><div><strong>Carousel</strong></div><div><code>wcm/core/carousel</code></div><div>Sliding content, Auto-play option</div></div></div><h3 id="eds-blocks-2">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>tabs</strong></div><div>Tab navigation</div><div>Table-based content, tabs.js</div></div><div><div><strong>accordion</strong></div><div>Collapsible sections</div><div>Details/Summary HTML, accordion.js</div></div><div><div><strong>carousel</strong></div><div>Content slider</div><div>CSS scroll-snap, carousel.js</div></div><div><div><strong>modal</strong></div><div>Dialog overlay</div><div>Trigger + content, modal.js</div></div></div><h3 id="mapping-3">Mapping</h3><pre><code>Tabs Component   →  tabs
+Accordion        →  accordion
+Carousel         →  carousel
+(Dialog)         →  modal
+</code></pre></div>
+<div><h2 id="form-components">5. Form Components</h2><h3 id="aem-components-4">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>AEM Forms (Adaptive)</strong></div><div><code>fd/af/components/form</code></div><div>Complex validation, Multi-step wizard</div></div><div><div><strong>Form Container</strong></div><div><code>wcm/core/form/container</code></div><div>Basic form wrapper, Action handlers</div></div></div><h3 id="eds-blocks-3">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>form</strong></div><div>Standard forms</div><div>form.js, basic validation</div></div><div><div><strong>rai-form</strong></div><div>Request a Call</div><div>AT&#x26;T-specific lead capture</div></div><div><div><strong>email-signup</strong></div><div>Newsletter form</div><div>Eloqua integration</div></div><div><div><strong>contact-form</strong></div><div>Contact us</div><div>Lead capture, CRM sync</div></div></div><h3 id="mapping-4">Mapping</h3><pre><code>AEM Forms (Adaptive)  ⇢  rai-form (simplified)
+Form Container        →  form, email-signup, contact-form
+</code></pre><p><strong>Note:</strong> Complex AEM Forms features (multi-step, conditional logic) require custom EDS block implementation.</p></div>
+<div><h2 id="content-components">6. Content Components</h2><h3 id="aem-components-5">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Text Component</strong></div><div><code>wcm/core/text</code></div><div>Rich text editing, Inline styles</div></div><div><div><strong>Image Component</strong></div><div><code>wcm/core/image</code></div><div>Smart crop, Lazy loading</div></div><div><div><strong>Container</strong></div><div><code>wcm/core/container</code></div><div>Layout container, Responsive grid</div></div></div><h3 id="eds-blocks-4">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>columns</strong></div><div>Multi-column layout</div><div>Side-by-side content</div></div><div><div><strong>article</strong></div><div>Long-form content</div><div>Blog posts, articles</div></div><div><div><strong>quote</strong></div><div>Blockquote styling</div><div>Testimonials, callouts</div></div><div><div><strong>stats</strong></div><div>Key metrics display</div><div>Numbers, statistics</div></div></div><h3 id="mapping-5">Mapping</h3><pre><code>Text Component   →  (Default content / article)
+Image Component  →  (Default content / columns)
+Container        →  columns
+</code></pre><p><strong>Note:</strong> Basic text and images in EDS are "default content" (not blocks) - they render without decoration.</p></div>
+<div><h2 id="media-components">7. Media Components</h2><h3 id="aem-components-6">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Video / Dynamic Media</strong></div><div><code>dam/components/video</code></div><div>Dynamic Media viewers</div></div><div><div><strong>Embed Component</strong></div><div><code>wcm/core/embed</code></div><div>YouTube, Vimeo, iframes</div></div></div><h3 id="eds-blocks-5">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>video</strong></div><div>HTML5 video player</div><div>video.js, native controls</div></div><div><div><strong>embed</strong></div><div>Third-party embeds</div><div>embed.js, iframe wrapper</div></div><div><div><strong>image-gallery</strong></div><div>Lightbox gallery</div><div>Multiple images, zoom</div></div></div><h3 id="mapping-6">Mapping</h3><pre><code>Video / Dynamic Media  →  video
+Embed Component        →  embed
+(Image gallery)        →  image-gallery
+</code></pre></div>
+<div><h2 id="table--data-components">8. Table &#x26; Data Components</h2><h3 id="aem-components-7">AEM Components</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Table Component</strong></div><div>Custom table, Structured data</div></div><div><div><strong>Comparison Component</strong></div><div>Product comparison, Feature matrix</div></div></div><h3 id="eds-blocks-6">EDS Blocks</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block"><div><div><strong>table</strong></div><div>Native table styling</div><div>Data tables</div></div><div><div><strong>comparison</strong></div><div>Side-by-side compare</div><div>Product comparison</div></div><div><div><strong>pricing</strong></div><div>Pricing tables</div><div>Plan pricing display</div></div></div><h3 id="mapping-7">Mapping</h3><pre><code>Table Component       →  table
+Comparison Component  →  comparison, pricing
+</code></pre></div>
+<div><h2 id="mapping-summary">Mapping Summary</h2><h3 id="component-count">Component Count</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="source"><div><div><strong>AEM Core Components</strong></div><div>~25</div></div><div><div><strong>EDS Blocks</strong></div><div>68</div></div><div><div><strong>Mapping Type</strong></div><div>1:N (expansion)</div></div></div><h3 id="key-principles">Key Principles</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="principle"><div><div><strong>1:N Mapping</strong></div><div>One AEM component often maps to multiple specialized EDS blocks</div></div><div><div><strong>Simplified Model</strong></div><div>Table-based authoring replaces complex dialogs</div></div><div><div><strong>Performance Focus</strong></div><div>Vanilla JS, minimal CSS, no framework overhead</div></div><div><div><strong>Variant Naming</strong></div><div>Block variants use <code>block-name-variant</code> pattern</div></div></div><h3 id="block-categories">Block Categories</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Navigation</div><div>3</div><div>3</div></div><div><div>Hero</div><div>2</div><div>7</div></div><div><div>Cards</div><div>2</div><div>4</div></div><div><div>Interactive</div><div>3</div><div>4</div></div><div><div>Forms</div><div>2</div><div>4</div></div><div><div>Content</div><div>3</div><div>4</div></div><div><div>Media</div><div>2</div><div>3</div></div><div><div>Tables</div><div>2</div><div>3</div></div><div><div><strong>Other</strong></div><div>-</div><div>36</div></div><div><div><strong>Total</strong></div><div>~19</div><div><strong>68</strong></div></div></div></div>
+<div><h2 id="complete-block-inventory">Complete Block Inventory</h2><h3 id="all-68-eds-blocks">All 68 EDS Blocks</h3><pre><code>Navigation (3)
+├── header
+├── footer
+└── mega-menu
+
+Hero (7)
+├── hero
+├── hero-split
+├── hero-video
+├── hero-carousel
+├── hero-animated
+├── hero-minimal
+└── hero-industry
+
+Cards (4)
+├── cards
+├── cards-offer
+├── cards-story
+└── cards-product
+
+Interactive (7)
+├── tabs
+├── accordion
+├── carousel
+├── modal
+├── tooltip
+├── mega-menu
+└── search
+
+Forms (4)
+├── form
+├── rai-form
+├── email-signup
+└── contact-form
+
+Content (8)
+├── columns
+├── article
+├── quote
+├── stats
+├── testimonial
+├── author
+├── tags
+└── share
+
+Media (3)
+├── video
+├── embed
+└── image-gallery
+
+CTA/Promo (5)
+├── cta-banner
+├── promo
+├── alert
+├── announcement
+└── sticky-cta
+
+Tables (3)
+├── table
+├── comparison
+└── pricing
+
+Support (6)
+├── support-grid
+├── contact-card
+├── faq
+├── chat-widget
+├── help-topic
+└── resource-links
+
+Industry (3)
+├── solution-cards
+├── industry-hero
+└── use-case
+
+Offers (4)
+├── offer-card
+├── deal-banner
+├── promo-tile
+└── bundle
+
+Other (11)
+├── quick-links
+├── breadcrumb
+├── social-share
+├── related-content
+├── anchor-nav
+├── back-to-top
+├── cookie-consent
+├── search-results
+├── pagination
+├── filters
+└── sort
+</code></pre></div>
+<div><h2 id="migration-considerations">Migration Considerations</h2><h3 id="what-changes">What Changes</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="aspect"><div><div><strong>Dialogs</strong></div><div>Complex Touch UI dialogs</div><div>Simple table structure</div></div><div><div><strong>Variants</strong></div><div>Style System + Policies</div><div>Block name suffix</div></div><div><div><strong>JavaScript</strong></div><div>AEM clientlibs (jQuery often)</div><div>Vanilla JS modules</div></div><div><div><strong>CSS</strong></div><div>SCSS with clientlib categories</div><div>Plain CSS with custom properties</div></div><div><div><strong>Content Model</strong></div><div>JCR properties</div><div>Table cells / rows</div></div></div><h3 id="what-stays-similar">What Stays Similar</h3><ul>
+<li>Component/Block concept</li>
+<li>Responsive behavior</li>
+<li>Semantic HTML output</li>
+<li>Accessibility requirements</li>
+<li>Design token usage</li>
+</ul></div>
+<div><p><em>Document Version: 1.0</em>
+<em>Updated: January 2026</em>
+<em>Platform: AEM as a Cloud Service → Edge Delivery Services</em></p></div>
+</main>
+<footer></footer>
+</body>
+</html>

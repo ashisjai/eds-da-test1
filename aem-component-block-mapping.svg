@@ -1,0 +1,390 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1500" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="1400" height="1500" fill="#ffffff"/>
+
+  <!-- Title -->
+  <rect x="20" y="15" width="520" height="40" rx="4" fill="#009FDB"/>
+  <text x="35" y="43" font-size="18" font-weight="bold" fill="white">AEM Components → EDS Blocks Mapping</text>
+  <text x="560" y="43" font-size="12" fill="#666">business.att.com | 68 Block Components</text>
+
+  <!-- Legend -->
+  <rect x="1050" y="15" width="330" height="70" rx="6" fill="#f8f9fa" stroke="#ddd"/>
+  <text x="1070" y="35" font-size="11" font-weight="bold" fill="#333">Legend</text>
+  <rect x="1070" y="45" width="60" height="15" rx="3" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="1140" y="57" font-size="9" fill="#333">AEM Component</text>
+  <rect x="1070" y="65" width="60" height="15" rx="3" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1140" y="77" font-size="9" fill="#333">EDS Block</text>
+  <text x="1250" y="57" font-size="9" fill="#666">→ Direct mapping</text>
+  <text x="1250" y="77" font-size="9" fill="#666">⇢ Split/Merge</text>
+
+  <!-- ==================== HEADER ROW ==================== -->
+  <rect x="20" y="100" width="660" height="40" rx="6" fill="#1976D2"/>
+  <text x="250" y="127" font-size="14" font-weight="bold" fill="white">AEM COMPONENTS (Traditional)</text>
+
+  <rect x="720" y="100" width="660" height="40" rx="6" fill="#388E3C"/>
+  <text x="950" y="127" font-size="14" font-weight="bold" fill="white">EDS BLOCKS (Edge Delivery)</text>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <rect x="20" y="155" width="1360" height="120" rx="8" fill="#FFF8E1" stroke="#FFC107" stroke-width="2"/>
+  <text x="40" y="175" font-size="11" font-weight="bold" fill="#F57F17" letter-spacing="1">NAVIGATION COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="190" width="180" height="70" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="215" font-size="10" font-weight="bold" fill="#1565C0">Header Component</text>
+  <text x="60" y="232" font-size="8" fill="#666">com.att.business/header</text>
+  <text x="60" y="247" font-size="8" fill="#666">Sling Model + HTL</text>
+
+  <rect x="240" y="190" width="180" height="70" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="260" y="215" font-size="10" font-weight="bold" fill="#1565C0">Footer Component</text>
+  <text x="260" y="232" font-size="8" fill="#666">com.att.business/footer</text>
+  <text x="260" y="247" font-size="8" fill="#666">Sling Model + HTL</text>
+
+  <rect x="440" y="190" width="180" height="70" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="460" y="215" font-size="10" font-weight="bold" fill="#1565C0">Navigation Component</text>
+  <text x="460" y="232" font-size="8" fill="#666">wcm/core/navigation</text>
+  <text x="460" y="247" font-size="8" fill="#666">Multi-level menu</text>
+
+  <!-- Arrows -->
+  <line x1="640" y1="225" x2="720" y2="225" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="190" width="180" height="70" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="215" font-size="10" font-weight="bold" fill="#2E7D32">header</text>
+  <text x="760" y="232" font-size="8" fill="#666">/blocks/header/</text>
+  <text x="760" y="247" font-size="8" fill="#666">header.js + header.css</text>
+
+  <rect x="940" y="190" width="180" height="70" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="960" y="215" font-size="10" font-weight="bold" fill="#2E7D32">footer</text>
+  <text x="960" y="232" font-size="8" fill="#666">/blocks/footer/</text>
+  <text x="960" y="247" font-size="8" fill="#666">footer.js + footer.css</text>
+
+  <rect x="1140" y="190" width="180" height="70" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1160" y="215" font-size="10" font-weight="bold" fill="#2E7D32">mega-menu</text>
+  <text x="1160" y="232" font-size="8" fill="#666">/blocks/mega-menu/</text>
+  <text x="1160" y="247" font-size="8" fill="#666">Multi-tier navigation</text>
+
+  <!-- ==================== HERO COMPONENTS ==================== -->
+  <rect x="20" y="290" width="1360" height="170" rx="8" fill="#E8EAF6" stroke="#5C6BC0" stroke-width="2"/>
+  <text x="40" y="310" font-size="11" font-weight="bold" fill="#3949AB" letter-spacing="1">HERO COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="325" width="280" height="120" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="350" font-size="10" font-weight="bold" fill="#1565C0">Teaser Component</text>
+  <text x="60" y="367" font-size="8" fill="#666">wcm/core/teaser</text>
+  <text x="60" y="384" font-size="8" fill="#666">Title, Description, Image, CTA</text>
+  <text x="60" y="401" font-size="8" fill="#666">Background options</text>
+  <text x="60" y="418" font-size="8" fill="#666">Style System variants</text>
+  <text x="60" y="435" font-size="8" fill="#666">Responsive image</text>
+
+  <rect x="340" y="325" width="280" height="120" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="360" y="350" font-size="10" font-weight="bold" fill="#1565C0">Experience Fragment</text>
+  <text x="360" y="367" font-size="8" fill="#666">cq/experience-fragments</text>
+  <text x="360" y="384" font-size="8" fill="#666">Reusable hero patterns</text>
+  <text x="360" y="401" font-size="8" fill="#666">Master + variations</text>
+  <text x="360" y="418" font-size="8" fill="#666">Cross-page consistency</text>
+  <text x="360" y="435" font-size="8" fill="#666">Live Copy support</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="385" x2="720" y2="385" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="660" y="375" font-size="8" fill="#666">⇢</text>
+
+  <!-- EDS Side - Multiple blocks -->
+  <rect x="740" y="325" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="350" font-size="10" font-weight="bold" fill="#2E7D32">hero</text>
+  <text x="760" y="367" font-size="8" fill="#666">hero.js + hero.css</text>
+
+  <rect x="895" y="325" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="915" y="350" font-size="10" font-weight="bold" fill="#2E7D32">hero-split</text>
+  <text x="915" y="367" font-size="8" fill="#666">50/50 layout</text>
+
+  <rect x="1050" y="325" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1070" y="350" font-size="10" font-weight="bold" fill="#2E7D32">hero-video</text>
+  <text x="1070" y="367" font-size="8" fill="#666">Video background</text>
+
+  <rect x="1205" y="325" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1225" y="350" font-size="10" font-weight="bold" fill="#2E7D32">hero-carousel</text>
+  <text x="1225" y="367" font-size="8" fill="#666">Rotating heroes</text>
+
+  <rect x="740" y="390" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="415" font-size="10" font-weight="bold" fill="#2E7D32">hero-animated</text>
+  <text x="760" y="432" font-size="8" fill="#666">Motion effects</text>
+
+  <rect x="895" y="390" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="915" y="415" font-size="10" font-weight="bold" fill="#2E7D32">hero-minimal</text>
+  <text x="915" y="432" font-size="8" fill="#666">Simple text hero</text>
+
+  <rect x="1050" y="390" width="140" height="55" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1070" y="415" font-size="10" font-weight="bold" fill="#2E7D32">hero-industry</text>
+  <text x="1070" y="432" font-size="8" fill="#666">Vertical-specific</text>
+
+  <!-- ==================== CARDS COMPONENTS ==================== -->
+  <rect x="20" y="475" width="1360" height="130" rx="8" fill="#FBE9E7" stroke="#FF5722" stroke-width="2"/>
+  <text x="40" y="495" font-size="11" font-weight="bold" fill="#E64A19" letter-spacing="1">CARD COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="510" width="280" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="535" font-size="10" font-weight="bold" fill="#1565C0">Card / List Component</text>
+  <text x="60" y="552" font-size="8" fill="#666">wcm/core/list + card styling</text>
+  <text x="60" y="569" font-size="8" fill="#666">Dynamic or static items</text>
+  <text x="60" y="586" font-size="8" fill="#666">Grid layout options</text>
+
+  <rect x="340" y="510" width="280" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="360" y="535" font-size="10" font-weight="bold" fill="#1565C0">Content Fragment List</text>
+  <text x="360" y="552" font-size="8" fill="#666">dam/cfm/components/list</text>
+  <text x="360" y="569" font-size="8" fill="#666">Query-based content</text>
+  <text x="360" y="586" font-size="8" fill="#666">Structured data display</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="550" x2="720" y2="550" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="510" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="535" font-size="10" font-weight="bold" fill="#2E7D32">cards</text>
+  <text x="760" y="552" font-size="8" fill="#666">Standard cards</text>
+  <text x="760" y="569" font-size="8" fill="#666">cards.js</text>
+
+  <rect x="895" y="510" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="915" y="535" font-size="10" font-weight="bold" fill="#2E7D32">cards-offer</text>
+  <text x="915" y="552" font-size="8" fill="#666">Promotional cards</text>
+  <text x="915" y="569" font-size="8" fill="#666">Price display</text>
+
+  <rect x="1050" y="510" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1070" y="535" font-size="10" font-weight="bold" fill="#2E7D32">cards-story</text>
+  <text x="1070" y="552" font-size="8" fill="#666">Case study cards</text>
+  <text x="1070" y="569" font-size="8" fill="#666">Customer stories</text>
+
+  <rect x="1205" y="510" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1225" y="535" font-size="10" font-weight="bold" fill="#2E7D32">cards-product</text>
+  <text x="1225" y="552" font-size="8" fill="#666">Product cards</text>
+  <text x="1225" y="569" font-size="8" fill="#666">Feature highlights</text>
+
+  <!-- ==================== INTERACTIVE COMPONENTS ==================== -->
+  <rect x="20" y="620" width="1360" height="130" rx="8" fill="#E0F2F1" stroke="#009688" stroke-width="2"/>
+  <text x="40" y="640" font-size="11" font-weight="bold" fill="#00796B" letter-spacing="1">INTERACTIVE COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="655" width="180" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="680" font-size="10" font-weight="bold" fill="#1565C0">Tabs Component</text>
+  <text x="60" y="697" font-size="8" fill="#666">wcm/core/tabs</text>
+  <text x="60" y="714" font-size="8" fill="#666">Container component</text>
+  <text x="60" y="731" font-size="8" fill="#666">Nested content</text>
+
+  <rect x="240" y="655" width="180" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="260" y="680" font-size="10" font-weight="bold" fill="#1565C0">Accordion</text>
+  <text x="260" y="697" font-size="8" fill="#666">wcm/core/accordion</text>
+  <text x="260" y="714" font-size="8" fill="#666">Expandable panels</text>
+  <text x="260" y="731" font-size="8" fill="#666">FAQ support</text>
+
+  <rect x="440" y="655" width="180" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="460" y="680" font-size="10" font-weight="bold" fill="#1565C0">Carousel</text>
+  <text x="460" y="697" font-size="8" fill="#666">wcm/core/carousel</text>
+  <text x="460" y="714" font-size="8" fill="#666">Sliding content</text>
+  <text x="460" y="731" font-size="8" fill="#666">Auto-play option</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="695" x2="720" y2="695" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="655" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="680" font-size="10" font-weight="bold" fill="#2E7D32">tabs</text>
+  <text x="760" y="697" font-size="8" fill="#666">tabs.js</text>
+  <text x="760" y="714" font-size="8" fill="#666">Table-based</text>
+
+  <rect x="885" y="655" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="905" y="680" font-size="10" font-weight="bold" fill="#2E7D32">accordion</text>
+  <text x="905" y="697" font-size="8" fill="#666">accordion.js</text>
+  <text x="905" y="714" font-size="8" fill="#666">Details/Summary</text>
+
+  <rect x="1030" y="655" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1050" y="680" font-size="10" font-weight="bold" fill="#2E7D32">carousel</text>
+  <text x="1050" y="697" font-size="8" fill="#666">carousel.js</text>
+  <text x="1050" y="714" font-size="8" fill="#666">CSS scroll-snap</text>
+
+  <rect x="1175" y="655" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1195" y="680" font-size="10" font-weight="bold" fill="#2E7D32">modal</text>
+  <text x="1195" y="697" font-size="8" fill="#666">modal.js</text>
+  <text x="1195" y="714" font-size="8" fill="#666">Dialog overlay</text>
+
+  <!-- ==================== FORM COMPONENTS ==================== -->
+  <rect x="20" y="765" width="1360" height="130" rx="8" fill="#FCE4EC" stroke="#E91E63" stroke-width="2"/>
+  <text x="40" y="785" font-size="11" font-weight="bold" fill="#C2185B" letter-spacing="1">FORM COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="800" width="280" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="825" font-size="10" font-weight="bold" fill="#1565C0">AEM Forms (Adaptive)</text>
+  <text x="60" y="842" font-size="8" fill="#666">fd/af/components/form</text>
+  <text x="60" y="859" font-size="8" fill="#666">Complex validation rules</text>
+  <text x="60" y="876" font-size="8" fill="#666">Multi-step wizard</text>
+
+  <rect x="340" y="800" width="280" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="360" y="825" font-size="10" font-weight="bold" fill="#1565C0">Form Container</text>
+  <text x="360" y="842" font-size="8" fill="#666">wcm/core/form/container</text>
+  <text x="360" y="859" font-size="8" fill="#666">Basic form wrapper</text>
+  <text x="360" y="876" font-size="8" fill="#666">Action handlers</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="840" x2="720" y2="840" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="800" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="825" font-size="10" font-weight="bold" fill="#2E7D32">form</text>
+  <text x="760" y="842" font-size="8" fill="#666">form.js</text>
+  <text x="760" y="859" font-size="8" fill="#666">Standard forms</text>
+
+  <rect x="895" y="800" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="915" y="825" font-size="10" font-weight="bold" fill="#2E7D32">rai-form</text>
+  <text x="915" y="842" font-size="8" fill="#666">rai-form.js</text>
+  <text x="915" y="859" font-size="8" fill="#666">Request a Call</text>
+
+  <rect x="1050" y="800" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1070" y="825" font-size="10" font-weight="bold" fill="#2E7D32">email-signup</text>
+  <text x="1070" y="842" font-size="8" fill="#666">Newsletter form</text>
+  <text x="1070" y="859" font-size="8" fill="#666">Eloqua integration</text>
+
+  <rect x="1205" y="800" width="140" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1225" y="825" font-size="10" font-weight="bold" fill="#2E7D32">contact-form</text>
+  <text x="1225" y="842" font-size="8" fill="#666">Contact us</text>
+  <text x="1225" y="859" font-size="8" fill="#666">Lead capture</text>
+
+  <!-- ==================== CONTENT COMPONENTS ==================== -->
+  <rect x="20" y="910" width="1360" height="130" rx="8" fill="#F3E5F5" stroke="#9C27B0" stroke-width="2"/>
+  <text x="40" y="930" font-size="11" font-weight="bold" fill="#7B1FA2" letter-spacing="1">CONTENT COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="945" width="180" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="970" font-size="10" font-weight="bold" fill="#1565C0">Text Component</text>
+  <text x="60" y="987" font-size="8" fill="#666">wcm/core/text</text>
+  <text x="60" y="1004" font-size="8" fill="#666">Rich text editing</text>
+  <text x="60" y="1021" font-size="8" fill="#666">Inline styles</text>
+
+  <rect x="240" y="945" width="180" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="260" y="970" font-size="10" font-weight="bold" fill="#1565C0">Image Component</text>
+  <text x="260" y="987" font-size="8" fill="#666">wcm/core/image</text>
+  <text x="260" y="1004" font-size="8" fill="#666">Smart crop</text>
+  <text x="260" y="1021" font-size="8" fill="#666">Lazy loading</text>
+
+  <rect x="440" y="945" width="180" height="80" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="460" y="970" font-size="10" font-weight="bold" fill="#1565C0">Container</text>
+  <text x="460" y="987" font-size="8" fill="#666">wcm/core/container</text>
+  <text x="460" y="1004" font-size="8" fill="#666">Layout container</text>
+  <text x="460" y="1021" font-size="8" fill="#666">Responsive grid</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="985" x2="720" y2="985" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="945" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="970" font-size="10" font-weight="bold" fill="#2E7D32">columns</text>
+  <text x="760" y="987" font-size="8" fill="#666">columns.js</text>
+  <text x="760" y="1004" font-size="8" fill="#666">Multi-column</text>
+
+  <rect x="885" y="945" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="905" y="970" font-size="10" font-weight="bold" fill="#2E7D32">article</text>
+  <text x="905" y="987" font-size="8" fill="#666">article.js</text>
+  <text x="905" y="1004" font-size="8" fill="#666">Long-form</text>
+
+  <rect x="1030" y="945" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1050" y="970" font-size="10" font-weight="bold" fill="#2E7D32">quote</text>
+  <text x="1050" y="987" font-size="8" fill="#666">quote.js</text>
+  <text x="1050" y="1004" font-size="8" fill="#666">Blockquote</text>
+
+  <rect x="1175" y="945" width="130" height="80" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1195" y="970" font-size="10" font-weight="bold" fill="#2E7D32">stats</text>
+  <text x="1195" y="987" font-size="8" fill="#666">stats.js</text>
+  <text x="1195" y="1004" font-size="8" fill="#666">Key metrics</text>
+
+  <!-- ==================== MEDIA COMPONENTS ==================== -->
+  <rect x="20" y="1055" width="1360" height="100" rx="8" fill="#E1F5FE" stroke="#03A9F4" stroke-width="2"/>
+  <text x="40" y="1075" font-size="11" font-weight="bold" fill="#0277BD" letter-spacing="1">MEDIA COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="1090" width="280" height="50" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="1115" font-size="10" font-weight="bold" fill="#1565C0">Video / Dynamic Media</text>
+  <text x="60" y="1132" font-size="8" fill="#666">dam/components/video | Dynamic Media viewers</text>
+
+  <rect x="340" y="1090" width="280" height="50" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="360" y="1115" font-size="10" font-weight="bold" fill="#1565C0">Embed Component</text>
+  <text x="360" y="1132" font-size="8" fill="#666">wcm/core/embed | YouTube, Vimeo, iframes</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="1115" x2="720" y2="1115" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="1090" width="180" height="50" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="1115" font-size="10" font-weight="bold" fill="#2E7D32">video</text>
+  <text x="760" y="1132" font-size="8" fill="#666">video.js | HTML5 video</text>
+
+  <rect x="940" y="1090" width="180" height="50" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="960" y="1115" font-size="10" font-weight="bold" fill="#2E7D32">embed</text>
+  <text x="960" y="1132" font-size="8" fill="#666">embed.js | Third-party</text>
+
+  <rect x="1140" y="1090" width="180" height="50" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1160" y="1115" font-size="10" font-weight="bold" fill="#2E7D32">image-gallery</text>
+  <text x="1160" y="1132" font-size="8" fill="#666">Lightbox gallery</text>
+
+  <!-- ==================== TABLE/DATA COMPONENTS ==================== -->
+  <rect x="20" y="1170" width="1360" height="100" rx="8" fill="#ECEFF1" stroke="#607D8B" stroke-width="2"/>
+  <text x="40" y="1190" font-size="11" font-weight="bold" fill="#455A64" letter-spacing="1">TABLE &amp; DATA COMPONENTS</text>
+
+  <!-- AEM Side -->
+  <rect x="40" y="1205" width="280" height="50" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="60" y="1230" font-size="10" font-weight="bold" fill="#1565C0">Table Component</text>
+  <text x="60" y="1247" font-size="8" fill="#666">Custom table component | Structured data</text>
+
+  <rect x="340" y="1205" width="280" height="50" rx="6" fill="#E3F2FD" stroke="#1976D2"/>
+  <text x="360" y="1230" font-size="10" font-weight="bold" fill="#1565C0">Comparison Component</text>
+  <text x="360" y="1247" font-size="8" fill="#666">Product comparison | Feature matrix</text>
+
+  <!-- Arrow -->
+  <line x1="640" y1="1230" x2="720" y2="1230" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- EDS Side -->
+  <rect x="740" y="1205" width="180" height="50" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="760" y="1230" font-size="10" font-weight="bold" fill="#2E7D32">table</text>
+  <text x="760" y="1247" font-size="8" fill="#666">Native table styling</text>
+
+  <rect x="940" y="1205" width="180" height="50" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="960" y="1230" font-size="10" font-weight="bold" fill="#2E7D32">comparison</text>
+  <text x="960" y="1247" font-size="8" fill="#666">Side-by-side compare</text>
+
+  <rect x="1140" y="1205" width="180" height="50" rx="6" fill="#E8F5E9" stroke="#388E3C"/>
+  <text x="1160" y="1230" font-size="10" font-weight="bold" fill="#2E7D32">pricing</text>
+  <text x="1160" y="1247" font-size="8" fill="#666">Pricing tables</text>
+
+  <!-- ==================== MAPPING SUMMARY ==================== -->
+  <rect x="20" y="1290" width="1360" height="100" rx="8" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+  <text x="40" y="1315" font-size="12" font-weight="bold" fill="#2E7D32">MAPPING SUMMARY</text>
+
+  <rect x="40" y="1330" width="200" height="45" rx="6" fill="white" stroke="#81C784"/>
+  <text x="60" y="1350" font-size="10" font-weight="bold" fill="#2E7D32">AEM Components</text>
+  <text x="60" y="1367" font-size="9" fill="#666">~25 Core Components</text>
+
+  <text x="260" y="1355" font-size="16" fill="#666">→</text>
+
+  <rect x="300" y="1330" width="200" height="45" rx="6" fill="white" stroke="#81C784"/>
+  <text x="320" y="1350" font-size="10" font-weight="bold" fill="#2E7D32">EDS Blocks</text>
+  <text x="320" y="1367" font-size="9" fill="#666">68 Specialized Blocks</text>
+
+  <rect x="540" y="1330" width="250" height="45" rx="6" fill="#FFF8E1" stroke="#FFC107"/>
+  <text x="560" y="1350" font-size="10" font-weight="bold" fill="#F57F17">1:N Mapping</text>
+  <text x="560" y="1367" font-size="9" fill="#666">1 AEM component → Multiple blocks</text>
+
+  <rect x="810" y="1330" width="250" height="45" rx="6" fill="#FFF8E1" stroke="#FFC107"/>
+  <text x="830" y="1350" font-size="10" font-weight="bold" fill="#F57F17">Simplified Model</text>
+  <text x="830" y="1367" font-size="9" fill="#666">Table-based authoring</text>
+
+  <rect x="1080" y="1330" width="250" height="45" rx="6" fill="#FFF8E1" stroke="#FFC107"/>
+  <text x="1100" y="1350" font-size="10" font-weight="bold" fill="#F57F17">Performance Focus</text>
+  <text x="1100" y="1367" font-size="9" fill="#666">Vanilla JS, minimal CSS</text>
+
+  <!-- Footer -->
+  <text x="40" y="1420" font-size="10" fill="#666">AEM Components → EDS Blocks Mapping v1.0 | business.att.com | 68 Block Components</text>
+  <text x="40" y="1440" font-size="9" fill="#999">Edge Delivery Services uses a simplified content model with table-based authoring and block decoration</text>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+    </marker>
+  </defs>
+</svg>
