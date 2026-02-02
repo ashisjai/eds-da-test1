@@ -300,7 +300,63 @@ abbvie.com/
 
 ## 6. Timeline & Phases
 
-### 6.1 Phase Overview
+### 6.1 Gantt Chart
+
+```
+ABBVIE.COM EDS MIGRATION - PROJECT GANTT CHART (18 Weeks)
+═══════════════════════════════════════════════════════════════════════════════════════════
+
+                              PHASE 1          PHASE 2              PHASE 3        PHASE 4
+                            Foundation       Development         Content Migr.    Launch
+WEEK                    1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+                        │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 1: FOUNDATION (480 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Environment Setup       ████
+Design System              ████
+Core Blocks (Nav/Hero)        ████████
+Homepage Migration               ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 2: DEVELOPMENT (960 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Card Blocks (8)                     ████████
+Interactive Blocks (8)                    ████████
+Content Blocks (8)                              ████████
+Form Blocks (3)                                    ████
+Templates (8)                                      ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 3: CONTENT MIGRATION (840 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Landing Pages (6)                                        ████████
+Story Migration (50+)                                          ████████
+Products Page                                                        ████
+Pipeline Page                                                        ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 4: TESTING & LAUNCH (640 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Integration Testing                                                        ████
+Accessibility Audit                                                           ████
+UAT & Fixes                                                                      ████
+Go-Live                                                                             ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+MILESTONES                ▼     ▼           ▼                 ▼        ▼     ▼        ▼
+                          │     │           │                 │        │     │        │
+                       Design  Core      All Blocks       Content   100%  UAT    GO-LIVE
+                       System  Blocks    Complete         50%       Done  OK
+                       Done    Done      (Week 10)        (Wk 12)   W14   W17     W18
+
+═══════════════════════════════════════════════════════════════════════════════════════════
+LEGEND: ████ = Active Work Period    ▼ = Milestone
+        Total: 2,920 Hours | 18 Weeks | 7-9 FTEs | ~$560K
+═══════════════════════════════════════════════════════════════════════════════════════════
+```
+
+### 6.2 Phase Overview
 
 ```
 Phase 1: Foundation (Weeks 1-4) ─────────────────── 480 hours
@@ -332,7 +388,7 @@ Phase 4: Testing & Launch (Weeks 15-18) ─────────── 480 ho
 TOTAL PROJECT HOURS: 2,560 hours
 ```
 
-### 6.2 Detailed Timeline by Week
+### 6.3 Detailed Timeline by Week
 
 | Phase | Week | Activities | Hours | Deliverables |
 |-------|------|------------|-------|--------------|
@@ -355,7 +411,7 @@ TOTAL PROJECT HOURS: 2,560 hours
 | | 17 | UAT with stakeholders, content review, final fixes | 120 | UAT sign-off |
 | | 18 | DNS cutover prep, go-live, post-launch monitoring | 120 | Production site live |
 
-### 6.3 Hours by Role per Phase
+### 6.4 Hours by Role per Phase
 
 | Role | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Total Hours |
 |------|---------|---------|---------|---------|-------------|
@@ -370,7 +426,7 @@ TOTAL PROJECT HOURS: 2,560 hours
 | QA Engineer | 0 | 0 | 0 | 200 | **200** |
 | **Phase Totals** | **480** | **960** | **840** | **640** | **2,920** |
 
-### 6.4 Milestones
+### 6.5 Milestones
 
 | Milestone | Target Week | Hours to Date | Dependencies | Exit Criteria |
 |-----------|-------------|---------------|--------------|---------------|
@@ -383,7 +439,7 @@ TOTAL PROJECT HOURS: 2,560 hours
 | UAT Sign-off | Week 17 | 2,320 | Stakeholder time | All critical issues resolved |
 | Go-Live | Week 18 | 2,560 | DNS, legal approval | Production site live |
 
-### 6.5 Critical Path
+### 6.6 Critical Path
 
 ```
 Week 1-2: Environment + Design System (CRITICAL - blocks dependencies)

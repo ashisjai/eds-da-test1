@@ -977,7 +977,60 @@
 </tbody></table>
 <hr>
 <h2>6. Timeline &amp; Phases</h2>
-<h3>6.1 Phase Overview</h3>
+<h3>6.1 Gantt Chart</h3>
+<pre><code>ABBVIE.COM EDS MIGRATION - PROJECT GANTT CHART (18 Weeks)
+═══════════════════════════════════════════════════════════════════════════════════════════
+
+                              PHASE 1          PHASE 2              PHASE 3        PHASE 4
+                            Foundation       Development         Content Migr.    Launch
+WEEK                    1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+                        │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 1: FOUNDATION (480 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Environment Setup       ████
+Design System              ████
+Core Blocks (Nav/Hero)        ████████
+Homepage Migration               ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 2: DEVELOPMENT (960 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Card Blocks (8)                     ████████
+Interactive Blocks (8)                    ████████
+Content Blocks (8)                              ████████
+Form Blocks (3)                                    ████
+Templates (8)                                      ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 3: CONTENT MIGRATION (840 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Landing Pages (6)                                        ████████
+Story Migration (50+)                                          ████████
+Products Page                                                        ████
+Pipeline Page                                                        ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 4: TESTING &amp; LAUNCH (640 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Integration Testing                                                        ████
+Accessibility Audit                                                           ████
+UAT &amp; Fixes                                                                      ████
+Go-Live                                                                             ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+MILESTONES                ▼     ▼           ▼                 ▼        ▼     ▼        ▼
+                          │     │           │                 │        │     │        │
+                       Design  Core      All Blocks       Content   100%  UAT    GO-LIVE
+                       System  Blocks    Complete         50%       Done  OK
+                       Done    Done      (Week 10)        (Wk 12)   W14   W17     W18
+
+═══════════════════════════════════════════════════════════════════════════════════════════
+LEGEND: ████ = Active Work Period    ▼ = Milestone
+        Total: 2,920 Hours | 18 Weeks | 7-9 FTEs | ~$560K
+═══════════════════════════════════════════════════════════════════════════════════════════
+</code></pre>
+<h3>6.2 Phase Overview</h3>
 <pre><code>Phase 1: Foundation (Weeks 1-4) ─────────────────── 480 hours
 ├── Project setup &amp; planning (80 hrs)
 ├── Design system extraction (120 hrs)
@@ -1006,7 +1059,7 @@ Phase 4: Testing &amp; Launch (Weeks 15-18) ─────────── 48
 
 TOTAL PROJECT HOURS: 2,560 hours
 </code></pre>
-<h3>6.2 Detailed Timeline by Week</h3>
+<h3>6.3 Detailed Timeline by Week</h3>
 <table>
 <thead>
 <tr>
@@ -1144,7 +1197,7 @@ TOTAL PROJECT HOURS: 2,560 hours
 <td>Production site live</td>
 </tr>
 </tbody></table>
-<h3>6.3 Hours by Role per Phase</h3>
+<h3>6.4 Hours by Role per Phase</h3>
 <table>
 <thead>
 <tr>
@@ -1237,7 +1290,7 @@ TOTAL PROJECT HOURS: 2,560 hours
 <td><strong>2,920</strong></td>
 </tr>
 </tbody></table>
-<h3>6.4 Milestones</h3>
+<h3>6.5 Milestones</h3>
 <table>
 <thead>
 <tr>
@@ -1305,7 +1358,7 @@ TOTAL PROJECT HOURS: 2,560 hours
 <td>Production site live</td>
 </tr>
 </tbody></table>
-<h3>6.5 Critical Path</h3>
+<h3>6.6 Critical Path</h3>
 <pre><code>Week 1-2: Environment + Design System (CRITICAL - blocks dependencies)
     ↓
 Week 3-4: Header/Footer + Hero (CRITICAL - all pages need these)
