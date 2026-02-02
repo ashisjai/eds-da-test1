@@ -1,0 +1,2813 @@
+<div><h1 id="att-business-migration-plan">AT&#x26;T Business Migration Plan</h1><h2 id="adobe-edge-delivery-services-eds-migration">Adobe Edge Delivery Services (EDS) Migration</h2><p><strong>Source:</strong> https://www.business.att.com/
+<strong>Target Platform:</strong> Adobe Edge Delivery Services (EDS)
+<strong>Authoring:</strong> Universal Editor with AEM as Content Source
+<strong>Document Version:</strong> 1.0
+<strong>Date:</strong> February 2026</p></div>
+<div><h2 id="executive-summary">Executive Summary</h2><p>This document outlines the comprehensive migration plan for business.att.com to Adobe Edge Delivery Services using <strong>Universal Editor with AEM as the content source</strong>. This architecture combines the performance benefits of EDS delivery with enterprise-grade content management in AEM, providing visual WYSIWYG authoring while maintaining existing content governance workflows.</p><p>The migration scope includes approximately <strong>200+ pages</strong> across 7 product portfolios, 12 industry verticals, and supporting content sections. The site features complex interactive components including pricing configurators, product comparisons, lead generation forms, and integration with AT&#x26;T's enterprise systems.</p><h3 id="architecture-approach">Architecture Approach</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Content Source</strong></div><div>AEM Content Repository</div><div>Enterprise content storage, governance, workflows</div></div><div><div><strong>Authoring</strong></div><div>Universal Editor</div><div>Visual WYSIWYG editing experience</div></div><div><div><strong>Delivery</strong></div><div>Edge Delivery Services</div><div>High-performance CDN delivery, Core Web Vitals</div></div><div><div><strong>Code Repository</strong></div><div>GitHub</div><div>Block code, styles, scripts</div></div><div><div><strong>Edge Functions</strong></div><div>Edge Workers</div><div>API proxies, dynamic content, personalization</div></div></div><p><strong>Key Benefits of UE + AEM Architecture:</strong></p><ul>
+<li>Preserves existing AEM content governance and permissions</li>
+<li>Visual editing with real-time preview</li>
+<li>Sub-second page loads via EDS global CDN</li>
+<li>Lighthouse scores > 90 with minimal effort</li>
+<li>Seamless integration with existing AT&#x26;T AEM workflows</li>
+<li>Edge workers for dynamic functionality (pricing, APIs)</li>
+</ul><h3 id="key-metrics">Key Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div><strong>Total Estimated Pages</strong></div><div>200+</div><div>200+</div></div><div><div><strong>Product Portfolios</strong></div><div>7</div><div>7</div></div><div><div><strong>Industry Verticals</strong></div><div>12</div><div>12</div></div><div><div><strong>Individual Products</strong></div><div>50+</div><div>50+</div></div><div><div><strong>Custom Blocks Required</strong></div><div>45</div><div>45</div></div><div><div><strong>Estimated Duration</strong></div><div>24 weeks</div><div>20-21 weeks</div></div><div><div><strong>Total Project Hours</strong></div><div>4,800 hours</div><div>4,120 hours</div></div><div><div><strong>Team Size</strong></div><div>10-12 FTEs</div><div>9-11 FTEs</div></div><div><div><strong>Estimated Cost</strong></div><div>$920,000</div><div>$790,000</div></div><div><div><strong>Savings with EC/AEMCoder</strong></div><div>-</div><div>~$130,000 (14%)</div></div></div><blockquote>
+<p><strong>Note:</strong> EC/AEMCoder automates initial block generation, reducing development effort by ~40% for block-related tasks. See Section 12 for detailed comparison.</p>
+</blockquote></div>
+<div><h2 id="site-structure-analysis">1. Site Structure Analysis</h2><h3 id="information-architecture">1.1 Information Architecture</h3><pre><code>business.att.com/
+├── Homepage (1)
+├── Products/ (7 portfolios, 50+ products)
+│   ├── Cloud Connectivity/
+│   │   ├── Colocation
+│   │   ├── Content Delivery Network
+│   │   ├── AT&#x26;T NetBond for Cloud
+│   │   ├── AT&#x26;T Managed Cloud Connect
+│   │   └── Cloud Connections On-Demand
+│   ├── 5G for Business/
+│   │   ├── Mobile 5G
+│   │   ├── AT&#x26;T On-Premise Edge
+│   │   └── AT&#x26;T Private Cellular Networks
+│   ├── Business Internet/
+│   │   ├── AT&#x26;T Business Fiber
+│   │   ├── AT&#x26;T Dedicated Internet
+│   │   ├── Internet Air (Fixed Wireless)
+│   │   └── DSL/IPBB
+│   ├── Cybersecurity/
+│   │   ├── AT&#x26;T Dynamic Defense
+│   │   ├── Managed Security Services
+│   │   └── Threat Intelligence
+│   ├── Internet of Things/
+│   │   ├── IoT Platforms
+│   │   ├── Vehicle Solutions
+│   │   ├── Asset Management
+│   │   ├── IoT Professional Services
+│   │   └── Smart Cities
+│   ├── Voice &#x26; Collaboration/
+│   │   ├── AT&#x26;T Office@Hand
+│   │   ├── AT&#x26;T IP Toll-Free
+│   │   ├── Business SIP Trunking
+│   │   ├── Cloud Voice with Microsoft Teams
+│   │   └── Next Generation 9-1-1
+│   └── Wireless/Mobility/
+│       ├── Business Unlimited Plans
+│       ├── International Add-ons
+│       ├── Field Management
+│       ├── Mobile Business Solutions
+│       ├── Enhanced Push-to-Talk
+│       └── BYOD Solutions
+├── Industries/ (12 verticals)
+│   ├── Small Business
+│   ├── Financial Services
+│   ├── Healthcare
+│   ├── Hospitality
+│   ├── Manufacturing
+│   ├── Public Sector
+│   ├── Retail
+│   ├── Transportation
+│   ├── Wholesale
+│   ├── AT&#x26;T Global Business
+│   ├── Partner Solutions
+│   └── FirstNet (Public Safety)
+├── Insights/ (Content Hub)
+│   ├── Customer Stories
+│   ├── Research Reports
+│   ├── Tech Advice (Blog)
+│   └── Top Voices
+├── Support/
+│   ├── Contact Us
+│   ├── Premier Support
+│   └── Business Center Support
+├── Offers &#x26; Deals
+├── Bundles
+└── Utility Pages
+    ├── Sitemap
+    ├── Terms of Use
+    ├── Privacy Center
+    ├── Accessibility
+    └── Legal Notices
+</code></pre><h3 id="page-template-classification">1.2 Page Template Classification</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template-type"><div><div><strong>Homepage</strong></div><div>1</div><div>Very High</div><div>Hero carousel, product tabs, CTAs, forms</div></div><div><div><strong>Portfolio Landing</strong></div><div>7</div><div>High</div><div>Cloud, 5G, Internet, Security, IoT, Voice, Wireless</div></div><div><div><strong>Product Detail</strong></div><div>50+</div><div>Medium-High</div><div>Individual product pages with specs, pricing</div></div><div><div><strong>Industry Landing</strong></div><div>12</div><div>Medium-High</div><div>Vertical-specific solutions</div></div><div><div><strong>Industry Solution</strong></div><div>20+</div><div>Medium</div><div>Sub-pages for industry features</div></div><div><div><strong>Article/Story</strong></div><div>30+</div><div>Medium</div><div>Customer stories, blog posts</div></div><div><div><strong>Research Report</strong></div><div>10+</div><div>Medium</div><div>Downloadable content with forms</div></div><div><div><strong>Support/Contact</strong></div><div>5</div><div>Medium</div><div>Forms, contact info, FAQs</div></div><div><div><strong>Offers/Deals</strong></div><div>5+</div><div>High</div><div>Dynamic pricing, promotions</div></div><div><div><strong>Utility</strong></div><div>10</div><div>Low</div><div>Legal, sitemap, accessibility</div></div></div></div>
+<div><h2 id="migration-steps--activities">2. Migration Steps &#x26; Activities</h2><h3 id="phase-0-pre-migration-weeks-1-2">Phase 0: Pre-Migration (Weeks 1-2)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>0a</div><div><strong>Site audit &#x26; inventory</strong></div><div>Content Strategist</div><div>40</div><div>Complete page inventory, asset list</div></div><div><div>0b</div><div><strong>Performance baseline</strong></div><div>Tech Lead</div><div>24</div><div>Current Core Web Vitals report</div></div><div><div>0c</div><div><strong>SEO audit</strong></div><div>SEO Specialist</div><div>32</div><div>Rankings, meta data, structured data</div></div><div><div>0d</div><div><strong>Stakeholder alignment &#x26; kickoff</strong></div><div>PM</div><div>24</div><div>RACI matrix, kickoff deck, timeline</div></div><div><div>0e</div><div><strong>Technical discovery</strong></div><div>Tech Lead</div><div>40</div><div>API inventory, integration mapping</div></div><div><div></div><div><strong>Phase 0 Total</strong></div><div></div><div><strong>160</strong></div><div></div></div></div><h3 id="phase-1-foundation-weeks-3-6">Phase 1: Foundation (Weeks 3-6)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>1</div><div><strong>Run EC/AEMcoder for initial migration</strong></div><div>Dev Team</div><div>80</div><div>40</div><div>Initial blocks, markdown, page structure</div></div><div><div>2</div><div><strong>Update blocks, functionality, CSS</strong></div><div>Dev Team</div><div>160</div><div>80</div><div>Production-ready block code</div></div><div><div>2a</div><div><strong>Extract design system tokens</strong></div><div>Dev Team</div><div>80</div><div>60</div><div>styles.css, CSS custom properties</div></div><div><div>2b</div><div><strong>Typography &#x26; font setup</strong></div><div>Dev Team</div><div>24</div><div>24</div><div>fonts.css, AT&#x26;T brand fonts</div></div><div><div>2c</div><div><strong>Core navigation blocks</strong></div><div>Dev Team</div><div>80</div><div>80</div><div>header/, footer/, mega-menu</div></div><div><div></div><div><strong>Phase 1 Total</strong></div><div></div><div><strong>424</strong></div><div><strong>284</strong></div><div></div></div></div><h3 id="phase-2-content-modeling-weeks-7-8">Phase 2: Content Modeling (Weeks 7-8)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>3</div><div><strong>Create component-model.json</strong></div><div>Tech Lead</div><div>60</div><div>JCR package structure for AEM importer</div></div><div><div>3a</div><div><strong>Create component-definitions.json</strong></div><div>Tech Lead</div><div>60</div><div>Universal Editor field definitions</div></div><div><div>3b</div><div><strong>Define content fragment models</strong></div><div>Content Strategist</div><div>40</div><div>CF models for products, stories</div></div><div><div>3c</div><div><strong>Update transformations</strong></div><div>Dev Team</div><div>40</div><div>Import script transformations</div></div><div><div></div><div><strong>Phase 2 Total</strong></div><div></div><div><strong>200</strong></div><div></div></div></div><h3 id="phase-3-block-development-weeks-9-14">Phase 3: Block Development (Weeks 9-14)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>4a</div><div><strong>Hero blocks (6 variants)</strong></div><div>Dev Team</div><div>120</div><div>72</div><div>hero-video, hero-carousel, hero-split, etc.</div></div><div><div>4b</div><div><strong>Card blocks (10 variants)</strong></div><div>Dev Team</div><div>200</div><div>100</div><div>cards-product, cards-feature, cards-pricing, etc.</div></div><div><div>4c</div><div><strong>Interactive blocks</strong></div><div>Dev Team</div><div>280</div><div>168</div><div>tabs, accordion, carousel, modal, search</div></div><div><div>4d</div><div><strong>Form blocks</strong></div><div>Dev Team</div><div>120</div><div>72</div><div>lead-form, contact-form, newsletter</div></div><div><div>4e</div><div><strong>Content blocks</strong></div><div>Dev Team</div><div>160</div><div>80</div><div>columns, quote, table, embed, download</div></div><div><div>4f</div><div><strong>Product-specific blocks</strong></div><div>Dev Team</div><div>200</div><div>108</div><div>pricing-table, comparison, spec-sheet</div></div><div><div></div><div><strong>Phase 3 Total</strong></div><div></div><div><strong>1,080</strong></div><div><strong>600</strong></div><div></div></div></div><blockquote>
+<p><strong>Note:</strong> EC/AEMCoder estimates assume AI-generated block scaffolding with manual refinement for brand compliance, accessibility, and complex interactions.</p>
+</blockquote><h3 id="phase-4-page-review--asset-migration-weeks-15-16">Phase 4: Page Review &#x26; Asset Migration (Weeks 15-16)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>4</div><div><strong>Review each page, re-author assets</strong></div><div>Content Team</div><div>200</div><div>Validated content in AEM DAM</div></div><div><div>4a</div><div><strong>Create URL redirect mapping</strong></div><div>Content Strategist</div><div>40</div><div>301 redirect spreadsheet</div></div><div><div>4b</div><div><strong>DAM asset migration</strong></div><div>Content Team</div><div>80</div><div>Assets with metadata in AEM</div></div><div><div>4c</div><div><strong>Image optimization</strong></div><div>Dev Team</div><div>40</div><div>WebP conversion, lazy loading</div></div><div><div></div><div><strong>Phase 4 Total</strong></div><div></div><div><strong>360</strong></div><div></div></div></div><h3 id="phase-5-edge-workers--apis-weeks-17-18">Phase 5: Edge Workers &#x26; APIs (Weeks 17-18)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>5</div><div><strong>Move servlets/APIs to Edge workers</strong></div><div>Dev Team</div><div>160</div><div>Edge worker functions</div></div><div><div>5a</div><div><strong>Pricing API integration</strong></div><div>Dev Team</div><div>60</div><div>Dynamic pricing endpoints</div></div><div><div>5b</div><div><strong>Lead form submission handling</strong></div><div>Dev Team</div><div>40</div><div>Form backend integration</div></div><div><div>5c</div><div><strong>Search functionality</strong></div><div>Dev Team</div><div>80</div><div>Site search implementation</div></div><div><div></div><div><strong>Phase 5 Total</strong></div><div></div><div><strong>340</strong></div><div></div></div></div><h3 id="phase-6-aem-migration-weeks-19-20">Phase 6: AEM Migration (Weeks 19-20)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>6</div><div><strong>Migrate custom functionality to AEMaaCS</strong></div><div>Dev Team</div><div>120</div><div>Reports, scheduled jobs</div></div><div><div>7</div><div><strong>Migrate meta-schema, taxonomy, workflows</strong></div><div>Tech Lead</div><div>80</div><div>AEM configurations</div></div><div><div>7a</div><div><strong>User/group migration</strong></div><div>Admin</div><div>40</div><div>Permissions in AEMaaCS</div></div><div><div>7b</div><div><strong>Workflow configuration</strong></div><div>Tech Lead</div><div>40</div><div>Approval workflows</div></div><div><div></div><div><strong>Phase 6 Total</strong></div><div></div><div><strong>280</strong></div><div></div></div></div><h3 id="phase-7-integrations-weeks-21-22">Phase 7: Integrations (Weeks 21-22)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>8a</div><div><strong>Analytics/tracking setup</strong></div><div>Dev Team</div><div>60</div><div>Adobe Launch configuration</div></div><div><div>8b</div><div><strong>Third-party scripts</strong></div><div>Dev Team</div><div>40</div><div>Chat, pixels, consent banner</div></div><div><div>8c</div><div><strong>Search indexing configuration</strong></div><div>Dev Team</div><div>40</div><div>Sitemap, robots.txt</div></div><div><div>8d</div><div><strong>Social meta tags</strong></div><div>Dev Team</div><div>20</div><div>OG tags, Twitter cards</div></div><div><div></div><div><strong>Phase 7 Total</strong></div><div></div><div><strong>160</strong></div><div></div></div></div><h3 id="phase-8-validation--testing-weeks-23-24">Phase 8: Validation &#x26; Testing (Weeks 23-24)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>8</div><div><strong>Validate all functionalities</strong></div><div>QA Team</div><div>160</div><div>Functional test reports</div></div><div><div>9</div><div><strong>Accessibility audit (WCAG 2.1 AA)</strong></div><div>QA Team</div><div>80</div><div>Accessibility report, fixes</div></div><div><div>10</div><div><strong>Performance/load testing</strong></div><div>QA Team</div><div>60</div><div>Performance test results</div></div><div><div>11</div><div><strong>SEO validation</strong></div><div>SEO Specialist</div><div>40</div><div>Redirect testing, sitemap validation</div></div><div><div>12</div><div><strong>Security review</strong></div><div>Security Team</div><div>40</div><div>Security headers, CSP audit</div></div><div><div></div><div><strong>Phase 8 Total</strong></div><div></div><div><strong>380</strong></div><div></div></div></div><h3 id="phase-9-launch-week-24">Phase 9: Launch (Week 24+)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="step"><div><div>13</div><div><strong>UAT &#x26; stakeholder sign-off</strong></div><div>PM</div><div>80</div><div>Sign-off documentation</div></div><div><div>14</div><div><strong>DNS cutover &#x26; rollback plan</strong></div><div>Tech Lead</div><div>40</div><div>Production deployment</div></div><div><div>15</div><div><strong>Author training on Universal Editor</strong></div><div>Training Lead</div><div>60</div><div>Training materials, sessions</div></div><div><div>16</div><div><strong>Hypercare &#x26; monitoring setup</strong></div><div>DevOps</div><div>80</div><div>Monitoring dashboards, alerts</div></div><div><div></div><div><strong>Phase 9 Total</strong></div><div></div><div><strong>260</strong></div><div></div></div></div></div>
+<div><h2 id="complete-step-summary">3. Complete Step Summary</h2><pre><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│              AT&#x26;T BUSINESS EDS MIGRATION - 18 STEP PLAN                     │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│  PRE-MIGRATION (160 hrs)                                                    │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  0a. Site audit &#x26; inventory                                                 │
+│  0b. Performance/SEO baseline                                               │
+│  0c. SEO audit (rankings, meta data, structured data)                       │
+│  0d. Stakeholder alignment &#x26; kickoff                                        │
+│  0e. Technical discovery (API inventory)                                    │
+│                                                                             │
+│  MIGRATION EXECUTION (2,344 hrs)                                            │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  1.  Run EC/AEMcoder for business.att.com initial migration                 │
+│  2.  Update blocks, add functionality, fix CSS                              │
+│  2a. Extract design system tokens                                           │
+│  2b. Typography &#x26; font setup                                                │
+│  2c. Core navigation blocks (header, footer, mega-menu)                     │
+│  3.  Create component-model.json for JCR package                            │
+│  3a. Create component-definitions.json for Universal Editor                 │
+│  3b. Define content fragment models                                         │
+│  3c. Update import transformations                                          │
+│  4.  Review each page, re-author assets in DAM                              │
+│  4a. Create URL redirect mapping                                            │
+│  4b. DAM asset migration with metadata                                      │
+│  4c. Image optimization (WebP, lazy loading)                                │
+│  5.  Move existing servlets/APIs to Edge workers                            │
+│  5a. Pricing API integration                                                │
+│  5b. Lead form submission handling                                          │
+│  5c. Search functionality implementation                                    │
+│  6.  Migrate custom functionality (reports, jobs) to AEMaaCS                │
+│  7.  Migrate meta-schema, taxonomy, workflows, users to AEMaaCS             │
+│  7a. User/group permissions migration                                       │
+│  7b. Workflow configuration                                                 │
+│                                                                             │
+│  INTEGRATIONS (160 hrs)                                                     │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  8a. Analytics/tracking setup (Adobe Launch)                                │
+│  8b. Third-party scripts (chat, pixels, consent)                            │
+│  8c. Search indexing configuration                                          │
+│  8d. Social meta tags (OG, Twitter cards)                                   │
+│                                                                             │
+│  VALIDATION &#x26; LAUNCH (640 hrs)                                              │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  8.  Validate all existing functionalities work as-is                       │
+│  9.  Accessibility audit &#x26; fixes (WCAG 2.1 AA)                              │
+│  10. Performance/load testing                                               │
+│  11. SEO validation (redirects, sitemap, robots.txt)                        │
+│  12. Security review (headers, CSP)                                         │
+│  13. UAT &#x26; stakeholder sign-off                                             │
+│  14. DNS cutover (with rollback plan)                                       │
+│  15. Author training on Universal Editor                                    │
+│  16. Hypercare &#x26; post-launch monitoring                                     │
+│                                                                             │
+│  MANUAL TOTAL: 3,644 base hours + contingency = 4,800 hours                 │
+│  EC/AEMCODER TOTAL: 2,964 base hours + contingency = 4,120 hours            │
+│                                                                             │
+│  ═══════════════════════════════════════════════════════════════════════    │
+│  APPROACH COMPARISON:                                                       │
+│  ───────────────────────────────────────────────────────────────────────    │
+│  Manual:      24 weeks | 4,800 hours | $920,000                             │
+│  EC/AEMCoder: 20 weeks | 4,120 hours | $790,000                             │
+│  SAVINGS:     4 weeks  |   680 hours | $130,000 (14%)                       │
+│  ═══════════════════════════════════════════════════════════════════════    │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<div><h2 id="block-requirements">4. Block Requirements</h2><h3 id="required-eds-blocks-45-total">4.1 Required EDS Blocks (45 Total)</h3><h4 id="navigation-blocks-4">Navigation Blocks (4)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>header</code></div><div>Very High</div><div>Mega menu, search, account login, Personal/Business toggle</div></div><div><div><code>footer</code></div><div>High</div><div>Multi-column, social links, legal links</div></div><div><div><code>breadcrumb</code></div><div>Low</div><div>Standard hierarchy</div></div><div><div><code>mobile-nav</code></div><div>High</div><div>Mobile menu with nested items</div></div></div><h4 id="hero-blocks-6">Hero Blocks (6)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>hero-video</code></div><div>High</div><div>Background video with overlay text, CTAs</div></div><div><div><code>hero-carousel</code></div><div>High</div><div>Multiple slides with auto-rotation</div></div><div><div><code>hero-tabs</code></div><div>High</div><div>Tabbed content (Mobile, Internet, Voice, etc.)</div></div><div><div><code>hero-split</code></div><div>Medium</div><div>Two-column layout</div></div><div><div><code>hero-minimal</code></div><div>Low</div><div>Text-only section header</div></div><div><div><code>hero-promo</code></div><div>Medium</div><div>Promotional banner with pricing</div></div></div><h4 id="card-blocks-10">Card Blocks (10)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>cards-product</code></div><div>Medium</div><div>Product tiles with pricing</div></div><div><div><code>cards-feature</code></div><div>Medium</div><div>Icon/image with text</div></div><div><div><code>cards-pricing</code></div><div>High</div><div>Pricing comparison cards</div></div><div><div><code>cards-industry</code></div><div>Medium</div><div>Industry solution cards</div></div><div><div><code>cards-story</code></div><div>Medium</div><div>Customer story previews</div></div><div><div><code>cards-stat</code></div><div>Medium</div><div>Large numbers with descriptions</div></div><div><div><code>cards-cta</code></div><div>Low</div><div>Simple call-to-action cards</div></div><div><div><code>cards-icon</code></div><div>Medium</div><div>Icon-based feature cards</div></div><div><div><code>cards-testimonial</code></div><div>Medium</div><div>Customer quotes</div></div><div><div><code>cards-link</code></div><div>Low</div><div>Quick link lists</div></div></div><h4 id="interactive-blocks-10">Interactive Blocks (10)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>accordion</code></div><div>Medium</div><div>FAQ, product details</div></div><div><div><code>tabs</code></div><div>Medium</div><div>Content organization</div></div><div><div><code>carousel</code></div><div>High</div><div>Image/content slider</div></div><div><div><code>modal</code></div><div>Medium</div><div>Popup dialogs, offer details</div></div><div><div><code>video</code></div><div>Medium</div><div>Inline video player</div></div><div><div><code>video-modal</code></div><div>High</div><div>Lightbox video player</div></div><div><div><code>search</code></div><div>High</div><div>Site search with filtering</div></div><div><div><code>filter</code></div><div>High</div><div>Product filtering</div></div><div><div><code>pricing-calculator</code></div><div>Very High</div><div>Dynamic pricing tool</div></div><div><div><code>comparison-table</code></div><div>High</div><div>Product comparison</div></div></div><h4 id="content-blocks-8">Content Blocks (8)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>columns</code></div><div>Low</div><div>Multi-column layouts</div></div><div><div><code>quote</code></div><div>Low</div><div>Testimonials, pull quotes</div></div><div><div><code>table</code></div><div>Medium</div><div>Data tables</div></div><div><div><code>embed</code></div><div>Medium</div><div>External content (YouTube, maps)</div></div><div><div><code>download</code></div><div>Low</div><div>PDF/document links</div></div><div><div><code>cta-banner</code></div><div>Medium</div><div>Full-width call-to-action</div></div><div><div><code>divider</code></div><div>Low</div><div>Section separators</div></div><div><div><code>icon-list</code></div><div>Medium</div><div>Feature lists with icons</div></div></div><h4 id="form-blocks-4">Form Blocks (4)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>lead-form</code></div><div>High</div><div>Sales contact form (RAI form)</div></div><div><div><code>contact-form</code></div><div>Medium</div><div>General inquiry</div></div><div><div><code>newsletter</code></div><div>Medium</div><div>Email signup</div></div><div><div><code>search-input</code></div><div>Medium</div><div>Search box</div></div></div><h4 id="att-specific-blocks-3">AT&#x26;T-Specific Blocks (3)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>guarantee-banner</code></div><div>Medium</div><div>AT&#x26;T Guarantee messaging</div></div><div><div><code>offer-card</code></div><div>High</div><div>Dynamic promotional offers</div></div><div><div><code>jd-power-badge</code></div><div>Low</div><div>Award/certification badges</div></div></div><h3 id="block-summary">4.2 Block Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Navigation</div><div>4</div><div>High</div></div><div><div>Hero</div><div>6</div><div>Medium-High</div></div><div><div>Cards</div><div>10</div><div>Medium</div></div><div><div>Interactive</div><div>10</div><div>High</div></div><div><div>Content</div><div>8</div><div>Low-Medium</div></div><div><div>Forms</div><div>4</div><div>Medium-High</div></div><div><div>AT&#x26;T-Specific</div><div>3</div><div>Medium</div></div><div><div><strong>Total</strong></div><div><strong>45</strong></div><div><strong>Medium-High</strong></div></div></div></div>
+<div><h2 id="technical-requirements">5. Technical Requirements</h2><h3 id="design-system">5.1 Design System</h3><h4 id="typography">Typography</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="font"><div><div>AT&#x26;T Aleck Sans</div><div>Headlines, display</div><div>Custom (AT&#x26;T brand)</div></div><div><div>AT&#x26;T Aleck Slab</div><div>Accent text</div><div>Custom (AT&#x26;T brand)</div></div><div><div>System fonts</div><div>Body text</div><div>System stack fallback</div></div></div><h4 id="color-palette">Color Palette</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="color"><div><div>AT&#x26;T Blue</div><div><code>#009FDB</code></div><div>Primary brand, links</div></div><div><div>AT&#x26;T Dark Blue</div><div><code>#0568AE</code></div><div>Headers, CTAs</div></div><div><div>AT&#x26;T Black</div><div><code>#000000</code></div><div>Body text</div></div><div><div>AT&#x26;T Gray</div><div><code>#5A5A5A</code></div><div>Secondary text</div></div><div><div>White</div><div><code>#FFFFFF</code></div><div>Backgrounds</div></div><div><div>Light Gray</div><div><code>#F2F2F2</code></div><div>Secondary backgrounds</div></div></div><h3 id="integrations-required">5.2 Integrations Required</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Adobe Analytics/Launch</div><div>Critical</div><div>Medium</div><div>Tag management, conversion tracking</div></div><div><div>ChiliPiper (Concierge)</div><div>High</div><div>Medium</div><div>Lead routing, scheduling</div></div><div><div>OneTrust</div><div>High</div><div>Medium</div><div>Cookie consent, GDPR/CCPA</div></div><div><div>Site Search</div><div>High</div><div>High</div><div>Algolia or similar</div></div><div><div>Lead Form Backend</div><div>Critical</div><div>High</div><div>CRM integration</div></div><div><div>AT&#x26;T Business Center</div><div>Medium</div><div>High</div><div>Account management links</div></div><div><div>Premier Support</div><div>Medium</div><div>Medium</div><div>Customer portal integration</div></div><div><div>Chat Widget</div><div>Medium</div><div>Low</div><div>Customer support chat</div></div></div><h3 id="edge-workers-required">5.3 Edge Workers Required</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="worker"><div><div><code>pricing-api</code></div><div>Dynamic pricing calculation</div><div>High</div></div><div><div><code>lead-routing</code></div><div>Form submission handling</div><div>Medium</div></div><div><div><code>search-proxy</code></div><div>Search API proxy</div><div>Medium</div></div><div><div><code>offer-personalization</code></div><div>Dynamic offers based on segment</div><div>High</div></div><div><div><code>analytics-proxy</code></div><div>Server-side analytics</div><div>Low</div></div></div><h3 id="performance-targets">5.4 Performance Targets</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>LCP</div><div>&#x3C; 2.5s</div><div>TBD</div></div><div><div>FID/INP</div><div>&#x3C; 100ms</div><div>TBD</div></div><div><div>CLS</div><div>&#x3C; 0.1</div><div>TBD</div></div><div><div>Lighthouse Score</div><div>> 90</div><div>TBD</div></div><div><div>Page Weight</div><div>&#x3C; 1.5MB</div><div>TBD</div></div><div><div>Time to Interactive</div><div>&#x3C; 3s</div><div>TBD</div></div></div></div>
+<div><h2 id="timeline--phases">6. Timeline &#x26; Phases</h2><h3 id="gantt-chart">6.1 Gantt Chart</h3><pre><code>AT&#x26;T BUSINESS EDS MIGRATION - PROJECT GANTT CHART (24 Weeks)
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════
+
+                        PHASE 0    PHASE 1      PHASE 2   PHASE 3          PHASE 4-6      PHASE 7-9
+                        Pre-Mig    Foundation   Modeling  Block Dev        Migration      Validation
+WEEK                1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+                    │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 0: PRE-MIGRATION (160 hrs)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+Site Audit              ████
+Performance Baseline    ████
+SEO Audit                  ████
+Stakeholder Kickoff        ████
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 1: FOUNDATION (424 hrs)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+EC/AEMcoder Migration          ████████
+Block Updates &#x26; CSS                ████████████
+Design System Extraction               ████████
+Navigation Blocks                          ████████
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 2: CONTENT MODELING (200 hrs)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+component-model.json                           ████████
+component-definitions.json                         ████████
+Content Fragment Models                                ████
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 3: BLOCK DEVELOPMENT (1,080 hrs)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+Hero Blocks (6)                                        ████████
+Card Blocks (10)                                           ████████████
+Interactive Blocks (10)                                            ████████████
+Form Blocks (4)                                                            ████████
+Product Blocks (6)                                                             ████████
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 4-6: PAGE REVIEW &#x26; MIGRATION (980 hrs)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+Page Review &#x26; Assets                                                               ████████
+Edge Workers &#x26; APIs                                                                    ████████
+AEM Migration                                                                              ████████
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 7-9: INTEGRATIONS &#x26; LAUNCH (800 hrs)
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+Integrations Setup                                                                             ████████
+Validation &#x26; Testing                                                                               ████████
+UAT &#x26; Go-Live                                                                                          ████
+
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+MILESTONES          ▼        ▼        ▼           ▼              ▼           ▼        ▼        ▼
+                    │        │        │           │              │           │        │        │
+                 Kickoff  Design   Models     Blocks 50%    All Blocks   Content  UAT    GO-LIVE
+                 Done    System    Done       Complete       Done        100%     OK
+                 W2      W6       W8          W12           W14         W20      W23    W24
+
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════
+LEGEND: ████ = Active Work Period    ▼ = Milestone
+        Total: 4,800 Hours | 24 Weeks | 10-12 FTEs | ~$920K
+═══════════════════════════════════════════════════════════════════════════════════════════════════════════
+</code></pre><h3 id="phase-overview">6.2 Phase Overview</h3><pre><code>Phase 0: Pre-Migration (Weeks 1-2) ────────────── 160 hours
+├── Site audit &#x26; inventory (40 hrs)
+├── Performance baseline (24 hrs)
+├── SEO audit (32 hrs)
+├── Stakeholder kickoff (24 hrs)
+└── Technical discovery (40 hrs)
+
+Phase 1: Foundation (Weeks 3-6) ───────────────── 424 hours
+├── EC/AEMcoder initial migration (80 hrs)
+├── Block updates &#x26; CSS (160 hrs)
+├── Design system extraction (80 hrs)
+├── Typography setup (24 hrs)
+└── Core navigation blocks (80 hrs)
+
+Phase 2: Content Modeling (Weeks 7-8) ─────────── 200 hours
+├── component-model.json (60 hrs)
+├── component-definitions.json (60 hrs)
+├── Content fragment models (40 hrs)
+└── Import transformations (40 hrs)
+
+Phase 3: Block Development (Weeks 9-14) ──────── 1,080 hours
+├── Hero blocks - 6 variants (120 hrs)
+├── Card blocks - 10 variants (200 hrs)
+├── Interactive blocks - 10 (280 hrs)
+├── Form blocks - 4 (120 hrs)
+├── Content blocks - 8 (160 hrs)
+└── Product-specific blocks - 6 (200 hrs)
+
+Phase 4: Page Review &#x26; Assets (Weeks 15-16) ───── 360 hours
+├── Page review &#x26; re-authoring (200 hrs)
+├── URL redirect mapping (40 hrs)
+├── DAM asset migration (80 hrs)
+└── Image optimization (40 hrs)
+
+Phase 5: Edge Workers &#x26; APIs (Weeks 17-18) ────── 340 hours
+├── Servlet/API migration (160 hrs)
+├── Pricing API integration (60 hrs)
+├── Lead form handling (40 hrs)
+└── Search functionality (80 hrs)
+
+Phase 6: AEM Migration (Weeks 19-20) ──────────── 280 hours
+├── Custom functionality migration (120 hrs)
+├── Meta-schema &#x26; taxonomy (80 hrs)
+├── User/group migration (40 hrs)
+└── Workflow configuration (40 hrs)
+
+Phase 7: Integrations (Weeks 21-22) ───────────── 160 hours
+├── Analytics/tracking setup (60 hrs)
+├── Third-party scripts (40 hrs)
+├── Search indexing (40 hrs)
+└── Social meta tags (20 hrs)
+
+Phase 8-9: Validation &#x26; Launch (Weeks 23-24) ──── 640 hours
+├── Functional validation (160 hrs)
+├── Accessibility audit (80 hrs)
+├── Performance testing (60 hrs)
+├── SEO validation (40 hrs)
+├── Security review (40 hrs)
+├── UAT &#x26; sign-off (80 hrs)
+├── DNS cutover (40 hrs)
+├── Author training (60 hrs)
+└── Hypercare &#x26; monitoring (80 hrs)
+
+TOTAL PROJECT HOURS: 3,644 base + contingency = 4,800 hours
+</code></pre></div>
+<div><h2 id="resource-requirements">7. Resource Requirements</h2><h3 id="team-structure">7.1 Team Structure</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div><strong>Project Manager</strong></div><div>1</div><div>Timeline, coordination, stakeholder management</div></div><div><div><strong>Technical Lead</strong></div><div>1</div><div>Architecture, code review, technical decisions</div></div><div><div><strong>Senior EDS Developer</strong></div><div>2</div><div>Core blocks, complex components, edge workers</div></div><div><div><strong>Mid EDS Developer</strong></div><div>2</div><div>Standard blocks, templates, CSS</div></div><div><div><strong>Junior EDS Developer</strong></div><div>1</div><div>Support, simple blocks, testing</div></div><div><div><strong>Content Strategist</strong></div><div>1</div><div>Content mapping, IA, CF models</div></div><div><div><strong>Content Author</strong></div><div>2</div><div>Content migration, DAM management</div></div><div><div><strong>QA Engineer</strong></div><div>1</div><div>Testing, validation, accessibility</div></div><div><div><strong>SEO Specialist</strong></div><div>0.5</div><div>SEO audit, redirect validation</div></div><div><div><strong>DevOps/Admin</strong></div><div>0.5</div><div>AEM admin, monitoring setup</div></div><div><div><strong>Total</strong></div><div><strong>10-12</strong></div><div></div></div></div><h3 id="hours-by-role-per-phase">7.2 Hours by Role per Phase</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div>Project Manager</div><div>24</div><div>40</div><div>20</div><div>60</div><div>60</div><div>80</div><div><strong>284</strong></div></div><div><div>Technical Lead</div><div>64</div><div>80</div><div>100</div><div>120</div><div>120</div><div>80</div><div><strong>564</strong></div></div><div><div>Sr. EDS Dev 1</div><div>0</div><div>120</div><div>40</div><div>320</div><div>200</div><div>80</div><div><strong>760</strong></div></div><div><div>Sr. EDS Dev 2</div><div>0</div><div>100</div><div>40</div><div>280</div><div>200</div><div>80</div><div><strong>700</strong></div></div><div><div>Mid EDS Dev 1</div><div>0</div><div>80</div><div>0</div><div>200</div><div>160</div><div>80</div><div><strong>520</strong></div></div><div><div>Mid EDS Dev 2</div><div>0</div><div>40</div><div>0</div><div>160</div><div>120</div><div>60</div><div><strong>380</strong></div></div><div><div>Jr. EDS Dev</div><div>0</div><div>24</div><div>0</div><div>80</div><div>80</div><div>60</div><div><strong>244</strong></div></div><div><div>Content Strategist</div><div>40</div><div>20</div><div>80</div><div>40</div><div>80</div><div>40</div><div><strong>300</strong></div></div><div><div>Content Author 1</div><div>0</div><div>0</div><div>0</div><div>0</div><div>240</div><div>60</div><div><strong>300</strong></div></div><div><div>Content Author 2</div><div>0</div><div>0</div><div>0</div><div>0</div><div>160</div><div>40</div><div><strong>200</strong></div></div><div><div>QA Engineer</div><div>0</div><div>0</div><div>0</div><div>0</div><div>80</div><div>280</div><div><strong>360</strong></div></div><div><div>SEO Specialist</div><div>32</div><div>0</div><div>0</div><div>0</div><div>0</div><div>40</div><div><strong>72</strong></div></div><div><div>DevOps/Admin</div><div>0</div><div>0</div><div>0</div><div>0</div><div>60</div><div>60</div><div><strong>120</strong></div></div><div><div><strong>Phase Totals</strong></div><div><strong>160</strong></div><div><strong>504</strong></div><div><strong>280</strong></div><div><strong>1,260</strong></div><div><strong>1,560</strong></div><div><strong>1,040</strong></div><div><strong>4,804</strong></div></div></div></div>
+<div><h2 id="cost-estimation">8. Cost Estimation</h2><h3 id="labor-costs---by-role">8.1 Labor Costs - By Role</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div>Project Manager</div><div>$150</div><div>284</div><div>$42,600</div><div>Planning, coordination</div></div><div><div>Technical Lead</div><div>$200</div><div>564</div><div>$112,800</div><div>Architecture, decisions</div></div><div><div>Sr. EDS Developer 1</div><div>$185</div><div>760</div><div>$140,600</div><div>Core blocks, edge workers</div></div><div><div>Sr. EDS Developer 2</div><div>$185</div><div>700</div><div>$129,500</div><div>Complex components</div></div><div><div>Mid EDS Developer 1</div><div>$165</div><div>520</div><div>$85,800</div><div>Standard blocks</div></div><div><div>Mid EDS Developer 2</div><div>$165</div><div>380</div><div>$62,700</div><div>Templates, CSS</div></div><div><div>Jr. EDS Developer</div><div>$140</div><div>244</div><div>$34,160</div><div>Support, testing</div></div><div><div>Content Strategist</div><div>$135</div><div>300</div><div>$40,500</div><div>IA, content models</div></div><div><div>Content Author 1</div><div>$95</div><div>300</div><div>$28,500</div><div>Primary migration</div></div><div><div>Content Author 2</div><div>$95</div><div>200</div><div>$19,000</div><div>Secondary support</div></div><div><div>QA Engineer</div><div>$130</div><div>360</div><div>$46,800</div><div>Testing, a11y</div></div><div><div>SEO Specialist</div><div>$140</div><div>72</div><div>$10,080</div><div>SEO validation</div></div><div><div>DevOps/Admin</div><div>$160</div><div>120</div><div>$19,200</div><div>Admin, monitoring</div></div><div><div><strong>Subtotal Labor</strong></div><div></div><div><strong>4,804</strong></div><div><strong>$772,240</strong></div><div></div></div></div><h3 id="labor-costs---by-phase">8.2 Labor Costs - By Phase</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="phase"><div><div>Phase 0: Pre-Migration</div><div>160</div><div>$26,000</div><div>3%</div></div><div><div>Phase 1: Foundation</div><div>504</div><div>$84,000</div><div>11%</div></div><div><div>Phase 2: Content Modeling</div><div>280</div><div>$50,000</div><div>6%</div></div><div><div>Phase 3: Block Development</div><div>1,260</div><div>$218,000</div><div>28%</div></div><div><div>Phase 4-6: Migration</div><div>1,560</div><div>$248,000</div><div>32%</div></div><div><div>Phase 7-9: Validation/Launch</div><div>1,040</div><div>$146,240</div><div>19%</div></div><div><div><strong>Total</strong></div><div><strong>4,804</strong></div><div><strong>$772,240</strong></div><div>100%</div></div></div><h3 id="additional-costs">8.3 Additional Costs</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="item"><div><div>Adobe EDS Licensing</div><div>TBD</div><div>Annual</div><div>TBD</div><div>Per Adobe agreement</div></div><div><div>AEM Cloud Service</div><div>TBD</div><div>Annual</div><div>TBD</div><div>Per Adobe agreement</div></div><div><div>Search Service (Algolia)</div><div>$1,200/mo</div><div>Monthly</div><div>$14,400</div><div>Enterprise search</div></div><div><div>Edge Worker Compute</div><div>$500/mo</div><div>Monthly</div><div>$6,000</div><div>Cloudflare/similar</div></div><div><div>Image CDN</div><div>$300/mo</div><div>Monthly</div><div>$3,600</div><div>Image optimization</div></div><div><div>Monitoring Tools</div><div>$400/mo</div><div>Monthly</div><div>$4,800</div><div>Datadog/New Relic</div></div><div><div><strong>Subtotal Additional</strong></div><div></div><div></div><div><strong>$28,800</strong></div><div>First year</div></div></div><h3 id="contingency--risk-buffer">8.4 Contingency &#x26; Risk Buffer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="contingency-type"><div><div>Scope contingency</div><div>$772,240</div><div>10%</div><div>$77,224</div></div><div><div>Technical risk buffer</div><div>$218,000</div><div>15%</div><div>$32,700</div></div><div><div>Integration risk</div><div>$50,000</div><div>20%</div><div>$10,000</div></div><div><div><strong>Total Contingency</strong></div><div></div><div></div><div><strong>$119,924</strong></div></div></div><h3 id="total-cost-summary">8.5 Total Cost Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Labor (4,804 hours)</div><div>$772,240</div></div><div><div>Additional Costs (Year 1)</div><div>$28,800</div></div><div><div>Contingency (~15%)</div><div>$119,924</div></div><div><div><strong>Project Total</strong></div><div><strong>$920,964</strong></div></div></div><h4 id="cost-range-scenarios">Cost Range Scenarios</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="scenario"><div><div><strong>Optimistic</strong></div><div>4,000</div><div>$750,000</div><div>No major issues, experienced team</div></div><div><div><strong>Expected</strong></div><div>4,800</div><div>$920,000</div><div>Planned estimate with contingency</div></div><div><div><strong>Conservative</strong></div><div>5,800</div><div>$1,100,000</div><div>Complex issues, scope additions</div></div></div></div>
+<div><h2 id="risk-assessment">9. Risk Assessment</h2><h3 id="risk-matrix">9.1 Risk Matrix</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="risk"><div><div>Complex mega-menu navigation</div><div>High</div><div>High</div><div>Technical spike early, fallback options</div></div><div><div>Pricing API integration</div><div>Medium</div><div>High</div><div>Early API documentation, mock services</div></div><div><div>Content approval delays</div><div>High</div><div>High</div><div>Phased reviews, dedicated reviewers</div></div><div><div>AT&#x26;T brand compliance</div><div>Medium</div><div>High</div><div>Early brand team engagement</div></div><div><div>Edge worker complexity</div><div>Medium</div><div>High</div><div>Prototype critical workers first</div></div><div><div>Third-party script conflicts</div><div>Medium</div><div>Medium</div><div>Staged integration, testing</div></div><div><div>SEO ranking impact</div><div>Medium</div><div>High</div><div>Comprehensive redirect strategy</div></div><div><div>Performance with dynamic content</div><div>Medium</div><div>Medium</div><div>Caching strategy, edge optimization</div></div></div><h3 id="key-assumptions">9.2 Key Assumptions</h3><ul>
+<li>AT&#x26;T provides timely content approvals</li>
+<li>Access to existing AEM instance for content extraction</li>
+<li>API documentation available for backend services</li>
+<li>AT&#x26;T brand fonts licensed for EDS use</li>
+<li>ChiliPiper/OneTrust integrations continue as-is</li>
+<li>No major redesign required (visual refresh acceptable)</li>
+<li>Legal/compliance review integrated into timeline</li>
+</ul></div>
+<div><h2 id="success-criteria">10. Success Criteria</h2><h3 id="technical-success-metrics">10.1 Technical Success Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Lighthouse Performance</div><div>> 90</div></div><div><div>Lighthouse Accessibility</div><div>> 95</div></div><div><div>Lighthouse SEO</div><div>> 95</div></div><div><div>Core Web Vitals (all)</div><div>Pass</div></div><div><div>Cross-browser compatibility</div><div>Chrome, Safari, Firefox, Edge</div></div><div><div>Mobile responsiveness</div><div>100% pages</div></div><div><div>Page load time (LCP)</div><div>&#x3C; 2.5s</div></div></div><h3 id="business-success-metrics">10.2 Business Success Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Page load time improvement</div><div>> 40%</div></div><div><div>Content authoring time</div><div>&#x3C; 50% of current</div></div><div><div>Time to publish</div><div>&#x3C; 5 minutes</div></div><div><div>Uptime SLA</div><div>99.9%</div></div><div><div>Lead form conversion</div><div>Maintain or improve</div></div><div><div>SEO rankings</div><div>No degradation</div></div></div></div>
+<div><h2 id="appendices">11. Appendices</h2><h3 id="appendix-a-key-urls-inventory">Appendix A: Key URLs Inventory</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section"><div><div>Products</div><div>/products/*.html</div><div>50+</div></div><div><div>Portfolios</div><div>/portfolios/*.html</div><div>7</div></div><div><div>Industries</div><div>/industries/*.html</div><div>12</div></div><div><div>Categories</div><div>/categories/*.html</div><div>20+</div></div><div><div>Learn/Insights</div><div>/learn/*.html</div><div>40+</div></div><div><div>Support</div><div>/support/*.html</div><div>5</div></div><div><div>Offers</div><div>/offers*.html</div><div>5+</div></div><div><div>Other</div><div>Various</div><div>60+</div></div><div><div><strong>Total</strong></div><div></div><div><strong>200+</strong></div></div></div><h3 id="appendix-b-integration-contacts">Appendix B: Integration Contacts</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="system"><div><div>Adobe Analytics</div><div>AT&#x26;T Digital</div><div>TBD</div></div><div><div>ChiliPiper</div><div>Marketing Ops</div><div>TBD</div></div><div><div>OneTrust</div><div>Legal/Privacy</div><div>TBD</div></div><div><div>CRM/Lead System</div><div>Sales Ops</div><div>TBD</div></div><div><div>Business Center</div><div>IT</div><div>TBD</div></div></div><h3 id="appendix-c-content-fragment-models">Appendix C: Content Fragment Models</h3><p>To be developed during Phase 2.</p></div>
+<div></div>
+<div><h2 id="estimation-approaches-manual-vs-ecaemcoder">12. Estimation Approaches: Manual vs EC/AEMCoder</h2><p>This section compares traditional manual migration with the accelerated EC/AEMCoder approach. EC/AEMCoder uses AI-assisted tooling to automate initial block generation, content mapping, and markdown structure creation.</p><h3 id="what-ecaemcoder-automates">12.1 What EC/AEMCoder Automates</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="capability"><div><div><strong>Block structure generation</strong></div><div>✅ Yes</div><div>Review and refinement</div></div><div><div><strong>Initial HTML → Markdown conversion</strong></div><div>✅ Yes</div><div>Content validation</div></div><div><div><strong>Block CSS scaffolding</strong></div><div>✅ Yes</div><div>Brand refinement, responsive tuning</div></div><div><div><strong>Content mapping to blocks</strong></div><div>✅ Yes</div><div>Edge case handling</div></div><div><div><strong>Basic JavaScript decoration</strong></div><div>✅ Partial</div><div>Complex interactions, state management</div></div><div><div><strong>Image extraction &#x26; references</strong></div><div>✅ Yes</div><div>DAM migration, optimization</div></div></div><h3 id="what-still-requires-manual-work">12.2 What Still Requires Manual Work</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="task"><div><div><strong>CSS brand refinement</strong></div><div>AT&#x26;T brand compliance, pixel-perfect styling</div><div>High</div></div><div><div><strong>Complex JavaScript interactions</strong></div><div>Pricing calculators, dynamic filtering, animations</div><div>High</div></div><div><div><strong>Accessibility compliance</strong></div><div>WCAG 2.1 AA testing, ARIA attributes, keyboard nav</div><div>Medium</div></div><div><div><strong>component-model.json</strong></div><div>JCR package structure for AEM importer</div><div>Medium</div></div><div><div><strong>component-definitions.json</strong></div><div>Universal Editor field definitions</div><div>Medium</div></div><div><div><strong>Edge workers</strong></div><div>API proxies, form handling, personalization</div><div>High</div></div><div><div><strong>Integration testing</strong></div><div>Third-party scripts, analytics, CRM</div><div>Medium</div></div><div><div><strong>Content validation</strong></div><div>Business accuracy, legal review</div><div>High</div></div><div><div><strong>Performance optimization</strong></div><div>Core Web Vitals tuning, lazy loading</div><div>Medium</div></div></div><h3 id="hours-comparison-by-phase">12.3 Hours Comparison by Phase</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="phase"><div><div><strong>Phase 0: Pre-Migration</strong></div><div>160</div><div>160</div><div>0</div><div>Same (planning, audits)</div></div><div><div><strong>Phase 1: Foundation</strong></div><div>424</div><div>284</div><div>140</div><div>Initial migration + block updates accelerated</div></div><div><div><strong>Phase 2: Content Modeling</strong></div><div>200</div><div>180</div><div>20</div><div>Slight assist on transformations</div></div><div><div><strong>Phase 3: Block Development</strong></div><div>1,080</div><div>600</div><div>480</div><div>Major acceleration (~45%)</div></div><div><div><strong>Phase 4: Assets</strong></div><div>360</div><div>360</div><div>0</div><div>Same (content review, DAM)</div></div><div><div><strong>Phase 5: Edge Workers</strong></div><div>340</div><div>340</div><div>0</div><div>Same (custom code required)</div></div><div><div><strong>Phase 6: AEM Migration</strong></div><div>280</div><div>280</div><div>0</div><div>Same (AEM configuration)</div></div><div><div><strong>Phase 7: Integrations</strong></div><div>160</div><div>160</div><div>0</div><div>Same (third-party scripts)</div></div><div><div><strong>Phase 8-9: Validation/Launch</strong></div><div>640</div><div>600</div><div>40</div><div>Fewer defects to fix</div></div><div><div><strong>Contingency</strong></div><div>1,156</div><div>1,156</div><div>0</div><div>Same % contingency</div></div><div><div><strong>TOTAL</strong></div><div><strong>4,800</strong></div><div><strong>4,120</strong></div><div><strong>680</strong></div><div><strong>~14% reduction</strong></div></div></div><h3 id="block-development-comparison-phase-3">12.4 Block Development Comparison (Phase 3)</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-category"><div><div><strong>Hero Blocks (6)</strong></div><div>120</div><div>72</div><div>40%</div></div><div><div><strong>Card Blocks (10)</strong></div><div>200</div><div>100</div><div>50%</div></div><div><div><strong>Interactive Blocks (10)</strong></div><div>280</div><div>168</div><div>40%</div></div><div><div><strong>Form Blocks (4)</strong></div><div>120</div><div>72</div><div>40%</div></div><div><div><strong>Content Blocks (8)</strong></div><div>160</div><div>80</div><div>50%</div></div><div><div><strong>Product-specific (6)</strong></div><div>200</div><div>108</div><div>46%</div></div><div><div><strong>TOTAL</strong></div><div><strong>1,080</strong></div><div><strong>600</strong></div><div><strong>~44%</strong></div></div></div><h3 id="cost-comparison">12.5 Cost Comparison</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div><strong>Labor (base hours)</strong></div><div>$772,240</div><div>$659,200</div><div>$113,040</div></div><div><div><strong>Additional Costs (Year 1)</strong></div><div>$28,800</div><div>$28,800</div><div>$0</div></div><div><div><strong>Contingency (~15%)</strong></div><div>$119,924</div><div>$102,960</div><div>$16,964</div></div><div><div><strong>PROJECT TOTAL</strong></div><div><strong>$920,964</strong></div><div><strong>$791,000</strong></div><div><strong>~$130,000</strong></div></div></div><h3 id="timeline-comparison">12.6 Timeline Comparison</h3><pre><code>MANUAL APPROACH (24 Weeks)
+═══════════════════════════════════════════════════════════════
+Week  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+      │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │
+Ph 0  ████
+Ph 1      ████████████████
+Ph 2                      ████████
+Ph 3                              ████████████████████████
+Ph 4-6                                                    ████████████
+Ph 7-9                                                                ████████
+                                                                            ▼
+                                                                       GO-LIVE
+
+EC/AEMCODER APPROACH (20-21 Weeks)
+═══════════════════════════════════════════════════════════════
+Week  1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20 21
+      │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │
+Ph 0  ████
+Ph 1      ████████████
+Ph 2                  ██████
+Ph 3                        ████████████████
+Ph 4-6                                      ████████████
+Ph 7-9                                                  ██████████
+                                                                  ▼
+                                                             GO-LIVE
+═══════════════════════════════════════════════════════════════
+TIMELINE SAVINGS: 3-4 Weeks
+</code></pre></div>
+<div><h2 id="key-insights">13. Key Insights</h2><h3 id="ecaemcoder-value-proposition">13.1 EC/AEMCoder Value Proposition</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="insight"><div><div><strong>Greatest impact on repetitive tasks</strong></div><div>Card blocks, content blocks see 50% reduction</div></div><div><div><strong>Complex components still need expertise</strong></div><div>Pricing calculators, mega-menus require senior developers</div></div><div><div><strong>Quality of output varies</strong></div><div>Simple blocks: production-ready; Complex: 60-70% complete</div></div><div><div><strong>Consistency across blocks</strong></div><div>EC/AEMCoder maintains consistent patterns and CSS structure</div></div><div><div><strong>Faster iteration cycles</strong></div><div>Initial version in hours vs days enables more refinement time</div></div></div><h3 id="when-to-choose-each-approach">13.2 When to Choose Each Approach</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="choose-manual-when"><div><div>Small scope (&#x3C; 20 pages)</div><div>Large scope (50+ pages)</div></div><div><div>Highly custom design</div><div>Standard EDS patterns</div></div><div><div>Complex interactive requirements</div><div>Content-heavy sites</div></div><div><div>Existing experienced EDS team</div><div>Team ramping up on EDS</div></div><div><div>Tight brand guidelines</div><div>Flexible brand implementation</div></div></div><h3 id="hybrid-recommendation-for-att-business">13.3 Hybrid Recommendation for AT&#x26;T Business</h3><p>Given the AT&#x26;T Business site characteristics:</p><ul>
+<li><strong>200+ pages</strong> → EC/AEMCoder advantageous for scale</li>
+<li><strong>Complex interactive components</strong> → Manual expertise required</li>
+<li><strong>Strong brand guidelines</strong> → CSS refinement essential</li>
+<li><strong>Enterprise integrations</strong> → Edge workers manual regardless</li>
+</ul><p><strong>Recommendation: EC/AEMCoder approach with senior developer oversight for complex blocks</strong></p><pre><code>RECOMMENDED BLOCK APPROACH BY COMPLEXITY
+═══════════════════════════════════════════════════════════════
+
+EC/AEMCoder Primary (50% effort reduction)
+├── cards-product, cards-feature, cards-industry
+├── columns, quote, table, embed, download
+├── hero-minimal, hero-split
+├── cta-banner, divider, icon-list
+└── breadcrumb, cards-link, cards-cta
+
+EC/AEMCoder + Manual Refinement (30-40% reduction)
+├── hero-video, hero-carousel, hero-tabs
+├── cards-pricing, cards-testimonial, cards-stat
+├── accordion, tabs, modal
+├── lead-form, contact-form, newsletter
+└── offer-card, guarantee-banner
+
+Manual Development Primary (10-20% reduction)
+├── header (mega-menu complexity)
+├── footer (multi-column, legal links)
+├── mobile-nav (nested interactions)
+├── pricing-calculator (dynamic logic)
+├── comparison-table (interactive features)
+├── search, filter (complex UX)
+└── video-modal (lightbox interactions)
+═══════════════════════════════════════════════════════════════
+</code></pre></div>
+<div><h2 id="disclaimers--assumptions">14. Disclaimers &#x26; Assumptions</h2><h3 id="estimate-disclaimers">14.1 Estimate Disclaimers</h3><blockquote>
+<p><strong>⚠️ IMPORTANT DISCLAIMERS</strong></p>
+<ol>
+<li>
+<p><strong>Estimates are projections, not commitments.</strong> Actual effort may vary ±20% based on discovered complexity, scope changes, and team velocity.</p>
+</li>
+<li>
+<p><strong>EC/AEMCoder savings are based on typical outcomes.</strong> Results depend on source site structure, content quality, and block complexity. Highly custom designs may see lower automation benefits.</p>
+</li>
+<li>
+<p><strong>Timeline assumes no major scope changes.</strong> Additions to scope, design revisions, or new integration requirements will extend timelines proportionally.</p>
+</li>
+<li>
+<p><strong>Cost rates are illustrative.</strong> Actual rates depend on staffing model (internal, SI partner, offshore blend) and regional variations.</p>
+</li>
+<li>
+<p><strong>Contingency should not be eliminated.</strong> The 15% contingency accounts for unknowns discovered during migration. Removing it increases project risk.</p>
+</li>
+</ol>
+</blockquote><h3 id="technical-assumptions">14.2 Technical Assumptions</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="assumption"><div><div>Source AEM content is accessible</div><div>High - delays extraction</div><div>Early access validation</div></div><div><div>APIs have documentation</div><div>Medium - extends edge worker dev</div><div>Technical spike Week 3</div></div><div><div>Brand fonts are web-licensed</div><div>Low - fallback to system fonts</div><div>Legal review Week 2</div></div><div><div>No major redesign required</div><div>High - extends all phases</div><div>Stakeholder alignment</div></div><div><div>Third-party scripts compatible</div><div>Medium - integration issues</div><div>Staged testing</div></div></div><h3 id="ecaemcoder-specific-assumptions">14.3 EC/AEMCoder-Specific Assumptions</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="assumption"><div><div>Source HTML is semantic and well-structured</div><div>Lower automation quality, more manual fixes</div></div><div><div>Consistent page templates across site</div><div>Higher variance in block output</div></div><div><div>Standard CSS naming conventions</div><div>Additional CSS mapping required</div></div><div><div>Images accessible via public URLs</div><div>Manual asset handling needed</div></div><div><div>Content in English (primary)</div><div>Multi-language adds complexity</div></div></div><h3 id="organizational-assumptions">14.4 Organizational Assumptions</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="assumption"><div><div>Content approvers available within 5 business days</div><div>Schedule delays</div></div><div><div>Single decision-maker for design/UX</div><div>Revision cycles</div></div><div><div>Legal review integrated into timeline</div><div>Launch delays</div></div><div><div>Training resources allocated</div><div>Adoption issues post-launch</div></div><div><div>Hypercare team identified</div><div>Post-launch support gaps</div></div></div></div>
+<div><h2 id="document-history">Document History</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="version"><div><div>1.0</div><div>Feb 2026</div><div>Migration Team</div><div>Initial document</div></div><div><div>1.1</div><div>Feb 2026</div><div>Migration Team</div><div>Added EC/AEMCoder comparison, Key Insights, Disclaimers</div></div></div></div>
+<div><p><em>This migration plan is a living document and will be updated as the project progresses.</em></p></div>

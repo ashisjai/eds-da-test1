@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&T Business EDS Migration - Project Gantt Chart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0568AE 0%, #009FDB 100%);
+            min-height: 100vh;
+            padding: 40px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0568AE 0%, #009FDB 100%);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .gantt-wrapper {
+            padding: 30px;
+            overflow-x: auto;
+        }
+        .gantt-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .gantt-table th {
+            background: #0568AE;
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        .gantt-table th:first-child {
+            text-align: left;
+            min-width: 220px;
+            padding-left: 20px;
+        }
+        .gantt-table th.week {
+            min-width: 44px;
+            font-size: 11px;
+        }
+        .gantt-table td {
+            padding: 8px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: middle;
+        }
+        .gantt-table td:first-child {
+            padding-left: 20px;
+            font-weight: 500;
+        }
+        .phase-header {
+            background: linear-gradient(90deg, #0568AE, #009FDB) !important;
+            color: white !important;
+            font-weight: 700 !important;
+            font-size: 14px !important;
+        }
+        .phase-header td {
+            padding: 14px 20px !important;
+            border: none !important;
+        }
+        .task-row td:first-child {
+            padding-left: 35px !important;
+            color: #333;
+        }
+        .bar-cell {
+            padding: 4px 2px !important;
+        }
+        .bar {
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            min-width: 100%;
+        }
+        .bar-phase0 { background: linear-gradient(90deg, #6366f1, #8b5cf6); }
+        .bar-phase1 { background: linear-gradient(90deg, #ef4444, #f97316); }
+        .bar-phase2 { background: linear-gradient(90deg, #f59e0b, #eab308); }
+        .bar-phase3 { background: linear-gradient(90deg, #009FDB, #0568AE); }
+        .bar-phase4 { background: linear-gradient(90deg, #10b981, #34d399); }
+        .bar-phase5 { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
+        .bar-phase6 { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+        .bar-phase7 { background: linear-gradient(90deg, #ec4899, #f472b6); }
+
+        .milestone-row {
+            background: #f8fafc;
+        }
+        .milestone-row td {
+            padding: 10px 8px !important;
+            font-weight: 600;
+            color: #0568AE;
+        }
+        .milestone {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 16px solid #ef4444;
+            margin: 0 auto;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 25px 40px;
+            background: #f8fafc;
+            border-top: 1px solid #e0e0e0;
+            justify-content: center;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #333;
+        }
+        .legend-color {
+            width: 24px;
+            height: 14px;
+            border-radius: 3px;
+        }
+
+        .summary {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #0568AE 0%, #009FDB 100%);
+        }
+        .summary-item {
+            text-align: center;
+            color: white;
+        }
+        .summary-item .value {
+            font-size: 32px;
+            font-weight: 700;
+            display: block;
+        }
+        .summary-item .label {
+            font-size: 13px;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AT&T Business EDS Migration - Project Gantt Chart</h1>
+            <p>Universal Editor + AEM Content Source | 24 Weeks | 4,800 Hours</p>
+        </div>
+
+        <div class="gantt-wrapper">
+            <table class="gantt-table">
+                <thead>
+                    <tr>
+                        <th>Task / Activity</th>
+                        <th class="week">W1</th>
+                        <th class="week">W2</th>
+                        <th class="week">W3</th>
+                        <th class="week">W4</th>
+                        <th class="week">W5</th>
+                        <th class="week">W6</th>
+                        <th class="week">W7</th>
+                        <th class="week">W8</th>
+                        <th class="week">W9</th>
+                        <th class="week">W10</th>
+                        <th class="week">W11</th>
+                        <th class="week">W12</th>
+                        <th class="week">W13</th>
+                        <th class="week">W14</th>
+                        <th class="week">W15</th>
+                        <th class="week">W16</th>
+                        <th class="week">W17</th>
+                        <th class="week">W18</th>
+                        <th class="week">W19</th>
+                        <th class="week">W20</th>
+                        <th class="week">W21</th>
+                        <th class="week">W22</th>
+                        <th class="week">W23</th>
+                        <th class="week">W24</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Phase 0 -->
+                    <tr class="phase-header">
+                        <td colspan="25">PHASE 0: PRE-MIGRATION (160h)</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Site Audit & Inventory</td>
+                        <td class="bar-cell"><div class="bar bar-phase0">40h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Performance & SEO Baseline</td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase0">56h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Stakeholder Kickoff</td>
+                        <td></td>
+                        <td class="bar-cell"><div class="bar bar-phase0">64h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+
+                    <!-- Phase 1 -->
+                    <tr class="phase-header">
+                        <td colspan="25">PHASE 1: FOUNDATION (424h)</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>EC/AEMcoder Migration</td>
+                        <td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase1">80h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Block Updates & CSS</td>
+                        <td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="3"><div class="bar bar-phase1">160h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Design System Extraction</td>
+                        <td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase1">104h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Navigation Blocks</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase1">80h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+
+                    <!-- Phase 2 -->
+                    <tr class="phase-header">
+                        <td colspan="25">PHASE 2: CONTENT MODELING (200h)</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>component-model.json</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase2">120h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Content Fragment Models</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell"><div class="bar bar-phase2">80h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+
+                    <!-- Phase 3 -->
+                    <tr class="phase-header">
+                        <td colspan="25">PHASE 3: BLOCK DEVELOPMENT (1,080h)</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Hero Blocks (6)</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase3">120h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Card Blocks (10)</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="3"><div class="bar bar-phase3">200h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Interactive Blocks (10)</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="3"><div class="bar bar-phase3">280h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Form & Content Blocks (12)</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase3">280h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Product-Specific Blocks (7)</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase3">200h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+
+                    <!-- Phase 4-6 -->
+                    <tr class="phase-header">
+                        <td colspan="25">PHASE 4-6: PAGE REVIEW & MIGRATION (980h)</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Page Review & Assets</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase4">360h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Edge Workers & APIs</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase5">340h</div></td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>AEM Migration</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase6">280h</div></td>
+                        <td></td><td></td><td></td>
+                    </tr>
+
+                    <!-- Phase 7-9 -->
+                    <tr class="phase-header">
+                        <td colspan="25">PHASE 7-9: INTEGRATIONS & LAUNCH (800h)</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Integrations Setup</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase7">160h</div></td>
+                        <td></td><td></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>Validation & Testing</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell" colspan="2"><div class="bar bar-phase7">380h</div></td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>UAT & Go-Live</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td class="bar-cell"><div class="bar bar-phase7">260h</div></td>
+                    </tr>
+
+                    <!-- Milestones -->
+                    <tr class="milestone-row">
+                        <td>KEY MILESTONES</td>
+                        <td></td>
+                        <td><div class="milestone"></div></td>
+                        <td></td><td></td><td></td>
+                        <td><div class="milestone"></div></td>
+                        <td></td>
+                        <td><div class="milestone"></div></td>
+                        <td></td><td></td><td></td>
+                        <td><div class="milestone"></div></td>
+                        <td></td>
+                        <td><div class="milestone"></div></td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                        <td><div class="milestone"></div></td>
+                        <td></td><td></td>
+                        <td><div class="milestone"></div></td>
+                        <td><div class="milestone"></div></td>
+                    </tr>
+                    <tr class="task-row" style="font-size: 10px; color: #666;">
+                        <td></td>
+                        <td></td>
+                        <td style="text-align:center">Kickoff</td>
+                        <td></td><td></td><td></td>
+                        <td style="text-align:center">Design</td>
+                        <td></td>
+                        <td style="text-align:center">Models</td>
+                        <td></td><td></td><td></td>
+                        <td style="text-align:center">50%</td>
+                        <td></td>
+                        <td style="text-align:center">Blocks</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                        <td style="text-align:center">Content</td>
+                        <td></td><td></td>
+                        <td style="text-align:center">UAT</td>
+                        <td style="text-align:center">LIVE</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #6366f1, #8b5cf6);"></div>
+                <span>Phase 0: Pre-Migration</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #ef4444, #f97316);"></div>
+                <span>Phase 1: Foundation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #f59e0b, #eab308);"></div>
+                <span>Phase 2: Content Modeling</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #009FDB, #0568AE);"></div>
+                <span>Phase 3: Block Development</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #10b981, #34d399);"></div>
+                <span>Phase 4: Page Review</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
+                <span>Phase 5: Edge Workers</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #8b5cf6, #a78bfa);"></div>
+                <span>Phase 6: AEM Migration</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(90deg, #ec4899, #f472b6);"></div>
+                <span>Phase 7-9: Launch</span>
+            </div>
+            <div class="legend-item">
+                <div class="milestone" style="margin: 0;"></div>
+                <span>Milestone</span>
+            </div>
+        </div>
+
+        <div class="summary">
+            <div class="summary-item">
+                <span class="value">24</span>
+                <span class="label">Weeks</span>
+            </div>
+            <div class="summary-item">
+                <span class="value">4,800</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="summary-item">
+                <span class="value">45</span>
+                <span class="label">Blocks</span>
+            </div>
+            <div class="summary-item">
+                <span class="value">200+</span>
+                <span class="label">Pages</span>
+            </div>
+            <div class="summary-item">
+                <span class="value">10-12</span>
+                <span class="label">FTEs</span>
+            </div>
+            <div class="summary-item">
+                <span class="value">~$920K</span>
+                <span class="label">Total Cost</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

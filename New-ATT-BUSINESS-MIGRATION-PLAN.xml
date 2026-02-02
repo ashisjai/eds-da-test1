@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<migrationPlan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata>
+    <title>AT&amp;T Business Migration Plan</title>
+    <subtitle>Adobe Edge Delivery Services (EDS) Migration</subtitle>
+    <source>https://www.business.att.com/</source>
+    <targetPlatform>Adobe Edge Delivery Services (EDS)</targetPlatform>
+    <authoring>Universal Editor with AEM as Content Source</authoring>
+    <version>1.1</version>
+    <date>2026-02</date>
+  </metadata>
+
+  <executiveSummary>
+    <description>Comprehensive migration plan for business.att.com to Adobe Edge Delivery Services using Universal Editor with AEM as the content source.</description>
+    <scope>
+      <pages>200+</pages>
+      <productPortfolios>7</productPortfolios>
+      <industryVerticals>12</industryVerticals>
+      <individualProducts>50+</individualProducts>
+    </scope>
+    <architecture>
+      <component name="Content Source" technology="AEM Content Repository" purpose="Enterprise content storage, governance, workflows"/>
+      <component name="Authoring" technology="Universal Editor" purpose="Visual WYSIWYG editing experience"/>
+      <component name="Delivery" technology="Edge Delivery Services" purpose="High-performance CDN delivery, Core Web Vitals"/>
+      <component name="Code Repository" technology="GitHub" purpose="Block code, styles, scripts"/>
+      <component name="Edge Functions" technology="Edge Workers" purpose="API proxies, dynamic content, personalization"/>
+    </architecture>
+  </executiveSummary>
+
+  <keyMetrics>
+    <comparison>
+      <metric name="Total Estimated Pages">
+        <manual>200+</manual>
+        <ecAemCoder>200+</ecAemCoder>
+      </metric>
+      <metric name="Product Portfolios">
+        <manual>7</manual>
+        <ecAemCoder>7</ecAemCoder>
+      </metric>
+      <metric name="Industry Verticals">
+        <manual>12</manual>
+        <ecAemCoder>12</ecAemCoder>
+      </metric>
+      <metric name="Individual Products">
+        <manual>50+</manual>
+        <ecAemCoder>50+</ecAemCoder>
+      </metric>
+      <metric name="Custom Blocks Required">
+        <manual>45</manual>
+        <ecAemCoder>45</ecAemCoder>
+      </metric>
+      <metric name="Estimated Duration" unit="weeks">
+        <manual>24</manual>
+        <ecAemCoder>20-21</ecAemCoder>
+      </metric>
+      <metric name="Total Project Hours" unit="hours">
+        <manual>4800</manual>
+        <ecAemCoder>4120</ecAemCoder>
+      </metric>
+      <metric name="Team Size" unit="FTEs">
+        <manual>10-12</manual>
+        <ecAemCoder>9-11</ecAemCoder>
+      </metric>
+      <metric name="Estimated Cost" unit="USD">
+        <manual>920000</manual>
+        <ecAemCoder>790000</ecAemCoder>
+      </metric>
+      <metric name="Savings with EC/AEMCoder">
+        <manual>-</manual>
+        <ecAemCoder>130000</ecAemCoder>
+        <savingsPercent>14</savingsPercent>
+      </metric>
+    </comparison>
+  </keyMetrics>
+
+  <siteStructure>
+    <section name="Homepage" count="1"/>
+    <section name="Products">
+      <portfolio name="Cloud Connectivity">
+        <product>Colocation</product>
+        <product>Content Delivery Network</product>
+        <product>AT&amp;T NetBond for Cloud</product>
+        <product>AT&amp;T Managed Cloud Connect</product>
+        <product>Cloud Connections On-Demand</product>
+      </portfolio>
+      <portfolio name="5G for Business">
+        <product>Mobile 5G</product>
+        <product>AT&amp;T On-Premise Edge</product>
+        <product>AT&amp;T Private Cellular Networks</product>
+      </portfolio>
+      <portfolio name="Business Internet">
+        <product>AT&amp;T Business Fiber</product>
+        <product>AT&amp;T Dedicated Internet</product>
+        <product>Internet Air (Fixed Wireless)</product>
+        <product>DSL/IPBB</product>
+      </portfolio>
+      <portfolio name="Cybersecurity">
+        <product>AT&amp;T Dynamic Defense</product>
+        <product>Managed Security Services</product>
+        <product>Threat Intelligence</product>
+      </portfolio>
+      <portfolio name="Internet of Things">
+        <product>IoT Platforms</product>
+        <product>Vehicle Solutions</product>
+        <product>Asset Management</product>
+        <product>IoT Professional Services</product>
+        <product>Smart Cities</product>
+      </portfolio>
+      <portfolio name="Voice &amp; Collaboration">
+        <product>AT&amp;T Office@Hand</product>
+        <product>AT&amp;T IP Toll-Free</product>
+        <product>Business SIP Trunking</product>
+        <product>Cloud Voice with Microsoft Teams</product>
+        <product>Next Generation 9-1-1</product>
+      </portfolio>
+      <portfolio name="Wireless/Mobility">
+        <product>Business Unlimited Plans</product>
+        <product>International Add-ons</product>
+        <product>Field Management</product>
+        <product>Mobile Business Solutions</product>
+        <product>Enhanced Push-to-Talk</product>
+        <product>BYOD Solutions</product>
+      </portfolio>
+    </section>
+    <section name="Industries" count="12">
+      <vertical>Small Business</vertical>
+      <vertical>Financial Services</vertical>
+      <vertical>Healthcare</vertical>
+      <vertical>Hospitality</vertical>
+      <vertical>Manufacturing</vertical>
+      <vertical>Public Sector</vertical>
+      <vertical>Retail</vertical>
+      <vertical>Transportation</vertical>
+      <vertical>Wholesale</vertical>
+      <vertical>AT&amp;T Global Business</vertical>
+      <vertical>Partner Solutions</vertical>
+      <vertical>FirstNet (Public Safety)</vertical>
+    </section>
+    <section name="Insights">
+      <content>Customer Stories</content>
+      <content>Research Reports</content>
+      <content>Tech Advice (Blog)</content>
+      <content>Top Voices</content>
+    </section>
+    <section name="Support">
+      <page>Contact Us</page>
+      <page>Premier Support</page>
+      <page>Business Center Support</page>
+    </section>
+    <section name="Offers &amp; Deals"/>
+    <section name="Bundles"/>
+    <section name="Utility Pages">
+      <page>Sitemap</page>
+      <page>Terms of Use</page>
+      <page>Privacy Center</page>
+      <page>Accessibility</page>
+      <page>Legal Notices</page>
+    </section>
+  </siteStructure>
+
+  <phases>
+    <phase id="0" name="Pre-Migration" weeks="1-2">
+      <hours manual="160" ecAemCoder="160"/>
+      <activities>
+        <activity id="0a" name="Site audit &amp; inventory" owner="Content Strategist" hours="40">
+          <deliverable>Complete page inventory, asset list</deliverable>
+        </activity>
+        <activity id="0b" name="Performance baseline" owner="Tech Lead" hours="24">
+          <deliverable>Current Core Web Vitals report</deliverable>
+        </activity>
+        <activity id="0c" name="SEO audit" owner="SEO Specialist" hours="32">
+          <deliverable>Rankings, meta data, structured data</deliverable>
+        </activity>
+        <activity id="0d" name="Stakeholder alignment &amp; kickoff" owner="PM" hours="24">
+          <deliverable>RACI matrix, kickoff deck, timeline</deliverable>
+        </activity>
+        <activity id="0e" name="Technical discovery" owner="Tech Lead" hours="40">
+          <deliverable>API inventory, integration mapping</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="1" name="Foundation" weeks="3-6">
+      <hours manual="424" ecAemCoder="284"/>
+      <activities>
+        <activity id="1" name="Run EC/AEMcoder for initial migration" owner="Dev Team">
+          <hours manual="80" ecAemCoder="40"/>
+          <deliverable>Initial blocks, markdown, page structure</deliverable>
+        </activity>
+        <activity id="2" name="Update blocks, functionality, CSS" owner="Dev Team">
+          <hours manual="160" ecAemCoder="80"/>
+          <deliverable>Production-ready block code</deliverable>
+        </activity>
+        <activity id="2a" name="Extract design system tokens" owner="Dev Team">
+          <hours manual="80" ecAemCoder="60"/>
+          <deliverable>styles.css, CSS custom properties</deliverable>
+        </activity>
+        <activity id="2b" name="Typography &amp; font setup" owner="Dev Team">
+          <hours manual="24" ecAemCoder="24"/>
+          <deliverable>fonts.css, AT&amp;T brand fonts</deliverable>
+        </activity>
+        <activity id="2c" name="Core navigation blocks" owner="Dev Team">
+          <hours manual="80" ecAemCoder="80"/>
+          <deliverable>header/, footer/, mega-menu</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="2" name="Content Modeling" weeks="7-8">
+      <hours manual="200" ecAemCoder="180"/>
+      <activities>
+        <activity id="3" name="Create component-model.json" owner="Tech Lead" hours="60">
+          <deliverable>JCR package structure for AEM importer</deliverable>
+        </activity>
+        <activity id="3a" name="Create component-definitions.json" owner="Tech Lead" hours="60">
+          <deliverable>Universal Editor field definitions</deliverable>
+        </activity>
+        <activity id="3b" name="Define content fragment models" owner="Content Strategist" hours="40">
+          <deliverable>CF models for products, stories</deliverable>
+        </activity>
+        <activity id="3c" name="Update transformations" owner="Dev Team" hours="40">
+          <deliverable>Import script transformations</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="3" name="Block Development" weeks="9-14">
+      <hours manual="1080" ecAemCoder="600"/>
+      <activities>
+        <activity id="4a" name="Hero blocks (6 variants)" owner="Dev Team">
+          <hours manual="120" ecAemCoder="72"/>
+          <deliverable>hero-video, hero-carousel, hero-split, etc.</deliverable>
+        </activity>
+        <activity id="4b" name="Card blocks (10 variants)" owner="Dev Team">
+          <hours manual="200" ecAemCoder="100"/>
+          <deliverable>cards-product, cards-feature, cards-pricing, etc.</deliverable>
+        </activity>
+        <activity id="4c" name="Interactive blocks" owner="Dev Team">
+          <hours manual="280" ecAemCoder="168"/>
+          <deliverable>tabs, accordion, carousel, modal, search</deliverable>
+        </activity>
+        <activity id="4d" name="Form blocks" owner="Dev Team">
+          <hours manual="120" ecAemCoder="72"/>
+          <deliverable>lead-form, contact-form, newsletter</deliverable>
+        </activity>
+        <activity id="4e" name="Content blocks" owner="Dev Team">
+          <hours manual="160" ecAemCoder="80"/>
+          <deliverable>columns, quote, table, embed, download</deliverable>
+        </activity>
+        <activity id="4f" name="Product-specific blocks" owner="Dev Team">
+          <hours manual="200" ecAemCoder="108"/>
+          <deliverable>pricing-table, comparison, spec-sheet</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="4" name="Page Review &amp; Asset Migration" weeks="15-16">
+      <hours manual="360" ecAemCoder="360"/>
+      <activities>
+        <activity id="4" name="Review each page, re-author assets" owner="Content Team" hours="200">
+          <deliverable>Validated content in AEM DAM</deliverable>
+        </activity>
+        <activity id="4a" name="Create URL redirect mapping" owner="Content Strategist" hours="40">
+          <deliverable>301 redirect spreadsheet</deliverable>
+        </activity>
+        <activity id="4b" name="DAM asset migration" owner="Content Team" hours="80">
+          <deliverable>Assets with metadata in AEM</deliverable>
+        </activity>
+        <activity id="4c" name="Image optimization" owner="Dev Team" hours="40">
+          <deliverable>WebP conversion, lazy loading</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="5" name="Edge Workers &amp; APIs" weeks="17-18">
+      <hours manual="340" ecAemCoder="340"/>
+      <activities>
+        <activity id="5" name="Move servlets/APIs to Edge workers" owner="Dev Team" hours="160">
+          <deliverable>Edge worker functions</deliverable>
+        </activity>
+        <activity id="5a" name="Pricing API integration" owner="Dev Team" hours="60">
+          <deliverable>Dynamic pricing endpoints</deliverable>
+        </activity>
+        <activity id="5b" name="Lead form submission handling" owner="Dev Team" hours="40">
+          <deliverable>Form backend integration</deliverable>
+        </activity>
+        <activity id="5c" name="Search functionality" owner="Dev Team" hours="80">
+          <deliverable>Site search implementation</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="6" name="AEM Migration" weeks="19-20">
+      <hours manual="280" ecAemCoder="280"/>
+      <activities>
+        <activity id="6" name="Migrate custom functionality to AEMaaCS" owner="Dev Team" hours="120">
+          <deliverable>Reports, scheduled jobs</deliverable>
+        </activity>
+        <activity id="7" name="Migrate meta-schema, taxonomy, workflows" owner="Tech Lead" hours="80">
+          <deliverable>AEM configurations</deliverable>
+        </activity>
+        <activity id="7a" name="User/group migration" owner="Admin" hours="40">
+          <deliverable>Permissions in AEMaaCS</deliverable>
+        </activity>
+        <activity id="7b" name="Workflow configuration" owner="Tech Lead" hours="40">
+          <deliverable>Approval workflows</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="7" name="Integrations" weeks="21-22">
+      <hours manual="160" ecAemCoder="160"/>
+      <activities>
+        <activity id="8a" name="Analytics/tracking setup" owner="Dev Team" hours="60">
+          <deliverable>Adobe Launch configuration</deliverable>
+        </activity>
+        <activity id="8b" name="Third-party scripts" owner="Dev Team" hours="40">
+          <deliverable>Chat, pixels, consent banner</deliverable>
+        </activity>
+        <activity id="8c" name="Search indexing configuration" owner="Dev Team" hours="40">
+          <deliverable>Sitemap, robots.txt</deliverable>
+        </activity>
+        <activity id="8d" name="Social meta tags" owner="Dev Team" hours="20">
+          <deliverable>OG tags, Twitter cards</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="8" name="Validation &amp; Testing" weeks="23-24">
+      <hours manual="380" ecAemCoder="340"/>
+      <activities>
+        <activity id="8" name="Validate all functionalities" owner="QA Team" hours="160">
+          <deliverable>Functional test reports</deliverable>
+        </activity>
+        <activity id="9" name="Accessibility audit (WCAG 2.1 AA)" owner="QA Team" hours="80">
+          <deliverable>Accessibility report, fixes</deliverable>
+        </activity>
+        <activity id="10" name="Performance/load testing" owner="QA Team" hours="60">
+          <deliverable>Performance test results</deliverable>
+        </activity>
+        <activity id="11" name="SEO validation" owner="SEO Specialist" hours="40">
+          <deliverable>Redirect testing, sitemap validation</deliverable>
+        </activity>
+        <activity id="12" name="Security review" owner="Security Team" hours="40">
+          <deliverable>Security headers, CSP audit</deliverable>
+        </activity>
+      </activities>
+    </phase>
+
+    <phase id="9" name="Launch" weeks="24+">
+      <hours manual="260" ecAemCoder="260"/>
+      <activities>
+        <activity id="13" name="UAT &amp; stakeholder sign-off" owner="PM" hours="80">
+          <deliverable>Sign-off documentation</deliverable>
+        </activity>
+        <activity id="14" name="DNS cutover &amp; rollback plan" owner="Tech Lead" hours="40">
+          <deliverable>Production deployment</deliverable>
+        </activity>
+        <activity id="15" name="Author training on Universal Editor" owner="Training Lead" hours="60">
+          <deliverable>Training materials, sessions</deliverable>
+        </activity>
+        <activity id="16" name="Hypercare &amp; monitoring setup" owner="DevOps" hours="80">
+          <deliverable>Monitoring dashboards, alerts</deliverable>
+        </activity>
+      </activities>
+    </phase>
+  </phases>
+
+  <blockRequirements totalBlocks="45">
+    <category name="Navigation" count="4" avgComplexity="High">
+      <block name="header" complexity="Very High" notes="Mega menu, search, account login, Personal/Business toggle"/>
+      <block name="footer" complexity="High" notes="Multi-column, social links, legal links"/>
+      <block name="breadcrumb" complexity="Low" notes="Standard hierarchy"/>
+      <block name="mobile-nav" complexity="High" notes="Mobile menu with nested items"/>
+    </category>
+    <category name="Hero" count="6" avgComplexity="Medium-High">
+      <block name="hero-video" complexity="High" notes="Background video with overlay text, CTAs"/>
+      <block name="hero-carousel" complexity="High" notes="Multiple slides with auto-rotation"/>
+      <block name="hero-tabs" complexity="High" notes="Tabbed content (Mobile, Internet, Voice, etc.)"/>
+      <block name="hero-split" complexity="Medium" notes="Two-column layout"/>
+      <block name="hero-minimal" complexity="Low" notes="Text-only section header"/>
+      <block name="hero-promo" complexity="Medium" notes="Promotional banner with pricing"/>
+    </category>
+    <category name="Cards" count="10" avgComplexity="Medium">
+      <block name="cards-product" complexity="Medium" notes="Product tiles with pricing"/>
+      <block name="cards-feature" complexity="Medium" notes="Icon/image with text"/>
+      <block name="cards-pricing" complexity="High" notes="Pricing comparison cards"/>
+      <block name="cards-industry" complexity="Medium" notes="Industry solution cards"/>
+      <block name="cards-story" complexity="Medium" notes="Customer story previews"/>
+      <block name="cards-stat" complexity="Medium" notes="Large numbers with descriptions"/>
+      <block name="cards-cta" complexity="Low" notes="Simple call-to-action cards"/>
+      <block name="cards-icon" complexity="Medium" notes="Icon-based feature cards"/>
+      <block name="cards-testimonial" complexity="Medium" notes="Customer quotes"/>
+      <block name="cards-link" complexity="Low" notes="Quick link lists"/>
+    </category>
+    <category name="Interactive" count="10" avgComplexity="High">
+      <block name="accordion" complexity="Medium" notes="FAQ, product details"/>
+      <block name="tabs" complexity="Medium" notes="Content organization"/>
+      <block name="carousel" complexity="High" notes="Image/content slider"/>
+      <block name="modal" complexity="Medium" notes="Popup dialogs, offer details"/>
+      <block name="video" complexity="Medium" notes="Inline video player"/>
+      <block name="video-modal" complexity="High" notes="Lightbox video player"/>
+      <block name="search" complexity="High" notes="Site search with filtering"/>
+      <block name="filter" complexity="High" notes="Product filtering"/>
+      <block name="pricing-calculator" complexity="Very High" notes="Dynamic pricing tool"/>
+      <block name="comparison-table" complexity="High" notes="Product comparison"/>
+    </category>
+    <category name="Content" count="8" avgComplexity="Low-Medium">
+      <block name="columns" complexity="Low" notes="Multi-column layouts"/>
+      <block name="quote" complexity="Low" notes="Testimonials, pull quotes"/>
+      <block name="table" complexity="Medium" notes="Data tables"/>
+      <block name="embed" complexity="Medium" notes="External content (YouTube, maps)"/>
+      <block name="download" complexity="Low" notes="PDF/document links"/>
+      <block name="cta-banner" complexity="Medium" notes="Full-width call-to-action"/>
+      <block name="divider" complexity="Low" notes="Section separators"/>
+      <block name="icon-list" complexity="Medium" notes="Feature lists with icons"/>
+    </category>
+    <category name="Forms" count="4" avgComplexity="Medium-High">
+      <block name="lead-form" complexity="High" notes="Sales contact form (RAI form)"/>
+      <block name="contact-form" complexity="Medium" notes="General inquiry"/>
+      <block name="newsletter" complexity="Medium" notes="Email signup"/>
+      <block name="search-input" complexity="Medium" notes="Search box"/>
+    </category>
+    <category name="AT&amp;T-Specific" count="3" avgComplexity="Medium">
+      <block name="guarantee-banner" complexity="Medium" notes="AT&amp;T Guarantee messaging"/>
+      <block name="offer-card" complexity="High" notes="Dynamic promotional offers"/>
+      <block name="jd-power-badge" complexity="Low" notes="Award/certification badges"/>
+    </category>
+  </blockRequirements>
+
+  <costEstimation>
+    <laborCosts>
+      <byRole>
+        <role name="Project Manager" ratePerHour="150" hours="284" total="42600"/>
+        <role name="Technical Lead" ratePerHour="200" hours="564" total="112800"/>
+        <role name="Sr. EDS Developer 1" ratePerHour="185" hours="760" total="140600"/>
+        <role name="Sr. EDS Developer 2" ratePerHour="185" hours="700" total="129500"/>
+        <role name="Mid EDS Developer 1" ratePerHour="165" hours="520" total="85800"/>
+        <role name="Mid EDS Developer 2" ratePerHour="165" hours="380" total="62700"/>
+        <role name="Jr. EDS Developer" ratePerHour="140" hours="244" total="34160"/>
+        <role name="Content Strategist" ratePerHour="135" hours="300" total="40500"/>
+        <role name="Content Author 1" ratePerHour="95" hours="300" total="28500"/>
+        <role name="Content Author 2" ratePerHour="95" hours="200" total="19000"/>
+        <role name="QA Engineer" ratePerHour="130" hours="360" total="46800"/>
+        <role name="SEO Specialist" ratePerHour="140" hours="72" total="10080"/>
+        <role name="DevOps/Admin" ratePerHour="160" hours="120" total="19200"/>
+      </byRole>
+      <subtotalLabor hours="4804" amount="772240"/>
+    </laborCosts>
+    <additionalCosts>
+      <cost name="Adobe EDS Licensing" frequency="Annual" amount="TBD"/>
+      <cost name="AEM Cloud Service" frequency="Annual" amount="TBD"/>
+      <cost name="Search Service (Algolia)" frequency="Monthly" monthlyAmount="1200" annualAmount="14400"/>
+      <cost name="Edge Worker Compute" frequency="Monthly" monthlyAmount="500" annualAmount="6000"/>
+      <cost name="Image CDN" frequency="Monthly" monthlyAmount="300" annualAmount="3600"/>
+      <cost name="Monitoring Tools" frequency="Monthly" monthlyAmount="400" annualAmount="4800"/>
+      <subtotalAdditional firstYear="28800"/>
+    </additionalCosts>
+    <contingency>
+      <item name="Scope contingency" baseAmount="772240" percent="10" buffer="77224"/>
+      <item name="Technical risk buffer" baseAmount="218000" percent="15" buffer="32700"/>
+      <item name="Integration risk" baseAmount="50000" percent="20" buffer="10000"/>
+      <totalContingency>119924</totalContingency>
+    </contingency>
+    <totalCostSummary>
+      <manual>
+        <labor>772240</labor>
+        <additionalCosts>28800</additionalCosts>
+        <contingency>119924</contingency>
+        <projectTotal>920964</projectTotal>
+      </manual>
+      <ecAemCoder>
+        <labor>659200</labor>
+        <additionalCosts>28800</additionalCosts>
+        <contingency>102960</contingency>
+        <projectTotal>791000</projectTotal>
+      </ecAemCoder>
+      <savings>130000</savings>
+      <savingsPercent>14</savingsPercent>
+    </totalCostSummary>
+  </costEstimation>
+
+  <ecAemCoderComparison>
+    <automatedCapabilities>
+      <capability name="Block structure generation" automated="true" manualEffort="Review and refinement"/>
+      <capability name="Initial HTML to Markdown conversion" automated="true" manualEffort="Content validation"/>
+      <capability name="Block CSS scaffolding" automated="true" manualEffort="Brand refinement, responsive tuning"/>
+      <capability name="Content mapping to blocks" automated="true" manualEffort="Edge case handling"/>
+      <capability name="Basic JavaScript decoration" automated="partial" manualEffort="Complex interactions, state management"/>
+      <capability name="Image extraction and references" automated="true" manualEffort="DAM migration, optimization"/>
+    </automatedCapabilities>
+    <manualWorkRequired>
+      <task name="CSS brand refinement" reason="AT&amp;T brand compliance, pixel-perfect styling" effort="High"/>
+      <task name="Complex JavaScript interactions" reason="Pricing calculators, dynamic filtering, animations" effort="High"/>
+      <task name="Accessibility compliance" reason="WCAG 2.1 AA testing, ARIA attributes, keyboard nav" effort="Medium"/>
+      <task name="component-model.json" reason="JCR package structure for AEM importer" effort="Medium"/>
+      <task name="component-definitions.json" reason="Universal Editor field definitions" effort="Medium"/>
+      <task name="Edge workers" reason="API proxies, form handling, personalization" effort="High"/>
+      <task name="Integration testing" reason="Third-party scripts, analytics, CRM" effort="Medium"/>
+      <task name="Content validation" reason="Business accuracy, legal review" effort="High"/>
+      <task name="Performance optimization" reason="Core Web Vitals tuning, lazy loading" effort="Medium"/>
+    </manualWorkRequired>
+    <blockDevelopmentComparison>
+      <category name="Hero Blocks" count="6" manualHours="120" ecAemCoderHours="72" reduction="40"/>
+      <category name="Card Blocks" count="10" manualHours="200" ecAemCoderHours="100" reduction="50"/>
+      <category name="Interactive Blocks" count="10" manualHours="280" ecAemCoderHours="168" reduction="40"/>
+      <category name="Form Blocks" count="4" manualHours="120" ecAemCoderHours="72" reduction="40"/>
+      <category name="Content Blocks" count="8" manualHours="160" ecAemCoderHours="80" reduction="50"/>
+      <category name="Product-specific" count="6" manualHours="200" ecAemCoderHours="108" reduction="46"/>
+      <total manualHours="1080" ecAemCoderHours="600" averageReduction="44"/>
+    </blockDevelopmentComparison>
+    <recommendation>
+      <approach>EC/AEMCoder approach with senior developer oversight for complex blocks</approach>
+      <rationale>
+        <point>200+ pages makes EC/AEMCoder advantageous for scale</point>
+        <point>Complex interactive components require manual expertise</point>
+        <point>Strong brand guidelines require CSS refinement</point>
+        <point>Enterprise integrations require manual edge workers regardless</point>
+      </rationale>
+      <blockApproach>
+        <tier name="EC/AEMCoder Primary" reduction="50">
+          <blocks>cards-product, cards-feature, cards-industry, columns, quote, table, embed, download, hero-minimal, hero-split, cta-banner, divider, icon-list, breadcrumb, cards-link, cards-cta</blocks>
+        </tier>
+        <tier name="EC/AEMCoder + Manual Refinement" reduction="30-40">
+          <blocks>hero-video, hero-carousel, hero-tabs, cards-pricing, cards-testimonial, cards-stat, accordion, tabs, modal, lead-form, contact-form, newsletter, offer-card, guarantee-banner</blocks>
+        </tier>
+        <tier name="Manual Development Primary" reduction="10-20">
+          <blocks>header, footer, mobile-nav, pricing-calculator, comparison-table, search, filter, video-modal</blocks>
+        </tier>
+      </blockApproach>
+    </recommendation>
+  </ecAemCoderComparison>
+
+  <disclaimers>
+    <disclaimer id="1">Estimates are projections, not commitments. Actual effort may vary ±20% based on discovered complexity, scope changes, and team velocity.</disclaimer>
+    <disclaimer id="2">EC/AEMCoder savings are based on typical outcomes. Results depend on source site structure, content quality, and block complexity. Highly custom designs may see lower automation benefits.</disclaimer>
+    <disclaimer id="3">Timeline assumes no major scope changes. Additions to scope, design revisions, or new integration requirements will extend timelines proportionally.</disclaimer>
+    <disclaimer id="4">Cost rates are illustrative. Actual rates depend on staffing model (internal, SI partner, offshore blend) and regional variations.</disclaimer>
+    <disclaimer id="5">Contingency should not be eliminated. The 15% contingency accounts for unknowns discovered during migration. Removing it increases project risk.</disclaimer>
+  </disclaimers>
+
+  <assumptions>
+    <technical>
+      <assumption name="Source AEM content is accessible" riskIfInvalid="High - delays extraction" mitigation="Early access validation"/>
+      <assumption name="APIs have documentation" riskIfInvalid="Medium - extends edge worker dev" mitigation="Technical spike Week 3"/>
+      <assumption name="Brand fonts are web-licensed" riskIfInvalid="Low - fallback to system fonts" mitigation="Legal review Week 2"/>
+      <assumption name="No major redesign required" riskIfInvalid="High - extends all phases" mitigation="Stakeholder alignment"/>
+      <assumption name="Third-party scripts compatible" riskIfInvalid="Medium - integration issues" mitigation="Staged testing"/>
+    </technical>
+    <ecAemCoderSpecific>
+      <assumption name="Source HTML is semantic and well-structured" impactIfWrong="Lower automation quality, more manual fixes"/>
+      <assumption name="Consistent page templates across site" impactIfWrong="Higher variance in block output"/>
+      <assumption name="Standard CSS naming conventions" impactIfWrong="Additional CSS mapping required"/>
+      <assumption name="Images accessible via public URLs" impactIfWrong="Manual asset handling needed"/>
+      <assumption name="Content in English (primary)" impactIfWrong="Multi-language adds complexity"/>
+    </ecAemCoderSpecific>
+    <organizational>
+      <assumption name="Content approvers available within 5 business days" riskIfInvalid="Schedule delays"/>
+      <assumption name="Single decision-maker for design/UX" riskIfInvalid="Revision cycles"/>
+      <assumption name="Legal review integrated into timeline" riskIfInvalid="Launch delays"/>
+      <assumption name="Training resources allocated" riskIfInvalid="Adoption issues post-launch"/>
+      <assumption name="Hypercare team identified" riskIfInvalid="Post-launch support gaps"/>
+    </organizational>
+  </assumptions>
+
+  <documentHistory>
+    <version number="1.0" date="2026-02" author="Migration Team" changes="Initial document"/>
+    <version number="1.1" date="2026-02" author="Migration Team" changes="Added EC/AEMCoder comparison, Key Insights, Disclaimers"/>
+  </documentHistory>
+</migrationPlan>
