@@ -1,0 +1,315 @@
+<mxfile host="app.diagrams.net" modified="2026-02-02T00:00:00.000Z" agent="Claude" version="22.0.0" type="device">
+  <diagram id="abbvie-migration-architecture" name="AbbVie EDS Migration">
+    <mxGraphModel dx="1600" dy="2000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Main Title -->
+        <mxCell id="main-title" value="AbbVie.com EDS Migration Architecture" style="text;html=1;strokeColor=none;fillColor=#071D49;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontStyle=1;fontSize=22;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="560" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 1: CURRENT STATE ==================== -->
+        <mxCell id="current-state-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="90" width="380" height="350" as="geometry"/>
+        </mxCell>
+        <mxCell id="current-state-title" value="CURRENT STATE" style="text;html=1;strokeColor=none;fillColor=#C62828;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="100" width="150" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Current AEM -->
+        <mxCell id="current-aem" value="Adobe Experience Manager&#xa;(Classic AEM)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#C62828;fontSize=11;fontColor=#B71C1C;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="145" width="180" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Current Features -->
+        <mxCell id="current-features" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#EF9A9A;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="210" width="340" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf-title" value="Current Challenges" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=11;fontColor=#C62828;" vertex="1" parent="1">
+          <mxGeometry x="50" y="215" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf1" value="• Complex authoring workflow" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="50" y="240" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf2" value="• Heavy page weight (2-4MB)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="50" y="260" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf3" value="• Slower Core Web Vitals" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="50" y="280" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf4" value="• Developer-dependent updates" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="cf5" value="• Longer time-to-publish" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="50" y="320" width="200" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="current-pages" value="~100 Pages&#xa;150+ Products&#xa;50+ Stories" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#EF9A9A;fontSize=10;fontColor=#B71C1C;" vertex="1" parent="1">
+          <mxGeometry x="250" y="250" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="current-perf" value="Performance&#xa;LCP: 3-5s&#xa;Lighthouse: 50-70" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#EF9A9A;fontSize=10;fontColor=#B71C1C;" vertex="1" parent="1">
+          <mxGeometry x="250" y="330" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== MIGRATION ARROW ==================== -->
+        <mxCell id="migration-arrow" value="" style="shape=flexArrow;endArrow=classic;html=1;strokeWidth=3;fillColor=#0071CE;strokeColor=#0071CE;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="420" y="265" as="sourcePoint"/>
+            <mxPoint x="520" y="265" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="migration-label" value="Migration&#xa;16-20 weeks" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=10;fontColor=#0071CE;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="100" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 2: FUTURE STATE ==================== -->
+        <mxCell id="future-state-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="540" y="90" width="400" height="350" as="geometry"/>
+        </mxCell>
+        <mxCell id="future-state-title" value="FUTURE STATE (EDS)" style="text;html=1;strokeColor=none;fillColor=#2E7D32;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="100" width="170" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Future EDS -->
+        <mxCell id="future-eds" value="Adobe Edge Delivery Services&#xa;+ Universal Editor" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#2E7D32;fontSize=11;fontColor=#1B5E20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="145" width="200" height="50" as="geometry"/>
+        </mxCell>
+
+        <!-- Future Features -->
+        <mxCell id="future-features" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#A5D6A7;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="210" width="360" height="210" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff-title" value="Key Benefits" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=11;fontColor=#2E7D32;" vertex="1" parent="1">
+          <mxGeometry x="570" y="215" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff1" value="• Visual authoring with Universal Editor" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="570" y="240" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff2" value="• Lightweight pages (&lt; 500KB)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="570" y="260" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff3" value="• Lighthouse score &gt; 90" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="570" y="280" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff4" value="• Instant preview and publish" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="570" y="300" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff5" value="• Git-based version control" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="570" y="320" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ff6" value="• Global CDN delivery" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#424242;" vertex="1" parent="1">
+          <mxGeometry x="570" y="340" width="220" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="future-blocks" value="35-45 Blocks&#xa;8 Templates&#xa;Reusable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#A5D6A7;fontSize=10;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="790" y="250" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="future-perf" value="Performance&#xa;LCP: &lt;2.5s&#xa;Lighthouse: 90+" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C8E6C9;strokeColor=#A5D6A7;fontSize=10;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="790" y="330" width="110" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 3: MIGRATION PHASES ==================== -->
+        <mxCell id="phases-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1976D2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="460" width="920" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="phases-title" value="MIGRATION PHASES (18 Weeks / 2,920 Hours)" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="470" width="300" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase 1 -->
+        <mxCell id="phase1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;" vertex="1" parent="1">
+          <mxGeometry x="40" y="515" width="200" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1-title" value="Phase 1: Foundation&#xa;Weeks 1-4 | 480 hrs" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="525" width="180" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1-items" value="• Environment setup (80h)&#xa;• Design system (120h)&#xa;• Core blocks (200h)&#xa;• Homepage (80h)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="565" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase 2 -->
+        <mxCell id="phase2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;" vertex="1" parent="1">
+          <mxGeometry x="260" y="515" width="200" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2-title" value="Phase 2: Development&#xa;Weeks 5-10 | 960 hrs" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="525" width="180" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2-items" value="• Cards blocks (320h)&#xa;• Interactive blocks (280h)&#xa;• Content/Forms (200h)&#xa;• Templates (160h)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="565" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase 3 -->
+        <mxCell id="phase3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;" vertex="1" parent="1">
+          <mxGeometry x="480" y="515" width="200" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3-title" value="Phase 3: Content&#xa;Weeks 11-14 | 840 hrs" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="525" width="180" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3-items" value="• Landing pages (320h)&#xa;• Stories (160h)&#xa;• Products (120h)&#xa;• Pipeline (160h)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="565" width="180" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase 4 -->
+        <mxCell id="phase4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#BBDEFB;strokeColor=#1976D2;" vertex="1" parent="1">
+          <mxGeometry x="700" y="515" width="220" height="125" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4-title" value="Phase 4: Launch&#xa;Weeks 15-18 | 640 hrs" style="text;html=1;strokeColor=none;fillColor=#1976D2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="525" width="200" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4-items" value="• Testing (120h)&#xa;• Accessibility (120h)&#xa;• UAT (80h)&#xa;• Go-live prep (80h)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="565" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase arrows -->
+        <mxCell id="p-arrow1" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="245" y="577" as="sourcePoint"/>
+            <mxPoint x="255" y="577" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-arrow2" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="465" y="577" as="sourcePoint"/>
+            <mxPoint x="475" y="577" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p-arrow3" value="" style="endArrow=classic;html=1;strokeWidth=2;strokeColor=#1976D2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="577" as="sourcePoint"/>
+            <mxPoint x="695" y="577" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ==================== SECTION 4: BLOCK ARCHITECTURE ==================== -->
+        <mxCell id="blocks-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="680" width="920" height="280" as="geometry"/>
+        </mxCell>
+        <mxCell id="blocks-title" value="BLOCK ARCHITECTURE (35-45 Blocks)" style="text;html=1;strokeColor=none;fillColor=#F57C00;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="690" width="270" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Navigation -->
+        <mxCell id="nav-blocks" value="Navigation (3)&#xa;• header&#xa;• footer&#xa;• breadcrumb" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontSize=10;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="40" y="735" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Hero -->
+        <mxCell id="hero-blocks" value="Hero (5)&#xa;• hero-video&#xa;• hero-image&#xa;• hero-carousel&#xa;• hero-split&#xa;• hero-minimal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontSize=10;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="185" y="735" width="130" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- Cards -->
+        <mxCell id="card-blocks" value="Cards (8)&#xa;• cards&#xa;• cards-story&#xa;• cards-stats&#xa;• cards-feature&#xa;• cards-cta&#xa;• cards-news&#xa;• cards-team&#xa;• cards-link" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontSize=10;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="330" y="735" width="130" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Interactive -->
+        <mxCell id="interactive-blocks" value="Interactive (8)&#xa;• accordion&#xa;• tabs&#xa;• carousel&#xa;• video&#xa;• video-modal&#xa;• search&#xa;• filter&#xa;• modal" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontSize=10;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="475" y="735" width="130" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Content -->
+        <mxCell id="content-blocks" value="Content (8)&#xa;• columns&#xa;• quote&#xa;• table&#xa;• pipeline-table&#xa;• embed&#xa;• download&#xa;• cta-banner&#xa;• divider" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontSize=10;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="620" y="735" width="130" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Forms -->
+        <mxCell id="form-blocks" value="Forms (3)&#xa;• form&#xa;• newsletter&#xa;• search-input" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE0B2;strokeColor=#F57C00;fontSize=10;fontColor=#E65100;align=left;spacingLeft=5;" vertex="1" parent="1">
+          <mxGeometry x="765" y="735" width="130" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Complexity indicator -->
+        <mxCell id="complexity" value="Complexity: ■ High (15)  ■ Medium (15)  ■ Low (5-15)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="40" y="920" width="300" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 5: TEAM & COSTS ==================== -->
+        <mxCell id="team-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="980" width="450" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="team-title" value="TEAM STRUCTURE (2,920 Hours)" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="990" width="220" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="team-pm" value="Project Manager&#xa;280 hrs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;fontSize=10;fontColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1035" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="team-lead" value="Technical Lead&#xa;440 hrs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;fontSize=10;fontColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="145" y="1035" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="team-dev" value="EDS Developers&#xa;1,500 hrs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;fontSize=10;fontColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="250" y="1035" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="team-content" value="Content Team&#xa;500 hrs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;fontSize=10;fontColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="355" y="1035" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="team-qa" value="QA Engineer&#xa;200 hrs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1BEE7;strokeColor=#7B1FA2;fontSize=10;fontColor=#4A148C;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1100" width="90" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="team-total" value="Total: 7-9 FTEs" style="text;html=1;strokeColor=none;fillColor=#7B1FA2;align=center;fontStyle=1;fontSize=11;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="145" y="1110" width="110" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- Cost Summary -->
+        <mxCell id="cost-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F2F1;strokeColor=#00796B;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="490" y="980" width="450" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="cost-title" value="COST ESTIMATE" style="text;html=1;strokeColor=none;fillColor=#00796B;align=center;fontStyle=1;fontSize=14;fontColor=#FFFFFF;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="990" width="140" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cost-labor" value="Labor Costs&#xa;$464,700" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B2DFDB;strokeColor=#00796B;fontSize=11;fontColor=#004D40;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1035" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cost-other" value="Additional +&#xa;Contingency&#xa;$96K" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#B2DFDB;strokeColor=#00796B;fontSize=11;fontColor=#004D40;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="645" y="1035" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="cost-total" value="TOTAL: ~$560K" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#00796B;strokeColor=#004D40;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1035" width="140" height="50" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="cost-breakdown" value="Includes:&#xa;• 2,920 total project hours&#xa;• 1,180 hrs block development&#xa;• 15% contingency buffer&#xa;• Range: $425K - $675K" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;fontColor=#004D40;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1095" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- ==================== SECTION 6: KEY METRICS ==================== -->
+        <mxCell id="metrics-bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#071D49;strokeColor=#071D49;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1200" width="920" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="metrics-title" value="KEY METRICS" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontStyle=1;fontSize=14;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1210" width="150" height="25" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="metric1" value="~100&#xa;Pages" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0071CE;strokeColor=#0071CE;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1240" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric2" value="35&#xa;Blocks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0071CE;strokeColor=#0071CE;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="155" y="1240" width="85" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric3" value="18&#xa;Weeks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0071CE;strokeColor=#0071CE;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="255" y="1240" width="85" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric4" value="2,920&#xa;Hours" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0071CE;strokeColor=#0071CE;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="355" y="1240" width="85" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric5" value="7-9&#xa;FTEs" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0071CE;strokeColor=#0071CE;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="1240" width="85" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric6" value="~$560K&#xa;Est. Cost" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#0071CE;strokeColor=#0071CE;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="555" y="1240" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric7" value="90+&#xa;Lighthouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#2E7D32;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1240" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="metric8" value="&lt;2.5s&#xa;LCP" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2E7D32;strokeColor=#2E7D32;fontSize=14;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="785" y="1240" width="100" height="50" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
