@@ -125,12 +125,52 @@
 <h1>AbbVie.com Migration Plan</h1>
 <h2>Adobe Edge Delivery Services (EDS) Migration</h2>
 <p><strong>Source:</strong> <a href="https://www.abbvie.com/">https://www.abbvie.com/</a>
-<strong>Target Platform:</strong> Adobe Edge Delivery Services with Universal Editor
+<strong>Target Platform:</strong> Adobe Edge Delivery Services (EDS)
+<strong>Authoring:</strong> Universal Editor with AEM as Content Source
 <strong>Document Version:</strong> 1.0
 <strong>Date:</strong> February 2026</p>
 <hr>
 <h2>Executive Summary</h2>
-<p>This document outlines the comprehensive migration plan for AbbVie.com to Adobe Edge Delivery Services. The migration scope includes approximately <strong>80-100 unique pages</strong> across 5 main content sections, with complex interactive components including product catalogs (150+ products), drug pipeline data visualization, story/article content hub, and rich media integration.</p>
+<p>This document outlines the comprehensive migration plan for AbbVie.com to Adobe Edge Delivery Services using <strong>Universal Editor with AEM as the content source</strong>. This architecture combines the performance benefits of EDS delivery with enterprise-grade content management in AEM, providing visual WYSIWYG authoring while maintaining existing content governance workflows.</p>
+<p>The migration scope includes approximately <strong>80-100 unique pages</strong> across 5 main content sections, with complex interactive components including product catalogs (150+ products), drug pipeline data visualization, story/article content hub, and rich media integration.</p>
+<h3>Architecture Approach</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Content Source</strong></td>
+<td>AEM Content Repository</td>
+<td>Enterprise content storage, governance, workflows</td>
+</tr>
+<tr>
+<td><strong>Authoring</strong></td>
+<td>Universal Editor</td>
+<td>Visual WYSIWYG editing experience</td>
+</tr>
+<tr>
+<td><strong>Delivery</strong></td>
+<td>Edge Delivery Services</td>
+<td>High-performance CDN delivery, Core Web Vitals</td>
+</tr>
+<tr>
+<td><strong>Code Repository</strong></td>
+<td>GitHub</td>
+<td>Block code, styles, scripts</td>
+</tr>
+</tbody></table>
+<p><strong>Key Benefits of UE + AEM Architecture:</strong></p>
+<ul>
+<li>Preserves existing AEM content governance and permissions</li>
+<li>Visual editing with real-time preview</li>
+<li>Sub-second page loads via EDS global CDN</li>
+<li>Lighthouse scores &gt; 90 with minimal effort</li>
+<li>Seamless integration with existing AEM workflows</li>
+</ul>
 <h3>Key Metrics</h3>
 <table>
 <thead>

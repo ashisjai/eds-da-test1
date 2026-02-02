@@ -2,7 +2,8 @@
 ## Adobe Edge Delivery Services (EDS) Migration
 
 **Source:** https://www.abbvie.com/
-**Target Platform:** Adobe Edge Delivery Services with Universal Editor
+**Target Platform:** Adobe Edge Delivery Services (EDS)
+**Authoring:** Universal Editor with AEM as Content Source
 **Document Version:** 1.0
 **Date:** February 2026
 
@@ -10,7 +11,25 @@
 
 ## Executive Summary
 
-This document outlines the comprehensive migration plan for AbbVie.com to Adobe Edge Delivery Services. The migration scope includes approximately **80-100 unique pages** across 5 main content sections, with complex interactive components including product catalogs (150+ products), drug pipeline data visualization, story/article content hub, and rich media integration.
+This document outlines the comprehensive migration plan for AbbVie.com to Adobe Edge Delivery Services using **Universal Editor with AEM as the content source**. This architecture combines the performance benefits of EDS delivery with enterprise-grade content management in AEM, providing visual WYSIWYG authoring while maintaining existing content governance workflows.
+
+The migration scope includes approximately **80-100 unique pages** across 5 main content sections, with complex interactive components including product catalogs (150+ products), drug pipeline data visualization, story/article content hub, and rich media integration.
+
+### Architecture Approach
+
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| **Content Source** | AEM Content Repository | Enterprise content storage, governance, workflows |
+| **Authoring** | Universal Editor | Visual WYSIWYG editing experience |
+| **Delivery** | Edge Delivery Services | High-performance CDN delivery, Core Web Vitals |
+| **Code Repository** | GitHub | Block code, styles, scripts |
+
+**Key Benefits of UE + AEM Architecture:**
+- Preserves existing AEM content governance and permissions
+- Visual editing with real-time preview
+- Sub-second page loads via EDS global CDN
+- Lighthouse scores > 90 with minimal effort
+- Seamless integration with existing AEM workflows
 
 ### Key Metrics
 | Metric | Value |
