@@ -1,0 +1,1778 @@
+<div><h1 id="abbviecom-migration-plan">AbbVie.com Migration Plan</h1><h2 id="adobe-edge-delivery-services-eds-migration">Adobe Edge Delivery Services (EDS) Migration</h2><p><strong>Source:</strong> https://www.abbvie.com/
+<strong>Target Platform:</strong> Adobe Edge Delivery Services (EDS)
+<strong>Authoring:</strong> Universal Editor with AEM as Content Source
+<strong>Document Version:</strong> 1.0
+<strong>Date:</strong> February 2026</p></div>
+<div><h2 id="executive-summary">Executive Summary</h2><p>This document outlines the comprehensive migration plan for AbbVie.com to Adobe Edge Delivery Services using <strong>Universal Editor with AEM as the content source</strong>. This architecture combines the performance benefits of EDS delivery with enterprise-grade content management in AEM, providing visual WYSIWYG authoring while maintaining existing content governance workflows.</p><p>The migration scope includes approximately <strong>80-100 unique pages</strong> across 5 main content sections, with complex interactive components including product catalogs (150+ products), drug pipeline data visualization, story/article content hub, and rich media integration.</p><h3 id="architecture-approach">Architecture Approach</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="component"><div><div><strong>Content Source</strong></div><div>AEM Content Repository</div><div>Enterprise content storage, governance, workflows</div></div><div><div><strong>Authoring</strong></div><div>Universal Editor</div><div>Visual WYSIWYG editing experience</div></div><div><div><strong>Delivery</strong></div><div>Edge Delivery Services</div><div>High-performance CDN delivery, Core Web Vitals</div></div><div><div><strong>Code Repository</strong></div><div>GitHub</div><div>Block code, styles, scripts</div></div></div><p><strong>Key Benefits of UE + AEM Architecture:</strong></p><ul>
+<li>Preserves existing AEM content governance and permissions</li>
+<li>Visual editing with real-time preview</li>
+<li>Sub-second page loads via EDS global CDN</li>
+<li>Lighthouse scores > 90 with minimal effort</li>
+<li>Seamless integration with existing AEM workflows</li>
+</ul><h3 id="key-metrics">Key Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div><strong>Total Estimated Pages</strong></div><div>80-100</div></div><div><div><strong>Product Entries</strong></div><div>150+</div></div><div><div><strong>Pipeline Compounds</strong></div><div>90+</div></div><div><div><strong>Content Stories</strong></div><div>50+ (estimated)</div></div><div><div><strong>Custom Blocks Required</strong></div><div>35</div></div><div><div><strong>Estimated Duration</strong></div><div>18 weeks</div></div><div><div><strong>Total Project Hours</strong></div><div>2,920 hours</div></div><div><div><strong>Team Size</strong></div><div>7-9 FTEs</div></div><div><div><strong>Estimated Cost</strong></div><div>$560,000 (with contingency)</div></div></div></div>
+<div><h2 id="site-structure-analysis">1. Site Structure Analysis</h2><h3 id="information-architecture">1.1 Information Architecture</h3><pre><code>abbvie.com/
+├── Homepage (1)
+├── Who We Are/ (7 pages)
+│   ├── Our Principles
+│   ├── Operating with Integrity
+│   ├── Key Facts
+│   ├── Our Leaders
+│   ├── Policies &#x26; Disclosures
+│   ├── Our Stories (Content Hub - 50+ articles)
+│   └── Pre-Approval Access Policy
+├── Science/ (9 pages)
+│   ├── Areas of Focus
+│   ├── Areas of Innovation
+│   ├── Pipeline (Complex data table)
+│   ├── Our People
+│   ├── Research Publications
+│   ├── Partner with Us
+│   ├── Clinical Trials
+│   ├── R&#x26;D Sites
+│   └── Independent Educational Grants
+├── Patients/ (4 pages)
+│   ├── Patient Support
+│   ├── Patient Assistance
+│   ├── Product Quality &#x26; Safety
+│   └── Products (150+ product accordions)
+├── Join Us/ (9 pages)
+│   ├── Opportunities (6 sub-pages)
+│   ├── Life at AbbVie
+│   └── Benefits
+├── Sustainability/ (10 pages)
+│   ├── AbbVie Foundation (3 sub-pages)
+│   ├── Disaster Relief
+│   ├── ESG (3 sub-pages)
+│   └── Philanthropy (2 sub-pages)
+└── Utility Pages (8+)
+    ├── Contact Center
+    ├── Accessibility Statement
+    ├── Site Map
+    ├── Terms of Use
+    ├── Privacy Notice
+    └── Latest Earnings
+</code></pre><h3 id="page-template-classification">1.2 Page Template Classification</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="template-type"><div><div><strong>Homepage</strong></div><div>1</div><div>High</div><div>Rich media, carousels, video</div></div><div><div><strong>Section Landing</strong></div><div>5</div><div>Medium-High</div><div>Who We Are, Science, Patients, Join Us, Sustainability</div></div><div><div><strong>Content Hub</strong></div><div>2</div><div>High</div><div>Our Stories, Pipeline</div></div><div><div><strong>Article/Story</strong></div><div>50+</div><div>Medium</div><div>Individual story pages</div></div><div><div><strong>Product Listing</strong></div><div>1</div><div>High</div><div>Products page with 150+ accordions</div></div><div><div><strong>Standard Content</strong></div><div>30+</div><div>Low-Medium</div><div>Policies, support pages</div></div><div><div><strong>Leader Profile</strong></div><div>10+</div><div>Medium</div><div>Executive bios</div></div><div><div><strong>Data Table</strong></div><div>1</div><div>High</div><div>Pipeline with filtering</div></div><div><div><strong>Utility</strong></div><div>8</div><div>Low</div><div>Contact, Terms, Privacy</div></div></div></div>
+<div><h2 id="content-volume-estimation">2. Content Volume Estimation</h2><h3 id="page-count-by-section">2.1 Page Count by Section</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section"><div><div>Homepage</div><div>1</div><div>0</div><div>1</div></div><div><div>Who We Are</div><div>7</div><div>50+ stories</div><div>57+</div></div><div><div>Science</div><div>9</div><div>0</div><div>9</div></div><div><div>Patients</div><div>4</div><div>0</div><div>4</div></div><div><div>Join Us</div><div>9</div><div>0</div><div>9</div></div><div><div>Sustainability</div><div>10</div><div>0</div><div>10</div></div><div><div>Utility</div><div>8</div><div>0</div><div>8</div></div><div><div><strong>Total</strong></div><div><strong>48</strong></div><div><strong>50+</strong></div><div><strong>98+</strong></div></div></div><h3 id="content-elements-inventory">2.2 Content Elements Inventory</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="element-type"><div><div>Hero sections</div><div>40+</div></div><div><div>Card components</div><div>200+</div></div><div><div>Video embeds</div><div>30+</div></div><div><div>Forms</div><div>5-10</div></div><div><div>Data tables</div><div>2-3</div></div><div><div>Accordions</div><div>150+ (products)</div></div><div><div>Carousels</div><div>15+</div></div><div><div>Images</div><div>500+</div></div><div><div>PDFs/Documents</div><div>50+</div></div></div></div>
+<div><h2 id="block-requirements">3. Block Requirements</h2><h3 id="required-eds-blocks">3.1 Required EDS Blocks</h3><h4 id="navigation-blocks-3">Navigation Blocks (3)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>header</code></div><div>High</div><div>Mega menu, search, language selector</div></div><div><div><code>footer</code></div><div>Medium</div><div>Multi-column, social links</div></div><div><div><code>breadcrumb</code></div><div>Low</div><div>Standard hierarchy</div></div></div><h4 id="hero-blocks-5">Hero Blocks (5)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>hero-video</code></div><div>High</div><div>Background video with overlay text</div></div><div><div><code>hero-image</code></div><div>Medium</div><div>Standard hero with CTA</div></div><div><div><code>hero-carousel</code></div><div>High</div><div>Multiple slides</div></div><div><div><code>hero-split</code></div><div>Medium</div><div>Two-column layout</div></div><div><div><code>hero-minimal</code></div><div>Low</div><div>Text-only section header</div></div></div><h4 id="card-blocks-8">Card Blocks (8)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>cards</code></div><div>Medium</div><div>Standard grid cards</div></div><div><div><code>cards-story</code></div><div>Medium</div><div>Article preview with image, date, category</div></div><div><div><code>cards-stats</code></div><div>Medium</div><div>Large numbers with descriptions</div></div><div><div><code>cards-feature</code></div><div>Medium</div><div>Icon/image with text</div></div><div><div><code>cards-cta</code></div><div>Low</div><div>Simple call-to-action cards</div></div><div><div><code>cards-news</code></div><div>Medium</div><div>Press release listings</div></div><div><div><code>cards-team</code></div><div>Medium</div><div>Leader/team member profiles</div></div><div><div><code>cards-link</code></div><div>Low</div><div>Quick link lists</div></div></div><h4 id="interactive-blocks-8">Interactive Blocks (8)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>accordion</code></div><div>Medium</div><div>Product listings with expandable content</div></div><div><div><code>tabs</code></div><div>Medium</div><div>Content organization</div></div><div><div><code>carousel</code></div><div>High</div><div>Image/content slider</div></div><div><div><code>video</code></div><div>Medium</div><div>Inline video player</div></div><div><div><code>video-modal</code></div><div>High</div><div>Lightbox video player</div></div><div><div><code>search</code></div><div>High</div><div>Site search with filtering</div></div><div><div><code>filter</code></div><div>High</div><div>Pipeline/content filtering</div></div><div><div><code>modal</code></div><div>Medium</div><div>Popup dialogs</div></div></div><h4 id="content-blocks-8">Content Blocks (8)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>columns</code></div><div>Low</div><div>Multi-column layouts</div></div><div><div><code>quote</code></div><div>Low</div><div>Testimonials, pull quotes</div></div><div><div><code>table</code></div><div>Medium</div><div>Data tables</div></div><div><div><code>pipeline-table</code></div><div>High</div><div>Interactive drug pipeline</div></div><div><div><code>embed</code></div><div>Medium</div><div>External content</div></div><div><div><code>download</code></div><div>Low</div><div>PDF/document links</div></div><div><div><code>cta-banner</code></div><div>Medium</div><div>Full-width call-to-action</div></div><div><div><code>divider</code></div><div>Low</div><div>Section separators</div></div></div><h4 id="form-blocks-3">Form Blocks (3)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-name"><div><div><code>form</code></div><div>High</div><div>Contact forms</div></div><div><div><code>newsletter</code></div><div>Medium</div><div>Email signup</div></div><div><div><code>search-input</code></div><div>Medium</div><div>Search box</div></div></div><h3 id="block-summary">3.2 Block Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Navigation</div><div>3</div><div>Medium</div></div><div><div>Hero</div><div>5</div><div>Medium-High</div></div><div><div>Cards</div><div>8</div><div>Medium</div></div><div><div>Interactive</div><div>8</div><div>High</div></div><div><div>Content</div><div>8</div><div>Medium</div></div><div><div>Forms</div><div>3</div><div>Medium-High</div></div><div><div><strong>Total</strong></div><div><strong>35</strong></div><div>Medium-High</div></div></div></div>
+<div><h2 id="technical-requirements">4. Technical Requirements</h2><h3 id="design-system">4.1 Design System</h3><h4 id="typography">Typography</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="font"><div><div>F37 Lineca</div><div>Headlines, display</div><div>Custom (licensing required)</div></div><div><div>Roboto</div><div>Body text</div><div>Google Fonts</div></div></div><h4 id="color-palette">Color Palette</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="color"><div><div>AbbVie Blue</div><div><code>#071D49</code></div><div>Primary brand</div></div><div><div>Light Blue</div><div><code>#0071CE</code></div><div>Accent, links</div></div><div><div>White</div><div><code>#FFFFFF</code></div><div>Backgrounds</div></div><div><div>Gray</div><div><code>#F5F5F5</code></div><div>Secondary backgrounds</div></div><div><div>Dark Gray</div><div><code>#333333</code></div><div>Body text</div></div></div><h3 id="integrations-required">4.2 Integrations Required</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="integration"><div><div>Adobe Analytics</div><div>High</div><div>Medium</div></div><div><div>Video hosting (existing)</div><div>High</div><div>Low</div></div><div><div>Search (Algolia/similar)</div><div>Medium</div><div>High</div></div><div><div>News feed API</div><div>Medium</div><div>Medium</div></div><div><div>Careers redirect</div><div>Low</div><div>Low</div></div><div><div>Investor site links</div><div>Low</div><div>Low</div></div></div><h3 id="performance-targets">4.3 Performance Targets</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>LCP</div><div>&#x3C; 2.5s</div><div>TBD</div></div><div><div>FID</div><div>&#x3C; 100ms</div><div>TBD</div></div><div><div>CLS</div><div>&#x3C; 0.1</div><div>TBD</div></div><div><div>Lighthouse Score</div><div>> 90</div><div>TBD</div></div><div><div>Page Weight</div><div>&#x3C; 1MB</div><div>TBD</div></div></div></div>
+<div><h2 id="resource-requirements">5. Resource Requirements</h2><h3 id="team-structure">5.1 Team Structure</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div><strong>Project Manager</strong></div><div>1</div><div>Timeline, coordination, stakeholder management</div></div><div><div><strong>Technical Lead</strong></div><div>1</div><div>Architecture, code review, technical decisions</div></div><div><div><strong>EDS Developer</strong></div><div>2-3</div><div>Block development, JavaScript, CSS</div></div><div><div><strong>Content Strategist</strong></div><div>1</div><div>Content mapping, information architecture</div></div><div><div><strong>Content Author</strong></div><div>1-2</div><div>Content migration, markdown authoring</div></div><div><div><strong>QA Engineer</strong></div><div>1</div><div>Testing, validation, accessibility</div></div><div><div><strong>Total</strong></div><div><strong>7-9</strong></div><div></div></div></div><h3 id="skills-required">5.2 Skills Required</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="skill"><div><div>Adobe Edge Delivery Services</div><div>Expert</div><div>Tech Lead, Developers</div></div><div><div>JavaScript/CSS</div><div>Advanced</div><div>Developers</div></div><div><div>AEM/Universal Editor</div><div>Intermediate</div><div>All</div></div><div><div>Content authoring</div><div>Intermediate</div><div>Content team</div></div><div><div>Accessibility (WCAG)</div><div>Advanced</div><div>QA, Developers</div></div><div><div>Git/GitHub</div><div>Intermediate</div><div>All</div></div></div><h3 id="external-dependencies">5.3 External Dependencies</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="dependency"><div><div>Font licensing (F37 Lineca)</div><div>AbbVie</div><div>Medium</div></div><div><div>Video hosting access</div><div>AbbVie</div><div>Low</div></div><div><div>Analytics configuration</div><div>AbbVie</div><div>Medium</div></div><div><div>Domain/DNS changes</div><div>AbbVie IT</div><div>High</div></div><div><div>Content approvals</div><div>AbbVie Marketing</div><div>High</div></div><div><div>Legal/Compliance review</div><div>AbbVie Legal</div><div>High</div></div></div></div>
+<div><h2 id="timeline--phases">6. Timeline &#x26; Phases</h2><h3 id="gantt-chart">6.1 Gantt Chart</h3><pre><code>ABBVIE.COM EDS MIGRATION - PROJECT GANTT CHART (18 Weeks)
+═══════════════════════════════════════════════════════════════════════════════════════════
+
+                              PHASE 1          PHASE 2              PHASE 3        PHASE 4
+                            Foundation       Development         Content Migr.    Launch
+WEEK                    1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+                        │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │  │
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 1: FOUNDATION (480 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Environment Setup       ████
+Design System              ████
+Core Blocks (Nav/Hero)        ████████
+Homepage Migration               ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 2: DEVELOPMENT (960 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Card Blocks (8)                     ████████
+Interactive Blocks (8)                    ████████
+Content Blocks (8)                              ████████
+Form Blocks (3)                                    ████
+Templates (8)                                      ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 3: CONTENT MIGRATION (840 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Landing Pages (6)                                        ████████
+Story Migration (50+)                                          ████████
+Products Page                                                        ████
+Pipeline Page                                                        ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+PHASE 4: TESTING &#x26; LAUNCH (640 hrs)
+─────────────────────────────────────────────────────────────────────────────────────────────
+Integration Testing                                                        ████
+Accessibility Audit                                                           ████
+UAT &#x26; Fixes                                                                      ████
+Go-Live                                                                             ████
+
+─────────────────────────────────────────────────────────────────────────────────────────────
+MILESTONES                ▼     ▼           ▼                 ▼        ▼     ▼        ▼
+                          │     │           │                 │        │     │        │
+                       Design  Core      All Blocks       Content   100%  UAT    GO-LIVE
+                       System  Blocks    Complete         50%       Done  OK
+                       Done    Done      (Week 10)        (Wk 12)   W14   W17     W18
+
+═══════════════════════════════════════════════════════════════════════════════════════════
+LEGEND: ████ = Active Work Period    ▼ = Milestone
+        Total: 2,920 Hours | 18 Weeks | 7-9 FTEs | ~$560K
+═══════════════════════════════════════════════════════════════════════════════════════════
+</code></pre><h3 id="phase-overview">6.2 Phase Overview</h3><pre><code>Phase 1: Foundation (Weeks 1-4) ─────────────────── 480 hours
+├── Project setup &#x26; planning (80 hrs)
+├── Design system extraction (120 hrs)
+├── Core block development (200 hrs)
+└── Homepage migration (80 hrs)
+
+Phase 2: Core Development (Weeks 5-10) ──────────── 960 hours
+├── Block development - Cards (160 hrs)
+├── Block development - Interactive (280 hrs)
+├── Block development - Content/Forms (200 hrs)
+├── Template creation (160 hrs)
+└── Section landing pages (160 hrs)
+
+Phase 3: Content Migration (Weeks 11-14) ────────── 640 hours
+├── Static page migration (200 hrs)
+├── Story/article migration (160 hrs)
+├── Product data migration (120 hrs)
+└── Pipeline implementation (160 hrs)
+
+Phase 4: Testing &#x26; Launch (Weeks 15-18) ─────────── 480 hours
+├── Integration testing (120 hrs)
+├── Performance optimization (80 hrs)
+├── Accessibility audit &#x26; fixes (120 hrs)
+├── UAT &#x26; stakeholder review (80 hrs)
+└── Go-live preparation (80 hrs)
+
+TOTAL PROJECT HOURS: 2,560 hours
+</code></pre><h3 id="detailed-timeline-by-week">6.3 Detailed Timeline by Week</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="phase"><div><div><strong>Phase 1</strong></div><div>1</div><div>Project kickoff, environment setup, stakeholder alignment</div><div>120</div><div>GitHub repo, AEM setup, RACI matrix</div></div><div><div></div><div>2</div><div>Design token extraction, typography setup, color system</div><div>120</div><div>styles.css, fonts.css, design tokens</div></div><div><div></div><div>3</div><div>Header block, footer block, navigation structure</div><div>120</div><div>header/, footer/, nav.md</div></div><div><div></div><div>4</div><div>Hero blocks (5 variants), homepage migration</div><div>120</div><div>hero-*, homepage.md</div></div><div><div><strong>Phase 2</strong></div><div>5</div><div>Card blocks (cards, cards-story, cards-stats, cards-feature)</div><div>160</div><div>4 card block variants</div></div><div><div></div><div>6</div><div>Card blocks (cards-cta, cards-news, cards-team, cards-link)</div><div>160</div><div>4 card block variants</div></div><div><div></div><div>7</div><div>Interactive blocks (accordion, tabs, carousel)</div><div>160</div><div>3 interactive blocks</div></div><div><div></div><div>8</div><div>Interactive blocks (video, video-modal, search, filter)</div><div>160</div><div>4 interactive blocks</div></div><div><div></div><div>9</div><div>Content blocks (columns, quote, table, pipeline-table)</div><div>160</div><div>4 content blocks</div></div><div><div></div><div>10</div><div>Content blocks (embed, download, cta-banner), forms, templates</div><div>160</div><div>3 blocks + forms + templates</div></div><div><div><strong>Phase 3</strong></div><div>11</div><div>Section landing pages (Who We Are, Science, Patients)</div><div>160</div><div>3 landing pages + sub-pages</div></div><div><div></div><div>12</div><div>Section landing pages (Join Us, Sustainability, Utility)</div><div>160</div><div>3 landing pages + sub-pages</div></div><div><div></div><div>13</div><div>Story/article migration (25 stories), content hub setup</div><div>160</div><div>25+ story pages</div></div><div><div></div><div>14</div><div>Product page (150+ accordions), pipeline page, remaining stories</div><div>160</div><div>Products, Pipeline, 25+ stories</div></div><div><div><strong>Phase 4</strong></div><div>15</div><div>Integration testing, cross-browser testing, mobile testing</div><div>120</div><div>Test reports, bug fixes</div></div><div><div></div><div>16</div><div>Accessibility audit (WCAG 2.1 AA), performance optimization</div><div>120</div><div>A11y report, LCP optimization</div></div><div><div></div><div>17</div><div>UAT with stakeholders, content review, final fixes</div><div>120</div><div>UAT sign-off</div></div><div><div></div><div>18</div><div>DNS cutover prep, go-live, post-launch monitoring</div><div>120</div><div>Production site live</div></div></div><h3 id="hours-by-role-per-phase">6.4 Hours by Role per Phase</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div>Project Manager</div><div>60</div><div>80</div><div>60</div><div>80</div><div><strong>280</strong></div></div><div><div>Technical Lead</div><div>100</div><div>160</div><div>80</div><div>100</div><div><strong>440</strong></div></div><div><div>EDS Developer 1</div><div>140</div><div>280</div><div>160</div><div>100</div><div><strong>680</strong></div></div><div><div>EDS Developer 2</div><div>100</div><div>280</div><div>160</div><div>60</div><div><strong>600</strong></div></div><div><div>EDS Developer 3 (50%)</div><div>40</div><div>80</div><div>60</div><div>40</div><div><strong>220</strong></div></div><div><div>Content Strategist</div><div>40</div><div>40</div><div>40</div><div>20</div><div><strong>140</strong></div></div><div><div>Content Author 1</div><div>0</div><div>40</div><div>160</div><div>40</div><div><strong>240</strong></div></div><div><div>Content Author 2 (50%)</div><div>0</div><div>0</div><div>120</div><div>0</div><div><strong>120</strong></div></div><div><div>QA Engineer</div><div>0</div><div>0</div><div>0</div><div>200</div><div><strong>200</strong></div></div><div><div><strong>Phase Totals</strong></div><div><strong>480</strong></div><div><strong>960</strong></div><div><strong>840</strong></div><div><strong>640</strong></div><div><strong>2,920</strong></div></div></div><h3 id="milestones">6.5 Milestones</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="milestone"><div><div>Environment Ready</div><div>Week 1</div><div>120</div><div>AEM access, GitHub</div><div>Repo created, local dev working</div></div><div><div>Design System Complete</div><div>Week 2</div><div>240</div><div>Font licensing</div><div>All tokens in CSS, typography ready</div></div><div><div>Core Blocks Complete</div><div>Week 4</div><div>480</div><div>Design approval</div><div>Header, footer, 5 hero variants</div></div><div><div>All Blocks Complete</div><div>Week 10</div><div>1,440</div><div>Dev capacity</div><div>35 blocks tested and documented</div></div><div><div>Content Migration 50%</div><div>Week 12</div><div>1,760</div><div>Content availability</div><div>Landing pages + 25 stories</div></div><div><div>Content Migration 100%</div><div>Week 14</div><div>2,080</div><div>Content approval</div><div>All 100 pages migrated</div></div><div><div>UAT Sign-off</div><div>Week 17</div><div>2,320</div><div>Stakeholder time</div><div>All critical issues resolved</div></div><div><div>Go-Live</div><div>Week 18</div><div>2,560</div><div>DNS, legal approval</div><div>Production site live</div></div></div><h3 id="critical-path">6.6 Critical Path</h3><pre><code>Week 1-2: Environment + Design System (CRITICAL - blocks dependencies)
+    ↓
+Week 3-4: Header/Footer + Hero (CRITICAL - all pages need these)
+    ↓
+Week 5-10: Block Development (parallel tracks possible)
+    ↓
+Week 11-14: Content Migration (depends on all blocks)
+    ↓
+Week 15-17: Testing + UAT (depends on content complete)
+    ↓
+Week 18: Go-Live (depends on UAT sign-off)
+</code></pre><p><strong>Critical Path Items:</strong></p><ol>
+<li>Font licensing must be resolved by Week 1</li>
+<li>Header/Footer blocks gate all page development</li>
+<li>Pipeline-table block is highest complexity - start Week 7</li>
+<li>Content approvals needed by Week 10 for migration</li>
+<li>DNS changes must be scheduled 2 weeks before go-live</li>
+</ol></div>
+<div><h2 id="cost-estimation">7. Cost Estimation</h2><h3 id="labor-costs---detailed-breakdown">7.1 Labor Costs - Detailed Breakdown</h3><h4 id="by-role">By Role</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="role"><div><div>Project Manager</div><div>$150</div><div>280</div><div>$42,000</div><div>Planning, coordination, reporting</div></div><div><div>Technical Lead</div><div>$200</div><div>440</div><div>$88,000</div><div>Architecture, code review, decisions</div></div><div><div>EDS Developer 1 (Senior)</div><div>$185</div><div>680</div><div>$125,800</div><div>Core blocks, complex components</div></div><div><div>EDS Developer 2 (Mid)</div><div>$165</div><div>600</div><div>$99,000</div><div>Standard blocks, templates</div></div><div><div>EDS Developer 3 (Junior, 50%)</div><div>$140</div><div>220</div><div>$30,800</div><div>Support, simple blocks</div></div><div><div>Content Strategist</div><div>$135</div><div>140</div><div>$18,900</div><div>IA, content mapping</div></div><div><div>Content Author 1</div><div>$95</div><div>240</div><div>$22,800</div><div>Primary content migration</div></div><div><div>Content Author 2 (50%)</div><div>$95</div><div>120</div><div>$11,400</div><div>Secondary migration support</div></div><div><div>QA Engineer</div><div>$130</div><div>200</div><div>$26,000</div><div>Testing, accessibility</div></div><div><div><strong>Subtotal Labor</strong></div><div></div><div><strong>2,920</strong></div><div><strong>$464,700</strong></div><div></div></div></div><h4 id="by-phase">By Phase</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="phase"><div><div>Phase 1: Foundation</div><div>480</div><div>$82,000</div><div>18%</div></div><div><div>Phase 2: Development</div><div>960</div><div>$168,000</div><div>36%</div></div><div><div>Phase 3: Content Migration</div><div>840</div><div>$122,000</div><div>26%</div></div><div><div>Phase 4: Testing &#x26; Launch</div><div>640</div><div>$92,700</div><div>20%</div></div><div><div><strong>Total</strong></div><div><strong>2,920</strong></div><div><strong>$464,700</strong></div><div>100%</div></div></div><h4 id="by-activity-type">By Activity Type</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="activity"><div><div>Project Management</div><div>280</div><div>$42,000</div><div>Planning, status, coordination</div></div><div><div>Architecture &#x26; Design</div><div>200</div><div>$40,000</div><div>System design, technical decisions</div></div><div><div>Block Development</div><div>1,200</div><div>$204,000</div><div>35 blocks (avg 34 hrs/block)</div></div><div><div>Template Development</div><div>160</div><div>$27,200</div><div>8 page templates</div></div><div><div>Content Migration</div><div>520</div><div>$49,400</div><div>100 pages (avg 5 hrs/page)</div></div><div><div>Integration Work</div><div>160</div><div>$27,200</div><div>Analytics, search, APIs</div></div><div><div>Testing &#x26; QA</div><div>320</div><div>$48,000</div><div>Functional, accessibility, UAT</div></div><div><div>Documentation</div><div>80</div><div>$12,800</div><div>Technical docs, runbooks</div></div><div><div><strong>Total</strong></div><div><strong>2,920</strong></div><div><strong>$464,700</strong></div><div></div></div></div><h3 id="block-development-hours-detail">7.2 Block Development Hours Detail</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="block-category"><div><div>Navigation (header, footer, breadcrumb)</div><div>3</div><div>50</div><div>150</div><div>$27,000</div></div><div><div>Hero variants</div><div>5</div><div>30</div><div>150</div><div>$27,000</div></div><div><div>Card variants</div><div>8</div><div>25</div><div>200</div><div>$36,000</div></div><div><div>Interactive (accordion, tabs, carousel, etc.)</div><div>8</div><div>45</div><div>360</div><div>$64,800</div></div><div><div>Content blocks</div><div>8</div><div>25</div><div>200</div><div>$36,000</div></div><div><div>Form blocks</div><div>3</div><div>40</div><div>120</div><div>$21,600</div></div><div><div><strong>Total Blocks</strong></div><div><strong>35</strong></div><div><strong>34 avg</strong></div><div><strong>1,180</strong></div><div><strong>$212,400</strong></div></div></div><p><em>Note: Hours include development, styling, testing, and documentation per block</em></p><h3 id="additional-costs">7.3 Additional Costs</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="item"><div><div>Adobe EDS Licensing</div><div>TBD</div><div>Annual</div><div>TBD</div><div>Per Adobe enterprise agreement</div></div><div><div>Font Licensing (F37 Lineca)</div><div>$8,000</div><div>One-time</div><div>$8,000</div><div>Web font license for enterprise</div></div><div><div>Search Service (Algolia)</div><div>$600/mo</div><div>Monthly</div><div>$7,200</div><div>If implementing site search</div></div><div><div>Image CDN (optional)</div><div>$200/mo</div><div>Monthly</div><div>$2,400</div><div>If using external image optimization</div></div><div><div>SSL Certificate</div><div>Included</div><div>-</div><div>$0</div><div>Included with EDS</div></div><div><div><strong>Subtotal Additional</strong></div><div></div><div></div><div><strong>$17,600</strong></div><div>First year</div></div></div><h3 id="contingency--risk-buffer">7.4 Contingency &#x26; Risk Buffer</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="contingency-type"><div><div>Scope contingency</div><div>$464,700</div><div>10%</div><div>$46,470</div></div><div><div>Technical risk buffer</div><div>$212,400</div><div>15%</div><div>$31,860</div></div><div><div>Schedule buffer</div><div>-</div><div>2 weeks</div><div>Included in timeline</div></div><div><div><strong>Total Contingency</strong></div><div></div><div></div><div><strong>$78,330</strong></div></div></div><h3 id="total-cost-summary">7.5 Total Cost Summary</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="category"><div><div>Labor (2,920 hours)</div><div>$464,700</div></div><div><div>Additional Costs (Year 1)</div><div>$17,600</div></div><div><div>Contingency (15%)</div><div>$78,330</div></div><div><div><strong>Project Total</strong></div><div><strong>$560,630</strong></div></div></div><h4 id="cost-range-scenarios">Cost Range Scenarios</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="scenario"><div><div><strong>Optimistic</strong></div><div>2,400</div><div>$425,000</div><div>No major issues, experienced team</div></div><div><div><strong>Expected</strong></div><div>2,920</div><div>$560,000</div><div>Planned estimate with contingency</div></div><div><div><strong>Conservative</strong></div><div>3,500</div><div>$675,000</div><div>Complex issues, scope additions</div></div></div><p><em>Note: Estimates based on blended agency rates. Internal team costs may vary significantly.</em></p></div>
+<div><h2 id="risk-assessment">8. Risk Assessment</h2><h3 id="risk-matrix">8.1 Risk Matrix</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="risk"><div><div>Content approval delays</div><div>High</div><div>High</div><div>Early stakeholder engagement, phased reviews</div></div><div><div>Complex interactive components</div><div>Medium</div><div>High</div><div>Technical spike early, fallback options</div></div><div><div>Font licensing issues</div><div>Medium</div><div>Medium</div><div>Identify alternatives early</div></div><div><div>Scope creep</div><div>High</div><div>Medium</div><div>Strict change control process</div></div><div><div>Resource availability</div><div>Medium</div><div>Medium</div><div>Cross-training, backup resources</div></div><div><div>Performance issues</div><div>Low</div><div>High</div><div>Early performance testing</div></div><div><div>Third-party integrations</div><div>Medium</div><div>Medium</div><div>Integration testing phase</div></div><div><div>Accessibility compliance</div><div>Medium</div><div>High</div><div>WCAG audits throughout</div></div></div><h3 id="key-assumptions">8.2 Key Assumptions</h3><ol>
+<li>AbbVie provides timely content approvals</li>
+<li>Existing video hosting remains accessible</li>
+<li>No major redesign required (visual refresh acceptable)</li>
+<li>Analytics configuration provided by AbbVie</li>
+<li>Legal/compliance review integrated into timeline</li>
+<li>No internationalization required in initial scope</li>
+</ol></div>
+<div><h2 id="success-criteria">9. Success Criteria</h2><h3 id="technical-success-metrics">9.1 Technical Success Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Lighthouse Performance</div><div>> 90</div></div><div><div>Lighthouse Accessibility</div><div>> 95</div></div><div><div>Lighthouse SEO</div><div>> 95</div></div><div><div>Core Web Vitals (all)</div><div>Pass</div></div><div><div>Cross-browser compatibility</div><div>Chrome, Safari, Firefox, Edge</div></div><div><div>Mobile responsiveness</div><div>100% pages</div></div></div><h3 id="business-success-metrics">9.2 Business Success Metrics</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="metric"><div><div>Page load time improvement</div><div>> 30%</div></div><div><div>Content authoring time</div><div>&#x3C; 50% of current</div></div><div><div>Time to publish</div><div>&#x3C; 5 minutes</div></div><div><div>Uptime SLA</div><div>99.9%</div></div></div></div>
+<div><h2 id="appendices">10. Appendices</h2><h3 id="appendix-a-current-site-technical-stack">Appendix A: Current Site Technical Stack</h3><ul>
+<li><strong>Platform:</strong> Adobe Experience Manager (AEM)</li>
+<li><strong>CDN:</strong> Akamai (assumed)</li>
+<li><strong>Analytics:</strong> Adobe Analytics</li>
+<li><strong>Video:</strong> Custom/third-party hosting</li>
+<li><strong>Forms:</strong> AEM Forms</li>
+<li><strong>Search:</strong> Custom implementation</li>
+</ul><h3 id="appendix-b-page-url-inventory">Appendix B: Page URL Inventory</h3><p>See attached spreadsheet for complete URL inventory.</p><h3 id="appendix-c-block-component-specifications">Appendix C: Block Component Specifications</h3><p>Detailed specifications to be developed during Phase 1.</p><h3 id="appendix-d-content-migration-mapping">Appendix D: Content Migration Mapping</h3><p>Content-to-template mapping to be developed during discovery.</p></div>
+<div><h2 id="document-history">Document History</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="version"><div><div>1.0</div><div>Feb 2026</div><div>Migration Team</div><div>Initial document</div></div></div></div>
+<div><p><em>This migration plan is a living document and will be updated as the project progresses.</em></p></div>
