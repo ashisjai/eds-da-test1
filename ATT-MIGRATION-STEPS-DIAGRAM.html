@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AT&T Business EDS Migration - Steps Diagram</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #0568AE;
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 1.1em;
+      margin-bottom: 40px;
+    }
+    .metrics-bar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .metric {
+      background: white;
+      padding: 15px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #0568AE;
+    }
+    .metric-label {
+      font-size: 0.9em;
+      color: #666;
+    }
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(to bottom, #009FDB, #0568AE);
+      border-radius: 3px;
+    }
+    .phase {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .phase:nth-child(odd) {
+      flex-direction: row;
+    }
+    .phase:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .phase-content {
+      width: 45%;
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .phase-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+    }
+    .phase:nth-child(odd) .phase-content {
+      margin-right: 5%;
+    }
+    .phase:nth-child(even) .phase-content {
+      margin-left: 5%;
+    }
+    .phase-number {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #009FDB, #0568AE);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2em;
+      box-shadow: 0 4px 15px rgba(5, 104, 174, 0.4);
+      z-index: 10;
+    }
+    .phase-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 10px;
+    }
+    .phase-title {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #0568AE;
+    }
+    .phase-weeks {
+      background: #e8f4fc;
+      color: #0568AE;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .phase-hours {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+    .hours-badge {
+      padding: 8px 15px;
+      border-radius: 8px;
+      font-size: 0.85em;
+    }
+    .hours-manual {
+      background: #fff3e0;
+      color: #e65100;
+    }
+    .hours-ec {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+    .steps-list {
+      list-style: none;
+    }
+    .steps-list li {
+      padding: 8px 0;
+      padding-left: 25px;
+      position: relative;
+      color: #444;
+      font-size: 0.95em;
+      border-bottom: 1px dashed #eee;
+    }
+    .steps-list li:last-child {
+      border-bottom: none;
+    }
+    .steps-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #009FDB;
+      font-weight: bold;
+    }
+    .step-reason {
+      display: block;
+      font-size: 0.8em;
+      color: #888;
+      margin-top: 3px;
+      font-style: italic;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+    }
+    .legend-manual {
+      background: #fff3e0;
+    }
+    .legend-ec {
+      background: #e8f5e9;
+    }
+    .summary-box {
+      background: linear-gradient(135deg, #0568AE, #009FDB);
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .summary-title {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .summary-item {
+      background: rgba(255,255,255,0.15);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .summary-value {
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+    .summary-label {
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+    @media (max-width: 900px) {
+      .timeline::before {
+        left: 30px;
+      }
+      .phase {
+        flex-direction: column !important;
+        padding-left: 70px;
+      }
+      .phase-content {
+        width: 100% !important;
+        margin: 0 !important;
+      }
+      .phase-number {
+        left: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AT&T Business EDS Migration</h1>
+    <p class="subtitle">Adobe Edge Delivery Services Migration Steps (749 Pages)</p>
+
+    <div class="metrics-bar">
+      <div class="metric">
+        <div class="metric-value">749</div>
+        <div class="metric-label">Pages to Migrate</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">45</div>
+        <div class="metric-label">Custom Blocks</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">9</div>
+        <div class="metric-label">Migration Phases</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">28-30</div>
+        <div class="metric-label">Weeks Duration</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <!-- Phase 0 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Pre-Migration</span>
+            <span class="phase-weeks">Weeks 1-2</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 168 hrs</span>
+            <span class="hours-badge hours-ec">EC: 168 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Site audit & inventory (749 pages)
+              <span class="step-reason">Understand full scope; prevent surprises</span>
+            </li>
+            <li>Performance baseline
+              <span class="step-reason">Establish metrics to measure ROI</span>
+            </li>
+            <li>SEO audit
+              <span class="step-reason">Preserve search rankings</span>
+            </li>
+            <li>Stakeholder alignment & kickoff
+              <span class="step-reason">Get executive buy-in</span>
+            </li>
+            <li>Technical discovery
+              <span class="step-reason">Identify API/integration dependencies</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">0</div>
+      </div>
+
+      <!-- Phase 1 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Foundation</span>
+            <span class="phase-weeks">Weeks 3-6</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 474 hrs</span>
+            <span class="hours-badge hours-ec">EC: 334 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>GitHub repository setup
+              <span class="step-reason">Version control foundation</span>
+            </li>
+            <li>AEM Cloud Service provisioning
+              <span class="step-reason">Required for Universal Editor</span>
+            </li>
+            <li>EDS site registration & fstab.yaml
+              <span class="step-reason">Connect GitHub to EDS</span>
+            </li>
+            <li>CI/CD pipeline setup
+              <span class="step-reason">Automate deployments</span>
+            </li>
+            <li>Run EC/AEMcoder for initial migration
+              <span class="step-reason">Auto-generate block structure</span>
+            </li>
+            <li>Update blocks, CSS, design tokens
+              <span class="step-reason">Brand compliance</span>
+            </li>
+            <li>Core navigation blocks
+              <span class="step-reason">Header/footer on every page</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">1</div>
+      </div>
+
+      <!-- Phase 2 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Content Modeling</span>
+            <span class="phase-weeks">Weeks 7-8</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 200 hrs</span>
+            <span class="hours-badge hours-ec">EC: 180 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Create component-model.json
+              <span class="step-reason">JCR package structure for AEM importer</span>
+            </li>
+            <li>Create component-definitions.json
+              <span class="step-reason">Universal Editor field definitions</span>
+            </li>
+            <li>Define content fragment models
+              <span class="step-reason">Reusable content structure</span>
+            </li>
+            <li>Update transformations
+              <span class="step-reason">Handle content edge cases</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">2</div>
+      </div>
+
+      <!-- Phase 3 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Block Development</span>
+            <span class="phase-weeks">Weeks 9-14</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 1,080 hrs</span>
+            <span class="hours-badge hours-ec">EC: 600 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Hero blocks (6 variants)
+              <span class="step-reason">Above-the-fold; critical for conversions</span>
+            </li>
+            <li>Card blocks (10 variants)
+              <span class="step-reason">Most reused across 749 pages</span>
+            </li>
+            <li>Interactive blocks (10)
+              <span class="step-reason">Tabs, accordion, carousel, modal, search</span>
+            </li>
+            <li>Form blocks (4)
+              <span class="step-reason">Lead capture is revenue-critical</span>
+            </li>
+            <li>Content blocks (8)
+              <span class="step-reason">Columns, quote, table, embed</span>
+            </li>
+            <li>Product-specific blocks (6)
+              <span class="step-reason">Pricing tables, comparisons</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">3</div>
+      </div>
+
+      <!-- Phase 4 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Page Review & Assets</span>
+            <span class="phase-weeks">Weeks 15-20</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 1,350 hrs</span>
+            <span class="hours-badge hours-ec">EC: 1,350 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Review each page (749 pages)
+              <span class="step-reason">Ensure content accuracy</span>
+            </li>
+            <li>URL redirect mapping
+              <span class="step-reason">Preserve SEO; prevent broken links</span>
+            </li>
+            <li>DAM asset migration
+              <span class="step-reason">Images/PDFs in AEM for authoring</span>
+            </li>
+            <li>Image optimization
+              <span class="step-reason">Core Web Vitals performance</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">4</div>
+      </div>
+
+      <!-- Phase 5 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Edge Workers & APIs</span>
+            <span class="phase-weeks">Weeks 21-22</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 340 hrs</span>
+            <span class="hours-badge hours-ec">EC: 340 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Move servlets/APIs to Edge workers
+              <span class="step-reason">EDS is static; dynamic needs edge</span>
+            </li>
+            <li>Pricing API integration
+              <span class="step-reason">Real-time pricing for trust</span>
+            </li>
+            <li>Lead form submission handling
+              <span class="step-reason">Revenue-critical CRM integration</span>
+            </li>
+            <li>Search functionality
+              <span class="step-reason">UX requirement for 749 pages</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">5</div>
+      </div>
+
+      <!-- Phase 6 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">AEM Migration</span>
+            <span class="phase-weeks">Weeks 23-24</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 280 hrs</span>
+            <span class="hours-badge hours-ec">EC: 280 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Migrate custom functionality
+              <span class="step-reason">Preserve business logic</span>
+            </li>
+            <li>Meta-schema, taxonomy, workflows
+              <span class="step-reason">Content governance</span>
+            </li>
+            <li>User/group migration
+              <span class="step-reason">Security; access controls</span>
+            </li>
+            <li>Workflow configuration
+              <span class="step-reason">Approval processes</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">6</div>
+      </div>
+
+      <!-- Phase 7 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Integrations</span>
+            <span class="phase-weeks">Weeks 25-26</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 160 hrs</span>
+            <span class="hours-badge hours-ec">EC: 160 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Analytics/tracking setup
+              <span class="step-reason">Track conversions and ROI</span>
+            </li>
+            <li>Third-party scripts
+              <span class="step-reason">Chat, pixels, consent banner</span>
+            </li>
+            <li>Search indexing
+              <span class="step-reason">SEO; crawl 749 pages</span>
+            </li>
+            <li>Social meta tags
+              <span class="step-reason">Social sharing previews</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">7</div>
+      </div>
+
+      <!-- Phase 8 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Validation & Testing</span>
+            <span class="phase-weeks">Weeks 27-28</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 620 hrs</span>
+            <span class="hours-badge hours-ec">EC: 585 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Validate all functionalities
+              <span class="step-reason">Ensure nothing broken</span>
+            </li>
+            <li>Accessibility audit (WCAG 2.1 AA)
+              <span class="step-reason">Legal ADA compliance</span>
+            </li>
+            <li>Performance/load testing
+              <span class="step-reason">Core Web Vitals targets</span>
+            </li>
+            <li>SEO validation
+              <span class="step-reason">No ranking loss</span>
+            </li>
+            <li>Security review
+              <span class="step-reason">XSS, CSP protection</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">8</div>
+      </div>
+
+      <!-- Phase 9 -->
+      <div class="phase">
+        <div class="phase-content">
+          <div class="phase-header">
+            <span class="phase-title">Launch</span>
+            <span class="phase-weeks">Weeks 29-30</span>
+          </div>
+          <div class="phase-hours">
+            <span class="hours-badge hours-manual">Manual: 336 hrs</span>
+            <span class="hours-badge hours-ec">EC: 331 hrs</span>
+          </div>
+          <ul class="steps-list">
+            <li>Domain/DNS configuration
+              <span class="step-reason">SSL; production readiness</span>
+            </li>
+            <li>UAT & stakeholder sign-off
+              <span class="step-reason">Business approval</span>
+            </li>
+            <li>DNS cutover & rollback plan
+              <span class="step-reason">Safe deployment</span>
+            </li>
+            <li>Author training
+              <span class="step-reason">Enable content team</span>
+            </li>
+            <li>Hypercare & monitoring
+              <span class="step-reason">99.9% uptime SLA</span>
+            </li>
+          </ul>
+        </div>
+        <div class="phase-number">9</div>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-color legend-manual"></div>
+        <span>Manual Approach Hours</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-color legend-ec"></div>
+        <span>EC/AEMCoder Hours (Accelerated)</span>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">Migration Summary</div>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="summary-value">7,250</div>
+          <div class="summary-label">Manual Hours</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">6,450</div>
+          <div class="summary-label">EC/AEMCoder Hours</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">800</div>
+          <div class="summary-label">Hours Saved</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">$1.39M</div>
+          <div class="summary-label">Manual Cost</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">$1.22M</div>
+          <div class="summary-label">EC/AEMCoder Cost</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-value">~13%</div>
+          <div class="summary-label">Cost Savings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
