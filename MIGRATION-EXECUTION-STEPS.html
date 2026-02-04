@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDS Migration Execution Steps</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8fafc;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 {
+      text-align: center;
+      color: #1e3a5f;
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      font-size: 1.1em;
+      margin-bottom: 50px;
+    }
+
+    /* Flow diagram */
+    .flow-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    /* Connector line */
+    .flow-container::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 60px;
+      bottom: 60px;
+      width: 4px;
+      background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #ec4899);
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .step-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 16px;
+      padding: 24px 30px;
+      width: 480px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border-left: 5px solid;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    }
+
+    .step-card.left {
+      margin-right: 80px;
+    }
+
+    .step-card.right {
+      margin-left: 80px;
+    }
+
+    /* Step number circle */
+    .step-number {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: white;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    .step-card.left .step-number {
+      right: -108px;
+    }
+
+    .step-card.right .step-number {
+      left: -108px;
+    }
+
+    /* Color coding by category */
+    .step-automation { border-color: #3b82f6; }
+    .step-automation .step-number { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+
+    .step-design { border-color: #8b5cf6; }
+    .step-design .step-number { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+    .step-content { border-color: #06b6d4; }
+    .step-content .step-number { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+
+    .step-integration { border-color: #f59e0b; }
+    .step-integration .step-number { background: linear-gradient(135deg, #f59e0b, #d97706); }
+
+    .step-migration { border-color: #ec4899; }
+    .step-migration .step-number { background: linear-gradient(135deg, #ec4899, #db2777); }
+
+    .step-validation { border-color: #10b981; }
+    .step-validation .step-number { background: linear-gradient(135deg, #10b981, #059669); }
+
+    .step-title {
+      font-size: 1.15em;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+
+    .step-description {
+      font-size: 0.95em;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    .step-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75em;
+      font-weight: 600;
+      margin-top: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-automation { background: #dbeafe; color: #1d4ed8; }
+    .tag-design { background: #ede9fe; color: #6d28d9; }
+    .tag-content { background: #cffafe; color: #0e7490; }
+    .tag-integration { background: #fef3c7; color: #b45309; }
+    .tag-migration { background: #fce7f3; color: #be185d; }
+    .tag-validation { background: #d1fae5; color: #047857; }
+
+    /* Arrow connectors */
+    .connector {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .connector-arrow {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 16px solid;
+    }
+
+    .arrow-blue { border-top-color: #3b82f6; }
+    .arrow-purple { border-top-color: #8b5cf6; }
+    .arrow-cyan { border-top-color: #06b6d4; }
+    .arrow-amber { border-top-color: #f59e0b; }
+    .arrow-pink { border-top-color: #ec4899; }
+    .arrow-green { border-top-color: #10b981; }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9em;
+      color: #475569;
+    }
+
+    .legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    /* Summary footer */
+    .summary {
+      margin-top: 50px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+      border-radius: 16px;
+      padding: 30px;
+      color: white;
+      text-align: center;
+    }
+
+    .summary-title {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .summary-steps {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .summary-step {
+      text-align: center;
+    }
+
+    .summary-number {
+      font-size: 2.5em;
+      font-weight: 700;
+    }
+
+    .summary-label {
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 800px) {
+      .step-card {
+        width: 100%;
+        margin: 0 !important;
+      }
+      .step-card.left .step-number,
+      .step-card.right .step-number {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -28px;
+      }
+      .flow-container::before {
+        display: none;
+      }
+      .step-row {
+        margin-bottom: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Migration Execution Steps</h1>
+    <p class="subtitle">Adobe Edge Delivery Services Migration Workflow</p>
+
+    <div class="flow-container">
+      <!-- Step 1 -->
+      <div class="step-row">
+        <div class="step-card left step-automation">
+          <div class="step-number">1</div>
+          <div class="step-title">Run EC/AEMcoder for Initial Migration</div>
+          <div class="step-description">
+            Execute automated migration tool to generate initial block structure, markdown content, and page scaffolding from source site.
+          </div>
+          <span class="step-tag tag-automation">Automation</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-blue"></div></div>
+
+      <!-- Step 2 -->
+      <div class="step-row">
+        <div class="step-card right step-automation">
+          <div class="step-number">2</div>
+          <div class="step-title">Update Blocks, Functionality, CSS</div>
+          <div class="step-description">
+            Refine auto-generated blocks with brand compliance, accessibility fixes, responsive behavior, and interactive functionality.
+          </div>
+          <span class="step-tag tag-automation">Automation</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-purple"></div></div>
+
+      <!-- Step 2a -->
+      <div class="step-row">
+        <div class="step-card left step-design">
+          <div class="step-number">2a</div>
+          <div class="step-title">Extract Design System Tokens</div>
+          <div class="step-description">
+            Extract colors, typography, spacing from source site. Create CSS custom properties in styles.css for global consistency.
+          </div>
+          <span class="step-tag tag-design">Design System</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-purple"></div></div>
+
+      <!-- Step 3 -->
+      <div class="step-row">
+        <div class="step-card right step-content">
+          <div class="step-number">3</div>
+          <div class="step-title">Create component-model.json</div>
+          <div class="step-description">
+            Define JCR package structure for AEM importer. Maps block content to AEM node structure for content storage.
+          </div>
+          <span class="step-tag tag-content">Content Modeling</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-cyan"></div></div>
+
+      <!-- Step 3a -->
+      <div class="step-row">
+        <div class="step-card left step-content">
+          <div class="step-number">3a</div>
+          <div class="step-title">Create component-definitions.json (UE)</div>
+          <div class="step-description">
+            Define Universal Editor field definitions. Creates authoring UI with field types, validation, and grouping for content authors.
+          </div>
+          <span class="step-tag tag-content">Content Modeling</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-cyan"></div></div>
+
+      <!-- Step 4 -->
+      <div class="step-row">
+        <div class="step-card right step-content">
+          <div class="step-number">4</div>
+          <div class="step-title">Review Pages, Re-author Assets in DAM</div>
+          <div class="step-description">
+            Validate migrated content accuracy. Upload images and documents to AEM DAM with proper metadata and folder structure.
+          </div>
+          <span class="step-tag tag-content">Content Migration</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-amber"></div></div>
+
+      <!-- Step 4a -->
+      <div class="step-row">
+        <div class="step-card left step-integration">
+          <div class="step-number">4a</div>
+          <div class="step-title">Create URL Redirect Mapping</div>
+          <div class="step-description">
+            Map old URLs to new EDS paths. Create 301 redirect rules to preserve SEO rankings and prevent broken links.
+          </div>
+          <span class="step-tag tag-integration">SEO & Routing</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-amber"></div></div>
+
+      <!-- Step 5 -->
+      <div class="step-row">
+        <div class="step-card right step-integration">
+          <div class="step-number">5</div>
+          <div class="step-title">Move Servlets/APIs to Edge Workers</div>
+          <div class="step-description">
+            Migrate server-side logic to edge functions. Handle forms, pricing APIs, search, and personalization at the edge.
+          </div>
+          <span class="step-tag tag-integration">Edge Functions</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-amber"></div></div>
+
+      <!-- Step 5a -->
+      <div class="step-row">
+        <div class="step-card left step-integration">
+          <div class="step-number">5a</div>
+          <div class="step-title">Setup Analytics/Tracking</div>
+          <div class="step-description">
+            Configure Adobe Launch tag management. Implement conversion tracking, event triggers, and third-party pixels.
+          </div>
+          <span class="step-tag tag-integration">Analytics</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-pink"></div></div>
+
+      <!-- Step 6 -->
+      <div class="step-row">
+        <div class="step-card right step-migration">
+          <div class="step-number">6</div>
+          <div class="step-title">Migrate Custom Functionality to AEMaaCS</div>
+          <div class="step-description">
+            Port custom AEM components, services, and scheduled jobs to AEM as a Cloud Service architecture.
+          </div>
+          <span class="step-tag tag-migration">AEM Migration</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-pink"></div></div>
+
+      <!-- Step 7 -->
+      <div class="step-row">
+        <div class="step-card left step-migration">
+          <div class="step-number">7</div>
+          <div class="step-title">Migrate Meta-schema, Taxonomy, Workflows, Users</div>
+          <div class="step-description">
+            Transfer content taxonomies, metadata schemas, approval workflows, and user/group permissions to AEMaaCS.
+          </div>
+          <span class="step-tag tag-migration">AEM Migration</span>
+        </div>
+      </div>
+
+      <div class="connector"><div class="connector-arrow arrow-green"></div></div>
+
+      <!-- Step 8 -->
+      <div class="step-row">
+        <div class="step-card right step-validation">
+          <div class="step-number">8</div>
+          <div class="step-title">Validate All Functionalities</div>
+          <div class="step-description">
+            Execute comprehensive QA testing. Verify all blocks, forms, APIs, accessibility (WCAG 2.1 AA), and performance targets.
+          </div>
+          <span class="step-tag tag-validation">Validation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #3b82f6;"></div>
+        <span>Automation</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #8b5cf6;"></div>
+        <span>Design System</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #06b6d4;"></div>
+        <span>Content Modeling</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #f59e0b;"></div>
+        <span>Integration</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #ec4899;"></div>
+        <span>AEM Migration</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background: #10b981;"></div>
+        <span>Validation</span>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary">
+      <div class="summary-title">Migration Execution Summary</div>
+      <div class="summary-steps">
+        <div class="summary-step">
+          <div class="summary-number">12</div>
+          <div class="summary-label">Total Steps</div>
+        </div>
+        <div class="summary-step">
+          <div class="summary-number">6</div>
+          <div class="summary-label">Categories</div>
+        </div>
+        <div class="summary-step">
+          <div class="summary-number">2</div>
+          <div class="summary-label">Automation Steps</div>
+        </div>
+        <div class="summary-step">
+          <div class="summary-number">3</div>
+          <div class="summary-label">Content Steps</div>
+        </div>
+        <div class="summary-step">
+          <div class="summary-number">4</div>
+          <div class="summary-label">Integration Steps</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
